@@ -1,0 +1,339 @@
+\hypertarget{sphinxstemen_8cpp}{\section{src/sphinxstemen.cpp File Reference}
+\label{sphinxstemen_8cpp}\index{src/sphinxstemen.\-cpp@{src/sphinxstemen.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_ab1c2f11c9fe296e76c4e563b5905cf12}{is\-\_\-vowel}(idx)~\hyperlink{sphinxstemen_8cpp_a1c639b757eb3e52283e93edd03d63eab}{vowel\-\_\-map}\mbox{[}word\mbox{[}idx\mbox{]}\mbox{]}
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_aaabf488c1cee4f139831bcca223ed6bc}{E\-X\-C\-B\-A\-S\-E}(b)~( iword==( ( (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})b\mbox{[}3\mbox{]}$<$$<$24 ) + ( (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})b\mbox{[}2\mbox{]}$<$$<$16 ) + ( (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})b\mbox{[}1\mbox{]}$<$$<$8 ) + (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})b\mbox{[}0\mbox{]} ) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_ab6a40d45f33cb68cde3b1fea1df0640e}{E\-X\-C4}(a, b)~( len==4 \&\& \hyperlink{sphinxstemen_8cpp_aaabf488c1cee4f139831bcca223ed6bc}{E\-X\-C\-B\-A\-S\-E}(b) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a1956f83289c8ef98ac51d3edc4fcb9a5}{E\-X\-C5}(a, b)~( len==5 \&\& \hyperlink{sphinxstemen_8cpp_aaabf488c1cee4f139831bcca223ed6bc}{E\-X\-C\-B\-A\-S\-E}(b) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_ae941cae4f80b173e1dca6766627d6faa}{E\-X\-C6}(a, b)~( len==6 \&\& \hyperlink{sphinxstemen_8cpp_aaabf488c1cee4f139831bcca223ed6bc}{E\-X\-C\-B\-A\-S\-E}(b) \&\& a\mbox{[}4\mbox{]}==b\mbox{[}4\mbox{]} )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_ac8712ef57cb75e6ddab3cbcc4c6c19af}{E\-X\-C7}(a, b)~( len==7 \&\& \hyperlink{sphinxstemen_8cpp_aaabf488c1cee4f139831bcca223ed6bc}{E\-X\-C\-B\-A\-S\-E}(b) \&\& a\mbox{[}4\mbox{]}==b\mbox{[}4\mbox{]} \&\& a\mbox{[}5\mbox{]}==b\mbox{[}5\mbox{]} )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a16d418633842f62120d81b61d9193d45}{E\-X\-C8}(a, b)~( len==8 \&\& \hyperlink{sphinxstemen_8cpp_aaabf488c1cee4f139831bcca223ed6bc}{E\-X\-C\-B\-A\-S\-E}(b) \&\& a\mbox{[}4\mbox{]}==b\mbox{[}4\mbox{]} \&\& a\mbox{[}5\mbox{]}==b\mbox{[}5\mbox{]} \&\& a\mbox{[}6\mbox{]}==b\mbox{[}6\mbox{]} )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a98f5699d43ca6e2f3c5448b4befb2a48}{C\-H\-E\-C\-K3}(c1, c2, c3)~\hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} ( iword==( (c1$<$$<$0)+(c2$<$$<$8)+(c3$<$$<$16) ) ) \hyperlink{sphinxsort_8cpp_a3a3a0de38f503963432a78b8a36aa74c}{return};
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a80a6f20402675d6e9defea07d929e98d}{C\-H\-E\-C\-K3\-A}(c1, c2, c3)~\hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} ( iword==( (c1$<$$<$0)+(c2$<$$<$8)+(c3$<$$<$16) ) ) \{ word\mbox{[}2\mbox{]} = '\textbackslash{}0'; \hyperlink{sphinxsort_8cpp_a3a3a0de38f503963432a78b8a36aa74c}{return}; \}
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(p, c)~( word\mbox{[}len-\/p\mbox{]}==c )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a10593408cd6275f451495e258d1aa346}{S\-U\-F\-F2}(c2, c1)~( len$>$=2 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(1,c1) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_abb973c515c9e2fad69ebfd6be55d811d}{S\-U\-F\-F3}(c3, c2, c1)~( len$>$=3 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(1,c1) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a194db6602d47175620ec76f0227dba49}{S\-U\-F\-F4}(c4, c3, c2, c1)~( len$>$=4 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(1,c1) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(4,c4) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a907c58830bac750bc61f5ca70a9ba7d2}{S\-U\-F\-F5}(c5, c4, c3, c2, c1)~( len$>$=5 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(1,c1) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(4,c4) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(5,c5) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_aa806115dae81cafd7bc763ede6550eec}{S\-U\-F\-F6}(c6, c5, c4, c3, c2, c1)~( len$>$=6 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(1,c1) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(4,c4) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(5,c5) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(6,c6) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a0c756ce4c18204140adf229eee078ae6}{S\-U\-F\-F7}(c7, c6, c5, c4, c3, c2, c1)~( len$>$=7 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(1,c1) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(4,c4) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(5,c5) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(6,c6) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(7,c7) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a9e983e9e73d5ac72a85fbf763a11e362}{S\-U\-F\-F3\-A}(c3, c2)~( len$>$=3 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_aba719b70b5ebc1b61fe10fc5d8d6d943}{S\-U\-F\-F4\-A}(c4, c3, c2)~( len$>$=4 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(4,c4) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a91de68b225b2c534e95ad002368c55b6}{S\-U\-F\-F5\-A}(c5, c4, c3, c2)~( len$>$=5 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(4,c4) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(5,c5) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_ae41fab12dfe668c188cbbdabec9455a9}{S\-U\-F\-F6\-A}(c6, c5, c4, c3, c2)~( len$>$=6 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(4,c4) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(5,c5) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(6,c6) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a80e6f9f9e0302d489f9a0a10743441fe}{S\-U\-F\-F7\-A}(c7, c6, c5, c4, c3, c2)~( len$>$=6 \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(4,c4) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(5,c5) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(6,c6) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(7,c7) )
+\item 
+\#define \hyperlink{sphinxstemen_8cpp_a9a8bda3847e9094ac305745e70759356}{I\-E\-D\-\_\-\-A\-C\-T\-I\-O\-N}~\{ \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} ( len-\/-\/!=4 ) len-\/-\/; \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstemen_8cpp_a5a82d096d4de2ed6a46eb37f175d3de0}{stem\-\_\-en\-\_\-id} (unsigned char l)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstemen_8cpp_ac6297401f3566a67da1ab603e93da70c}{stem\-\_\-en\-\_\-ivwxy} (unsigned char l)
+\item 
+void \hyperlink{sphinxstemen_8cpp_a1f32a0e8b997c3d273ba660d74fd4ca9}{stem\-\_\-en\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em initialize English stemmar \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstemen_8cpp_ac10f18c85280a8e121556d3f34c97cfe}{stem\-\_\-en} (unsigned char $\ast$word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} len)
+\begin{DoxyCompactList}\small\item\em stem lowercase English word \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned char \hyperlink{sphinxstemen_8cpp_ad58949e47f57d5575e4452d2c52d5805}{stem\-\_\-en\-\_\-doubles} \mbox{[}$\,$\mbox{]} = \char`\"{}bdfgmnprt\char`\"{}
+\item 
+static unsigned char \hyperlink{sphinxstemen_8cpp_a1c639b757eb3e52283e93edd03d63eab}{vowel\-\_\-map} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxstemen_8cpp_a98f5699d43ca6e2f3c5448b4befb2a48}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!C\-H\-E\-C\-K3@{C\-H\-E\-C\-K3}}
+\index{C\-H\-E\-C\-K3@{C\-H\-E\-C\-K3}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{C\-H\-E\-C\-K3}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K3(
+\begin{DoxyParamCaption}
+\item[{}]{c1, }
+\item[{}]{c2, }
+\item[{}]{c3}
+\end{DoxyParamCaption}
+)~{\bf if} ( iword==( (c1$<$$<$0)+(c2$<$$<$8)+(c3$<$$<$16) ) ) {\bf return};}}\label{sphinxstemen_8cpp_a98f5699d43ca6e2f3c5448b4befb2a48}
+\hypertarget{sphinxstemen_8cpp_a80a6f20402675d6e9defea07d929e98d}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!C\-H\-E\-C\-K3\-A@{C\-H\-E\-C\-K3\-A}}
+\index{C\-H\-E\-C\-K3\-A@{C\-H\-E\-C\-K3\-A}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{C\-H\-E\-C\-K3\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K3\-A(
+\begin{DoxyParamCaption}
+\item[{}]{c1, }
+\item[{}]{c2, }
+\item[{}]{c3}
+\end{DoxyParamCaption}
+)~{\bf if} ( iword==( (c1$<$$<$0)+(c2$<$$<$8)+(c3$<$$<$16) ) ) \{ word\mbox{[}2\mbox{]} = '\textbackslash{}0'; {\bf return}; \}}}\label{sphinxstemen_8cpp_a80a6f20402675d6e9defea07d929e98d}
+\hypertarget{sphinxstemen_8cpp_ab6a40d45f33cb68cde3b1fea1df0640e}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!E\-X\-C4@{E\-X\-C4}}
+\index{E\-X\-C4@{E\-X\-C4}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{E\-X\-C4}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-C4(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~( len==4 \&\& {\bf E\-X\-C\-B\-A\-S\-E}(b) )}}\label{sphinxstemen_8cpp_ab6a40d45f33cb68cde3b1fea1df0640e}
+\hypertarget{sphinxstemen_8cpp_a1956f83289c8ef98ac51d3edc4fcb9a5}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!E\-X\-C5@{E\-X\-C5}}
+\index{E\-X\-C5@{E\-X\-C5}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{E\-X\-C5}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-C5(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~( len==5 \&\& {\bf E\-X\-C\-B\-A\-S\-E}(b) )}}\label{sphinxstemen_8cpp_a1956f83289c8ef98ac51d3edc4fcb9a5}
+\hypertarget{sphinxstemen_8cpp_ae941cae4f80b173e1dca6766627d6faa}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!E\-X\-C6@{E\-X\-C6}}
+\index{E\-X\-C6@{E\-X\-C6}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{E\-X\-C6}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-C6(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~( len==6 \&\& {\bf E\-X\-C\-B\-A\-S\-E}(b) \&\& a\mbox{[}4\mbox{]}==b\mbox{[}4\mbox{]} )}}\label{sphinxstemen_8cpp_ae941cae4f80b173e1dca6766627d6faa}
+\hypertarget{sphinxstemen_8cpp_ac8712ef57cb75e6ddab3cbcc4c6c19af}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!E\-X\-C7@{E\-X\-C7}}
+\index{E\-X\-C7@{E\-X\-C7}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{E\-X\-C7}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-C7(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~( len==7 \&\& {\bf E\-X\-C\-B\-A\-S\-E}(b) \&\& a\mbox{[}4\mbox{]}==b\mbox{[}4\mbox{]} \&\& a\mbox{[}5\mbox{]}==b\mbox{[}5\mbox{]} )}}\label{sphinxstemen_8cpp_ac8712ef57cb75e6ddab3cbcc4c6c19af}
+\hypertarget{sphinxstemen_8cpp_a16d418633842f62120d81b61d9193d45}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!E\-X\-C8@{E\-X\-C8}}
+\index{E\-X\-C8@{E\-X\-C8}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{E\-X\-C8}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-C8(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~( len==8 \&\& {\bf E\-X\-C\-B\-A\-S\-E}(b) \&\& a\mbox{[}4\mbox{]}==b\mbox{[}4\mbox{]} \&\& a\mbox{[}5\mbox{]}==b\mbox{[}5\mbox{]} \&\& a\mbox{[}6\mbox{]}==b\mbox{[}6\mbox{]} )}}\label{sphinxstemen_8cpp_a16d418633842f62120d81b61d9193d45}
+\hypertarget{sphinxstemen_8cpp_aaabf488c1cee4f139831bcca223ed6bc}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!E\-X\-C\-B\-A\-S\-E@{E\-X\-C\-B\-A\-S\-E}}
+\index{E\-X\-C\-B\-A\-S\-E@{E\-X\-C\-B\-A\-S\-E}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{E\-X\-C\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-C\-B\-A\-S\-E(
+\begin{DoxyParamCaption}
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~( iword==( ( ({\bf int})b\mbox{[}3\mbox{]}$<$$<$24 ) + ( ({\bf int})b\mbox{[}2\mbox{]}$<$$<$16 ) + ( ({\bf int})b\mbox{[}1\mbox{]}$<$$<$8 ) + ({\bf int})b\mbox{[}0\mbox{]} ) )}}\label{sphinxstemen_8cpp_aaabf488c1cee4f139831bcca223ed6bc}
+\hypertarget{sphinxstemen_8cpp_a9a8bda3847e9094ac305745e70759356}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!I\-E\-D\-\_\-\-A\-C\-T\-I\-O\-N@{I\-E\-D\-\_\-\-A\-C\-T\-I\-O\-N}}
+\index{I\-E\-D\-\_\-\-A\-C\-T\-I\-O\-N@{I\-E\-D\-\_\-\-A\-C\-T\-I\-O\-N}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{I\-E\-D\-\_\-\-A\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-E\-D\-\_\-\-A\-C\-T\-I\-O\-N~\{ {\bf if} ( len-\/-\/!=4 ) len-\/-\/; \}}}\label{sphinxstemen_8cpp_a9a8bda3847e9094ac305745e70759356}
+\hypertarget{sphinxstemen_8cpp_ab1c2f11c9fe296e76c4e563b5905cf12}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!is\-\_\-vowel@{is\-\_\-vowel}}
+\index{is\-\_\-vowel@{is\-\_\-vowel}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{is\-\_\-vowel}]{\setlength{\rightskip}{0pt plus 5cm}\#define is\-\_\-vowel(
+\begin{DoxyParamCaption}
+\item[{}]{idx}
+\end{DoxyParamCaption}
+)~{\bf vowel\-\_\-map}\mbox{[}word\mbox{[}idx\mbox{]}\mbox{]}}}\label{sphinxstemen_8cpp_ab1c2f11c9fe296e76c4e563b5905cf12}
+\hypertarget{sphinxstemen_8cpp_a10593408cd6275f451495e258d1aa346}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F2@{S\-U\-F\-F2}}
+\index{S\-U\-F\-F2@{S\-U\-F\-F2}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F2(
+\begin{DoxyParamCaption}
+\item[{}]{c2, }
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~( len$>$=2 \&\& {\bf W}(1,c1) \&\& {\bf W}(2,c2) )}}\label{sphinxstemen_8cpp_a10593408cd6275f451495e258d1aa346}
+\hypertarget{sphinxstemen_8cpp_abb973c515c9e2fad69ebfd6be55d811d}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F3@{S\-U\-F\-F3}}
+\index{S\-U\-F\-F3@{S\-U\-F\-F3}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F3}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F3(
+\begin{DoxyParamCaption}
+\item[{}]{c3, }
+\item[{}]{c2, }
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~( len$>$=3 \&\& {\bf W}(1,c1) \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) )}}\label{sphinxstemen_8cpp_abb973c515c9e2fad69ebfd6be55d811d}
+\hypertarget{sphinxstemen_8cpp_a9e983e9e73d5ac72a85fbf763a11e362}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F3\-A@{S\-U\-F\-F3\-A}}
+\index{S\-U\-F\-F3\-A@{S\-U\-F\-F3\-A}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F3\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F3\-A(
+\begin{DoxyParamCaption}
+\item[{}]{c3, }
+\item[{}]{c2}
+\end{DoxyParamCaption}
+)~( len$>$=3 \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) )}}\label{sphinxstemen_8cpp_a9e983e9e73d5ac72a85fbf763a11e362}
+\hypertarget{sphinxstemen_8cpp_a194db6602d47175620ec76f0227dba49}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F4@{S\-U\-F\-F4}}
+\index{S\-U\-F\-F4@{S\-U\-F\-F4}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F4}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F4(
+\begin{DoxyParamCaption}
+\item[{}]{c4, }
+\item[{}]{c3, }
+\item[{}]{c2, }
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~( len$>$=4 \&\& {\bf W}(1,c1) \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) \&\& {\bf W}(4,c4) )}}\label{sphinxstemen_8cpp_a194db6602d47175620ec76f0227dba49}
+\hypertarget{sphinxstemen_8cpp_aba719b70b5ebc1b61fe10fc5d8d6d943}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F4\-A@{S\-U\-F\-F4\-A}}
+\index{S\-U\-F\-F4\-A@{S\-U\-F\-F4\-A}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F4\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F4\-A(
+\begin{DoxyParamCaption}
+\item[{}]{c4, }
+\item[{}]{c3, }
+\item[{}]{c2}
+\end{DoxyParamCaption}
+)~( len$>$=4 \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) \&\& {\bf W}(4,c4) )}}\label{sphinxstemen_8cpp_aba719b70b5ebc1b61fe10fc5d8d6d943}
+\hypertarget{sphinxstemen_8cpp_a907c58830bac750bc61f5ca70a9ba7d2}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F5@{S\-U\-F\-F5}}
+\index{S\-U\-F\-F5@{S\-U\-F\-F5}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F5}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F5(
+\begin{DoxyParamCaption}
+\item[{}]{c5, }
+\item[{}]{c4, }
+\item[{}]{c3, }
+\item[{}]{c2, }
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~( len$>$=5 \&\& {\bf W}(1,c1) \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) \&\& {\bf W}(4,c4) \&\& {\bf W}(5,c5) )}}\label{sphinxstemen_8cpp_a907c58830bac750bc61f5ca70a9ba7d2}
+\hypertarget{sphinxstemen_8cpp_a91de68b225b2c534e95ad002368c55b6}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F5\-A@{S\-U\-F\-F5\-A}}
+\index{S\-U\-F\-F5\-A@{S\-U\-F\-F5\-A}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F5\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F5\-A(
+\begin{DoxyParamCaption}
+\item[{}]{c5, }
+\item[{}]{c4, }
+\item[{}]{c3, }
+\item[{}]{c2}
+\end{DoxyParamCaption}
+)~( len$>$=5 \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) \&\& {\bf W}(4,c4) \&\& {\bf W}(5,c5) )}}\label{sphinxstemen_8cpp_a91de68b225b2c534e95ad002368c55b6}
+\hypertarget{sphinxstemen_8cpp_aa806115dae81cafd7bc763ede6550eec}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F6@{S\-U\-F\-F6}}
+\index{S\-U\-F\-F6@{S\-U\-F\-F6}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F6}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F6(
+\begin{DoxyParamCaption}
+\item[{}]{c6, }
+\item[{}]{c5, }
+\item[{}]{c4, }
+\item[{}]{c3, }
+\item[{}]{c2, }
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~( len$>$=6 \&\& {\bf W}(1,c1) \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) \&\& {\bf W}(4,c4) \&\& {\bf W}(5,c5) \&\& {\bf W}(6,c6) )}}\label{sphinxstemen_8cpp_aa806115dae81cafd7bc763ede6550eec}
+\hypertarget{sphinxstemen_8cpp_ae41fab12dfe668c188cbbdabec9455a9}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F6\-A@{S\-U\-F\-F6\-A}}
+\index{S\-U\-F\-F6\-A@{S\-U\-F\-F6\-A}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F6\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F6\-A(
+\begin{DoxyParamCaption}
+\item[{}]{c6, }
+\item[{}]{c5, }
+\item[{}]{c4, }
+\item[{}]{c3, }
+\item[{}]{c2}
+\end{DoxyParamCaption}
+)~( len$>$=6 \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) \&\& {\bf W}(4,c4) \&\& {\bf W}(5,c5) \&\& {\bf W}(6,c6) )}}\label{sphinxstemen_8cpp_ae41fab12dfe668c188cbbdabec9455a9}
+\hypertarget{sphinxstemen_8cpp_a0c756ce4c18204140adf229eee078ae6}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F7@{S\-U\-F\-F7}}
+\index{S\-U\-F\-F7@{S\-U\-F\-F7}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F7}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F7(
+\begin{DoxyParamCaption}
+\item[{}]{c7, }
+\item[{}]{c6, }
+\item[{}]{c5, }
+\item[{}]{c4, }
+\item[{}]{c3, }
+\item[{}]{c2, }
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~( len$>$=7 \&\& {\bf W}(1,c1) \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) \&\& {\bf W}(4,c4) \&\& {\bf W}(5,c5) \&\& {\bf W}(6,c6) \&\& {\bf W}(7,c7) )}}\label{sphinxstemen_8cpp_a0c756ce4c18204140adf229eee078ae6}
+\hypertarget{sphinxstemen_8cpp_a80e6f9f9e0302d489f9a0a10743441fe}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!S\-U\-F\-F7\-A@{S\-U\-F\-F7\-A}}
+\index{S\-U\-F\-F7\-A@{S\-U\-F\-F7\-A}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{S\-U\-F\-F7\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-F\-F7\-A(
+\begin{DoxyParamCaption}
+\item[{}]{c7, }
+\item[{}]{c6, }
+\item[{}]{c5, }
+\item[{}]{c4, }
+\item[{}]{c3, }
+\item[{}]{c2}
+\end{DoxyParamCaption}
+)~( len$>$=6 \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) \&\& {\bf W}(4,c4) \&\& {\bf W}(5,c5) \&\& {\bf W}(6,c6) \&\& {\bf W}(7,c7) )}}\label{sphinxstemen_8cpp_a80e6f9f9e0302d489f9a0a10743441fe}
+\hypertarget{sphinxstemen_8cpp_a6517260a8b67f7380c81a3fef7a5cdfb}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!W@{W}}
+\index{W@{W}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{W}]{\setlength{\rightskip}{0pt plus 5cm}\#define W(
+\begin{DoxyParamCaption}
+\item[{}]{p, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~( word\mbox{[}len-\/p\mbox{]}==c )}}\label{sphinxstemen_8cpp_a6517260a8b67f7380c81a3fef7a5cdfb}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxstemen_8cpp_ac10f18c85280a8e121556d3f34c97cfe}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!stem\-\_\-en@{stem\-\_\-en}}
+\index{stem\-\_\-en@{stem\-\_\-en}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{stem\-\_\-en}]{\setlength{\rightskip}{0pt plus 5cm}void stem\-\_\-en (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{word, }
+\item[{{\bf int}}]{len}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemen_8cpp_ac10f18c85280a8e121556d3f34c97cfe}
+
+
+stem lowercase English word 
+
+\hypertarget{sphinxstemen_8cpp_a5a82d096d4de2ed6a46eb37f175d3de0}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!stem\-\_\-en\-\_\-id@{stem\-\_\-en\-\_\-id}}
+\index{stem\-\_\-en\-\_\-id@{stem\-\_\-en\-\_\-id}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{stem\-\_\-en\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} stem\-\_\-en\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxstemen_8cpp_a5a82d096d4de2ed6a46eb37f175d3de0}
+\hypertarget{sphinxstemen_8cpp_a1f32a0e8b997c3d273ba660d74fd4ca9}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!stem\-\_\-en\-\_\-init@{stem\-\_\-en\-\_\-init}}
+\index{stem\-\_\-en\-\_\-init@{stem\-\_\-en\-\_\-init}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{stem\-\_\-en\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void stem\-\_\-en\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemen_8cpp_a1f32a0e8b997c3d273ba660d74fd4ca9}
+
+
+initialize English stemmar 
+
+\hypertarget{sphinxstemen_8cpp_ac6297401f3566a67da1ab603e93da70c}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!stem\-\_\-en\-\_\-ivwxy@{stem\-\_\-en\-\_\-ivwxy}}
+\index{stem\-\_\-en\-\_\-ivwxy@{stem\-\_\-en\-\_\-ivwxy}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{stem\-\_\-en\-\_\-ivwxy}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} stem\-\_\-en\-\_\-ivwxy (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxstemen_8cpp_ac6297401f3566a67da1ab603e93da70c}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxstemen_8cpp_ad58949e47f57d5575e4452d2c52d5805}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!stem\-\_\-en\-\_\-doubles@{stem\-\_\-en\-\_\-doubles}}
+\index{stem\-\_\-en\-\_\-doubles@{stem\-\_\-en\-\_\-doubles}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{stem\-\_\-en\-\_\-doubles}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char stem\-\_\-en\-\_\-doubles\mbox{[}$\,$\mbox{]} = \char`\"{}bdfgmnprt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemen_8cpp_ad58949e47f57d5575e4452d2c52d5805}
+\hypertarget{sphinxstemen_8cpp_a1c639b757eb3e52283e93edd03d63eab}{\index{sphinxstemen.\-cpp@{sphinxstemen.\-cpp}!vowel\-\_\-map@{vowel\-\_\-map}}
+\index{vowel\-\_\-map@{vowel\-\_\-map}!sphinxstemen.cpp@{sphinxstemen.\-cpp}}
+\subsubsection[{vowel\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char vowel\-\_\-map\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemen_8cpp_a1c639b757eb3e52283e93edd03d63eab}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)1\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)1\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)1\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)1"} 
+    
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)1\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)1\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"} 
+    \textcolor{stringliteral}{"\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0\(\backslash\)0"}
+\end{DoxyCode}

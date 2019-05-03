@@ -1,0 +1,111 @@
+\hypertarget{structAggrResult__t}{\section{Aggr\-Result\-\_\-t Struct Reference}
+\label{structAggrResult__t}\index{Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}}
+}
+
+
+result set aggregated across indexes  
+
+
+
+
+{\ttfamily \#include $<$searchdaemon.\-h$>$}
+
+Inheritance diagram for Aggr\-Result\-\_\-t\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structAggrResult__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structAggrResult__t_a3900745ffc037f0ddb3021f06aab8a8f}{Aggr\-Result\-\_\-t} ()
+\item 
+virtual \hyperlink{structAggrResult__t_ab3e2290a625323dd4f2ec0c1505b4f67}{$\sim$\-Aggr\-Result\-\_\-t} ()
+\item 
+void \hyperlink{structAggrResult__t_a5caaefcd75a186b3d0b97f50af834ef9}{Clamp\-Matches} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Limit, bool b\-Common\-Schema)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} $>$ \hyperlink{structAggrResult__t_a52e63e87c90a4428ca009c0ecb3c0390}{m\-\_\-d\-Schemas}
+\begin{DoxyCompactList}\small\item\em aggregated result sets schemas (for schema minimization) \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{structAggrResult__t_a8fb4c9631dfc7f05b1a17a0fdcc1a83d}{m\-\_\-d\-Match\-Counts}
+\begin{DoxyCompactList}\small\item\em aggregated result sets lengths (for schema minimization) \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ const \hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$ $>$ \hyperlink{structAggrResult__t_a04227b919acd8a0b925b912a9991df0c}{m\-\_\-d\-Locked\-Attrs}
+\begin{DoxyCompactList}\small\item\em indexes which are hold in the memory until sending result \end{DoxyCompactList}\item 
+\hyperlink{classCSphTaggedVector}{C\-Sph\-Tagged\-Vector} \hyperlink{structAggrResult__t_ae2309ab0f12f4558435075b96f463084}{m\-\_\-d\-Tag2\-Pools}
+\begin{DoxyCompactList}\small\item\em tag to M\-V\-A and strings storage pools mapping \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \hyperlink{structAggrResult__t_a5b6c26a144fa7054522ef8f52f14e06a}{m\-\_\-d\-Zero\-Count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+result set aggregated across indexes 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structAggrResult__t_a3900745ffc037f0ddb3021f06aab8a8f}{\index{Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}!Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}}
+\index{Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}!AggrResult_t@{Aggr\-Result\-\_\-t}}
+\subsubsection[{Aggr\-Result\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Aggr\-Result\-\_\-t\-::\-Aggr\-Result\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structAggrResult__t_a3900745ffc037f0ddb3021f06aab8a8f}
+\hypertarget{structAggrResult__t_ab3e2290a625323dd4f2ec0c1505b4f67}{\index{Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}!$\sim$\-Aggr\-Result\-\_\-t@{$\sim$\-Aggr\-Result\-\_\-t}}
+\index{$\sim$\-Aggr\-Result\-\_\-t@{$\sim$\-Aggr\-Result\-\_\-t}!AggrResult_t@{Aggr\-Result\-\_\-t}}
+\subsubsection[{$\sim$\-Aggr\-Result\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}virtual Aggr\-Result\-\_\-t\-::$\sim$\-Aggr\-Result\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structAggrResult__t_ab3e2290a625323dd4f2ec0c1505b4f67}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structAggrResult__t_a5caaefcd75a186b3d0b97f50af834ef9}{\index{Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}!Clamp\-Matches@{Clamp\-Matches}}
+\index{Clamp\-Matches@{Clamp\-Matches}!AggrResult_t@{Aggr\-Result\-\_\-t}}
+\subsubsection[{Clamp\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}void Aggr\-Result\-\_\-t\-::\-Clamp\-Matches (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Limit, }
+\item[{bool}]{b\-Common\-Schema}
+\end{DoxyParamCaption}
+)}}\label{structAggrResult__t_a5caaefcd75a186b3d0b97f50af834ef9}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structAggrResult__t_a04227b919acd8a0b925b912a9991df0c}{\index{Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}!m\-\_\-d\-Locked\-Attrs@{m\-\_\-d\-Locked\-Attrs}}
+\index{m\-\_\-d\-Locked\-Attrs@{m\-\_\-d\-Locked\-Attrs}!AggrResult_t@{Aggr\-Result\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Locked\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<$const {\bf C\-Sph\-Index}$\ast$$>$ Aggr\-Result\-\_\-t\-::m\-\_\-d\-Locked\-Attrs}}\label{structAggrResult__t_a04227b919acd8a0b925b912a9991df0c}
+
+
+indexes which are hold in the memory until sending result 
+
+\hypertarget{structAggrResult__t_a8fb4c9631dfc7f05b1a17a0fdcc1a83d}{\index{Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}!m\-\_\-d\-Match\-Counts@{m\-\_\-d\-Match\-Counts}}
+\index{m\-\_\-d\-Match\-Counts@{m\-\_\-d\-Match\-Counts}!AggrResult_t@{Aggr\-Result\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Match\-Counts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf int}$>$ Aggr\-Result\-\_\-t\-::m\-\_\-d\-Match\-Counts}}\label{structAggrResult__t_a8fb4c9631dfc7f05b1a17a0fdcc1a83d}
+
+
+aggregated result sets lengths (for schema minimization) 
+
+\hypertarget{structAggrResult__t_a52e63e87c90a4428ca009c0ecb3c0390}{\index{Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}!m\-\_\-d\-Schemas@{m\-\_\-d\-Schemas}}
+\index{m\-\_\-d\-Schemas@{m\-\_\-d\-Schemas}!AggrResult_t@{Aggr\-Result\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Schemas}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Rset\-Schema}$>$ Aggr\-Result\-\_\-t\-::m\-\_\-d\-Schemas}}\label{structAggrResult__t_a52e63e87c90a4428ca009c0ecb3c0390}
+
+
+aggregated result sets schemas (for schema minimization) 
+
+\hypertarget{structAggrResult__t_ae2309ab0f12f4558435075b96f463084}{\index{Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}!m\-\_\-d\-Tag2\-Pools@{m\-\_\-d\-Tag2\-Pools}}
+\index{m\-\_\-d\-Tag2\-Pools@{m\-\_\-d\-Tag2\-Pools}!AggrResult_t@{Aggr\-Result\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Tag2\-Pools}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Tagged\-Vector} Aggr\-Result\-\_\-t\-::m\-\_\-d\-Tag2\-Pools}}\label{structAggrResult__t_ae2309ab0f12f4558435075b96f463084}
+
+
+tag to M\-V\-A and strings storage pools mapping 
+
+\hypertarget{structAggrResult__t_a5b6c26a144fa7054522ef8f52f14e06a}{\index{Aggr\-Result\-\_\-t@{Aggr\-Result\-\_\-t}!m\-\_\-d\-Zero\-Count@{m\-\_\-d\-Zero\-Count}}
+\index{m\-\_\-d\-Zero\-Count@{m\-\_\-d\-Zero\-Count}!AggrResult_t@{Aggr\-Result\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Zero\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-String}$>$ Aggr\-Result\-\_\-t\-::m\-\_\-d\-Zero\-Count}}\label{structAggrResult__t_a5b6c26a144fa7054522ef8f52f14e06a}
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{searchdaemon_8h}{searchdaemon.\-h}\item 
+src/\hyperlink{searchd_8cpp}{searchd.\-cpp}\end{DoxyCompactItemize}

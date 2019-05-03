@@ -1,0 +1,243 @@
+\hypertarget{classCSphFilterSettings}{\section{C\-Sph\-Filter\-Settings Class Reference}
+\label{classCSphFilterSettings}\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}}
+}
+
+
+search query filter  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphFilterSettings_a93f2f8a89bf1d7cbd50d07b0380f65c1}{C\-Sph\-Filter\-Settings} ()
+\item 
+void \hyperlink{classCSphFilterSettings_a1ec2474442720fbc33779c0c574e8e09}{Set\-External\-Values} (const \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} $\ast$p\-Values, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} n\-Values)
+\item 
+\hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} \hyperlink{classCSphFilterSettings_a7142cfd6c996a7ffa9ed215763b184cf}{Get\-Value} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Idx) const 
+\item 
+const \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} $\ast$ \hyperlink{classCSphFilterSettings_aa1e1295b519fb958c04691f25fb70f81}{Get\-Value\-Array} () const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFilterSettings_a531e1dfc1f0a03dbaf74e3caa86d1eee}{Get\-Num\-Values} () const 
+\item 
+bool \hyperlink{classCSphFilterSettings_a9c7c2e254f61e64934234486dbe9cb0f}{operator==} (const \hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} \&rhs) const 
+\item 
+bool \hyperlink{classCSphFilterSettings_ac6c96e177e2b7bb8314d377a2b828c8c}{operator!=} (const \hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} \&rhs) const 
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classCSphFilterSettings_a62aaac3b64284ae4dffae38be8477458}{Get\-Hash} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphFilterSettings_a44521197066f8647769ba3a0aae69ff0}{m\-\_\-s\-Attr\-Name}
+\begin{DoxyCompactList}\small\item\em filtered attribute name \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphFilterSettings_aabd848634277dda04df2bfab2d50f551}{m\-\_\-b\-Exclude}
+\begin{DoxyCompactList}\small\item\em whether this is \char`\"{}include\char`\"{} or \char`\"{}exclude\char`\"{} filter (default is \char`\"{}include\char`\"{}) \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphFilterSettings_ae355b2d7bf90822d0d09b5b68f0439fa}{m\-\_\-b\-Has\-Equal}
+\begin{DoxyCompactList}\small\item\em has filter \char`\"{}equal\char`\"{} component (gte) or pure greater \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3b925425803466642d1163991b4d6fbf}{E\-Sph\-Filter} \hyperlink{classCSphFilterSettings_ae212f4330154407a5700c4123aacaebc}{m\-\_\-e\-Type}
+\begin{DoxyCompactList}\small\item\em filter type \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_afb207f61ce068a8cabcadaf049c24029}{E\-Sph\-Mva\-Func} \hyperlink{classCSphFilterSettings_a583ba5fb2b8150d3750027ac3f2b2108}{m\-\_\-e\-Mva\-Func}
+\begin{DoxyCompactList}\small\item\em M\-V\-A folding function. \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{SphAttr\_t} \hyperlink{classCSphFilterSettings_a473a0111b04baca34aecf66dda543457}{m\_iMinValue}\\
+\>\>{\em range min }\\
+\>\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classCSphFilterSettings_a9c0bbe23d0ed8c48e411ddc51038677a}{m\_fMinValue}\\
+\>\>{\em range min }\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{SphAttr\_t} \hyperlink{classCSphFilterSettings_a02b61305bfbc6ae22f0d7bcb0c4ec8b0}{m\_iMaxValue}\\
+\>\>{\em range max }\\
+\>\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classCSphFilterSettings_a74624f4727af1cbdec318a3cb967d53f}{m\_fMaxValue}\\
+\>\>{\em range max }\\
+\}; \\
+
+\end{tabbing}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} $>$ \hyperlink{classCSphFilterSettings_a7a260ca2d244d25258227df1e108feb5}{m\-\_\-d\-Values}
+\begin{DoxyCompactList}\small\item\em integer values set \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \hyperlink{classCSphFilterSettings_a7ec760e655bf9c839678d09bd7a99278}{m\-\_\-d\-Strings}
+\begin{DoxyCompactList}\small\item\em string values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} $\ast$ \hyperlink{classCSphFilterSettings_a09a650d5454c6c53380ab6dd37289d9f}{m\-\_\-p\-Values}
+\begin{DoxyCompactList}\small\item\em external value array \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFilterSettings_a24cf7c8652d45573747ce5b11e727681}{m\-\_\-n\-Values}
+\begin{DoxyCompactList}\small\item\em external array size \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+search query filter 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphFilterSettings_a93f2f8a89bf1d7cbd50d07b0380f65c1}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}}
+\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{C\-Sph\-Filter\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Filter\-Settings\-::\-C\-Sph\-Filter\-Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphFilterSettings_a93f2f8a89bf1d7cbd50d07b0380f65c1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphFilterSettings_a62aaac3b64284ae4dffae38be8477458}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!Get\-Hash@{Get\-Hash}}
+\index{Get\-Hash@{Get\-Hash}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} C\-Sph\-Filter\-Settings\-::\-Get\-Hash (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCSphFilterSettings_a62aaac3b64284ae4dffae38be8477458}
+\hypertarget{classCSphFilterSettings_a531e1dfc1f0a03dbaf74e3caa86d1eee}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!Get\-Num\-Values@{Get\-Num\-Values}}
+\index{Get\-Num\-Values@{Get\-Num\-Values}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{Get\-Num\-Values}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Filter\-Settings\-::\-Get\-Num\-Values (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFilterSettings_a531e1dfc1f0a03dbaf74e3caa86d1eee}
+\hypertarget{classCSphFilterSettings_a7142cfd6c996a7ffa9ed215763b184cf}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!Get\-Value@{Get\-Value}}
+\index{Get\-Value@{Get\-Value}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{Get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Attr\-\_\-t} C\-Sph\-Filter\-Settings\-::\-Get\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Idx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFilterSettings_a7142cfd6c996a7ffa9ed215763b184cf}
+\hypertarget{classCSphFilterSettings_aa1e1295b519fb958c04691f25fb70f81}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!Get\-Value\-Array@{Get\-Value\-Array}}
+\index{Get\-Value\-Array@{Get\-Value\-Array}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{Get\-Value\-Array}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Sph\-Attr\-\_\-t}$\ast$ C\-Sph\-Filter\-Settings\-::\-Get\-Value\-Array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFilterSettings_aa1e1295b519fb958c04691f25fb70f81}
+\hypertarget{classCSphFilterSettings_ac6c96e177e2b7bb8314d377a2b828c8c}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Filter\-Settings\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Filter\-Settings} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFilterSettings_ac6c96e177e2b7bb8314d377a2b828c8c}
+\hypertarget{classCSphFilterSettings_a9c7c2e254f61e64934234486dbe9cb0f}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!operator==@{operator==}}
+\index{operator==@{operator==}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Filter\-Settings\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Filter\-Settings} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{classCSphFilterSettings_a9c7c2e254f61e64934234486dbe9cb0f}
+\hypertarget{classCSphFilterSettings_a1ec2474442720fbc33779c0c574e8e09}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!Set\-External\-Values@{Set\-External\-Values}}
+\index{Set\-External\-Values@{Set\-External\-Values}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{Set\-External\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Filter\-Settings\-::\-Set\-External\-Values (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sph\-Attr\-\_\-t} $\ast$}]{p\-Values, }
+\item[{{\bf int}}]{n\-Values}
+\end{DoxyParamCaption}
+)}}\label{classCSphFilterSettings_a1ec2474442720fbc33779c0c574e8e09}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphFilterSettings_ad3893b2283c7154ab34d47912a787916}{\subsubsection[{"@19}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }}\label{classCSphFilterSettings_ad3893b2283c7154ab34d47912a787916}
+\hypertarget{classCSphFilterSettings_aaebe6e081df3abd88a3b0b5e51fb3910}{\subsubsection[{"@21}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }}\label{classCSphFilterSettings_aaebe6e081df3abd88a3b0b5e51fb3910}
+\hypertarget{classCSphFilterSettings_aabd848634277dda04df2bfab2d50f551}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-b\-Exclude@{m\-\_\-b\-Exclude}}
+\index{m\-\_\-b\-Exclude@{m\-\_\-b\-Exclude}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-b\-Exclude}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Filter\-Settings\-::m\-\_\-b\-Exclude}}\label{classCSphFilterSettings_aabd848634277dda04df2bfab2d50f551}
+
+
+whether this is \char`\"{}include\char`\"{} or \char`\"{}exclude\char`\"{} filter (default is \char`\"{}include\char`\"{}) 
+
+\hypertarget{classCSphFilterSettings_ae355b2d7bf90822d0d09b5b68f0439fa}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-b\-Has\-Equal@{m\-\_\-b\-Has\-Equal}}
+\index{m\-\_\-b\-Has\-Equal@{m\-\_\-b\-Has\-Equal}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-b\-Has\-Equal}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Filter\-Settings\-::m\-\_\-b\-Has\-Equal}}\label{classCSphFilterSettings_ae355b2d7bf90822d0d09b5b68f0439fa}
+
+
+has filter \char`\"{}equal\char`\"{} component (gte) or pure greater 
+
+\hypertarget{classCSphFilterSettings_a7ec760e655bf9c839678d09bd7a99278}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-d\-Strings@{m\-\_\-d\-Strings}}
+\index{m\-\_\-d\-Strings@{m\-\_\-d\-Strings}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-d\-Strings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-String}$>$ C\-Sph\-Filter\-Settings\-::m\-\_\-d\-Strings}}\label{classCSphFilterSettings_a7ec760e655bf9c839678d09bd7a99278}
+
+
+string values 
+
+\hypertarget{classCSphFilterSettings_a7a260ca2d244d25258227df1e108feb5}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-d\-Values@{m\-\_\-d\-Values}}
+\index{m\-\_\-d\-Values@{m\-\_\-d\-Values}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-d\-Values}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Sph\-Attr\-\_\-t}$>$ C\-Sph\-Filter\-Settings\-::m\-\_\-d\-Values}}\label{classCSphFilterSettings_a7a260ca2d244d25258227df1e108feb5}
+
+
+integer values set 
+
+\hypertarget{classCSphFilterSettings_a583ba5fb2b8150d3750027ac3f2b2108}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-e\-Mva\-Func@{m\-\_\-e\-Mva\-Func}}
+\index{m\-\_\-e\-Mva\-Func@{m\-\_\-e\-Mva\-Func}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-e\-Mva\-Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Mva\-Func} C\-Sph\-Filter\-Settings\-::m\-\_\-e\-Mva\-Func}}\label{classCSphFilterSettings_a583ba5fb2b8150d3750027ac3f2b2108}
+
+
+M\-V\-A folding function. 
+
+\hypertarget{classCSphFilterSettings_ae212f4330154407a5700c4123aacaebc}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-e\-Type@{m\-\_\-e\-Type}}
+\index{m\-\_\-e\-Type@{m\-\_\-e\-Type}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-e\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Filter} C\-Sph\-Filter\-Settings\-::m\-\_\-e\-Type}}\label{classCSphFilterSettings_ae212f4330154407a5700c4123aacaebc}
+
+
+filter type 
+
+\hypertarget{classCSphFilterSettings_a74624f4727af1cbdec318a3cb967d53f}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-f\-Max\-Value@{m\-\_\-f\-Max\-Value}}
+\index{m\-\_\-f\-Max\-Value@{m\-\_\-f\-Max\-Value}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-f\-Max\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} C\-Sph\-Filter\-Settings\-::m\-\_\-f\-Max\-Value}}\label{classCSphFilterSettings_a74624f4727af1cbdec318a3cb967d53f}
+
+
+range max 
+
+\hypertarget{classCSphFilterSettings_a9c0bbe23d0ed8c48e411ddc51038677a}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-f\-Min\-Value@{m\-\_\-f\-Min\-Value}}
+\index{m\-\_\-f\-Min\-Value@{m\-\_\-f\-Min\-Value}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-f\-Min\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} C\-Sph\-Filter\-Settings\-::m\-\_\-f\-Min\-Value}}\label{classCSphFilterSettings_a9c0bbe23d0ed8c48e411ddc51038677a}
+
+
+range min 
+
+\hypertarget{classCSphFilterSettings_a02b61305bfbc6ae22f0d7bcb0c4ec8b0}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-i\-Max\-Value@{m\-\_\-i\-Max\-Value}}
+\index{m\-\_\-i\-Max\-Value@{m\-\_\-i\-Max\-Value}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-i\-Max\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Attr\-\_\-t} C\-Sph\-Filter\-Settings\-::m\-\_\-i\-Max\-Value}}\label{classCSphFilterSettings_a02b61305bfbc6ae22f0d7bcb0c4ec8b0}
+
+
+range max 
+
+\hypertarget{classCSphFilterSettings_a473a0111b04baca34aecf66dda543457}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-i\-Min\-Value@{m\-\_\-i\-Min\-Value}}
+\index{m\-\_\-i\-Min\-Value@{m\-\_\-i\-Min\-Value}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-i\-Min\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Attr\-\_\-t} C\-Sph\-Filter\-Settings\-::m\-\_\-i\-Min\-Value}}\label{classCSphFilterSettings_a473a0111b04baca34aecf66dda543457}
+
+
+range min 
+
+\hypertarget{classCSphFilterSettings_a24cf7c8652d45573747ce5b11e727681}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-n\-Values@{m\-\_\-n\-Values}}
+\index{m\-\_\-n\-Values@{m\-\_\-n\-Values}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-n\-Values}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Filter\-Settings\-::m\-\_\-n\-Values\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphFilterSettings_a24cf7c8652d45573747ce5b11e727681}
+
+
+external array size 
+
+\hypertarget{classCSphFilterSettings_a09a650d5454c6c53380ab6dd37289d9f}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-p\-Values@{m\-\_\-p\-Values}}
+\index{m\-\_\-p\-Values@{m\-\_\-p\-Values}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-p\-Values}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Sph\-Attr\-\_\-t}$\ast$ C\-Sph\-Filter\-Settings\-::m\-\_\-p\-Values\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphFilterSettings_a09a650d5454c6c53380ab6dd37289d9f}
+
+
+external value array 
+
+\hypertarget{classCSphFilterSettings_a44521197066f8647769ba3a0aae69ff0}{\index{C\-Sph\-Filter\-Settings@{C\-Sph\-Filter\-Settings}!m\-\_\-s\-Attr\-Name@{m\-\_\-s\-Attr\-Name}}
+\index{m\-\_\-s\-Attr\-Name@{m\-\_\-s\-Attr\-Name}!CSphFilterSettings@{C\-Sph\-Filter\-Settings}}
+\subsubsection[{m\-\_\-s\-Attr\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Filter\-Settings\-::m\-\_\-s\-Attr\-Name}}\label{classCSphFilterSettings_a44521197066f8647769ba3a0aae69ff0}
+
+
+filtered attribute name 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

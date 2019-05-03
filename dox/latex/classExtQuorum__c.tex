@@ -1,0 +1,315 @@
+\hypertarget{classExtQuorum__c}{\section{Ext\-Quorum\-\_\-c Class Reference}
+\label{classExtQuorum__c}\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}}
+}
+
+
+quorum streamer  
+
+
+Inheritance diagram for Ext\-Quorum\-\_\-c\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classExtQuorum__c}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structExtQuorum__c_1_1TermTuple__t}{Term\-Tuple\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExtQuorum__c_a21c0732eb8861e167a447e0bea049136}{Ext\-Quorum\-\_\-c} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classExtNode__i}{Ext\-Node\-\_\-i} $\ast$ $>$ \&d\-Qwords, const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} \&t\-Node, const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\item 
+virtual \hyperlink{classExtQuorum__c_a92090421306ae29239cf98f003e256d2}{$\sim$\-Ext\-Quorum\-\_\-c} ()
+\item 
+virtual void \hyperlink{classExtQuorum__c_a8e52d583f3ae86095c2e410d24e77514}{Reset} (const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\item 
+virtual const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$ \hyperlink{classExtQuorum__c_a92b13d5111d8efb3774f58371329d568}{Get\-Docs\-Chunk} ()
+\item 
+virtual const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classExtQuorum__c_aeece97cc40fcba55e56a0c7e5182a470}{Get\-Hits\-Chunk} (const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$p\-Docs)
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtQuorum__c_ab2131bda8679d4eea2549f379aedaeee}{Get\-Qwords} (\hyperlink{sphinxsearch_8cpp_a814fc096e1ffb29d072d79b72b702fe6}{Ext\-Qwords\-Hash\-\_\-t} \&h\-Qwords)
+\item 
+virtual void \hyperlink{classExtQuorum__c_a78cf0e498c46fe1b27c2ad521904f08b}{Set\-Qwords\-I\-D\-F} (const \hyperlink{sphinxsearch_8cpp_a814fc096e1ffb29d072d79b72b702fe6}{Ext\-Qwords\-Hash\-\_\-t} \&h\-Qwords)
+\item 
+virtual void \hyperlink{classExtQuorum__c_a6098eecf86b064e1a0a0f6daf0006c2f}{Get\-Terms} (const \hyperlink{sphinxsearch_8cpp_a814fc096e1ffb29d072d79b72b702fe6}{Ext\-Qwords\-Hash\-\_\-t} \&h\-Qwords, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structTermPos__t}{Term\-Pos\-\_\-t} $>$ \&d\-Term\-Dupes) const 
+\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classExtQuorum__c_a4c0c79255459146332ed4112e63d9b7a}{Get\-Word\-I\-D} () const 
+\begin{DoxyCompactList}\small\item\em for now, only used for duplicate keyword checks in quorum operator \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classExtQuorum__c_ae7128056c2e7fc87703fd9bcd7d1ca7b}{Got\-Hitless} ()
+\item 
+virtual void \hyperlink{classExtQuorum__c_a4de2644095647afa8df96bb005f57662}{Hint\-Docid} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Min\-I\-D)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtQuorum__c_ab4f34d7c7aa2317ad2de0be05814e41d}{Get\-Threshold} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} \&t\-Node, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Qwords)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classExtQuorum__c_a939ddae310ab77af7978b583116e7c57}{Collect\-Matching\-Hits} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Docid, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Quorum)
+\item 
+const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classExtQuorum__c_a978b1986a189021d2ef528b94181d68d}{Get\-Hits\-Chunk\-Dupes} (const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$p\-Docs)
+\item 
+const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classExtQuorum__c_aea678a21f0f775655271b7920cdc9483}{Get\-Hits\-Chunk\-Dupes\-Tail} ()
+\item 
+const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classExtQuorum__c_ae3a1514a9ef512162a8ff1cc4c30dca3}{Get\-Hits\-Chunk\-Simple} (const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$p\-Docs)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtQuorum__c_ac04b677a78c4952b11e7a24efb9e4d2f}{Count\-Quorum} (bool b\-Fix\-Dupes)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} \hyperlink{classExtQuorum__c_ac516e17dd9536d086bf35aaf5b25a273}{m\-\_\-d\-Quorum\-Hits} \mbox{[}\hyperlink{classExtNode__i_a79b81cba51253fdbe56fd3595fac9ab4}{M\-A\-X\-\_\-\-H\-I\-T\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em buffer for all my quorum hits; inherited m\-\_\-d\-Hits will receive filtered results \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtQuorum__c_a0fcb4df0253039b183597e3c7aa9e50e}{m\-\_\-i\-My\-Hit\-Count}
+\begin{DoxyCompactList}\small\item\em hits collected so far \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtQuorum__c_a29760dc18c41ce8fa14e924145d894cb}{m\-\_\-i\-My\-Last}
+\begin{DoxyCompactList}\small\item\em hits processed so far \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structExtQuorum__c_1_1TermTuple__t}{Term\-Tuple\-\_\-t} $>$ \hyperlink{classExtQuorum__c_a4c54e9b1dddd17f5e31cf81eca77474a}{m\-\_\-d\-Initial\-Children}
+\begin{DoxyCompactList}\small\item\em my children nodes (simply \hyperlink{classExtTerm__c}{Ext\-Term\-\_\-c} for now) \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structExtQuorum__c_1_1TermTuple__t}{Term\-Tuple\-\_\-t} $>$ \hyperlink{classExtQuorum__c_a10bf8d557f130030f0eebae0a7bc99c1}{m\-\_\-d\-Children}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classExtQuorum__c_a39c92bddc5e5b3851c65a6729457f252}{m\-\_\-u\-Matched\-Docid}
+\begin{DoxyCompactList}\small\item\em tail docid for hitlist emission \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtQuorum__c_a987d1c1f27fd6cbc16b8d143153cdbad}{m\-\_\-i\-Thresh}
+\begin{DoxyCompactList}\small\item\em keyword count threshold \end{DoxyCompactList}\item 
+bool \hyperlink{classExtQuorum__c_aa39189c8613c870930052d4b50ea4ded}{m\-\_\-b\-Has\-Dupes}
+\begin{DoxyCompactList}\small\item\em should we analyze hits on docs collecting \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+quorum streamer 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExtQuorum__c_a21c0732eb8861e167a447e0bea049136}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}}
+\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Ext\-Quorum\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Ext\-Quorum\-\_\-c\-::\-Ext\-Quorum\-\_\-c (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Ext\-Node\-\_\-i} $\ast$ $>$ \&}]{d\-Qwords, }
+\item[{const {\bf X\-Q\-Node\-\_\-t} \&}]{t\-Node, }
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)}}\label{classExtQuorum__c_a21c0732eb8861e167a447e0bea049136}
+\hypertarget{classExtQuorum__c_a92090421306ae29239cf98f003e256d2}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!$\sim$\-Ext\-Quorum\-\_\-c@{$\sim$\-Ext\-Quorum\-\_\-c}}
+\index{$\sim$\-Ext\-Quorum\-\_\-c@{$\sim$\-Ext\-Quorum\-\_\-c}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{$\sim$\-Ext\-Quorum\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Ext\-Quorum\-\_\-c\-::$\sim$\-Ext\-Quorum\-\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtQuorum__c_a92090421306ae29239cf98f003e256d2}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExtQuorum__c_a939ddae310ab77af7978b583116e7c57}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Collect\-Matching\-Hits@{Collect\-Matching\-Hits}}
+\index{Collect\-Matching\-Hits@{Collect\-Matching\-Hits}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Collect\-Matching\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}bool Ext\-Quorum\-\_\-c\-::\-Collect\-Matching\-Hits (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Docid, }
+\item[{{\bf int}}]{i\-Quorum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_a939ddae310ab77af7978b583116e7c57}
+\hypertarget{classExtQuorum__c_ac04b677a78c4952b11e7a24efb9e4d2f}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Count\-Quorum@{Count\-Quorum}}
+\index{Count\-Quorum@{Count\-Quorum}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Count\-Quorum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Ext\-Quorum\-\_\-c\-::\-Count\-Quorum (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Fix\-Dupes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classExtQuorum__c_ac04b677a78c4952b11e7a24efb9e4d2f}
+\hypertarget{classExtQuorum__c_a92b13d5111d8efb3774f58371329d568}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Get\-Docs\-Chunk@{Get\-Docs\-Chunk}}
+\index{Get\-Docs\-Chunk@{Get\-Docs\-Chunk}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Get\-Docs\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Doc\-\_\-t} $\ast$ Ext\-Quorum\-\_\-c\-::\-Get\-Docs\-Chunk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtQuorum__c_a92b13d5111d8efb3774f58371329d568}
+
+
+Implements \hyperlink{classExtNode__i_a729fb08a7ad224275224ec3c9e89751a}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtQuorum__c_aeece97cc40fcba55e56a0c7e5182a470}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Get\-Hits\-Chunk@{Get\-Hits\-Chunk}}
+\index{Get\-Hits\-Chunk@{Get\-Hits\-Chunk}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Get\-Hits\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Hit\-\_\-t} $\ast$ Ext\-Quorum\-\_\-c\-::\-Get\-Hits\-Chunk (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Doc\-\_\-t} $\ast$}]{p\-Docs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtQuorum__c_aeece97cc40fcba55e56a0c7e5182a470}
+
+
+Implements \hyperlink{classExtNode__i_a486fcc633078a57c60de634c5c35f084}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtQuorum__c_a978b1986a189021d2ef528b94181d68d}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Get\-Hits\-Chunk\-Dupes@{Get\-Hits\-Chunk\-Dupes}}
+\index{Get\-Hits\-Chunk\-Dupes@{Get\-Hits\-Chunk\-Dupes}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Get\-Hits\-Chunk\-Dupes}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Hit\-\_\-t} $\ast$ Ext\-Quorum\-\_\-c\-::\-Get\-Hits\-Chunk\-Dupes (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Doc\-\_\-t} $\ast$}]{p\-Docs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_a978b1986a189021d2ef528b94181d68d}
+\hypertarget{classExtQuorum__c_aea678a21f0f775655271b7920cdc9483}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Get\-Hits\-Chunk\-Dupes\-Tail@{Get\-Hits\-Chunk\-Dupes\-Tail}}
+\index{Get\-Hits\-Chunk\-Dupes\-Tail@{Get\-Hits\-Chunk\-Dupes\-Tail}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Get\-Hits\-Chunk\-Dupes\-Tail}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Hit\-\_\-t} $\ast$ Ext\-Quorum\-\_\-c\-::\-Get\-Hits\-Chunk\-Dupes\-Tail (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_aea678a21f0f775655271b7920cdc9483}
+\hypertarget{classExtQuorum__c_ae3a1514a9ef512162a8ff1cc4c30dca3}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Get\-Hits\-Chunk\-Simple@{Get\-Hits\-Chunk\-Simple}}
+\index{Get\-Hits\-Chunk\-Simple@{Get\-Hits\-Chunk\-Simple}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Get\-Hits\-Chunk\-Simple}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Hit\-\_\-t} $\ast$ Ext\-Quorum\-\_\-c\-::\-Get\-Hits\-Chunk\-Simple (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Doc\-\_\-t} $\ast$}]{p\-Docs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_ae3a1514a9ef512162a8ff1cc4c30dca3}
+\hypertarget{classExtQuorum__c_ab2131bda8679d4eea2549f379aedaeee}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Get\-Qwords@{Get\-Qwords}}
+\index{Get\-Qwords@{Get\-Qwords}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Get\-Qwords}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Ext\-Quorum\-\_\-c\-::\-Get\-Qwords (
+\begin{DoxyParamCaption}
+\item[{{\bf Ext\-Qwords\-Hash\-\_\-t} \&}]{h\-Qwords}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtQuorum__c_ab2131bda8679d4eea2549f379aedaeee}
+
+
+Implements \hyperlink{classExtNode__i_a11e49c90db27942ee8f5a174ebfe7212}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtQuorum__c_a6098eecf86b064e1a0a0f6daf0006c2f}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Get\-Terms@{Get\-Terms}}
+\index{Get\-Terms@{Get\-Terms}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Get\-Terms}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-Quorum\-\_\-c\-::\-Get\-Terms (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Qwords\-Hash\-\_\-t} \&}]{h\-Qwords, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Term\-Pos\-\_\-t} $>$ \&}]{d\-Term\-Dupes}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtQuorum__c_a6098eecf86b064e1a0a0f6daf0006c2f}
+
+
+Implements \hyperlink{classExtNode__i_a54f48b44df2f712dc1282a401a14e108}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtQuorum__c_ab4f34d7c7aa2317ad2de0be05814e41d}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Get\-Threshold@{Get\-Threshold}}
+\index{Get\-Threshold@{Get\-Threshold}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Get\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Ext\-Quorum\-\_\-c\-::\-Get\-Threshold (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} \&}]{t\-Node, }
+\item[{{\bf int}}]{i\-Qwords}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classExtQuorum__c_ab4f34d7c7aa2317ad2de0be05814e41d}
+\hypertarget{classExtQuorum__c_a4c0c79255459146332ed4112e63d9b7a}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} Ext\-Quorum\-\_\-c\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtQuorum__c_a4c0c79255459146332ed4112e63d9b7a}
+
+
+for now, only used for duplicate keyword checks in quorum operator 
+
+
+
+Implements \hyperlink{classExtNode__i_ac05a844939491a1875fb8dbf84ba9f97}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtQuorum__c_ae7128056c2e7fc87703fd9bcd7d1ca7b}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Got\-Hitless@{Got\-Hitless}}
+\index{Got\-Hitless@{Got\-Hitless}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Got\-Hitless}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Ext\-Quorum\-\_\-c\-::\-Got\-Hitless (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtQuorum__c_ae7128056c2e7fc87703fd9bcd7d1ca7b}
+
+
+Implements \hyperlink{classExtNode__i_a08afc9f33bb800121ef8dccca67bdd75}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtQuorum__c_a4de2644095647afa8df96bb005f57662}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Hint\-Docid@{Hint\-Docid}}
+\index{Hint\-Docid@{Hint\-Docid}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Hint\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ext\-Quorum\-\_\-c\-::\-Hint\-Docid (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Min\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtQuorum__c_a4de2644095647afa8df96bb005f57662}
+
+
+Implements \hyperlink{classExtNode__i_a83fface58e270a2074023d441d902ad1}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtQuorum__c_a8e52d583f3ae86095c2e410d24e77514}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Reset@{Reset}}
+\index{Reset@{Reset}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-Quorum\-\_\-c\-::\-Reset (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtQuorum__c_a8e52d583f3ae86095c2e410d24e77514}
+
+
+Implements \hyperlink{classExtNode__i_adb612662cec19c54649244bec75d0e82}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtQuorum__c_a78cf0e498c46fe1b27c2ad521904f08b}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!Set\-Qwords\-I\-D\-F@{Set\-Qwords\-I\-D\-F}}
+\index{Set\-Qwords\-I\-D\-F@{Set\-Qwords\-I\-D\-F}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{Set\-Qwords\-I\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-Quorum\-\_\-c\-::\-Set\-Qwords\-I\-D\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Qwords\-Hash\-\_\-t} \&}]{h\-Qwords}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtQuorum__c_a78cf0e498c46fe1b27c2ad521904f08b}
+
+
+Implements \hyperlink{classExtNode__i_a73f0d94f75d927ace362079f4794d702}{Ext\-Node\-\_\-i}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExtQuorum__c_aa39189c8613c870930052d4b50ea4ded}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!m\-\_\-b\-Has\-Dupes@{m\-\_\-b\-Has\-Dupes}}
+\index{m\-\_\-b\-Has\-Dupes@{m\-\_\-b\-Has\-Dupes}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{m\-\_\-b\-Has\-Dupes}]{\setlength{\rightskip}{0pt plus 5cm}bool Ext\-Quorum\-\_\-c\-::m\-\_\-b\-Has\-Dupes\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_aa39189c8613c870930052d4b50ea4ded}
+
+
+should we analyze hits on docs collecting 
+
+\hypertarget{classExtQuorum__c_a10bf8d557f130030f0eebae0a7bc99c1}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!m\-\_\-d\-Children@{m\-\_\-d\-Children}}
+\index{m\-\_\-d\-Children@{m\-\_\-d\-Children}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Children}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Term\-Tuple\-\_\-t}$>$ Ext\-Quorum\-\_\-c\-::m\-\_\-d\-Children\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_a10bf8d557f130030f0eebae0a7bc99c1}
+\hypertarget{classExtQuorum__c_a4c54e9b1dddd17f5e31cf81eca77474a}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!m\-\_\-d\-Initial\-Children@{m\-\_\-d\-Initial\-Children}}
+\index{m\-\_\-d\-Initial\-Children@{m\-\_\-d\-Initial\-Children}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Initial\-Children}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Term\-Tuple\-\_\-t}$>$ Ext\-Quorum\-\_\-c\-::m\-\_\-d\-Initial\-Children\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_a4c54e9b1dddd17f5e31cf81eca77474a}
+
+
+my children nodes (simply \hyperlink{classExtTerm__c}{Ext\-Term\-\_\-c} for now) 
+
+\hypertarget{classExtQuorum__c_ac516e17dd9536d086bf35aaf5b25a273}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!m\-\_\-d\-Quorum\-Hits@{m\-\_\-d\-Quorum\-Hits}}
+\index{m\-\_\-d\-Quorum\-Hits@{m\-\_\-d\-Quorum\-Hits}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Quorum\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ext\-Hit\-\_\-t} Ext\-Quorum\-\_\-c\-::m\-\_\-d\-Quorum\-Hits\mbox{[}{\bf M\-A\-X\-\_\-\-H\-I\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_ac516e17dd9536d086bf35aaf5b25a273}
+
+
+buffer for all my quorum hits; inherited m\-\_\-d\-Hits will receive filtered results 
+
+\hypertarget{classExtQuorum__c_a0fcb4df0253039b183597e3c7aa9e50e}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!m\-\_\-i\-My\-Hit\-Count@{m\-\_\-i\-My\-Hit\-Count}}
+\index{m\-\_\-i\-My\-Hit\-Count@{m\-\_\-i\-My\-Hit\-Count}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{m\-\_\-i\-My\-Hit\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Ext\-Quorum\-\_\-c\-::m\-\_\-i\-My\-Hit\-Count\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_a0fcb4df0253039b183597e3c7aa9e50e}
+
+
+hits collected so far 
+
+\hypertarget{classExtQuorum__c_a29760dc18c41ce8fa14e924145d894cb}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!m\-\_\-i\-My\-Last@{m\-\_\-i\-My\-Last}}
+\index{m\-\_\-i\-My\-Last@{m\-\_\-i\-My\-Last}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{m\-\_\-i\-My\-Last}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Ext\-Quorum\-\_\-c\-::m\-\_\-i\-My\-Last\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_a29760dc18c41ce8fa14e924145d894cb}
+
+
+hits processed so far 
+
+\hypertarget{classExtQuorum__c_a987d1c1f27fd6cbc16b8d143153cdbad}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!m\-\_\-i\-Thresh@{m\-\_\-i\-Thresh}}
+\index{m\-\_\-i\-Thresh@{m\-\_\-i\-Thresh}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Thresh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Ext\-Quorum\-\_\-c\-::m\-\_\-i\-Thresh\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_a987d1c1f27fd6cbc16b8d143153cdbad}
+
+
+keyword count threshold 
+
+\hypertarget{classExtQuorum__c_a39c92bddc5e5b3851c65a6729457f252}{\index{Ext\-Quorum\-\_\-c@{Ext\-Quorum\-\_\-c}!m\-\_\-u\-Matched\-Docid@{m\-\_\-u\-Matched\-Docid}}
+\index{m\-\_\-u\-Matched\-Docid@{m\-\_\-u\-Matched\-Docid}!ExtQuorum_c@{Ext\-Quorum\-\_\-c}}
+\subsubsection[{m\-\_\-u\-Matched\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} Ext\-Quorum\-\_\-c\-::m\-\_\-u\-Matched\-Docid\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtQuorum__c_a39c92bddc5e5b3851c65a6729457f252}
+
+
+tail docid for hitlist emission 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsearch_8cpp}{sphinxsearch.\-cpp}\end{DoxyCompactItemize}

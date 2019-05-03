@@ -1,0 +1,366 @@
+\hypertarget{classCSphSource__BaseSV}{\section{C\-Sph\-Source\-\_\-\-Base\-S\-V Class Reference}
+\label{classCSphSource__BaseSV}\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+}
+Inheritance diagram for C\-Sph\-Source\-\_\-\-Base\-S\-V\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.444445cm]{classCSphSource__BaseSV}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphSource__BaseSV_a27350bec60123de61cc0392808f61e4b}{C\-Sph\-Source\-\_\-\-Base\-S\-V} (const char $\ast$s\-Name)
+\item 
+virtual \hyperlink{classCSphSource__BaseSV_a911f235d9b65f48e81b06a8f80c19398}{$\sim$\-C\-Sph\-Source\-\_\-\-Base\-S\-V} ()
+\item 
+virtual bool \hyperlink{classCSphSource__BaseSV_a2d7bfaa58ed537c37f825c5e940677ff}{Connect} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em run the command and open the pipe \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphSource__BaseSV_aa4c4b9d4a350c04b5258bd2d0bae12f1}{Disconnect} ()
+\begin{DoxyCompactList}\small\item\em close the pipe \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{classCSphSource__BaseSV_a165580b52ec38afb87f15c3cad622b8b}{Decorate\-Message} (const char $\ast$s\-Template,...) const \hyperlink{sphinxstd_8h_a9d373a9b65ff25b2db84c07394e1c212}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((format(printf
+\item 
+const char virtual bool \hyperlink{classCSphSource__BaseSV_a5b2b2753b3280a4353f3c8b87265934c}{Iterate\-Start} (\hyperlink{structCSphString}{C\-Sph\-String} \&)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCSphSource__BaseSV_a2d7bfaa58ed537c37f825c5e940677ff}{Connect()} starts getting documents automatically, so this one is empty. \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$$\ast$ \hyperlink{classCSphSource__BaseSV_a113962fbc82cffb84caf83a2b9009f06}{Next\-Document} (\hyperlink{structCSphString}{C\-Sph\-String} \&)
+\begin{DoxyCompactList}\small\item\em parse incoming chunk and emit some hits \end{DoxyCompactList}\item 
+virtual const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$ \hyperlink{classCSphSource__BaseSV_a88b4912d2e7ae375c94a70b2dce4d5f5}{Get\-Field\-Lengths} () const 
+\item 
+virtual bool \hyperlink{classCSphSource__BaseSV_a3777e2a157361b88188f0e563ca7d16c}{Has\-Attrs\-Configured} ()
+\item 
+virtual bool \hyperlink{classCSphSource__BaseSV_a17edb065bd1f6feeca0c399e5b11ea67}{Iterate\-Multivalued\-Start} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \hyperlink{structCSphString}{C\-Sph\-String} \&)
+\item 
+virtual bool \hyperlink{classCSphSource__BaseSV_ae8480463154311258b4fdfb86f6ac825}{Iterate\-Multivalued\-Next} ()
+\begin{DoxyCompactList}\small\item\em get next multi-\/valued (id,attr-\/value) or (id, offset) for mva64 tuple to m\-\_\-t\-Doc\-Info \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphSource__BaseSV_a3884a4dd0fa2de86b1bf2e01cb81673b}{Iterate\-Kill\-List\-Start} (\hyperlink{structCSphString}{C\-Sph\-String} \&)
+\begin{DoxyCompactList}\small\item\em begin iterating kill list \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphSource__BaseSV_ae81d1f575ac41eaf8d4a61856d774b2f}{Iterate\-Kill\-List\-Next} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \&)
+\begin{DoxyCompactList}\small\item\em get next kill list doc id \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphSource__BaseSV_ac7ea92847b126ef4948d9e34348a36bb}{Setup} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Source, F\-I\-L\-E $\ast$p\-Pipe, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classCSphSource__BaseSV_aa78147110220c575814ba85191261524}{E\-Sph\-Parse\-Result} \{ \hyperlink{classCSphSource__BaseSV_aa78147110220c575814ba85191261524abae58534a4044f8c7ed3a15d1dc8e56d}{P\-A\-R\-S\-I\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D}, 
+\hyperlink{classCSphSource__BaseSV_aa78147110220c575814ba85191261524a08db78cd34775415ee76d3f0ce42f043}{G\-O\-T\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T}, 
+\hyperlink{classCSphSource__BaseSV_aa78147110220c575814ba85191261524add7b0fe74a57c3cf294d51fe8d8717e4}{D\-A\-T\-A\-\_\-\-O\-V\-E\-R}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$$\ast$ \hyperlink{classCSphSource__BaseSV_a197492bc1d340e835200e5f4a928da34}{Report\-Document\-Error} ()
+\item 
+virtual bool \hyperlink{classCSphSource__BaseSV_a8180e78e4e113f412439b1aa1a8d42c1}{Setup\-Schema} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Source, bool b\-Word\-Dict, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)=0
+\item 
+virtual \hyperlink{classCSphSource__BaseSV_aa78147110220c575814ba85191261524}{E\-Sph\-Parse\-Result} \hyperlink{classCSphSource__BaseSV_a2a84bb3d23903c8f483c0c02c6d321f4}{Split\-Columns} (\hyperlink{structCSphString}{C\-Sph\-String} \&)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classCSphSource__BaseSV_a6be6e6e470f707c9c43d4123282bb904}{m\-\_\-d\-Buf}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ char $>$ \hyperlink{classCSphSource__BaseSV_ac63e0c03a6de3ff69712b739359d7493}{m\-\_\-d\-Error}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCSphSource__BaseSV_a24d2092a696b76ce6e390cbb0e3cf93a}{m\-\_\-d\-Columns\-Len}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{structRemapXSV__t}{Remap\-X\-S\-V\-\_\-t} $>$ \hyperlink{classCSphSource__BaseSV_ab39d4c46b897debdc6a59c1fe200545c}{m\-\_\-d\-Remap}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ $>$ \hyperlink{classCSphSource__BaseSV_ac6131a6232f2f063c3fc69b598101e72}{m\-\_\-d\-Fields}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCSphSource__BaseSV_af185adf11b2464d3b4ec339e0e4d6be4}{m\-\_\-d\-Field\-Lengths}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{classCSphSource__BaseSV_a66f169fd368952457057b5bd0aa0c373}{m\-\_\-p\-F\-P}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSource__BaseSV_ae4d10220733d93f60cb9cd33d9ac9fab}{m\-\_\-i\-Data\-Start}
+\begin{DoxyCompactList}\small\item\em where the next line to parse starts in m\-\_\-d\-Buf \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSource__BaseSV_a223e0b723cd89cb7ff7f0f70164b52a1}{m\-\_\-i\-Doc\-Start}
+\begin{DoxyCompactList}\small\item\em where the last parsed document stats in m\-\_\-d\-Buf \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSource__BaseSV_a81e9ebdee306c5d0d3f654c90f05c44d}{m\-\_\-i\-Buf\-Used}
+\begin{DoxyCompactList}\small\item\em bytes \mbox{[}0,m\-\_\-i\-Buf\-Used) are actually currently used; the rest of m\-\_\-d\-Buf is free \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSource__BaseSV_a076423aa982d0c6d7917a588b8b3817d}{m\-\_\-i\-Line}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSource__BaseSV_a2f8d1af1cc5e072a72a6bfe3aa5d3f0a}{m\-\_\-i\-Auto\-Count}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classCSphSource__BaseSV_aa78147110220c575814ba85191261524}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!E\-Sph\-Parse\-Result@{E\-Sph\-Parse\-Result}}
+\index{E\-Sph\-Parse\-Result@{E\-Sph\-Parse\-Result}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{E\-Sph\-Parse\-Result}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-E\-Sph\-Parse\-Result}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_aa78147110220c575814ba85191261524}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{P\-A\-R\-S\-I\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D@{P\-A\-R\-S\-I\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D}!C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!P\-A\-R\-S\-I\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D@{P\-A\-R\-S\-I\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D}}\item[{\em 
+\hypertarget{classCSphSource__BaseSV_aa78147110220c575814ba85191261524abae58534a4044f8c7ed3a15d1dc8e56d}{P\-A\-R\-S\-I\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D}\label{classCSphSource__BaseSV_aa78147110220c575814ba85191261524abae58534a4044f8c7ed3a15d1dc8e56d}
+}]\index{G\-O\-T\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T@{G\-O\-T\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T}!C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!G\-O\-T\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T@{G\-O\-T\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T}}\item[{\em 
+\hypertarget{classCSphSource__BaseSV_aa78147110220c575814ba85191261524a08db78cd34775415ee76d3f0ce42f043}{G\-O\-T\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T}\label{classCSphSource__BaseSV_aa78147110220c575814ba85191261524a08db78cd34775415ee76d3f0ce42f043}
+}]\index{D\-A\-T\-A\-\_\-\-O\-V\-E\-R@{D\-A\-T\-A\-\_\-\-O\-V\-E\-R}!C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!D\-A\-T\-A\-\_\-\-O\-V\-E\-R@{D\-A\-T\-A\-\_\-\-O\-V\-E\-R}}\item[{\em 
+\hypertarget{classCSphSource__BaseSV_aa78147110220c575814ba85191261524add7b0fe74a57c3cf294d51fe8d8717e4}{D\-A\-T\-A\-\_\-\-O\-V\-E\-R}\label{classCSphSource__BaseSV_aa78147110220c575814ba85191261524add7b0fe74a57c3cf294d51fe8d8717e4}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphSource__BaseSV_a27350bec60123de61cc0392808f61e4b}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{C\-Sph\-Source\-\_\-\-Base\-S\-V}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-C\-Sph\-Source\-\_\-\-Base\-S\-V (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCSphSource__BaseSV_a27350bec60123de61cc0392808f61e4b}
+\hypertarget{classCSphSource__BaseSV_a911f235d9b65f48e81b06a8f80c19398}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!$\sim$\-C\-Sph\-Source\-\_\-\-Base\-S\-V@{$\sim$\-C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\index{$\sim$\-C\-Sph\-Source\-\_\-\-Base\-S\-V@{$\sim$\-C\-Sph\-Source\-\_\-\-Base\-S\-V}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{$\sim$\-C\-Sph\-Source\-\_\-\-Base\-S\-V}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Source\-\_\-\-Base\-S\-V\-::$\sim$\-C\-Sph\-Source\-\_\-\-Base\-S\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_a911f235d9b65f48e81b06a8f80c19398}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphSource__BaseSV_a2d7bfaa58ed537c37f825c5e940677ff}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Connect@{Connect}}
+\index{Connect@{Connect}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Connect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_a2d7bfaa58ed537c37f825c5e940677ff}
+
+
+run the command and open the pipe 
+
+
+
+Implements \hyperlink{classCSphSource_a50f73194db9b7580d03b877fad183d1d}{C\-Sph\-Source}.
+
+\hypertarget{classCSphSource__BaseSV_a165580b52ec38afb87f15c3cad622b8b}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Decorate\-Message@{Decorate\-Message}}
+\index{Decorate\-Message@{Decorate\-Message}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Decorate\-Message}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Decorate\-Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Template, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+) const}}\label{classCSphSource__BaseSV_a165580b52ec38afb87f15c3cad622b8b}
+\hypertarget{classCSphSource__BaseSV_aa4c4b9d4a350c04b5258bd2d0bae12f1}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Disconnect@{Disconnect}}
+\index{Disconnect@{Disconnect}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_aa4c4b9d4a350c04b5258bd2d0bae12f1}
+
+
+close the pipe 
+
+
+
+Implements \hyperlink{classCSphSource_ae8fb8afc3854b68c2b9f69421e2ba759}{C\-Sph\-Source}.
+
+\hypertarget{classCSphSource__BaseSV_a88b4912d2e7ae375c94a70b2dce4d5f5}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Get\-Field\-Lengths@{Get\-Field\-Lengths}}
+\index{Get\-Field\-Lengths@{Get\-Field\-Lengths}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Get\-Field\-Lengths}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf int}$\ast$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Get\-Field\-Lengths (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_a88b4912d2e7ae375c94a70b2dce4d5f5}
+
+
+Implements \hyperlink{classCSphSource__Document_a0cd72b8587d98e306ff2f2e3d07503bb}{C\-Sph\-Source\-\_\-\-Document}.
+
+\hypertarget{classCSphSource__BaseSV_a3777e2a157361b88188f0e563ca7d16c}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Has\-Attrs\-Configured@{Has\-Attrs\-Configured}}
+\index{Has\-Attrs\-Configured@{Has\-Attrs\-Configured}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Has\-Attrs\-Configured}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Has\-Attrs\-Configured (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_a3777e2a157361b88188f0e563ca7d16c}
+check if there are any attributes configured note that there might be N\-O actual attributes in the case if configured ones do not match those actually returned by the source 
+
+Implements \hyperlink{classCSphSource_a18a23aba5b933c8ed3c84d3fa360ac3b}{C\-Sph\-Source}.
+
+\hypertarget{classCSphSource__BaseSV_ae81d1f575ac41eaf8d4a61856d774b2f}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Iterate\-Kill\-List\-Next@{Iterate\-Kill\-List\-Next}}
+\index{Iterate\-Kill\-List\-Next@{Iterate\-Kill\-List\-Next}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Iterate\-Kill\-List\-Next}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Iterate\-Kill\-List\-Next (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t} \&}]{u\-Doc\-Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_ae81d1f575ac41eaf8d4a61856d774b2f}
+
+
+get next kill list doc id 
+
+
+
+Implements \hyperlink{classCSphSource_a612f192dcf6b2705895fe1ca478cf224}{C\-Sph\-Source}.
+
+\hypertarget{classCSphSource__BaseSV_a3884a4dd0fa2de86b1bf2e01cb81673b}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Iterate\-Kill\-List\-Start@{Iterate\-Kill\-List\-Start}}
+\index{Iterate\-Kill\-List\-Start@{Iterate\-Kill\-List\-Start}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Iterate\-Kill\-List\-Start}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Iterate\-Kill\-List\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_a3884a4dd0fa2de86b1bf2e01cb81673b}
+
+
+begin iterating kill list 
+
+
+
+Implements \hyperlink{classCSphSource_a03c3bdd36535b2ef9e3dca04efbfdee2}{C\-Sph\-Source}.
+
+\hypertarget{classCSphSource__BaseSV_ae8480463154311258b4fdfb86f6ac825}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Iterate\-Multivalued\-Next@{Iterate\-Multivalued\-Next}}
+\index{Iterate\-Multivalued\-Next@{Iterate\-Multivalued\-Next}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Iterate\-Multivalued\-Next}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Iterate\-Multivalued\-Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_ae8480463154311258b4fdfb86f6ac825}
+
+
+get next multi-\/valued (id,attr-\/value) or (id, offset) for mva64 tuple to m\-\_\-t\-Doc\-Info 
+
+
+
+Implements \hyperlink{classCSphSource_a96b70f84184221299e21078ba7c45405}{C\-Sph\-Source}.
+
+\hypertarget{classCSphSource__BaseSV_a17edb065bd1f6feeca0c399e5b11ea67}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Iterate\-Multivalued\-Start@{Iterate\-Multivalued\-Start}}
+\index{Iterate\-Multivalued\-Start@{Iterate\-Multivalued\-Start}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Iterate\-Multivalued\-Start}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Iterate\-Multivalued\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Attr, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_a17edb065bd1f6feeca0c399e5b11ea67}
+begin iterating values of out-\/of-\/document multi-\/valued attribute i\-Attr will fail if i\-Attr is out of range, or is not multi-\/valued can also fail if configured settings are invalid (eg. S\-Q\-L query can not be executed) 
+
+Implements \hyperlink{classCSphSource_a9c153cf946c203bf8a8b29d1c10787bf}{C\-Sph\-Source}.
+
+\hypertarget{classCSphSource__BaseSV_a5b2b2753b3280a4353f3c8b87265934c}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Iterate\-Start@{Iterate\-Start}}
+\index{Iterate\-Start@{Iterate\-Start}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Iterate\-Start}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Iterate\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_a5b2b2753b3280a4353f3c8b87265934c}
+
+
+\hyperlink{classCSphSource__BaseSV_a2d7bfaa58ed537c37f825c5e940677ff}{Connect()} starts getting documents automatically, so this one is empty. 
+
+
+
+Implements \hyperlink{classCSphSource_a290f2ae8fbc60b2def57305ee08b0d3f}{C\-Sph\-Source}.
+
+\hypertarget{classCSphSource__BaseSV_a113962fbc82cffb84caf83a2b9009f06}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Next\-Document@{Next\-Document}}
+\index{Next\-Document@{Next\-Document}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Next\-Document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} $\ast$$\ast$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Next\-Document (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSource__BaseSV_a113962fbc82cffb84caf83a2b9009f06}
+
+
+parse incoming chunk and emit some hits 
+
+
+
+Implements \hyperlink{classCSphSource__Document_a09f4bb163daef06a29a72387e0796d5a}{C\-Sph\-Source\-\_\-\-Document}.
+
+\hypertarget{classCSphSource__BaseSV_a197492bc1d340e835200e5f4a928da34}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Report\-Document\-Error@{Report\-Document\-Error}}
+\index{Report\-Document\-Error@{Report\-Document\-Error}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Report\-Document\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} $\ast$$\ast$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Report\-Document\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_a197492bc1d340e835200e5f4a928da34}
+\hypertarget{classCSphSource__BaseSV_ac7ea92847b126ef4948d9e34348a36bb}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Setup@{Setup}}
+\index{Setup@{Setup}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Setup (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Source, }
+\item[{F\-I\-L\-E $\ast$}]{p\-Pipe, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphSource__BaseSV_ac7ea92847b126ef4948d9e34348a36bb}
+\hypertarget{classCSphSource__BaseSV_a8180e78e4e113f412439b1aa1a8d42c1}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Setup\-Schema@{Setup\-Schema}}
+\index{Setup\-Schema@{Setup\-Schema}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Setup\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Setup\-Schema (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Source, }
+\item[{bool}]{b\-Word\-Dict, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classCSphSource__BaseSV_a8180e78e4e113f412439b1aa1a8d42c1}
+
+
+Implemented in \hyperlink{classCSphSource__CSV_abfcf53c68c9bf46c74e4712c680c58f9}{C\-Sph\-Source\-\_\-\-C\-S\-V}, and \hyperlink{classCSphSource__TSV_a368bacb4554087c44f385b4a986cf7c3}{C\-Sph\-Source\-\_\-\-T\-S\-V}.
+
+\hypertarget{classCSphSource__BaseSV_a2a84bb3d23903c8f483c0c02c6d321f4}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!Split\-Columns@{Split\-Columns}}
+\index{Split\-Columns@{Split\-Columns}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{Split\-Columns}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf E\-Sph\-Parse\-Result} C\-Sph\-Source\-\_\-\-Base\-S\-V\-::\-Split\-Columns (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classCSphSource__BaseSV_a2a84bb3d23903c8f483c0c02c6d321f4}
+
+
+Implemented in \hyperlink{classCSphSource__CSV_a57888a392b298f92d7dfb3c769e6caee}{C\-Sph\-Source\-\_\-\-C\-S\-V}, and \hyperlink{classCSphSource__TSV_a6337b6f61f31610eb185615e726b75e6}{C\-Sph\-Source\-\_\-\-T\-S\-V}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphSource__BaseSV_a6be6e6e470f707c9c43d4123282bb904}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-d\-Buf@{m\-\_\-d\-Buf}}
+\index{m\-\_\-d\-Buf@{m\-\_\-d\-Buf}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-d\-Buf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf B\-Y\-T\-E}$>$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-d\-Buf\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_a6be6e6e470f707c9c43d4123282bb904}
+\hypertarget{classCSphSource__BaseSV_a24d2092a696b76ce6e390cbb0e3cf93a}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-d\-Columns\-Len@{m\-\_\-d\-Columns\-Len}}
+\index{m\-\_\-d\-Columns\-Len@{m\-\_\-d\-Columns\-Len}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-d\-Columns\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf int}$>$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-d\-Columns\-Len\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_a24d2092a696b76ce6e390cbb0e3cf93a}
+\hypertarget{classCSphSource__BaseSV_ac63e0c03a6de3ff69712b739359d7493}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-d\-Error@{m\-\_\-d\-Error}}
+\index{m\-\_\-d\-Error@{m\-\_\-d\-Error}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-d\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<$char$>$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-d\-Error\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_ac63e0c03a6de3ff69712b739359d7493}
+\hypertarget{classCSphSource__BaseSV_af185adf11b2464d3b4ec339e0e4d6be4}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-d\-Field\-Lengths@{m\-\_\-d\-Field\-Lengths}}
+\index{m\-\_\-d\-Field\-Lengths@{m\-\_\-d\-Field\-Lengths}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-d\-Field\-Lengths}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf int}$>$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-d\-Field\-Lengths\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_af185adf11b2464d3b4ec339e0e4d6be4}
+\hypertarget{classCSphSource__BaseSV_ac6131a6232f2f063c3fc69b598101e72}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-d\-Fields@{m\-\_\-d\-Fields}}
+\index{m\-\_\-d\-Fields@{m\-\_\-d\-Fields}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-d\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf B\-Y\-T\-E} $\ast$$>$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-d\-Fields\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_ac6131a6232f2f063c3fc69b598101e72}
+\hypertarget{classCSphSource__BaseSV_ab39d4c46b897debdc6a59c1fe200545c}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-d\-Remap@{m\-\_\-d\-Remap}}
+\index{m\-\_\-d\-Remap@{m\-\_\-d\-Remap}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-d\-Remap}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf Remap\-X\-S\-V\-\_\-t}$>$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-d\-Remap\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_ab39d4c46b897debdc6a59c1fe200545c}
+\hypertarget{classCSphSource__BaseSV_a2f8d1af1cc5e072a72a6bfe3aa5d3f0a}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-i\-Auto\-Count@{m\-\_\-i\-Auto\-Count}}
+\index{m\-\_\-i\-Auto\-Count@{m\-\_\-i\-Auto\-Count}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-i\-Auto\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-i\-Auto\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_a2f8d1af1cc5e072a72a6bfe3aa5d3f0a}
+\hypertarget{classCSphSource__BaseSV_a81e9ebdee306c5d0d3f654c90f05c44d}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-i\-Buf\-Used@{m\-\_\-i\-Buf\-Used}}
+\index{m\-\_\-i\-Buf\-Used@{m\-\_\-i\-Buf\-Used}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-i\-Buf\-Used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-i\-Buf\-Used\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_a81e9ebdee306c5d0d3f654c90f05c44d}
+
+
+bytes \mbox{[}0,m\-\_\-i\-Buf\-Used) are actually currently used; the rest of m\-\_\-d\-Buf is free 
+
+\hypertarget{classCSphSource__BaseSV_ae4d10220733d93f60cb9cd33d9ac9fab}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-i\-Data\-Start@{m\-\_\-i\-Data\-Start}}
+\index{m\-\_\-i\-Data\-Start@{m\-\_\-i\-Data\-Start}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-i\-Data\-Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-i\-Data\-Start\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_ae4d10220733d93f60cb9cd33d9ac9fab}
+
+
+where the next line to parse starts in m\-\_\-d\-Buf 
+
+\hypertarget{classCSphSource__BaseSV_a223e0b723cd89cb7ff7f0f70164b52a1}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-i\-Doc\-Start@{m\-\_\-i\-Doc\-Start}}
+\index{m\-\_\-i\-Doc\-Start@{m\-\_\-i\-Doc\-Start}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-i\-Doc\-Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-i\-Doc\-Start\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_a223e0b723cd89cb7ff7f0f70164b52a1}
+
+
+where the last parsed document stats in m\-\_\-d\-Buf 
+
+\hypertarget{classCSphSource__BaseSV_a076423aa982d0c6d7917a588b8b3817d}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-i\-Line@{m\-\_\-i\-Line}}
+\index{m\-\_\-i\-Line@{m\-\_\-i\-Line}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-i\-Line}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-i\-Line\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_a076423aa982d0c6d7917a588b8b3817d}
+\hypertarget{classCSphSource__BaseSV_a66f169fd368952457057b5bd0aa0c373}{\index{C\-Sph\-Source\-\_\-\-Base\-S\-V@{C\-Sph\-Source\-\_\-\-Base\-S\-V}!m\-\_\-p\-F\-P@{m\-\_\-p\-F\-P}}
+\index{m\-\_\-p\-F\-P@{m\-\_\-p\-F\-P}!CSphSource_BaseSV@{C\-Sph\-Source\-\_\-\-Base\-S\-V}}
+\subsubsection[{m\-\_\-p\-F\-P}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ C\-Sph\-Source\-\_\-\-Base\-S\-V\-::m\-\_\-p\-F\-P\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource__BaseSV_a66f169fd368952457057b5bd0aa0c373}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\hypertarget{structCSphAggregateHit}{\section{C\-Sph\-Aggregate\-Hit Struct Reference}
+\label{structCSphAggregateHit}\index{C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}}
+}
+
+
+aggregated hit info  
+
+
+Inheritance diagram for C\-Sph\-Aggregate\-Hit\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structCSphAggregateHit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphAggregateHit_aa75b488930250fa66e1275e3f09d3b7e}{C\-Sph\-Aggregate\-Hit} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphAggregateHit_a898f2bdaa81b577e99ccf48a7e0781f5}{Get\-Aggr\-Count} () const 
+\item 
+void \hyperlink{structCSphAggregateHit_a6f8ddaf5dbe4f7fc8ef2cf79436c467f}{Set\-Aggr\-Count} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Val)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{structCSphAggregateHit_aebd6323792225cc1ccdbd29cd841fe1f}{m\-\_\-u\-Doc\-I\-D}
+\begin{DoxyCompactList}\small\item\em document I\-D \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{structCSphAggregateHit_aebbf4230647af0e336746ce7dcc9e77c}{m\-\_\-u\-Word\-I\-D}
+\begin{DoxyCompactList}\small\item\em word I\-D in current dictionary \end{DoxyCompactList}\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{structCSphAggregateHit_aa66adfd392df1239428349d0c9a78349}{m\-\_\-s\-Keyword}
+\begin{DoxyCompactList}\small\item\em word itself (in keywords dictionary case only) \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_af1385e83d53e0648b15eae6d8f101847}{Hitpos\-\_\-t} \hyperlink{structCSphAggregateHit_a99f49fe08e3fb20ee11c5217803067b3}{m\-\_\-i\-Word\-Pos}
+\begin{DoxyCompactList}\small\item\em word position in current document, or hit count in case of aggregate hit \end{DoxyCompactList}\item 
+\hyperlink{structFieldMask__t}{Field\-Mask\-\_\-t} \hyperlink{structCSphAggregateHit_a87b97f5d6e3838790db7ef4773eeac67}{m\-\_\-d\-Field\-Mask}
+\begin{DoxyCompactList}\small\item\em mask of fields containing this word, 0 for regular hits, non-\/0 for aggregate hits \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+aggregated hit info 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphAggregateHit_aa75b488930250fa66e1275e3f09d3b7e}{\index{C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}!C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}}
+\index{C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}!CSphAggregateHit@{C\-Sph\-Aggregate\-Hit}}
+\subsubsection[{C\-Sph\-Aggregate\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Aggregate\-Hit\-::\-C\-Sph\-Aggregate\-Hit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphAggregateHit_aa75b488930250fa66e1275e3f09d3b7e}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphAggregateHit_a898f2bdaa81b577e99ccf48a7e0781f5}{\index{C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}!Get\-Aggr\-Count@{Get\-Aggr\-Count}}
+\index{Get\-Aggr\-Count@{Get\-Aggr\-Count}!CSphAggregateHit@{C\-Sph\-Aggregate\-Hit}}
+\subsubsection[{Get\-Aggr\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Aggregate\-Hit\-::\-Get\-Aggr\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphAggregateHit_a898f2bdaa81b577e99ccf48a7e0781f5}
+\hypertarget{structCSphAggregateHit_a6f8ddaf5dbe4f7fc8ef2cf79436c467f}{\index{C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}!Set\-Aggr\-Count@{Set\-Aggr\-Count}}
+\index{Set\-Aggr\-Count@{Set\-Aggr\-Count}!CSphAggregateHit@{C\-Sph\-Aggregate\-Hit}}
+\subsubsection[{Set\-Aggr\-Count}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Aggregate\-Hit\-::\-Set\-Aggr\-Count (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphAggregateHit_a6f8ddaf5dbe4f7fc8ef2cf79436c467f}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphAggregateHit_a87b97f5d6e3838790db7ef4773eeac67}{\index{C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}!m\-\_\-d\-Field\-Mask@{m\-\_\-d\-Field\-Mask}}
+\index{m\-\_\-d\-Field\-Mask@{m\-\_\-d\-Field\-Mask}!CSphAggregateHit@{C\-Sph\-Aggregate\-Hit}}
+\subsubsection[{m\-\_\-d\-Field\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Field\-Mask\-\_\-t} C\-Sph\-Aggregate\-Hit\-::m\-\_\-d\-Field\-Mask}}\label{structCSphAggregateHit_a87b97f5d6e3838790db7ef4773eeac67}
+
+
+mask of fields containing this word, 0 for regular hits, non-\/0 for aggregate hits 
+
+\hypertarget{structCSphAggregateHit_a99f49fe08e3fb20ee11c5217803067b3}{\index{C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}!m\-\_\-i\-Word\-Pos@{m\-\_\-i\-Word\-Pos}}
+\index{m\-\_\-i\-Word\-Pos@{m\-\_\-i\-Word\-Pos}!CSphAggregateHit@{C\-Sph\-Aggregate\-Hit}}
+\subsubsection[{m\-\_\-i\-Word\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hitpos\-\_\-t} C\-Sph\-Aggregate\-Hit\-::m\-\_\-i\-Word\-Pos}}\label{structCSphAggregateHit_a99f49fe08e3fb20ee11c5217803067b3}
+
+
+word position in current document, or hit count in case of aggregate hit 
+
+\hypertarget{structCSphAggregateHit_aa66adfd392df1239428349d0c9a78349}{\index{C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}!m\-\_\-s\-Keyword@{m\-\_\-s\-Keyword}}
+\index{m\-\_\-s\-Keyword@{m\-\_\-s\-Keyword}!CSphAggregateHit@{C\-Sph\-Aggregate\-Hit}}
+\subsubsection[{m\-\_\-s\-Keyword}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Aggregate\-Hit\-::m\-\_\-s\-Keyword}}\label{structCSphAggregateHit_aa66adfd392df1239428349d0c9a78349}
+
+
+word itself (in keywords dictionary case only) 
+
+\hypertarget{structCSphAggregateHit_aebd6323792225cc1ccdbd29cd841fe1f}{\index{C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}!m\-\_\-u\-Doc\-I\-D@{m\-\_\-u\-Doc\-I\-D}}
+\index{m\-\_\-u\-Doc\-I\-D@{m\-\_\-u\-Doc\-I\-D}!CSphAggregateHit@{C\-Sph\-Aggregate\-Hit}}
+\subsubsection[{m\-\_\-u\-Doc\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Aggregate\-Hit\-::m\-\_\-u\-Doc\-I\-D}}\label{structCSphAggregateHit_aebd6323792225cc1ccdbd29cd841fe1f}
+
+
+document I\-D 
+
+\hypertarget{structCSphAggregateHit_aebbf4230647af0e336746ce7dcc9e77c}{\index{C\-Sph\-Aggregate\-Hit@{C\-Sph\-Aggregate\-Hit}!m\-\_\-u\-Word\-I\-D@{m\-\_\-u\-Word\-I\-D}}
+\index{m\-\_\-u\-Word\-I\-D@{m\-\_\-u\-Word\-I\-D}!CSphAggregateHit@{C\-Sph\-Aggregate\-Hit}}
+\subsubsection[{m\-\_\-u\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Aggregate\-Hit\-::m\-\_\-u\-Word\-I\-D}}\label{structCSphAggregateHit_aebbf4230647af0e336746ce7dcc9e77c}
+
+
+word I\-D in current dictionary 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

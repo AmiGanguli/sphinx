@@ -1,0 +1,344 @@
+\hypertarget{classCSphQueryContext}{\section{C\-Sph\-Query\-Context Class Reference}
+\label{classCSphQueryContext}\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}}
+}
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Query\-Context\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphQueryContext}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCSphQueryContext_1_1CalcItem__t}{Calc\-Item\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphQueryContext_a15e8de278af5d5646f63363e07559c9b}{C\-Sph\-Query\-Context} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} \&q)
+\item 
+\hyperlink{classCSphQueryContext_a6b5f859f3d0a02529296220592fbf9a1}{$\sim$\-C\-Sph\-Query\-Context} ()
+\item 
+void \hyperlink{classCSphQueryContext_a60c73f239769158c55863b76061aab6d}{Bind\-Weights} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Schema, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning)
+\item 
+bool \hyperlink{classCSphQueryContext_aa18a365eddaad8999ae25d0e313e352b}{Setup\-Calc} (\hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$p\-Result, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-In\-Schema, const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Schema, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mva\-Pool, bool b\-Arena\-Prohibit)
+\item 
+bool \hyperlink{classCSphQueryContext_a6b415f84617d1086fcf47054debbf3bf}{Create\-Filters} (bool b\-Fullscan, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} $>$ $\ast$pd\-Filters, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Schema, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mva\-Pool, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Strings, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning, \hyperlink{sphinxexpr_8h_a78197b7b74319074237ecaf5d99cfbe5}{E\-Sph\-Collation} e\-Collation, bool b\-Arena\-Prohibit, const \hyperlink{sphinx_8h_a1510ca22159d6c94f7fd300b5d3be431}{Kill\-List\-Vector} \&d\-Kill\-List)
+\item 
+bool \hyperlink{classCSphQueryContext_a4dfcf23195f97bdb80be5ecefdf3d07f}{Setup\-Overrides} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$p\-Result, const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Index\-Schema, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Outgoing\-Schema)
+\item 
+void \hyperlink{classCSphQueryContext_a675421ba85a4cd0fee95ad9842b8ef3b}{Calc\-Filter} (\hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\item 
+void \hyperlink{classCSphQueryContext_af108a8e99fe50da4d1429d711d1f8456}{Calc\-Sort} (\hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\item 
+void \hyperlink{classCSphQueryContext_a9864d406b1394e87bea17c252c659ec2}{Calc\-Final} (\hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\item 
+void \hyperlink{classCSphQueryContext_a3ac926f928d2b575ea061e2f5f9f7d00}{Free\-Str\-Filter} (\hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\item 
+void \hyperlink{classCSphQueryContext_ab9c165d8b5335a73ae44d9215c873863}{Free\-Str\-Sort} (\hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\item 
+void \hyperlink{classCSphQueryContext_a87ab305ef3822402d8169a2967fb1ceb}{Expr\-Command} (\hyperlink{sphinxexpr_8h_a30be184fb07bd80c271360fc6094c818}{E\-Sph\-Expr\-Command} e\-Cmd, void $\ast$p\-Arg)
+\item 
+void \hyperlink{classCSphQueryContext_aca31066a630da7b8d58141f3e66e7fe9}{Set\-String\-Pool} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Strings)
+\item 
+void \hyperlink{classCSphQueryContext_abea6fdf546c1a7a38beb838020659e8b}{Set\-M\-V\-A\-Pool} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mva, bool b\-Arena\-Prohibit)
+\item 
+void \hyperlink{classCSphQueryContext_aaf23e4528a9aab552728a62c24eabae6}{Setup\-Extra\-Data} (\hyperlink{classISphRanker}{I\-Sph\-Ranker} $\ast$p\-Ranker, \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$p\-Sorter)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCSphQuery}{C\-Sph\-Query} \& \hyperlink{classCSphQueryContext_a7ae9bdda8aa24628726ebc663ba2fb5b}{m\-\_\-t\-Query}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryContext_a02ad4d2f26c2e5bea1c44343aab35284}{m\-\_\-i\-Weights}
+\begin{DoxyCompactList}\small\item\em search query field weights count \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryContext_a328f2c06cdeabb2aa93b421986286f37}{m\-\_\-d\-Weights} \mbox{[}\hyperlink{sphinx_8h_ad5336c1a92b4f76b012a1a868a85b874}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em search query field weights \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQueryContext_adc2fdf623920be11414ea4940593e538}{m\-\_\-b\-Lookup\-Filter}
+\begin{DoxyCompactList}\small\item\em row data lookup required at filtering stage \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQueryContext_afb0929e88a2b40a38c50f04dd90929fd}{m\-\_\-b\-Lookup\-Sort}
+\begin{DoxyCompactList}\small\item\em row data lookup required at sorting stage \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphQueryContext_ad5195a6e8fe8fe2d1dc2137842d19977}{m\-\_\-u\-Packed\-Factor\-Flags}
+\begin{DoxyCompactList}\small\item\em whether we need to calculate packed factors (and some extra options) \end{DoxyCompactList}\item 
+\hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$ \hyperlink{classCSphQueryContext_a64ea660caf0c74b4416b30ea4faaa656}{m\-\_\-p\-Filter}
+\item 
+\hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$ \hyperlink{classCSphQueryContext_a520fee85c149346a61e134802dd98987}{m\-\_\-p\-Weight\-Filter}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphQueryContext_1_1CalcItem__t}{Calc\-Item\-\_\-t} $>$ \hyperlink{classCSphQueryContext_a91e8831b84db253a2ca879097441859e}{m\-\_\-d\-Calc\-Filter}
+\begin{DoxyCompactList}\small\item\em items to compute for filtering \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphQueryContext_1_1CalcItem__t}{Calc\-Item\-\_\-t} $>$ \hyperlink{classCSphQueryContext_a3e7861fc7ec930997c5b3f0c2fc57a8d}{m\-\_\-d\-Calc\-Sort}
+\begin{DoxyCompactList}\small\item\em items to compute for sorting/grouping \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphQueryContext_1_1CalcItem__t}{Calc\-Item\-\_\-t} $>$ \hyperlink{classCSphQueryContext_abe6a6a77e323d80d90ff494bb11acc3d}{m\-\_\-d\-Calc\-Final}
+\begin{DoxyCompactList}\small\item\em items to compute when finalizing result set \end{DoxyCompactList}\item 
+const \hyperlink{classCSphVector}{C\-Sph\-Vector}\\*
+$<$ \hyperlink{classCSphAttrOverride}{C\-Sph\-Attr\-Override} $>$ $\ast$ \hyperlink{classCSphQueryContext_a5017f23729432ca54f9530a6555f46f3}{m\-\_\-p\-Overrides}
+\begin{DoxyCompactList}\small\item\em overridden attribute values \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} $>$ \hyperlink{classCSphQueryContext_acb76110a17747348c8ad6351674da55e}{m\-\_\-d\-Override\-In}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} $>$ \hyperlink{classCSphQueryContext_a2b3bade694af993198331a05fc6f8ab6}{m\-\_\-d\-Override\-Out}
+\item 
+const void $\ast$ \hyperlink{classCSphQueryContext_a57d27f825ca837d923ec7ef70fde7bd2}{m\-\_\-p\-Index\-Data}
+\begin{DoxyCompactList}\small\item\em backend specific data \end{DoxyCompactList}\item 
+\hyperlink{classCSphQueryProfile}{C\-Sph\-Query\-Profile} $\ast$ \hyperlink{classCSphQueryContext_ae582e104b3365bd7fa9b729acfbca400}{m\-\_\-p\-Profile}
+\item 
+const \hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T}\\*
+$<$ \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $>$ $\ast$ \hyperlink{classCSphQueryContext_a1a64d73d4c94e6efe7460dbb0881bd2e}{m\-\_\-p\-Local\-Docs}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQueryContext_ac04374526c69e45a7bc7a0547e9cb153}{m\-\_\-i\-Total\-Docs}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQueryContext_a09e4f76edfe5453c46d72873b694cfff}{m\-\_\-i\-Bad\-Rows}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ const \\*
+\hyperlink{classUservarIntSet__c}{Uservar\-Int\-Set\-\_\-c} $\ast$ $>$ \hyperlink{classCSphQueryContext_a6be62d25efc2df7c6922213d734574c1}{m\-\_\-d\-User\-Vals}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+per-\/query search context everything that index needs to compute/create to process the query 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphQueryContext_a15e8de278af5d5646f63363e07559c9b}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}}
+\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{C\-Sph\-Query\-Context}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-Context\-::\-C\-Sph\-Query\-Context (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCSphQueryContext_a15e8de278af5d5646f63363e07559c9b}
+\hypertarget{classCSphQueryContext_a6b5f859f3d0a02529296220592fbf9a1}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!$\sim$\-C\-Sph\-Query\-Context@{$\sim$\-C\-Sph\-Query\-Context}}
+\index{$\sim$\-C\-Sph\-Query\-Context@{$\sim$\-C\-Sph\-Query\-Context}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{$\sim$\-C\-Sph\-Query\-Context}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-Context\-::$\sim$\-C\-Sph\-Query\-Context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryContext_a6b5f859f3d0a02529296220592fbf9a1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphQueryContext_a60c73f239769158c55863b76061aab6d}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Bind\-Weights@{Bind\-Weights}}
+\index{Bind\-Weights@{Bind\-Weights}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Bind\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Context\-::\-Bind\-Weights (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const {\bf C\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryContext_a60c73f239769158c55863b76061aab6d}
+\hypertarget{classCSphQueryContext_a675421ba85a4cd0fee95ad9842b8ef3b}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Calc\-Filter@{Calc\-Filter}}
+\index{Calc\-Filter@{Calc\-Filter}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Calc\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Context\-::\-Calc\-Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const}}\label{classCSphQueryContext_a675421ba85a4cd0fee95ad9842b8ef3b}
+\hypertarget{classCSphQueryContext_a9864d406b1394e87bea17c252c659ec2}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Calc\-Final@{Calc\-Final}}
+\index{Calc\-Final@{Calc\-Final}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Calc\-Final}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Context\-::\-Calc\-Final (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const}}\label{classCSphQueryContext_a9864d406b1394e87bea17c252c659ec2}
+\hypertarget{classCSphQueryContext_af108a8e99fe50da4d1429d711d1f8456}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Calc\-Sort@{Calc\-Sort}}
+\index{Calc\-Sort@{Calc\-Sort}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Calc\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Context\-::\-Calc\-Sort (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const}}\label{classCSphQueryContext_af108a8e99fe50da4d1429d711d1f8456}
+\hypertarget{classCSphQueryContext_a6b415f84617d1086fcf47054debbf3bf}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Create\-Filters@{Create\-Filters}}
+\index{Create\-Filters@{Create\-Filters}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Create\-Filters}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-Context\-::\-Create\-Filters (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Fullscan, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Filter\-Settings} $>$ $\ast$}]{pd\-Filters, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mva\-Pool, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Strings, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning, }
+\item[{{\bf E\-Sph\-Collation}}]{e\-Collation, }
+\item[{bool}]{b\-Arena\-Prohibit, }
+\item[{const {\bf Kill\-List\-Vector} \&}]{d\-Kill\-List}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryContext_a6b415f84617d1086fcf47054debbf3bf}
+\hypertarget{classCSphQueryContext_a87ab305ef3822402d8169a2967fb1ceb}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Expr\-Command@{Expr\-Command}}
+\index{Expr\-Command@{Expr\-Command}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Expr\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Context\-::\-Expr\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Expr\-Command}}]{e\-Cmd, }
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryContext_a87ab305ef3822402d8169a2967fb1ceb}
+\hypertarget{classCSphQueryContext_a3ac926f928d2b575ea061e2f5f9f7d00}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Free\-Str\-Filter@{Free\-Str\-Filter}}
+\index{Free\-Str\-Filter@{Free\-Str\-Filter}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Free\-Str\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Context\-::\-Free\-Str\-Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const}}\label{classCSphQueryContext_a3ac926f928d2b575ea061e2f5f9f7d00}
+\hypertarget{classCSphQueryContext_ab9c165d8b5335a73ae44d9215c873863}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Free\-Str\-Sort@{Free\-Str\-Sort}}
+\index{Free\-Str\-Sort@{Free\-Str\-Sort}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Free\-Str\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Context\-::\-Free\-Str\-Sort (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const}}\label{classCSphQueryContext_ab9c165d8b5335a73ae44d9215c873863}
+\hypertarget{classCSphQueryContext_abea6fdf546c1a7a38beb838020659e8b}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Set\-M\-V\-A\-Pool@{Set\-M\-V\-A\-Pool}}
+\index{Set\-M\-V\-A\-Pool@{Set\-M\-V\-A\-Pool}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Set\-M\-V\-A\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Context\-::\-Set\-M\-V\-A\-Pool (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mva, }
+\item[{bool}]{b\-Arena\-Prohibit}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryContext_abea6fdf546c1a7a38beb838020659e8b}
+\hypertarget{classCSphQueryContext_aca31066a630da7b8d58141f3e66e7fe9}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Set\-String\-Pool@{Set\-String\-Pool}}
+\index{Set\-String\-Pool@{Set\-String\-Pool}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Set\-String\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Context\-::\-Set\-String\-Pool (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Strings}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryContext_aca31066a630da7b8d58141f3e66e7fe9}
+\hypertarget{classCSphQueryContext_aa18a365eddaad8999ae25d0e313e352b}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Setup\-Calc@{Setup\-Calc}}
+\index{Setup\-Calc@{Setup\-Calc}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Setup\-Calc}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-Context\-::\-Setup\-Calc (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$}]{p\-Result, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-In\-Schema, }
+\item[{const {\bf C\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mva\-Pool, }
+\item[{bool}]{b\-Arena\-Prohibit}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryContext_aa18a365eddaad8999ae25d0e313e352b}
+\hypertarget{classCSphQueryContext_aaf23e4528a9aab552728a62c24eabae6}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Setup\-Extra\-Data@{Setup\-Extra\-Data}}
+\index{Setup\-Extra\-Data@{Setup\-Extra\-Data}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Setup\-Extra\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Context\-::\-Setup\-Extra\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Ranker} $\ast$}]{p\-Ranker, }
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$}]{p\-Sorter}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryContext_aaf23e4528a9aab552728a62c24eabae6}
+\hypertarget{classCSphQueryContext_a4dfcf23195f97bdb80be5ecefdf3d07f}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!Setup\-Overrides@{Setup\-Overrides}}
+\index{Setup\-Overrides@{Setup\-Overrides}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{Setup\-Overrides}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-Context\-::\-Setup\-Overrides (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$}]{p\-Result, }
+\item[{const {\bf C\-Sph\-Schema} \&}]{t\-Index\-Schema, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Outgoing\-Schema}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryContext_a4dfcf23195f97bdb80be5ecefdf3d07f}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphQueryContext_adc2fdf623920be11414ea4940593e538}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-b\-Lookup\-Filter@{m\-\_\-b\-Lookup\-Filter}}
+\index{m\-\_\-b\-Lookup\-Filter@{m\-\_\-b\-Lookup\-Filter}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-b\-Lookup\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-Context\-::m\-\_\-b\-Lookup\-Filter}}\label{classCSphQueryContext_adc2fdf623920be11414ea4940593e538}
+
+
+row data lookup required at filtering stage 
+
+\hypertarget{classCSphQueryContext_afb0929e88a2b40a38c50f04dd90929fd}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-b\-Lookup\-Sort@{m\-\_\-b\-Lookup\-Sort}}
+\index{m\-\_\-b\-Lookup\-Sort@{m\-\_\-b\-Lookup\-Sort}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-b\-Lookup\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-Context\-::m\-\_\-b\-Lookup\-Sort}}\label{classCSphQueryContext_afb0929e88a2b40a38c50f04dd90929fd}
+
+
+row data lookup required at sorting stage 
+
+\hypertarget{classCSphQueryContext_a91e8831b84db253a2ca879097441859e}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-d\-Calc\-Filter@{m\-\_\-d\-Calc\-Filter}}
+\index{m\-\_\-d\-Calc\-Filter@{m\-\_\-d\-Calc\-Filter}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-d\-Calc\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Calc\-Item\-\_\-t}$>$ C\-Sph\-Query\-Context\-::m\-\_\-d\-Calc\-Filter}}\label{classCSphQueryContext_a91e8831b84db253a2ca879097441859e}
+
+
+items to compute for filtering 
+
+\hypertarget{classCSphQueryContext_abe6a6a77e323d80d90ff494bb11acc3d}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-d\-Calc\-Final@{m\-\_\-d\-Calc\-Final}}
+\index{m\-\_\-d\-Calc\-Final@{m\-\_\-d\-Calc\-Final}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-d\-Calc\-Final}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Calc\-Item\-\_\-t}$>$ C\-Sph\-Query\-Context\-::m\-\_\-d\-Calc\-Final}}\label{classCSphQueryContext_abe6a6a77e323d80d90ff494bb11acc3d}
+
+
+items to compute when finalizing result set 
+
+\hypertarget{classCSphQueryContext_a3e7861fc7ec930997c5b3f0c2fc57a8d}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-d\-Calc\-Sort@{m\-\_\-d\-Calc\-Sort}}
+\index{m\-\_\-d\-Calc\-Sort@{m\-\_\-d\-Calc\-Sort}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-d\-Calc\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Calc\-Item\-\_\-t}$>$ C\-Sph\-Query\-Context\-::m\-\_\-d\-Calc\-Sort}}\label{classCSphQueryContext_a3e7861fc7ec930997c5b3f0c2fc57a8d}
+
+
+items to compute for sorting/grouping 
+
+\hypertarget{classCSphQueryContext_acb76110a17747348c8ad6351674da55e}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-d\-Override\-In@{m\-\_\-d\-Override\-In}}
+\index{m\-\_\-d\-Override\-In@{m\-\_\-d\-Override\-In}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-d\-Override\-In}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Attr\-Locator}$>$ C\-Sph\-Query\-Context\-::m\-\_\-d\-Override\-In}}\label{classCSphQueryContext_acb76110a17747348c8ad6351674da55e}
+\hypertarget{classCSphQueryContext_a2b3bade694af993198331a05fc6f8ab6}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-d\-Override\-Out@{m\-\_\-d\-Override\-Out}}
+\index{m\-\_\-d\-Override\-Out@{m\-\_\-d\-Override\-Out}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-d\-Override\-Out}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Attr\-Locator}$>$ C\-Sph\-Query\-Context\-::m\-\_\-d\-Override\-Out}}\label{classCSphQueryContext_a2b3bade694af993198331a05fc6f8ab6}
+\hypertarget{classCSphQueryContext_a6be62d25efc2df7c6922213d734574c1}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-d\-User\-Vals@{m\-\_\-d\-User\-Vals}}
+\index{m\-\_\-d\-User\-Vals@{m\-\_\-d\-User\-Vals}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-d\-User\-Vals}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<$const {\bf Uservar\-Int\-Set\-\_\-c}$\ast$$>$ C\-Sph\-Query\-Context\-::m\-\_\-d\-User\-Vals\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphQueryContext_a6be62d25efc2df7c6922213d734574c1}
+\hypertarget{classCSphQueryContext_a328f2c06cdeabb2aa93b421986286f37}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-d\-Weights@{m\-\_\-d\-Weights}}
+\index{m\-\_\-d\-Weights@{m\-\_\-d\-Weights}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-d\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Context\-::m\-\_\-d\-Weights\mbox{[}{\bf S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-S}\mbox{]}}}\label{classCSphQueryContext_a328f2c06cdeabb2aa93b421986286f37}
+
+
+search query field weights 
+
+\hypertarget{classCSphQueryContext_a09e4f76edfe5453c46d72873b694cfff}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-i\-Bad\-Rows@{m\-\_\-i\-Bad\-Rows}}
+\index{m\-\_\-i\-Bad\-Rows@{m\-\_\-i\-Bad\-Rows}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-i\-Bad\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-Context\-::m\-\_\-i\-Bad\-Rows}}\label{classCSphQueryContext_a09e4f76edfe5453c46d72873b694cfff}
+\hypertarget{classCSphQueryContext_ac04374526c69e45a7bc7a0547e9cb153}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-i\-Total\-Docs@{m\-\_\-i\-Total\-Docs}}
+\index{m\-\_\-i\-Total\-Docs@{m\-\_\-i\-Total\-Docs}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-i\-Total\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-Context\-::m\-\_\-i\-Total\-Docs}}\label{classCSphQueryContext_ac04374526c69e45a7bc7a0547e9cb153}
+\hypertarget{classCSphQueryContext_a02ad4d2f26c2e5bea1c44343aab35284}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-i\-Weights@{m\-\_\-i\-Weights}}
+\index{m\-\_\-i\-Weights@{m\-\_\-i\-Weights}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-i\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Context\-::m\-\_\-i\-Weights}}\label{classCSphQueryContext_a02ad4d2f26c2e5bea1c44343aab35284}
+
+
+search query field weights count 
+
+\hypertarget{classCSphQueryContext_a64ea660caf0c74b4416b30ea4faaa656}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-p\-Filter@{m\-\_\-p\-Filter}}
+\index{m\-\_\-p\-Filter@{m\-\_\-p\-Filter}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-p\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Filter}$\ast$ C\-Sph\-Query\-Context\-::m\-\_\-p\-Filter}}\label{classCSphQueryContext_a64ea660caf0c74b4416b30ea4faaa656}
+\hypertarget{classCSphQueryContext_a57d27f825ca837d923ec7ef70fde7bd2}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-p\-Index\-Data@{m\-\_\-p\-Index\-Data}}
+\index{m\-\_\-p\-Index\-Data@{m\-\_\-p\-Index\-Data}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-p\-Index\-Data}]{\setlength{\rightskip}{0pt plus 5cm}const void$\ast$ C\-Sph\-Query\-Context\-::m\-\_\-p\-Index\-Data}}\label{classCSphQueryContext_a57d27f825ca837d923ec7ef70fde7bd2}
+
+
+backend specific data 
+
+\hypertarget{classCSphQueryContext_a1a64d73d4c94e6efe7460dbb0881bd2e}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-p\-Local\-Docs@{m\-\_\-p\-Local\-Docs}}
+\index{m\-\_\-p\-Local\-Docs@{m\-\_\-p\-Local\-Docs}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-p\-Local\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Small\-String\-Hash\-\_\-\-T}$<${\bf int64\-\_\-t}$>$$\ast$ C\-Sph\-Query\-Context\-::m\-\_\-p\-Local\-Docs}}\label{classCSphQueryContext_a1a64d73d4c94e6efe7460dbb0881bd2e}
+\hypertarget{classCSphQueryContext_a5017f23729432ca54f9530a6555f46f3}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-p\-Overrides@{m\-\_\-p\-Overrides}}
+\index{m\-\_\-p\-Overrides@{m\-\_\-p\-Overrides}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-p\-Overrides}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Attr\-Override}$>$$\ast$ C\-Sph\-Query\-Context\-::m\-\_\-p\-Overrides}}\label{classCSphQueryContext_a5017f23729432ca54f9530a6555f46f3}
+
+
+overridden attribute values 
+
+\hypertarget{classCSphQueryContext_ae582e104b3365bd7fa9b729acfbca400}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-p\-Profile@{m\-\_\-p\-Profile}}
+\index{m\-\_\-p\-Profile@{m\-\_\-p\-Profile}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-p\-Profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Query\-Profile}$\ast$ C\-Sph\-Query\-Context\-::m\-\_\-p\-Profile}}\label{classCSphQueryContext_ae582e104b3365bd7fa9b729acfbca400}
+\hypertarget{classCSphQueryContext_a520fee85c149346a61e134802dd98987}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-p\-Weight\-Filter@{m\-\_\-p\-Weight\-Filter}}
+\index{m\-\_\-p\-Weight\-Filter@{m\-\_\-p\-Weight\-Filter}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-p\-Weight\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Filter}$\ast$ C\-Sph\-Query\-Context\-::m\-\_\-p\-Weight\-Filter}}\label{classCSphQueryContext_a520fee85c149346a61e134802dd98987}
+\hypertarget{classCSphQueryContext_a7ae9bdda8aa24628726ebc663ba2fb5b}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-t\-Query@{m\-\_\-t\-Query}}
+\index{m\-\_\-t\-Query@{m\-\_\-t\-Query}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-t\-Query}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Query}\& C\-Sph\-Query\-Context\-::m\-\_\-t\-Query}}\label{classCSphQueryContext_a7ae9bdda8aa24628726ebc663ba2fb5b}
+\hypertarget{classCSphQueryContext_ad5195a6e8fe8fe2d1dc2137842d19977}{\index{C\-Sph\-Query\-Context@{C\-Sph\-Query\-Context}!m\-\_\-u\-Packed\-Factor\-Flags@{m\-\_\-u\-Packed\-Factor\-Flags}}
+\index{m\-\_\-u\-Packed\-Factor\-Flags@{m\-\_\-u\-Packed\-Factor\-Flags}!CSphQueryContext@{C\-Sph\-Query\-Context}}
+\subsubsection[{m\-\_\-u\-Packed\-Factor\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Query\-Context\-::m\-\_\-u\-Packed\-Factor\-Flags}}\label{classCSphQueryContext_ad5195a6e8fe8fe2d1dc2137842d19977}
+
+
+whether we need to calculate packed factors (and some extra options) 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

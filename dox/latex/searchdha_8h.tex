@@ -1,0 +1,428 @@
+\hypertarget{searchdha_8h}{\section{src/searchdha.h File Reference}
+\label{searchdha_8h}\index{src/searchdha.\-h@{src/searchdha.\-h}}
+}
+{\ttfamily \#include $<$utility$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPersistentConnectionsPool__t}{Persistent\-Connections\-Pool\-\_\-t}
+\item 
+struct \hyperlink{structAgentStats__t}{Agent\-Stats\-\_\-t}
+\item 
+class \hyperlink{classHostUrl__c}{Host\-Url\-\_\-c}
+\item 
+class \hyperlink{classAgentDesc__c}{Agent\-Desc\-\_\-c}
+\item 
+struct \hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t}
+\begin{DoxyCompactList}\small\item\em remote agent connection (local per-\/query state) \end{DoxyCompactList}\item 
+struct \hyperlink{structAgentDash__t}{Agent\-Dash\-\_\-t}
+\item 
+struct \hyperlink{structHostDashboard__t}{Host\-Dashboard\-\_\-t}
+\begin{DoxyCompactList}\small\item\em per-\/host dashboard \end{DoxyCompactList}\item 
+struct \hyperlink{structAgentOptions__t}{Agent\-Options\-\_\-t}
+\item 
+struct \hyperlink{structMultiAgentDesc__t}{Multi\-Agent\-Desc\-\_\-t}
+\item 
+struct \hyperlink{structSearchdStats__t}{Searchd\-Stats\-\_\-t}
+\item 
+class \hyperlink{classcDashStorage}{c\-Dash\-Storage}
+\item 
+struct \hyperlink{structWarnInfo__t}{Warn\-Info\-\_\-t}
+\item 
+struct \hyperlink{structIRequestBuilder__t}{I\-Request\-Builder\-\_\-t}
+\item 
+struct \hyperlink{structIReplyParser__t}{I\-Reply\-Parser\-\_\-t}
+\item 
+struct \hyperlink{structAgentConnectionContext__t}{Agent\-Connection\-Context\-\_\-t}
+\item 
+class \hyperlink{classISphRemoteAgentsController}{I\-Sph\-Remote\-Agents\-Controller}
+\item 
+struct \hyperlink{structNetEventsIterator__t}{Net\-Events\-Iterator\-\_\-t}
+\item 
+class \hyperlink{classISphNetEvents}{I\-Sph\-Net\-Events}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{searchdha_8h_a17b372318eab344add27ee9dc298a282}{P\-O\-L\-L\-I\-N\-G\-\_\-\-S\-E\-L\-E\-C\-T}~1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{searchdha_8h_a603e9fc44e82de9605380ced07f50b8c}{Host\-Stat\-Snapshot\-\_\-t} = \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t}\mbox{[}\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbaf9e9435f9437aa6166b0f38554398c46}{e\-Max\-Agent\-Stat}+\hyperlink{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a07c0754963c29d6abd12eaa164890eb3}{eh\-Max\-Stat}\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{searchdha_8h_a6bc068f78279c924de5303f164d520d8}{Searchd\-Status\-\_\-e} \{ \hyperlink{searchdha_8h_a6bc068f78279c924de5303f164d520d8a71e81178790b93122bf7c9cc5e652994}{S\-E\-A\-R\-C\-H\-D\-\_\-\-O\-K} = 0, 
+\hyperlink{searchdha_8h_a6bc068f78279c924de5303f164d520d8acbe90ab9712d353f525671d7245bad8e}{S\-E\-A\-R\-C\-H\-D\-\_\-\-E\-R\-R\-O\-R} = 1, 
+\hyperlink{searchdha_8h_a6bc068f78279c924de5303f164d520d8aea500db6d834fccecd06841fb2c2a306}{S\-E\-A\-R\-C\-H\-D\-\_\-\-R\-E\-T\-R\-Y} = 2, 
+\hyperlink{searchdha_8h_a6bc068f78279c924de5303f164d520d8a0269c362c530541c16ab20c7f47b4cac}{S\-E\-A\-R\-C\-H\-D\-\_\-\-W\-A\-R\-N\-I\-N\-G} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em known status return codes \end{DoxyCompactList}\item 
+enum \hyperlink{searchdha_8h_aacf8321964d37cbf1de1f483bba94939}{Agent\-State\-\_\-e} \{ \\*
+\hyperlink{searchdha_8h_aacf8321964d37cbf1de1f483bba94939abf96b9df1ee59b8166903d325e1a7464}{A\-G\-E\-N\-T\-\_\-\-U\-N\-U\-S\-E\-D} = 0, 
+\hyperlink{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a9c841d44cce21dc95e3cd7cb7cc11a2e}{A\-G\-E\-N\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-N\-G}, 
+\hyperlink{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a0465d5ce64af38b6fcaea5246cad25bf}{A\-G\-E\-N\-T\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E}, 
+\hyperlink{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a63994d3d48750377409bc27d1f41d7df}{A\-G\-E\-N\-T\-\_\-\-E\-S\-T\-A\-B\-L\-I\-S\-H\-E\-D}, 
+\\*
+\hyperlink{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a092f30cb68484858e54289f1a17c263d}{A\-G\-E\-N\-T\-\_\-\-Q\-U\-E\-R\-Y\-E\-D}, 
+\hyperlink{searchdha_8h_aacf8321964d37cbf1de1f483bba94939acf7a964f175c083c4533eaf05d29deb4}{A\-G\-E\-N\-T\-\_\-\-P\-R\-E\-R\-E\-P\-L\-Y}, 
+\hyperlink{searchdha_8h_aacf8321964d37cbf1de1f483bba94939add7fb3cbf4f8d5d28823726f17575098}{A\-G\-E\-N\-T\-\_\-\-R\-E\-P\-L\-Y}, 
+\hyperlink{searchdha_8h_aacf8321964d37cbf1de1f483bba94939af0650ae7222be20e35431bfb7bfdb89e}{A\-G\-E\-N\-T\-\_\-\-R\-E\-T\-R\-Y}
+ \}
+\begin{DoxyCompactList}\small\item\em remote agent state \end{DoxyCompactList}\item 
+enum \hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebb}{Agent\-Stats\-\_\-e} \{ \\*
+\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbab23165382a5023601d9db76cd7c15fe3}{e\-Timeouts\-Query} = 0, 
+\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebba1fdf6dc4956f34f853b882379f5c6d5a}{e\-Timeouts\-Connect}, 
+\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebba184720749ec502fe28dea239262a8daa}{e\-Connect\-Failures}, 
+\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbacd2d9535362cf620d7d43a0a0618ee7a}{e\-Network\-Errors}, 
+\\*
+\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbab8321cdd6e86f4e65e49452eb89ff636}{e\-Wrong\-Replies}, 
+\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbaf3ff889fd3999f5ccaaf1405332cb8e1}{e\-Unexpected\-Close}, 
+\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebba3a5067c0b5f5c4d969fa3152b1f6f057}{e\-Network\-Critical}, 
+\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbab0075479727ce302de18171e029e4a0f}{e\-Network\-Non\-Critical}, 
+\\*
+\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbaf9e9435f9437aa6166b0f38554398c46}{e\-Max\-Agent\-Stat}
+ \}
+\begin{DoxyCompactList}\small\item\em per-\/agent query stats (raw, filled atomically on-\/the-\/fly) \end{DoxyCompactList}\item 
+enum \hyperlink{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1}{Host\-Stats\-\_\-e} \{ \\*
+\hyperlink{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a18d2feafa1e638da13806c767f299b65}{eh\-Total\-Msecs} =0, 
+\hyperlink{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a15d6e6128488015072290a211878e400}{eh\-Conn\-Tries}, 
+\hyperlink{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a6f104bcbcad2f81b03967ccb6453a7b5}{eh\-Average\-Msecs}, 
+\hyperlink{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a9f14f8dafef71c255350d9c0cd8be774}{eh\-Max\-Msecs}, 
+\\*
+\hyperlink{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a07c0754963c29d6abd12eaa164890eb3}{eh\-Max\-Stat}
+ \}
+\item 
+enum \hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152}{H\-A\-Strategies\-\_\-e} \{ \\*
+\hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152a31b7c1805a9999cc19209a4f8db1123a}{H\-A\-\_\-\-R\-A\-N\-D\-O\-M}, 
+\hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152af96c43901112a4e3aa2301a67a169f3b}{H\-A\-\_\-\-R\-O\-U\-N\-D\-R\-O\-B\-I\-N}, 
+\hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152af236fc585fbc61bb6843f246a660e864}{H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D}, 
+\hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152aacc66669b38b04c223e8d7d24037f51a}{H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S}, 
+\\*
+\hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152ac5312b73edd77aa4205cd8833969d038}{H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D\-T\-M}, 
+\hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152ab0708ba9441d5ed803af2bde961c67f9}{H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S\-T\-M}, 
+\hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152aee62357d9d3227729999dc05ff8a1ec1}{H\-A\-\_\-\-D\-E\-F\-A\-U\-L\-T} = H\-A\-\_\-\-R\-A\-N\-D\-O\-M
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{searchdha_8h_a5096f2f26f65d0b0a784d6542dae19dd}{Close\-Persistent\-Sockets} ()
+\item 
+bool \hyperlink{searchdha_8h_a28743a2a8268de9f865db635facd16a9}{Parse\-Strategy\-H\-A} (const char $\ast$s\-Name, \hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152}{H\-A\-Strategies\-\_\-e} \&e\-Strategy)
+\item 
+bool \hyperlink{searchdha_8h_aac409b5e2cf62a563fcef6a17b10202d}{Parse\-Address\-Port} (\hyperlink{classHostUrl__c}{Host\-Url\-\_\-c} $\ast$p\-Agent, const char $\ast$$\ast$pp\-Line, const \hyperlink{structWarnInfo__t}{Warn\-Info\-\_\-t} \&d\-Info)
+\item 
+bool \hyperlink{searchdha_8h_ab90bf846ca12479d617759d36451dc1c}{Configure\-Agent} (\hyperlink{structMultiAgentDesc__t}{Multi\-Agent\-Desc\-\_\-t} \&t\-Agent, const char $\ast$sz\-Agent, const char $\ast$sz\-Index\-Name, \hyperlink{structAgentOptions__t}{Agent\-Options\-\_\-t} t\-Desc)
+\item 
+void \hyperlink{searchdha_8h_a98932fca334878ef841f83d0957a96b0}{Remote\-Connect\-To\-Agent} (\hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} \&t\-Agent)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8h_a96806ced32ccc0696933f1fd34736c9e}{Remote\-Query\-Agents} (\hyperlink{structAgentConnectionContext__t}{Agent\-Connection\-Context\-\_\-t} $\ast$p\-Ctx)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8h_a27ed3cf927e10c33b0fc0390cccf6cf9}{Remote\-Wait\-For\-Agents} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} $>$ \&d\-Agents, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Timeout, \hyperlink{structIReplyParser__t}{I\-Reply\-Parser\-\_\-t} \&t\-Parser)
+\item 
+\hyperlink{classISphRemoteAgentsController}{I\-Sph\-Remote\-Agents\-Controller} $\ast$ \hyperlink{searchdha_8h_a2167d64e6ef3fb095d005e5a943d7efc}{Get\-Agents\-Controller} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Threads, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} $>$ \&d\-Agents, const \hyperlink{structIRequestBuilder__t}{I\-Request\-Builder\-\_\-t} \&t\-Builder, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Timeout, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Retry\-Max=0, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Delay=0)
+\item 
+bool \hyperlink{searchdha_8h_a17b339bd9739c1cf7315a668a2967921}{sph\-N\-B\-Sock\-Eof} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Sock)
+\begin{DoxyCompactList}\small\item\em check if a non-\/blocked socket is still connected \end{DoxyCompactList}\item 
+\hyperlink{classISphNetEvents}{I\-Sph\-Net\-Events} $\ast$ \hyperlink{searchdha_8h_a496aa7eb15792c37f3f8cabf452a2f18}{sph\-Create\-Poll} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size\-Hint, bool b\-Fallback\-Select=false)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8h_a87fb1f444b6edd12d8719a50f4066f8f}{g\-\_\-i\-Read\-Timeout}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8h_a78fabba624fabe7980d54d26d33642cb}{g\-\_\-i\-Ping\-Interval}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{searchdha_8h_a73073b3fde180790bc34a4c48cd8c51f}{g\-\_\-u\-H\-A\-Period\-Karma}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8h_a356eeb7a11d31edfd153c7254b0bb3e3}{g\-\_\-i\-Persistent\-Pool\-Size}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8h_af3395ba922b1269815758f85499c17ad}{g\-\_\-i\-Agent\-Connect\-Timeout}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8h_a761c5c98d892b2ea0b5bc22be948bbc6}{g\-\_\-i\-Agent\-Query\-Timeout}
+\item 
+bool \hyperlink{searchdha_8h_aea2cfe5eb614a528737082c7c9097944}{g\-\_\-b\-Hostname\-Lookup}
+\item 
+const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8h_ac33d3d24d3ebcfa8a8eb217ca01f6fec}{S\-T\-A\-T\-S\-\_\-\-D\-A\-S\-H\-\_\-\-T\-I\-M\-E} = 15
+\begin{DoxyCompactList}\small\item\em store the history for last periods \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{searchdha_8h_a5b3edfec0432f479835439a791d48fce}{s\-Agent\-Stats\-Names} \mbox{[}\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbaf9e9435f9437aa6166b0f38554398c46}{e\-Max\-Agent\-Stat}+\hyperlink{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a07c0754963c29d6abd12eaa164890eb3}{eh\-Max\-Stat}\mbox{]}
+\item 
+\hyperlink{structSearchdStats__t}{Searchd\-Stats\-\_\-t} \hyperlink{searchdha_8h_a394071f98fd9cd336975913f2e29d171}{g\-\_\-t\-Stats}
+\item 
+\hyperlink{classcDashStorage}{c\-Dash\-Storage} \hyperlink{searchdha_8h_a9bbddb3c92c9eca6077b611f80757070}{g\-\_\-t\-Dashes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Declarations for the stuff specifically needed by searchd to work with remote agents and high availability funcs 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{searchdha_8h_a17b372318eab344add27ee9dc298a282}{\index{searchdha.\-h@{searchdha.\-h}!P\-O\-L\-L\-I\-N\-G\-\_\-\-S\-E\-L\-E\-C\-T@{P\-O\-L\-L\-I\-N\-G\-\_\-\-S\-E\-L\-E\-C\-T}}
+\index{P\-O\-L\-L\-I\-N\-G\-\_\-\-S\-E\-L\-E\-C\-T@{P\-O\-L\-L\-I\-N\-G\-\_\-\-S\-E\-L\-E\-C\-T}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{P\-O\-L\-L\-I\-N\-G\-\_\-\-S\-E\-L\-E\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-L\-L\-I\-N\-G\-\_\-\-S\-E\-L\-E\-C\-T~1}}\label{searchdha_8h_a17b372318eab344add27ee9dc298a282}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{searchdha_8h_a603e9fc44e82de9605380ced07f50b8c}{\index{searchdha.\-h@{searchdha.\-h}!Host\-Stat\-Snapshot\-\_\-t@{Host\-Stat\-Snapshot\-\_\-t}}
+\index{Host\-Stat\-Snapshot\-\_\-t@{Host\-Stat\-Snapshot\-\_\-t}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Host\-Stat\-Snapshot\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Host\-Stat\-Snapshot\-\_\-t} =  {\bf uint64\-\_\-t}\mbox{[}{\bf e\-Max\-Agent\-Stat}+{\bf eh\-Max\-Stat}\mbox{]}}}\label{searchdha_8h_a603e9fc44e82de9605380ced07f50b8c}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{searchdha_8h_aacf8321964d37cbf1de1f483bba94939}{\index{searchdha.\-h@{searchdha.\-h}!Agent\-State\-\_\-e@{Agent\-State\-\_\-e}}
+\index{Agent\-State\-\_\-e@{Agent\-State\-\_\-e}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Agent\-State\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Agent\-State\-\_\-e}}}\label{searchdha_8h_aacf8321964d37cbf1de1f483bba94939}
+
+
+remote agent state 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{A\-G\-E\-N\-T\-\_\-\-U\-N\-U\-S\-E\-D@{A\-G\-E\-N\-T\-\_\-\-U\-N\-U\-S\-E\-D}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!A\-G\-E\-N\-T\-\_\-\-U\-N\-U\-S\-E\-D@{A\-G\-E\-N\-T\-\_\-\-U\-N\-U\-S\-E\-D}}\item[{\em 
+\hypertarget{searchdha_8h_aacf8321964d37cbf1de1f483bba94939abf96b9df1ee59b8166903d325e1a7464}{A\-G\-E\-N\-T\-\_\-\-U\-N\-U\-S\-E\-D}\label{searchdha_8h_aacf8321964d37cbf1de1f483bba94939abf96b9df1ee59b8166903d325e1a7464}
+}]agent is unused for this request \index{A\-G\-E\-N\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-N\-G@{A\-G\-E\-N\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-N\-G}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!A\-G\-E\-N\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-N\-G@{A\-G\-E\-N\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-N\-G}}\item[{\em 
+\hypertarget{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a9c841d44cce21dc95e3cd7cb7cc11a2e}{A\-G\-E\-N\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-N\-G}\label{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a9c841d44cce21dc95e3cd7cb7cc11a2e}
+}]connecting to agent in progress, write handshake on socket ready \index{A\-G\-E\-N\-T\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E@{A\-G\-E\-N\-T\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!A\-G\-E\-N\-T\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E@{A\-G\-E\-N\-T\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E}}\item[{\em 
+\hypertarget{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a0465d5ce64af38b6fcaea5246cad25bf}{A\-G\-E\-N\-T\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E}\label{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a0465d5ce64af38b6fcaea5246cad25bf}
+}]waiting for \char`\"{}\-V\-E\-R x\char`\"{} hello, read response on socket ready \index{A\-G\-E\-N\-T\-\_\-\-E\-S\-T\-A\-B\-L\-I\-S\-H\-E\-D@{A\-G\-E\-N\-T\-\_\-\-E\-S\-T\-A\-B\-L\-I\-S\-H\-E\-D}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!A\-G\-E\-N\-T\-\_\-\-E\-S\-T\-A\-B\-L\-I\-S\-H\-E\-D@{A\-G\-E\-N\-T\-\_\-\-E\-S\-T\-A\-B\-L\-I\-S\-H\-E\-D}}\item[{\em 
+\hypertarget{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a63994d3d48750377409bc27d1f41d7df}{A\-G\-E\-N\-T\-\_\-\-E\-S\-T\-A\-B\-L\-I\-S\-H\-E\-D}\label{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a63994d3d48750377409bc27d1f41d7df}
+}]handshake completed. Ready to sent query, write query on socket ready \index{A\-G\-E\-N\-T\-\_\-\-Q\-U\-E\-R\-Y\-E\-D@{A\-G\-E\-N\-T\-\_\-\-Q\-U\-E\-R\-Y\-E\-D}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!A\-G\-E\-N\-T\-\_\-\-Q\-U\-E\-R\-Y\-E\-D@{A\-G\-E\-N\-T\-\_\-\-Q\-U\-E\-R\-Y\-E\-D}}\item[{\em 
+\hypertarget{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a092f30cb68484858e54289f1a17c263d}{A\-G\-E\-N\-T\-\_\-\-Q\-U\-E\-R\-Y\-E\-D}\label{searchdha_8h_aacf8321964d37cbf1de1f483bba94939a092f30cb68484858e54289f1a17c263d}
+}]query sent, waiting for reply. read reply on socket ready \index{A\-G\-E\-N\-T\-\_\-\-P\-R\-E\-R\-E\-P\-L\-Y@{A\-G\-E\-N\-T\-\_\-\-P\-R\-E\-R\-E\-P\-L\-Y}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!A\-G\-E\-N\-T\-\_\-\-P\-R\-E\-R\-E\-P\-L\-Y@{A\-G\-E\-N\-T\-\_\-\-P\-R\-E\-R\-E\-P\-L\-Y}}\item[{\em 
+\hypertarget{searchdha_8h_aacf8321964d37cbf1de1f483bba94939acf7a964f175c083c4533eaf05d29deb4}{A\-G\-E\-N\-T\-\_\-\-P\-R\-E\-R\-E\-P\-L\-Y}\label{searchdha_8h_aacf8321964d37cbf1de1f483bba94939acf7a964f175c083c4533eaf05d29deb4}
+}]query sent, activity detected, need to read reply \index{A\-G\-E\-N\-T\-\_\-\-R\-E\-P\-L\-Y@{A\-G\-E\-N\-T\-\_\-\-R\-E\-P\-L\-Y}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!A\-G\-E\-N\-T\-\_\-\-R\-E\-P\-L\-Y@{A\-G\-E\-N\-T\-\_\-\-R\-E\-P\-L\-Y}}\item[{\em 
+\hypertarget{searchdha_8h_aacf8321964d37cbf1de1f483bba94939add7fb3cbf4f8d5d28823726f17575098}{A\-G\-E\-N\-T\-\_\-\-R\-E\-P\-L\-Y}\label{searchdha_8h_aacf8321964d37cbf1de1f483bba94939add7fb3cbf4f8d5d28823726f17575098}
+}]reading reply \index{A\-G\-E\-N\-T\-\_\-\-R\-E\-T\-R\-Y@{A\-G\-E\-N\-T\-\_\-\-R\-E\-T\-R\-Y}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!A\-G\-E\-N\-T\-\_\-\-R\-E\-T\-R\-Y@{A\-G\-E\-N\-T\-\_\-\-R\-E\-T\-R\-Y}}\item[{\em 
+\hypertarget{searchdha_8h_aacf8321964d37cbf1de1f483bba94939af0650ae7222be20e35431bfb7bfdb89e}{A\-G\-E\-N\-T\-\_\-\-R\-E\-T\-R\-Y}\label{searchdha_8h_aacf8321964d37cbf1de1f483bba94939af0650ae7222be20e35431bfb7bfdb89e}
+}]should retry \end{description}
+\end{Desc}
+
+\hypertarget{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebb}{\index{searchdha.\-h@{searchdha.\-h}!Agent\-Stats\-\_\-e@{Agent\-Stats\-\_\-e}}
+\index{Agent\-Stats\-\_\-e@{Agent\-Stats\-\_\-e}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Agent\-Stats\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Agent\-Stats\-\_\-e}}}\label{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebb}
+
+
+per-\/agent query stats (raw, filled atomically on-\/the-\/fly) 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{e\-Timeouts\-Query@{e\-Timeouts\-Query}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!e\-Timeouts\-Query@{e\-Timeouts\-Query}}\item[{\em 
+\hypertarget{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbab23165382a5023601d9db76cd7c15fe3}{e\-Timeouts\-Query}\label{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbab23165382a5023601d9db76cd7c15fe3}
+}]number of time-\/outed queries \index{e\-Timeouts\-Connect@{e\-Timeouts\-Connect}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!e\-Timeouts\-Connect@{e\-Timeouts\-Connect}}\item[{\em 
+\hypertarget{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebba1fdf6dc4956f34f853b882379f5c6d5a}{e\-Timeouts\-Connect}\label{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebba1fdf6dc4956f34f853b882379f5c6d5a}
+}]number of time-\/outed connections \index{e\-Connect\-Failures@{e\-Connect\-Failures}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!e\-Connect\-Failures@{e\-Connect\-Failures}}\item[{\em 
+\hypertarget{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebba184720749ec502fe28dea239262a8daa}{e\-Connect\-Failures}\label{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebba184720749ec502fe28dea239262a8daa}
+}]failed to connect \index{e\-Network\-Errors@{e\-Network\-Errors}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!e\-Network\-Errors@{e\-Network\-Errors}}\item[{\em 
+\hypertarget{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbacd2d9535362cf620d7d43a0a0618ee7a}{e\-Network\-Errors}\label{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbacd2d9535362cf620d7d43a0a0618ee7a}
+}]network error \index{e\-Wrong\-Replies@{e\-Wrong\-Replies}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!e\-Wrong\-Replies@{e\-Wrong\-Replies}}\item[{\em 
+\hypertarget{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbab8321cdd6e86f4e65e49452eb89ff636}{e\-Wrong\-Replies}\label{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbab8321cdd6e86f4e65e49452eb89ff636}
+}]incomplete reply \index{e\-Unexpected\-Close@{e\-Unexpected\-Close}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!e\-Unexpected\-Close@{e\-Unexpected\-Close}}\item[{\em 
+\hypertarget{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbaf3ff889fd3999f5ccaaf1405332cb8e1}{e\-Unexpected\-Close}\label{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbaf3ff889fd3999f5ccaaf1405332cb8e1}
+}]agent closed the connection \index{e\-Network\-Critical@{e\-Network\-Critical}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!e\-Network\-Critical@{e\-Network\-Critical}}\item[{\em 
+\hypertarget{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebba3a5067c0b5f5c4d969fa3152b1f6f057}{e\-Network\-Critical}\label{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebba3a5067c0b5f5c4d969fa3152b1f6f057}
+}]agent answered, but with warnings \index{e\-Network\-Non\-Critical@{e\-Network\-Non\-Critical}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!e\-Network\-Non\-Critical@{e\-Network\-Non\-Critical}}\item[{\em 
+\hypertarget{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbab0075479727ce302de18171e029e4a0f}{e\-Network\-Non\-Critical}\label{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbab0075479727ce302de18171e029e4a0f}
+}]successful queries, no errors \index{e\-Max\-Agent\-Stat@{e\-Max\-Agent\-Stat}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!e\-Max\-Agent\-Stat@{e\-Max\-Agent\-Stat}}\item[{\em 
+\hypertarget{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbaf9e9435f9437aa6166b0f38554398c46}{e\-Max\-Agent\-Stat}\label{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebbaf9e9435f9437aa6166b0f38554398c46}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152}{\index{searchdha.\-h@{searchdha.\-h}!H\-A\-Strategies\-\_\-e@{H\-A\-Strategies\-\_\-e}}
+\index{H\-A\-Strategies\-\_\-e@{H\-A\-Strategies\-\_\-e}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{H\-A\-Strategies\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf H\-A\-Strategies\-\_\-e}}}\label{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{H\-A\-\_\-\-R\-A\-N\-D\-O\-M@{H\-A\-\_\-\-R\-A\-N\-D\-O\-M}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!H\-A\-\_\-\-R\-A\-N\-D\-O\-M@{H\-A\-\_\-\-R\-A\-N\-D\-O\-M}}\item[{\em 
+\hypertarget{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152a31b7c1805a9999cc19209a4f8db1123a}{H\-A\-\_\-\-R\-A\-N\-D\-O\-M}\label{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152a31b7c1805a9999cc19209a4f8db1123a}
+}]\index{H\-A\-\_\-\-R\-O\-U\-N\-D\-R\-O\-B\-I\-N@{H\-A\-\_\-\-R\-O\-U\-N\-D\-R\-O\-B\-I\-N}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!H\-A\-\_\-\-R\-O\-U\-N\-D\-R\-O\-B\-I\-N@{H\-A\-\_\-\-R\-O\-U\-N\-D\-R\-O\-B\-I\-N}}\item[{\em 
+\hypertarget{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152af96c43901112a4e3aa2301a67a169f3b}{H\-A\-\_\-\-R\-O\-U\-N\-D\-R\-O\-B\-I\-N}\label{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152af96c43901112a4e3aa2301a67a169f3b}
+}]\index{H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D@{H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D@{H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D}}\item[{\em 
+\hypertarget{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152af236fc585fbc61bb6843f246a660e864}{H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D}\label{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152af236fc585fbc61bb6843f246a660e864}
+}]\index{H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S@{H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S@{H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S}}\item[{\em 
+\hypertarget{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152aacc66669b38b04c223e8d7d24037f51a}{H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S}\label{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152aacc66669b38b04c223e8d7d24037f51a}
+}]\index{H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D\-T\-M@{H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D\-T\-M}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D\-T\-M@{H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D\-T\-M}}\item[{\em 
+\hypertarget{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152ac5312b73edd77aa4205cd8833969d038}{H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D\-T\-M}\label{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152ac5312b73edd77aa4205cd8833969d038}
+}]the same as H\-A\-\_\-\-A\-V\-O\-I\-D\-D\-E\-A\-D, but uses just min timeout instead of weighted random \index{H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S\-T\-M@{H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S\-T\-M}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S\-T\-M@{H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S\-T\-M}}\item[{\em 
+\hypertarget{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152ab0708ba9441d5ed803af2bde961c67f9}{H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S\-T\-M}\label{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152ab0708ba9441d5ed803af2bde961c67f9}
+}]the same as H\-A\-\_\-\-A\-V\-O\-I\-D\-E\-R\-R\-O\-R\-S, but uses just min timeout instead of weighted random \index{H\-A\-\_\-\-D\-E\-F\-A\-U\-L\-T@{H\-A\-\_\-\-D\-E\-F\-A\-U\-L\-T}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!H\-A\-\_\-\-D\-E\-F\-A\-U\-L\-T@{H\-A\-\_\-\-D\-E\-F\-A\-U\-L\-T}}\item[{\em 
+\hypertarget{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152aee62357d9d3227729999dc05ff8a1ec1}{H\-A\-\_\-\-D\-E\-F\-A\-U\-L\-T}\label{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152aee62357d9d3227729999dc05ff8a1ec1}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1}{\index{searchdha.\-h@{searchdha.\-h}!Host\-Stats\-\_\-e@{Host\-Stats\-\_\-e}}
+\index{Host\-Stats\-\_\-e@{Host\-Stats\-\_\-e}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Host\-Stats\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Host\-Stats\-\_\-e}}}\label{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{eh\-Total\-Msecs@{eh\-Total\-Msecs}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!eh\-Total\-Msecs@{eh\-Total\-Msecs}}\item[{\em 
+\hypertarget{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a18d2feafa1e638da13806c767f299b65}{eh\-Total\-Msecs}\label{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a18d2feafa1e638da13806c767f299b65}
+}]number of microseconds in queries, total \index{eh\-Conn\-Tries@{eh\-Conn\-Tries}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!eh\-Conn\-Tries@{eh\-Conn\-Tries}}\item[{\em 
+\hypertarget{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a15d6e6128488015072290a211878e400}{eh\-Conn\-Tries}\label{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a15d6e6128488015072290a211878e400}
+}]total number of connect tries \index{eh\-Average\-Msecs@{eh\-Average\-Msecs}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!eh\-Average\-Msecs@{eh\-Average\-Msecs}}\item[{\em 
+\hypertarget{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a6f104bcbcad2f81b03967ccb6453a7b5}{eh\-Average\-Msecs}\label{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a6f104bcbcad2f81b03967ccb6453a7b5}
+}]average connect time \index{eh\-Max\-Msecs@{eh\-Max\-Msecs}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!eh\-Max\-Msecs@{eh\-Max\-Msecs}}\item[{\em 
+\hypertarget{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a9f14f8dafef71c255350d9c0cd8be774}{eh\-Max\-Msecs}\label{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a9f14f8dafef71c255350d9c0cd8be774}
+}]maximal connect time \index{eh\-Max\-Stat@{eh\-Max\-Stat}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!eh\-Max\-Stat@{eh\-Max\-Stat}}\item[{\em 
+\hypertarget{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a07c0754963c29d6abd12eaa164890eb3}{eh\-Max\-Stat}\label{searchdha_8h_a7de8deeab061ce5ecb5d4d8c405e28a1a07c0754963c29d6abd12eaa164890eb3}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{searchdha_8h_a6bc068f78279c924de5303f164d520d8}{\index{searchdha.\-h@{searchdha.\-h}!Searchd\-Status\-\_\-e@{Searchd\-Status\-\_\-e}}
+\index{Searchd\-Status\-\_\-e@{Searchd\-Status\-\_\-e}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Searchd\-Status\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Searchd\-Status\-\_\-e}}}\label{searchdha_8h_a6bc068f78279c924de5303f164d520d8}
+
+
+known status return codes 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-E\-A\-R\-C\-H\-D\-\_\-\-O\-K@{S\-E\-A\-R\-C\-H\-D\-\_\-\-O\-K}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!S\-E\-A\-R\-C\-H\-D\-\_\-\-O\-K@{S\-E\-A\-R\-C\-H\-D\-\_\-\-O\-K}}\item[{\em 
+\hypertarget{searchdha_8h_a6bc068f78279c924de5303f164d520d8a71e81178790b93122bf7c9cc5e652994}{S\-E\-A\-R\-C\-H\-D\-\_\-\-O\-K}\label{searchdha_8h_a6bc068f78279c924de5303f164d520d8a71e81178790b93122bf7c9cc5e652994}
+}]general success, command-\/specific reply follows \index{S\-E\-A\-R\-C\-H\-D\-\_\-\-E\-R\-R\-O\-R@{S\-E\-A\-R\-C\-H\-D\-\_\-\-E\-R\-R\-O\-R}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!S\-E\-A\-R\-C\-H\-D\-\_\-\-E\-R\-R\-O\-R@{S\-E\-A\-R\-C\-H\-D\-\_\-\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{searchdha_8h_a6bc068f78279c924de5303f164d520d8acbe90ab9712d353f525671d7245bad8e}{S\-E\-A\-R\-C\-H\-D\-\_\-\-E\-R\-R\-O\-R}\label{searchdha_8h_a6bc068f78279c924de5303f164d520d8acbe90ab9712d353f525671d7245bad8e}
+}]general failure, error message follows \index{S\-E\-A\-R\-C\-H\-D\-\_\-\-R\-E\-T\-R\-Y@{S\-E\-A\-R\-C\-H\-D\-\_\-\-R\-E\-T\-R\-Y}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!S\-E\-A\-R\-C\-H\-D\-\_\-\-R\-E\-T\-R\-Y@{S\-E\-A\-R\-C\-H\-D\-\_\-\-R\-E\-T\-R\-Y}}\item[{\em 
+\hypertarget{searchdha_8h_a6bc068f78279c924de5303f164d520d8aea500db6d834fccecd06841fb2c2a306}{S\-E\-A\-R\-C\-H\-D\-\_\-\-R\-E\-T\-R\-Y}\label{searchdha_8h_a6bc068f78279c924de5303f164d520d8aea500db6d834fccecd06841fb2c2a306}
+}]temporary failure, error message follows, client should retry later \index{S\-E\-A\-R\-C\-H\-D\-\_\-\-W\-A\-R\-N\-I\-N\-G@{S\-E\-A\-R\-C\-H\-D\-\_\-\-W\-A\-R\-N\-I\-N\-G}!searchdha.\-h@{searchdha.\-h}}\index{searchdha.\-h@{searchdha.\-h}!S\-E\-A\-R\-C\-H\-D\-\_\-\-W\-A\-R\-N\-I\-N\-G@{S\-E\-A\-R\-C\-H\-D\-\_\-\-W\-A\-R\-N\-I\-N\-G}}\item[{\em 
+\hypertarget{searchdha_8h_a6bc068f78279c924de5303f164d520d8a0269c362c530541c16ab20c7f47b4cac}{S\-E\-A\-R\-C\-H\-D\-\_\-\-W\-A\-R\-N\-I\-N\-G}\label{searchdha_8h_a6bc068f78279c924de5303f164d520d8a0269c362c530541c16ab20c7f47b4cac}
+}]general success, warning message and command-\/specific reply follow \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{searchdha_8h_a5096f2f26f65d0b0a784d6542dae19dd}{\index{searchdha.\-h@{searchdha.\-h}!Close\-Persistent\-Sockets@{Close\-Persistent\-Sockets}}
+\index{Close\-Persistent\-Sockets@{Close\-Persistent\-Sockets}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Close\-Persistent\-Sockets}]{\setlength{\rightskip}{0pt plus 5cm}void Close\-Persistent\-Sockets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8h_a5096f2f26f65d0b0a784d6542dae19dd}
+\hypertarget{searchdha_8h_ab90bf846ca12479d617759d36451dc1c}{\index{searchdha.\-h@{searchdha.\-h}!Configure\-Agent@{Configure\-Agent}}
+\index{Configure\-Agent@{Configure\-Agent}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Configure\-Agent}]{\setlength{\rightskip}{0pt plus 5cm}bool Configure\-Agent (
+\begin{DoxyParamCaption}
+\item[{{\bf Multi\-Agent\-Desc\-\_\-t} \&}]{t\-Agent, }
+\item[{const char $\ast$}]{sz\-Agent, }
+\item[{const char $\ast$}]{sz\-Index\-Name, }
+\item[{{\bf Agent\-Options\-\_\-t}}]{t\-Desc}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8h_ab90bf846ca12479d617759d36451dc1c}
+\hypertarget{searchdha_8h_a2167d64e6ef3fb095d005e5a943d7efc}{\index{searchdha.\-h@{searchdha.\-h}!Get\-Agents\-Controller@{Get\-Agents\-Controller}}
+\index{Get\-Agents\-Controller@{Get\-Agents\-Controller}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Get\-Agents\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Remote\-Agents\-Controller}$\ast$ Get\-Agents\-Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Threads, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Agent\-Conn\-\_\-t} $>$ \&}]{d\-Agents, }
+\item[{const {\bf I\-Request\-Builder\-\_\-t} \&}]{t\-Builder, }
+\item[{{\bf int}}]{i\-Timeout, }
+\item[{{\bf int}}]{i\-Retry\-Max = {\ttfamily 0}, }
+\item[{{\bf int}}]{i\-Delay = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8h_a2167d64e6ef3fb095d005e5a943d7efc}
+\hypertarget{searchdha_8h_aac409b5e2cf62a563fcef6a17b10202d}{\index{searchdha.\-h@{searchdha.\-h}!Parse\-Address\-Port@{Parse\-Address\-Port}}
+\index{Parse\-Address\-Port@{Parse\-Address\-Port}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Parse\-Address\-Port}]{\setlength{\rightskip}{0pt plus 5cm}bool Parse\-Address\-Port (
+\begin{DoxyParamCaption}
+\item[{{\bf Host\-Url\-\_\-c} $\ast$}]{p\-Agent, }
+\item[{const char $\ast$$\ast$}]{pp\-Line, }
+\item[{const {\bf Warn\-Info\-\_\-t} \&}]{d\-Info}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8h_aac409b5e2cf62a563fcef6a17b10202d}
+\hypertarget{searchdha_8h_a28743a2a8268de9f865db635facd16a9}{\index{searchdha.\-h@{searchdha.\-h}!Parse\-Strategy\-H\-A@{Parse\-Strategy\-H\-A}}
+\index{Parse\-Strategy\-H\-A@{Parse\-Strategy\-H\-A}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Parse\-Strategy\-H\-A}]{\setlength{\rightskip}{0pt plus 5cm}bool Parse\-Strategy\-H\-A (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf H\-A\-Strategies\-\_\-e} \&}]{e\-Strategy}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8h_a28743a2a8268de9f865db635facd16a9}
+\hypertarget{searchdha_8h_a98932fca334878ef841f83d0957a96b0}{\index{searchdha.\-h@{searchdha.\-h}!Remote\-Connect\-To\-Agent@{Remote\-Connect\-To\-Agent}}
+\index{Remote\-Connect\-To\-Agent@{Remote\-Connect\-To\-Agent}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Remote\-Connect\-To\-Agent}]{\setlength{\rightskip}{0pt plus 5cm}void Remote\-Connect\-To\-Agent (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Conn\-\_\-t} \&}]{t\-Agent}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8h_a98932fca334878ef841f83d0957a96b0}
+\hypertarget{searchdha_8h_a96806ced32ccc0696933f1fd34736c9e}{\index{searchdha.\-h@{searchdha.\-h}!Remote\-Query\-Agents@{Remote\-Query\-Agents}}
+\index{Remote\-Query\-Agents@{Remote\-Query\-Agents}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Remote\-Query\-Agents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Remote\-Query\-Agents (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Connection\-Context\-\_\-t} $\ast$}]{p\-Ctx}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8h_a96806ced32ccc0696933f1fd34736c9e}
+\hypertarget{searchdha_8h_a27ed3cf927e10c33b0fc0390cccf6cf9}{\index{searchdha.\-h@{searchdha.\-h}!Remote\-Wait\-For\-Agents@{Remote\-Wait\-For\-Agents}}
+\index{Remote\-Wait\-For\-Agents@{Remote\-Wait\-For\-Agents}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{Remote\-Wait\-For\-Agents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Remote\-Wait\-For\-Agents (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Agent\-Conn\-\_\-t} $>$ \&}]{d\-Agents, }
+\item[{{\bf int}}]{i\-Timeout, }
+\item[{{\bf I\-Reply\-Parser\-\_\-t} \&}]{t\-Parser}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8h_a27ed3cf927e10c33b0fc0390cccf6cf9}
+\hypertarget{searchdha_8h_a496aa7eb15792c37f3f8cabf452a2f18}{\index{searchdha.\-h@{searchdha.\-h}!sph\-Create\-Poll@{sph\-Create\-Poll}}
+\index{sph\-Create\-Poll@{sph\-Create\-Poll}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{sph\-Create\-Poll}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Net\-Events}$\ast$ sph\-Create\-Poll (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size\-Hint, }
+\item[{bool}]{b\-Fallback\-Select = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8h_a496aa7eb15792c37f3f8cabf452a2f18}
+\hypertarget{searchdha_8h_a17b339bd9739c1cf7315a668a2967921}{\index{searchdha.\-h@{searchdha.\-h}!sph\-N\-B\-Sock\-Eof@{sph\-N\-B\-Sock\-Eof}}
+\index{sph\-N\-B\-Sock\-Eof@{sph\-N\-B\-Sock\-Eof}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{sph\-N\-B\-Sock\-Eof}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-N\-B\-Sock\-Eof (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Sock}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8h_a17b339bd9739c1cf7315a668a2967921}
+
+
+check if a non-\/blocked socket is still connected 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{searchdha_8h_aea2cfe5eb614a528737082c7c9097944}{\index{searchdha.\-h@{searchdha.\-h}!g\-\_\-b\-Hostname\-Lookup@{g\-\_\-b\-Hostname\-Lookup}}
+\index{g\-\_\-b\-Hostname\-Lookup@{g\-\_\-b\-Hostname\-Lookup}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{g\-\_\-b\-Hostname\-Lookup}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Hostname\-Lookup}}\label{searchdha_8h_aea2cfe5eb614a528737082c7c9097944}
+\hypertarget{searchdha_8h_af3395ba922b1269815758f85499c17ad}{\index{searchdha.\-h@{searchdha.\-h}!g\-\_\-i\-Agent\-Connect\-Timeout@{g\-\_\-i\-Agent\-Connect\-Timeout}}
+\index{g\-\_\-i\-Agent\-Connect\-Timeout@{g\-\_\-i\-Agent\-Connect\-Timeout}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{g\-\_\-i\-Agent\-Connect\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Agent\-Connect\-Timeout}}\label{searchdha_8h_af3395ba922b1269815758f85499c17ad}
+\hypertarget{searchdha_8h_a761c5c98d892b2ea0b5bc22be948bbc6}{\index{searchdha.\-h@{searchdha.\-h}!g\-\_\-i\-Agent\-Query\-Timeout@{g\-\_\-i\-Agent\-Query\-Timeout}}
+\index{g\-\_\-i\-Agent\-Query\-Timeout@{g\-\_\-i\-Agent\-Query\-Timeout}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{g\-\_\-i\-Agent\-Query\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Agent\-Query\-Timeout}}\label{searchdha_8h_a761c5c98d892b2ea0b5bc22be948bbc6}
+\hypertarget{searchdha_8h_a356eeb7a11d31edfd153c7254b0bb3e3}{\index{searchdha.\-h@{searchdha.\-h}!g\-\_\-i\-Persistent\-Pool\-Size@{g\-\_\-i\-Persistent\-Pool\-Size}}
+\index{g\-\_\-i\-Persistent\-Pool\-Size@{g\-\_\-i\-Persistent\-Pool\-Size}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{g\-\_\-i\-Persistent\-Pool\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Persistent\-Pool\-Size}}\label{searchdha_8h_a356eeb7a11d31edfd153c7254b0bb3e3}
+\hypertarget{searchdha_8h_a78fabba624fabe7980d54d26d33642cb}{\index{searchdha.\-h@{searchdha.\-h}!g\-\_\-i\-Ping\-Interval@{g\-\_\-i\-Ping\-Interval}}
+\index{g\-\_\-i\-Ping\-Interval@{g\-\_\-i\-Ping\-Interval}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{g\-\_\-i\-Ping\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Ping\-Interval}}\label{searchdha_8h_a78fabba624fabe7980d54d26d33642cb}
+\hypertarget{searchdha_8h_a87fb1f444b6edd12d8719a50f4066f8f}{\index{searchdha.\-h@{searchdha.\-h}!g\-\_\-i\-Read\-Timeout@{g\-\_\-i\-Read\-Timeout}}
+\index{g\-\_\-i\-Read\-Timeout@{g\-\_\-i\-Read\-Timeout}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{g\-\_\-i\-Read\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Read\-Timeout}}\label{searchdha_8h_a87fb1f444b6edd12d8719a50f4066f8f}
+\hypertarget{searchdha_8h_a9bbddb3c92c9eca6077b611f80757070}{\index{searchdha.\-h@{searchdha.\-h}!g\-\_\-t\-Dashes@{g\-\_\-t\-Dashes}}
+\index{g\-\_\-t\-Dashes@{g\-\_\-t\-Dashes}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{g\-\_\-t\-Dashes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf c\-Dash\-Storage} g\-\_\-t\-Dashes}}\label{searchdha_8h_a9bbddb3c92c9eca6077b611f80757070}
+\hypertarget{searchdha_8h_a394071f98fd9cd336975913f2e29d171}{\index{searchdha.\-h@{searchdha.\-h}!g\-\_\-t\-Stats@{g\-\_\-t\-Stats}}
+\index{g\-\_\-t\-Stats@{g\-\_\-t\-Stats}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{g\-\_\-t\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Searchd\-Stats\-\_\-t} g\-\_\-t\-Stats}}\label{searchdha_8h_a394071f98fd9cd336975913f2e29d171}
+\hypertarget{searchdha_8h_a73073b3fde180790bc34a4c48cd8c51f}{\index{searchdha.\-h@{searchdha.\-h}!g\-\_\-u\-H\-A\-Period\-Karma@{g\-\_\-u\-H\-A\-Period\-Karma}}
+\index{g\-\_\-u\-H\-A\-Period\-Karma@{g\-\_\-u\-H\-A\-Period\-Karma}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{g\-\_\-u\-H\-A\-Period\-Karma}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} g\-\_\-u\-H\-A\-Period\-Karma}}\label{searchdha_8h_a73073b3fde180790bc34a4c48cd8c51f}
+\hypertarget{searchdha_8h_a5b3edfec0432f479835439a791d48fce}{\index{searchdha.\-h@{searchdha.\-h}!s\-Agent\-Stats\-Names@{s\-Agent\-Stats\-Names}}
+\index{s\-Agent\-Stats\-Names@{s\-Agent\-Stats\-Names}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{s\-Agent\-Stats\-Names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ s\-Agent\-Stats\-Names\mbox{[}{\bf e\-Max\-Agent\-Stat}+{\bf eh\-Max\-Stat}\mbox{]}}}\label{searchdha_8h_a5b3edfec0432f479835439a791d48fce}
+\hypertarget{searchdha_8h_ac33d3d24d3ebcfa8a8eb217ca01f6fec}{\index{searchdha.\-h@{searchdha.\-h}!S\-T\-A\-T\-S\-\_\-\-D\-A\-S\-H\-\_\-\-T\-I\-M\-E@{S\-T\-A\-T\-S\-\_\-\-D\-A\-S\-H\-\_\-\-T\-I\-M\-E}}
+\index{S\-T\-A\-T\-S\-\_\-\-D\-A\-S\-H\-\_\-\-T\-I\-M\-E@{S\-T\-A\-T\-S\-\_\-\-D\-A\-S\-H\-\_\-\-T\-I\-M\-E}!searchdha.h@{searchdha.\-h}}
+\subsubsection[{S\-T\-A\-T\-S\-\_\-\-D\-A\-S\-H\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} S\-T\-A\-T\-S\-\_\-\-D\-A\-S\-H\-\_\-\-T\-I\-M\-E = 15}}\label{searchdha_8h_ac33d3d24d3ebcfa8a8eb217ca01f6fec}
+
+
+store the history for last periods 
+

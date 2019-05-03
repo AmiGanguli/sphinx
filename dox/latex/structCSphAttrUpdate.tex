@@ -1,0 +1,114 @@
+\hypertarget{structCSphAttrUpdate}{\section{C\-Sph\-Attr\-Update Struct Reference}
+\label{structCSphAttrUpdate}\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}}
+}
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphAttrUpdate_a861b96a6a11792e53fc3952f4fa0ecf7}{C\-Sph\-Attr\-Update} ()
+\item 
+\hyperlink{structCSphAttrUpdate_addcae276a21312a28e6f5e376186ec42}{$\sim$\-C\-Sph\-Attr\-Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ char $\ast$ $>$ \hyperlink{structCSphAttrUpdate_af6b87e1c9492c7707aca93213cf18f3a}{m\-\_\-d\-Attrs}
+\begin{DoxyCompactList}\small\item\em update schema, attr names to update \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} $>$ \hyperlink{structCSphAttrUpdate_ae07327b4cd589b53e96bf2e0661dbf7f}{m\-\_\-d\-Types}
+\begin{DoxyCompactList}\small\item\em update schema, attr types to update \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \hyperlink{structCSphAttrUpdate_a074812eb96b6877e46858109c08090ca}{m\-\_\-d\-Pool}
+\begin{DoxyCompactList}\small\item\em update values pool \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ \hyperlink{structCSphAttrUpdate_af80514672c2da7d0310044485e67375c}{m\-\_\-d\-Docids}
+\begin{DoxyCompactList}\small\item\em document I\-Ds vector \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ const \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$ $>$ \hyperlink{structCSphAttrUpdate_af109ebce3bcb683624821fef41f430e3}{m\-\_\-d\-Rows}
+\begin{DoxyCompactList}\small\item\em document attribute's vector, used instead of m\-\_\-d\-Docids. \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{structCSphAttrUpdate_ac82102723b4c90f12d6b05f44105d51e}{m\-\_\-d\-Row\-Offset}
+\begin{DoxyCompactList}\small\item\em document row offsets in the pool (1 per doc, i.\-e. the length is the same as of m\-\_\-d\-Docids) \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphAttrUpdate_a075e1bb316a7fbaa730a00b0e8aed978}{m\-\_\-b\-Ignore\-Nonexistent}
+\begin{DoxyCompactList}\small\item\em whether to warn about non-\/existen attrs, or just silently ignore them \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphAttrUpdate_a707ad0946e2c43fdc55802545fb5514d}{m\-\_\-b\-Strict}
+\begin{DoxyCompactList}\small\item\em whether to check for incompatible types first, or just ignore them \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphAttrUpdate_a861b96a6a11792e53fc3952f4fa0ecf7}{\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}}
+\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!CSphAttrUpdate@{C\-Sph\-Attr\-Update}}
+\subsubsection[{C\-Sph\-Attr\-Update}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Attr\-Update\-::\-C\-Sph\-Attr\-Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphAttrUpdate_a861b96a6a11792e53fc3952f4fa0ecf7}
+\hypertarget{structCSphAttrUpdate_addcae276a21312a28e6f5e376186ec42}{\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!$\sim$\-C\-Sph\-Attr\-Update@{$\sim$\-C\-Sph\-Attr\-Update}}
+\index{$\sim$\-C\-Sph\-Attr\-Update@{$\sim$\-C\-Sph\-Attr\-Update}!CSphAttrUpdate@{C\-Sph\-Attr\-Update}}
+\subsubsection[{$\sim$\-C\-Sph\-Attr\-Update}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Attr\-Update\-::$\sim$\-C\-Sph\-Attr\-Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphAttrUpdate_addcae276a21312a28e6f5e376186ec42}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphAttrUpdate_a075e1bb316a7fbaa730a00b0e8aed978}{\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!m\-\_\-b\-Ignore\-Nonexistent@{m\-\_\-b\-Ignore\-Nonexistent}}
+\index{m\-\_\-b\-Ignore\-Nonexistent@{m\-\_\-b\-Ignore\-Nonexistent}!CSphAttrUpdate@{C\-Sph\-Attr\-Update}}
+\subsubsection[{m\-\_\-b\-Ignore\-Nonexistent}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Attr\-Update\-::m\-\_\-b\-Ignore\-Nonexistent}}\label{structCSphAttrUpdate_a075e1bb316a7fbaa730a00b0e8aed978}
+
+
+whether to warn about non-\/existen attrs, or just silently ignore them 
+
+\hypertarget{structCSphAttrUpdate_a707ad0946e2c43fdc55802545fb5514d}{\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!m\-\_\-b\-Strict@{m\-\_\-b\-Strict}}
+\index{m\-\_\-b\-Strict@{m\-\_\-b\-Strict}!CSphAttrUpdate@{C\-Sph\-Attr\-Update}}
+\subsubsection[{m\-\_\-b\-Strict}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Attr\-Update\-::m\-\_\-b\-Strict}}\label{structCSphAttrUpdate_a707ad0946e2c43fdc55802545fb5514d}
+
+
+whether to check for incompatible types first, or just ignore them 
+
+\hypertarget{structCSphAttrUpdate_af6b87e1c9492c7707aca93213cf18f3a}{\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!m\-\_\-d\-Attrs@{m\-\_\-d\-Attrs}}
+\index{m\-\_\-d\-Attrs@{m\-\_\-d\-Attrs}!CSphAttrUpdate@{C\-Sph\-Attr\-Update}}
+\subsubsection[{m\-\_\-d\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<$char$\ast$$>$ C\-Sph\-Attr\-Update\-::m\-\_\-d\-Attrs}}\label{structCSphAttrUpdate_af6b87e1c9492c7707aca93213cf18f3a}
+
+
+update schema, attr names to update 
+
+\hypertarget{structCSphAttrUpdate_af80514672c2da7d0310044485e67375c}{\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!m\-\_\-d\-Docids@{m\-\_\-d\-Docids}}
+\index{m\-\_\-d\-Docids@{m\-\_\-d\-Docids}!CSphAttrUpdate@{C\-Sph\-Attr\-Update}}
+\subsubsection[{m\-\_\-d\-Docids}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Sph\-Doc\-I\-D\-\_\-t}$>$ C\-Sph\-Attr\-Update\-::m\-\_\-d\-Docids}}\label{structCSphAttrUpdate_af80514672c2da7d0310044485e67375c}
+
+
+document I\-Ds vector 
+
+\hypertarget{structCSphAttrUpdate_a074812eb96b6877e46858109c08090ca}{\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!m\-\_\-d\-Pool@{m\-\_\-d\-Pool}}
+\index{m\-\_\-d\-Pool@{m\-\_\-d\-Pool}!CSphAttrUpdate@{C\-Sph\-Attr\-Update}}
+\subsubsection[{m\-\_\-d\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf D\-W\-O\-R\-D}$>$ C\-Sph\-Attr\-Update\-::m\-\_\-d\-Pool}}\label{structCSphAttrUpdate_a074812eb96b6877e46858109c08090ca}
+
+
+update values pool 
+
+\hypertarget{structCSphAttrUpdate_ac82102723b4c90f12d6b05f44105d51e}{\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!m\-\_\-d\-Row\-Offset@{m\-\_\-d\-Row\-Offset}}
+\index{m\-\_\-d\-Row\-Offset@{m\-\_\-d\-Row\-Offset}!CSphAttrUpdate@{C\-Sph\-Attr\-Update}}
+\subsubsection[{m\-\_\-d\-Row\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf int}$>$ C\-Sph\-Attr\-Update\-::m\-\_\-d\-Row\-Offset}}\label{structCSphAttrUpdate_ac82102723b4c90f12d6b05f44105d51e}
+
+
+document row offsets in the pool (1 per doc, i.\-e. the length is the same as of m\-\_\-d\-Docids) 
+
+\hypertarget{structCSphAttrUpdate_af109ebce3bcb683624821fef41f430e3}{\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!m\-\_\-d\-Rows@{m\-\_\-d\-Rows}}
+\index{m\-\_\-d\-Rows@{m\-\_\-d\-Rows}!CSphAttrUpdate@{C\-Sph\-Attr\-Update}}
+\subsubsection[{m\-\_\-d\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<$const {\bf C\-Sph\-Rowitem}$\ast$$>$ C\-Sph\-Attr\-Update\-::m\-\_\-d\-Rows}}\label{structCSphAttrUpdate_af109ebce3bcb683624821fef41f430e3}
+
+
+document attribute's vector, used instead of m\-\_\-d\-Docids. 
+
+\hypertarget{structCSphAttrUpdate_ae07327b4cd589b53e96bf2e0661dbf7f}{\index{C\-Sph\-Attr\-Update@{C\-Sph\-Attr\-Update}!m\-\_\-d\-Types@{m\-\_\-d\-Types}}
+\index{m\-\_\-d\-Types@{m\-\_\-d\-Types}!CSphAttrUpdate@{C\-Sph\-Attr\-Update}}
+\subsubsection[{m\-\_\-d\-Types}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf E\-Sph\-Attr}$>$ C\-Sph\-Attr\-Update\-::m\-\_\-d\-Types}}\label{structCSphAttrUpdate_ae07327b4cd589b53e96bf2e0661dbf7f}
+
+
+update schema, attr types to update 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\end{DoxyCompactItemize}

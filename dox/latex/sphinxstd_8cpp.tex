@@ -1,0 +1,479 @@
+\hypertarget{sphinxstd_8cpp}{\section{src/sphinxstd.cpp File Reference}
+\label{sphinxstd_8cpp}\index{src/sphinxstd.\-cpp@{src/sphinxstd.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structThreadCall__t}{Thread\-Call\-\_\-t}
+\item 
+struct \hyperlink{structThdJob__t}{Thd\-Job\-\_\-t}
+\item 
+class \hyperlink{classCSphThdPool}{C\-Sph\-Thd\-Pool}
+\item 
+class \hyperlink{classTDigest__c}{T\-Digest\-\_\-c}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxstd_8cpp_ad731e1fdaf7086480f7eee8aefd3a3d0}{U\-S\-E\-\_\-\-G\-P\-R\-O\-F}~0
+\item 
+\#define \hyperlink{sphinxstd_8cpp_a54147e143e0a12e900a41d807745f9c3}{S\-P\-H\-\_\-\-T\-H\-D\-F\-U\-N\-C}~void $\ast$
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{sphinxstd_8cpp_a1e019a440dd2add5a0d631076c0bb65e}{operator new} (size\-\_\-t i\-Size)
+\item 
+void $\ast$ \hyperlink{sphinxstd_8cpp_a1a39c7f54fad77b12507b917f6b582b8}{operator new\mbox{[}$\,$\mbox{]}} (size\-\_\-t i\-Size)
+\item 
+void \hyperlink{sphinxstd_8cpp_a12d122bc15aa2a86ab48ba9e63012442}{operator delete} (void $\ast$p\-Ptr)  throw ()
+\item 
+void \hyperlink{sphinxstd_8cpp_a8c4006333ec9d94d5de6fe534547ee22}{operator delete\mbox{[}$\,$\mbox{]}} (void $\ast$p\-Ptr)  throw ()
+\item 
+void \hyperlink{sphinxstd_8cpp_a40c3fd1feb2e915b395c4d1b81d399dc}{sph\-Set\-Die\-Callback} (\hyperlink{sphinxstd_8h_a266723c581b9191bdb94e53090552e42}{Sph\-Die\-Callback\-\_\-t} pf\-Die\-Callback)
+\item 
+void \hyperlink{sphinxstd_8cpp_a670a004a2eee1b6d8a18c1769e0e83cd}{sph\-Die} (const char $\ast$s\-Template,...)
+\item 
+void \hyperlink{sphinxstd_8cpp_a25dd3c7e7859abbd03d223c665b96bba}{sph\-Die\-Restart} (const char $\ast$s\-Template,...)
+\item 
+void \hyperlink{sphinxstd_8cpp_a6aa7dbc659a4609b973802f00fec9031}{sph\-Srand} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Seed)
+\begin{DoxyCompactList}\small\item\em seed \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8cpp_af684a2a652cd988bc9989714d25f97ef}{sph\-Auto\-Srand} ()
+\begin{DoxyCompactList}\small\item\em auto-\/seed R\-N\-G based on time and P\-I\-D \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxstd_8cpp_aee2283ca247e5759172c1a7132c93235}{sph\-Rand} ()
+\begin{DoxyCompactList}\small\item\em generate another dword \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8cpp_a54147e143e0a12e900a41d807745f9c3}{S\-P\-H\-\_\-\-T\-H\-D\-F\-U\-N\-C} \hyperlink{sphinxstd_8cpp_a7e4d58f654e8a620790c96ff4dabd617}{sph\-Thread\-Proc\-Wrapper} (void $\ast$p\-Arg)
+\item 
+void $\ast$ \hyperlink{sphinxstd_8cpp_a45259183fe24f3bf818b4cceac92be73}{sph\-Thread\-Init} (bool b\-Detached)
+\begin{DoxyCompactList}\small\item\em my threading initialize routine \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8cpp_ae5d0e2de86d38a07128dc4d91c76d221}{sph\-Thread\-Done} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\begin{DoxyCompactList}\small\item\em my threading deinitialize routine \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxstd_8cpp_a5ccc276ba68c0eb413887fefac30a37d}{sph\-Thread\-Create} (\hyperlink{sphinxstd_8h_ad728334ec85e8a6b4db5bc1efd06447a}{Sph\-Thread\-\_\-t} $\ast$p\-Thread, void($\ast$fn\-Thread)(void $\ast$), void $\ast$p\-Arg, bool b\-Detached)
+\begin{DoxyCompactList}\small\item\em my create thread wrapper \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxstd_8cpp_a16e7b256c1d908a0a46643b19416eb8a}{sph\-Thread\-Join} (\hyperlink{sphinxstd_8h_ad728334ec85e8a6b4db5bc1efd06447a}{Sph\-Thread\-\_\-t} $\ast$p\-Thread)
+\begin{DoxyCompactList}\small\item\em my join thread wrapper \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8cpp_a38869c3116553d088036f3080bc77dfa}{sph\-Thread\-On\-Exit} (void($\ast$fn\-Cleanup)(void $\ast$), void $\ast$p\-Arg)
+\begin{DoxyCompactList}\small\item\em add (cleanup) callback to run on thread exit \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxstd_8cpp_a5171a457237e55fc8e4fb6cd450e8497}{sph\-Thread\-Key\-Create} (\hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} $\ast$p\-Key)
+\begin{DoxyCompactList}\small\item\em alloc thread-\/local key \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8cpp_a2428df88751a24c24b222b5a8fd77b01}{sph\-Thread\-Key\-Delete} (\hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} t\-Key)
+\begin{DoxyCompactList}\small\item\em free thread-\/local key \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{sphinxstd_8cpp_aae86e1d659d04703aa8b02bedd2fdb8a}{sph\-Thread\-Get} (\hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} t\-Key)
+\begin{DoxyCompactList}\small\item\em get thread-\/local key value \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{sphinxstd_8cpp_a3ece2bc5d2d0b1f9ec317d0044390030}{sph\-My\-Stack} ()
+\begin{DoxyCompactList}\small\item\em get the pointer to my thread's stack \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{sphinxstd_8cpp_a8a71681ef329114bca741cff9916b426}{sph\-Get\-Stack\-Used} ()
+\begin{DoxyCompactList}\small\item\em get size of used stack \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8cpp_ad207625041ddca0c53e87bd5cce998f6}{sph\-Set\-My\-Stack\-Size} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Stack\-Size)
+\begin{DoxyCompactList}\small\item\em set the size of my thread's stack \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8cpp_a1ac7e63c29b62739c3db80dde8fd4f2d}{Memorize\-Stack} (void $\ast$P\-Stack)
+\begin{DoxyCompactList}\small\item\em store the address in the T\-L\-S \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxstd_8cpp_a108c8bfd8f6d89da0fa813866b51f6a5}{sph\-Thread\-Set} (\hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} t\-Key, void $\ast$p\-Value)
+\begin{DoxyCompactList}\small\item\em set thread-\/local key value \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxstd_8cpp_aed1db7785967f19faf94eb7b2365ecf8}{sph\-Is\-Lt\-Lib} ()
+\begin{DoxyCompactList}\small\item\em what kind of threading lib do we have? The number of frames in the stack depends from it \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{sphinxstd_8cpp_a3caa94cb69902b59e3b1d8d06cef1696}{sph\-Micro\-Timer} ()
+\begin{DoxyCompactList}\small\item\em microsecond precision timestamp \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxstd_8cpp_a88903916c9ceac711ed6fd611aa049a1}{sph\-C\-R\-C32} (const void $\ast$s)
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxstd_8cpp_a4b6ffcd6ffe9295547c0251ac2456a04}{sph\-C\-R\-C32} (const void $\ast$s, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxstd_8cpp_a791bf5509a0c6820f3f6bced7b2d4bf3}{sph\-C\-R\-C32} (const void $\ast$s, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Prev\-C\-R\-C)
+\item 
+const char $\ast$ \hyperlink{sphinxstd_8cpp_a3247bd1b260714a1b73df9a4709b3ed6}{sph\-Check\-Endian} ()
+\begin{DoxyCompactList}\small\item\em Fast check if our endianess is correct. \end{DoxyCompactList}\item 
+static void \hyperlink{sphinxstd_8cpp_a282127d949a9d9280bd2a74fb53440aa}{Set\-Thd\-Name} (const char $\ast$)
+\item 
+\hyperlink{structISphThdPool}{I\-Sph\-Thd\-Pool} $\ast$ \hyperlink{sphinxstd_8cpp_a3fc7a71ade633e4cc9111294e50200c8}{sph\-Thread\-Pool\-Create} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Threads, const char $\ast$s\-Name)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8cpp_a47f4cb90679403c7310c52fd5126bc13}{sph\-Cpu\-Threads\-Count} ()
+\item 
+\hyperlink{classTDigest__i}{T\-Digest\-\_\-i} $\ast$ \hyperlink{sphinxstd_8cpp_a923fbc68c6568df491250edf26692c14}{sph\-Create\-T\-Digest} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8cpp_a23b6a1b11aea720b9dd6665a32de96be}{g\-\_\-i\-Thread\-Stack\-Size} = 1024$\ast$1024
+\item 
+static \hyperlink{sphinxstd_8h_a266723c581b9191bdb94e53090552e42}{Sph\-Die\-Callback\-\_\-t} \hyperlink{sphinxstd_8cpp_ab5971cf6cf03c99d387be39d531cb1c9}{g\-\_\-pf\-Die\-Callback} = N\-U\-L\-L
+\item 
+static \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxstd_8cpp_aac6fec9f6aaa6c6be9905a8741d9f88c}{g\-\_\-d\-Rng\-State} \mbox{[}5\mbox{]} = \{ 0x95d3474b\-U\-L, 0x035cf1f7\-U\-L, 0xfd43995f\-U\-L, 0x5dfc55fb\-U\-L, 0x334a9229\-U\-L \}
+\begin{DoxyCompactList}\small\item\em M\-W\-C (Multiply-\/\-With-\/\-Carry) R\-N\-G, invented by George Marsaglia. \end{DoxyCompactList}\item 
+static \hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} \hyperlink{sphinxstd_8cpp_a7ec3ba3d412d571a4ccd2f2ba197e511}{g\-\_\-t\-Thread\-Cleanup\-Key}
+\item 
+static \hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} \hyperlink{sphinxstd_8cpp_a011af9006057968b6cbca329ac44e728}{g\-\_\-t\-My\-Thread\-Stack}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxstd_8cpp_af76ebfe4e183caf58b899b71aa488ce3}{g\-\_\-d\-Sphinx\-C\-R\-C32} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em Sphinx C\-R\-C32 implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxstd_8cpp_a54147e143e0a12e900a41d807745f9c3}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!S\-P\-H\-\_\-\-T\-H\-D\-F\-U\-N\-C@{S\-P\-H\-\_\-\-T\-H\-D\-F\-U\-N\-C}}
+\index{S\-P\-H\-\_\-\-T\-H\-D\-F\-U\-N\-C@{S\-P\-H\-\_\-\-T\-H\-D\-F\-U\-N\-C}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{S\-P\-H\-\_\-\-T\-H\-D\-F\-U\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-T\-H\-D\-F\-U\-N\-C~void $\ast$}}\label{sphinxstd_8cpp_a54147e143e0a12e900a41d807745f9c3}
+\hypertarget{sphinxstd_8cpp_ad731e1fdaf7086480f7eee8aefd3a3d0}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!U\-S\-E\-\_\-\-G\-P\-R\-O\-F@{U\-S\-E\-\_\-\-G\-P\-R\-O\-F}}
+\index{U\-S\-E\-\_\-\-G\-P\-R\-O\-F@{U\-S\-E\-\_\-\-G\-P\-R\-O\-F}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{U\-S\-E\-\_\-\-G\-P\-R\-O\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-S\-E\-\_\-\-G\-P\-R\-O\-F~0}}\label{sphinxstd_8cpp_ad731e1fdaf7086480f7eee8aefd3a3d0}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxstd_8cpp_a1ac7e63c29b62739c3db80dde8fd4f2d}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!Memorize\-Stack@{Memorize\-Stack}}
+\index{Memorize\-Stack@{Memorize\-Stack}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{Memorize\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void Memorize\-Stack (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{P\-Stack}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a1ac7e63c29b62739c3db80dde8fd4f2d}
+
+
+store the address in the T\-L\-S 
+
+\hypertarget{sphinxstd_8cpp_a12d122bc15aa2a86ab48ba9e63012442}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!operator delete@{operator delete}}
+\index{operator delete@{operator delete}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{operator delete}]{\setlength{\rightskip}{0pt plus 5cm}void operator delete (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Ptr}
+\end{DoxyParamCaption}
+)  throw ()}}\label{sphinxstd_8cpp_a12d122bc15aa2a86ab48ba9e63012442}
+\hypertarget{sphinxstd_8cpp_a8c4006333ec9d94d5de6fe534547ee22}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!operator delete\mbox{[}$\,$\mbox{]}@{operator delete[]}}
+\index{operator delete\mbox{[}$\,$\mbox{]}@{operator delete[]}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{operator delete[]}]{\setlength{\rightskip}{0pt plus 5cm}void operator delete\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Ptr}
+\end{DoxyParamCaption}
+)  throw ()}}\label{sphinxstd_8cpp_a8c4006333ec9d94d5de6fe534547ee22}
+\hypertarget{sphinxstd_8cpp_a1e019a440dd2add5a0d631076c0bb65e}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!operator new@{operator new}}
+\index{operator new@{operator new}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{operator new}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ operator new (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{i\-Size}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a1e019a440dd2add5a0d631076c0bb65e}
+\hypertarget{sphinxstd_8cpp_a1a39c7f54fad77b12507b917f6b582b8}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!operator new\mbox{[}$\,$\mbox{]}@{operator new[]}}
+\index{operator new\mbox{[}$\,$\mbox{]}@{operator new[]}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{operator new[]}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ operator new\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{i\-Size}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a1a39c7f54fad77b12507b917f6b582b8}
+\hypertarget{sphinxstd_8cpp_a282127d949a9d9280bd2a74fb53440aa}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!Set\-Thd\-Name@{Set\-Thd\-Name}}
+\index{Set\-Thd\-Name@{Set\-Thd\-Name}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{Set\-Thd\-Name}]{\setlength{\rightskip}{0pt plus 5cm}static void Set\-Thd\-Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstd_8cpp_a282127d949a9d9280bd2a74fb53440aa}
+\hypertarget{sphinxstd_8cpp_af684a2a652cd988bc9989714d25f97ef}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Auto\-Srand@{sph\-Auto\-Srand}}
+\index{sph\-Auto\-Srand@{sph\-Auto\-Srand}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Auto\-Srand}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Auto\-Srand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_af684a2a652cd988bc9989714d25f97ef}
+
+
+auto-\/seed R\-N\-G based on time and P\-I\-D 
+
+\hypertarget{sphinxstd_8cpp_a3247bd1b260714a1b73df9a4709b3ed6}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Check\-Endian@{sph\-Check\-Endian}}
+\index{sph\-Check\-Endian@{sph\-Check\-Endian}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Check\-Endian}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ sph\-Check\-Endian (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a3247bd1b260714a1b73df9a4709b3ed6}
+
+
+Fast check if our endianess is correct. 
+
+\hypertarget{sphinxstd_8cpp_a47f4cb90679403c7310c52fd5126bc13}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Cpu\-Threads\-Count@{sph\-Cpu\-Threads\-Count}}
+\index{sph\-Cpu\-Threads\-Count@{sph\-Cpu\-Threads\-Count}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Cpu\-Threads\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Cpu\-Threads\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a47f4cb90679403c7310c52fd5126bc13}
+\hypertarget{sphinxstd_8cpp_a88903916c9ceac711ed6fd611aa049a1}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-C\-R\-C32@{sph\-C\-R\-C32}}
+\index{sph\-C\-R\-C32@{sph\-C\-R\-C32}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-C\-R\-C32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} sph\-C\-R\-C32 (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a88903916c9ceac711ed6fd611aa049a1}
+\hypertarget{sphinxstd_8cpp_a4b6ffcd6ffe9295547c0251ac2456a04}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-C\-R\-C32@{sph\-C\-R\-C32}}
+\index{sph\-C\-R\-C32@{sph\-C\-R\-C32}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-C\-R\-C32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} sph\-C\-R\-C32 (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{s, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a4b6ffcd6ffe9295547c0251ac2456a04}
+\hypertarget{sphinxstd_8cpp_a791bf5509a0c6820f3f6bced7b2d4bf3}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-C\-R\-C32@{sph\-C\-R\-C32}}
+\index{sph\-C\-R\-C32@{sph\-C\-R\-C32}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-C\-R\-C32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} sph\-C\-R\-C32 (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{s, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Prev\-C\-R\-C}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a791bf5509a0c6820f3f6bced7b2d4bf3}
+\hypertarget{sphinxstd_8cpp_a923fbc68c6568df491250edf26692c14}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Create\-T\-Digest@{sph\-Create\-T\-Digest}}
+\index{sph\-Create\-T\-Digest@{sph\-Create\-T\-Digest}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Create\-T\-Digest}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\-Digest\-\_\-i}$\ast$ sph\-Create\-T\-Digest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a923fbc68c6568df491250edf26692c14}
+\hypertarget{sphinxstd_8cpp_a670a004a2eee1b6d8a18c1769e0e83cd}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Die@{sph\-Die}}
+\index{sph\-Die@{sph\-Die}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Die}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Die (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Template, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a670a004a2eee1b6d8a18c1769e0e83cd}
+\hypertarget{sphinxstd_8cpp_a25dd3c7e7859abbd03d223c665b96bba}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Die\-Restart@{sph\-Die\-Restart}}
+\index{sph\-Die\-Restart@{sph\-Die\-Restart}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Die\-Restart}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Die\-Restart (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Template, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a25dd3c7e7859abbd03d223c665b96bba}
+\hypertarget{sphinxstd_8cpp_a8a71681ef329114bca741cff9916b426}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Get\-Stack\-Used@{sph\-Get\-Stack\-Used}}
+\index{sph\-Get\-Stack\-Used@{sph\-Get\-Stack\-Used}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Get\-Stack\-Used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} sph\-Get\-Stack\-Used (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a8a71681ef329114bca741cff9916b426}
+
+
+get size of used stack 
+
+\hypertarget{sphinxstd_8cpp_aed1db7785967f19faf94eb7b2365ecf8}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Is\-Lt\-Lib@{sph\-Is\-Lt\-Lib}}
+\index{sph\-Is\-Lt\-Lib@{sph\-Is\-Lt\-Lib}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Is\-Lt\-Lib}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Is\-Lt\-Lib (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_aed1db7785967f19faf94eb7b2365ecf8}
+
+
+what kind of threading lib do we have? The number of frames in the stack depends from it 
+
+\hypertarget{sphinxstd_8cpp_a3caa94cb69902b59e3b1d8d06cef1696}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Micro\-Timer@{sph\-Micro\-Timer}}
+\index{sph\-Micro\-Timer@{sph\-Micro\-Timer}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Micro\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} sph\-Micro\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a3caa94cb69902b59e3b1d8d06cef1696}
+
+
+microsecond precision timestamp 
+
+microsecond precision timestamp current U\-N\-I\-X timestamp in seconds multiplied by 1000000, plus microseconds since the beginning of current second \hypertarget{sphinxstd_8cpp_a3ece2bc5d2d0b1f9ec317d0044390030}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-My\-Stack@{sph\-My\-Stack}}
+\index{sph\-My\-Stack@{sph\-My\-Stack}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-My\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sph\-My\-Stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a3ece2bc5d2d0b1f9ec317d0044390030}
+
+
+get the pointer to my thread's stack 
+
+\hypertarget{sphinxstd_8cpp_aee2283ca247e5759172c1a7132c93235}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Rand@{sph\-Rand}}
+\index{sph\-Rand@{sph\-Rand}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Rand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} sph\-Rand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_aee2283ca247e5759172c1a7132c93235}
+
+
+generate another dword 
+
+generate another random \hypertarget{sphinxstd_8cpp_a40c3fd1feb2e915b395c4d1b81d399dc}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Set\-Die\-Callback@{sph\-Set\-Die\-Callback}}
+\index{sph\-Set\-Die\-Callback@{sph\-Set\-Die\-Callback}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Set\-Die\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Set\-Die\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Die\-Callback\-\_\-t}}]{pf\-Die\-Callback}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a40c3fd1feb2e915b395c4d1b81d399dc}
+setup a callback function to call from \hyperlink{sphinxstd_8cpp_a670a004a2eee1b6d8a18c1769e0e83cd}{sph\-Die()} before exit if callback returns false, \hyperlink{sphinxstd_8cpp_a670a004a2eee1b6d8a18c1769e0e83cd}{sph\-Die()} will not log to stdout \hypertarget{sphinxstd_8cpp_ad207625041ddca0c53e87bd5cce998f6}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Set\-My\-Stack\-Size@{sph\-Set\-My\-Stack\-Size}}
+\index{sph\-Set\-My\-Stack\-Size@{sph\-Set\-My\-Stack\-Size}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Set\-My\-Stack\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Set\-My\-Stack\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Stack\-Size}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_ad207625041ddca0c53e87bd5cce998f6}
+
+
+set the size of my thread's stack 
+
+\hypertarget{sphinxstd_8cpp_a6aa7dbc659a4609b973802f00fec9031}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Srand@{sph\-Srand}}
+\index{sph\-Srand@{sph\-Srand}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Srand}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Srand (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Seed}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a6aa7dbc659a4609b973802f00fec9031}
+
+
+seed 
+
+seed R\-N\-G \hypertarget{sphinxstd_8cpp_a5ccc276ba68c0eb413887fefac30a37d}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-Create@{sph\-Thread\-Create}}
+\index{sph\-Thread\-Create@{sph\-Thread\-Create}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-Create}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Thread\-Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-\_\-t} $\ast$}]{p\-Thread, }
+\item[{void($\ast$)(void $\ast$)}]{fn\-Thread, }
+\item[{void $\ast$}]{p\-Arg, }
+\item[{bool}]{b\-Detached}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a5ccc276ba68c0eb413887fefac30a37d}
+
+
+my create thread wrapper 
+
+\hypertarget{sphinxstd_8cpp_ae5d0e2de86d38a07128dc4d91c76d221}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-Done@{sph\-Thread\-Done}}
+\index{sph\-Thread\-Done@{sph\-Thread\-Done}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Thread\-Done (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_ae5d0e2de86d38a07128dc4d91c76d221}
+
+
+my threading deinitialize routine 
+
+\hypertarget{sphinxstd_8cpp_aae86e1d659d04703aa8b02bedd2fdb8a}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-Get@{sph\-Thread\-Get}}
+\index{sph\-Thread\-Get@{sph\-Thread\-Get}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-Get}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sph\-Thread\-Get (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-Key\-\_\-t}}]{t\-Key}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_aae86e1d659d04703aa8b02bedd2fdb8a}
+
+
+get thread-\/local key value 
+
+\hypertarget{sphinxstd_8cpp_a45259183fe24f3bf818b4cceac92be73}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-Init@{sph\-Thread\-Init}}
+\index{sph\-Thread\-Init@{sph\-Thread\-Init}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sph\-Thread\-Init (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Detached}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a45259183fe24f3bf818b4cceac92be73}
+
+
+my threading initialize routine 
+
+\hypertarget{sphinxstd_8cpp_a16e7b256c1d908a0a46643b19416eb8a}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-Join@{sph\-Thread\-Join}}
+\index{sph\-Thread\-Join@{sph\-Thread\-Join}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-Join}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Thread\-Join (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-\_\-t} $\ast$}]{p\-Thread}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a16e7b256c1d908a0a46643b19416eb8a}
+
+
+my join thread wrapper 
+
+\hypertarget{sphinxstd_8cpp_a5171a457237e55fc8e4fb6cd450e8497}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-Key\-Create@{sph\-Thread\-Key\-Create}}
+\index{sph\-Thread\-Key\-Create@{sph\-Thread\-Key\-Create}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-Key\-Create}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Thread\-Key\-Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-Key\-\_\-t} $\ast$}]{p\-Key}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a5171a457237e55fc8e4fb6cd450e8497}
+
+
+alloc thread-\/local key 
+
+\hypertarget{sphinxstd_8cpp_a2428df88751a24c24b222b5a8fd77b01}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-Key\-Delete@{sph\-Thread\-Key\-Delete}}
+\index{sph\-Thread\-Key\-Delete@{sph\-Thread\-Key\-Delete}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-Key\-Delete}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Thread\-Key\-Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-Key\-\_\-t}}]{t\-Key}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a2428df88751a24c24b222b5a8fd77b01}
+
+
+free thread-\/local key 
+
+\hypertarget{sphinxstd_8cpp_a38869c3116553d088036f3080bc77dfa}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-On\-Exit@{sph\-Thread\-On\-Exit}}
+\index{sph\-Thread\-On\-Exit@{sph\-Thread\-On\-Exit}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-On\-Exit}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Thread\-On\-Exit (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(void $\ast$)}]{fn\-Cleanup, }
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a38869c3116553d088036f3080bc77dfa}
+
+
+add (cleanup) callback to run on thread exit 
+
+\hypertarget{sphinxstd_8cpp_a3fc7a71ade633e4cc9111294e50200c8}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-Pool\-Create@{sph\-Thread\-Pool\-Create}}
+\index{sph\-Thread\-Pool\-Create@{sph\-Thread\-Pool\-Create}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-Pool\-Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Thd\-Pool}$\ast$ sph\-Thread\-Pool\-Create (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Threads, }
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a3fc7a71ade633e4cc9111294e50200c8}
+\hypertarget{sphinxstd_8cpp_a7e4d58f654e8a620790c96ff4dabd617}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-Proc\-Wrapper@{sph\-Thread\-Proc\-Wrapper}}
+\index{sph\-Thread\-Proc\-Wrapper@{sph\-Thread\-Proc\-Wrapper}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-Proc\-Wrapper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-P\-H\-\_\-\-T\-H\-D\-F\-U\-N\-C} sph\-Thread\-Proc\-Wrapper (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a7e4d58f654e8a620790c96ff4dabd617}
+\hypertarget{sphinxstd_8cpp_a108c8bfd8f6d89da0fa813866b51f6a5}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!sph\-Thread\-Set@{sph\-Thread\-Set}}
+\index{sph\-Thread\-Set@{sph\-Thread\-Set}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{sph\-Thread\-Set}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Thread\-Set (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-Key\-\_\-t}}]{t\-Key, }
+\item[{void $\ast$}]{p\-Value}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8cpp_a108c8bfd8f6d89da0fa813866b51f6a5}
+
+
+set thread-\/local key value 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxstd_8cpp_aac6fec9f6aaa6c6be9905a8741d9f88c}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!g\-\_\-d\-Rng\-State@{g\-\_\-d\-Rng\-State}}
+\index{g\-\_\-d\-Rng\-State@{g\-\_\-d\-Rng\-State}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{g\-\_\-d\-Rng\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} g\-\_\-d\-Rng\-State\mbox{[}5\mbox{]} = \{ 0x95d3474b\-U\-L, 0x035cf1f7\-U\-L, 0xfd43995f\-U\-L, 0x5dfc55fb\-U\-L, 0x334a9229\-U\-L \}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstd_8cpp_aac6fec9f6aaa6c6be9905a8741d9f88c}
+
+
+M\-W\-C (Multiply-\/\-With-\/\-Carry) R\-N\-G, invented by George Marsaglia. 
+
+\hypertarget{sphinxstd_8cpp_af76ebfe4e183caf58b899b71aa488ce3}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!g\-\_\-d\-Sphinx\-C\-R\-C32@{g\-\_\-d\-Sphinx\-C\-R\-C32}}
+\index{g\-\_\-d\-Sphinx\-C\-R\-C32@{g\-\_\-d\-Sphinx\-C\-R\-C32}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{g\-\_\-d\-Sphinx\-C\-R\-C32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} g\-\_\-d\-Sphinx\-C\-R\-C32\mbox{[}256\mbox{]}}}\label{sphinxstd_8cpp_af76ebfe4e183caf58b899b71aa488ce3}
+
+
+Sphinx C\-R\-C32 implementation. 
+
+\hypertarget{sphinxstd_8cpp_a23b6a1b11aea720b9dd6665a32de96be}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!g\-\_\-i\-Thread\-Stack\-Size@{g\-\_\-i\-Thread\-Stack\-Size}}
+\index{g\-\_\-i\-Thread\-Stack\-Size@{g\-\_\-i\-Thread\-Stack\-Size}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{g\-\_\-i\-Thread\-Stack\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Thread\-Stack\-Size = 1024$\ast$1024}}\label{sphinxstd_8cpp_a23b6a1b11aea720b9dd6665a32de96be}
+\hypertarget{sphinxstd_8cpp_ab5971cf6cf03c99d387be39d531cb1c9}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!g\-\_\-pf\-Die\-Callback@{g\-\_\-pf\-Die\-Callback}}
+\index{g\-\_\-pf\-Die\-Callback@{g\-\_\-pf\-Die\-Callback}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{g\-\_\-pf\-Die\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Die\-Callback\-\_\-t} g\-\_\-pf\-Die\-Callback = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstd_8cpp_ab5971cf6cf03c99d387be39d531cb1c9}
+\hypertarget{sphinxstd_8cpp_a011af9006057968b6cbca329ac44e728}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!g\-\_\-t\-My\-Thread\-Stack@{g\-\_\-t\-My\-Thread\-Stack}}
+\index{g\-\_\-t\-My\-Thread\-Stack@{g\-\_\-t\-My\-Thread\-Stack}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{g\-\_\-t\-My\-Thread\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Thread\-Key\-\_\-t} g\-\_\-t\-My\-Thread\-Stack\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstd_8cpp_a011af9006057968b6cbca329ac44e728}
+\hypertarget{sphinxstd_8cpp_a7ec3ba3d412d571a4ccd2f2ba197e511}{\index{sphinxstd.\-cpp@{sphinxstd.\-cpp}!g\-\_\-t\-Thread\-Cleanup\-Key@{g\-\_\-t\-Thread\-Cleanup\-Key}}
+\index{g\-\_\-t\-Thread\-Cleanup\-Key@{g\-\_\-t\-Thread\-Cleanup\-Key}!sphinxstd.cpp@{sphinxstd.\-cpp}}
+\subsubsection[{g\-\_\-t\-Thread\-Cleanup\-Key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Thread\-Key\-\_\-t} g\-\_\-t\-Thread\-Cleanup\-Key\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstd_8cpp_a7ec3ba3d412d571a4ccd2f2ba197e511}

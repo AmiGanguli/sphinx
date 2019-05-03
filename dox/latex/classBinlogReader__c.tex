@@ -1,0 +1,95 @@
+\hypertarget{classBinlogReader__c}{\section{Binlog\-Reader\-\_\-c Class Reference}
+\label{classBinlogReader__c}\index{Binlog\-Reader\-\_\-c@{Binlog\-Reader\-\_\-c}}
+}
+Inheritance diagram for Binlog\-Reader\-\_\-c\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classBinlogReader__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBinlogReader__c_aaffbc4889059a5f3d2725458cb424eef}{Binlog\-Reader\-\_\-c} ()
+\item 
+void \hyperlink{classBinlogReader__c_a95380dab34fe8b9d0bd7f9ca1b778cd8}{Reset\-Crc} ()
+\item 
+bool \hyperlink{classBinlogReader__c_a78ad9b6000521dc6fee44fa8e467f77d}{Check\-Crc} (const char $\ast$s\-Op, const char $\ast$s\-Index\-Name, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Tid, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Txn\-Pos)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classBinlogReader__c_a249edada0086024219024833dbd34fc0}{Update\-Cache} ()
+\item 
+void \hyperlink{classBinlogReader__c_aba5f9ac4503bceb949e0b508b0c05623}{Hash\-Collected} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classBinlogReader__c_a538ce6083d17c7c86374ac21cebaf3e8}{m\-\_\-u\-C\-R\-C}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classBinlogReader__c_ab3e18f5f5f9568cab6f04cf801b745f3}{m\-\_\-i\-Last\-Crc\-Pos}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBinlogReader__c_aaffbc4889059a5f3d2725458cb424eef}{\index{Binlog\-Reader\-\_\-c@{Binlog\-Reader\-\_\-c}!Binlog\-Reader\-\_\-c@{Binlog\-Reader\-\_\-c}}
+\index{Binlog\-Reader\-\_\-c@{Binlog\-Reader\-\_\-c}!BinlogReader_c@{Binlog\-Reader\-\_\-c}}
+\subsubsection[{Binlog\-Reader\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Binlog\-Reader\-\_\-c\-::\-Binlog\-Reader\-\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBinlogReader__c_aaffbc4889059a5f3d2725458cb424eef}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBinlogReader__c_a78ad9b6000521dc6fee44fa8e467f77d}{\index{Binlog\-Reader\-\_\-c@{Binlog\-Reader\-\_\-c}!Check\-Crc@{Check\-Crc}}
+\index{Check\-Crc@{Check\-Crc}!BinlogReader_c@{Binlog\-Reader\-\_\-c}}
+\subsubsection[{Check\-Crc}]{\setlength{\rightskip}{0pt plus 5cm}bool Binlog\-Reader\-\_\-c\-::\-Check\-Crc (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Op, }
+\item[{const char $\ast$}]{s\-Index\-Name, }
+\item[{{\bf int64\-\_\-t}}]{i\-Tid, }
+\item[{{\bf int64\-\_\-t}}]{i\-Txn\-Pos}
+\end{DoxyParamCaption}
+)}}\label{classBinlogReader__c_a78ad9b6000521dc6fee44fa8e467f77d}
+\hypertarget{classBinlogReader__c_aba5f9ac4503bceb949e0b508b0c05623}{\index{Binlog\-Reader\-\_\-c@{Binlog\-Reader\-\_\-c}!Hash\-Collected@{Hash\-Collected}}
+\index{Hash\-Collected@{Hash\-Collected}!BinlogReader_c@{Binlog\-Reader\-\_\-c}}
+\subsubsection[{Hash\-Collected}]{\setlength{\rightskip}{0pt plus 5cm}void Binlog\-Reader\-\_\-c\-::\-Hash\-Collected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classBinlogReader__c_aba5f9ac4503bceb949e0b508b0c05623}
+\hypertarget{classBinlogReader__c_a95380dab34fe8b9d0bd7f9ca1b778cd8}{\index{Binlog\-Reader\-\_\-c@{Binlog\-Reader\-\_\-c}!Reset\-Crc@{Reset\-Crc}}
+\index{Reset\-Crc@{Reset\-Crc}!BinlogReader_c@{Binlog\-Reader\-\_\-c}}
+\subsubsection[{Reset\-Crc}]{\setlength{\rightskip}{0pt plus 5cm}void Binlog\-Reader\-\_\-c\-::\-Reset\-Crc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBinlogReader__c_a95380dab34fe8b9d0bd7f9ca1b778cd8}
+\hypertarget{classBinlogReader__c_a249edada0086024219024833dbd34fc0}{\index{Binlog\-Reader\-\_\-c@{Binlog\-Reader\-\_\-c}!Update\-Cache@{Update\-Cache}}
+\index{Update\-Cache@{Update\-Cache}!BinlogReader_c@{Binlog\-Reader\-\_\-c}}
+\subsubsection[{Update\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}void Binlog\-Reader\-\_\-c\-::\-Update\-Cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classBinlogReader__c_a249edada0086024219024833dbd34fc0}
+
+
+Reimplemented from \hyperlink{classCSphReader_aa49bf9fe0713d71e1f989ee699247037}{C\-Sph\-Reader}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBinlogReader__c_ab3e18f5f5f9568cab6f04cf801b745f3}{\index{Binlog\-Reader\-\_\-c@{Binlog\-Reader\-\_\-c}!m\-\_\-i\-Last\-Crc\-Pos@{m\-\_\-i\-Last\-Crc\-Pos}}
+\index{m\-\_\-i\-Last\-Crc\-Pos@{m\-\_\-i\-Last\-Crc\-Pos}!BinlogReader_c@{Binlog\-Reader\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Last\-Crc\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Binlog\-Reader\-\_\-c\-::m\-\_\-i\-Last\-Crc\-Pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classBinlogReader__c_ab3e18f5f5f9568cab6f04cf801b745f3}
+\hypertarget{classBinlogReader__c_a538ce6083d17c7c86374ac21cebaf3e8}{\index{Binlog\-Reader\-\_\-c@{Binlog\-Reader\-\_\-c}!m\-\_\-u\-C\-R\-C@{m\-\_\-u\-C\-R\-C}}
+\index{m\-\_\-u\-C\-R\-C@{m\-\_\-u\-C\-R\-C}!BinlogReader_c@{Binlog\-Reader\-\_\-c}}
+\subsubsection[{m\-\_\-u\-C\-R\-C}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} Binlog\-Reader\-\_\-c\-::m\-\_\-u\-C\-R\-C\hspace{0.3cm}{\ttfamily [private]}}}\label{classBinlogReader__c_a538ce6083d17c7c86374ac21cebaf3e8}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxrt_8cpp}{sphinxrt.\-cpp}\end{DoxyCompactItemize}

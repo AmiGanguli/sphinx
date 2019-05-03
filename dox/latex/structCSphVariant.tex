@@ -1,0 +1,193 @@
+\hypertarget{structCSphVariant}{\section{C\-Sph\-Variant Struct Reference}
+\label{structCSphVariant}\index{C\-Sph\-Variant@{C\-Sph\-Variant}}
+}
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphVariant_add1fa7895b6eaa9c69a7aac34c620eae}{C\-Sph\-Variant} ()
+\begin{DoxyCompactList}\small\item\em default ctor \end{DoxyCompactList}\item 
+\hyperlink{structCSphVariant_aa66fbb7f61e6c83786b658d76f2c41f6}{C\-Sph\-Variant} (const char $\ast$s\-String, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Tag)
+\begin{DoxyCompactList}\small\item\em ctor from C string \end{DoxyCompactList}\item 
+\hyperlink{structCSphVariant_a7812b2079266f226d90eb4d969b0c6ed}{C\-Sph\-Variant} (const \hyperlink{structCSphVariant}{C\-Sph\-Variant} \&rhs)
+\begin{DoxyCompactList}\small\item\em copy ctor \end{DoxyCompactList}\item 
+\hyperlink{structCSphVariant_abc51cf9304d5cd4bdd165c675b95fb10}{$\sim$\-C\-Sph\-Variant} ()
+\item 
+const char $\ast$ \hyperlink{structCSphVariant_a367fb885c87799b27964d8d354e9a31f}{cstr} () const 
+\item 
+const \hyperlink{structCSphString}{C\-Sph\-String} \& \hyperlink{structCSphVariant_ab46f8245c187ccc12dae8f1b11a3c430}{strval} () const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphVariant_a7750e429e892dbaab5abbc67033fd9d5}{intval} () const 
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structCSphVariant_aa699769137810248a9b17a6b407928c6}{int64val} () const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{structCSphVariant_a9dd347d014db39b583ea270b57d1e9ae}{floatval} () const 
+\item 
+const \hyperlink{structCSphVariant}{C\-Sph\-Variant} \& \hyperlink{structCSphVariant_ac546c5d272c1c63fd28520482b0c0ad3}{operator=} (const \hyperlink{structCSphVariant}{C\-Sph\-Variant} \&rhs)
+\begin{DoxyCompactList}\small\item\em default copy operator \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphVariant_a3ffa97c18ac2f4b068fa8bcc9103a261}{operator==} (const char $\ast$s) const 
+\item 
+bool \hyperlink{structCSphVariant_a1c79d73235f1ca9d36e56b8d951dd13a}{operator!=} (const char $\ast$s) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphVariant}{C\-Sph\-Variant} $\ast$ \hyperlink{structCSphVariant_a01737970e93eded1ef575b6b94264df2}{m\-\_\-p\-Next}
+\item 
+bool \hyperlink{structCSphVariant_af8110026039321dacc1dcab6ccf9d1cb}{m\-\_\-b\-Tag}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphVariant_a971357e0cbfc577bb74b162cd32e5b50}{m\-\_\-i\-Tag}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphVariant_af9974f67d953c0257675234c22608a29}{m\-\_\-s\-Value}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphVariant_a072659b1b0b948e83f981b0fd1abf7da}{m\-\_\-i\-Value}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structCSphVariant_a6f7e8f7afd6d3464c82bed27c83b68c8}{m\-\_\-i64\-Value}
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{structCSphVariant_a7a8ccf942ef67957310fc73279a527f5}{m\-\_\-f\-Value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+immutable string/int/float variant list proxy used in config parsing 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphVariant_add1fa7895b6eaa9c69a7aac34c620eae}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!C\-Sph\-Variant@{C\-Sph\-Variant}}
+\index{C\-Sph\-Variant@{C\-Sph\-Variant}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{C\-Sph\-Variant}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Variant\-::\-C\-Sph\-Variant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_add1fa7895b6eaa9c69a7aac34c620eae}
+
+
+default ctor 
+
+\hypertarget{structCSphVariant_aa66fbb7f61e6c83786b658d76f2c41f6}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!C\-Sph\-Variant@{C\-Sph\-Variant}}
+\index{C\-Sph\-Variant@{C\-Sph\-Variant}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{C\-Sph\-Variant}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Variant\-::\-C\-Sph\-Variant (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-String, }
+\item[{{\bf int}}]{i\-Tag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_aa66fbb7f61e6c83786b658d76f2c41f6}
+
+
+ctor from C string 
+
+\hypertarget{structCSphVariant_a7812b2079266f226d90eb4d969b0c6ed}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!C\-Sph\-Variant@{C\-Sph\-Variant}}
+\index{C\-Sph\-Variant@{C\-Sph\-Variant}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{C\-Sph\-Variant}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Variant\-::\-C\-Sph\-Variant (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Variant} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_a7812b2079266f226d90eb4d969b0c6ed}
+
+
+copy ctor 
+
+\hypertarget{structCSphVariant_abc51cf9304d5cd4bdd165c675b95fb10}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!$\sim$\-C\-Sph\-Variant@{$\sim$\-C\-Sph\-Variant}}
+\index{$\sim$\-C\-Sph\-Variant@{$\sim$\-C\-Sph\-Variant}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{$\sim$\-C\-Sph\-Variant}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Variant\-::$\sim$\-C\-Sph\-Variant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_abc51cf9304d5cd4bdd165c675b95fb10}
+default dtor W\-A\-R\-N\-I\-N\-G\-: automatically frees linked items! 
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphVariant_a367fb885c87799b27964d8d354e9a31f}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!cstr@{cstr}}
+\index{cstr@{cstr}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{cstr}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ C\-Sph\-Variant\-::cstr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_a367fb885c87799b27964d8d354e9a31f}
+\hypertarget{structCSphVariant_a9dd347d014db39b583ea270b57d1e9ae}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!floatval@{floatval}}
+\index{floatval@{floatval}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{floatval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} C\-Sph\-Variant\-::floatval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_a9dd347d014db39b583ea270b57d1e9ae}
+\hypertarget{structCSphVariant_aa699769137810248a9b17a6b407928c6}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!int64val@{int64val}}
+\index{int64val@{int64val}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{int64val}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Variant\-::int64val (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_aa699769137810248a9b17a6b407928c6}
+\hypertarget{structCSphVariant_a7750e429e892dbaab5abbc67033fd9d5}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!intval@{intval}}
+\index{intval@{intval}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{intval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Variant\-::intval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_a7750e429e892dbaab5abbc67033fd9d5}
+\hypertarget{structCSphVariant_a1c79d73235f1ca9d36e56b8d951dd13a}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Variant\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_a1c79d73235f1ca9d36e56b8d951dd13a}
+\hypertarget{structCSphVariant_ac546c5d272c1c63fd28520482b0c0ad3}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Variant}\& C\-Sph\-Variant\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Variant} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_ac546c5d272c1c63fd28520482b0c0ad3}
+
+
+default copy operator 
+
+\hypertarget{structCSphVariant_a3ffa97c18ac2f4b068fa8bcc9103a261}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!operator==@{operator==}}
+\index{operator==@{operator==}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Variant\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_a3ffa97c18ac2f4b068fa8bcc9103a261}
+\hypertarget{structCSphVariant_ab46f8245c187ccc12dae8f1b11a3c430}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!strval@{strval}}
+\index{strval@{strval}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{strval}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-String}\& C\-Sph\-Variant\-::strval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphVariant_ab46f8245c187ccc12dae8f1b11a3c430}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphVariant_af8110026039321dacc1dcab6ccf9d1cb}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!m\-\_\-b\-Tag@{m\-\_\-b\-Tag}}
+\index{m\-\_\-b\-Tag@{m\-\_\-b\-Tag}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{m\-\_\-b\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Variant\-::m\-\_\-b\-Tag}}\label{structCSphVariant_af8110026039321dacc1dcab6ccf9d1cb}
+\hypertarget{structCSphVariant_a7a8ccf942ef67957310fc73279a527f5}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!m\-\_\-f\-Value@{m\-\_\-f\-Value}}
+\index{m\-\_\-f\-Value@{m\-\_\-f\-Value}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{m\-\_\-f\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} C\-Sph\-Variant\-::m\-\_\-f\-Value\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphVariant_a7a8ccf942ef67957310fc73279a527f5}
+\hypertarget{structCSphVariant_a6f7e8f7afd6d3464c82bed27c83b68c8}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!m\-\_\-i64\-Value@{m\-\_\-i64\-Value}}
+\index{m\-\_\-i64\-Value@{m\-\_\-i64\-Value}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{m\-\_\-i64\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Variant\-::m\-\_\-i64\-Value\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphVariant_a6f7e8f7afd6d3464c82bed27c83b68c8}
+\hypertarget{structCSphVariant_a971357e0cbfc577bb74b162cd32e5b50}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!m\-\_\-i\-Tag@{m\-\_\-i\-Tag}}
+\index{m\-\_\-i\-Tag@{m\-\_\-i\-Tag}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{m\-\_\-i\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Variant\-::m\-\_\-i\-Tag}}\label{structCSphVariant_a971357e0cbfc577bb74b162cd32e5b50}
+\hypertarget{structCSphVariant_a072659b1b0b948e83f981b0fd1abf7da}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!m\-\_\-i\-Value@{m\-\_\-i\-Value}}
+\index{m\-\_\-i\-Value@{m\-\_\-i\-Value}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{m\-\_\-i\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Variant\-::m\-\_\-i\-Value\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphVariant_a072659b1b0b948e83f981b0fd1abf7da}
+\hypertarget{structCSphVariant_a01737970e93eded1ef575b6b94264df2}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!m\-\_\-p\-Next@{m\-\_\-p\-Next}}
+\index{m\-\_\-p\-Next@{m\-\_\-p\-Next}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{m\-\_\-p\-Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Variant}$\ast$ C\-Sph\-Variant\-::m\-\_\-p\-Next}}\label{structCSphVariant_a01737970e93eded1ef575b6b94264df2}
+\hypertarget{structCSphVariant_af9974f67d953c0257675234c22608a29}{\index{C\-Sph\-Variant@{C\-Sph\-Variant}!m\-\_\-s\-Value@{m\-\_\-s\-Value}}
+\index{m\-\_\-s\-Value@{m\-\_\-s\-Value}!CSphVariant@{C\-Sph\-Variant}}
+\subsubsection[{m\-\_\-s\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Variant\-::m\-\_\-s\-Value\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphVariant_af9974f67d953c0257675234c22608a29}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

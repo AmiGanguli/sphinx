@@ -1,0 +1,74 @@
+\hypertarget{structExtHit__t}{\section{Ext\-Hit\-\_\-t Struct Reference}
+\label{structExtHit__t}\index{Ext\-Hit\-\_\-t@{Ext\-Hit\-\_\-t}}
+}
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{structExtHit__t_aeeb4c8b597e1e30fd21071cdf705f2e0}{m\-\_\-u\-Docid}
+\item 
+\hyperlink{sphinx_8h_af1385e83d53e0648b15eae6d8f101847}{Hitpos\-\_\-t} \hyperlink{structExtHit__t_a41d3b564c98eb634ba5e9023c0377d6e}{m\-\_\-u\-Hitpos}
+\item 
+\hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} \hyperlink{structExtHit__t_aed20dada6b9dde4ddb6f19cacd771986}{m\-\_\-u\-Querypos}
+\item 
+\hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} \hyperlink{structExtHit__t_a2fbd01527bb12881c9f8e1125a8e1047}{m\-\_\-u\-Nodepos}
+\item 
+\hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} \hyperlink{structExtHit__t_a5e23d4898a6a0ac97c8047a4425f9bc4}{m\-\_\-u\-Spanlen}
+\item 
+\hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} \hyperlink{structExtHit__t_ac47022c7c08d0bee709e7a4974753f95}{m\-\_\-u\-Matchlen}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structExtHit__t_a10adc697543b6239dab714a670a2cf39}{m\-\_\-u\-Weight}
+\begin{DoxyCompactList}\small\item\em 1 for individual keywords, L\-C\-S value for folded phrase/proximity/near hits \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structExtHit__t_a44641c915e72ca70cf70d46c99f576ed}{m\-\_\-u\-Qpos\-Mask}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+hit in the stream combines posting info (docid and hitpos) with a few more matching/ranking bits
+
+note that while in simple cases every hit would just represent a single keyword, this is N\-O\-T always the case; phrase, proximity, and N\-E\-A\-R operators (that already analyze keywords positions while matching the document) can emit a single folded hit representing the entire multi-\/keyword match, so that the ranker could avoid double work processing individual hits again. in such cases, m\-\_\-u\-Weight, m\-\_\-u\-Spanlen, and m\-\_\-u\-Matchlen will differ from the \char`\"{}usual\char`\"{} value of 1.
+
+thus, in folded hits\-:
+\begin{DoxyItemize}
+\item m\-\_\-u\-Weight is the match L\-C\-S value in all cases (phrase, proximity, near).
+\item m\-\_\-u\-Spanlen is the match span length, ie. a distance from the first to the last matching keyword. for phrase operators it natually equals m\-\_\-u\-Weight, for other operators it might be very different.
+\item m\-\_\-u\-Matchlen is a piece of voodoo magic that only the near operator seems to use. 
+\end{DoxyItemize}
+
+\subsection{Member Data Documentation}
+\hypertarget{structExtHit__t_aeeb4c8b597e1e30fd21071cdf705f2e0}{\index{Ext\-Hit\-\_\-t@{Ext\-Hit\-\_\-t}!m\-\_\-u\-Docid@{m\-\_\-u\-Docid}}
+\index{m\-\_\-u\-Docid@{m\-\_\-u\-Docid}!ExtHit_t@{Ext\-Hit\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} Ext\-Hit\-\_\-t\-::m\-\_\-u\-Docid}}\label{structExtHit__t_aeeb4c8b597e1e30fd21071cdf705f2e0}
+\hypertarget{structExtHit__t_a41d3b564c98eb634ba5e9023c0377d6e}{\index{Ext\-Hit\-\_\-t@{Ext\-Hit\-\_\-t}!m\-\_\-u\-Hitpos@{m\-\_\-u\-Hitpos}}
+\index{m\-\_\-u\-Hitpos@{m\-\_\-u\-Hitpos}!ExtHit_t@{Ext\-Hit\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Hitpos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hitpos\-\_\-t} Ext\-Hit\-\_\-t\-::m\-\_\-u\-Hitpos}}\label{structExtHit__t_a41d3b564c98eb634ba5e9023c0377d6e}
+\hypertarget{structExtHit__t_ac47022c7c08d0bee709e7a4974753f95}{\index{Ext\-Hit\-\_\-t@{Ext\-Hit\-\_\-t}!m\-\_\-u\-Matchlen@{m\-\_\-u\-Matchlen}}
+\index{m\-\_\-u\-Matchlen@{m\-\_\-u\-Matchlen}!ExtHit_t@{Ext\-Hit\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Matchlen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-O\-R\-D} Ext\-Hit\-\_\-t\-::m\-\_\-u\-Matchlen}}\label{structExtHit__t_ac47022c7c08d0bee709e7a4974753f95}
+\hypertarget{structExtHit__t_a2fbd01527bb12881c9f8e1125a8e1047}{\index{Ext\-Hit\-\_\-t@{Ext\-Hit\-\_\-t}!m\-\_\-u\-Nodepos@{m\-\_\-u\-Nodepos}}
+\index{m\-\_\-u\-Nodepos@{m\-\_\-u\-Nodepos}!ExtHit_t@{Ext\-Hit\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Nodepos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-O\-R\-D} Ext\-Hit\-\_\-t\-::m\-\_\-u\-Nodepos}}\label{structExtHit__t_a2fbd01527bb12881c9f8e1125a8e1047}
+\hypertarget{structExtHit__t_a44641c915e72ca70cf70d46c99f576ed}{\index{Ext\-Hit\-\_\-t@{Ext\-Hit\-\_\-t}!m\-\_\-u\-Qpos\-Mask@{m\-\_\-u\-Qpos\-Mask}}
+\index{m\-\_\-u\-Qpos\-Mask@{m\-\_\-u\-Qpos\-Mask}!ExtHit_t@{Ext\-Hit\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Qpos\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} Ext\-Hit\-\_\-t\-::m\-\_\-u\-Qpos\-Mask}}\label{structExtHit__t_a44641c915e72ca70cf70d46c99f576ed}
+\hypertarget{structExtHit__t_aed20dada6b9dde4ddb6f19cacd771986}{\index{Ext\-Hit\-\_\-t@{Ext\-Hit\-\_\-t}!m\-\_\-u\-Querypos@{m\-\_\-u\-Querypos}}
+\index{m\-\_\-u\-Querypos@{m\-\_\-u\-Querypos}!ExtHit_t@{Ext\-Hit\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Querypos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-O\-R\-D} Ext\-Hit\-\_\-t\-::m\-\_\-u\-Querypos}}\label{structExtHit__t_aed20dada6b9dde4ddb6f19cacd771986}
+\hypertarget{structExtHit__t_a5e23d4898a6a0ac97c8047a4425f9bc4}{\index{Ext\-Hit\-\_\-t@{Ext\-Hit\-\_\-t}!m\-\_\-u\-Spanlen@{m\-\_\-u\-Spanlen}}
+\index{m\-\_\-u\-Spanlen@{m\-\_\-u\-Spanlen}!ExtHit_t@{Ext\-Hit\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Spanlen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-O\-R\-D} Ext\-Hit\-\_\-t\-::m\-\_\-u\-Spanlen}}\label{structExtHit__t_a5e23d4898a6a0ac97c8047a4425f9bc4}
+\hypertarget{structExtHit__t_a10adc697543b6239dab714a670a2cf39}{\index{Ext\-Hit\-\_\-t@{Ext\-Hit\-\_\-t}!m\-\_\-u\-Weight@{m\-\_\-u\-Weight}}
+\index{m\-\_\-u\-Weight@{m\-\_\-u\-Weight}!ExtHit_t@{Ext\-Hit\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} Ext\-Hit\-\_\-t\-::m\-\_\-u\-Weight}}\label{structExtHit__t_a10adc697543b6239dab714a670a2cf39}
+
+
+1 for individual keywords, L\-C\-S value for folded phrase/proximity/near hits 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\end{DoxyCompactItemize}

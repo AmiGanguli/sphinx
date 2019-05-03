@@ -1,0 +1,1248 @@
+\hypertarget{classCSphIndex__VLN}{\section{C\-Sph\-Index\-\_\-\-V\-L\-N Class Reference}
+\label{classCSphIndex__VLN}\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+}
+
+
+this is my actual V\-L\-N-\/compressed phrase index implementation  
+
+
+Inheritance diagram for C\-Sph\-Index\-\_\-\-V\-L\-N\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphIndex__VLN}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphIndex__VLN_a27abdf068526c879ff208daebfea89bc}{C\-Sph\-Index\-\_\-\-V\-L\-N} (const char $\ast$s\-Index\-Name, const char $\ast$s\-Filename)
+\item 
+\hyperlink{classCSphIndex__VLN_ad5c628b0fb3ea8c20a02ee29d36b5cb2}{$\sim$\-C\-Sph\-Index\-\_\-\-V\-L\-N} ()
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_ae7e6e2eba64cd58df4d54f858ffe43d9}{Build} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphSource}{C\-Sph\-Source} $\ast$ $>$ \&d\-Sources, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Memory\-Limit, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Write\-Buffer)
+\begin{DoxyCompactList}\small\item\em build index by indexing given sources \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphIndex__VLN_a25ecbda2ffee84a157513ea35143b652}{Set\-Progress\-Callback} (\hyperlink{structCSphIndexProgress_ae4d818fe1ea74a250088fcc7b77fdf63}{C\-Sph\-Index\-Progress\-::\-Indexing\-Progress\-\_\-fn} pfn\-Progress)
+\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a287c106cc1194869fcdcdd6b562bd011}{Load\-Header} (const char $\ast$s\-Header\-Name, bool b\-Strip\-Path, \hyperlink{structCSphEmbeddedFiles}{C\-Sph\-Embedded\-Files} \&t\-Embedded\-Files, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning)
+\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a750bd222010dd13de24ca8df55fa8587}{Write\-Header} (const \hyperlink{structBuildHeader__t}{Build\-Header\-\_\-t} \&t\-Build\-Header, \hyperlink{classCSphWriter}{C\-Sph\-Writer} \&fd\-Info) const 
+\item 
+virtual void \hyperlink{classCSphIndex__VLN_ae8087604bfbd59de777c19a2385562d4}{Debug\-Dump\-Header} (F\-I\-L\-E $\ast$fp, const char $\ast$s\-Header\-Name, bool b\-Config)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphIndex__VLN_a5d0c3e9f71f5f562d09a8215ff798991}{Debug\-Dump\-Docids} (F\-I\-L\-E $\ast$fp)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphIndex__VLN_aecfaf0915c7ba4e5688a6e64e2842547}{Debug\-Dump\-Hitlist} (F\-I\-L\-E $\ast$fp, const char $\ast$s\-Keyword, bool b\-I\-D)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphIndex__VLN_a34aa87a7a718c2ba99252ef0987051f5}{Debug\-Dump\-Dict} (F\-I\-L\-E $\ast$fp)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphIndex__VLN_a34ebf8bf93a036d553a4367ed9cbbe37}{Set\-Debug\-Check} ()
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_ad36fc39ad4872661b483674862157722}{Debug\-Check} (F\-I\-L\-E $\ast$fp)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Qword $>$ }\\void \hyperlink{classCSphIndex__VLN_afbde34e20a9723c42f35389216913486}{Dump\-Hitlist} (F\-I\-L\-E $\ast$fp, const char $\ast$s\-Keyword, bool b\-I\-D)
+\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a705c4100e5340e1bd6a7eec6e6275964}{Prealloc} (bool b\-Strip\-Path)
+\begin{DoxyCompactList}\small\item\em check all data files, preload schema, and preallocate enough R\-A\-M to load memory-\/cached data \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphIndex__VLN_a37b03701193ed45aaeef50cd420a7cd3}{Dealloc} ()
+\begin{DoxyCompactList}\small\item\em deallocate all previously preallocated shared data \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphIndex__VLN_a8c884a54057466eca5993ab48015513e}{Preread} ()
+\begin{DoxyCompactList}\small\item\em precache everything which needs to be precached \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphIndex__VLN_a0462c2281e279ee294fff7235bb18082}{Set\-Memory\-Settings} (bool b\-Mlock, bool b\-Ondisk\-Attrs, bool b\-Ondisk\-Pool)
+\item 
+virtual void \hyperlink{classCSphIndex__VLN_a83345cc90af465c5fd14c0b6fb2e6e79}{Set\-Base} (const char $\ast$s\-New\-Base)
+\begin{DoxyCompactList}\small\item\em set new index base path \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a1c3c39c6636241309471d3c4e30916c0}{Rename} (const char $\ast$s\-New\-Base)
+\begin{DoxyCompactList}\small\item\em set new index base path, and physically rename index files too \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a48705bf60dc7b395e6e05758ae400105}{Lock} ()
+\begin{DoxyCompactList}\small\item\em obtain exclusive lock on this index \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphIndex__VLN_a0abb4876490ea0ce0a5838c7f6b821f0}{Unlock} ()
+\begin{DoxyCompactList}\small\item\em dismiss exclusive lock and unlink lock file \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphIndex__VLN_a71cf032470305674c9e433246a7f45e0}{Post\-Setup} ()
+\begin{DoxyCompactList}\small\item\em called when index is loaded and prepared to work \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a0f92cfbe694c5f18a60a620986e0e7e5}{Multi\-Query} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$p\-Result, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Sorters, \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$$\ast$pp\-Sorters, const \hyperlink{structCSphMultiQueryArgs}{C\-Sph\-Multi\-Query\-Args} \&t\-Args) const 
+\begin{DoxyCompactList}\small\item\em one regular query vs many sorters \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphIndex__VLN_ac7a479cbb120f5e26eda9524b76fe1c1}{Multi\-Query\-Ex} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Queries, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Queries, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$$\ast$pp\-Results, \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$$\ast$pp\-Sorters, const \hyperlink{structCSphMultiQueryArgs}{C\-Sph\-Multi\-Query\-Args} \&t\-Args) const 
+\item 
+virtual bool \hyperlink{classCSphIndex__VLN_ace717440ec35b62b73f8e5fac5bee4b5}{Get\-Keywords} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphKeywordInfo}{C\-Sph\-Keyword\-Info} $>$ \&d\-Keywords, const char $\ast$sz\-Query, const \hyperlink{structGetKeywordsSettings__t}{Get\-Keywords\-Settings\-\_\-t} \&t\-Settings, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$p\-Error) const 
+\item 
+{\footnotesize template$<$class Qword $>$ }\\bool \hyperlink{classCSphIndex__VLN_a92e455134b4484ce071906d7b3c4148f}{Do\-Get\-Keywords} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphKeywordInfo}{C\-Sph\-Keyword\-Info} $>$ \&d\-Keywords, const char $\ast$sz\-Query, const \hyperlink{structGetKeywordsSettings__t}{Get\-Keywords\-Settings\-\_\-t} \&t\-Settings, bool b\-Fill\-Only, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$p\-Error) const 
+\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a6f6cfe56247312a406f5679933adbf91}{Fill\-Keywords} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphKeywordInfo}{C\-Sph\-Keyword\-Info} $>$ \&d\-Keywords) const 
+\item 
+virtual void \hyperlink{classCSphIndex__VLN_ae1371f4eb4f003e09441722ef1ad3119}{Get\-Suggest} (const \hyperlink{structSuggestArgs__t}{Suggest\-Args\-\_\-t} \&t\-Args, \hyperlink{structSuggestResult__t}{Suggest\-Result\-\_\-t} \&t\-Res) const 
+\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a1552caaff98b5dcc25838c2d0143d4b9}{Merge} (\hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$p\-Source, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} $>$ \&d\-Filters, bool b\-Merge\-Kill\-Lists)
+\begin{DoxyCompactList}\small\item\em build index by mering current index with given index \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_aceb20a734f6620e9fe66d602ce9ab3d6}{Update\-Attributes} (const \hyperlink{structCSphAttrUpdate}{C\-Sph\-Attr\-Update} \&t\-Upd, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning)
+\item 
+virtual bool \hyperlink{classCSphIndex__VLN_ab722e3bdffbc6039750548f9127c04ab}{Save\-Attributes} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error) const 
+\item 
+virtual \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphIndex__VLN_a84149ceea0a524ec77a5cef4c960b051}{Get\-Attribute\-Status} () const 
+\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a14eaf54e3b7c6eace81368ec48873e69}{Add\-Remove\-Attribute} (bool b\-Add\-Attr, const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Attr\-Name, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-Attr\-Type, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+bool \hyperlink{classCSphIndex__VLN_a4c016ab2c1733e77dd6129e1dc6eecc6}{Early\-Reject} (\hyperlink{classCSphQueryContext}{C\-Sph\-Query\-Context} $\ast$p\-Ctx, \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\item 
+virtual void \hyperlink{classCSphIndex__VLN_a39ab6863792cfd78ddca77dab87f44de}{Set\-Keep\-Attrs} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Keep\-Attrs, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Attrs)
+\item 
+virtual \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $\ast$ \hyperlink{classCSphIndex__VLN_a7ee035c8472da9e95145d54327a3f14d}{Get\-Kill\-List} () const 
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_ab3aa77139f6f4a0b8080253d234dc3d5}{Get\-Kill\-List\-Size} () const 
+\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a873968728c5c0c745e4b96bea467a224}{Has\-Docid} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Docid) const 
+\item 
+virtual const \hyperlink{structCSphSourceStats}{C\-Sph\-Source\-Stats} \& \hyperlink{classCSphIndex__VLN_a9677fb0ba974b220f9c4c6271e816309}{Get\-Stats} () const 
+\begin{DoxyCompactList}\small\item\em return index document, bytes totals (F\-I\-X\-M\-E? remove this in favor of \hyperlink{classCSphIndex__VLN_a5f54630ef391dd86dd9819002bec864a}{Get\-Status()} maybe?) \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $\ast$ \hyperlink{classCSphIndex__VLN_a4f19488eac8c285480bfd3fefc8a0904}{Get\-Field\-Lens} () const 
+\item 
+virtual void \hyperlink{classCSphIndex__VLN_a5f54630ef391dd86dd9819002bec864a}{Get\-Status} (\hyperlink{structCSphIndexStatus}{C\-Sph\-Index\-Status} $\ast$) const 
+\begin{DoxyCompactList}\small\item\em return additional index info \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a604c4defa61d730b0ff576c7dd4f80fb}{Build\-Doc\-List} (\hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} $\ast$$\ast$pp\-Doc\-List, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $\ast$p\-Count, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$p\-Error) const 
+\begin{DoxyCompactList}\small\item\em internal make document id list from external docinfo, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphIndex__VLN_a87ad4387690b5f1b80fce0701c073a46}{Replace\-Kill\-List} (const \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $\ast$p\-Killist, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\begin{DoxyCompactList}\small\item\em internal replace kill-\/list and rewrite spk file, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Q\-W\-O\-R\-D\-D\-S\-T , class Q\-W\-O\-R\-D\-S\-R\-C $>$ }\\static bool \hyperlink{classCSphIndex__VLN_a8ceb4d3ddede6869549bde0ad4883ab4}{Merge\-Words} (const \hyperlink{classCSphIndex__VLN}{C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$p\-Dst\-Index, const \hyperlink{classCSphIndex__VLN}{C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$p\-Src\-Index, const \hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$p\-Filter, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ \&d\-Kill\-List, \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Min\-I\-D, \hyperlink{classCSphHitBuilder}{C\-Sph\-Hit\-Builder} $\ast$p\-Hit\-Builder, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{structCSphSourceStats}{C\-Sph\-Source\-Stats} \&t\-Stat, \hyperlink{structCSphIndexProgress}{C\-Sph\-Index\-Progress} \&t\-Progress, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle, volatile bool $\ast$p\-Global\-Stop, volatile bool $\ast$p\-Local\-Stop)
+\item 
+static bool \hyperlink{classCSphIndex__VLN_ade93dc6220b418e1c93eee78b5e5b4df}{Do\-Merge} (const \hyperlink{classCSphIndex__VLN}{C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$p\-Dst\-Index, const \hyperlink{classCSphIndex__VLN}{C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$p\-Src\-Index, bool b\-Merge\-Kill\-Lists, \hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$p\-Filter, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ \&d\-Kill\-List, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{structCSphIndexProgress}{C\-Sph\-Index\-Progress} \&t\-Progress, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle, volatile bool $\ast$p\-Global\-Stop, volatile bool $\ast$p\-Local\-Stop)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCSphIndex__VLN_a03a02f41d76a364fbb1404fd8c692e31}{Load\-Hitless\-Words} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} $>$ \&d\-Hitless\-Words)
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphIndex__VLN_a05e719393720661db5f450c7abb54ab4}{Get\-Index\-File\-Name} (const char $\ast$s\-Ext) const 
+\item 
+bool \hyperlink{classCSphIndex__VLN_af4e39d88e985886c09c5d466258cab4e}{Parsed\-Multi\-Query} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$p\-Result, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Sorters, \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$$\ast$pp\-Sorters, const \hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} \&t\-X\-Q, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, const \hyperlink{structCSphMultiQueryArgs}{C\-Sph\-Multi\-Query\-Args} \&t\-Args, \hyperlink{classCSphQueryNodeCache}{C\-Sph\-Query\-Node\-Cache} $\ast$p\-Node\-Cache, const \hyperlink{structSphWordStatChecker__t}{Sph\-Word\-Stat\-Checker\-\_\-t} \&t\-Stat\-Diff) const 
+\item 
+bool \hyperlink{classCSphIndex__VLN_a95cc31d20cf4f59de5b2410a76980474}{Multi\-Scan} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$p\-Result, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Sorters, \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$$\ast$pp\-Sorters, const \hyperlink{structCSphMultiQueryArgs}{C\-Sph\-Multi\-Query\-Args} \&t\-Args) const 
+\item 
+void \hyperlink{classCSphIndex__VLN_af64c320922dc7d5d8932abd32b173c55}{Match\-Extended} (\hyperlink{classCSphQueryContext}{C\-Sph\-Query\-Context} $\ast$p\-Ctx, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Sorters, \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$$\ast$pp\-Sorters, \hyperlink{classISphRanker}{I\-Sph\-Ranker} $\ast$p\-Ranker, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Tag, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index\-Weight) const 
+\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$ \hyperlink{classCSphIndex__VLN_a4dd07ae9d4a91f59d766a1b8f8279b77}{Find\-Docinfo} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Doc\-I\-D) const 
+\item 
+void \hyperlink{classCSphIndex__VLN_adf69ced5c19008494619848cbec229a8}{Copy\-Docinfo} (const \hyperlink{classCSphQueryContext}{C\-Sph\-Query\-Context} $\ast$p\-Ctx, \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Found) const 
+\item 
+bool \hyperlink{classCSphIndex__VLN_a5e78d9f95c3104bb5747bdf8404acb7b}{Build\-M\-V\-A} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphSource}{C\-Sph\-Source} $\ast$ $>$ \&d\-Sources, \hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{structCSphWordHit}{C\-Sph\-Word\-Hit} $>$ \&d\-Hits, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Arena\-Size, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Field\-F\-D, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} n\-Field\-M\-V\-As, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Field\-M\-V\-A\-In\-Pool, \hyperlink{classCSphIndex__VLN}{C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$p\-Prev\-Index, const \hyperlink{classCSphBitvec}{C\-Sph\-Bitvec} $\ast$p\-Prev\-Mva)
+\item 
+bool \hyperlink{classCSphIndex__VLN_a6df262be60faa7b3b548c5e7b92c23b3}{Is\-Star\-Dict} () const 
+\item 
+\hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$ \hyperlink{classCSphIndex__VLN_ae098d5fc2f05ac37e8f099056370022b}{Setup\-Star\-Dict} (\hyperlink{classCSphScopedPtr}{C\-Sph\-Scoped\-Ptr}$<$ \hyperlink{classCSphDict}{C\-Sph\-Dict} $>$ \&t\-Container, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Prev\-Dict) const 
+\item 
+\hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$ \hyperlink{classCSphIndex__VLN_a9cf2359824cbffd58ea5febaafa127f1}{Setup\-Exact\-Dict} (\hyperlink{classCSphScopedPtr}{C\-Sph\-Scoped\-Ptr}$<$ \hyperlink{classCSphDict}{C\-Sph\-Dict} $>$ \&t\-Container, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Prev\-Dict) const 
+\item 
+bool \hyperlink{classCSphIndex__VLN_a6e09a4dd8babed1c75be5e5fd913d0e2}{Relocate\-Block} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-File, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Buffer, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Relocation\-Size, \hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} $\ast$p\-File\-Size, \hyperlink{structCSphBin}{C\-Sph\-Bin} $\ast$p\-Min\-Bin, \hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} $\ast$p\-Shared\-Offset)
+\item 
+bool \hyperlink{classCSphIndex__VLN_a5f9afecc7dd20ff9d5958a8f956b0c25}{Precompute\-Min\-Max} ()
+\item 
+bool \hyperlink{classCSphIndex__VLN_ac8d89100ee1c93442bd0a0b05d39de4d}{Load\-Persistent\-M\-V\-A} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+bool \hyperlink{classCSphIndex__VLN_a487d076c6f169b83521d896bb980ab88}{Juggle\-File} (const char $\ast$sz\-Ext, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Need\-Origin=true) const 
+\item 
+\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ \hyperlink{classCSphIndex__VLN_afaf8aeee8e0a90aa82b29fd865274bbc}{Expand\-Prefix} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, \hyperlink{classCSphQueryResultMeta}{C\-Sph\-Query\-Result\-Meta} $\ast$p\-Result, \hyperlink{classCSphScopedPayload}{C\-Sph\-Scoped\-Payload} $\ast$p\-Payloads, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Query\-Debug\-Flags) const 
+\item 
+bool \hyperlink{classCSphIndex__VLN_a35c62ff34330c0cd17741dad13eab935}{Build\-Done} (const \hyperlink{structBuildHeader__t}{Build\-Header\-\_\-t} \&t\-Build\-Header, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_a52726c9aa707f16daf6c2ac9121dba4c}{m\-\_\-i\-Lock\-F\-D}
+\item 
+\hyperlink{structCSphSourceStats}{C\-Sph\-Source\-Stats} \hyperlink{classCSphIndex__VLN_a44fa11618a881933be296b1faf9953d3}{m\-\_\-t\-Stats}
+\begin{DoxyCompactList}\small\item\em my stats \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_ad1a73d5715b4677c8b1aa90864511d57}{m\-\_\-i\-Total\-Dups}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $>$ \hyperlink{classCSphIndex__VLN_add0678514a5453c688e54b9ddeda6902}{m\-\_\-d\-Min\-Row}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classCSphIndex__VLN_a35b0482c8ed0e2722d10435b7c27d73c}{m\-\_\-u\-Min\-Docid}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $>$ \hyperlink{classCSphIndex__VLN_a276716802f2e004b84c4325cfa5f6af6}{m\-\_\-d\-Field\-Lens}
+\begin{DoxyCompactList}\small\item\em total per-\/field lengths summed over entire indexed data, in tokens \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphIndex__VLN_aeb67c1c2b19b152ad3d5f965b49dd919}{m\-\_\-s\-Keep\-Attrs}
+\begin{DoxyCompactList}\small\item\em retain attributes of that index reindexing \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \hyperlink{classCSphIndex__VLN_ae0b5a4d5a90aaf8db1eb7c73824abb7b}{m\-\_\-d\-Keep\-Attrs}
+\item 
+\hyperlink{structCSphIndexProgress}{C\-Sph\-Index\-Progress} \hyperlink{classCSphIndex__VLN_ab3ba01819dc3d431b01eb46be7d04816}{m\-\_\-t\-Progress}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphIndex__VLN_a21d49cfc99641fff1dfe6214a2d67ee0}{m\-\_\-i\-Docinfo}
+\begin{DoxyCompactList}\small\item\em my docinfo cache size \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphIndex__VLN_aeed3dd0d105f3b98cd96ab7fe597e36a}{m\-\_\-i\-Docinfo\-Index}
+\begin{DoxyCompactList}\small\item\em docinfo \char`\"{}index\char`\"{} entries count (each entry is 2x docinfo rows, for min/max) \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$ \hyperlink{classCSphIndex__VLN_adb6dfe7998b4af88348e89493be91761}{m\-\_\-p\-Docinfo\-Index}
+\begin{DoxyCompactList}\small\item\em docinfo \char`\"{}index\char`\"{}, to accelerate filtering during full-\/scan (2x rows for each block, and 2x rows for the whole index, 1+m\-\_\-u\-Docinfo\-Index entries) \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphIndex__VLN_aa1885ec7b19c3cbcd980dc8a83765864}{m\-\_\-i\-Min\-Max\-Index}
+\begin{DoxyCompactList}\small\item\em stored min/max cache offset (counted in D\-W\-O\-R\-Ds) \end{DoxyCompactList}\item 
+\hyperlink{classCSphMappedBuffer}{C\-Sph\-Mapped\-Buffer}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \hyperlink{classCSphIndex__VLN_a156a8c6fbcdd160b7158d6b5469442a7}{m\-\_\-t\-Attr}
+\item 
+\hyperlink{classCSphMappedBuffer}{C\-Sph\-Mapped\-Buffer}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \hyperlink{classCSphIndex__VLN_acea5ffe949125ad0a33f619d1994e336}{m\-\_\-t\-Mva}
+\item 
+\hyperlink{classCSphMappedBuffer}{C\-Sph\-Mapped\-Buffer}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classCSphIndex__VLN_a20e30ba61cb53c05ffae47fc2128140b}{m\-\_\-t\-String}
+\item 
+\hyperlink{classCSphMappedBuffer}{C\-Sph\-Mapped\-Buffer}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ \hyperlink{classCSphIndex__VLN_afb905c342ba761eeee0245909dbadbcb}{m\-\_\-t\-Kill\-List}
+\begin{DoxyCompactList}\small\item\em killlist \end{DoxyCompactList}\item 
+\hyperlink{classCSphMappedBuffer}{C\-Sph\-Mapped\-Buffer}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classCSphIndex__VLN_a2723a67ab1986a98194e407195cfe530}{m\-\_\-t\-Skiplists}
+\begin{DoxyCompactList}\small\item\em (compressed) skiplists data \end{DoxyCompactList}\item 
+\hyperlink{classCWordlist}{C\-Wordlist} \hyperlink{classCSphIndex__VLN_a75a987e7fc14ef67e788828de872f475}{m\-\_\-t\-Wordlist}
+\begin{DoxyCompactList}\small\item\em my wordlist \end{DoxyCompactList}\item 
+\hyperlink{classCSphLargeBuffer}{C\-Sph\-Large\-Buffer}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \hyperlink{classCSphIndex__VLN_ac9b72032d0689f4d95cb3462e04c6d2f}{m\-\_\-t\-Docinfo\-Hash}
+\begin{DoxyCompactList}\small\item\em hashed ids, to accelerate lookups \end{DoxyCompactList}\item 
+\hyperlink{classCSphLargeBuffer}{C\-Sph\-Large\-Buffer}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \hyperlink{classCSphIndex__VLN_a7869e1d3943fa12418252b1a77451efb}{m\-\_\-t\-Min\-Max\-Legacy}
+\item 
+bool \hyperlink{classCSphIndex__VLN_a7d6c4c10d78c04e3ffbf24310cdc6952}{m\-\_\-b\-Mlock}
+\item 
+bool \hyperlink{classCSphIndex__VLN_a758ceff72ae0e0271c5c493b33a5a1b3}{m\-\_\-b\-Ondisk\-All\-Attr}
+\item 
+bool \hyperlink{classCSphIndex__VLN_a12ec73b6de3eb3d8d0d3353a3391be46}{m\-\_\-b\-Ondisk\-Pool\-Attr}
+\item 
+bool \hyperlink{classCSphIndex__VLN_ae421f7393f6b6010ea5a50b3a7ae7518}{m\-\_\-b\-Arena\-Prohibit}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphIndex__VLN_ad0f2135353d82298028168bfb907d56d}{m\-\_\-u\-Version}
+\begin{DoxyCompactList}\small\item\em data files version \end{DoxyCompactList}\item 
+volatile bool \hyperlink{classCSphIndex__VLN_aef7d2489dccd2bd576c064f14611b426}{m\-\_\-b\-Passed\-Read}
+\item 
+volatile bool \hyperlink{classCSphIndex__VLN_af4b0c18218a61ebd4195d373967426f3}{m\-\_\-b\-Passed\-Alloc}
+\item 
+bool \hyperlink{classCSphIndex__VLN_aee6349cca972ae11c1e8aca95a7e95e9}{m\-\_\-b\-Is\-Empty}
+\begin{DoxyCompactList}\small\item\em do we have actually indexed documents (m\-\_\-i\-Total\-Documents is just fetched documents, not indexed!) \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphIndex__VLN_a91098fede5b42d8991979ccd7ef00e21}{m\-\_\-b\-Have\-Skips}
+\begin{DoxyCompactList}\small\item\em whether we have skiplists \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphIndex__VLN_a5cbf8ccbb123d90bb48a2d6c750ef98f}{m\-\_\-b\-Debug\-Check}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphIndex__VLN_a391dbb57434b6eee37e1bd7c61f9e5c9}{m\-\_\-u\-Attrs\-Status}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_aca1f6d99738c9f0d8fd70c23d2ee325f}{m\-\_\-i\-Index\-Tag}
+\begin{DoxyCompactList}\small\item\em my ids for M\-V\-A updates pool \end{DoxyCompactList}\item 
+\hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \hyperlink{classCSphIndex__VLN_a0cb2e9d10215ca5c7f248be4f3816ec7}{m\-\_\-t\-Doclist\-File}
+\begin{DoxyCompactList}\small\item\em doclist file \end{DoxyCompactList}\item 
+\hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \hyperlink{classCSphIndex__VLN_aa046c0e0bcaf89a4087f2b1819a0c71a}{m\-\_\-t\-Hitlist\-File}
+\begin{DoxyCompactList}\small\item\em hitlist file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_aa3de81463a2b666539e60665c2077b04}{M\-I\-N\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R} = 262144
+\begin{DoxyCompactList}\small\item\em min write buffer size \end{DoxyCompactList}\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_a2b58bf32e73d5d143b65b999ae072d97}{D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R} = 1048576
+\begin{DoxyCompactList}\small\item\em default write buffer size \end{DoxyCompactList}\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_afdfbe7daa22bd24cf5d859fe58f55fd9}{D\-O\-C\-I\-N\-F\-O\-\_\-\-H\-A\-S\-H\-\_\-\-B\-I\-T\-S} = 18
+\item 
+static volatile \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphIndex__VLN_a44d22f219ec36276ff3af738922b9547}{m\-\_\-i\-Index\-Tag\-Seq} = 0
+\begin{DoxyCompactList}\small\item\em static ids sequence \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCSphIndex__VLN_ad6703018b80fd3f77d87795858f5e844}{Disk\-Index\-Qword\-Setup\-\_\-c}
+\item 
+class \hyperlink{classCSphIndex__VLN_a37a49e33cacd6e4719c8ae5d6189d428}{C\-Sph\-Merger}
+\item 
+class \hyperlink{classCSphIndex__VLN_aef183d615809867ddd9f63f49dd93255}{Attr\-Index\-Builder\-\_\-t$<$ Sph\-Doc\-I\-D\-\_\-t $>$}
+\item 
+struct \hyperlink{classCSphIndex__VLN_a030d37981a8def95119f9f600e7a5469}{Sph\-Final\-Match\-Calc\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+this is my actual V\-L\-N-\/compressed phrase index implementation 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphIndex__VLN_a27abdf068526c879ff208daebfea89bc}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{C\-Sph\-Index\-\_\-\-V\-L\-N}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-C\-Sph\-Index\-\_\-\-V\-L\-N (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Index\-Name, }
+\item[{const char $\ast$}]{s\-Filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCSphIndex__VLN_a27abdf068526c879ff208daebfea89bc}
+\hypertarget{classCSphIndex__VLN_ad5c628b0fb3ea8c20a02ee29d36b5cb2}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!$\sim$\-C\-Sph\-Index\-\_\-\-V\-L\-N@{$\sim$\-C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\index{$\sim$\-C\-Sph\-Index\-\_\-\-V\-L\-N@{$\sim$\-C\-Sph\-Index\-\_\-\-V\-L\-N}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{$\sim$\-C\-Sph\-Index\-\_\-\-V\-L\-N}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Index\-\_\-\-V\-L\-N\-::$\sim$\-C\-Sph\-Index\-\_\-\-V\-L\-N (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphIndex__VLN_ad5c628b0fb3ea8c20a02ee29d36b5cb2}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphIndex__VLN_a14eaf54e3b7c6eace81368ec48873e69}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Add\-Remove\-Attribute@{Add\-Remove\-Attribute}}
+\index{Add\-Remove\-Attribute@{Add\-Remove\-Attribute}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Add\-Remove\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Add\-Remove\-Attribute (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Add\-Attr, }
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Attr\-Name, }
+\item[{{\bf E\-Sph\-Attr}}]{e\-Attr\-Type, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a14eaf54e3b7c6eace81368ec48873e69}
+
+
+Implements \hyperlink{classCSphIndex_ae03b4ecb65255ca5ff209f9d79df52ad}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_ae7e6e2eba64cd58df4d54f858ffe43d9}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Build@{Build}}
+\index{Build@{Build}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Build}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Build (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Source} $\ast$ $>$ \&}]{d\-Sources, }
+\item[{{\bf int}}]{i\-Memory\-Limit, }
+\item[{{\bf int}}]{i\-Write\-Buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_ae7e6e2eba64cd58df4d54f858ffe43d9}
+
+
+build index by indexing given sources 
+
+
+
+Implements \hyperlink{classCSphIndex_a511623b7f266c3bdded675613aba2939}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a604c4defa61d730b0ff576c7dd4f80fb}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Build\-Doc\-List@{Build\-Doc\-List}}
+\index{Build\-Doc\-List@{Build\-Doc\-List}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Build\-Doc\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Build\-Doc\-List (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Attr\-\_\-t} $\ast$$\ast$}]{pp\-Doc\-List, }
+\item[{{\bf int64\-\_\-t} $\ast$}]{p\-Count, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{p\-Error}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a604c4defa61d730b0ff576c7dd4f80fb}
+
+
+internal make document id list from external docinfo, D\-O N\-O\-T U\-S\-E 
+
+
+
+Reimplemented from \hyperlink{classCSphIndex_a512b5a8eded9c9b46835212df1a46ff8}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a35c62ff34330c0cd17741dad13eab935}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Build\-Done@{Build\-Done}}
+\index{Build\-Done@{Build\-Done}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Build\-Done}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Build\-Done (
+\begin{DoxyParamCaption}
+\item[{const {\bf Build\-Header\-\_\-t} \&}]{t\-Build\-Header, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a35c62ff34330c0cd17741dad13eab935}
+\hypertarget{classCSphIndex__VLN_a5e78d9f95c3104bb5747bdf8404acb7b}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Build\-M\-V\-A@{Build\-M\-V\-A}}
+\index{Build\-M\-V\-A@{Build\-M\-V\-A}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Build\-M\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Build\-M\-V\-A (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Source} $\ast$ $>$ \&}]{d\-Sources, }
+\item[{{\bf C\-Sph\-Fixed\-Vector}$<$ {\bf C\-Sph\-Word\-Hit} $>$ \&}]{d\-Hits, }
+\item[{{\bf int}}]{i\-Arena\-Size, }
+\item[{{\bf int}}]{i\-Field\-F\-D, }
+\item[{{\bf int}}]{n\-Field\-M\-V\-As, }
+\item[{{\bf int}}]{i\-Field\-M\-V\-A\-In\-Pool, }
+\item[{{\bf C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$}]{p\-Prev\-Index, }
+\item[{const {\bf C\-Sph\-Bitvec} $\ast$}]{p\-Prev\-Mva}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a5e78d9f95c3104bb5747bdf8404acb7b}
+\hypertarget{classCSphIndex__VLN_adf69ced5c19008494619848cbec229a8}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Copy\-Docinfo@{Copy\-Docinfo}}
+\index{Copy\-Docinfo@{Copy\-Docinfo}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Copy\-Docinfo}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Copy\-Docinfo (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query\-Context} $\ast$}]{p\-Ctx, }
+\item[{{\bf C\-Sph\-Match} \&}]{t\-Match, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Found}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_adf69ced5c19008494619848cbec229a8}
+\hypertarget{classCSphIndex__VLN_a37b03701193ed45aaeef50cd420a7cd3}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Dealloc@{Dealloc}}
+\index{Dealloc@{Dealloc}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Dealloc}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Dealloc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a37b03701193ed45aaeef50cd420a7cd3}
+
+
+deallocate all previously preallocated shared data 
+
+
+
+Implements \hyperlink{classCSphIndex_a19cd46e34780cebed5ab7d4b0faed501}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_ad36fc39ad4872661b483674862157722}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Debug\-Check@{Debug\-Check}}
+\index{Debug\-Check@{Debug\-Check}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Debug\-Check}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Debug\-Check (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_ad36fc39ad4872661b483674862157722}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_a0f44239433b6bef01f3590583fdf2f60}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a34aa87a7a718c2ba99252ef0987051f5}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Debug\-Dump\-Dict@{Debug\-Dump\-Dict}}
+\index{Debug\-Dump\-Dict@{Debug\-Dump\-Dict}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Debug\-Dump\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Debug\-Dump\-Dict (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a34aa87a7a718c2ba99252ef0987051f5}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_a684af9d03342c79a4ab6885f8250bc64}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a5d0c3e9f71f5f562d09a8215ff798991}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Debug\-Dump\-Docids@{Debug\-Dump\-Docids}}
+\index{Debug\-Dump\-Docids@{Debug\-Dump\-Docids}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Debug\-Dump\-Docids}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Debug\-Dump\-Docids (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a5d0c3e9f71f5f562d09a8215ff798991}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_a2385d5af2cc0403456f17dd3c5289a91}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_ae8087604bfbd59de777c19a2385562d4}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Debug\-Dump\-Header@{Debug\-Dump\-Header}}
+\index{Debug\-Dump\-Header@{Debug\-Dump\-Header}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Debug\-Dump\-Header}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Debug\-Dump\-Header (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{const char $\ast$}]{s\-Header\-Name, }
+\item[{bool}]{b\-Config}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_ae8087604bfbd59de777c19a2385562d4}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_ab1123cb39dff035759be9adaa800e2e6}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_aecfaf0915c7ba4e5688a6e64e2842547}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Debug\-Dump\-Hitlist@{Debug\-Dump\-Hitlist}}
+\index{Debug\-Dump\-Hitlist@{Debug\-Dump\-Hitlist}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Debug\-Dump\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Debug\-Dump\-Hitlist (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{const char $\ast$}]{s\-Keyword, }
+\item[{bool}]{b\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_aecfaf0915c7ba4e5688a6e64e2842547}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_ac1f1f3287a7cc88920c76e62bd8750cf}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a92e455134b4484ce071906d7b3c4148f}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Do\-Get\-Keywords@{Do\-Get\-Keywords}}
+\index{Do\-Get\-Keywords@{Do\-Get\-Keywords}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Do\-Get\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Qword $>$ bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Do\-Get\-Keywords (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Keyword\-Info} $>$ \&}]{d\-Keywords, }
+\item[{const char $\ast$}]{sz\-Query, }
+\item[{const {\bf Get\-Keywords\-Settings\-\_\-t} \&}]{t\-Settings, }
+\item[{bool}]{b\-Fill\-Only, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{p\-Error}
+\end{DoxyParamCaption}
+) const}}\label{classCSphIndex__VLN_a92e455134b4484ce071906d7b3c4148f}
+\hypertarget{classCSphIndex__VLN_ade93dc6220b418e1c93eee78b5e5b4df}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Do\-Merge@{Do\-Merge}}
+\index{Do\-Merge@{Do\-Merge}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Do\-Merge}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Do\-Merge (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$}]{p\-Dst\-Index, }
+\item[{const {\bf C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$}]{p\-Src\-Index, }
+\item[{bool}]{b\-Merge\-Kill\-Lists, }
+\item[{{\bf I\-Sph\-Filter} $\ast$}]{p\-Filter, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Doc\-I\-D\-\_\-t} $>$ \&}]{d\-Kill\-List, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf C\-Sph\-Index\-Progress} \&}]{t\-Progress, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle, }
+\item[{volatile bool $\ast$}]{p\-Global\-Stop, }
+\item[{volatile bool $\ast$}]{p\-Local\-Stop}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classCSphIndex__VLN_ade93dc6220b418e1c93eee78b5e5b4df}
+merging \hypertarget{classCSphIndex__VLN_afbde34e20a9723c42f35389216913486}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Dump\-Hitlist@{Dump\-Hitlist}}
+\index{Dump\-Hitlist@{Dump\-Hitlist}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Dump\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Qword $>$ void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Dump\-Hitlist (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{const char $\ast$}]{s\-Keyword, }
+\item[{bool}]{b\-I\-D}
+\end{DoxyParamCaption}
+)}}\label{classCSphIndex__VLN_afbde34e20a9723c42f35389216913486}
+\hypertarget{classCSphIndex__VLN_a4c016ab2c1733e77dd6129e1dc6eecc6}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Early\-Reject@{Early\-Reject}}
+\index{Early\-Reject@{Early\-Reject}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Early\-Reject}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Early\-Reject (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Query\-Context} $\ast$}]{p\-Ctx, }
+\item[{{\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a4c016ab2c1733e77dd6129e1dc6eecc6}
+
+
+Implements \hyperlink{classCSphIndex_a9b37c81e5a2ffe7be4d2a0265e8e7081}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_afaf8aeee8e0a90aa82b29fd865274bbc}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Expand\-Prefix@{Expand\-Prefix}}
+\index{Expand\-Prefix@{Expand\-Prefix}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Expand\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\-Q\-Node\-\_\-t} $\ast$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Expand\-Prefix (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{{\bf C\-Sph\-Query\-Result\-Meta} $\ast$}]{p\-Result, }
+\item[{{\bf C\-Sph\-Scoped\-Payload} $\ast$}]{p\-Payloads, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Query\-Debug\-Flags}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_afaf8aeee8e0a90aa82b29fd865274bbc}
+\hypertarget{classCSphIndex__VLN_a6f6cfe56247312a406f5679933adbf91}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Fill\-Keywords@{Fill\-Keywords}}
+\index{Fill\-Keywords@{Fill\-Keywords}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Fill\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Fill\-Keywords (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Keyword\-Info} $>$ \&}]{d\-Keywords}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a6f6cfe56247312a406f5679933adbf91}
+
+
+Implements \hyperlink{classCSphIndex_a9b8cfa825762de9f49db54eeb39f6004}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a4dd07ae9d4a91f59d766a1b8f8279b77}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Find\-Docinfo@{Find\-Docinfo}}
+\index{Find\-Docinfo@{Find\-Docinfo}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Find\-Docinfo}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D} $\ast$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Find\-Docinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Doc\-I\-D}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a4dd07ae9d4a91f59d766a1b8f8279b77}
+\hypertarget{classCSphIndex__VLN_a84149ceea0a524ec77a5cef4c960b051}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Get\-Attribute\-Status@{Get\-Attribute\-Status}}
+\index{Get\-Attribute\-Status@{Get\-Attribute\-Status}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Get\-Attribute\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Get\-Attribute\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a84149ceea0a524ec77a5cef4c960b051}
+
+
+Implements \hyperlink{classCSphIndex_a5ec250c0b3e1eb392f2b76796425e503}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a4f19488eac8c285480bfd3fefc8a0904}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Get\-Field\-Lens@{Get\-Field\-Lens}}
+\index{Get\-Field\-Lens@{Get\-Field\-Lens}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Get\-Field\-Lens}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int64\-\_\-t}$\ast$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Get\-Field\-Lens (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a4f19488eac8c285480bfd3fefc8a0904}
+
+
+Reimplemented from \hyperlink{classCSphIndex_ab9b5c8ae5b87827dab4961f458c41fba}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a05e719393720661db5f450c7abb54ab4}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Get\-Index\-File\-Name@{Get\-Index\-File\-Name}}
+\index{Get\-Index\-File\-Name@{Get\-Index\-File\-Name}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Get\-Index\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Get\-Index\-File\-Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Ext}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a05e719393720661db5f450c7abb54ab4}
+\hypertarget{classCSphIndex__VLN_ace717440ec35b62b73f8e5fac5bee4b5}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Get\-Keywords@{Get\-Keywords}}
+\index{Get\-Keywords@{Get\-Keywords}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Get\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Get\-Keywords (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Keyword\-Info} $>$ \&}]{d\-Keywords, }
+\item[{const char $\ast$}]{sz\-Query, }
+\item[{const {\bf Get\-Keywords\-Settings\-\_\-t} \&}]{t\-Settings, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{p\-Error}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_ace717440ec35b62b73f8e5fac5bee4b5}
+
+
+Implements \hyperlink{classCSphIndex_a3096853f1151b77ed5e3e666c4120a4b}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a7ee035c8472da9e95145d54327a3f14d}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Get\-Kill\-List@{Get\-Kill\-List}}
+\index{Get\-Kill\-List@{Get\-Kill\-List}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Get\-Kill\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} $\ast$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Get\-Kill\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a7ee035c8472da9e95145d54327a3f14d}
+
+
+Implements \hyperlink{classCSphIndex_a742881b516501e4a60830a7051be32ef}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_ab3aa77139f6f4a0b8080253d234dc3d5}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Get\-Kill\-List\-Size@{Get\-Kill\-List\-Size}}
+\index{Get\-Kill\-List\-Size@{Get\-Kill\-List\-Size}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Get\-Kill\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Get\-Kill\-List\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_ab3aa77139f6f4a0b8080253d234dc3d5}
+
+
+Implements \hyperlink{classCSphIndex_afc96ce6459f93e6a214a0433691bd6da}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a9677fb0ba974b220f9c4c6271e816309}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Get\-Stats@{Get\-Stats}}
+\index{Get\-Stats@{Get\-Stats}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Get\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-Source\-Stats}\& C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Get\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a9677fb0ba974b220f9c4c6271e816309}
+
+
+return index document, bytes totals (F\-I\-X\-M\-E? remove this in favor of \hyperlink{classCSphIndex__VLN_a5f54630ef391dd86dd9819002bec864a}{Get\-Status()} maybe?) 
+
+
+
+Implements \hyperlink{classCSphIndex_a993b7194dfa869f1fc53e88dbaea312e}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a5f54630ef391dd86dd9819002bec864a}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Get\-Status@{Get\-Status}}
+\index{Get\-Status@{Get\-Status}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Get\-Status (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index\-Status} $\ast$}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a5f54630ef391dd86dd9819002bec864a}
+
+
+return additional index info 
+
+
+
+Implements \hyperlink{classCSphIndex_aa62060b8df807b6beeb93efda865cd60}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_ae1371f4eb4f003e09441722ef1ad3119}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Get\-Suggest@{Get\-Suggest}}
+\index{Get\-Suggest@{Get\-Suggest}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Get\-Suggest}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Get\-Suggest (
+\begin{DoxyParamCaption}
+\item[{const {\bf Suggest\-Args\-\_\-t} \&}]{t\-Args, }
+\item[{{\bf Suggest\-Result\-\_\-t} \&}]{t\-Res}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_ae1371f4eb4f003e09441722ef1ad3119}
+
+
+Reimplemented from \hyperlink{classCSphIndex_a26e82892cf483be2a2ea98093f51acd0}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a873968728c5c0c745e4b96bea467a224}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Has\-Docid@{Has\-Docid}}
+\index{Has\-Docid@{Has\-Docid}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Has\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Has\-Docid (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Docid}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a873968728c5c0c745e4b96bea467a224}
+
+
+Implements \hyperlink{classCSphIndex_adb5aa35c6a81bb37cb9895a3938edb6e}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a6df262be60faa7b3b548c5e7b92c23b3}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Is\-Star\-Dict@{Is\-Star\-Dict}}
+\index{Is\-Star\-Dict@{Is\-Star\-Dict}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Is\-Star\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Is\-Star\-Dict (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a6df262be60faa7b3b548c5e7b92c23b3}
+
+
+Reimplemented from \hyperlink{classCSphIndex_aaa446cd3c180b24ba5b4a9a5654ac8fe}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a487d076c6f169b83521d896bb980ab88}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Juggle\-File@{Juggle\-File}}
+\index{Juggle\-File@{Juggle\-File}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Juggle\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Juggle\-File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{sz\-Ext, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Need\-Origin = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a487d076c6f169b83521d896bb980ab88}
+\hypertarget{classCSphIndex__VLN_a287c106cc1194869fcdcdd6b562bd011}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Load\-Header@{Load\-Header}}
+\index{Load\-Header@{Load\-Header}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Load\-Header}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Load\-Header (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Header\-Name, }
+\item[{bool}]{b\-Strip\-Path, }
+\item[{{\bf C\-Sph\-Embedded\-Files} \&}]{t\-Embedded\-Files, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a287c106cc1194869fcdcdd6b562bd011}
+\hypertarget{classCSphIndex__VLN_a03a02f41d76a364fbb1404fd8c692e31}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Load\-Hitless\-Words@{Load\-Hitless\-Words}}
+\index{Load\-Hitless\-Words@{Load\-Hitless\-Words}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Load\-Hitless\-Words}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Load\-Hitless\-Words (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Sph\-Word\-I\-D\-\_\-t} $>$ \&}]{d\-Hitless\-Words}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a03a02f41d76a364fbb1404fd8c692e31}
+\hypertarget{classCSphIndex__VLN_ac8d89100ee1c93442bd0a0b05d39de4d}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Load\-Persistent\-M\-V\-A@{Load\-Persistent\-M\-V\-A}}
+\index{Load\-Persistent\-M\-V\-A@{Load\-Persistent\-M\-V\-A}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Load\-Persistent\-M\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Load\-Persistent\-M\-V\-A (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_ac8d89100ee1c93442bd0a0b05d39de4d}
+\hypertarget{classCSphIndex__VLN_a48705bf60dc7b395e6e05758ae400105}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Lock@{Lock}}
+\index{Lock@{Lock}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Lock}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a48705bf60dc7b395e6e05758ae400105}
+
+
+obtain exclusive lock on this index 
+
+
+
+Implements \hyperlink{classCSphIndex_a0d9cb1bec9432296de727de7982fd28f}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_af64c320922dc7d5d8932abd32b173c55}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Match\-Extended@{Match\-Extended}}
+\index{Match\-Extended@{Match\-Extended}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Match\-Extended}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Match\-Extended (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Query\-Context} $\ast$}]{p\-Ctx, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{{\bf int}}]{i\-Sorters, }
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$$\ast$}]{pp\-Sorters, }
+\item[{{\bf I\-Sph\-Ranker} $\ast$}]{p\-Ranker, }
+\item[{{\bf int}}]{i\-Tag, }
+\item[{{\bf int}}]{i\-Index\-Weight}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_af64c320922dc7d5d8932abd32b173c55}
+\hypertarget{classCSphIndex__VLN_a1552caaff98b5dcc25838c2d0143d4b9}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Merge@{Merge}}
+\index{Merge@{Merge}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Merge}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Merge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index} $\ast$}]{p\-Source, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Filter\-Settings} $>$ \&}]{d\-Filters, }
+\item[{bool}]{b\-Merge\-Kill\-Lists}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a1552caaff98b5dcc25838c2d0143d4b9}
+
+
+build index by mering current index with given index 
+
+
+
+Implements \hyperlink{classCSphIndex_ab27064d2a9275e8683fccaa9472894d5}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a8ceb4d3ddede6869549bde0ad4883ab4}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Merge\-Words@{Merge\-Words}}
+\index{Merge\-Words@{Merge\-Words}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Merge\-Words}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Q\-W\-O\-R\-D\-D\-S\-T , typename Q\-W\-O\-R\-D\-S\-R\-C $>$ bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Merge\-Words (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$}]{p\-Dst\-Index, }
+\item[{const {\bf C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$}]{p\-Src\-Index, }
+\item[{const {\bf I\-Sph\-Filter} $\ast$}]{p\-Filter, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Doc\-I\-D\-\_\-t} $>$ \&}]{d\-Kill\-List, }
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Min\-I\-D, }
+\item[{{\bf C\-Sph\-Hit\-Builder} $\ast$}]{p\-Hit\-Builder, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf C\-Sph\-Source\-Stats} \&}]{t\-Stat, }
+\item[{{\bf C\-Sph\-Index\-Progress} \&}]{t\-Progress, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle, }
+\item[{volatile bool $\ast$}]{p\-Global\-Stop, }
+\item[{volatile bool $\ast$}]{p\-Local\-Stop}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classCSphIndex__VLN_a8ceb4d3ddede6869549bde0ad4883ab4}
+prepare for indexing
+
+setup qwords
+
+merge \hypertarget{classCSphIndex__VLN_a0f92cfbe694c5f18a60a620986e0e7e5}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Multi\-Query@{Multi\-Query}}
+\index{Multi\-Query@{Multi\-Query}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Multi\-Query}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Multi\-Query (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$}]{p\-Result, }
+\item[{{\bf int}}]{i\-Sorters, }
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$$\ast$}]{pp\-Sorters, }
+\item[{const {\bf C\-Sph\-Multi\-Query\-Args} \&}]{t\-Args}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a0f92cfbe694c5f18a60a620986e0e7e5}
+
+
+one regular query vs many sorters 
+
+
+
+Implements \hyperlink{classCSphIndex_af9509496c555985ec9ccec4c2260391d}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_ac7a479cbb120f5e26eda9524b76fe1c1}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Multi\-Query\-Ex@{Multi\-Query\-Ex}}
+\index{Multi\-Query\-Ex@{Multi\-Query\-Ex}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Multi\-Query\-Ex}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Multi\-Query\-Ex (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Queries, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Queries, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$$\ast$}]{pp\-Results, }
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$$\ast$}]{pp\-Sorters, }
+\item[{const {\bf C\-Sph\-Multi\-Query\-Args} \&}]{t\-Args}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_ac7a479cbb120f5e26eda9524b76fe1c1}
+many regular queries with one sorter attached to each query. returns true if at least one query succeeded. The failed queries indicated with p\-Result-\/$>$m\-\_\-i\-Multiplier==-\/1 $<$ show that this particular query failed
+
+$<$ show that this particular query failed 
+
+Implements \hyperlink{classCSphIndex_a19f5a3df99344e37a1d8a1e9ac7f8c22}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a95cc31d20cf4f59de5b2410a76980474}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Multi\-Scan@{Multi\-Scan}}
+\index{Multi\-Scan@{Multi\-Scan}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Multi\-Scan}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Multi\-Scan (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$}]{p\-Result, }
+\item[{{\bf int}}]{i\-Sorters, }
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$$\ast$}]{pp\-Sorters, }
+\item[{const {\bf C\-Sph\-Multi\-Query\-Args} \&}]{t\-Args}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a95cc31d20cf4f59de5b2410a76980474}
+\hypertarget{classCSphIndex__VLN_af4e39d88e985886c09c5d466258cab4e}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Parsed\-Multi\-Query@{Parsed\-Multi\-Query}}
+\index{Parsed\-Multi\-Query@{Parsed\-Multi\-Query}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Parsed\-Multi\-Query}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Parsed\-Multi\-Query (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$}]{p\-Result, }
+\item[{{\bf int}}]{i\-Sorters, }
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$$\ast$}]{pp\-Sorters, }
+\item[{const {\bf X\-Q\-Query\-\_\-t} \&}]{t\-X\-Q, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{const {\bf C\-Sph\-Multi\-Query\-Args} \&}]{t\-Args, }
+\item[{{\bf C\-Sph\-Query\-Node\-Cache} $\ast$}]{p\-Node\-Cache, }
+\item[{const {\bf Sph\-Word\-Stat\-Checker\-\_\-t} \&}]{t\-Stat\-Diff}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_af4e39d88e985886c09c5d466258cab4e}
+\hypertarget{classCSphIndex__VLN_a71cf032470305674c9e433246a7f45e0}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Post\-Setup@{Post\-Setup}}
+\index{Post\-Setup@{Post\-Setup}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Post\-Setup}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Post\-Setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a71cf032470305674c9e433246a7f45e0}
+
+
+called when index is loaded and prepared to work 
+
+
+
+Implements \hyperlink{classCSphIndex_a903008e29c37e817e72e7e92d2ccb964}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a705c4100e5340e1bd6a7eec6e6275964}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Prealloc@{Prealloc}}
+\index{Prealloc@{Prealloc}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Prealloc}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Prealloc (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Strip\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a705c4100e5340e1bd6a7eec6e6275964}
+
+
+check all data files, preload schema, and preallocate enough R\-A\-M to load memory-\/cached data 
+
+
+
+Implements \hyperlink{classCSphIndex_a5ecebcd36640119821b2a3c44edf120c}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a5f9afecc7dd20ff9d5958a8f956b0c25}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Precompute\-Min\-Max@{Precompute\-Min\-Max}}
+\index{Precompute\-Min\-Max@{Precompute\-Min\-Max}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Precompute\-Min\-Max}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Precompute\-Min\-Max (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a5f9afecc7dd20ff9d5958a8f956b0c25}
+\hypertarget{classCSphIndex__VLN_a8c884a54057466eca5993ab48015513e}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Preread@{Preread}}
+\index{Preread@{Preread}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Preread}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Preread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a8c884a54057466eca5993ab48015513e}
+
+
+precache everything which needs to be precached 
+
+
+
+Implements \hyperlink{classCSphIndex_acaa353c3d9d7753600527336efa6a0f8}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a6e09a4dd8babed1c75be5e5fd913d0e2}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Relocate\-Block@{Relocate\-Block}}
+\index{Relocate\-Block@{Relocate\-Block}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Relocate\-Block}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Relocate\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-File, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Buffer, }
+\item[{{\bf int}}]{i\-Relocation\-Size, }
+\item[{{\bf Sph\-Offset\-\_\-t} $\ast$}]{p\-File\-Size, }
+\item[{{\bf C\-Sph\-Bin} $\ast$}]{p\-Min\-Bin, }
+\item[{{\bf Sph\-Offset\-\_\-t} $\ast$}]{p\-Shared\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a6e09a4dd8babed1c75be5e5fd913d0e2}
+\hypertarget{classCSphIndex__VLN_a1c3c39c6636241309471d3c4e30916c0}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Rename@{Rename}}
+\index{Rename@{Rename}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Rename}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Rename (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-New\-Base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a1c3c39c6636241309471d3c4e30916c0}
+
+
+set new index base path, and physically rename index files too 
+
+
+
+Implements \hyperlink{classCSphIndex_a8dc7ada3f2ed3d5e946b0b3b744c6ba7}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a87ad4387690b5f1b80fce0701c073a46}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Replace\-Kill\-List@{Replace\-Kill\-List}}
+\index{Replace\-Kill\-List@{Replace\-Kill\-List}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Replace\-Kill\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Replace\-Kill\-List (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sph\-Doc\-I\-D\-\_\-t} $\ast$}]{, }
+\item[{{\bf int}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a87ad4387690b5f1b80fce0701c073a46}
+
+
+internal replace kill-\/list and rewrite spk file, D\-O N\-O\-T U\-S\-E 
+
+
+
+Reimplemented from \hyperlink{classCSphIndex_a693c6595c8b79545e14b6e1e9ef97ae6}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_ab722e3bdffbc6039750548f9127c04ab}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Save\-Attributes@{Save\-Attributes}}
+\index{Save\-Attributes@{Save\-Attributes}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Save\-Attributes}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Save\-Attributes (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_ab722e3bdffbc6039750548f9127c04ab}
+saves memory-\/cached attributes, if there were any updates to them on failure, false is returned and \hyperlink{classCSphIndex_aa6c4f86ceb64733762450a5a37ba15d8}{Get\-Last\-Error()} contains error message 
+
+Implements \hyperlink{classCSphIndex_a125ab8314647e93a406f827ee6406a14}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a83345cc90af465c5fd14c0b6fb2e6e79}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Set\-Base@{Set\-Base}}
+\index{Set\-Base@{Set\-Base}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Set\-Base}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Set\-Base (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-New\-Base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a83345cc90af465c5fd14c0b6fb2e6e79}
+
+
+set new index base path 
+
+
+
+Implements \hyperlink{classCSphIndex_a390720d5982aedac1973de92f08fe821}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a34ebf8bf93a036d553a4367ed9cbbe37}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Set\-Debug\-Check@{Set\-Debug\-Check}}
+\index{Set\-Debug\-Check@{Set\-Debug\-Check}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Set\-Debug\-Check}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Set\-Debug\-Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a34ebf8bf93a036d553a4367ed9cbbe37}
+
+
+Reimplemented from \hyperlink{classCSphIndex_a8483825d76be13d50462e7673b198617}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a39ab6863792cfd78ddca77dab87f44de}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Set\-Keep\-Attrs@{Set\-Keep\-Attrs}}
+\index{Set\-Keep\-Attrs@{Set\-Keep\-Attrs}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Set\-Keep\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Set\-Keep\-Attrs (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Keep\-Attrs, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Attrs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a39ab6863792cfd78ddca77dab87f44de}
+
+
+Reimplemented from \hyperlink{classCSphIndex_aae305c037dc11dcb8ca0758474d3bb51}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a0462c2281e279ee294fff7235bb18082}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Set\-Memory\-Settings@{Set\-Memory\-Settings}}
+\index{Set\-Memory\-Settings@{Set\-Memory\-Settings}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Set\-Memory\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Set\-Memory\-Settings (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Mlock, }
+\item[{bool}]{b\-Ondisk\-Attrs, }
+\item[{bool}]{b\-Ondisk\-Pool}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a0462c2281e279ee294fff7235bb18082}
+
+
+Implements \hyperlink{classCSphIndex_ae0bb2bd341cb41c0339ca5132284799e}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a25ecbda2ffee84a157513ea35143b652}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Set\-Progress\-Callback@{Set\-Progress\-Callback}}
+\index{Set\-Progress\-Callback@{Set\-Progress\-Callback}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Set\-Progress\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Set\-Progress\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index\-Progress\-::\-Indexing\-Progress\-\_\-fn}}]{pfn\-Progress}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a25ecbda2ffee84a157513ea35143b652}
+
+
+Implements \hyperlink{classCSphIndex_a787668511b48ea883bb2e9a9721a8652}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a9cf2359824cbffd58ea5febaafa127f1}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Setup\-Exact\-Dict@{Setup\-Exact\-Dict}}
+\index{Setup\-Exact\-Dict@{Setup\-Exact\-Dict}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Setup\-Exact\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Dict} $\ast$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Setup\-Exact\-Dict (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Scoped\-Ptr}$<$ {\bf C\-Sph\-Dict} $>$ \&}]{t\-Container, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Prev\-Dict}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a9cf2359824cbffd58ea5febaafa127f1}
+\hypertarget{classCSphIndex__VLN_ae098d5fc2f05ac37e8f099056370022b}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Setup\-Star\-Dict@{Setup\-Star\-Dict}}
+\index{Setup\-Star\-Dict@{Setup\-Star\-Dict}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Setup\-Star\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Dict} $\ast$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Setup\-Star\-Dict (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Scoped\-Ptr}$<$ {\bf C\-Sph\-Dict} $>$ \&}]{t\-Container, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Prev\-Dict}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_ae098d5fc2f05ac37e8f099056370022b}
+\hypertarget{classCSphIndex__VLN_a0abb4876490ea0ce0a5838c7f6b821f0}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Unlock@{Unlock}}
+\index{Unlock@{Unlock}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Unlock}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a0abb4876490ea0ce0a5838c7f6b821f0}
+
+
+dismiss exclusive lock and unlink lock file 
+
+
+
+Implements \hyperlink{classCSphIndex_aaabb7c87f3776dc91be0ebb9978ea8d7}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_aceb20a734f6620e9fe66d602ce9ab3d6}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Update\-Attributes@{Update\-Attributes}}
+\index{Update\-Attributes@{Update\-Attributes}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Update\-Attributes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Update\-Attributes (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Update} \&}]{t\-Upd, }
+\item[{{\bf int}}]{i\-Index, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_aceb20a734f6620e9fe66d602ce9ab3d6}
+updates memory-\/cached attributes in real time returns non-\/negative amount of actually found and updated records on success on failure, -\/1 is returned and \hyperlink{classCSphIndex_aa6c4f86ceb64733762450a5a37ba15d8}{Get\-Last\-Error()} contains error message 
+
+Implements \hyperlink{classCSphIndex_a04bc00c3a4767aecd7f6ca953ef92f17}{C\-Sph\-Index}.
+
+\hypertarget{classCSphIndex__VLN_a750bd222010dd13de24ca8df55fa8587}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Write\-Header@{Write\-Header}}
+\index{Write\-Header@{Write\-Header}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Write\-Header}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-Write\-Header (
+\begin{DoxyParamCaption}
+\item[{const {\bf Build\-Header\-\_\-t} \&}]{t\-Build\-Header, }
+\item[{{\bf C\-Sph\-Writer} \&}]{fd\-Info}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphIndex__VLN_a750bd222010dd13de24ca8df55fa8587}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCSphIndex__VLN_aef183d615809867ddd9f63f49dd93255}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Attr\-Index\-Builder\-\_\-t$<$ Sph\-Doc\-I\-D\-\_\-t $>$@{Attr\-Index\-Builder\-\_\-t$<$ Sph\-Doc\-I\-D\-\_\-t $>$}}
+\index{Attr\-Index\-Builder\-\_\-t$<$ Sph\-Doc\-I\-D\-\_\-t $>$@{Attr\-Index\-Builder\-\_\-t$<$ Sph\-Doc\-I\-D\-\_\-t $>$}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Attr\-Index\-Builder\-\_\-t$<$ Sph\-Doc\-I\-D\-\_\-t $>$}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Attr\-Index\-Builder\-\_\-t}$<$ {\bf Sph\-Doc\-I\-D\-\_\-t} $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphIndex__VLN_aef183d615809867ddd9f63f49dd93255}
+\hypertarget{classCSphIndex__VLN_a37a49e33cacd6e4719c8ae5d6189d428}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!C\-Sph\-Merger@{C\-Sph\-Merger}}
+\index{C\-Sph\-Merger@{C\-Sph\-Merger}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{C\-Sph\-Merger}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf C\-Sph\-Merger}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphIndex__VLN_a37a49e33cacd6e4719c8ae5d6189d428}
+\hypertarget{classCSphIndex__VLN_ad6703018b80fd3f77d87795858f5e844}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Disk\-Index\-Qword\-Setup\-\_\-c@{Disk\-Index\-Qword\-Setup\-\_\-c}}
+\index{Disk\-Index\-Qword\-Setup\-\_\-c@{Disk\-Index\-Qword\-Setup\-\_\-c}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Disk\-Index\-Qword\-Setup\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Disk\-Index\-Qword\-Setup\-\_\-c}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphIndex__VLN_ad6703018b80fd3f77d87795858f5e844}
+\hypertarget{classCSphIndex__VLN_a030d37981a8def95119f9f600e7a5469}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!Sph\-Final\-Match\-Calc\-\_\-t@{Sph\-Final\-Match\-Calc\-\_\-t}}
+\index{Sph\-Final\-Match\-Calc\-\_\-t@{Sph\-Final\-Match\-Calc\-\_\-t}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{Sph\-Final\-Match\-Calc\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}friend struct {\bf Sph\-Final\-Match\-Calc\-\_\-t}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphIndex__VLN_a030d37981a8def95119f9f600e7a5469}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphIndex__VLN_a2b58bf32e73d5d143b65b999ae072d97}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R@{D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R@{D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R = 1048576\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphIndex__VLN_a2b58bf32e73d5d143b65b999ae072d97}
+
+
+default write buffer size 
+
+\hypertarget{classCSphIndex__VLN_afdfbe7daa22bd24cf5d859fe58f55fd9}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!D\-O\-C\-I\-N\-F\-O\-\_\-\-H\-A\-S\-H\-\_\-\-B\-I\-T\-S@{D\-O\-C\-I\-N\-F\-O\-\_\-\-H\-A\-S\-H\-\_\-\-B\-I\-T\-S}}
+\index{D\-O\-C\-I\-N\-F\-O\-\_\-\-H\-A\-S\-H\-\_\-\-B\-I\-T\-S@{D\-O\-C\-I\-N\-F\-O\-\_\-\-H\-A\-S\-H\-\_\-\-B\-I\-T\-S}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{D\-O\-C\-I\-N\-F\-O\-\_\-\-H\-A\-S\-H\-\_\-\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-D\-O\-C\-I\-N\-F\-O\-\_\-\-H\-A\-S\-H\-\_\-\-B\-I\-T\-S = 18\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphIndex__VLN_afdfbe7daa22bd24cf5d859fe58f55fd9}
+\hypertarget{classCSphIndex__VLN_ae421f7393f6b6010ea5a50b3a7ae7518}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-b\-Arena\-Prohibit@{m\-\_\-b\-Arena\-Prohibit}}
+\index{m\-\_\-b\-Arena\-Prohibit@{m\-\_\-b\-Arena\-Prohibit}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-b\-Arena\-Prohibit}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-b\-Arena\-Prohibit\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_ae421f7393f6b6010ea5a50b3a7ae7518}
+\hypertarget{classCSphIndex__VLN_a5cbf8ccbb123d90bb48a2d6c750ef98f}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-b\-Debug\-Check@{m\-\_\-b\-Debug\-Check}}
+\index{m\-\_\-b\-Debug\-Check@{m\-\_\-b\-Debug\-Check}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-b\-Debug\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-b\-Debug\-Check\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a5cbf8ccbb123d90bb48a2d6c750ef98f}
+\hypertarget{classCSphIndex__VLN_a91098fede5b42d8991979ccd7ef00e21}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-b\-Have\-Skips@{m\-\_\-b\-Have\-Skips}}
+\index{m\-\_\-b\-Have\-Skips@{m\-\_\-b\-Have\-Skips}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-b\-Have\-Skips}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-b\-Have\-Skips\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a91098fede5b42d8991979ccd7ef00e21}
+
+
+whether we have skiplists 
+
+\hypertarget{classCSphIndex__VLN_aee6349cca972ae11c1e8aca95a7e95e9}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-b\-Is\-Empty@{m\-\_\-b\-Is\-Empty}}
+\index{m\-\_\-b\-Is\-Empty@{m\-\_\-b\-Is\-Empty}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-b\-Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-b\-Is\-Empty\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_aee6349cca972ae11c1e8aca95a7e95e9}
+
+
+do we have actually indexed documents (m\-\_\-i\-Total\-Documents is just fetched documents, not indexed!) 
+
+\hypertarget{classCSphIndex__VLN_a7d6c4c10d78c04e3ffbf24310cdc6952}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-b\-Mlock@{m\-\_\-b\-Mlock}}
+\index{m\-\_\-b\-Mlock@{m\-\_\-b\-Mlock}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-b\-Mlock}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-b\-Mlock\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a7d6c4c10d78c04e3ffbf24310cdc6952}
+\hypertarget{classCSphIndex__VLN_a758ceff72ae0e0271c5c493b33a5a1b3}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-b\-Ondisk\-All\-Attr@{m\-\_\-b\-Ondisk\-All\-Attr}}
+\index{m\-\_\-b\-Ondisk\-All\-Attr@{m\-\_\-b\-Ondisk\-All\-Attr}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-b\-Ondisk\-All\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-b\-Ondisk\-All\-Attr\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a758ceff72ae0e0271c5c493b33a5a1b3}
+\hypertarget{classCSphIndex__VLN_a12ec73b6de3eb3d8d0d3353a3391be46}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-b\-Ondisk\-Pool\-Attr@{m\-\_\-b\-Ondisk\-Pool\-Attr}}
+\index{m\-\_\-b\-Ondisk\-Pool\-Attr@{m\-\_\-b\-Ondisk\-Pool\-Attr}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-b\-Ondisk\-Pool\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-b\-Ondisk\-Pool\-Attr\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a12ec73b6de3eb3d8d0d3353a3391be46}
+\hypertarget{classCSphIndex__VLN_af4b0c18218a61ebd4195d373967426f3}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-b\-Passed\-Alloc@{m\-\_\-b\-Passed\-Alloc}}
+\index{m\-\_\-b\-Passed\-Alloc@{m\-\_\-b\-Passed\-Alloc}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-b\-Passed\-Alloc}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-b\-Passed\-Alloc\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_af4b0c18218a61ebd4195d373967426f3}
+\hypertarget{classCSphIndex__VLN_aef7d2489dccd2bd576c064f14611b426}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-b\-Passed\-Read@{m\-\_\-b\-Passed\-Read}}
+\index{m\-\_\-b\-Passed\-Read@{m\-\_\-b\-Passed\-Read}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-b\-Passed\-Read}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-b\-Passed\-Read\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_aef7d2489dccd2bd576c064f14611b426}
+\hypertarget{classCSphIndex__VLN_a276716802f2e004b84c4325cfa5f6af6}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-d\-Field\-Lens@{m\-\_\-d\-Field\-Lens}}
+\index{m\-\_\-d\-Field\-Lens@{m\-\_\-d\-Field\-Lens}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-d\-Field\-Lens}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf int64\-\_\-t}$>$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-d\-Field\-Lens\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a276716802f2e004b84c4325cfa5f6af6}
+
+
+total per-\/field lengths summed over entire indexed data, in tokens 
+
+\hypertarget{classCSphIndex__VLN_ae0b5a4d5a90aaf8db1eb7c73824abb7b}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-d\-Keep\-Attrs@{m\-\_\-d\-Keep\-Attrs}}
+\index{m\-\_\-d\-Keep\-Attrs@{m\-\_\-d\-Keep\-Attrs}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-d\-Keep\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-String}$>$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-d\-Keep\-Attrs\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_ae0b5a4d5a90aaf8db1eb7c73824abb7b}
+\hypertarget{classCSphIndex__VLN_add0678514a5453c688e54b9ddeda6902}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-d\-Min\-Row@{m\-\_\-d\-Min\-Row}}
+\index{m\-\_\-d\-Min\-Row@{m\-\_\-d\-Min\-Row}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-d\-Min\-Row}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf C\-Sph\-Rowitem}$>$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-d\-Min\-Row\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_add0678514a5453c688e54b9ddeda6902}
+\hypertarget{classCSphIndex__VLN_a21d49cfc99641fff1dfe6214a2d67ee0}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-i\-Docinfo@{m\-\_\-i\-Docinfo}}
+\index{m\-\_\-i\-Docinfo@{m\-\_\-i\-Docinfo}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-i\-Docinfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-i\-Docinfo\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a21d49cfc99641fff1dfe6214a2d67ee0}
+
+
+my docinfo cache size 
+
+\hypertarget{classCSphIndex__VLN_aeed3dd0d105f3b98cd96ab7fe597e36a}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-i\-Docinfo\-Index@{m\-\_\-i\-Docinfo\-Index}}
+\index{m\-\_\-i\-Docinfo\-Index@{m\-\_\-i\-Docinfo\-Index}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-i\-Docinfo\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-i\-Docinfo\-Index\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_aeed3dd0d105f3b98cd96ab7fe597e36a}
+
+
+docinfo \char`\"{}index\char`\"{} entries count (each entry is 2x docinfo rows, for min/max) 
+
+\hypertarget{classCSphIndex__VLN_aca1f6d99738c9f0d8fd70c23d2ee325f}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-i\-Index\-Tag@{m\-\_\-i\-Index\-Tag}}
+\index{m\-\_\-i\-Index\-Tag@{m\-\_\-i\-Index\-Tag}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-i\-Index\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-i\-Index\-Tag\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_aca1f6d99738c9f0d8fd70c23d2ee325f}
+
+
+my ids for M\-V\-A updates pool 
+
+\hypertarget{classCSphIndex__VLN_a44d22f219ec36276ff3af738922b9547}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-i\-Index\-Tag\-Seq@{m\-\_\-i\-Index\-Tag\-Seq}}
+\index{m\-\_\-i\-Index\-Tag\-Seq@{m\-\_\-i\-Index\-Tag\-Seq}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-i\-Index\-Tag\-Seq}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-i\-Index\-Tag\-Seq = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphIndex__VLN_a44d22f219ec36276ff3af738922b9547}
+
+
+static ids sequence 
+
+\hypertarget{classCSphIndex__VLN_a52726c9aa707f16daf6c2ac9121dba4c}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-i\-Lock\-F\-D@{m\-\_\-i\-Lock\-F\-D}}
+\index{m\-\_\-i\-Lock\-F\-D@{m\-\_\-i\-Lock\-F\-D}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-i\-Lock\-F\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-i\-Lock\-F\-D\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a52726c9aa707f16daf6c2ac9121dba4c}
+\hypertarget{classCSphIndex__VLN_aa1885ec7b19c3cbcd980dc8a83765864}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-i\-Min\-Max\-Index@{m\-\_\-i\-Min\-Max\-Index}}
+\index{m\-\_\-i\-Min\-Max\-Index@{m\-\_\-i\-Min\-Max\-Index}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-i\-Min\-Max\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-i\-Min\-Max\-Index\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_aa1885ec7b19c3cbcd980dc8a83765864}
+
+
+stored min/max cache offset (counted in D\-W\-O\-R\-Ds) 
+
+\hypertarget{classCSphIndex__VLN_ad1a73d5715b4677c8b1aa90864511d57}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-i\-Total\-Dups@{m\-\_\-i\-Total\-Dups}}
+\index{m\-\_\-i\-Total\-Dups@{m\-\_\-i\-Total\-Dups}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-i\-Total\-Dups}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-i\-Total\-Dups\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_ad1a73d5715b4677c8b1aa90864511d57}
+\hypertarget{classCSphIndex__VLN_adb6dfe7998b4af88348e89493be91761}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-p\-Docinfo\-Index@{m\-\_\-p\-Docinfo\-Index}}
+\index{m\-\_\-p\-Docinfo\-Index@{m\-\_\-p\-Docinfo\-Index}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-p\-Docinfo\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D}$\ast$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-p\-Docinfo\-Index\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_adb6dfe7998b4af88348e89493be91761}
+
+
+docinfo \char`\"{}index\char`\"{}, to accelerate filtering during full-\/scan (2x rows for each block, and 2x rows for the whole index, 1+m\-\_\-u\-Docinfo\-Index entries) 
+
+\hypertarget{classCSphIndex__VLN_aeb67c1c2b19b152ad3d5f965b49dd919}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-s\-Keep\-Attrs@{m\-\_\-s\-Keep\-Attrs}}
+\index{m\-\_\-s\-Keep\-Attrs@{m\-\_\-s\-Keep\-Attrs}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-s\-Keep\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-s\-Keep\-Attrs\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_aeb67c1c2b19b152ad3d5f965b49dd919}
+
+
+retain attributes of that index reindexing 
+
+\hypertarget{classCSphIndex__VLN_a156a8c6fbcdd160b7158d6b5469442a7}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Attr@{m\-\_\-t\-Attr}}
+\index{m\-\_\-t\-Attr@{m\-\_\-t\-Attr}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Mapped\-Buffer}$<${\bf D\-W\-O\-R\-D}$>$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Attr\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a156a8c6fbcdd160b7158d6b5469442a7}
+\hypertarget{classCSphIndex__VLN_ac9b72032d0689f4d95cb3462e04c6d2f}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Docinfo\-Hash@{m\-\_\-t\-Docinfo\-Hash}}
+\index{m\-\_\-t\-Docinfo\-Hash@{m\-\_\-t\-Docinfo\-Hash}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Docinfo\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Large\-Buffer}$<${\bf D\-W\-O\-R\-D}$>$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Docinfo\-Hash\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_ac9b72032d0689f4d95cb3462e04c6d2f}
+
+
+hashed ids, to accelerate lookups 
+
+\hypertarget{classCSphIndex__VLN_a0cb2e9d10215ca5c7f248be4f3816ec7}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Doclist\-File@{m\-\_\-t\-Doclist\-File}}
+\index{m\-\_\-t\-Doclist\-File@{m\-\_\-t\-Doclist\-File}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Doclist\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Autofile} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Doclist\-File\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a0cb2e9d10215ca5c7f248be4f3816ec7}
+
+
+doclist file 
+
+\hypertarget{classCSphIndex__VLN_aa046c0e0bcaf89a4087f2b1819a0c71a}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Hitlist\-File@{m\-\_\-t\-Hitlist\-File}}
+\index{m\-\_\-t\-Hitlist\-File@{m\-\_\-t\-Hitlist\-File}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Hitlist\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Autofile} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Hitlist\-File\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_aa046c0e0bcaf89a4087f2b1819a0c71a}
+
+
+hitlist file 
+
+\hypertarget{classCSphIndex__VLN_afb905c342ba761eeee0245909dbadbcb}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Kill\-List@{m\-\_\-t\-Kill\-List}}
+\index{m\-\_\-t\-Kill\-List@{m\-\_\-t\-Kill\-List}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Kill\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Mapped\-Buffer}$<${\bf Sph\-Doc\-I\-D\-\_\-t}$>$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Kill\-List\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_afb905c342ba761eeee0245909dbadbcb}
+
+
+killlist 
+
+\hypertarget{classCSphIndex__VLN_a7869e1d3943fa12418252b1a77451efb}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Min\-Max\-Legacy@{m\-\_\-t\-Min\-Max\-Legacy}}
+\index{m\-\_\-t\-Min\-Max\-Legacy@{m\-\_\-t\-Min\-Max\-Legacy}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Min\-Max\-Legacy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Large\-Buffer}$<${\bf D\-W\-O\-R\-D}$>$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Min\-Max\-Legacy\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a7869e1d3943fa12418252b1a77451efb}
+\hypertarget{classCSphIndex__VLN_acea5ffe949125ad0a33f619d1994e336}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Mva@{m\-\_\-t\-Mva}}
+\index{m\-\_\-t\-Mva@{m\-\_\-t\-Mva}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Mva}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Mapped\-Buffer}$<${\bf D\-W\-O\-R\-D}$>$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Mva\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_acea5ffe949125ad0a33f619d1994e336}
+\hypertarget{classCSphIndex__VLN_ab3ba01819dc3d431b01eb46be7d04816}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Progress@{m\-\_\-t\-Progress}}
+\index{m\-\_\-t\-Progress@{m\-\_\-t\-Progress}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Index\-Progress} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Progress\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_ab3ba01819dc3d431b01eb46be7d04816}
+\hypertarget{classCSphIndex__VLN_a2723a67ab1986a98194e407195cfe530}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Skiplists@{m\-\_\-t\-Skiplists}}
+\index{m\-\_\-t\-Skiplists@{m\-\_\-t\-Skiplists}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Skiplists}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Mapped\-Buffer}$<${\bf B\-Y\-T\-E}$>$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Skiplists\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a2723a67ab1986a98194e407195cfe530}
+
+
+(compressed) skiplists data 
+
+\hypertarget{classCSphIndex__VLN_a44fa11618a881933be296b1faf9953d3}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Stats@{m\-\_\-t\-Stats}}
+\index{m\-\_\-t\-Stats@{m\-\_\-t\-Stats}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Source\-Stats} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Stats\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a44fa11618a881933be296b1faf9953d3}
+
+
+my stats 
+
+\hypertarget{classCSphIndex__VLN_a20e30ba61cb53c05ffae47fc2128140b}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-String@{m\-\_\-t\-String}}
+\index{m\-\_\-t\-String@{m\-\_\-t\-String}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Mapped\-Buffer}$<${\bf B\-Y\-T\-E}$>$ C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-String\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a20e30ba61cb53c05ffae47fc2128140b}
+\hypertarget{classCSphIndex__VLN_a75a987e7fc14ef67e788828de872f475}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-t\-Wordlist@{m\-\_\-t\-Wordlist}}
+\index{m\-\_\-t\-Wordlist@{m\-\_\-t\-Wordlist}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-t\-Wordlist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Wordlist} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-t\-Wordlist\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a75a987e7fc14ef67e788828de872f475}
+
+
+my wordlist 
+
+\hypertarget{classCSphIndex__VLN_a391dbb57434b6eee37e1bd7c61f9e5c9}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-u\-Attrs\-Status@{m\-\_\-u\-Attrs\-Status}}
+\index{m\-\_\-u\-Attrs\-Status@{m\-\_\-u\-Attrs\-Status}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-u\-Attrs\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-u\-Attrs\-Status\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a391dbb57434b6eee37e1bd7c61f9e5c9}
+\hypertarget{classCSphIndex__VLN_a35b0482c8ed0e2722d10435b7c27d73c}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-u\-Min\-Docid@{m\-\_\-u\-Min\-Docid}}
+\index{m\-\_\-u\-Min\-Docid@{m\-\_\-u\-Min\-Docid}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-u\-Min\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-u\-Min\-Docid\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_a35b0482c8ed0e2722d10435b7c27d73c}
+\hypertarget{classCSphIndex__VLN_ad0f2135353d82298028168bfb907d56d}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!m\-\_\-u\-Version@{m\-\_\-u\-Version}}
+\index{m\-\_\-u\-Version@{m\-\_\-u\-Version}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{m\-\_\-u\-Version}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Index\-\_\-\-V\-L\-N\-::m\-\_\-u\-Version\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIndex__VLN_ad0f2135353d82298028168bfb907d56d}
+
+
+data files version 
+
+\hypertarget{classCSphIndex__VLN_aa3de81463a2b666539e60665c2077b04}{\index{C\-Sph\-Index\-\_\-\-V\-L\-N@{C\-Sph\-Index\-\_\-\-V\-L\-N}!M\-I\-N\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R@{M\-I\-N\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}}
+\index{M\-I\-N\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R@{M\-I\-N\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}!CSphIndex_VLN@{C\-Sph\-Index\-\_\-\-V\-L\-N}}
+\subsubsection[{M\-I\-N\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Index\-\_\-\-V\-L\-N\-::\-M\-I\-N\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R = 262144\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphIndex__VLN_aa3de81463a2b666539e60665c2077b04}
+
+
+min write buffer size 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+\hypertarget{classExceptionsTrieGen__c}{\section{Exceptions\-Trie\-Gen\-\_\-c Class Reference}
+\label{classExceptionsTrieGen__c}\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExceptionsTrieGen__c_a95d733ce708d010bbd2e13521fceb8d3}{Exceptions\-Trie\-Gen\-\_\-c} ()
+\item 
+\hyperlink{classExceptionsTrieGen__c_ad72e09b02ed20544c35a396cb60dd479}{$\sim$\-Exceptions\-Trie\-Gen\-\_\-c} ()
+\item 
+void \hyperlink{classExceptionsTrieGen__c_a0e558084a2fbcd161cee18fedc1f3a20}{Fold\-Space} (char $\ast$s) const 
+\begin{DoxyCompactList}\small\item\em trims left/right whitespace, folds inner whitespace \end{DoxyCompactList}\item 
+bool \hyperlink{classExceptionsTrieGen__c_abad0499b9802bfeec574317f7e71f4fa}{Parse\-Line} (char $\ast$s\-Buffer, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+\hyperlink{classExceptionsTrie__c}{Exceptions\-Trie\-\_\-c} $\ast$ \hyperlink{classExceptionsTrieGen__c_a3daaa808bc0b7541eaba73f35058a308}{Build} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classExceptionsTrieGen__c_af81bc9d02fcf6e9ea634ebf5e079e5f6}{Save\-Int} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&v, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} p, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} x)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExceptionsTrieGen__c_ad978f0f13db4dfc213635199883fd029}{Save\-Node} (\hyperlink{classExceptionsTrie__c}{Exceptions\-Trie\-\_\-c} $\ast$p\-Res, \hyperlink{classExceptionsTrieNode__c}{Exceptions\-Trie\-Node\-\_\-c} $\ast$p\-Node, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Mappings)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExceptionsTrieNode__c}{Exceptions\-Trie\-Node\-\_\-c} $\ast$ \hyperlink{classExceptionsTrieGen__c_a3fc2613488897a8c241d8114f4210268}{m\-\_\-p\-Root}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExceptionsTrieGen__c_aae43cdb5e11cb1655cf6e8de8e95b9b8}{m\-\_\-i\-Count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+exceptions trie builder plain old text mappings in, nice useful trie out 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExceptionsTrieGen__c_a95d733ce708d010bbd2e13521fceb8d3}{\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!ExceptionsTrieGen_c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\subsubsection[{Exceptions\-Trie\-Gen\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Exceptions\-Trie\-Gen\-\_\-c\-::\-Exceptions\-Trie\-Gen\-\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrieGen__c_a95d733ce708d010bbd2e13521fceb8d3}
+\hypertarget{classExceptionsTrieGen__c_ad72e09b02ed20544c35a396cb60dd479}{\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!$\sim$\-Exceptions\-Trie\-Gen\-\_\-c@{$\sim$\-Exceptions\-Trie\-Gen\-\_\-c}}
+\index{$\sim$\-Exceptions\-Trie\-Gen\-\_\-c@{$\sim$\-Exceptions\-Trie\-Gen\-\_\-c}!ExceptionsTrieGen_c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\subsubsection[{$\sim$\-Exceptions\-Trie\-Gen\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Exceptions\-Trie\-Gen\-\_\-c\-::$\sim$\-Exceptions\-Trie\-Gen\-\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrieGen__c_ad72e09b02ed20544c35a396cb60dd479}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExceptionsTrieGen__c_a3daaa808bc0b7541eaba73f35058a308}{\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!Build@{Build}}
+\index{Build@{Build}!ExceptionsTrieGen_c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\subsubsection[{Build}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exceptions\-Trie\-\_\-c}$\ast$ Exceptions\-Trie\-Gen\-\_\-c\-::\-Build (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrieGen__c_a3daaa808bc0b7541eaba73f35058a308}
+\hypertarget{classExceptionsTrieGen__c_a0e558084a2fbcd161cee18fedc1f3a20}{\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!Fold\-Space@{Fold\-Space}}
+\index{Fold\-Space@{Fold\-Space}!ExceptionsTrieGen_c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\subsubsection[{Fold\-Space}]{\setlength{\rightskip}{0pt plus 5cm}void Exceptions\-Trie\-Gen\-\_\-c\-::\-Fold\-Space (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrieGen__c_a0e558084a2fbcd161cee18fedc1f3a20}
+
+
+trims left/right whitespace, folds inner whitespace 
+
+\hypertarget{classExceptionsTrieGen__c_abad0499b9802bfeec574317f7e71f4fa}{\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!Parse\-Line@{Parse\-Line}}
+\index{Parse\-Line@{Parse\-Line}!ExceptionsTrieGen_c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\subsubsection[{Parse\-Line}]{\setlength{\rightskip}{0pt plus 5cm}bool Exceptions\-Trie\-Gen\-\_\-c\-::\-Parse\-Line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s\-Buffer, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrieGen__c_abad0499b9802bfeec574317f7e71f4fa}
+\hypertarget{classExceptionsTrieGen__c_af81bc9d02fcf6e9ea634ebf5e079e5f6}{\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!Save\-Int@{Save\-Int}}
+\index{Save\-Int@{Save\-Int}!ExceptionsTrieGen_c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\subsubsection[{Save\-Int}]{\setlength{\rightskip}{0pt plus 5cm}void Exceptions\-Trie\-Gen\-\_\-c\-::\-Save\-Int (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{v, }
+\item[{{\bf int}}]{p, }
+\item[{{\bf int}}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classExceptionsTrieGen__c_af81bc9d02fcf6e9ea634ebf5e079e5f6}
+\hypertarget{classExceptionsTrieGen__c_ad978f0f13db4dfc213635199883fd029}{\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!Save\-Node@{Save\-Node}}
+\index{Save\-Node@{Save\-Node}!ExceptionsTrieGen_c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\subsubsection[{Save\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Exceptions\-Trie\-Gen\-\_\-c\-::\-Save\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Exceptions\-Trie\-\_\-c} $\ast$}]{p\-Res, }
+\item[{{\bf Exceptions\-Trie\-Node\-\_\-c} $\ast$}]{p\-Node, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Mappings}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classExceptionsTrieGen__c_ad978f0f13db4dfc213635199883fd029}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExceptionsTrieGen__c_aae43cdb5e11cb1655cf6e8de8e95b9b8}{\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!m\-\_\-i\-Count@{m\-\_\-i\-Count}}
+\index{m\-\_\-i\-Count@{m\-\_\-i\-Count}!ExceptionsTrieGen_c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Exceptions\-Trie\-Gen\-\_\-c\-::m\-\_\-i\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExceptionsTrieGen__c_aae43cdb5e11cb1655cf6e8de8e95b9b8}
+\hypertarget{classExceptionsTrieGen__c_a3fc2613488897a8c241d8114f4210268}{\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!m\-\_\-p\-Root@{m\-\_\-p\-Root}}
+\index{m\-\_\-p\-Root@{m\-\_\-p\-Root}!ExceptionsTrieGen_c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\subsubsection[{m\-\_\-p\-Root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exceptions\-Trie\-Node\-\_\-c}$\ast$ Exceptions\-Trie\-Gen\-\_\-c\-::m\-\_\-p\-Root\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExceptionsTrieGen__c_a3fc2613488897a8c241d8114f4210268}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

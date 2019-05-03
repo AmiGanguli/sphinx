@@ -1,0 +1,288 @@
+\hypertarget{sphinxjson_8cpp}{\section{src/sphinxjson.cpp File Reference}
+\label{sphinxjson_8cpp}\index{src/sphinxjson.\-cpp@{src/sphinxjson.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinxjson.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}llsphinxjson.\-c\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}yysphinxjson.\-c\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structJsonNode__t}{Json\-Node\-\_\-t}
+\begin{DoxyCompactList}\small\item\em parser view on a generic node \end{DoxyCompactList}\item 
+class \hyperlink{classJsonParser__c}{Json\-Parser\-\_\-c}
+\begin{DoxyCompactList}\small\item\em actually, J\-S\-O\-N-\/to-\/\-Sphinx\-B\-S\-O\-N converter helper, but who cares \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxjson_8cpp_a2ceb5b985e149f18e018b142cfdd7264}{Y\-Y\-S\-T\-Y\-P\-E}~\hyperlink{structJsonNode__t}{Json\-Node\-\_\-t}
+\item 
+\#define \hyperlink{sphinxjson_8cpp_ae78ac56cd1f29572e967ed7636952d15}{Y\-Y\-\_\-\-N\-O\-\_\-\-U\-N\-I\-S\-T\-D\-\_\-\-H}~1
+\item 
+\#define \hyperlink{sphinxjson_8cpp_ae5b01ac2fa5a6ad5fb97559638abe686}{Y\-Y\-\_\-\-D\-E\-C\-L}~static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} my\-\_\-lex ( \hyperlink{unionYYSTYPE}{Y\-Y\-S\-T\-Y\-P\-E} $\ast$ lvalp, void $\ast$ yyscanner, \hyperlink{classJsonParser__c}{Json\-Parser\-\_\-c} $\ast$ p\-Parser )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sphinxjson_8cpp_a66c055768b83f7d9c17434c12701330c}{yyerror} (\hyperlink{classJsonParser__c}{Json\-Parser\-\_\-c} $\ast$p\-Parser, const char $\ast$s\-Message)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxjson_8cpp_a9544e663185c8b6914db0b21525627c7}{yylex} (\hyperlink{unionYYSTYPE}{Y\-Y\-S\-T\-Y\-P\-E} $\ast$lvalp, \hyperlink{classJsonParser__c}{Json\-Parser\-\_\-c} $\ast$p\-Parser)
+\item 
+bool \hyperlink{sphinxjson_8cpp_a701cb88fd6ab0d47aad9a36047e831d4}{sph\-Json\-Parse} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Data, char $\ast$s\-Data, bool b\-Autoconv, bool b\-To\-Lowercase, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em parse J\-S\-O\-N, convert it into Sphinx\-B\-S\-O\-N blob \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxjson_8cpp_a2ec26efa4c66ce5ea894079273010856}{sph\-Json\-Key\-Mask} (const char $\ast$s\-Key, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\begin{DoxyCompactList}\small\item\em compute key mask (for Bloom filtering) from the key name \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxjson_8cpp_a67d2f4b2007819a3c81f7232061251eb}{sph\-Json\-Node\-Size} (\hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} e\-Type, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Data)
+\item 
+void \hyperlink{sphinxjson_8cpp_a5b27c3a5f81bf21ed269ce5a6a9872d3}{sph\-Json\-Skip\-Node} (\hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} e\-Type, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$$\ast$pp\-Data)
+\begin{DoxyCompactList}\small\item\em skip the current node, and update the pointer \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxjson_8cpp_ac22df1180a016eeba8fc972cbe7823d1}{sph\-Json\-Field\-Length} (\hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} e\-Type, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Data)
+\item 
+\hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} \hyperlink{sphinxjson_8cpp_af7f5727d54ec8e53ccc2d3262a89a64c}{sph\-Json\-Find\-First} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$$\ast$pp\-Data)
+\begin{DoxyCompactList}\small\item\em find first value in Sphinx\-B\-S\-O\-N blob, return associated type \end{DoxyCompactList}\item 
+\hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} \hyperlink{sphinxjson_8cpp_aade6806055a24fcc205d02a84eb03132}{sph\-Json\-Find\-By\-Key} (\hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} e\-Type, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$$\ast$pp\-Value, const void $\ast$p\-Key, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Mask)
+\begin{DoxyCompactList}\small\item\em find value by key in Sphinx\-B\-S\-O\-N blob, return associated type \end{DoxyCompactList}\item 
+\hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} \hyperlink{sphinxjson_8cpp_a4adadc49bb87b8afaebcf4d68d3cc174}{sph\-Json\-Find\-By\-Index} (\hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} e\-Type, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$$\ast$pp\-Value, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)
+\begin{DoxyCompactList}\small\item\em find value by index in Sphinx\-B\-S\-O\-N blob, return associated type \end{DoxyCompactList}\item 
+static const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{sphinxjson_8cpp_adfde3bd3477512d1c33f78035a431d22}{Json\-Format\-Str} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Out, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p, bool b\-Quote=true)
+\item 
+void \hyperlink{sphinxjson_8cpp_aa5c12622c68ec0f16b9833d3682c04bd}{Json\-Add\-Str} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Out, const char $\ast$p\-Str)
+\item 
+void \hyperlink{sphinxjson_8cpp_aa931e8611fd6680e3971de9c770c9a40}{sph\-Json\-Format} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Out, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Data)
+\begin{DoxyCompactList}\small\item\em convert Sphinx\-B\-S\-O\-N blob back to J\-S\-O\-N document \end{DoxyCompactList}\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{sphinxjson_8cpp_a6c6956ca4dc5f1bc1ac1f51d901498ed}{sph\-Json\-Field\-Format} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Out, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Data, \hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} e\-Type, bool b\-Quote\-String)
+\item 
+bool \hyperlink{sphinxjson_8cpp_acb9ba2734777dd0112a8c32d99e87a71}{sph\-Json\-Name\-Split} (const char $\ast$s\-Name, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$s\-Column, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$s\-Key)
+\begin{DoxyCompactList}\small\item\em split name to object and key parts, return false if not J\-S\-O\-N name \end{DoxyCompactList}\item 
+void \hyperlink{sphinxjson_8cpp_a67c683f5e963c81d3c312e85722081da}{Json\-Store\-Int} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} v)
+\item 
+void \hyperlink{sphinxjson_8cpp_a9fe9b5cfbb3518379914ccdb7d1dcd1d}{Json\-Store\-Bigint} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} v)
+\item 
+bool \hyperlink{sphinxjson_8cpp_a5680fc51af2360b06d5a0a362da55c83}{sph\-Json\-Inplace\-Update} (\hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} e\-Value\-Type, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Value, \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Expr, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Strings, const \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$p\-Row, bool b\-Update)
+\begin{DoxyCompactList}\small\item\em inplace J\-S\-O\-N update, both for realtime and non-\/realtime indexes, returns true if update is possible \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxjson_8cpp_a5d7598edf767601dc2dab7cbbc2c839f}{sph\-Json\-String\-To\-Number} (const char $\ast$s, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxjson_8h_ad0338b1aabded682906629a3e477a2a8}{E\-Sph\-Json\-Type} \&e\-Type, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \&i\-Val, double \&f\-Val)
+\begin{DoxyCompactList}\small\item\em converts string to number \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxjson_8cpp_ae5b01ac2fa5a6ad5fb97559638abe686}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!Y\-Y\-\_\-\-D\-E\-C\-L@{Y\-Y\-\_\-\-D\-E\-C\-L}}
+\index{Y\-Y\-\_\-\-D\-E\-C\-L@{Y\-Y\-\_\-\-D\-E\-C\-L}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{Y\-Y\-\_\-\-D\-E\-C\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-D\-E\-C\-L~static {\bf int} my\-\_\-lex ( {\bf Y\-Y\-S\-T\-Y\-P\-E} $\ast$ lvalp, void $\ast$ yyscanner, {\bf Json\-Parser\-\_\-c} $\ast$ p\-Parser )}}\label{sphinxjson_8cpp_ae5b01ac2fa5a6ad5fb97559638abe686}
+\hypertarget{sphinxjson_8cpp_ae78ac56cd1f29572e967ed7636952d15}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!Y\-Y\-\_\-\-N\-O\-\_\-\-U\-N\-I\-S\-T\-D\-\_\-\-H@{Y\-Y\-\_\-\-N\-O\-\_\-\-U\-N\-I\-S\-T\-D\-\_\-\-H}}
+\index{Y\-Y\-\_\-\-N\-O\-\_\-\-U\-N\-I\-S\-T\-D\-\_\-\-H@{Y\-Y\-\_\-\-N\-O\-\_\-\-U\-N\-I\-S\-T\-D\-\_\-\-H}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{Y\-Y\-\_\-\-N\-O\-\_\-\-U\-N\-I\-S\-T\-D\-\_\-\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-N\-O\-\_\-\-U\-N\-I\-S\-T\-D\-\_\-\-H~1}}\label{sphinxjson_8cpp_ae78ac56cd1f29572e967ed7636952d15}
+\hypertarget{sphinxjson_8cpp_a2ceb5b985e149f18e018b142cfdd7264}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!Y\-Y\-S\-T\-Y\-P\-E@{Y\-Y\-S\-T\-Y\-P\-E}}
+\index{Y\-Y\-S\-T\-Y\-P\-E@{Y\-Y\-S\-T\-Y\-P\-E}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{Y\-Y\-S\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf Y\-Y\-S\-T\-Y\-P\-E}~{\bf Json\-Node\-\_\-t}}}\label{sphinxjson_8cpp_a2ceb5b985e149f18e018b142cfdd7264}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxjson_8cpp_aa5c12622c68ec0f16b9833d3682c04bd}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!Json\-Add\-Str@{Json\-Add\-Str}}
+\index{Json\-Add\-Str@{Json\-Add\-Str}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{Json\-Add\-Str}]{\setlength{\rightskip}{0pt plus 5cm}void Json\-Add\-Str (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Out, }
+\item[{const char $\ast$}]{p\-Str}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_aa5c12622c68ec0f16b9833d3682c04bd}
+\hypertarget{sphinxjson_8cpp_adfde3bd3477512d1c33f78035a431d22}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!Json\-Format\-Str@{Json\-Format\-Str}}
+\index{Json\-Format\-Str@{Json\-Format\-Str}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{Json\-Format\-Str}]{\setlength{\rightskip}{0pt plus 5cm}static const {\bf B\-Y\-T\-E}$\ast$ Json\-Format\-Str (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Out, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p, }
+\item[{bool}]{b\-Quote = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxjson_8cpp_adfde3bd3477512d1c33f78035a431d22}
+\hypertarget{sphinxjson_8cpp_a9fe9b5cfbb3518379914ccdb7d1dcd1d}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!Json\-Store\-Bigint@{Json\-Store\-Bigint}}
+\index{Json\-Store\-Bigint@{Json\-Store\-Bigint}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{Json\-Store\-Bigint}]{\setlength{\rightskip}{0pt plus 5cm}void Json\-Store\-Bigint (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p, }
+\item[{{\bf int64\-\_\-t}}]{v}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a9fe9b5cfbb3518379914ccdb7d1dcd1d}
+\hypertarget{sphinxjson_8cpp_a67c683f5e963c81d3c312e85722081da}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!Json\-Store\-Int@{Json\-Store\-Int}}
+\index{Json\-Store\-Int@{Json\-Store\-Int}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{Json\-Store\-Int}]{\setlength{\rightskip}{0pt plus 5cm}void Json\-Store\-Int (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p, }
+\item[{{\bf int}}]{v}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a67c683f5e963c81d3c312e85722081da}
+\hypertarget{sphinxjson_8cpp_a6c6956ca4dc5f1bc1ac1f51d901498ed}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Field\-Format@{sph\-Json\-Field\-Format}}
+\index{sph\-Json\-Field\-Format@{sph\-Json\-Field\-Format}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Field\-Format}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E}$\ast$ sph\-Json\-Field\-Format (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Out, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Data, }
+\item[{{\bf E\-Sph\-Json\-Type}}]{e\-Type, }
+\item[{bool}]{b\-Quote\-String = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a6c6956ca4dc5f1bc1ac1f51d901498ed}
+convert Sphinx\-B\-S\-O\-N blob back to J\-S\-O\-N document N\-O\-T\-E, b\-Quote\-String==false is intended to format individual values only (and avoid quoting string values in that case) \hypertarget{sphinxjson_8cpp_ac22df1180a016eeba8fc972cbe7823d1}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Field\-Length@{sph\-Json\-Field\-Length}}
+\index{sph\-Json\-Field\-Length@{sph\-Json\-Field\-Length}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Field\-Length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Json\-Field\-Length (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Json\-Type}}]{e\-Type, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Data}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_ac22df1180a016eeba8fc972cbe7823d1}
+return object length or array length, in elements P\-O\-D types return 1, empty objects return 0 \hypertarget{sphinxjson_8cpp_a4adadc49bb87b8afaebcf4d68d3cc174}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Find\-By\-Index@{sph\-Json\-Find\-By\-Index}}
+\index{sph\-Json\-Find\-By\-Index@{sph\-Json\-Find\-By\-Index}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Find\-By\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Json\-Type} sph\-Json\-Find\-By\-Index (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Json\-Type}}]{e\-Type, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$$\ast$}]{pp\-Value, }
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a4adadc49bb87b8afaebcf4d68d3cc174}
+
+
+find value by index in Sphinx\-B\-S\-O\-N blob, return associated type 
+
+\hypertarget{sphinxjson_8cpp_aade6806055a24fcc205d02a84eb03132}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Find\-By\-Key@{sph\-Json\-Find\-By\-Key}}
+\index{sph\-Json\-Find\-By\-Key@{sph\-Json\-Find\-By\-Key}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Find\-By\-Key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Json\-Type} sph\-Json\-Find\-By\-Key (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Json\-Type}}]{e\-Type, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$$\ast$}]{pp\-Value, }
+\item[{const void $\ast$}]{p\-Key, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Mask}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_aade6806055a24fcc205d02a84eb03132}
+
+
+find value by key in Sphinx\-B\-S\-O\-N blob, return associated type 
+
+\hypertarget{sphinxjson_8cpp_af7f5727d54ec8e53ccc2d3262a89a64c}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Find\-First@{sph\-Json\-Find\-First}}
+\index{sph\-Json\-Find\-First@{sph\-Json\-Find\-First}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Find\-First}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Json\-Type} sph\-Json\-Find\-First (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$$\ast$}]{pp\-Data}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_af7f5727d54ec8e53ccc2d3262a89a64c}
+
+
+find first value in Sphinx\-B\-S\-O\-N blob, return associated type 
+
+\hypertarget{sphinxjson_8cpp_aa931e8611fd6680e3971de9c770c9a40}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Format@{sph\-Json\-Format}}
+\index{sph\-Json\-Format@{sph\-Json\-Format}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Format}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Json\-Format (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Out, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Data}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_aa931e8611fd6680e3971de9c770c9a40}
+
+
+convert Sphinx\-B\-S\-O\-N blob back to J\-S\-O\-N document 
+
+\hypertarget{sphinxjson_8cpp_a5680fc51af2360b06d5a0a362da55c83}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Inplace\-Update@{sph\-Json\-Inplace\-Update}}
+\index{sph\-Json\-Inplace\-Update@{sph\-Json\-Inplace\-Update}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Inplace\-Update}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Json\-Inplace\-Update (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Json\-Type}}]{e\-Value\-Type, }
+\item[{{\bf int64\-\_\-t}}]{i\-Value, }
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Expr, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Strings, }
+\item[{const {\bf C\-Sph\-Rowitem} $\ast$}]{p\-Row, }
+\item[{bool}]{b\-Update}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a5680fc51af2360b06d5a0a362da55c83}
+
+
+inplace J\-S\-O\-N update, both for realtime and non-\/realtime indexes, returns true if update is possible 
+
+\hypertarget{sphinxjson_8cpp_a2ec26efa4c66ce5ea894079273010856}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Key\-Mask@{sph\-Json\-Key\-Mask}}
+\index{sph\-Json\-Key\-Mask@{sph\-Json\-Key\-Mask}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Key\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} sph\-Json\-Key\-Mask (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a2ec26efa4c66ce5ea894079273010856}
+
+
+compute key mask (for Bloom filtering) from the key name 
+
+\hypertarget{sphinxjson_8cpp_acb9ba2734777dd0112a8c32d99e87a71}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Name\-Split@{sph\-Json\-Name\-Split}}
+\index{sph\-Json\-Name\-Split@{sph\-Json\-Name\-Split}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Name\-Split}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Json\-Name\-Split (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{s\-Column, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{s\-Key}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_acb9ba2734777dd0112a8c32d99e87a71}
+
+
+split name to object and key parts, return false if not J\-S\-O\-N name 
+
+\hypertarget{sphinxjson_8cpp_a67d2f4b2007819a3c81f7232061251eb}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Node\-Size@{sph\-Json\-Node\-Size}}
+\index{sph\-Json\-Node\-Size@{sph\-Json\-Node\-Size}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Node\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Json\-Node\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Json\-Type}}]{e\-Type, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Data}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a67d2f4b2007819a3c81f7232061251eb}
+compute node size, in bytes returns -\/1 when data itself is required to compute the size, but p\-Data is N\-U\-L\-L \hypertarget{sphinxjson_8cpp_a701cb88fd6ab0d47aad9a36047e831d4}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Parse@{sph\-Json\-Parse}}
+\index{sph\-Json\-Parse@{sph\-Json\-Parse}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Parse}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Json\-Parse (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Data, }
+\item[{char $\ast$}]{s\-Data, }
+\item[{bool}]{b\-Autoconv, }
+\item[{bool}]{b\-To\-Lowercase, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a701cb88fd6ab0d47aad9a36047e831d4}
+
+
+parse J\-S\-O\-N, convert it into Sphinx\-B\-S\-O\-N blob 
+
+\hypertarget{sphinxjson_8cpp_a5b27c3a5f81bf21ed269ce5a6a9872d3}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-Skip\-Node@{sph\-Json\-Skip\-Node}}
+\index{sph\-Json\-Skip\-Node@{sph\-Json\-Skip\-Node}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-Skip\-Node}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Json\-Skip\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Json\-Type}}]{e\-Type, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$$\ast$}]{pp\-Data}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a5b27c3a5f81bf21ed269ce5a6a9872d3}
+
+
+skip the current node, and update the pointer 
+
+\hypertarget{sphinxjson_8cpp_a5d7598edf767601dc2dab7cbbc2c839f}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!sph\-Json\-String\-To\-Number@{sph\-Json\-String\-To\-Number}}
+\index{sph\-Json\-String\-To\-Number@{sph\-Json\-String\-To\-Number}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{sph\-Json\-String\-To\-Number}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Json\-String\-To\-Number (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf E\-Sph\-Json\-Type} \&}]{e\-Type, }
+\item[{{\bf int64\-\_\-t} \&}]{i\-Val, }
+\item[{double \&}]{f\-Val}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a5d7598edf767601dc2dab7cbbc2c839f}
+
+
+converts string to number 
+
+\hypertarget{sphinxjson_8cpp_a66c055768b83f7d9c17434c12701330c}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!yyerror@{yyerror}}
+\index{yyerror@{yyerror}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{yyerror}]{\setlength{\rightskip}{0pt plus 5cm}void yyerror (
+\begin{DoxyParamCaption}
+\item[{{\bf Json\-Parser\-\_\-c} $\ast$}]{p\-Parser, }
+\item[{const char $\ast$}]{s\-Message}
+\end{DoxyParamCaption}
+)}}\label{sphinxjson_8cpp_a66c055768b83f7d9c17434c12701330c}
+\hypertarget{sphinxjson_8cpp_a9544e663185c8b6914db0b21525627c7}{\index{sphinxjson.\-cpp@{sphinxjson.\-cpp}!yylex@{yylex}}
+\index{yylex@{yylex}!sphinxjson.cpp@{sphinxjson.\-cpp}}
+\subsubsection[{yylex}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} yylex (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-S\-T\-Y\-P\-E} $\ast$}]{lvalp, }
+\item[{{\bf Json\-Parser\-\_\-c} $\ast$}]{p\-Parser}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxjson_8cpp_a9544e663185c8b6914db0b21525627c7}

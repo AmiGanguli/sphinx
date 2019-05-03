@@ -1,0 +1,108 @@
+\hypertarget{classCSphAutoEvent}{\section{C\-Sph\-Auto\-Event Class Reference}
+\label{classCSphAutoEvent}\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}}
+}
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Auto\-Event\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphAutoEvent}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphAutoEvent_aa0ac0df23395895a82d919ef3267991f}{C\-Sph\-Auto\-Event} ()
+\item 
+\hyperlink{classCSphAutoEvent_a6faa08f6461599e8524d2cebe57459c1}{$\sim$\-C\-Sph\-Auto\-Event} ()
+\item 
+bool \hyperlink{classCSphAutoEvent_ae469653196d282cbe3adcf31a9a8e490}{Init} (C\-Sph\-Mutex $\ast$p\-Mutex)
+\item 
+bool \hyperlink{classCSphAutoEvent_a702194799ef1d17be24f4ac5a2e88eb8}{Done} ()
+\item 
+void \hyperlink{classCSphAutoEvent_ae1e2b47aa6df3498bc605fcebedac8d9}{Set\-Event} ()
+\item 
+bool \hyperlink{classCSphAutoEvent_a95d12203276238859d18c6dc3b5e55e4}{Wait\-Event} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCSphAutoEvent_a4fcafeb9de9298f736d43f9453527454}{m\-\_\-b\-Initialized}
+\item 
+bool \hyperlink{classCSphAutoEvent_a2d58681011e343892baba94e7693a60c}{m\-\_\-b\-Sent}
+\item 
+pthread\-\_\-cond\-\_\-t \hyperlink{classCSphAutoEvent_a24395747674c91fc8e840c49feb8bfa6}{m\-\_\-t\-Cond}
+\item 
+pthread\-\_\-mutex\-\_\-t $\ast$ \hyperlink{classCSphAutoEvent_a9860d49c0d3c508561cf7874a4e2f8a7}{m\-\_\-p\-Mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphAutoEvent_aa0ac0df23395895a82d919ef3267991f}{\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}}
+\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!CSphAutoEvent@{C\-Sph\-Auto\-Event}}
+\subsubsection[{C\-Sph\-Auto\-Event}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Auto\-Event\-::\-C\-Sph\-Auto\-Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphAutoEvent_aa0ac0df23395895a82d919ef3267991f}
+\hypertarget{classCSphAutoEvent_a6faa08f6461599e8524d2cebe57459c1}{\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!$\sim$\-C\-Sph\-Auto\-Event@{$\sim$\-C\-Sph\-Auto\-Event}}
+\index{$\sim$\-C\-Sph\-Auto\-Event@{$\sim$\-C\-Sph\-Auto\-Event}!CSphAutoEvent@{C\-Sph\-Auto\-Event}}
+\subsubsection[{$\sim$\-C\-Sph\-Auto\-Event}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Auto\-Event\-::$\sim$\-C\-Sph\-Auto\-Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphAutoEvent_a6faa08f6461599e8524d2cebe57459c1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphAutoEvent_a702194799ef1d17be24f4ac5a2e88eb8}{\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!Done@{Done}}
+\index{Done@{Done}!CSphAutoEvent@{C\-Sph\-Auto\-Event}}
+\subsubsection[{Done}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Auto\-Event\-::\-Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutoEvent_a702194799ef1d17be24f4ac5a2e88eb8}
+\hypertarget{classCSphAutoEvent_ae469653196d282cbe3adcf31a9a8e490}{\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!Init@{Init}}
+\index{Init@{Init}!CSphAutoEvent@{C\-Sph\-Auto\-Event}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Auto\-Event\-::\-Init (
+\begin{DoxyParamCaption}
+\item[{C\-Sph\-Mutex $\ast$}]{p\-Mutex}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutoEvent_ae469653196d282cbe3adcf31a9a8e490}
+\hypertarget{classCSphAutoEvent_ae1e2b47aa6df3498bc605fcebedac8d9}{\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!Set\-Event@{Set\-Event}}
+\index{Set\-Event@{Set\-Event}!CSphAutoEvent@{C\-Sph\-Auto\-Event}}
+\subsubsection[{Set\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Auto\-Event\-::\-Set\-Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutoEvent_ae1e2b47aa6df3498bc605fcebedac8d9}
+\hypertarget{classCSphAutoEvent_a95d12203276238859d18c6dc3b5e55e4}{\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!Wait\-Event@{Wait\-Event}}
+\index{Wait\-Event@{Wait\-Event}!CSphAutoEvent@{C\-Sph\-Auto\-Event}}
+\subsubsection[{Wait\-Event}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Auto\-Event\-::\-Wait\-Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutoEvent_a95d12203276238859d18c6dc3b5e55e4}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphAutoEvent_a4fcafeb9de9298f736d43f9453527454}{\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!m\-\_\-b\-Initialized@{m\-\_\-b\-Initialized}}
+\index{m\-\_\-b\-Initialized@{m\-\_\-b\-Initialized}!CSphAutoEvent@{C\-Sph\-Auto\-Event}}
+\subsubsection[{m\-\_\-b\-Initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Auto\-Event\-::m\-\_\-b\-Initialized\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAutoEvent_a4fcafeb9de9298f736d43f9453527454}
+\hypertarget{classCSphAutoEvent_a2d58681011e343892baba94e7693a60c}{\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!m\-\_\-b\-Sent@{m\-\_\-b\-Sent}}
+\index{m\-\_\-b\-Sent@{m\-\_\-b\-Sent}!CSphAutoEvent@{C\-Sph\-Auto\-Event}}
+\subsubsection[{m\-\_\-b\-Sent}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Auto\-Event\-::m\-\_\-b\-Sent\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAutoEvent_a2d58681011e343892baba94e7693a60c}
+\hypertarget{classCSphAutoEvent_a9860d49c0d3c508561cf7874a4e2f8a7}{\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!m\-\_\-p\-Mutex@{m\-\_\-p\-Mutex}}
+\index{m\-\_\-p\-Mutex@{m\-\_\-p\-Mutex}!CSphAutoEvent@{C\-Sph\-Auto\-Event}}
+\subsubsection[{m\-\_\-p\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}pthread\-\_\-mutex\-\_\-t$\ast$ C\-Sph\-Auto\-Event\-::m\-\_\-p\-Mutex\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAutoEvent_a9860d49c0d3c508561cf7874a4e2f8a7}
+\hypertarget{classCSphAutoEvent_a24395747674c91fc8e840c49feb8bfa6}{\index{C\-Sph\-Auto\-Event@{C\-Sph\-Auto\-Event}!m\-\_\-t\-Cond@{m\-\_\-t\-Cond}}
+\index{m\-\_\-t\-Cond@{m\-\_\-t\-Cond}!CSphAutoEvent@{C\-Sph\-Auto\-Event}}
+\subsubsection[{m\-\_\-t\-Cond}]{\setlength{\rightskip}{0pt plus 5cm}pthread\-\_\-cond\-\_\-t C\-Sph\-Auto\-Event\-::m\-\_\-t\-Cond\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAutoEvent_a24395747674c91fc8e840c49feb8bfa6}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\item 
+src/\hyperlink{sphinxstd_8cpp}{sphinxstd.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,118 @@
+\hypertarget{udfexample_8c}{\section{src/udfexample.c File Reference}
+\label{udfexample_8c}\index{src/udfexample.\-c@{src/udfexample.\-c}}
+}
+{\ttfamily \#include \char`\"{}sphinxudf.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{D\-L\-L\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{D\-L\-L\-E\-X\-P\-O\-R\-T} \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{udfexample_8c_afc73a1d4ff80473ac87c488fe0474f6d}{udfexample\-\_\-ver} ()
+\item 
+\hyperlink{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{D\-L\-L\-E\-X\-P\-O\-R\-T} void \hyperlink{udfexample_8c_a5f41e7a209e6679fc25b15099c8fd858}{udfexample\-\_\-reinit} ()
+\item 
+\hyperlink{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{D\-L\-L\-E\-X\-P\-O\-R\-T} \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{udfexample_8c_a0df848fde79ebbc579cb20f439f13a17}{sequence\-\_\-init} (\hyperlink{sphinxudf_8h_af57f73442a2d50129554ae57fd73e9e6}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init, \hyperlink{sphinxudf_8h_acd696630bd84382530fa56bb9a879532}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$args, char $\ast$error\-\_\-message)
+\item 
+\hyperlink{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{D\-L\-L\-E\-X\-P\-O\-R\-T} void \hyperlink{udfexample_8c_adcd8304b06395af6b6f222e2253801a7}{sequence\-\_\-deinit} (\hyperlink{sphinxudf_8h_af57f73442a2d50129554ae57fd73e9e6}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init)
+\item 
+\hyperlink{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{D\-L\-L\-E\-X\-P\-O\-R\-T} \hyperlink{sphinxudf_8h_ac12156af03a9e29aed3174eb8c3a191c}{sphinx\-\_\-int64\-\_\-t} \hyperlink{udfexample_8c_ae23e6e3c7e1b572df15ff4e5a7da4dd8}{sequence} (\hyperlink{sphinxudf_8h_af57f73442a2d50129554ae57fd73e9e6}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init, \hyperlink{sphinxudf_8h_acd696630bd84382530fa56bb9a879532}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$args, char $\ast$error\-\_\-flag)
+\item 
+\hyperlink{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{D\-L\-L\-E\-X\-P\-O\-R\-T} \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{udfexample_8c_a14f4280557288004cbeb5d27f6b3091f}{strtoint\-\_\-init} (\hyperlink{sphinxudf_8h_af57f73442a2d50129554ae57fd73e9e6}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init, \hyperlink{sphinxudf_8h_acd696630bd84382530fa56bb9a879532}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$args, char $\ast$error\-\_\-message)
+\item 
+\hyperlink{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{D\-L\-L\-E\-X\-P\-O\-R\-T} \hyperlink{sphinxudf_8h_ac12156af03a9e29aed3174eb8c3a191c}{sphinx\-\_\-int64\-\_\-t} \hyperlink{udfexample_8c_aa83c7878fb9aad2ec668b7c3c62fae0c}{strtoint} (\hyperlink{sphinxudf_8h_af57f73442a2d50129554ae57fd73e9e6}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init, \hyperlink{sphinxudf_8h_acd696630bd84382530fa56bb9a879532}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$args, char $\ast$error\-\_\-flag)
+\item 
+\hyperlink{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{D\-L\-L\-E\-X\-P\-O\-R\-T} \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{udfexample_8c_a41665c91be2fbc1a581d587b2f356808}{avgmva\-\_\-init} (\hyperlink{sphinxudf_8h_af57f73442a2d50129554ae57fd73e9e6}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init, \hyperlink{sphinxudf_8h_acd696630bd84382530fa56bb9a879532}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$args, char $\ast$error\-\_\-message)
+\item 
+\hyperlink{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{D\-L\-L\-E\-X\-P\-O\-R\-T} double \hyperlink{udfexample_8c_a4891bd2bce6e9c4b8aefcdbf59508e04}{avgmva} (\hyperlink{sphinxudf_8h_af57f73442a2d50129554ae57fd73e9e6}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init, \hyperlink{sphinxudf_8h_acd696630bd84382530fa56bb9a879532}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$args, char $\ast$error\-\_\-flag)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{udfexample_8c_a808e08638be3cba36e36759e5b150de0}{\index{udfexample.\-c@{udfexample.\-c}!D\-L\-L\-E\-X\-P\-O\-R\-T@{D\-L\-L\-E\-X\-P\-O\-R\-T}}
+\index{D\-L\-L\-E\-X\-P\-O\-R\-T@{D\-L\-L\-E\-X\-P\-O\-R\-T}!udfexample.c@{udfexample.\-c}}
+\subsubsection[{D\-L\-L\-E\-X\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-L\-L\-E\-X\-P\-O\-R\-T}}\label{udfexample_8c_a808e08638be3cba36e36759e5b150de0}
+
+
+\subsection{Function Documentation}
+\hypertarget{udfexample_8c_a4891bd2bce6e9c4b8aefcdbf59508e04}{\index{udfexample.\-c@{udfexample.\-c}!avgmva@{avgmva}}
+\index{avgmva@{avgmva}!udfexample.c@{udfexample.\-c}}
+\subsubsection[{avgmva}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-L\-E\-X\-P\-O\-R\-T} double avgmva (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$}]{init, }
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$}]{args, }
+\item[{char $\ast$}]{error\-\_\-flag}
+\end{DoxyParamCaption}
+)}}\label{udfexample_8c_a4891bd2bce6e9c4b8aefcdbf59508e04}
+\hypertarget{udfexample_8c_a41665c91be2fbc1a581d587b2f356808}{\index{udfexample.\-c@{udfexample.\-c}!avgmva\-\_\-init@{avgmva\-\_\-init}}
+\index{avgmva\-\_\-init@{avgmva\-\_\-init}!udfexample.c@{udfexample.\-c}}
+\subsubsection[{avgmva\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-L\-E\-X\-P\-O\-R\-T} {\bf int} avgmva\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$}]{init, }
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$}]{args, }
+\item[{char $\ast$}]{error\-\_\-message}
+\end{DoxyParamCaption}
+)}}\label{udfexample_8c_a41665c91be2fbc1a581d587b2f356808}
+\hypertarget{udfexample_8c_ae23e6e3c7e1b572df15ff4e5a7da4dd8}{\index{udfexample.\-c@{udfexample.\-c}!sequence@{sequence}}
+\index{sequence@{sequence}!udfexample.c@{udfexample.\-c}}
+\subsubsection[{sequence}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-L\-E\-X\-P\-O\-R\-T} {\bf sphinx\-\_\-int64\-\_\-t} sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$}]{init, }
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$}]{args, }
+\item[{char $\ast$}]{error\-\_\-flag}
+\end{DoxyParamCaption}
+)}}\label{udfexample_8c_ae23e6e3c7e1b572df15ff4e5a7da4dd8}
+U\-D\-F implementation gets called for every row, unless optimized away \hypertarget{udfexample_8c_adcd8304b06395af6b6f222e2253801a7}{\index{udfexample.\-c@{udfexample.\-c}!sequence\-\_\-deinit@{sequence\-\_\-deinit}}
+\index{sequence\-\_\-deinit@{sequence\-\_\-deinit}!udfexample.c@{udfexample.\-c}}
+\subsubsection[{sequence\-\_\-deinit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-L\-E\-X\-P\-O\-R\-T} void sequence\-\_\-deinit (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$}]{init}
+\end{DoxyParamCaption}
+)}}\label{udfexample_8c_adcd8304b06395af6b6f222e2253801a7}
+U\-D\-F deinitialization gets called on every query, when query ends \hypertarget{udfexample_8c_a0df848fde79ebbc579cb20f439f13a17}{\index{udfexample.\-c@{udfexample.\-c}!sequence\-\_\-init@{sequence\-\_\-init}}
+\index{sequence\-\_\-init@{sequence\-\_\-init}!udfexample.c@{udfexample.\-c}}
+\subsubsection[{sequence\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-L\-E\-X\-P\-O\-R\-T} {\bf int} sequence\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$}]{init, }
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$}]{args, }
+\item[{char $\ast$}]{error\-\_\-message}
+\end{DoxyParamCaption}
+)}}\label{udfexample_8c_a0df848fde79ebbc579cb20f439f13a17}
+U\-D\-F initialization gets called on every query, when query begins args are filled with values for a particular query \hypertarget{udfexample_8c_aa83c7878fb9aad2ec668b7c3c62fae0c}{\index{udfexample.\-c@{udfexample.\-c}!strtoint@{strtoint}}
+\index{strtoint@{strtoint}!udfexample.c@{udfexample.\-c}}
+\subsubsection[{strtoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-L\-E\-X\-P\-O\-R\-T} {\bf sphinx\-\_\-int64\-\_\-t} strtoint (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$}]{init, }
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$}]{args, }
+\item[{char $\ast$}]{error\-\_\-flag}
+\end{DoxyParamCaption}
+)}}\label{udfexample_8c_aa83c7878fb9aad2ec668b7c3c62fae0c}
+\hypertarget{udfexample_8c_a14f4280557288004cbeb5d27f6b3091f}{\index{udfexample.\-c@{udfexample.\-c}!strtoint\-\_\-init@{strtoint\-\_\-init}}
+\index{strtoint\-\_\-init@{strtoint\-\_\-init}!udfexample.c@{udfexample.\-c}}
+\subsubsection[{strtoint\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-L\-E\-X\-P\-O\-R\-T} {\bf int} strtoint\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$}]{init, }
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$}]{args, }
+\item[{char $\ast$}]{error\-\_\-message}
+\end{DoxyParamCaption}
+)}}\label{udfexample_8c_a14f4280557288004cbeb5d27f6b3091f}
+\hypertarget{udfexample_8c_a5f41e7a209e6679fc25b15099c8fd858}{\index{udfexample.\-c@{udfexample.\-c}!udfexample\-\_\-reinit@{udfexample\-\_\-reinit}}
+\index{udfexample\-\_\-reinit@{udfexample\-\_\-reinit}!udfexample.c@{udfexample.\-c}}
+\subsubsection[{udfexample\-\_\-reinit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-L\-E\-X\-P\-O\-R\-T} void udfexample\-\_\-reinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{udfexample_8c_a5f41e7a209e6679fc25b15099c8fd858}
+U\-D\-F re-\/initialization func gets called on sighup (workers=prefork only) \hypertarget{udfexample_8c_afc73a1d4ff80473ac87c488fe0474f6d}{\index{udfexample.\-c@{udfexample.\-c}!udfexample\-\_\-ver@{udfexample\-\_\-ver}}
+\index{udfexample\-\_\-ver@{udfexample\-\_\-ver}!udfexample.c@{udfexample.\-c}}
+\subsubsection[{udfexample\-\_\-ver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-L\-E\-X\-P\-O\-R\-T} {\bf int} udfexample\-\_\-ver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{udfexample_8c_afc73a1d4ff80473ac87c488fe0474f6d}
+U\-D\-F version control gets called once when the library is loaded 

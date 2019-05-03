@@ -1,0 +1,77 @@
+\hypertarget{classCSphDictStarV8}{\section{C\-Sph\-Dict\-Star\-V8 Class Reference}
+\label{classCSphDictStarV8}\index{C\-Sph\-Dict\-Star\-V8@{C\-Sph\-Dict\-Star\-V8}}
+}
+
+
+star dict for index v.\-8+  
+
+
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Dict\-Star\-V8\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCSphDictStarV8}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphDictStarV8_adfa43ad86c8cb25004669d1d34e33bf0}{C\-Sph\-Dict\-Star\-V8} (\hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, bool b\-Prefixes, bool b\-Infixes)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDictStarV8_a643a9893a9c825a807ba0892ccf52fd8}{Get\-Word\-I\-D} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCSphDictStarV8_ae01b72441144a8cf1b7fcc4a67369d92}{m\-\_\-b\-Prefixes}
+\item 
+bool \hyperlink{classCSphDictStarV8_af69c0f5ab8655132b79d6bcd0a7a79bd}{m\-\_\-b\-Infixes}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+star dict for index v.\-8+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphDictStarV8_adfa43ad86c8cb25004669d1d34e33bf0}{\index{C\-Sph\-Dict\-Star\-V8@{C\-Sph\-Dict\-Star\-V8}!C\-Sph\-Dict\-Star\-V8@{C\-Sph\-Dict\-Star\-V8}}
+\index{C\-Sph\-Dict\-Star\-V8@{C\-Sph\-Dict\-Star\-V8}!CSphDictStarV8@{C\-Sph\-Dict\-Star\-V8}}
+\subsubsection[{C\-Sph\-Dict\-Star\-V8}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Dict\-Star\-V8\-::\-C\-Sph\-Dict\-Star\-V8 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{bool}]{b\-Prefixes, }
+\item[{bool}]{b\-Infixes}
+\end{DoxyParamCaption}
+)}}\label{classCSphDictStarV8_adfa43ad86c8cb25004669d1d34e33bf0}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphDictStarV8_a643a9893a9c825a807ba0892ccf52fd8}{\index{C\-Sph\-Dict\-Star\-V8@{C\-Sph\-Dict\-Star\-V8}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!CSphDictStarV8@{C\-Sph\-Dict\-Star\-V8}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Star\-V8\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictStarV8_a643a9893a9c825a807ba0892ccf52fd8}
+Get word I\-D by word, \char`\"{}text\char`\"{} version may apply stemming and modify word inplace modified word may become bigger than the original one, so make sure you have enough space in buffer which is pointer by p\-Word a general practice is to use char\mbox{[}3$\ast$\-S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N+4\mbox{]} as a buffer returns 0 for stopwords 
+
+Reimplemented from \hyperlink{classCSphDictStar_a4e569ff418bf922b57c9c22c30d40bc9}{C\-Sph\-Dict\-Star}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphDictStarV8_af69c0f5ab8655132b79d6bcd0a7a79bd}{\index{C\-Sph\-Dict\-Star\-V8@{C\-Sph\-Dict\-Star\-V8}!m\-\_\-b\-Infixes@{m\-\_\-b\-Infixes}}
+\index{m\-\_\-b\-Infixes@{m\-\_\-b\-Infixes}!CSphDictStarV8@{C\-Sph\-Dict\-Star\-V8}}
+\subsubsection[{m\-\_\-b\-Infixes}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-Star\-V8\-::m\-\_\-b\-Infixes\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictStarV8_af69c0f5ab8655132b79d6bcd0a7a79bd}
+\hypertarget{classCSphDictStarV8_ae01b72441144a8cf1b7fcc4a67369d92}{\index{C\-Sph\-Dict\-Star\-V8@{C\-Sph\-Dict\-Star\-V8}!m\-\_\-b\-Prefixes@{m\-\_\-b\-Prefixes}}
+\index{m\-\_\-b\-Prefixes@{m\-\_\-b\-Prefixes}!CSphDictStarV8@{C\-Sph\-Dict\-Star\-V8}}
+\subsubsection[{m\-\_\-b\-Prefixes}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-Star\-V8\-::m\-\_\-b\-Prefixes\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictStarV8_ae01b72441144a8cf1b7fcc4a67369d92}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

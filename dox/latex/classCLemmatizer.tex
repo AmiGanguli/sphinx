@@ -1,0 +1,203 @@
+\hypertarget{classCLemmatizer}{\section{C\-Lemmatizer Class Reference}
+\label{classCLemmatizer}\index{C\-Lemmatizer@{C\-Lemmatizer}}
+}
+
+
+lemmatizer  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCLemmatizer_a26ba36ca2355d61661c5ef1edda9aa1b}{C\-Lemmatizer} (bool Is\-German=false)
+\item 
+bool \hyperlink{classCLemmatizer_afc85dfd34ad468285d08621b49e124b1}{Lemmatize\-Word} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$results) const 
+\begin{DoxyCompactList}\small\item\em returns true if matched in dictionary, false if predicted \end{DoxyCompactList}\item 
+bool \hyperlink{classCLemmatizer_a62c10c445efa48e642a0213648193aa1}{Load\-Pak} (\hyperlink{classCSphReader}{C\-Sph\-Reader} \&rd)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxaot_8cpp_af0b2c6d1d1a82df73c3ba2ec360442df}{C\-Flexia\-Model} $>$ \hyperlink{classCLemmatizer_a7895fb55ebe69a7aa60c1c0dceb8b04c}{m\-\_\-\-Flexia\-Models}
+\begin{DoxyCompactList}\small\item\em flexia models \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCLemmatizer_a6d7aba68315463237ddfbec80dc99b7f}{m\-\_\-i\-Lang}
+\begin{DoxyCompactList}\small\item\em my language \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCLemmatizer_a0b1ae0e81bc26748b0d48e3c2088542c}{Is\-Prefix} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Prefix, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len) const 
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCLemmatizer_ab45819832a6e9433ad29596dbd07a929}{Predict\-Pack} (const \hyperlink{structCPredictTuple}{C\-Predict\-Tuple} \&t) const 
+\item 
+bool \hyperlink{classCLemmatizer_a5bf62c7b061e504ce71c791f824d0297}{Predict\-Find} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCPredictTuple}{C\-Predict\-Tuple} $>$ \&res) const 
+\item 
+void \hyperlink{classCLemmatizer_af08fa9256329696acf75a50b85f13b96}{Predict\-Find\-Recursive} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} r, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Path, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Path, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCPredictTuple}{C\-Predict\-Tuple} $>$ \&Infos) const 
+\item 
+void \hyperlink{classCLemmatizer_a78ad2f07ff8a6e36948a5dfc47010ac4}{Predict\-By\-Data\-Base} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$results, bool is\-\_\-cap) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCLemmatizer_aee78b345c6cb1475f6d61f38ed948698}{m\-\_\-b\-Is\-German}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{classCLemmatizer_a5b90b2010d69693a7e096235db1c28cd}{m\-\_\-\-U\-C} \mbox{[}256\mbox{]}
+\item 
+\hyperlink{classCMorphAutomat}{C\-Morph\-Automat} \hyperlink{classCLemmatizer_a53eefd483fbc7b6f434d0f82818035db}{m\-\_\-\-Form\-Automat}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} $>$ \hyperlink{classCLemmatizer_aff1ef9346f58dc6ce9dd2d9c2e8e3930}{m\-\_\-\-Lemma\-Flexia\-Model}
+\begin{DoxyCompactList}\small\item\em lemma id to flexia model id mapping \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classCLemmatizer_a8ed8787ab19324a82b4aae5d19134623}{m\-\_\-\-N\-P\-Ss}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCLemmatizer_a534943c29beda648c14a504261315053}{m\-\_\-\-Prefix\-Len} \mbox{[}\hyperlink{classCLemmatizer_a741c02dd57aa5794e6f197f9d533fac4}{M\-A\-X\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-L\-E\-N}\mbox{]}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classCLemmatizer_a7ea2f362b36f23c127736d67360d8fa7}{m\-\_\-\-Prefix\-Blob}
+\item 
+\hyperlink{classCMorphAutomat}{C\-Morph\-Automat} \hyperlink{classCLemmatizer_aa1098b2b33498d4c9f332aa8cb08b26e}{m\-\_\-\-Suffix\-Automat}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \hyperlink{classCLemmatizer_a3951deca7374102dd11f0da82c58483c}{m\-\_\-\-Model\-Freq}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCLemmatizer_a741c02dd57aa5794e6f197f9d533fac4}{M\-A\-X\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-L\-E\-N} = 12
+\item 
+static const bool \hyperlink{classCLemmatizer_a50a62c695ccd43d736ae590a6650fc22}{m\-\_\-b\-Maximal\-Prediction} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lemmatizer 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCLemmatizer_a26ba36ca2355d61661c5ef1edda9aa1b}{\index{C\-Lemmatizer@{C\-Lemmatizer}!C\-Lemmatizer@{C\-Lemmatizer}}
+\index{C\-Lemmatizer@{C\-Lemmatizer}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{C\-Lemmatizer}]{\setlength{\rightskip}{0pt plus 5cm}C\-Lemmatizer\-::\-C\-Lemmatizer (
+\begin{DoxyParamCaption}
+\item[{bool}]{Is\-German = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCLemmatizer_a26ba36ca2355d61661c5ef1edda9aa1b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCLemmatizer_a0b1ae0e81bc26748b0d48e3c2088542c}{\index{C\-Lemmatizer@{C\-Lemmatizer}!Is\-Prefix@{Is\-Prefix}}
+\index{Is\-Prefix@{Is\-Prefix}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{Is\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Lemmatizer\-::\-Is\-Prefix (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-Prefix, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_a0b1ae0e81bc26748b0d48e3c2088542c}
+\hypertarget{classCLemmatizer_afc85dfd34ad468285d08621b49e124b1}{\index{C\-Lemmatizer@{C\-Lemmatizer}!Lemmatize\-Word@{Lemmatize\-Word}}
+\index{Lemmatize\-Word@{Lemmatize\-Word}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{Lemmatize\-Word}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Lemmatizer\-::\-Lemmatize\-Word (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word, }
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{results}
+\end{DoxyParamCaption}
+) const}}\label{classCLemmatizer_afc85dfd34ad468285d08621b49e124b1}
+
+
+returns true if matched in dictionary, false if predicted 
+
+$<$ use the alphabet to reduce another letters \hypertarget{classCLemmatizer_a62c10c445efa48e642a0213648193aa1}{\index{C\-Lemmatizer@{C\-Lemmatizer}!Load\-Pak@{Load\-Pak}}
+\index{Load\-Pak@{Load\-Pak}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{Load\-Pak}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Lemmatizer\-::\-Load\-Pak (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Reader} \&}]{rd}
+\end{DoxyParamCaption}
+)}}\label{classCLemmatizer_a62c10c445efa48e642a0213648193aa1}
+\hypertarget{classCLemmatizer_a78ad2f07ff8a6e36948a5dfc47010ac4}{\index{C\-Lemmatizer@{C\-Lemmatizer}!Predict\-By\-Data\-Base@{Predict\-By\-Data\-Base}}
+\index{Predict\-By\-Data\-Base@{Predict\-By\-Data\-Base}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{Predict\-By\-Data\-Base}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Lemmatizer\-::\-Predict\-By\-Data\-Base (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{results, }
+\item[{bool}]{is\-\_\-cap}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_a78ad2f07ff8a6e36948a5dfc47010ac4}
+\hypertarget{classCLemmatizer_a5bf62c7b061e504ce71c791f824d0297}{\index{C\-Lemmatizer@{C\-Lemmatizer}!Predict\-Find@{Predict\-Find}}
+\index{Predict\-Find@{Predict\-Find}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{Predict\-Find}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Lemmatizer\-::\-Predict\-Find (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Predict\-Tuple} $>$ \&}]{res}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_a5bf62c7b061e504ce71c791f824d0297}
+\hypertarget{classCLemmatizer_af08fa9256329696acf75a50b85f13b96}{\index{C\-Lemmatizer@{C\-Lemmatizer}!Predict\-Find\-Recursive@{Predict\-Find\-Recursive}}
+\index{Predict\-Find\-Recursive@{Predict\-Find\-Recursive}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{Predict\-Find\-Recursive}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Lemmatizer\-::\-Predict\-Find\-Recursive (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{r, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Path, }
+\item[{{\bf int}}]{i\-Path, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Predict\-Tuple} $>$ \&}]{Infos}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_af08fa9256329696acf75a50b85f13b96}
+\hypertarget{classCLemmatizer_ab45819832a6e9433ad29596dbd07a929}{\index{C\-Lemmatizer@{C\-Lemmatizer}!Predict\-Pack@{Predict\-Pack}}
+\index{Predict\-Pack@{Predict\-Pack}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{Predict\-Pack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Lemmatizer\-::\-Predict\-Pack (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Predict\-Tuple} \&}]{t}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCLemmatizer_ab45819832a6e9433ad29596dbd07a929}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCLemmatizer_aee78b345c6cb1475f6d61f38ed948698}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-b\-Is\-German@{m\-\_\-b\-Is\-German}}
+\index{m\-\_\-b\-Is\-German@{m\-\_\-b\-Is\-German}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-b\-Is\-German}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Lemmatizer\-::m\-\_\-b\-Is\-German\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_aee78b345c6cb1475f6d61f38ed948698}
+\hypertarget{classCLemmatizer_a50a62c695ccd43d736ae590a6650fc22}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-b\-Maximal\-Prediction@{m\-\_\-b\-Maximal\-Prediction}}
+\index{m\-\_\-b\-Maximal\-Prediction@{m\-\_\-b\-Maximal\-Prediction}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-b\-Maximal\-Prediction}]{\setlength{\rightskip}{0pt plus 5cm}const bool C\-Lemmatizer\-::m\-\_\-b\-Maximal\-Prediction = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCLemmatizer_a50a62c695ccd43d736ae590a6650fc22}
+\hypertarget{classCLemmatizer_a7895fb55ebe69a7aa60c1c0dceb8b04c}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-\-Flexia\-Models@{m\-\_\-\-Flexia\-Models}}
+\index{m\-\_\-\-Flexia\-Models@{m\-\_\-\-Flexia\-Models}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-\-Flexia\-Models}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Flexia\-Model}$>$ C\-Lemmatizer\-::m\-\_\-\-Flexia\-Models}}\label{classCLemmatizer_a7895fb55ebe69a7aa60c1c0dceb8b04c}
+
+
+flexia models 
+
+\hypertarget{classCLemmatizer_a53eefd483fbc7b6f434d0f82818035db}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-\-Form\-Automat@{m\-\_\-\-Form\-Automat}}
+\index{m\-\_\-\-Form\-Automat@{m\-\_\-\-Form\-Automat}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-\-Form\-Automat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Morph\-Automat} C\-Lemmatizer\-::m\-\_\-\-Form\-Automat\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_a53eefd483fbc7b6f434d0f82818035db}
+\hypertarget{classCLemmatizer_a6d7aba68315463237ddfbec80dc99b7f}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-i\-Lang@{m\-\_\-i\-Lang}}
+\index{m\-\_\-i\-Lang@{m\-\_\-i\-Lang}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-i\-Lang}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Lemmatizer\-::m\-\_\-i\-Lang}}\label{classCLemmatizer_a6d7aba68315463237ddfbec80dc99b7f}
+
+
+my language 
+
+\hypertarget{classCLemmatizer_aff1ef9346f58dc6ce9dd2d9c2e8e3930}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-\-Lemma\-Flexia\-Model@{m\-\_\-\-Lemma\-Flexia\-Model}}
+\index{m\-\_\-\-Lemma\-Flexia\-Model@{m\-\_\-\-Lemma\-Flexia\-Model}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-\-Lemma\-Flexia\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf W\-O\-R\-D}$>$ C\-Lemmatizer\-::m\-\_\-\-Lemma\-Flexia\-Model\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_aff1ef9346f58dc6ce9dd2d9c2e8e3930}
+
+
+lemma id to flexia model id mapping 
+
+\hypertarget{classCLemmatizer_a3951deca7374102dd11f0da82c58483c}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-\-Model\-Freq@{m\-\_\-\-Model\-Freq}}
+\index{m\-\_\-\-Model\-Freq@{m\-\_\-\-Model\-Freq}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-\-Model\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf D\-W\-O\-R\-D}$>$ C\-Lemmatizer\-::m\-\_\-\-Model\-Freq\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_a3951deca7374102dd11f0da82c58483c}
+\hypertarget{classCLemmatizer_a8ed8787ab19324a82b4aae5d19134623}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-\-N\-P\-Ss@{m\-\_\-\-N\-P\-Ss}}
+\index{m\-\_\-\-N\-P\-Ss@{m\-\_\-\-N\-P\-Ss}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-\-N\-P\-Ss}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf B\-Y\-T\-E}$>$ C\-Lemmatizer\-::m\-\_\-\-N\-P\-Ss\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_a8ed8787ab19324a82b4aae5d19134623}
+\hypertarget{classCLemmatizer_a7ea2f362b36f23c127736d67360d8fa7}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-\-Prefix\-Blob@{m\-\_\-\-Prefix\-Blob}}
+\index{m\-\_\-\-Prefix\-Blob@{m\-\_\-\-Prefix\-Blob}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-\-Prefix\-Blob}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf B\-Y\-T\-E}$>$ C\-Lemmatizer\-::m\-\_\-\-Prefix\-Blob\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_a7ea2f362b36f23c127736d67360d8fa7}
+\hypertarget{classCLemmatizer_a534943c29beda648c14a504261315053}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-\-Prefix\-Len@{m\-\_\-\-Prefix\-Len}}
+\index{m\-\_\-\-Prefix\-Len@{m\-\_\-\-Prefix\-Len}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-\-Prefix\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Lemmatizer\-::m\-\_\-\-Prefix\-Len\mbox{[}{\bf M\-A\-X\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-L\-E\-N}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_a534943c29beda648c14a504261315053}
+\hypertarget{classCLemmatizer_aa1098b2b33498d4c9f332aa8cb08b26e}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-\-Suffix\-Automat@{m\-\_\-\-Suffix\-Automat}}
+\index{m\-\_\-\-Suffix\-Automat@{m\-\_\-\-Suffix\-Automat}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-\-Suffix\-Automat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Morph\-Automat} C\-Lemmatizer\-::m\-\_\-\-Suffix\-Automat\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_aa1098b2b33498d4c9f332aa8cb08b26e}
+\hypertarget{classCLemmatizer_a5b90b2010d69693a7e096235db1c28cd}{\index{C\-Lemmatizer@{C\-Lemmatizer}!m\-\_\-\-U\-C@{m\-\_\-\-U\-C}}
+\index{m\-\_\-\-U\-C@{m\-\_\-\-U\-C}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{m\-\_\-\-U\-C}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} C\-Lemmatizer\-::m\-\_\-\-U\-C\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCLemmatizer_a5b90b2010d69693a7e096235db1c28cd}
+\hypertarget{classCLemmatizer_a741c02dd57aa5794e6f197f9d533fac4}{\index{C\-Lemmatizer@{C\-Lemmatizer}!M\-A\-X\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-L\-E\-N}}
+\index{M\-A\-X\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-L\-E\-N}!CLemmatizer@{C\-Lemmatizer}}
+\subsubsection[{M\-A\-X\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Lemmatizer\-::\-M\-A\-X\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-L\-E\-N = 12\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCLemmatizer_a741c02dd57aa5794e6f197f9d533fac4}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxaot_8cpp}{sphinxaot.\-cpp}\end{DoxyCompactItemize}

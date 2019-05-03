@@ -1,0 +1,170 @@
+\hypertarget{classCSphDictReader}{\section{C\-Sph\-Dict\-Reader Class Reference}
+\label{classCSphDictReader}\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphDictReader_a4d6968d5a10941c4050b09bc593fb529}{C\-Sph\-Dict\-Reader} ()
+\item 
+bool \hyperlink{classCSphDictReader_af6017020471c29139580f331b4996800}{Setup} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Filename, \hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} i\-Max\-Pos, \hyperlink{sphinx_8h_a1920852c5151009d65cf2bc8204a685b}{E\-Sph\-Hitless} e\-Hitless, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Word\-Dict, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle, bool b\-Has\-Skips)
+\item 
+void \hyperlink{classCSphDictReader_abd30c1e8e424f14cef65dba4d9fd9edb}{Setup} (\hyperlink{classCSphReader}{C\-Sph\-Reader} $\ast$p\-Reader, \hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} i\-Max\-Pos, \hyperlink{sphinx_8h_a1920852c5151009d65cf2bc8204a685b}{E\-Sph\-Hitless} e\-Hitless, bool b\-Word\-Dict, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle, bool b\-Has\-Skips)
+\item 
+bool \hyperlink{classCSphDictReader_a911ff89600ee84d30c74ccfbdabc1f0f}{Read} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictReader_ac040da5e652a2fe5622febf76908f564}{Cmp\-Word} (const \hyperlink{classCSphDictReader}{C\-Sph\-Dict\-Reader} \&t\-Other) const 
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphDictReader_af8e16d6d6d17302d3058c7aa5f3a0f07}{Get\-Word} () const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictReader_a74db979b812a2ee90f5dc2b9a04a0507}{Get\-Checkpoint} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDictReader_a7d418315d3e96c281ab9ba0caf9ab873}{m\-\_\-u\-Word\-I\-D}
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphDictReader_a6bef1a1487783775479c60ff63338e19}{m\-\_\-i\-Doclist\-Offset}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictReader_a4a0d8f5686aded362e2c530b341378cc}{m\-\_\-i\-Docs}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictReader_a1d0be92902f6cff16e462277a9528056}{m\-\_\-i\-Hits}
+\item 
+bool \hyperlink{classCSphDictReader_a008769ed0080f70fb394c2298a88e0df}{m\-\_\-b\-Has\-Hitlist}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictReader_aa4de3149ff055b416d76131111c19fe2}{m\-\_\-i\-Hint}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a1920852c5151009d65cf2bc8204a685b}{E\-Sph\-Hitless} \hyperlink{classCSphDictReader_a456770410ba1b7983bfa7056801d87f2}{m\-\_\-e\-Hitless}
+\item 
+\hyperlink{classCSphAutoreader}{C\-Sph\-Autoreader} \hyperlink{classCSphDictReader_aaadcd186a03d6298bca770e856bad831}{m\-\_\-t\-My\-Reader}
+\item 
+\hyperlink{classCSphReader}{C\-Sph\-Reader} $\ast$ \hyperlink{classCSphDictReader_a33aec953cff4ae5fc253167d51c894e9}{m\-\_\-p\-Reader}
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphDictReader_a220c33d6373a862120a7e2af84a06ede}{m\-\_\-i\-Max\-Pos}
+\item 
+bool \hyperlink{classCSphDictReader_a5c1784c9c78cea2e4031f117fbc8273e}{m\-\_\-b\-Word\-Dict}
+\item 
+char \hyperlink{classCSphDictReader_aa6478d98e28c6f076a35181fe1e9355f}{m\-\_\-s\-Word} \mbox{[}\hyperlink{sphinx_8cpp_aeb328d19a9780d5c5defcd7e9b08239b}{M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictReader_a344c07503cbed21b30dfa575916dae5b}{m\-\_\-i\-Checkpoint}
+\item 
+bool \hyperlink{classCSphDictReader_a97e57292f2bd7f1f7453aadf46c5c280}{m\-\_\-b\-Has\-Skips}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphDictReader_a4d6968d5a10941c4050b09bc593fb529}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}}
+\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{C\-Sph\-Dict\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Dict\-Reader\-::\-C\-Sph\-Dict\-Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDictReader_a4d6968d5a10941c4050b09bc593fb529}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphDictReader_ac040da5e652a2fe5622febf76908f564}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!Cmp\-Word@{Cmp\-Word}}
+\index{Cmp\-Word@{Cmp\-Word}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{Cmp\-Word}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Reader\-::\-Cmp\-Word (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Dict\-Reader} \&}]{t\-Other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDictReader_ac040da5e652a2fe5622febf76908f564}
+\hypertarget{classCSphDictReader_a74db979b812a2ee90f5dc2b9a04a0507}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!Get\-Checkpoint@{Get\-Checkpoint}}
+\index{Get\-Checkpoint@{Get\-Checkpoint}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{Get\-Checkpoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Reader\-::\-Get\-Checkpoint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDictReader_a74db979b812a2ee90f5dc2b9a04a0507}
+\hypertarget{classCSphDictReader_af8e16d6d6d17302d3058c7aa5f3a0f07}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!Get\-Word@{Get\-Word}}
+\index{Get\-Word@{Get\-Word}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{Get\-Word}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Dict\-Reader\-::\-Get\-Word (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDictReader_af8e16d6d6d17302d3058c7aa5f3a0f07}
+\hypertarget{classCSphDictReader_a911ff89600ee84d30c74ccfbdabc1f0f}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!Read@{Read}}
+\index{Read@{Read}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{Read}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-Reader\-::\-Read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDictReader_a911ff89600ee84d30c74ccfbdabc1f0f}
+\hypertarget{classCSphDictReader_af6017020471c29139580f331b4996800}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!Setup@{Setup}}
+\index{Setup@{Setup}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-Reader\-::\-Setup (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Filename, }
+\item[{{\bf Sph\-Offset\-\_\-t}}]{i\-Max\-Pos, }
+\item[{{\bf E\-Sph\-Hitless}}]{e\-Hitless, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Word\-Dict, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle, }
+\item[{bool}]{b\-Has\-Skips}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDictReader_af6017020471c29139580f331b4996800}
+\hypertarget{classCSphDictReader_abd30c1e8e424f14cef65dba4d9fd9edb}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!Setup@{Setup}}
+\index{Setup@{Setup}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Dict\-Reader\-::\-Setup (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Reader} $\ast$}]{p\-Reader, }
+\item[{{\bf Sph\-Offset\-\_\-t}}]{i\-Max\-Pos, }
+\item[{{\bf E\-Sph\-Hitless}}]{e\-Hitless, }
+\item[{bool}]{b\-Word\-Dict, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle, }
+\item[{bool}]{b\-Has\-Skips}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDictReader_abd30c1e8e424f14cef65dba4d9fd9edb}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphDictReader_a008769ed0080f70fb394c2298a88e0df}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-b\-Has\-Hitlist@{m\-\_\-b\-Has\-Hitlist}}
+\index{m\-\_\-b\-Has\-Hitlist@{m\-\_\-b\-Has\-Hitlist}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-b\-Has\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-Reader\-::m\-\_\-b\-Has\-Hitlist}}\label{classCSphDictReader_a008769ed0080f70fb394c2298a88e0df}
+\hypertarget{classCSphDictReader_a97e57292f2bd7f1f7453aadf46c5c280}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-b\-Has\-Skips@{m\-\_\-b\-Has\-Skips}}
+\index{m\-\_\-b\-Has\-Skips@{m\-\_\-b\-Has\-Skips}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-b\-Has\-Skips}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-Reader\-::m\-\_\-b\-Has\-Skips\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictReader_a97e57292f2bd7f1f7453aadf46c5c280}
+\hypertarget{classCSphDictReader_a5c1784c9c78cea2e4031f117fbc8273e}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-b\-Word\-Dict@{m\-\_\-b\-Word\-Dict}}
+\index{m\-\_\-b\-Word\-Dict@{m\-\_\-b\-Word\-Dict}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-b\-Word\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-Reader\-::m\-\_\-b\-Word\-Dict\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictReader_a5c1784c9c78cea2e4031f117fbc8273e}
+\hypertarget{classCSphDictReader_a456770410ba1b7983bfa7056801d87f2}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-e\-Hitless@{m\-\_\-e\-Hitless}}
+\index{m\-\_\-e\-Hitless@{m\-\_\-e\-Hitless}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-e\-Hitless}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Hitless} C\-Sph\-Dict\-Reader\-::m\-\_\-e\-Hitless\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictReader_a456770410ba1b7983bfa7056801d87f2}
+\hypertarget{classCSphDictReader_a344c07503cbed21b30dfa575916dae5b}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-i\-Checkpoint@{m\-\_\-i\-Checkpoint}}
+\index{m\-\_\-i\-Checkpoint@{m\-\_\-i\-Checkpoint}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-i\-Checkpoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Reader\-::m\-\_\-i\-Checkpoint\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictReader_a344c07503cbed21b30dfa575916dae5b}
+\hypertarget{classCSphDictReader_a6bef1a1487783775479c60ff63338e19}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-i\-Doclist\-Offset@{m\-\_\-i\-Doclist\-Offset}}
+\index{m\-\_\-i\-Doclist\-Offset@{m\-\_\-i\-Doclist\-Offset}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-i\-Doclist\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Dict\-Reader\-::m\-\_\-i\-Doclist\-Offset}}\label{classCSphDictReader_a6bef1a1487783775479c60ff63338e19}
+\hypertarget{classCSphDictReader_a4a0d8f5686aded362e2c530b341378cc}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-i\-Docs@{m\-\_\-i\-Docs}}
+\index{m\-\_\-i\-Docs@{m\-\_\-i\-Docs}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-i\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Reader\-::m\-\_\-i\-Docs}}\label{classCSphDictReader_a4a0d8f5686aded362e2c530b341378cc}
+\hypertarget{classCSphDictReader_aa4de3149ff055b416d76131111c19fe2}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-i\-Hint@{m\-\_\-i\-Hint}}
+\index{m\-\_\-i\-Hint@{m\-\_\-i\-Hint}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-i\-Hint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Reader\-::m\-\_\-i\-Hint}}\label{classCSphDictReader_aa4de3149ff055b416d76131111c19fe2}
+\hypertarget{classCSphDictReader_a1d0be92902f6cff16e462277a9528056}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-i\-Hits@{m\-\_\-i\-Hits}}
+\index{m\-\_\-i\-Hits@{m\-\_\-i\-Hits}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-i\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Reader\-::m\-\_\-i\-Hits}}\label{classCSphDictReader_a1d0be92902f6cff16e462277a9528056}
+\hypertarget{classCSphDictReader_a220c33d6373a862120a7e2af84a06ede}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-i\-Max\-Pos@{m\-\_\-i\-Max\-Pos}}
+\index{m\-\_\-i\-Max\-Pos@{m\-\_\-i\-Max\-Pos}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-i\-Max\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Dict\-Reader\-::m\-\_\-i\-Max\-Pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictReader_a220c33d6373a862120a7e2af84a06ede}
+\hypertarget{classCSphDictReader_a33aec953cff4ae5fc253167d51c894e9}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-p\-Reader@{m\-\_\-p\-Reader}}
+\index{m\-\_\-p\-Reader@{m\-\_\-p\-Reader}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-p\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Reader}$\ast$ C\-Sph\-Dict\-Reader\-::m\-\_\-p\-Reader\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictReader_a33aec953cff4ae5fc253167d51c894e9}
+\hypertarget{classCSphDictReader_aa6478d98e28c6f076a35181fe1e9355f}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-s\-Word@{m\-\_\-s\-Word}}
+\index{m\-\_\-s\-Word@{m\-\_\-s\-Word}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-s\-Word}]{\setlength{\rightskip}{0pt plus 5cm}char C\-Sph\-Dict\-Reader\-::m\-\_\-s\-Word\mbox{[}{\bf M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictReader_aa6478d98e28c6f076a35181fe1e9355f}
+\hypertarget{classCSphDictReader_aaadcd186a03d6298bca770e856bad831}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-t\-My\-Reader@{m\-\_\-t\-My\-Reader}}
+\index{m\-\_\-t\-My\-Reader@{m\-\_\-t\-My\-Reader}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-t\-My\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Autoreader} C\-Sph\-Dict\-Reader\-::m\-\_\-t\-My\-Reader\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictReader_aaadcd186a03d6298bca770e856bad831}
+\hypertarget{classCSphDictReader_a7d418315d3e96c281ab9ba0caf9ab873}{\index{C\-Sph\-Dict\-Reader@{C\-Sph\-Dict\-Reader}!m\-\_\-u\-Word\-I\-D@{m\-\_\-u\-Word\-I\-D}}
+\index{m\-\_\-u\-Word\-I\-D@{m\-\_\-u\-Word\-I\-D}!CSphDictReader@{C\-Sph\-Dict\-Reader}}
+\subsubsection[{m\-\_\-u\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Reader\-::m\-\_\-u\-Word\-I\-D}}\label{classCSphDictReader_a7d418315d3e96c281ab9ba0caf9ab873}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

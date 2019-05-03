@@ -1,0 +1,260 @@
+\hypertarget{classCSphQueryResultMeta}{\section{C\-Sph\-Query\-Result\-Meta Class Reference}
+\label{classCSphQueryResultMeta}\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}}
+}
+
+
+search query meta-\/info  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Query\-Result\-Meta\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphQueryResultMeta}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCSphQueryResultMeta_1_1WordStat__t}{Word\-Stat\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphQueryResultMeta_a33eed84000f71dd203a9196eff989f88}{C\-Sph\-Query\-Result\-Meta} ()
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+virtual \hyperlink{classCSphQueryResultMeta_ace409540750a5b17177d99e68cba1722}{$\sim$\-C\-Sph\-Query\-Result\-Meta} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+void \hyperlink{classCSphQueryResultMeta_a41095a8fa9bfc08860a5c83224b6f82c}{Add\-Stat} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Word, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Docs, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Hits)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryResultMeta_ad22d20d59f9daf6ba72e70bdae3fe170}{m\-\_\-i\-Query\-Time}
+\begin{DoxyCompactList}\small\item\em query time, milliseconds \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryResultMeta_aa9ad268e281a104663adbc6bc1370d9a}{m\-\_\-i\-Real\-Query\-Time}
+\begin{DoxyCompactList}\small\item\em query time, measured just from start to finish of the query. In milliseconds \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQueryResultMeta_a2d1d0c5cfb53278422774abb9d642984}{m\-\_\-i\-Cpu\-Time}
+\begin{DoxyCompactList}\small\item\em user time, microseconds \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryResultMeta_ab678890016913938bb758c98a6b403dc}{m\-\_\-i\-Multiplier}
+\begin{DoxyCompactList}\small\item\em multi-\/query multiplier, -\/1 to indicate error \end{DoxyCompactList}\item 
+\hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T}$<$ \hyperlink{structCSphQueryResultMeta_1_1WordStat__t}{Word\-Stat\-\_\-t} $>$ \hyperlink{classCSphQueryResultMeta_aa669bb718f46151e057e738288adb5e3}{m\-\_\-h\-Word\-Stats}
+\begin{DoxyCompactList}\small\item\em hash of i-\/th search term (normalized word form) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryResultMeta_ad4a2583024826d59a7970f399f4ce3c8}{m\-\_\-i\-Matches}
+\begin{DoxyCompactList}\small\item\em total matches returned (upto M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S) \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQueryResultMeta_aa212bc7b1148d610d6aca616ddd14d4b}{m\-\_\-i\-Total\-Matches}
+\begin{DoxyCompactList}\small\item\em total matches found (unlimited) \end{DoxyCompactList}\item 
+\hyperlink{classCSphIOStats}{C\-Sph\-I\-O\-Stats} \hyperlink{classCSphQueryResultMeta_a59801b7386119d26d7bee1a8c3428036}{m\-\_\-t\-I\-O\-Stats}
+\begin{DoxyCompactList}\small\item\em i/o stats for the query \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQueryResultMeta_a8333ab6fcf9a0b825e29d165fc1d6b22}{m\-\_\-i\-Agent\-Cpu\-Time}
+\begin{DoxyCompactList}\small\item\em agent cpu time (for distributed searches) \end{DoxyCompactList}\item 
+\hyperlink{classCSphIOStats}{C\-Sph\-I\-O\-Stats} \hyperlink{classCSphQueryResultMeta_a75b36f1d4101ee5c04eed34a84ac9e34}{m\-\_\-t\-Agent\-I\-O\-Stats}
+\begin{DoxyCompactList}\small\item\em agent I\-O stats (for distributed searches) \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQueryResultMeta_acf3a3a1f20860124b5d6416ee8bc4a50}{m\-\_\-i\-Predicted\-Time}
+\begin{DoxyCompactList}\small\item\em local predicted time \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQueryResultMeta_a744cec6632ca0aa9028b3b8d78989fff}{m\-\_\-i\-Agent\-Predicted\-Time}
+\begin{DoxyCompactList}\small\item\em distributed predicted time \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphQueryResultMeta_a920c82ad433a09cb0d40fa3aed43c8f3}{m\-\_\-i\-Agent\-Fetched\-Docs}
+\begin{DoxyCompactList}\small\item\em distributed fetched docs \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphQueryResultMeta_a67bb36ce07715dfb7cdf204ec2593316}{m\-\_\-i\-Agent\-Fetched\-Hits}
+\begin{DoxyCompactList}\small\item\em distributed fetched hits \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphQueryResultMeta_a3ef02b751370172e2d06533ff3877e5a}{m\-\_\-i\-Agent\-Fetched\-Skips}
+\begin{DoxyCompactList}\small\item\em distributed fetched skips \end{DoxyCompactList}\item 
+\hyperlink{structCSphQueryStats}{C\-Sph\-Query\-Stats} \hyperlink{classCSphQueryResultMeta_a4068160dff2389c2d12d6e54d0cd9411}{m\-\_\-t\-Stats}
+\begin{DoxyCompactList}\small\item\em query prediction counters \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQueryResultMeta_a35dd80f8c55d97635cac7c4d822bcd45}{m\-\_\-b\-Has\-Prediction}
+\begin{DoxyCompactList}\small\item\em is prediction counters set? \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQueryResultMeta_a62ab7fe3b8010c9c709143b1a7cd0165}{m\-\_\-s\-Error}
+\begin{DoxyCompactList}\small\item\em error message \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQueryResultMeta_a1efcc451fcdba2ae16e3828aab626cb6}{m\-\_\-s\-Warning}
+\begin{DoxyCompactList}\small\item\em warning message \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQueryResultMeta_aeda24c2e70479c5ea25df201aa176148}{m\-\_\-i\-Bad\-Rows}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+search query meta-\/info 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphQueryResultMeta_a33eed84000f71dd203a9196eff989f88}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}}
+\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{C\-Sph\-Query\-Result\-Meta}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-Result\-Meta\-::\-C\-Sph\-Query\-Result\-Meta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryResultMeta_a33eed84000f71dd203a9196eff989f88}
+
+
+ctor 
+
+\hypertarget{classCSphQueryResultMeta_ace409540750a5b17177d99e68cba1722}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!$\sim$\-C\-Sph\-Query\-Result\-Meta@{$\sim$\-C\-Sph\-Query\-Result\-Meta}}
+\index{$\sim$\-C\-Sph\-Query\-Result\-Meta@{$\sim$\-C\-Sph\-Query\-Result\-Meta}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{$\sim$\-C\-Sph\-Query\-Result\-Meta}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\-Sph\-Query\-Result\-Meta\-::$\sim$\-C\-Sph\-Query\-Result\-Meta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphQueryResultMeta_ace409540750a5b17177d99e68cba1722}
+
+
+dtor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphQueryResultMeta_a41095a8fa9bfc08860a5c83224b6f82c}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!Add\-Stat@{Add\-Stat}}
+\index{Add\-Stat@{Add\-Stat}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{Add\-Stat}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Result\-Meta\-::\-Add\-Stat (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Word, }
+\item[{{\bf int64\-\_\-t}}]{i\-Docs, }
+\item[{{\bf int64\-\_\-t}}]{i\-Hits}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryResultMeta_a41095a8fa9bfc08860a5c83224b6f82c}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphQueryResultMeta_a35dd80f8c55d97635cac7c4d822bcd45}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-b\-Has\-Prediction@{m\-\_\-b\-Has\-Prediction}}
+\index{m\-\_\-b\-Has\-Prediction@{m\-\_\-b\-Has\-Prediction}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-b\-Has\-Prediction}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-Result\-Meta\-::m\-\_\-b\-Has\-Prediction}}\label{classCSphQueryResultMeta_a35dd80f8c55d97635cac7c4d822bcd45}
+
+
+is prediction counters set? 
+
+\hypertarget{classCSphQueryResultMeta_aa669bb718f46151e057e738288adb5e3}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-h\-Word\-Stats@{m\-\_\-h\-Word\-Stats}}
+\index{m\-\_\-h\-Word\-Stats@{m\-\_\-h\-Word\-Stats}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-h\-Word\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Small\-String\-Hash\-\_\-\-T}$<${\bf Word\-Stat\-\_\-t}$>$ C\-Sph\-Query\-Result\-Meta\-::m\-\_\-h\-Word\-Stats}}\label{classCSphQueryResultMeta_aa669bb718f46151e057e738288adb5e3}
+
+
+hash of i-\/th search term (normalized word form) 
+
+\hypertarget{classCSphQueryResultMeta_a8333ab6fcf9a0b825e29d165fc1d6b22}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Agent\-Cpu\-Time@{m\-\_\-i\-Agent\-Cpu\-Time}}
+\index{m\-\_\-i\-Agent\-Cpu\-Time@{m\-\_\-i\-Agent\-Cpu\-Time}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Agent\-Cpu\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Agent\-Cpu\-Time}}\label{classCSphQueryResultMeta_a8333ab6fcf9a0b825e29d165fc1d6b22}
+
+
+agent cpu time (for distributed searches) 
+
+\hypertarget{classCSphQueryResultMeta_a920c82ad433a09cb0d40fa3aed43c8f3}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Agent\-Fetched\-Docs@{m\-\_\-i\-Agent\-Fetched\-Docs}}
+\index{m\-\_\-i\-Agent\-Fetched\-Docs@{m\-\_\-i\-Agent\-Fetched\-Docs}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Agent\-Fetched\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Agent\-Fetched\-Docs}}\label{classCSphQueryResultMeta_a920c82ad433a09cb0d40fa3aed43c8f3}
+
+
+distributed fetched docs 
+
+\hypertarget{classCSphQueryResultMeta_a67bb36ce07715dfb7cdf204ec2593316}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Agent\-Fetched\-Hits@{m\-\_\-i\-Agent\-Fetched\-Hits}}
+\index{m\-\_\-i\-Agent\-Fetched\-Hits@{m\-\_\-i\-Agent\-Fetched\-Hits}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Agent\-Fetched\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Agent\-Fetched\-Hits}}\label{classCSphQueryResultMeta_a67bb36ce07715dfb7cdf204ec2593316}
+
+
+distributed fetched hits 
+
+\hypertarget{classCSphQueryResultMeta_a3ef02b751370172e2d06533ff3877e5a}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Agent\-Fetched\-Skips@{m\-\_\-i\-Agent\-Fetched\-Skips}}
+\index{m\-\_\-i\-Agent\-Fetched\-Skips@{m\-\_\-i\-Agent\-Fetched\-Skips}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Agent\-Fetched\-Skips}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Agent\-Fetched\-Skips}}\label{classCSphQueryResultMeta_a3ef02b751370172e2d06533ff3877e5a}
+
+
+distributed fetched skips 
+
+\hypertarget{classCSphQueryResultMeta_a744cec6632ca0aa9028b3b8d78989fff}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Agent\-Predicted\-Time@{m\-\_\-i\-Agent\-Predicted\-Time}}
+\index{m\-\_\-i\-Agent\-Predicted\-Time@{m\-\_\-i\-Agent\-Predicted\-Time}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Agent\-Predicted\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Agent\-Predicted\-Time}}\label{classCSphQueryResultMeta_a744cec6632ca0aa9028b3b8d78989fff}
+
+
+distributed predicted time 
+
+\hypertarget{classCSphQueryResultMeta_aeda24c2e70479c5ea25df201aa176148}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Bad\-Rows@{m\-\_\-i\-Bad\-Rows}}
+\index{m\-\_\-i\-Bad\-Rows@{m\-\_\-i\-Bad\-Rows}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Bad\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Bad\-Rows}}\label{classCSphQueryResultMeta_aeda24c2e70479c5ea25df201aa176148}
+\hypertarget{classCSphQueryResultMeta_a2d1d0c5cfb53278422774abb9d642984}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Cpu\-Time@{m\-\_\-i\-Cpu\-Time}}
+\index{m\-\_\-i\-Cpu\-Time@{m\-\_\-i\-Cpu\-Time}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Cpu\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Cpu\-Time}}\label{classCSphQueryResultMeta_a2d1d0c5cfb53278422774abb9d642984}
+
+
+user time, microseconds 
+
+\hypertarget{classCSphQueryResultMeta_ad4a2583024826d59a7970f399f4ce3c8}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Matches@{m\-\_\-i\-Matches}}
+\index{m\-\_\-i\-Matches@{m\-\_\-i\-Matches}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Matches}}\label{classCSphQueryResultMeta_ad4a2583024826d59a7970f399f4ce3c8}
+
+
+total matches returned (upto M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S) 
+
+\hypertarget{classCSphQueryResultMeta_ab678890016913938bb758c98a6b403dc}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Multiplier@{m\-\_\-i\-Multiplier}}
+\index{m\-\_\-i\-Multiplier@{m\-\_\-i\-Multiplier}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Multiplier}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Multiplier}}\label{classCSphQueryResultMeta_ab678890016913938bb758c98a6b403dc}
+
+
+multi-\/query multiplier, -\/1 to indicate error 
+
+\hypertarget{classCSphQueryResultMeta_acf3a3a1f20860124b5d6416ee8bc4a50}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Predicted\-Time@{m\-\_\-i\-Predicted\-Time}}
+\index{m\-\_\-i\-Predicted\-Time@{m\-\_\-i\-Predicted\-Time}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Predicted\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Predicted\-Time}}\label{classCSphQueryResultMeta_acf3a3a1f20860124b5d6416ee8bc4a50}
+
+
+local predicted time 
+
+\hypertarget{classCSphQueryResultMeta_ad22d20d59f9daf6ba72e70bdae3fe170}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Query\-Time@{m\-\_\-i\-Query\-Time}}
+\index{m\-\_\-i\-Query\-Time@{m\-\_\-i\-Query\-Time}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Query\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Query\-Time}}\label{classCSphQueryResultMeta_ad22d20d59f9daf6ba72e70bdae3fe170}
+
+
+query time, milliseconds 
+
+\hypertarget{classCSphQueryResultMeta_aa9ad268e281a104663adbc6bc1370d9a}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Real\-Query\-Time@{m\-\_\-i\-Real\-Query\-Time}}
+\index{m\-\_\-i\-Real\-Query\-Time@{m\-\_\-i\-Real\-Query\-Time}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Real\-Query\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Real\-Query\-Time}}\label{classCSphQueryResultMeta_aa9ad268e281a104663adbc6bc1370d9a}
+
+
+query time, measured just from start to finish of the query. In milliseconds 
+
+\hypertarget{classCSphQueryResultMeta_aa212bc7b1148d610d6aca616ddd14d4b}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-i\-Total\-Matches@{m\-\_\-i\-Total\-Matches}}
+\index{m\-\_\-i\-Total\-Matches@{m\-\_\-i\-Total\-Matches}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-i\-Total\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-i\-Total\-Matches}}\label{classCSphQueryResultMeta_aa212bc7b1148d610d6aca616ddd14d4b}
+
+
+total matches found (unlimited) 
+
+\hypertarget{classCSphQueryResultMeta_a62ab7fe3b8010c9c709143b1a7cd0165}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-s\-Error@{m\-\_\-s\-Error}}
+\index{m\-\_\-s\-Error@{m\-\_\-s\-Error}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-s\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-s\-Error}}\label{classCSphQueryResultMeta_a62ab7fe3b8010c9c709143b1a7cd0165}
+
+
+error message 
+
+\hypertarget{classCSphQueryResultMeta_a1efcc451fcdba2ae16e3828aab626cb6}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-s\-Warning@{m\-\_\-s\-Warning}}
+\index{m\-\_\-s\-Warning@{m\-\_\-s\-Warning}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-s\-Warning}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-s\-Warning}}\label{classCSphQueryResultMeta_a1efcc451fcdba2ae16e3828aab626cb6}
+
+
+warning message 
+
+\hypertarget{classCSphQueryResultMeta_a75b36f1d4101ee5c04eed34a84ac9e34}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-t\-Agent\-I\-O\-Stats@{m\-\_\-t\-Agent\-I\-O\-Stats}}
+\index{m\-\_\-t\-Agent\-I\-O\-Stats@{m\-\_\-t\-Agent\-I\-O\-Stats}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-t\-Agent\-I\-O\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-I\-O\-Stats} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-t\-Agent\-I\-O\-Stats}}\label{classCSphQueryResultMeta_a75b36f1d4101ee5c04eed34a84ac9e34}
+
+
+agent I\-O stats (for distributed searches) 
+
+\hypertarget{classCSphQueryResultMeta_a59801b7386119d26d7bee1a8c3428036}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-t\-I\-O\-Stats@{m\-\_\-t\-I\-O\-Stats}}
+\index{m\-\_\-t\-I\-O\-Stats@{m\-\_\-t\-I\-O\-Stats}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-t\-I\-O\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-I\-O\-Stats} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-t\-I\-O\-Stats}}\label{classCSphQueryResultMeta_a59801b7386119d26d7bee1a8c3428036}
+
+
+i/o stats for the query 
+
+\hypertarget{classCSphQueryResultMeta_a4068160dff2389c2d12d6e54d0cd9411}{\index{C\-Sph\-Query\-Result\-Meta@{C\-Sph\-Query\-Result\-Meta}!m\-\_\-t\-Stats@{m\-\_\-t\-Stats}}
+\index{m\-\_\-t\-Stats@{m\-\_\-t\-Stats}!CSphQueryResultMeta@{C\-Sph\-Query\-Result\-Meta}}
+\subsubsection[{m\-\_\-t\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Query\-Stats} C\-Sph\-Query\-Result\-Meta\-::m\-\_\-t\-Stats}}\label{classCSphQueryResultMeta_a4068160dff2389c2d12d6e54d0cd9411}
+
+
+query prediction counters 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

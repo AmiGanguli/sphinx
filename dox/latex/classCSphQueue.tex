@@ -1,0 +1,139 @@
+\hypertarget{classCSphQueue}{\section{C\-Sph\-Queue$<$ T, C\-O\-M\-P $>$ Class Template Reference}
+\label{classCSphQueue}\index{C\-Sph\-Queue$<$ T, C\-O\-M\-P $>$@{C\-Sph\-Queue$<$ T, C\-O\-M\-P $>$}}
+}
+
+
+generic stateless priority queue  
+
+
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphQueue_ab8bcd8d719b5cb4dae3d397e946cc76d}{C\-Sph\-Queue} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size)
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+\hyperlink{classCSphQueue_aaeba52820c682033d345f02c82a1adf9}{$\sim$\-C\-Sph\-Queue} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+void \hyperlink{classCSphQueue_adf7527421a1d1e4dc40568b66ed11d7a}{Reset} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size)
+\item 
+bool \hyperlink{classCSphQueue_adfe8d25be5ec4b9277679243e9a3c898}{Push} (const T \&t\-Entry)
+\begin{DoxyCompactList}\small\item\em add entry to the queue \end{DoxyCompactList}\item 
+void \hyperlink{classCSphQueue_a4cef3e79e380174597834b3f118d2067}{Pop} ()
+\begin{DoxyCompactList}\small\item\em remove root (ie. top priority) entry \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueue_ace2ccbaa0b1c45bdbdd352a80a119e15}{Get\-Length} () const 
+\begin{DoxyCompactList}\small\item\em get entries count \end{DoxyCompactList}\item 
+const T \& \hyperlink{classCSphQueue_a9a7f5f38e28b24887dbe4edf70b42f12}{Root} () const 
+\begin{DoxyCompactList}\small\item\em get current root \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{classCSphQueue_a883105a8c3a9f6026cd38685165647f8}{m\-\_\-p\-Data}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueue_a691cd46976be3de890c015333edc5c0a}{m\-\_\-i\-Used}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueue_adff4c65de0a550843aa28c3bd77a8597}{m\-\_\-i\-Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename C\-O\-M\-P$>$class C\-Sph\-Queue$<$ T, C\-O\-M\-P $>$}
+
+generic stateless priority queue 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphQueue_ab8bcd8d719b5cb4dae3d397e946cc76d}{\index{C\-Sph\-Queue@{C\-Sph\-Queue}!C\-Sph\-Queue@{C\-Sph\-Queue}}
+\index{C\-Sph\-Queue@{C\-Sph\-Queue}!CSphQueue@{C\-Sph\-Queue}}
+\subsubsection[{C\-Sph\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-O\-M\-P $>$ {\bf C\-Sph\-Queue}$<$ T, C\-O\-M\-P $>$\-::{\bf C\-Sph\-Queue} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphQueue_ab8bcd8d719b5cb4dae3d397e946cc76d}
+
+
+ctor 
+
+\hypertarget{classCSphQueue_aaeba52820c682033d345f02c82a1adf9}{\index{C\-Sph\-Queue@{C\-Sph\-Queue}!$\sim$\-C\-Sph\-Queue@{$\sim$\-C\-Sph\-Queue}}
+\index{$\sim$\-C\-Sph\-Queue@{$\sim$\-C\-Sph\-Queue}!CSphQueue@{C\-Sph\-Queue}}
+\subsubsection[{$\sim$\-C\-Sph\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-O\-M\-P $>$ {\bf C\-Sph\-Queue}$<$ T, C\-O\-M\-P $>$\-::$\sim${\bf C\-Sph\-Queue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphQueue_aaeba52820c682033d345f02c82a1adf9}
+
+
+dtor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphQueue_ace2ccbaa0b1c45bdbdd352a80a119e15}{\index{C\-Sph\-Queue@{C\-Sph\-Queue}!Get\-Length@{Get\-Length}}
+\index{Get\-Length@{Get\-Length}!CSphQueue@{C\-Sph\-Queue}}
+\subsubsection[{Get\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-O\-M\-P $>$ {\bf int} {\bf C\-Sph\-Queue}$<$ T, C\-O\-M\-P $>$\-::Get\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphQueue_ace2ccbaa0b1c45bdbdd352a80a119e15}
+
+
+get entries count 
+
+\hypertarget{classCSphQueue_a4cef3e79e380174597834b3f118d2067}{\index{C\-Sph\-Queue@{C\-Sph\-Queue}!Pop@{Pop}}
+\index{Pop@{Pop}!CSphQueue@{C\-Sph\-Queue}}
+\subsubsection[{Pop}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-O\-M\-P $>$ void {\bf C\-Sph\-Queue}$<$ T, C\-O\-M\-P $>$\-::Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphQueue_a4cef3e79e380174597834b3f118d2067}
+
+
+remove root (ie. top priority) entry 
+
+\hypertarget{classCSphQueue_adfe8d25be5ec4b9277679243e9a3c898}{\index{C\-Sph\-Queue@{C\-Sph\-Queue}!Push@{Push}}
+\index{Push@{Push}!CSphQueue@{C\-Sph\-Queue}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-O\-M\-P $>$ bool {\bf C\-Sph\-Queue}$<$ T, C\-O\-M\-P $>$\-::Push (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{t\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphQueue_adfe8d25be5ec4b9277679243e9a3c898}
+
+
+add entry to the queue 
+
+\hypertarget{classCSphQueue_adf7527421a1d1e4dc40568b66ed11d7a}{\index{C\-Sph\-Queue@{C\-Sph\-Queue}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphQueue@{C\-Sph\-Queue}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-O\-M\-P $>$ void {\bf C\-Sph\-Queue}$<$ T, C\-O\-M\-P $>$\-::Reset (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphQueue_adf7527421a1d1e4dc40568b66ed11d7a}
+\hypertarget{classCSphQueue_a9a7f5f38e28b24887dbe4edf70b42f12}{\index{C\-Sph\-Queue@{C\-Sph\-Queue}!Root@{Root}}
+\index{Root@{Root}!CSphQueue@{C\-Sph\-Queue}}
+\subsubsection[{Root}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-O\-M\-P $>$ const T\& {\bf C\-Sph\-Queue}$<$ T, C\-O\-M\-P $>$\-::Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphQueue_a9a7f5f38e28b24887dbe4edf70b42f12}
+
+
+get current root 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphQueue_adff4c65de0a550843aa28c3bd77a8597}{\index{C\-Sph\-Queue@{C\-Sph\-Queue}!m\-\_\-i\-Size@{m\-\_\-i\-Size}}
+\index{m\-\_\-i\-Size@{m\-\_\-i\-Size}!CSphQueue@{C\-Sph\-Queue}}
+\subsubsection[{m\-\_\-i\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-O\-M\-P $>$ {\bf int} {\bf C\-Sph\-Queue}$<$ T, C\-O\-M\-P $>$\-::m\-\_\-i\-Size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphQueue_adff4c65de0a550843aa28c3bd77a8597}
+\hypertarget{classCSphQueue_a691cd46976be3de890c015333edc5c0a}{\index{C\-Sph\-Queue@{C\-Sph\-Queue}!m\-\_\-i\-Used@{m\-\_\-i\-Used}}
+\index{m\-\_\-i\-Used@{m\-\_\-i\-Used}!CSphQueue@{C\-Sph\-Queue}}
+\subsubsection[{m\-\_\-i\-Used}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-O\-M\-P $>$ {\bf int} {\bf C\-Sph\-Queue}$<$ T, C\-O\-M\-P $>$\-::m\-\_\-i\-Used\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphQueue_a691cd46976be3de890c015333edc5c0a}
+\hypertarget{classCSphQueue_a883105a8c3a9f6026cd38685165647f8}{\index{C\-Sph\-Queue@{C\-Sph\-Queue}!m\-\_\-p\-Data@{m\-\_\-p\-Data}}
+\index{m\-\_\-p\-Data@{m\-\_\-p\-Data}!CSphQueue@{C\-Sph\-Queue}}
+\subsubsection[{m\-\_\-p\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-O\-M\-P $>$ T$\ast$ {\bf C\-Sph\-Queue}$<$ T, C\-O\-M\-P $>$\-::m\-\_\-p\-Data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphQueue_a883105a8c3a9f6026cd38685165647f8}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

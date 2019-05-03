@@ -1,0 +1,135 @@
+\hypertarget{classDiskIndexQword__c}{\section{Disk\-Index\-Qword\-\_\-c$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$ Class Template Reference}
+\label{classDiskIndexQword__c}\index{Disk\-Index\-Qword\-\_\-c$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$@{Disk\-Index\-Qword\-\_\-c$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$}}
+}
+
+
+query word from the searcher's point of view  
+
+
+Inheritance diagram for Disk\-Index\-Qword\-\_\-c$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDiskIndexQword__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDiskIndexQword__c_a34f89c8fc4d1823e1443588e489eb3df}{Disk\-Index\-Qword\-\_\-c} (bool b\-Use\-Minibuffer, bool b\-Excluded)
+\item 
+virtual void \hyperlink{classDiskIndexQword__c_a97747c8101848e9c35042c034f37a1a4}{Reset} ()
+\item 
+void \hyperlink{classDiskIndexQword__c_add6ce5247bb877bc9a06b3e0025d0e71}{Get\-Hitlist\-Entry} ()
+\item 
+virtual void \hyperlink{classDiskIndexQword__c_af907be47b2b72a4cc557e000328c86f1}{Hint\-Docid} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Min\-I\-D)
+\item 
+virtual const \hyperlink{classCSphMatch}{C\-Sph\-Match} \& \hyperlink{classDiskIndexQword__c_ab40909f9581d80f1d60341f666c489b3}{Get\-Next\-Doc} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Docinfo)
+\item 
+virtual void \hyperlink{classDiskIndexQword__c_abb795c0d543535a2418193699c0561d6}{Seek\-Hitlist} (\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} u\-Off)
+\item 
+virtual \hyperlink{sphinx_8h_af1385e83d53e0648b15eae6d8f101847}{Hitpos\-\_\-t} \hyperlink{classDiskIndexQword__c_aee48b9a8e515921e03e885f6b8d4f92a}{Get\-Next\-Hit} ()
+\item 
+bool \hyperlink{classDiskIndexQword__c_ab449a897608050b19bab605107bc42f5}{Setup} (const \hyperlink{classDiskIndexQwordSetup__c}{Disk\-Index\-Qword\-Setup\-\_\-c} $\ast$p\-Setup)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$bool I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, bool I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, bool D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K$>$class Disk\-Index\-Qword\-\_\-c$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$}
+
+query word from the searcher's point of view 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDiskIndexQword__c_a34f89c8fc4d1823e1443588e489eb3df}{\index{Disk\-Index\-Qword\-\_\-c@{Disk\-Index\-Qword\-\_\-c}!Disk\-Index\-Qword\-\_\-c@{Disk\-Index\-Qword\-\_\-c}}
+\index{Disk\-Index\-Qword\-\_\-c@{Disk\-Index\-Qword\-\_\-c}!DiskIndexQword_c@{Disk\-Index\-Qword\-\_\-c}}
+\subsubsection[{Disk\-Index\-Qword\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, bool I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, bool D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K$>$ {\bf Disk\-Index\-Qword\-\_\-c}$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$\-::{\bf Disk\-Index\-Qword\-\_\-c} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Use\-Minibuffer, }
+\item[{bool}]{b\-Excluded}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDiskIndexQword__c_a34f89c8fc4d1823e1443588e489eb3df}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDiskIndexQword__c_add6ce5247bb877bc9a06b3e0025d0e71}{\index{Disk\-Index\-Qword\-\_\-c@{Disk\-Index\-Qword\-\_\-c}!Get\-Hitlist\-Entry@{Get\-Hitlist\-Entry}}
+\index{Get\-Hitlist\-Entry@{Get\-Hitlist\-Entry}!DiskIndexQword_c@{Disk\-Index\-Qword\-\_\-c}}
+\subsubsection[{Get\-Hitlist\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, bool I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, bool D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K$>$ void {\bf Disk\-Index\-Qword\-\_\-c}$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$\-::Get\-Hitlist\-Entry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDiskIndexQword__c_add6ce5247bb877bc9a06b3e0025d0e71}
+\hypertarget{classDiskIndexQword__c_ab40909f9581d80f1d60341f666c489b3}{\index{Disk\-Index\-Qword\-\_\-c@{Disk\-Index\-Qword\-\_\-c}!Get\-Next\-Doc@{Get\-Next\-Doc}}
+\index{Get\-Next\-Doc@{Get\-Next\-Doc}!DiskIndexQword_c@{Disk\-Index\-Qword\-\_\-c}}
+\subsubsection[{Get\-Next\-Doc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, bool I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, bool D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K$>$ virtual const {\bf C\-Sph\-Match}\& {\bf Disk\-Index\-Qword\-\_\-c}$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$\-::Get\-Next\-Doc (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Docinfo}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classDiskIndexQword__c_ab40909f9581d80f1d60341f666c489b3}
+
+
+Implements \hyperlink{classISphQword_acd52849d3fe4575edadc4e575440ed83}{I\-Sph\-Qword}.
+
+
+
+Reimplemented in \hyperlink{classDiskPayloadQword__c_a57e25f4a8bb33ee595135f5af7f81673}{Disk\-Payload\-Qword\-\_\-c$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S $>$}.
+
+\hypertarget{classDiskIndexQword__c_aee48b9a8e515921e03e885f6b8d4f92a}{\index{Disk\-Index\-Qword\-\_\-c@{Disk\-Index\-Qword\-\_\-c}!Get\-Next\-Hit@{Get\-Next\-Hit}}
+\index{Get\-Next\-Hit@{Get\-Next\-Hit}!DiskIndexQword_c@{Disk\-Index\-Qword\-\_\-c}}
+\subsubsection[{Get\-Next\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, bool I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, bool D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K$>$ virtual {\bf Hitpos\-\_\-t} {\bf Disk\-Index\-Qword\-\_\-c}$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$\-::Get\-Next\-Hit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classDiskIndexQword__c_aee48b9a8e515921e03e885f6b8d4f92a}
+
+
+Implements \hyperlink{classISphQword_aadb12527d7a43f99a46f045da2ea4c42}{I\-Sph\-Qword}.
+
+\hypertarget{classDiskIndexQword__c_af907be47b2b72a4cc557e000328c86f1}{\index{Disk\-Index\-Qword\-\_\-c@{Disk\-Index\-Qword\-\_\-c}!Hint\-Docid@{Hint\-Docid}}
+\index{Hint\-Docid@{Hint\-Docid}!DiskIndexQword_c@{Disk\-Index\-Qword\-\_\-c}}
+\subsubsection[{Hint\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, bool I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, bool D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K$>$ virtual void {\bf Disk\-Index\-Qword\-\_\-c}$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$\-::Hint\-Docid (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Min\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classDiskIndexQword__c_af907be47b2b72a4cc557e000328c86f1}
+
+
+Reimplemented from \hyperlink{classISphQword_ad536fc5508cfd5a1f62a10d1f57c9039}{I\-Sph\-Qword}.
+
+\hypertarget{classDiskIndexQword__c_a97747c8101848e9c35042c034f37a1a4}{\index{Disk\-Index\-Qword\-\_\-c@{Disk\-Index\-Qword\-\_\-c}!Reset@{Reset}}
+\index{Reset@{Reset}!DiskIndexQword_c@{Disk\-Index\-Qword\-\_\-c}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, bool I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, bool D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K$>$ virtual void {\bf Disk\-Index\-Qword\-\_\-c}$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$\-::Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classDiskIndexQword__c_a97747c8101848e9c35042c034f37a1a4}
+
+
+Reimplemented from \hyperlink{classISphQword_aa33687f4c96569a4f9107774c09dc6ff}{I\-Sph\-Qword}.
+
+\hypertarget{classDiskIndexQword__c_abb795c0d543535a2418193699c0561d6}{\index{Disk\-Index\-Qword\-\_\-c@{Disk\-Index\-Qword\-\_\-c}!Seek\-Hitlist@{Seek\-Hitlist}}
+\index{Seek\-Hitlist@{Seek\-Hitlist}!DiskIndexQword_c@{Disk\-Index\-Qword\-\_\-c}}
+\subsubsection[{Seek\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, bool I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, bool D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K$>$ virtual void {\bf Disk\-Index\-Qword\-\_\-c}$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$\-::Seek\-Hitlist (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Offset\-\_\-t}}]{u\-Off}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classDiskIndexQword__c_abb795c0d543535a2418193699c0561d6}
+
+
+Implements \hyperlink{classISphQword_a134ffe414b951605c53d941addbd4a0b}{I\-Sph\-Qword}.
+
+\hypertarget{classDiskIndexQword__c_ab449a897608050b19bab605107bc42f5}{\index{Disk\-Index\-Qword\-\_\-c@{Disk\-Index\-Qword\-\_\-c}!Setup@{Setup}}
+\index{Setup@{Setup}!DiskIndexQword_c@{Disk\-Index\-Qword\-\_\-c}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, bool I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, bool D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K$>$ bool {\bf Disk\-Index\-Qword\-\_\-c}$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$\-::Setup (
+\begin{DoxyParamCaption}
+\item[{const {\bf Disk\-Index\-Qword\-Setup\-\_\-c} $\ast$}]{p\-Setup}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classDiskIndexQword__c_ab449a897608050b19bab605107bc42f5}
+
+
+Implements \hyperlink{classDiskIndexQwordTraits__c_a667e9f2f2c6830de427f1d7054c62091}{Disk\-Index\-Qword\-Traits\-\_\-c}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,135 @@
+\hypertarget{classCSphMerger}{\section{C\-Sph\-Merger Class Reference}
+\label{classCSphMerger}\index{C\-Sph\-Merger@{C\-Sph\-Merger}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphMerger_a5cf73c8d8c794fa6babf4246a826539c}{C\-Sph\-Merger} (\hyperlink{classCSphHitBuilder}{C\-Sph\-Hit\-Builder} $\ast$p\-Hit\-Builder, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Inline\-Count, \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Min\-I\-D)
+\item 
+{\footnotesize template$<$typename Q\-W\-O\-R\-D $>$ }\\bool \hyperlink{classCSphMerger_a9e3311102750faf264a875f360957e6e}{Next\-Document} (Q\-W\-O\-R\-D \&t\-Qword, const \hyperlink{classCSphIndex__VLN}{C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$p\-Source\-Index, const \hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$p\-Filter, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ \&d\-Kill\-List)
+\item 
+{\footnotesize template$<$typename Q\-W\-O\-R\-D $>$ }\\void \hyperlink{classCSphMerger_add2b536b5d1554cb980addaad08950e7}{Transfer\-Data} (Q\-W\-O\-R\-D \&t\-Qword, \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} i\-Word\-I\-D, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Word, const \hyperlink{classCSphIndex__VLN}{C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$p\-Source\-Index, const \hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$p\-Filter, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ \&d\-Kill\-List, volatile bool $\ast$p\-Global\-Stop, volatile bool $\ast$p\-Local\-Stop)
+\item 
+{\footnotesize template$<$typename Q\-W\-O\-R\-D $>$ }\\void \hyperlink{classCSphMerger_a403304810ff1b3761f103e01b55995b8}{Transfer\-Hits} (Q\-W\-O\-R\-D \&t\-Qword, \hyperlink{structCSphAggregateHit}{C\-Sph\-Aggregate\-Hit} \&t\-Hit)
+\item 
+const \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$ \hyperlink{classCSphMerger_add134535bc096d10a31c322a5e7d025a}{Get\-Inline} () const 
+\item 
+\hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$ \hyperlink{classCSphMerger_a997c8cbecfbfff516dc6ef466e6f7927}{Acquire\-Inline} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Q\-W\-O\-R\-D $>$ }\\static void \hyperlink{classCSphMerger_ad1c867f57373f6c5e88da747810a7d36}{Prepare\-Qword} (Q\-W\-O\-R\-D \&t\-Qword, const \hyperlink{classCSphDictReader}{C\-Sph\-Dict\-Reader} \&t\-Reader, \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} i\-Min\-I\-D, bool b\-Word\-Dict)
+\item 
+{\footnotesize template$<$typename Q\-W\-O\-R\-D $>$ }\\static void \hyperlink{classCSphMerger_a2d6995e96c5e9f13a67202916591728a}{Configure\-Qword} (Q\-W\-O\-R\-D \&t\-Qword, const \hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \&t\-Hits, const \hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \&t\-Docs, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Dynamic, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Inline, const \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$p\-Min, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $>$ \hyperlink{classCSphMerger_a38fdfaaaba3f0f52ab25c3e9e385681b}{m\-\_\-d\-Inline\-Row}
+\item 
+\hyperlink{classCSphHitBuilder}{C\-Sph\-Hit\-Builder} $\ast$ \hyperlink{classCSphMerger_a007c577963e11daa92b018e026c6b755}{m\-\_\-p\-Hit\-Builder}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classCSphMerger_a85e280118c793240be1b768f89d27513}{m\-\_\-u\-Min\-I\-D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphMerger_a5cf73c8d8c794fa6babf4246a826539c}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!C\-Sph\-Merger@{C\-Sph\-Merger}}
+\index{C\-Sph\-Merger@{C\-Sph\-Merger}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{C\-Sph\-Merger}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Merger\-::\-C\-Sph\-Merger (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Hit\-Builder} $\ast$}]{p\-Hit\-Builder, }
+\item[{{\bf int}}]{i\-Inline\-Count, }
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Min\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphMerger_a5cf73c8d8c794fa6babf4246a826539c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphMerger_a997c8cbecfbfff516dc6ef466e6f7927}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!Acquire\-Inline@{Acquire\-Inline}}
+\index{Acquire\-Inline@{Acquire\-Inline}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{Acquire\-Inline}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Rowitem}$\ast$ C\-Sph\-Merger\-::\-Acquire\-Inline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMerger_a997c8cbecfbfff516dc6ef466e6f7927}
+\hypertarget{classCSphMerger_a2d6995e96c5e9f13a67202916591728a}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!Configure\-Qword@{Configure\-Qword}}
+\index{Configure\-Qword@{Configure\-Qword}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{Configure\-Qword}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Q\-W\-O\-R\-D $>$ static void C\-Sph\-Merger\-::\-Configure\-Qword (
+\begin{DoxyParamCaption}
+\item[{Q\-W\-O\-R\-D \&}]{t\-Qword, }
+\item[{const {\bf C\-Sph\-Autofile} \&}]{t\-Hits, }
+\item[{const {\bf C\-Sph\-Autofile} \&}]{t\-Docs, }
+\item[{{\bf int}}]{i\-Dynamic, }
+\item[{{\bf int}}]{i\-Inline, }
+\item[{const {\bf C\-Sph\-Rowitem} $\ast$}]{p\-Min, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCSphMerger_a2d6995e96c5e9f13a67202916591728a}
+\hypertarget{classCSphMerger_add134535bc096d10a31c322a5e7d025a}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!Get\-Inline@{Get\-Inline}}
+\index{Get\-Inline@{Get\-Inline}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{Get\-Inline}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Rowitem}$\ast$ C\-Sph\-Merger\-::\-Get\-Inline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMerger_add134535bc096d10a31c322a5e7d025a}
+\hypertarget{classCSphMerger_a9e3311102750faf264a875f360957e6e}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!Next\-Document@{Next\-Document}}
+\index{Next\-Document@{Next\-Document}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{Next\-Document}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Q\-W\-O\-R\-D $>$ bool C\-Sph\-Merger\-::\-Next\-Document (
+\begin{DoxyParamCaption}
+\item[{Q\-W\-O\-R\-D \&}]{t\-Qword, }
+\item[{const {\bf C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$}]{p\-Source\-Index, }
+\item[{const {\bf I\-Sph\-Filter} $\ast$}]{p\-Filter, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Doc\-I\-D\-\_\-t} $>$ \&}]{d\-Kill\-List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMerger_a9e3311102750faf264a875f360957e6e}
+\hypertarget{classCSphMerger_ad1c867f57373f6c5e88da747810a7d36}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!Prepare\-Qword@{Prepare\-Qword}}
+\index{Prepare\-Qword@{Prepare\-Qword}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{Prepare\-Qword}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Q\-W\-O\-R\-D $>$ static void C\-Sph\-Merger\-::\-Prepare\-Qword (
+\begin{DoxyParamCaption}
+\item[{Q\-W\-O\-R\-D \&}]{t\-Qword, }
+\item[{const {\bf C\-Sph\-Dict\-Reader} \&}]{t\-Reader, }
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{i\-Min\-I\-D, }
+\item[{bool}]{b\-Word\-Dict}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCSphMerger_ad1c867f57373f6c5e88da747810a7d36}
+\hypertarget{classCSphMerger_add2b536b5d1554cb980addaad08950e7}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!Transfer\-Data@{Transfer\-Data}}
+\index{Transfer\-Data@{Transfer\-Data}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{Transfer\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Q\-W\-O\-R\-D $>$ void C\-Sph\-Merger\-::\-Transfer\-Data (
+\begin{DoxyParamCaption}
+\item[{Q\-W\-O\-R\-D \&}]{t\-Qword, }
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{i\-Word\-I\-D, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-Word, }
+\item[{const {\bf C\-Sph\-Index\-\_\-\-V\-L\-N} $\ast$}]{p\-Source\-Index, }
+\item[{const {\bf I\-Sph\-Filter} $\ast$}]{p\-Filter, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Doc\-I\-D\-\_\-t} $>$ \&}]{d\-Kill\-List, }
+\item[{volatile bool $\ast$}]{p\-Global\-Stop, }
+\item[{volatile bool $\ast$}]{p\-Local\-Stop}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMerger_add2b536b5d1554cb980addaad08950e7}
+\hypertarget{classCSphMerger_a403304810ff1b3761f103e01b55995b8}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!Transfer\-Hits@{Transfer\-Hits}}
+\index{Transfer\-Hits@{Transfer\-Hits}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{Transfer\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Q\-W\-O\-R\-D $>$ void C\-Sph\-Merger\-::\-Transfer\-Hits (
+\begin{DoxyParamCaption}
+\item[{Q\-W\-O\-R\-D \&}]{t\-Qword, }
+\item[{{\bf C\-Sph\-Aggregate\-Hit} \&}]{t\-Hit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMerger_a403304810ff1b3761f103e01b55995b8}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphMerger_a38fdfaaaba3f0f52ab25c3e9e385681b}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!m\-\_\-d\-Inline\-Row@{m\-\_\-d\-Inline\-Row}}
+\index{m\-\_\-d\-Inline\-Row@{m\-\_\-d\-Inline\-Row}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{m\-\_\-d\-Inline\-Row}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf C\-Sph\-Rowitem}$>$ C\-Sph\-Merger\-::m\-\_\-d\-Inline\-Row\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphMerger_a38fdfaaaba3f0f52ab25c3e9e385681b}
+\hypertarget{classCSphMerger_a007c577963e11daa92b018e026c6b755}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!m\-\_\-p\-Hit\-Builder@{m\-\_\-p\-Hit\-Builder}}
+\index{m\-\_\-p\-Hit\-Builder@{m\-\_\-p\-Hit\-Builder}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{m\-\_\-p\-Hit\-Builder}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Hit\-Builder}$\ast$ C\-Sph\-Merger\-::m\-\_\-p\-Hit\-Builder\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphMerger_a007c577963e11daa92b018e026c6b755}
+\hypertarget{classCSphMerger_a85e280118c793240be1b768f89d27513}{\index{C\-Sph\-Merger@{C\-Sph\-Merger}!m\-\_\-u\-Min\-I\-D@{m\-\_\-u\-Min\-I\-D}}
+\index{m\-\_\-u\-Min\-I\-D@{m\-\_\-u\-Min\-I\-D}!CSphMerger@{C\-Sph\-Merger}}
+\subsubsection[{m\-\_\-u\-Min\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Merger\-::m\-\_\-u\-Min\-I\-D\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphMerger_a85e280118c793240be1b768f89d27513}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,129 @@
+\hypertarget{classExpr__ArgVsConstSet__c}{\section{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c$<$ T $>$ Class Template Reference}
+\label{classExpr__ArgVsConstSet__c}\index{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c$<$ T $>$@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c$<$ T $>$}}
+}
+
+
+arg-\/vs-\/constant-\/set  
+
+
+Inheritance diagram for Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classExpr__ArgVsConstSet__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExpr__ArgVsConstSet__c_a4e2d6743658c6fabd19700ae5b713790}{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c} (\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Arg, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ $>$ \&d\-Args, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Skip)
+\begin{DoxyCompactList}\small\item\em take ownership of arg, pre-\/evaluate and dismiss turn points \end{DoxyCompactList}\item 
+\hyperlink{classExpr__ArgVsConstSet__c_a3b4ce2d9096e12123e4d936cad8e07b0}{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c} (\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Arg, \hyperlink{classConstList__c}{Const\-List\-\_\-c} $\ast$p\-Consts)
+\begin{DoxyCompactList}\small\item\em take ownership of arg, and copy that constlist \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classExpr__ArgVsConstSet__c_a4be34d5625a4960dbea8ca47e6d867ad}{Get\-Hash} (const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Prev\-Hash, bool \&b\-Disable)
+\begin{DoxyCompactList}\small\item\em get expression hash (for query cache) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classExpr__ArgVsConstSet__c_a9471df13fe0ffe92742e711d321f8556}{Calc\-Value\-Hash} ()
+\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classExpr__ArgVsConstSet__c_a5d38584111975db89e3136fba3e99784}{Calc\-Hash} (const char $\ast$sz\-Tag, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Prev\-Hash, bool \&b\-Disable)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T $>$ \hyperlink{classExpr__ArgVsConstSet__c_a6209640b02248d20bc284db2242af647}{m\-\_\-d\-Values}
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classExpr__ArgVsConstSet__c_a36ef18a5262a821775d94a43d37a4bc9}{m\-\_\-u\-Value\-Hash}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c$<$ T $>$}
+
+arg-\/vs-\/constant-\/set 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExpr__ArgVsConstSet__c_a4e2d6743658c6fabd19700ae5b713790}{\index{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}!Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}}
+\index{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}!Expr_ArgVsConstSet_c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}}
+\subsubsection[{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}$<$ T $>$\-::{\bf Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c} (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Arg, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf I\-Sph\-Expr} $\ast$ $>$ \&}]{d\-Args, }
+\item[{{\bf int}}]{i\-Skip}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExpr__ArgVsConstSet__c_a4e2d6743658c6fabd19700ae5b713790}
+
+
+take ownership of arg, pre-\/evaluate and dismiss turn points 
+
+\hypertarget{classExpr__ArgVsConstSet__c_a3b4ce2d9096e12123e4d936cad8e07b0}{\index{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}!Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}}
+\index{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}!Expr_ArgVsConstSet_c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}}
+\subsubsection[{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}$<$ T $>$\-::{\bf Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c} (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Arg, }
+\item[{{\bf Const\-List\-\_\-c} $\ast$}]{p\-Consts}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExpr__ArgVsConstSet__c_a3b4ce2d9096e12123e4d936cad8e07b0}
+
+
+take ownership of arg, and copy that constlist 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExpr__ArgVsConstSet__c_a5d38584111975db89e3136fba3e99784}{\index{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}!Calc\-Hash@{Calc\-Hash}}
+\index{Calc\-Hash@{Calc\-Hash}!Expr_ArgVsConstSet_c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}}
+\subsubsection[{Calc\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual {\bf uint64\-\_\-t} {\bf Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}$<$ T $>$\-::Calc\-Hash (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{sz\-Tag, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Prev\-Hash, }
+\item[{bool \&}]{b\-Disable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classExpr__ArgVsConstSet__c_a5d38584111975db89e3136fba3e99784}
+
+
+Reimplemented from \hyperlink{classExpr__ArgVsSet__c_a250bcadbda86a16d302455e1f540f2ac}{Expr\-\_\-\-Arg\-Vs\-Set\-\_\-c$<$ T $>$}.
+
+\hypertarget{classExpr__ArgVsConstSet__c_a9471df13fe0ffe92742e711d321f8556}{\index{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}!Calc\-Value\-Hash@{Calc\-Value\-Hash}}
+\index{Calc\-Value\-Hash@{Calc\-Value\-Hash}!Expr_ArgVsConstSet_c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}}
+\subsubsection[{Calc\-Value\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}$<$ T $>$\-::Calc\-Value\-Hash (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classExpr__ArgVsConstSet__c_a9471df13fe0ffe92742e711d321f8556}
+\hypertarget{classExpr__ArgVsConstSet__c_a4be34d5625a4960dbea8ca47e6d867ad}{\index{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}!Get\-Hash@{Get\-Hash}}
+\index{Get\-Hash@{Get\-Hash}!Expr_ArgVsConstSet_c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}}
+\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual {\bf uint64\-\_\-t} {\bf Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}$<$ T $>$\-::Get\-Hash (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Prev\-Hash, }
+\item[{bool \&}]{b\-Disable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__ArgVsConstSet__c_a4be34d5625a4960dbea8ca47e6d867ad}
+
+
+get expression hash (for query cache) 
+
+
+
+Implements \hyperlink{structISphExpr_aabc4c95ac6f190f6ebb15fabd7e54b08}{I\-Sph\-Expr}.
+
+
+
+Reimplemented in \hyperlink{classExpr__StrIn__c_ade280f607479af673eac963a39691f0f}{Expr\-\_\-\-Str\-In\-\_\-c}, \hyperlink{classExpr__JsonFieldIn__c_a8cd12fea0603dd58c72ad6500e5c1b20}{Expr\-\_\-\-Json\-Field\-In\-\_\-c}, \hyperlink{classExpr__MVAIn__c_a51087124678d26d29debc2fc02bbd48a}{Expr\-\_\-\-M\-V\-A\-In\-\_\-c$<$ M\-V\-A64 $>$}, \hyperlink{classExpr__In__c_a6b599b2dc4164abe75e58e3f10e146e3}{Expr\-\_\-\-In\-\_\-c$<$ T $>$}, and \hyperlink{classExpr__IntervalConst__c_a20faf025217ed1f36a607b4eec3e19cf}{Expr\-\_\-\-Interval\-Const\-\_\-c$<$ T $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExpr__ArgVsConstSet__c_a6209640b02248d20bc284db2242af647}{\index{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}!m\-\_\-d\-Values@{m\-\_\-d\-Values}}
+\index{m\-\_\-d\-Values@{m\-\_\-d\-Values}!Expr_ArgVsConstSet_c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Vector}$<$T$>$ {\bf Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}$<$ T $>$\-::m\-\_\-d\-Values\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExpr__ArgVsConstSet__c_a6209640b02248d20bc284db2242af647}
+\hypertarget{classExpr__ArgVsConstSet__c_a36ef18a5262a821775d94a43d37a4bc9}{\index{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}!m\-\_\-u\-Value\-Hash@{m\-\_\-u\-Value\-Hash}}
+\index{m\-\_\-u\-Value\-Hash@{m\-\_\-u\-Value\-Hash}!Expr_ArgVsConstSet_c@{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}}
+\subsubsection[{m\-\_\-u\-Value\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf uint64\-\_\-t} {\bf Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c}$<$ T $>$\-::m\-\_\-u\-Value\-Hash\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExpr__ArgVsConstSet__c_a36ef18a5262a821775d94a43d37a4bc9}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexpr_8cpp}{sphinxexpr.\-cpp}\end{DoxyCompactItemize}

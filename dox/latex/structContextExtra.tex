@@ -1,0 +1,61 @@
+\hypertarget{structContextExtra}{\section{Context\-Extra Struct Reference}
+\label{structContextExtra}\index{Context\-Extra@{Context\-Extra}}
+}
+Inheritance diagram for Context\-Extra\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structContextExtra}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{structContextExtra_a43da928bb0a840a566efa77942800847}{Extra\-Data\-Impl} (\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88}{Extra\-Data\-\_\-e} e\-Data, void $\ast$$\ast$pp\-Arg)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classISphRanker}{I\-Sph\-Ranker} $\ast$ \hyperlink{structContextExtra_aef5b7622ed20e52f148846873e9d69b9}{m\-\_\-p\-Ranker}
+\item 
+\hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$ \hyperlink{structContextExtra_a285024a92158bbeb503f1cb870558226}{m\-\_\-p\-Sorter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+F\-I\-X\-M\-E, perhaps this rather crappy helper class really serves exactly 1 (one) simple purpose
+
+it passes a sorting queue internals (namely, weight and float sortkey, if any, of the current-\/worst queue element) to the M\-I\-N\-\_\-\-T\-O\-P\-\_\-\-W\-O\-R\-S\-T() and M\-I\-N\-\_\-\-T\-O\-P\-\_\-\-S\-O\-R\-T\-V\-A\-L() expression classes that expose those to the cruel outside world
+
+all the C\-O\-M-\/like E\-X\-T\-R\-A\-\_\-xxx message back and forth is needed because expressions are currently parsed and created earlier than the sorting queue
+
+that also is the reason why we mischievously return 0 instead of clearly failing with an error when the sortval is not a dynamic float; by the time we are parsing expressions, we do not {\itshape yet} know that; but by the time we create a sorting queue, we do not {\itshape want} to leak select expression checks into it
+
+alternatively, we probably want to refactor this and introduce Bind(), to parse expressions once, then bind them to actual searching contexts (aka index or segment, and ranker, and sorter, and whatever else might be referenced by the expressions) 
+
+\subsection{Member Function Documentation}
+\hypertarget{structContextExtra_a43da928bb0a840a566efa77942800847}{\index{Context\-Extra@{Context\-Extra}!Extra\-Data\-Impl@{Extra\-Data\-Impl}}
+\index{Extra\-Data\-Impl@{Extra\-Data\-Impl}!ContextExtra@{Context\-Extra}}
+\subsubsection[{Extra\-Data\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Context\-Extra\-::\-Extra\-Data\-Impl (
+\begin{DoxyParamCaption}
+\item[{{\bf Extra\-Data\-\_\-e}}]{e\-Data, }
+\item[{void $\ast$$\ast$}]{pp\-Arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structContextExtra_a43da928bb0a840a566efa77942800847}
+
+
+Reimplemented from \hyperlink{classISphExtra_abb7ec9aff3ed68a8dc3509d2f605878c}{I\-Sph\-Extra}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structContextExtra_aef5b7622ed20e52f148846873e9d69b9}{\index{Context\-Extra@{Context\-Extra}!m\-\_\-p\-Ranker@{m\-\_\-p\-Ranker}}
+\index{m\-\_\-p\-Ranker@{m\-\_\-p\-Ranker}!ContextExtra@{Context\-Extra}}
+\subsubsection[{m\-\_\-p\-Ranker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Ranker}$\ast$ Context\-Extra\-::m\-\_\-p\-Ranker}}\label{structContextExtra_aef5b7622ed20e52f148846873e9d69b9}
+\hypertarget{structContextExtra_a285024a92158bbeb503f1cb870558226}{\index{Context\-Extra@{Context\-Extra}!m\-\_\-p\-Sorter@{m\-\_\-p\-Sorter}}
+\index{m\-\_\-p\-Sorter@{m\-\_\-p\-Sorter}!ContextExtra@{Context\-Extra}}
+\subsubsection[{m\-\_\-p\-Sorter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Match\-Sorter}$\ast$ Context\-Extra\-::m\-\_\-p\-Sorter}}\label{structContextExtra_a285024a92158bbeb503f1cb870558226}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

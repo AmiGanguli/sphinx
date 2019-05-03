@@ -1,0 +1,76 @@
+\hypertarget{classExprFilterFloatRange__c}{\section{Expr\-Filter\-Float\-Range\-\_\-c$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S $>$ Class Template Reference}
+\label{classExprFilterFloatRange__c}\index{Expr\-Filter\-Float\-Range\-\_\-c$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S $>$@{Expr\-Filter\-Float\-Range\-\_\-c$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S $>$}}
+}
+Inheritance diagram for Expr\-Filter\-Float\-Range\-\_\-c$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classExprFilterFloatRange__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExprFilterFloatRange__c_a2ae99a57f7de61961aaa5b6154ab0061}{Expr\-Filter\-Float\-Range\-\_\-c} (\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Expr)
+\item 
+virtual void \hyperlink{classExprFilterFloatRange__c_ab3d6e6fbabb0920b6b80ba2970b99a38}{Set\-Range\-Float} (\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} f\-Min, \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} f\-Max)
+\item 
+virtual bool \hyperlink{classExprFilterFloatRange__c_a0d53d4f9429760d976e4983f1f153469}{Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classExprFilterFloatRange__c_a9efb6088d5a1b34a999916726b30de8e}{m\-\_\-f\-Min\-Value}
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classExprFilterFloatRange__c_aa75bdd31c007c175b24e18f57f04299b}{m\-\_\-f\-Max\-Value}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExprFilterFloatRange__c_a2ae99a57f7de61961aaa5b6154ab0061}{\index{Expr\-Filter\-Float\-Range\-\_\-c@{Expr\-Filter\-Float\-Range\-\_\-c}!Expr\-Filter\-Float\-Range\-\_\-c@{Expr\-Filter\-Float\-Range\-\_\-c}}
+\index{Expr\-Filter\-Float\-Range\-\_\-c@{Expr\-Filter\-Float\-Range\-\_\-c}!ExprFilterFloatRange_c@{Expr\-Filter\-Float\-Range\-\_\-c}}
+\subsubsection[{Expr\-Filter\-Float\-Range\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S$>$ {\bf Expr\-Filter\-Float\-Range\-\_\-c}$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S $>$\-::{\bf Expr\-Filter\-Float\-Range\-\_\-c} (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Expr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classExprFilterFloatRange__c_a2ae99a57f7de61961aaa5b6154ab0061}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExprFilterFloatRange__c_a0d53d4f9429760d976e4983f1f153469}{\index{Expr\-Filter\-Float\-Range\-\_\-c@{Expr\-Filter\-Float\-Range\-\_\-c}!Eval@{Eval}}
+\index{Eval@{Eval}!ExprFilterFloatRange_c@{Expr\-Filter\-Float\-Range\-\_\-c}}
+\subsubsection[{Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S$>$ virtual bool {\bf Expr\-Filter\-Float\-Range\-\_\-c}$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S $>$\-::Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExprFilterFloatRange__c_a0d53d4f9429760d976e4983f1f153469}
+evaluate filter for a given match returns true if match satisfies the filter critertia (i.\-e. in range, found in values list etc) 
+
+Implements \hyperlink{structISphFilter_a6f3cedb0fa449a85d6010220a635bc74}{I\-Sph\-Filter}.
+
+\hypertarget{classExprFilterFloatRange__c_ab3d6e6fbabb0920b6b80ba2970b99a38}{\index{Expr\-Filter\-Float\-Range\-\_\-c@{Expr\-Filter\-Float\-Range\-\_\-c}!Set\-Range\-Float@{Set\-Range\-Float}}
+\index{Set\-Range\-Float@{Set\-Range\-Float}!ExprFilterFloatRange_c@{Expr\-Filter\-Float\-Range\-\_\-c}}
+\subsubsection[{Set\-Range\-Float}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S$>$ virtual void {\bf Expr\-Filter\-Float\-Range\-\_\-c}$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S $>$\-::Set\-Range\-Float (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{f\-Min, }
+\item[{{\bf float}}]{f\-Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExprFilterFloatRange__c_ab3d6e6fbabb0920b6b80ba2970b99a38}
+
+
+Reimplemented from \hyperlink{structISphFilter_a6eeb7d0b75f237be64bea5af0ed5e5ab}{I\-Sph\-Filter}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExprFilterFloatRange__c_aa75bdd31c007c175b24e18f57f04299b}{\index{Expr\-Filter\-Float\-Range\-\_\-c@{Expr\-Filter\-Float\-Range\-\_\-c}!m\-\_\-f\-Max\-Value@{m\-\_\-f\-Max\-Value}}
+\index{m\-\_\-f\-Max\-Value@{m\-\_\-f\-Max\-Value}!ExprFilterFloatRange_c@{Expr\-Filter\-Float\-Range\-\_\-c}}
+\subsubsection[{m\-\_\-f\-Max\-Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S$>$ {\bf float} {\bf Expr\-Filter\-Float\-Range\-\_\-c}$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S $>$\-::m\-\_\-f\-Max\-Value}}\label{classExprFilterFloatRange__c_aa75bdd31c007c175b24e18f57f04299b}
+\hypertarget{classExprFilterFloatRange__c_a9efb6088d5a1b34a999916726b30de8e}{\index{Expr\-Filter\-Float\-Range\-\_\-c@{Expr\-Filter\-Float\-Range\-\_\-c}!m\-\_\-f\-Min\-Value@{m\-\_\-f\-Min\-Value}}
+\index{m\-\_\-f\-Min\-Value@{m\-\_\-f\-Min\-Value}!ExprFilterFloatRange_c@{Expr\-Filter\-Float\-Range\-\_\-c}}
+\subsubsection[{m\-\_\-f\-Min\-Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S$>$ {\bf float} {\bf Expr\-Filter\-Float\-Range\-\_\-c}$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L\-S $>$\-::m\-\_\-f\-Min\-Value}}\label{classExprFilterFloatRange__c_a9efb6088d5a1b34a999916726b30de8e}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxfilter_8cpp}{sphinxfilter.\-cpp}\end{DoxyCompactItemize}

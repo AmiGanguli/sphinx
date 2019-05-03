@@ -1,0 +1,284 @@
+\hypertarget{structAgentConn__t}{\section{Agent\-Conn\-\_\-t Struct Reference}
+\label{structAgentConn__t}\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}}
+}
+
+
+remote agent connection (local per-\/query state)  
+
+
+
+
+{\ttfamily \#include $<$searchdha.\-h$>$}
+
+Inheritance diagram for Agent\-Conn\-\_\-t\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structAgentConn__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structAgentConn__t_af3e2cf976f977bdca921a5286eb9796c}{Agent\-Conn\-\_\-t} ()
+\item 
+\hyperlink{structAgentConn__t_afba48527a33db4220c9fdf2b1bb8a81d}{$\sim$\-Agent\-Conn\-\_\-t} ()
+\item 
+void \hyperlink{structAgentConn__t_a48035eccaae9a0d5de1a91e378e4548e}{Close} (bool b\-Close\-Persist=true)
+\item 
+void \hyperlink{structAgentConn__t_a8c67e1a26d34f157e61e3fc96ad4d2da}{Fail} (\hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebb}{Agent\-Stats\-\_\-e} e\-Stat, const char $\ast$s\-Message,...) \hyperlink{sphinxstd_8h_a9d373a9b65ff25b2db84c07394e1c212}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((format(printf
+\item 
+void void \hyperlink{structAgentConn__t_a1b0ad66924cff4c6797b6dc10503c1fe}{Specify\-And\-Select\-Mirror} (\hyperlink{structMultiAgentDesc__t}{Multi\-Agent\-Desc\-\_\-t} $\ast$p\-Mirror\-Chooser=nullptr)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structAgentConn__t_ac167c632a1c884cdce0958d0965b37ee}{Num\-Of\-Mirrors} () const 
+\item 
+\hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} \& \hyperlink{structAgentConn__t_a3103763aece77f0474dac4b0e96c7a38}{operator=} (const \hyperlink{classHostUrl__c}{Host\-Url\-\_\-c} \&rhs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structAgentConn__t_a839dd9a3b8c453d19a350c2c319cc9e0}{m\-\_\-i\-Sock}
+\begin{DoxyCompactList}\small\item\em socket number, -\/1 if not connected \end{DoxyCompactList}\item 
+bool \hyperlink{structAgentConn__t_aacc0fc32c87a655ee731944c096198d6}{m\-\_\-b\-Fresh}
+\begin{DoxyCompactList}\small\item\em just created persistent connection, need S\-E\-A\-R\-C\-H\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-E\-R\-S\-I\-S\-T \end{DoxyCompactList}\item 
+\hyperlink{searchdha_8h_aacf8321964d37cbf1de1f483bba94939}{Agent\-State\-\_\-e} \hyperlink{structAgentConn__t_a1b1c48b4720544ea723a0d27f604c422}{m\-\_\-e\-State}
+\begin{DoxyCompactList}\small\item\em current state \end{DoxyCompactList}\item 
+bool \hyperlink{structAgentConn__t_a7668be7cb46253022088332a4e1e45da}{m\-\_\-b\-Success}
+\begin{DoxyCompactList}\small\item\em whether last request was successful (ie. there are available results) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structAgentConn__t_a90c41f9dede2f2db77525cc0f3668042}{m\-\_\-s\-Failure}
+\begin{DoxyCompactList}\small\item\em failure message \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structAgentConn__t_a3aea30ff4e6deae995a681bdf4b5a504}{m\-\_\-i\-Reply\-Status}
+\begin{DoxyCompactList}\small\item\em reply status code \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structAgentConn__t_a118e79b17fe8cb55b9a7d25d607f431d}{m\-\_\-i\-Reply\-Size}
+\begin{DoxyCompactList}\small\item\em how many reply bytes are there \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structAgentConn__t_afa5270ede328ecb5c146a823807d44ab}{m\-\_\-i\-Reply\-Read}
+\begin{DoxyCompactList}\small\item\em how many reply bytes are alredy received \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structAgentConn__t_aa433a6e029e33cee67b34d07ec24f397}{m\-\_\-i\-Retries}
+\begin{DoxyCompactList}\small\item\em count from 0 to m\-\_\-i\-Retry\-Limit \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structAgentConn__t_a24f72eb1cfc5a147ba190887f62e1680}{m\-\_\-i\-Retry\-Limit}
+\begin{DoxyCompactList}\small\item\em how many times retry (m.\-b. with another mirror) \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{structAgentConn__t_add128e00687669a2b318381ec7e6be04}{m\-\_\-p\-Reply\-Buf}
+\begin{DoxyCompactList}\small\item\em reply buffer \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $>$ \hyperlink{structAgentConn__t_acd760dc9dfe66a5d71ffdd75de3e821f}{m\-\_\-d\-Results}
+\begin{DoxyCompactList}\small\item\em multi-\/query results \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structAgentConn__t_a07c96676f202daee7f9cf3e1869f55e7}{m\-\_\-i\-Wall}
+\begin{DoxyCompactList}\small\item\em wall time spent vs this agent \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structAgentConn__t_ad8d236185b0ff03980532eb039ae0990}{m\-\_\-i\-Waited}
+\begin{DoxyCompactList}\small\item\em statistics of waited \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structAgentConn__t_a422ec8cb29794eda43e0fb8941fcab86}{m\-\_\-i\-Start\-Query}
+\begin{DoxyCompactList}\small\item\em the timestamp of the latest request \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structAgentConn__t_aa72a5c38f23e61a419f0bf80509aa337}{m\-\_\-i\-End\-Query}
+\begin{DoxyCompactList}\small\item\em the timestamp of the end of the latest operation \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structAgentConn__t_a293275c6b9072ed5074553a073b389a9}{m\-\_\-i\-Worker\-Tag}
+\begin{DoxyCompactList}\small\item\em worker tag \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structAgentConn__t_a6f256b258881ec414716c06a94c97e50}{m\-\_\-i\-Store\-Tag}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structAgentConn__t_aa30e153ed1e6de625b3a8535b615f5e5}{m\-\_\-i\-Weight}
+\item 
+bool \hyperlink{structAgentConn__t_ae309e522e296677d68bb51c097b2f3a7}{m\-\_\-b\-Ping}
+\item 
+\hyperlink{structMultiAgentDesc__t}{Multi\-Agent\-Desc\-\_\-t} $\ast$ \hyperlink{structAgentConn__t_a4dd1c818ec6ec01e16d867b406f7b348}{m\-\_\-p\-Mirror\-Chooser}
+\begin{DoxyCompactList}\small\item\em used to select another mirror if this one is broken \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+remote agent connection (local per-\/query state) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structAgentConn__t_af3e2cf976f977bdca921a5286eb9796c}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}}
+\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{Agent\-Conn\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Agent\-Conn\-\_\-t\-::\-Agent\-Conn\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structAgentConn__t_af3e2cf976f977bdca921a5286eb9796c}
+\hypertarget{structAgentConn__t_afba48527a33db4220c9fdf2b1bb8a81d}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!$\sim$\-Agent\-Conn\-\_\-t@{$\sim$\-Agent\-Conn\-\_\-t}}
+\index{$\sim$\-Agent\-Conn\-\_\-t@{$\sim$\-Agent\-Conn\-\_\-t}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{$\sim$\-Agent\-Conn\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Agent\-Conn\-\_\-t\-::$\sim$\-Agent\-Conn\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structAgentConn__t_afba48527a33db4220c9fdf2b1bb8a81d}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structAgentConn__t_a48035eccaae9a0d5de1a91e378e4548e}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!Close@{Close}}
+\index{Close@{Close}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void Agent\-Conn\-\_\-t\-::\-Close (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Close\-Persist = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{structAgentConn__t_a48035eccaae9a0d5de1a91e378e4548e}
+\hypertarget{structAgentConn__t_a8c67e1a26d34f157e61e3fc96ad4d2da}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!Fail@{Fail}}
+\index{Fail@{Fail}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{Fail}]{\setlength{\rightskip}{0pt plus 5cm}void Agent\-Conn\-\_\-t\-::\-Fail (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Stats\-\_\-e}}]{e\-Stat, }
+\item[{const char $\ast$}]{s\-Message, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{structAgentConn__t_a8c67e1a26d34f157e61e3fc96ad4d2da}
+\hypertarget{structAgentConn__t_ac167c632a1c884cdce0958d0965b37ee}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!Num\-Of\-Mirrors@{Num\-Of\-Mirrors}}
+\index{Num\-Of\-Mirrors@{Num\-Of\-Mirrors}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{Num\-Of\-Mirrors}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Agent\-Conn\-\_\-t\-::\-Num\-Of\-Mirrors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structAgentConn__t_ac167c632a1c884cdce0958d0965b37ee}
+\hypertarget{structAgentConn__t_a3103763aece77f0474dac4b0e96c7a38}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!operator=@{operator=}}
+\index{operator=@{operator=}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Agent\-Conn\-\_\-t}\& Agent\-Conn\-\_\-t\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Host\-Url\-\_\-c} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{structAgentConn__t_a3103763aece77f0474dac4b0e96c7a38}
+\hypertarget{structAgentConn__t_a1b0ad66924cff4c6797b6dc10503c1fe}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!Specify\-And\-Select\-Mirror@{Specify\-And\-Select\-Mirror}}
+\index{Specify\-And\-Select\-Mirror@{Specify\-And\-Select\-Mirror}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{Specify\-And\-Select\-Mirror}]{\setlength{\rightskip}{0pt plus 5cm}void void Agent\-Conn\-\_\-t\-::\-Specify\-And\-Select\-Mirror (
+\begin{DoxyParamCaption}
+\item[{{\bf Multi\-Agent\-Desc\-\_\-t} $\ast$}]{p\-Mirror\-Chooser = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}}\label{structAgentConn__t_a1b0ad66924cff4c6797b6dc10503c1fe}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structAgentConn__t_aacc0fc32c87a655ee731944c096198d6}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-b\-Fresh@{m\-\_\-b\-Fresh}}
+\index{m\-\_\-b\-Fresh@{m\-\_\-b\-Fresh}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Fresh}]{\setlength{\rightskip}{0pt plus 5cm}bool Agent\-Conn\-\_\-t\-::m\-\_\-b\-Fresh}}\label{structAgentConn__t_aacc0fc32c87a655ee731944c096198d6}
+
+
+just created persistent connection, need S\-E\-A\-R\-C\-H\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-E\-R\-S\-I\-S\-T 
+
+\hypertarget{structAgentConn__t_ae309e522e296677d68bb51c097b2f3a7}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-b\-Ping@{m\-\_\-b\-Ping}}
+\index{m\-\_\-b\-Ping@{m\-\_\-b\-Ping}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Ping}]{\setlength{\rightskip}{0pt plus 5cm}bool Agent\-Conn\-\_\-t\-::m\-\_\-b\-Ping}}\label{structAgentConn__t_ae309e522e296677d68bb51c097b2f3a7}
+\hypertarget{structAgentConn__t_a7668be7cb46253022088332a4e1e45da}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-b\-Success@{m\-\_\-b\-Success}}
+\index{m\-\_\-b\-Success@{m\-\_\-b\-Success}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Success}]{\setlength{\rightskip}{0pt plus 5cm}bool Agent\-Conn\-\_\-t\-::m\-\_\-b\-Success}}\label{structAgentConn__t_a7668be7cb46253022088332a4e1e45da}
+
+
+whether last request was successful (ie. there are available results) 
+
+\hypertarget{structAgentConn__t_acd760dc9dfe66a5d71ffdd75de3e821f}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-d\-Results@{m\-\_\-d\-Results}}
+\index{m\-\_\-d\-Results@{m\-\_\-d\-Results}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Results}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Query\-Result}$>$ Agent\-Conn\-\_\-t\-::m\-\_\-d\-Results}}\label{structAgentConn__t_acd760dc9dfe66a5d71ffdd75de3e821f}
+
+
+multi-\/query results 
+
+\hypertarget{structAgentConn__t_a1b1c48b4720544ea723a0d27f604c422}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-e\-State@{m\-\_\-e\-State}}
+\index{m\-\_\-e\-State@{m\-\_\-e\-State}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-e\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Agent\-State\-\_\-e} Agent\-Conn\-\_\-t\-::m\-\_\-e\-State}}\label{structAgentConn__t_a1b1c48b4720544ea723a0d27f604c422}
+
+
+current state 
+
+\hypertarget{structAgentConn__t_aa72a5c38f23e61a419f0bf80509aa337}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-End\-Query@{m\-\_\-i\-End\-Query}}
+\index{m\-\_\-i\-End\-Query@{m\-\_\-i\-End\-Query}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-End\-Query}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Agent\-Conn\-\_\-t\-::m\-\_\-i\-End\-Query}}\label{structAgentConn__t_aa72a5c38f23e61a419f0bf80509aa337}
+
+
+the timestamp of the end of the latest operation 
+
+\hypertarget{structAgentConn__t_afa5270ede328ecb5c146a823807d44ab}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Reply\-Read@{m\-\_\-i\-Reply\-Read}}
+\index{m\-\_\-i\-Reply\-Read@{m\-\_\-i\-Reply\-Read}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Reply\-Read}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Reply\-Read}}\label{structAgentConn__t_afa5270ede328ecb5c146a823807d44ab}
+
+
+how many reply bytes are alredy received 
+
+\hypertarget{structAgentConn__t_a118e79b17fe8cb55b9a7d25d607f431d}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Reply\-Size@{m\-\_\-i\-Reply\-Size}}
+\index{m\-\_\-i\-Reply\-Size@{m\-\_\-i\-Reply\-Size}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Reply\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Reply\-Size}}\label{structAgentConn__t_a118e79b17fe8cb55b9a7d25d607f431d}
+
+
+how many reply bytes are there 
+
+\hypertarget{structAgentConn__t_a3aea30ff4e6deae995a681bdf4b5a504}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Reply\-Status@{m\-\_\-i\-Reply\-Status}}
+\index{m\-\_\-i\-Reply\-Status@{m\-\_\-i\-Reply\-Status}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Reply\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Reply\-Status}}\label{structAgentConn__t_a3aea30ff4e6deae995a681bdf4b5a504}
+
+
+reply status code 
+
+\hypertarget{structAgentConn__t_aa433a6e029e33cee67b34d07ec24f397}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Retries@{m\-\_\-i\-Retries}}
+\index{m\-\_\-i\-Retries@{m\-\_\-i\-Retries}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Retries}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Retries}}\label{structAgentConn__t_aa433a6e029e33cee67b34d07ec24f397}
+
+
+count from 0 to m\-\_\-i\-Retry\-Limit 
+
+\hypertarget{structAgentConn__t_a24f72eb1cfc5a147ba190887f62e1680}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Retry\-Limit@{m\-\_\-i\-Retry\-Limit}}
+\index{m\-\_\-i\-Retry\-Limit@{m\-\_\-i\-Retry\-Limit}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Retry\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Retry\-Limit}}\label{structAgentConn__t_a24f72eb1cfc5a147ba190887f62e1680}
+
+
+how many times retry (m.\-b. with another mirror) 
+
+\hypertarget{structAgentConn__t_a839dd9a3b8c453d19a350c2c319cc9e0}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Sock@{m\-\_\-i\-Sock}}
+\index{m\-\_\-i\-Sock@{m\-\_\-i\-Sock}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Sock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Sock}}\label{structAgentConn__t_a839dd9a3b8c453d19a350c2c319cc9e0}
+
+
+socket number, -\/1 if not connected 
+
+\hypertarget{structAgentConn__t_a422ec8cb29794eda43e0fb8941fcab86}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Start\-Query@{m\-\_\-i\-Start\-Query}}
+\index{m\-\_\-i\-Start\-Query@{m\-\_\-i\-Start\-Query}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Start\-Query}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Start\-Query}}\label{structAgentConn__t_a422ec8cb29794eda43e0fb8941fcab86}
+
+
+the timestamp of the latest request 
+
+\hypertarget{structAgentConn__t_a6f256b258881ec414716c06a94c97e50}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Store\-Tag@{m\-\_\-i\-Store\-Tag}}
+\index{m\-\_\-i\-Store\-Tag@{m\-\_\-i\-Store\-Tag}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Store\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Store\-Tag}}\label{structAgentConn__t_a6f256b258881ec414716c06a94c97e50}
+\hypertarget{structAgentConn__t_ad8d236185b0ff03980532eb039ae0990}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Waited@{m\-\_\-i\-Waited}}
+\index{m\-\_\-i\-Waited@{m\-\_\-i\-Waited}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Waited}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Waited}}\label{structAgentConn__t_ad8d236185b0ff03980532eb039ae0990}
+
+
+statistics of waited 
+
+\hypertarget{structAgentConn__t_a07c96676f202daee7f9cf3e1869f55e7}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Wall@{m\-\_\-i\-Wall}}
+\index{m\-\_\-i\-Wall@{m\-\_\-i\-Wall}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Wall}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Wall}}\label{structAgentConn__t_a07c96676f202daee7f9cf3e1869f55e7}
+
+
+wall time spent vs this agent 
+
+\hypertarget{structAgentConn__t_aa30e153ed1e6de625b3a8535b615f5e5}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Weight@{m\-\_\-i\-Weight}}
+\index{m\-\_\-i\-Weight@{m\-\_\-i\-Weight}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Weight}}\label{structAgentConn__t_aa30e153ed1e6de625b3a8535b615f5e5}
+\hypertarget{structAgentConn__t_a293275c6b9072ed5074553a073b389a9}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-i\-Worker\-Tag@{m\-\_\-i\-Worker\-Tag}}
+\index{m\-\_\-i\-Worker\-Tag@{m\-\_\-i\-Worker\-Tag}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Worker\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Agent\-Conn\-\_\-t\-::m\-\_\-i\-Worker\-Tag}}\label{structAgentConn__t_a293275c6b9072ed5074553a073b389a9}
+
+
+worker tag 
+
+\hypertarget{structAgentConn__t_a4dd1c818ec6ec01e16d867b406f7b348}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-p\-Mirror\-Chooser@{m\-\_\-p\-Mirror\-Chooser}}
+\index{m\-\_\-p\-Mirror\-Chooser@{m\-\_\-p\-Mirror\-Chooser}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Mirror\-Chooser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Multi\-Agent\-Desc\-\_\-t}$\ast$ Agent\-Conn\-\_\-t\-::m\-\_\-p\-Mirror\-Chooser}}\label{structAgentConn__t_a4dd1c818ec6ec01e16d867b406f7b348}
+
+
+used to select another mirror if this one is broken 
+
+\hypertarget{structAgentConn__t_add128e00687669a2b318381ec7e6be04}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-p\-Reply\-Buf@{m\-\_\-p\-Reply\-Buf}}
+\index{m\-\_\-p\-Reply\-Buf@{m\-\_\-p\-Reply\-Buf}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Reply\-Buf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ Agent\-Conn\-\_\-t\-::m\-\_\-p\-Reply\-Buf}}\label{structAgentConn__t_add128e00687669a2b318381ec7e6be04}
+
+
+reply buffer 
+
+\hypertarget{structAgentConn__t_a90c41f9dede2f2db77525cc0f3668042}{\index{Agent\-Conn\-\_\-t@{Agent\-Conn\-\_\-t}!m\-\_\-s\-Failure@{m\-\_\-s\-Failure}}
+\index{m\-\_\-s\-Failure@{m\-\_\-s\-Failure}!AgentConn_t@{Agent\-Conn\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Failure}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Agent\-Conn\-\_\-t\-::m\-\_\-s\-Failure}}\label{structAgentConn__t_a90c41f9dede2f2db77525cc0f3668042}
+
+
+failure message 
+
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{searchdha_8h}{searchdha.\-h}\item 
+src/\hyperlink{searchdha_8cpp}{searchdha.\-cpp}\end{DoxyCompactItemize}

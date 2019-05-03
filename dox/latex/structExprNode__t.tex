@@ -1,0 +1,166 @@
+\hypertarget{structExprNode__t}{\section{Expr\-Node\-\_\-t Struct Reference}
+\label{structExprNode__t}\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structExprNode__t_af2466e5b5d61954ea551fd461fdd7630}{Expr\-Node\-\_\-t} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprNode__t_a3284fa55459c5c340c2634366193edd6}{m\-\_\-i\-Token}
+\begin{DoxyCompactList}\small\item\em token type, including operators \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} \hyperlink{structExprNode__t_aa5d41c0ece7a62def4b188a6c08c74ed}{m\-\_\-e\-Ret\-Type}
+\begin{DoxyCompactList}\small\item\em result type \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} \hyperlink{structExprNode__t_a2bfa6411665349b830d4b480eea1a095}{m\-\_\-e\-Arg\-Type}
+\begin{DoxyCompactList}\small\item\em args type \end{DoxyCompactList}\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{structExprNode__t_a1293f5314ce85e4b3f338c97d793c842}{m\-\_\-t\-Locator}
+\begin{DoxyCompactList}\small\item\em attribute locator, for T\-O\-K\-\_\-\-A\-T\-T\-R type \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprNode__t_a2c7cc58e91cd233b2d41d99a06edcec2}{m\-\_\-i\-Locator}
+\begin{DoxyCompactList}\small\item\em index of attribute locator in schema \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\_t} \hyperlink{structExprNode__t_a7b2ded141635d07da15b515c01fff520}{m\_iConst}\\
+\>\>{\em constant value, for TOK\_CONST\_INT type }\\
+\>\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{structExprNode__t_a45aa1e9aec7573e9bf1591ee57c8beb5}{m\_fConst}\\
+\>\>{\em constant value, for TOK\_CONST\_FLOAT type }\\
+\>\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprNode__t_a950d0840f6c2ccfdd28c7432411ca417}{m\_iFunc}\\
+\>\>{\em built-\/in function id, for TOK\_FUNC type }\\
+\>\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprNode__t_a00c9790bdea60e3da05d5b67920a7f10}{m\_iArgs}\\
+\>\>{\em args count, for arglist (token==',') type }\\
+\>\hyperlink{classConstList__c}{ConstList\_c} $\ast$ \hyperlink{structExprNode__t_a1350967836c47fd22b1e71cea87cf54d}{m\_pConsts}\\
+\>\>{\em constants list, for TOK\_CONST\_LIST type }\\
+\>\hyperlink{classMapArg__c}{MapArg\_c} $\ast$ \hyperlink{structExprNode__t_a4bf50267e002ad709b111b071abeeb47}{m\_pMapArg}\\
+\>\>{\em map argument (maps name to const or name to expr), for TOK\_MAP\_ARG type }\\
+\>const char $\ast$ \hyperlink{structExprNode__t_a2e58049c1d93320737052c5fa3a071c9}{m\_sIdent}\\
+\>\>{\em pointer to const char, for TOK\_IDENT type }\\
+\>\hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{SphAttr\_t} $\ast$ \hyperlink{structExprNode__t_ad91854673bc7551fb8835124e968371c}{m\_pAttr}\\
+\>\>{\em pointer to 64-\/bit value, for TOK\_ITERATOR type }\\
+\}; \\
+
+\end{tabbing}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprNode__t_a1f64a3d3f4a2b1b2c89e911677c13916}{m\-\_\-i\-Left}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprNode__t_a7a8e9fd262583802c38b6906e6df3751}{m\-\_\-i\-Right}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+expression tree node used to build an A\-S\-T (Abstract Syntax Tree) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structExprNode__t_af2466e5b5d61954ea551fd461fdd7630}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}}
+\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{Expr\-Node\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Expr\-Node\-\_\-t\-::\-Expr\-Node\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structExprNode__t_af2466e5b5d61954ea551fd461fdd7630}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structExprNode__t_ace9de42ac22340dedfc547692278a5b8}{\subsubsection[{"@27}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }}\label{structExprNode__t_ace9de42ac22340dedfc547692278a5b8}
+\hypertarget{structExprNode__t_a2bfa6411665349b830d4b480eea1a095}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-e\-Arg\-Type@{m\-\_\-e\-Arg\-Type}}
+\index{m\-\_\-e\-Arg\-Type@{m\-\_\-e\-Arg\-Type}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-e\-Arg\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Attr} Expr\-Node\-\_\-t\-::m\-\_\-e\-Arg\-Type}}\label{structExprNode__t_a2bfa6411665349b830d4b480eea1a095}
+
+
+args type 
+
+\hypertarget{structExprNode__t_aa5d41c0ece7a62def4b188a6c08c74ed}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-e\-Ret\-Type@{m\-\_\-e\-Ret\-Type}}
+\index{m\-\_\-e\-Ret\-Type@{m\-\_\-e\-Ret\-Type}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-e\-Ret\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Attr} Expr\-Node\-\_\-t\-::m\-\_\-e\-Ret\-Type}}\label{structExprNode__t_aa5d41c0ece7a62def4b188a6c08c74ed}
+
+
+result type 
+
+\hypertarget{structExprNode__t_a45aa1e9aec7573e9bf1591ee57c8beb5}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-f\-Const@{m\-\_\-f\-Const}}
+\index{m\-\_\-f\-Const@{m\-\_\-f\-Const}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-f\-Const}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} Expr\-Node\-\_\-t\-::m\-\_\-f\-Const}}\label{structExprNode__t_a45aa1e9aec7573e9bf1591ee57c8beb5}
+
+
+constant value, for T\-O\-K\-\_\-\-C\-O\-N\-S\-T\-\_\-\-F\-L\-O\-A\-T type 
+
+\hypertarget{structExprNode__t_a00c9790bdea60e3da05d5b67920a7f10}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-i\-Args@{m\-\_\-i\-Args}}
+\index{m\-\_\-i\-Args@{m\-\_\-i\-Args}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Args}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Node\-\_\-t\-::m\-\_\-i\-Args}}\label{structExprNode__t_a00c9790bdea60e3da05d5b67920a7f10}
+
+
+args count, for arglist (token==',') type 
+
+\hypertarget{structExprNode__t_a7b2ded141635d07da15b515c01fff520}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-i\-Const@{m\-\_\-i\-Const}}
+\index{m\-\_\-i\-Const@{m\-\_\-i\-Const}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Const}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Expr\-Node\-\_\-t\-::m\-\_\-i\-Const}}\label{structExprNode__t_a7b2ded141635d07da15b515c01fff520}
+
+
+constant value, for T\-O\-K\-\_\-\-C\-O\-N\-S\-T\-\_\-\-I\-N\-T type 
+
+\hypertarget{structExprNode__t_a950d0840f6c2ccfdd28c7432411ca417}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-i\-Func@{m\-\_\-i\-Func}}
+\index{m\-\_\-i\-Func@{m\-\_\-i\-Func}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Node\-\_\-t\-::m\-\_\-i\-Func}}\label{structExprNode__t_a950d0840f6c2ccfdd28c7432411ca417}
+
+
+built-\/in function id, for T\-O\-K\-\_\-\-F\-U\-N\-C type 
+
+\hypertarget{structExprNode__t_a1f64a3d3f4a2b1b2c89e911677c13916}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-i\-Left@{m\-\_\-i\-Left}}
+\index{m\-\_\-i\-Left@{m\-\_\-i\-Left}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Node\-\_\-t\-::m\-\_\-i\-Left}}\label{structExprNode__t_a1f64a3d3f4a2b1b2c89e911677c13916}
+\hypertarget{structExprNode__t_a2c7cc58e91cd233b2d41d99a06edcec2}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-i\-Locator@{m\-\_\-i\-Locator}}
+\index{m\-\_\-i\-Locator@{m\-\_\-i\-Locator}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Locator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Node\-\_\-t\-::m\-\_\-i\-Locator}}\label{structExprNode__t_a2c7cc58e91cd233b2d41d99a06edcec2}
+
+
+index of attribute locator in schema 
+
+\hypertarget{structExprNode__t_a7a8e9fd262583802c38b6906e6df3751}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-i\-Right@{m\-\_\-i\-Right}}
+\index{m\-\_\-i\-Right@{m\-\_\-i\-Right}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Right}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Node\-\_\-t\-::m\-\_\-i\-Right}}\label{structExprNode__t_a7a8e9fd262583802c38b6906e6df3751}
+\hypertarget{structExprNode__t_a3284fa55459c5c340c2634366193edd6}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-i\-Token@{m\-\_\-i\-Token}}
+\index{m\-\_\-i\-Token@{m\-\_\-i\-Token}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Node\-\_\-t\-::m\-\_\-i\-Token}}\label{structExprNode__t_a3284fa55459c5c340c2634366193edd6}
+
+
+token type, including operators 
+
+\hypertarget{structExprNode__t_ad91854673bc7551fb8835124e968371c}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-p\-Attr@{m\-\_\-p\-Attr}}
+\index{m\-\_\-p\-Attr@{m\-\_\-p\-Attr}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Attr\-\_\-t}$\ast$ Expr\-Node\-\_\-t\-::m\-\_\-p\-Attr}}\label{structExprNode__t_ad91854673bc7551fb8835124e968371c}
+
+
+pointer to 64-\/bit value, for T\-O\-K\-\_\-\-I\-T\-E\-R\-A\-T\-O\-R type 
+
+\hypertarget{structExprNode__t_a1350967836c47fd22b1e71cea87cf54d}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-p\-Consts@{m\-\_\-p\-Consts}}
+\index{m\-\_\-p\-Consts@{m\-\_\-p\-Consts}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Consts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Const\-List\-\_\-c}$\ast$ Expr\-Node\-\_\-t\-::m\-\_\-p\-Consts}}\label{structExprNode__t_a1350967836c47fd22b1e71cea87cf54d}
+
+
+constants list, for T\-O\-K\-\_\-\-C\-O\-N\-S\-T\-\_\-\-L\-I\-S\-T type 
+
+\hypertarget{structExprNode__t_a4bf50267e002ad709b111b071abeeb47}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-p\-Map\-Arg@{m\-\_\-p\-Map\-Arg}}
+\index{m\-\_\-p\-Map\-Arg@{m\-\_\-p\-Map\-Arg}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Map\-Arg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Map\-Arg\-\_\-c}$\ast$ Expr\-Node\-\_\-t\-::m\-\_\-p\-Map\-Arg}}\label{structExprNode__t_a4bf50267e002ad709b111b071abeeb47}
+
+
+map argument (maps name to const or name to expr), for T\-O\-K\-\_\-\-M\-A\-P\-\_\-\-A\-R\-G type 
+
+\hypertarget{structExprNode__t_a2e58049c1d93320737052c5fa3a071c9}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-s\-Ident@{m\-\_\-s\-Ident}}
+\index{m\-\_\-s\-Ident@{m\-\_\-s\-Ident}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Ident}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Expr\-Node\-\_\-t\-::m\-\_\-s\-Ident}}\label{structExprNode__t_a2e58049c1d93320737052c5fa3a071c9}
+
+
+pointer to const char, for T\-O\-K\-\_\-\-I\-D\-E\-N\-T type 
+
+\hypertarget{structExprNode__t_a1293f5314ce85e4b3f338c97d793c842}{\index{Expr\-Node\-\_\-t@{Expr\-Node\-\_\-t}!m\-\_\-t\-Locator@{m\-\_\-t\-Locator}}
+\index{m\-\_\-t\-Locator@{m\-\_\-t\-Locator}!ExprNode_t@{Expr\-Node\-\_\-t}}
+\subsubsection[{m\-\_\-t\-Locator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Attr\-Locator} Expr\-Node\-\_\-t\-::m\-\_\-t\-Locator}}\label{structExprNode__t_a1293f5314ce85e4b3f338c97d793c842}
+
+
+attribute locator, for T\-O\-K\-\_\-\-A\-T\-T\-R type 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexpr_8cpp}{sphinxexpr.\-cpp}\end{DoxyCompactItemize}

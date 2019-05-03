@@ -1,0 +1,152 @@
+\hypertarget{classCSphFixedHash}{\section{C\-Sph\-Fixed\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$ Class Template Reference}
+\label{classCSphFixedHash}\index{C\-Sph\-Fixed\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$@{C\-Sph\-Fixed\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$}}
+}
+Inheritance diagram for C\-Sph\-Fixed\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphFixedHash}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCSphFixedHash_1_1HashEntry__t}{Hash\-Entry\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphFixedHash_a33a8410177a598bac8d1b8f68d9b3962}{C\-Sph\-Fixed\-Hash} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Length)
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+void \hyperlink{classCSphFixedHash_a8642fda7c124ac8ed26859ffe22dd02d}{Reset} ()
+\begin{DoxyCompactList}\small\item\em cleanup \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classCSphFixedHash_a7b53c2b5fc2d2b7b3b2888b1e2a31da9}{Add} (const T \&t\-Value, const K\-E\-Y \&t\-Key, bool b\-Replace=false)
+\item 
+void \hyperlink{classCSphFixedHash_a84717b4b2381056235cfc0aefb06afad}{Remove} (const K\-E\-Y \&t\-Key)
+\begin{DoxyCompactList}\small\item\em remove entry from hash \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classCSphFixedHash_ab0c04cc7bacce731d67564dc7b18a656}{operator()} (const K\-E\-Y \&t\-Key) const 
+\begin{DoxyCompactList}\small\item\em get value pointer by key \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphFixedHash_1_1HashEntry__t}{Hash\-Entry\-\_\-t} $>$ \hyperlink{classCSphFixedHash_aba1dc52d241597da01057190430e12a5}{m\-\_\-d\-Entries}
+\begin{DoxyCompactList}\small\item\em key-\/value pairs storage pool \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCSphFixedHash_abda07cbb047e51558be3f0b34826f72e}{m\-\_\-d\-Hash}
+\begin{DoxyCompactList}\small\item\em hash into m\-\_\-d\-Entries pool \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFixedHash_a3c34e89a7a12eb42ad09728e3de09851}{m\-\_\-i\-Free}
+\begin{DoxyCompactList}\small\item\em free pairs count \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCSphFixedHash_aa2d34730efe0f159b46fce97f473a4ba}{m\-\_\-d\-Free}
+\begin{DoxyCompactList}\small\item\em free pair indexes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFixedHash_aa158f9c67eeeb94db05bf09125ba677d}{H\-A\-S\-H\-\_\-\-L\-I\-S\-T\-\_\-\-E\-N\-D} = -\/1
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFixedHash_ae2fa3ad3688e80830a3d38edf8049d61}{H\-A\-S\-H\-\_\-\-D\-E\-L\-E\-T\-E\-D} = -\/2
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$class C\-Sph\-Fixed\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$}
+
+simple fixed-\/size hash doesn't keep the order 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphFixedHash_a33a8410177a598bac8d1b8f68d9b3962}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}}
+\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{C\-Sph\-Fixed\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::{\bf C\-Sph\-Fixed\-Hash} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphFixedHash_a33a8410177a598bac8d1b8f68d9b3962}
+
+
+ctor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphFixedHash_a7b53c2b5fc2d2b7b3b2888b1e2a31da9}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!Add@{Add}}
+\index{Add@{Add}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ T$\ast$ {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::Add (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{t\-Value, }
+\item[{const K\-E\-Y \&}]{t\-Key, }
+\item[{bool}]{b\-Replace = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedHash_a7b53c2b5fc2d2b7b3b2888b1e2a31da9}
+add new entry returns N\-U\-L\-L on success returns pointer to value if already hashed, or replace it with new one, if insisted. \hypertarget{classCSphFixedHash_ab0c04cc7bacce731d67564dc7b18a656}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!operator()@{operator()}}
+\index{operator()@{operator()}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ T$\ast$ {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedHash_ab0c04cc7bacce731d67564dc7b18a656}
+
+
+get value pointer by key 
+
+\hypertarget{classCSphFixedHash_a84717b4b2381056235cfc0aefb06afad}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!Remove@{Remove}}
+\index{Remove@{Remove}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{Remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ void {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::Remove (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedHash_a84717b4b2381056235cfc0aefb06afad}
+
+
+remove entry from hash 
+
+\hypertarget{classCSphFixedHash_a8642fda7c124ac8ed26859ffe22dd02d}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ void {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedHash_a8642fda7c124ac8ed26859ffe22dd02d}
+
+
+cleanup 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphFixedHash_ae2fa3ad3688e80830a3d38edf8049d61}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!H\-A\-S\-H\-\_\-\-D\-E\-L\-E\-T\-E\-D@{H\-A\-S\-H\-\_\-\-D\-E\-L\-E\-T\-E\-D}}
+\index{H\-A\-S\-H\-\_\-\-D\-E\-L\-E\-T\-E\-D@{H\-A\-S\-H\-\_\-\-D\-E\-L\-E\-T\-E\-D}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{H\-A\-S\-H\-\_\-\-D\-E\-L\-E\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ const {\bf int} {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::H\-A\-S\-H\-\_\-\-D\-E\-L\-E\-T\-E\-D = -\/2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphFixedHash_ae2fa3ad3688e80830a3d38edf8049d61}
+\hypertarget{classCSphFixedHash_aa158f9c67eeeb94db05bf09125ba677d}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!H\-A\-S\-H\-\_\-\-L\-I\-S\-T\-\_\-\-E\-N\-D@{H\-A\-S\-H\-\_\-\-L\-I\-S\-T\-\_\-\-E\-N\-D}}
+\index{H\-A\-S\-H\-\_\-\-L\-I\-S\-T\-\_\-\-E\-N\-D@{H\-A\-S\-H\-\_\-\-L\-I\-S\-T\-\_\-\-E\-N\-D}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{H\-A\-S\-H\-\_\-\-L\-I\-S\-T\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ const {\bf int} {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::H\-A\-S\-H\-\_\-\-L\-I\-S\-T\-\_\-\-E\-N\-D = -\/1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphFixedHash_aa158f9c67eeeb94db05bf09125ba677d}
+\hypertarget{classCSphFixedHash_aba1dc52d241597da01057190430e12a5}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!m\-\_\-d\-Entries@{m\-\_\-d\-Entries}}
+\index{m\-\_\-d\-Entries@{m\-\_\-d\-Entries}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{m\-\_\-d\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ {\bf C\-Sph\-Vector}$<${\bf Hash\-Entry\-\_\-t}$>$ {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::m\-\_\-d\-Entries\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphFixedHash_aba1dc52d241597da01057190430e12a5}
+
+
+key-\/value pairs storage pool 
+
+\hypertarget{classCSphFixedHash_aa2d34730efe0f159b46fce97f473a4ba}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!m\-\_\-d\-Free@{m\-\_\-d\-Free}}
+\index{m\-\_\-d\-Free@{m\-\_\-d\-Free}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{m\-\_\-d\-Free}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ {\bf C\-Sph\-Vector}$<${\bf int}$>$ {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::m\-\_\-d\-Free\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphFixedHash_aa2d34730efe0f159b46fce97f473a4ba}
+
+
+free pair indexes 
+
+\hypertarget{classCSphFixedHash_abda07cbb047e51558be3f0b34826f72e}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!m\-\_\-d\-Hash@{m\-\_\-d\-Hash}}
+\index{m\-\_\-d\-Hash@{m\-\_\-d\-Hash}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{m\-\_\-d\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ {\bf C\-Sph\-Vector}$<${\bf int}$>$ {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::m\-\_\-d\-Hash\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphFixedHash_abda07cbb047e51558be3f0b34826f72e}
+
+
+hash into m\-\_\-d\-Entries pool 
+
+\hypertarget{classCSphFixedHash_a3c34e89a7a12eb42ad09728e3de09851}{\index{C\-Sph\-Fixed\-Hash@{C\-Sph\-Fixed\-Hash}!m\-\_\-i\-Free@{m\-\_\-i\-Free}}
+\index{m\-\_\-i\-Free@{m\-\_\-i\-Free}!CSphFixedHash@{C\-Sph\-Fixed\-Hash}}
+\subsubsection[{m\-\_\-i\-Free}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C$>$ {\bf int} {\bf C\-Sph\-Fixed\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::m\-\_\-i\-Free\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphFixedHash_a3c34e89a7a12eb42ad09728e3de09851}
+
+
+free pairs count 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

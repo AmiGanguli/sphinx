@@ -1,0 +1,113 @@
+\hypertarget{structBinlogIndexInfo__t}{\section{Binlog\-Index\-Info\-\_\-t Struct Reference}
+\label{structBinlogIndexInfo__t}\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structBinlogIndexInfo__t_a362dec68271ebe2c034af1880410ee97}{Binlog\-Index\-Info\-\_\-t} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structBinlogIndexInfo__t_aee6b5463460b2a5a090eb197b53ae2be}{m\-\_\-s\-Name}
+\begin{DoxyCompactList}\small\item\em index name \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structBinlogIndexInfo__t_a506a22d43cfe9c16bb358afb583fc1c2}{m\-\_\-i\-Min\-T\-I\-D}
+\begin{DoxyCompactList}\small\item\em min T\-I\-D logged by this file \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structBinlogIndexInfo__t_a0e3e8fc820c96e114def961d985192f6}{m\-\_\-i\-Max\-T\-I\-D}
+\begin{DoxyCompactList}\small\item\em max T\-I\-D logged by this file \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structBinlogIndexInfo__t_a92a6e7433836ca0391ad5cc248a6259f}{m\-\_\-i\-Flushed\-T\-I\-D}
+\begin{DoxyCompactList}\small\item\em last flushed T\-I\-D \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structBinlogIndexInfo__t_a464295839609038c27049e8e2ae9f75a}{m\-\_\-tm\-Min}
+\begin{DoxyCompactList}\small\item\em min T\-I\-D timestamp \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structBinlogIndexInfo__t_a726a0f334827bbdcac2d0ca81d1936ac}{m\-\_\-tm\-Max}
+\begin{DoxyCompactList}\small\item\em max T\-I\-D timestamp \end{DoxyCompactList}\item 
+\hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$ \hyperlink{structBinlogIndexInfo__t_a1d49a0ea83bebbe1b7aa498b310f3125}{m\-\_\-p\-Index}
+\begin{DoxyCompactList}\small\item\em replay only; associated index (might be N\-U\-L\-L if we don't serve it anymore!) \end{DoxyCompactList}\item 
+\hyperlink{structRtIndex__t}{Rt\-Index\-\_\-t} $\ast$ \hyperlink{structBinlogIndexInfo__t_a62214ee8f32b300129216d1fe42b0350}{m\-\_\-p\-R\-T}
+\begin{DoxyCompactList}\small\item\em replay only; R\-T index handle (might be N\-U\-L\-L if N/\-A or non-\/\-R\-T) \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structBinlogIndexInfo__t_a4a8661a7f79a3e872e97f301876bff67}{m\-\_\-i\-Pre\-Replay\-T\-I\-D}
+\begin{DoxyCompactList}\small\item\em replay only; index T\-I\-D at the beginning of this file replay \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+binlog file view of the index everything that a given log file needs to know about an index 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structBinlogIndexInfo__t_a362dec68271ebe2c034af1880410ee97}{\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}}
+\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!BinlogIndexInfo_t@{Binlog\-Index\-Info\-\_\-t}}
+\subsubsection[{Binlog\-Index\-Info\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Binlog\-Index\-Info\-\_\-t\-::\-Binlog\-Index\-Info\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structBinlogIndexInfo__t_a362dec68271ebe2c034af1880410ee97}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structBinlogIndexInfo__t_a92a6e7433836ca0391ad5cc248a6259f}{\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!m\-\_\-i\-Flushed\-T\-I\-D@{m\-\_\-i\-Flushed\-T\-I\-D}}
+\index{m\-\_\-i\-Flushed\-T\-I\-D@{m\-\_\-i\-Flushed\-T\-I\-D}!BinlogIndexInfo_t@{Binlog\-Index\-Info\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Flushed\-T\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Binlog\-Index\-Info\-\_\-t\-::m\-\_\-i\-Flushed\-T\-I\-D}}\label{structBinlogIndexInfo__t_a92a6e7433836ca0391ad5cc248a6259f}
+
+
+last flushed T\-I\-D 
+
+\hypertarget{structBinlogIndexInfo__t_a0e3e8fc820c96e114def961d985192f6}{\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!m\-\_\-i\-Max\-T\-I\-D@{m\-\_\-i\-Max\-T\-I\-D}}
+\index{m\-\_\-i\-Max\-T\-I\-D@{m\-\_\-i\-Max\-T\-I\-D}!BinlogIndexInfo_t@{Binlog\-Index\-Info\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Max\-T\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Binlog\-Index\-Info\-\_\-t\-::m\-\_\-i\-Max\-T\-I\-D}}\label{structBinlogIndexInfo__t_a0e3e8fc820c96e114def961d985192f6}
+
+
+max T\-I\-D logged by this file 
+
+\hypertarget{structBinlogIndexInfo__t_a506a22d43cfe9c16bb358afb583fc1c2}{\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!m\-\_\-i\-Min\-T\-I\-D@{m\-\_\-i\-Min\-T\-I\-D}}
+\index{m\-\_\-i\-Min\-T\-I\-D@{m\-\_\-i\-Min\-T\-I\-D}!BinlogIndexInfo_t@{Binlog\-Index\-Info\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Min\-T\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Binlog\-Index\-Info\-\_\-t\-::m\-\_\-i\-Min\-T\-I\-D}}\label{structBinlogIndexInfo__t_a506a22d43cfe9c16bb358afb583fc1c2}
+
+
+min T\-I\-D logged by this file 
+
+\hypertarget{structBinlogIndexInfo__t_a4a8661a7f79a3e872e97f301876bff67}{\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!m\-\_\-i\-Pre\-Replay\-T\-I\-D@{m\-\_\-i\-Pre\-Replay\-T\-I\-D}}
+\index{m\-\_\-i\-Pre\-Replay\-T\-I\-D@{m\-\_\-i\-Pre\-Replay\-T\-I\-D}!BinlogIndexInfo_t@{Binlog\-Index\-Info\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Pre\-Replay\-T\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Binlog\-Index\-Info\-\_\-t\-::m\-\_\-i\-Pre\-Replay\-T\-I\-D}}\label{structBinlogIndexInfo__t_a4a8661a7f79a3e872e97f301876bff67}
+
+
+replay only; index T\-I\-D at the beginning of this file replay 
+
+\hypertarget{structBinlogIndexInfo__t_a1d49a0ea83bebbe1b7aa498b310f3125}{\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!m\-\_\-p\-Index@{m\-\_\-p\-Index}}
+\index{m\-\_\-p\-Index@{m\-\_\-p\-Index}!BinlogIndexInfo_t@{Binlog\-Index\-Info\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Index}$\ast$ Binlog\-Index\-Info\-\_\-t\-::m\-\_\-p\-Index}}\label{structBinlogIndexInfo__t_a1d49a0ea83bebbe1b7aa498b310f3125}
+
+
+replay only; associated index (might be N\-U\-L\-L if we don't serve it anymore!) 
+
+\hypertarget{structBinlogIndexInfo__t_a62214ee8f32b300129216d1fe42b0350}{\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!m\-\_\-p\-R\-T@{m\-\_\-p\-R\-T}}
+\index{m\-\_\-p\-R\-T@{m\-\_\-p\-R\-T}!BinlogIndexInfo_t@{Binlog\-Index\-Info\-\_\-t}}
+\subsubsection[{m\-\_\-p\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rt\-Index\-\_\-t}$\ast$ Binlog\-Index\-Info\-\_\-t\-::m\-\_\-p\-R\-T}}\label{structBinlogIndexInfo__t_a62214ee8f32b300129216d1fe42b0350}
+
+
+replay only; R\-T index handle (might be N\-U\-L\-L if N/\-A or non-\/\-R\-T) 
+
+\hypertarget{structBinlogIndexInfo__t_aee6b5463460b2a5a090eb197b53ae2be}{\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!m\-\_\-s\-Name@{m\-\_\-s\-Name}}
+\index{m\-\_\-s\-Name@{m\-\_\-s\-Name}!BinlogIndexInfo_t@{Binlog\-Index\-Info\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Binlog\-Index\-Info\-\_\-t\-::m\-\_\-s\-Name}}\label{structBinlogIndexInfo__t_aee6b5463460b2a5a090eb197b53ae2be}
+
+
+index name 
+
+\hypertarget{structBinlogIndexInfo__t_a726a0f334827bbdcac2d0ca81d1936ac}{\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!m\-\_\-tm\-Max@{m\-\_\-tm\-Max}}
+\index{m\-\_\-tm\-Max@{m\-\_\-tm\-Max}!BinlogIndexInfo_t@{Binlog\-Index\-Info\-\_\-t}}
+\subsubsection[{m\-\_\-tm\-Max}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Binlog\-Index\-Info\-\_\-t\-::m\-\_\-tm\-Max}}\label{structBinlogIndexInfo__t_a726a0f334827bbdcac2d0ca81d1936ac}
+
+
+max T\-I\-D timestamp 
+
+\hypertarget{structBinlogIndexInfo__t_a464295839609038c27049e8e2ae9f75a}{\index{Binlog\-Index\-Info\-\_\-t@{Binlog\-Index\-Info\-\_\-t}!m\-\_\-tm\-Min@{m\-\_\-tm\-Min}}
+\index{m\-\_\-tm\-Min@{m\-\_\-tm\-Min}!BinlogIndexInfo_t@{Binlog\-Index\-Info\-\_\-t}}
+\subsubsection[{m\-\_\-tm\-Min}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Binlog\-Index\-Info\-\_\-t\-::m\-\_\-tm\-Min}}\label{structBinlogIndexInfo__t_a464295839609038c27049e8e2ae9f75a}
+
+
+min T\-I\-D timestamp 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxrt_8cpp}{sphinxrt.\-cpp}\end{DoxyCompactItemize}

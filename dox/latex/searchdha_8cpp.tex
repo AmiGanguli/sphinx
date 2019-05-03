@@ -1,0 +1,285 @@
+\hypertarget{searchdha_8cpp}{\section{src/searchdha.cpp File Reference}
+\label{searchdha_8cpp}\index{src/searchdha.\-cpp@{src/searchdha.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxstd.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxrt.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}searchdaemon.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}searchdha.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structAgentWorkContext__t}{Agent\-Work\-Context\-\_\-t}
+\item 
+class \hyperlink{classThdWorkPool__c}{Thd\-Work\-Pool\-\_\-c}
+\item 
+class \hyperlink{classCSphRemoteAgentsController}{C\-Sph\-Remote\-Agents\-Controller}
+\item 
+class \hyperlink{classSelectEvents__c}{Select\-Events\-\_\-c}
+\item 
+class \hyperlink{classDummyEvents__c}{Dummy\-Events\-\_\-c}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{searchdha_8cpp_a2ca38e743667cced10386c5460ca0d10}{sph\-Str\-Match\-Static}(\-\_\-str, \-\_\-cstr)~( strncmp ( \-\_\-str, \-\_\-cstr, sizeof(\-\_\-str)-\/1 )==0 )
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{searchdha_8cpp_ae3f0466fd37fe9e573a13b81ff22c421}{Thd\-Worker\-\_\-fn} )(\hyperlink{structAgentWorkContext__t}{Agent\-Work\-Context\-\_\-t} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{searchdha_8cpp_a5096f2f26f65d0b0a784d6542dae19dd}{Close\-Persistent\-Sockets} ()
+\item 
+static void \hyperlink{searchdha_8cpp_aa224de6b8cfe1e6cd5877cc9d4631963}{Log\-Agent\-Weights} (const \hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} $\ast$p\-Old\-Weights, const \hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} $\ast$p\-Cur\-Weights, const \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $\ast$p\-Timers, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classAgentDesc__c}{Agent\-Desc\-\_\-c} $>$ \&d\-Agents)
+\item 
+void \hyperlink{searchdha_8cpp_a4687fb59ba2c9fd1842178792a56f5f7}{agent\-\_\-stats\-\_\-inc} (\hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} \&t\-Agent, \hyperlink{searchdha_8h_af72fe71e6601be343fec3a3111ba7ebb}{Agent\-Stats\-\_\-e} i\-Counter)
+\item 
+void \hyperlink{searchdha_8cpp_a14f85c0025c2c92a7b1b77fb1008b903}{track\-\_\-processing\-\_\-time} (\hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} \&t\-Agent)
+\item 
+bool \hyperlink{searchdha_8cpp_aac409b5e2cf62a563fcef6a17b10202d}{Parse\-Address\-Port} (\hyperlink{classHostUrl__c}{Host\-Url\-\_\-c} $\ast$p\-Agent, const char $\ast$$\ast$pp\-Line, const \hyperlink{structWarnInfo__t}{Warn\-Info\-\_\-t} \&d\-Info)
+\item 
+bool \hyperlink{searchdha_8cpp_a28743a2a8268de9f865db635facd16a9}{Parse\-Strategy\-H\-A} (const char $\ast$s\-Name, \hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152}{H\-A\-Strategies\-\_\-e} \&e\-Strategy)
+\item 
+static bool \hyperlink{searchdha_8cpp_a3004491873c9cc14636076424c06dc74}{Is\-Agent\-Delimiter} (char c)
+\item 
+bool \hyperlink{searchdha_8cpp_a7818a0cd4dd254f14fe00789cb62b98a}{Validate\-And\-Add\-Dashboard} (\hyperlink{classAgentDesc__c}{Agent\-Desc\-\_\-c} $\ast$p\-New\-Agent, \hyperlink{structWarnInfo__t}{Warn\-Info\-\_\-t} $\ast$p\-Info=nullptr)
+\item 
+void \hyperlink{searchdha_8cpp_a7a1a9ad5c9367372f96a4c233a5cc0c6}{Fixup\-Orphaned\-Agents} (\hyperlink{structMultiAgentDesc__t}{Multi\-Agent\-Desc\-\_\-t} \&t\-Multi\-Agent)
+\item 
+bool \hyperlink{searchdha_8cpp_ab90bf846ca12479d617759d36451dc1c}{Configure\-Agent} (\hyperlink{structMultiAgentDesc__t}{Multi\-Agent\-Desc\-\_\-t} \&t\-Agent, const char $\ast$sz\-Agent, const char $\ast$sz\-Index\-Name, \hyperlink{structAgentOptions__t}{Agent\-Options\-\_\-t} t\-Desc)
+\item 
+void \hyperlink{searchdha_8cpp_a98932fca334878ef841f83d0957a96b0}{Remote\-Connect\-To\-Agent} (\hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} \&t\-Agent)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8cpp_a96806ced32ccc0696933f1fd34736c9e}{Remote\-Query\-Agents} (\hyperlink{structAgentConnectionContext__t}{Agent\-Connection\-Context\-\_\-t} $\ast$p\-Ctx)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8cpp_a27ed3cf927e10c33b0fc0390cccf6cf9}{Remote\-Wait\-For\-Agents} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} $>$ \&d\-Agents, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Timeout, \hyperlink{structIReplyParser__t}{I\-Reply\-Parser\-\_\-t} \&t\-Parser)
+\item 
+void \hyperlink{searchdha_8cpp_aca0131d3afbbbc68939e17bd0b86fa21}{Thd\-Work\-Parallel} (\hyperlink{structAgentWorkContext__t}{Agent\-Work\-Context\-\_\-t} $\ast$)
+\item 
+void \hyperlink{searchdha_8cpp_adacebf7789e553ed3abbf51421329895}{Thd\-Work\-Wait} (\hyperlink{structAgentWorkContext__t}{Agent\-Work\-Context\-\_\-t} $\ast$p\-Ctx)
+\item 
+void \hyperlink{searchdha_8cpp_ae5c387b0a3872240b0c6c0dc0de316e5}{Set\-Next\-Retry} (\hyperlink{structAgentWorkContext__t}{Agent\-Work\-Context\-\_\-t} $\ast$p\-Ctx)
+\item 
+void \hyperlink{searchdha_8cpp_a6c2bc29ee35ece601cececa7aea84569}{Thd\-Work\-Sequental} (\hyperlink{structAgentWorkContext__t}{Agent\-Work\-Context\-\_\-t} $\ast$p\-Ctx)
+\item 
+\hyperlink{classISphRemoteAgentsController}{I\-Sph\-Remote\-Agents\-Controller} $\ast$ \hyperlink{searchdha_8cpp_ab8914fd42af8890b56741050ab87769a}{Get\-Agents\-Controller} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Threads, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} $>$ \&d\-Agents, const \hyperlink{structIRequestBuilder__t}{I\-Request\-Builder\-\_\-t} \&t\-Builder, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Timeout, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Retry\-Max, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Delay)
+\item 
+bool \hyperlink{searchdha_8cpp_a17b339bd9739c1cf7315a668a2967921}{sph\-N\-B\-Sock\-Eof} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Sock)
+\begin{DoxyCompactList}\small\item\em check if a non-\/blocked socket is still connected \end{DoxyCompactList}\item 
+\hyperlink{classISphNetEvents}{I\-Sph\-Net\-Events} $\ast$ \hyperlink{searchdha_8cpp_aa6c88c849fb212aa81b176df9987bda0}{sph\-Create\-Poll} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size\-Hint, bool b\-Fallback\-Select)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8cpp_a78fabba624fabe7980d54d26d33642cb}{g\-\_\-i\-Ping\-Interval} = 0
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{searchdha_8cpp_a73073b3fde180790bc34a4c48cd8c51f}{g\-\_\-u\-H\-A\-Period\-Karma} = 60
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{searchdha_8cpp_a356eeb7a11d31edfd153c7254b0bb3e3}{g\-\_\-i\-Persistent\-Pool\-Size} = 0
+\item 
+\hyperlink{classcDashStorage}{c\-Dash\-Storage} \hyperlink{searchdha_8cpp_a9bbddb3c92c9eca6077b611f80757070}{g\-\_\-t\-Dashes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{searchdha_8cpp_a2ca38e743667cced10386c5460ca0d10}{\index{searchdha.\-cpp@{searchdha.\-cpp}!sph\-Str\-Match\-Static@{sph\-Str\-Match\-Static}}
+\index{sph\-Str\-Match\-Static@{sph\-Str\-Match\-Static}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{sph\-Str\-Match\-Static}]{\setlength{\rightskip}{0pt plus 5cm}\#define sph\-Str\-Match\-Static(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-str, }
+\item[{}]{\-\_\-cstr}
+\end{DoxyParamCaption}
+)~( strncmp ( \-\_\-str, \-\_\-cstr, sizeof(\-\_\-str)-\/1 )==0 )}}\label{searchdha_8cpp_a2ca38e743667cced10386c5460ca0d10}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{searchdha_8cpp_ae3f0466fd37fe9e573a13b81ff22c421}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Thd\-Worker\-\_\-fn@{Thd\-Worker\-\_\-fn}}
+\index{Thd\-Worker\-\_\-fn@{Thd\-Worker\-\_\-fn}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Thd\-Worker\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( $\ast$ Thd\-Worker\-\_\-fn)({\bf Agent\-Work\-Context\-\_\-t} $\ast$)}}\label{searchdha_8cpp_ae3f0466fd37fe9e573a13b81ff22c421}
+
+
+\subsection{Function Documentation}
+\hypertarget{searchdha_8cpp_a4687fb59ba2c9fd1842178792a56f5f7}{\index{searchdha.\-cpp@{searchdha.\-cpp}!agent\-\_\-stats\-\_\-inc@{agent\-\_\-stats\-\_\-inc}}
+\index{agent\-\_\-stats\-\_\-inc@{agent\-\_\-stats\-\_\-inc}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{agent\-\_\-stats\-\_\-inc}]{\setlength{\rightskip}{0pt plus 5cm}void agent\-\_\-stats\-\_\-inc (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Conn\-\_\-t} \&}]{t\-Agent, }
+\item[{{\bf Agent\-Stats\-\_\-e}}]{i\-Counter}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a4687fb59ba2c9fd1842178792a56f5f7}
+\hypertarget{searchdha_8cpp_a5096f2f26f65d0b0a784d6542dae19dd}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Close\-Persistent\-Sockets@{Close\-Persistent\-Sockets}}
+\index{Close\-Persistent\-Sockets@{Close\-Persistent\-Sockets}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Close\-Persistent\-Sockets}]{\setlength{\rightskip}{0pt plus 5cm}void Close\-Persistent\-Sockets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a5096f2f26f65d0b0a784d6542dae19dd}
+\hypertarget{searchdha_8cpp_ab90bf846ca12479d617759d36451dc1c}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Configure\-Agent@{Configure\-Agent}}
+\index{Configure\-Agent@{Configure\-Agent}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Configure\-Agent}]{\setlength{\rightskip}{0pt plus 5cm}bool Configure\-Agent (
+\begin{DoxyParamCaption}
+\item[{{\bf Multi\-Agent\-Desc\-\_\-t} \&}]{t\-Agent, }
+\item[{const char $\ast$}]{sz\-Agent, }
+\item[{const char $\ast$}]{sz\-Index\-Name, }
+\item[{{\bf Agent\-Options\-\_\-t}}]{t\-Desc}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_ab90bf846ca12479d617759d36451dc1c}
+\hypertarget{searchdha_8cpp_a7a1a9ad5c9367372f96a4c233a5cc0c6}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Fixup\-Orphaned\-Agents@{Fixup\-Orphaned\-Agents}}
+\index{Fixup\-Orphaned\-Agents@{Fixup\-Orphaned\-Agents}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Fixup\-Orphaned\-Agents}]{\setlength{\rightskip}{0pt plus 5cm}void Fixup\-Orphaned\-Agents (
+\begin{DoxyParamCaption}
+\item[{{\bf Multi\-Agent\-Desc\-\_\-t} \&}]{t\-Multi\-Agent}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a7a1a9ad5c9367372f96a4c233a5cc0c6}
+\hypertarget{searchdha_8cpp_ab8914fd42af8890b56741050ab87769a}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Get\-Agents\-Controller@{Get\-Agents\-Controller}}
+\index{Get\-Agents\-Controller@{Get\-Agents\-Controller}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Get\-Agents\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Remote\-Agents\-Controller}$\ast$ Get\-Agents\-Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Threads, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Agent\-Conn\-\_\-t} $>$ \&}]{d\-Agents, }
+\item[{const {\bf I\-Request\-Builder\-\_\-t} \&}]{t\-Builder, }
+\item[{{\bf int}}]{i\-Timeout, }
+\item[{{\bf int}}]{i\-Retry\-Max, }
+\item[{{\bf int}}]{i\-Delay}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_ab8914fd42af8890b56741050ab87769a}
+\hypertarget{searchdha_8cpp_a3004491873c9cc14636076424c06dc74}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Is\-Agent\-Delimiter@{Is\-Agent\-Delimiter}}
+\index{Is\-Agent\-Delimiter@{Is\-Agent\-Delimiter}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Is\-Agent\-Delimiter}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Agent\-Delimiter (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdha_8cpp_a3004491873c9cc14636076424c06dc74}
+\hypertarget{searchdha_8cpp_aa224de6b8cfe1e6cd5877cc9d4631963}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Log\-Agent\-Weights@{Log\-Agent\-Weights}}
+\index{Log\-Agent\-Weights@{Log\-Agent\-Weights}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Log\-Agent\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}static void Log\-Agent\-Weights (
+\begin{DoxyParamCaption}
+\item[{const {\bf W\-O\-R\-D} $\ast$}]{p\-Old\-Weights, }
+\item[{const {\bf W\-O\-R\-D} $\ast$}]{p\-Cur\-Weights, }
+\item[{const {\bf int64\-\_\-t} $\ast$}]{p\-Timers, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Agent\-Desc\-\_\-c} $>$ \&}]{d\-Agents}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdha_8cpp_aa224de6b8cfe1e6cd5877cc9d4631963}
+\hypertarget{searchdha_8cpp_aac409b5e2cf62a563fcef6a17b10202d}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Parse\-Address\-Port@{Parse\-Address\-Port}}
+\index{Parse\-Address\-Port@{Parse\-Address\-Port}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Parse\-Address\-Port}]{\setlength{\rightskip}{0pt plus 5cm}bool Parse\-Address\-Port (
+\begin{DoxyParamCaption}
+\item[{{\bf Host\-Url\-\_\-c} $\ast$}]{p\-Agent, }
+\item[{const char $\ast$$\ast$}]{pp\-Line, }
+\item[{const {\bf Warn\-Info\-\_\-t} \&}]{d\-Info}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_aac409b5e2cf62a563fcef6a17b10202d}
+\hypertarget{searchdha_8cpp_a28743a2a8268de9f865db635facd16a9}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Parse\-Strategy\-H\-A@{Parse\-Strategy\-H\-A}}
+\index{Parse\-Strategy\-H\-A@{Parse\-Strategy\-H\-A}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Parse\-Strategy\-H\-A}]{\setlength{\rightskip}{0pt plus 5cm}bool Parse\-Strategy\-H\-A (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf H\-A\-Strategies\-\_\-e} \&}]{e\-Strategy}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a28743a2a8268de9f865db635facd16a9}
+\hypertarget{searchdha_8cpp_a98932fca334878ef841f83d0957a96b0}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Remote\-Connect\-To\-Agent@{Remote\-Connect\-To\-Agent}}
+\index{Remote\-Connect\-To\-Agent@{Remote\-Connect\-To\-Agent}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Remote\-Connect\-To\-Agent}]{\setlength{\rightskip}{0pt plus 5cm}void Remote\-Connect\-To\-Agent (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Conn\-\_\-t} \&}]{t\-Agent}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a98932fca334878ef841f83d0957a96b0}
+\hypertarget{searchdha_8cpp_a96806ced32ccc0696933f1fd34736c9e}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Remote\-Query\-Agents@{Remote\-Query\-Agents}}
+\index{Remote\-Query\-Agents@{Remote\-Query\-Agents}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Remote\-Query\-Agents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Remote\-Query\-Agents (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Connection\-Context\-\_\-t} $\ast$}]{p\-Ctx}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a96806ced32ccc0696933f1fd34736c9e}
+\hypertarget{searchdha_8cpp_a27ed3cf927e10c33b0fc0390cccf6cf9}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Remote\-Wait\-For\-Agents@{Remote\-Wait\-For\-Agents}}
+\index{Remote\-Wait\-For\-Agents@{Remote\-Wait\-For\-Agents}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Remote\-Wait\-For\-Agents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Remote\-Wait\-For\-Agents (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Agent\-Conn\-\_\-t} $>$ \&}]{d\-Agents, }
+\item[{{\bf int}}]{i\-Timeout, }
+\item[{{\bf I\-Reply\-Parser\-\_\-t} \&}]{t\-Parser}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a27ed3cf927e10c33b0fc0390cccf6cf9}
+\hypertarget{searchdha_8cpp_ae5c387b0a3872240b0c6c0dc0de316e5}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Set\-Next\-Retry@{Set\-Next\-Retry}}
+\index{Set\-Next\-Retry@{Set\-Next\-Retry}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Set\-Next\-Retry}]{\setlength{\rightskip}{0pt plus 5cm}void Set\-Next\-Retry (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Work\-Context\-\_\-t} $\ast$}]{p\-Ctx}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_ae5c387b0a3872240b0c6c0dc0de316e5}
+\hypertarget{searchdha_8cpp_aa6c88c849fb212aa81b176df9987bda0}{\index{searchdha.\-cpp@{searchdha.\-cpp}!sph\-Create\-Poll@{sph\-Create\-Poll}}
+\index{sph\-Create\-Poll@{sph\-Create\-Poll}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{sph\-Create\-Poll}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Net\-Events}$\ast$ sph\-Create\-Poll (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size\-Hint, }
+\item[{bool}]{b\-Fallback\-Select}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_aa6c88c849fb212aa81b176df9987bda0}
+\hypertarget{searchdha_8cpp_a17b339bd9739c1cf7315a668a2967921}{\index{searchdha.\-cpp@{searchdha.\-cpp}!sph\-N\-B\-Sock\-Eof@{sph\-N\-B\-Sock\-Eof}}
+\index{sph\-N\-B\-Sock\-Eof@{sph\-N\-B\-Sock\-Eof}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{sph\-N\-B\-Sock\-Eof}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-N\-B\-Sock\-Eof (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Sock}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a17b339bd9739c1cf7315a668a2967921}
+
+
+check if a non-\/blocked socket is still connected 
+
+\hypertarget{searchdha_8cpp_aca0131d3afbbbc68939e17bd0b86fa21}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Thd\-Work\-Parallel@{Thd\-Work\-Parallel}}
+\index{Thd\-Work\-Parallel@{Thd\-Work\-Parallel}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Thd\-Work\-Parallel}]{\setlength{\rightskip}{0pt plus 5cm}void Thd\-Work\-Parallel (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Work\-Context\-\_\-t} $\ast$}]{p\-Ctx}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_aca0131d3afbbbc68939e17bd0b86fa21}
+\hypertarget{searchdha_8cpp_a6c2bc29ee35ece601cececa7aea84569}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Thd\-Work\-Sequental@{Thd\-Work\-Sequental}}
+\index{Thd\-Work\-Sequental@{Thd\-Work\-Sequental}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Thd\-Work\-Sequental}]{\setlength{\rightskip}{0pt plus 5cm}void Thd\-Work\-Sequental (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Work\-Context\-\_\-t} $\ast$}]{p\-Ctx}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a6c2bc29ee35ece601cececa7aea84569}
+\hypertarget{searchdha_8cpp_adacebf7789e553ed3abbf51421329895}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Thd\-Work\-Wait@{Thd\-Work\-Wait}}
+\index{Thd\-Work\-Wait@{Thd\-Work\-Wait}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Thd\-Work\-Wait}]{\setlength{\rightskip}{0pt plus 5cm}void Thd\-Work\-Wait (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Work\-Context\-\_\-t} $\ast$}]{p\-Ctx}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_adacebf7789e553ed3abbf51421329895}
+\hypertarget{searchdha_8cpp_a14f85c0025c2c92a7b1b77fb1008b903}{\index{searchdha.\-cpp@{searchdha.\-cpp}!track\-\_\-processing\-\_\-time@{track\-\_\-processing\-\_\-time}}
+\index{track\-\_\-processing\-\_\-time@{track\-\_\-processing\-\_\-time}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{track\-\_\-processing\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}void track\-\_\-processing\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Conn\-\_\-t} \&}]{t\-Agent}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a14f85c0025c2c92a7b1b77fb1008b903}
+\hypertarget{searchdha_8cpp_a7818a0cd4dd254f14fe00789cb62b98a}{\index{searchdha.\-cpp@{searchdha.\-cpp}!Validate\-And\-Add\-Dashboard@{Validate\-And\-Add\-Dashboard}}
+\index{Validate\-And\-Add\-Dashboard@{Validate\-And\-Add\-Dashboard}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{Validate\-And\-Add\-Dashboard}]{\setlength{\rightskip}{0pt plus 5cm}bool Validate\-And\-Add\-Dashboard (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Desc\-\_\-c} $\ast$}]{p\-New\-Agent, }
+\item[{{\bf Warn\-Info\-\_\-t} $\ast$}]{p\-Info = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}}\label{searchdha_8cpp_a7818a0cd4dd254f14fe00789cb62b98a}
+
+
+\subsection{Variable Documentation}
+\hypertarget{searchdha_8cpp_a356eeb7a11d31edfd153c7254b0bb3e3}{\index{searchdha.\-cpp@{searchdha.\-cpp}!g\-\_\-i\-Persistent\-Pool\-Size@{g\-\_\-i\-Persistent\-Pool\-Size}}
+\index{g\-\_\-i\-Persistent\-Pool\-Size@{g\-\_\-i\-Persistent\-Pool\-Size}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{g\-\_\-i\-Persistent\-Pool\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Persistent\-Pool\-Size = 0}}\label{searchdha_8cpp_a356eeb7a11d31edfd153c7254b0bb3e3}
+\hypertarget{searchdha_8cpp_a78fabba624fabe7980d54d26d33642cb}{\index{searchdha.\-cpp@{searchdha.\-cpp}!g\-\_\-i\-Ping\-Interval@{g\-\_\-i\-Ping\-Interval}}
+\index{g\-\_\-i\-Ping\-Interval@{g\-\_\-i\-Ping\-Interval}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{g\-\_\-i\-Ping\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Ping\-Interval = 0}}\label{searchdha_8cpp_a78fabba624fabe7980d54d26d33642cb}
+\hypertarget{searchdha_8cpp_a9bbddb3c92c9eca6077b611f80757070}{\index{searchdha.\-cpp@{searchdha.\-cpp}!g\-\_\-t\-Dashes@{g\-\_\-t\-Dashes}}
+\index{g\-\_\-t\-Dashes@{g\-\_\-t\-Dashes}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{g\-\_\-t\-Dashes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf c\-Dash\-Storage} g\-\_\-t\-Dashes}}\label{searchdha_8cpp_a9bbddb3c92c9eca6077b611f80757070}
+\hypertarget{searchdha_8cpp_a73073b3fde180790bc34a4c48cd8c51f}{\index{searchdha.\-cpp@{searchdha.\-cpp}!g\-\_\-u\-H\-A\-Period\-Karma@{g\-\_\-u\-H\-A\-Period\-Karma}}
+\index{g\-\_\-u\-H\-A\-Period\-Karma@{g\-\_\-u\-H\-A\-Period\-Karma}!searchdha.cpp@{searchdha.\-cpp}}
+\subsubsection[{g\-\_\-u\-H\-A\-Period\-Karma}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} g\-\_\-u\-H\-A\-Period\-Karma = 60}}\label{searchdha_8cpp_a73073b3fde180790bc34a4c48cd8c51f}

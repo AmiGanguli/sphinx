@@ -1,0 +1,138 @@
+\hypertarget{sphinxrt_8h}{\section{src/sphinxrt.h File Reference}
+\label{sphinxrt_8h}\index{src/sphinxrt.\-h@{src/sphinxrt.\-h}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxstem.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classISphRtIndex}{I\-Sph\-Rt\-Index}
+\begin{DoxyCompactList}\small\item\em R\-A\-M based updateable backend interface. \end{DoxyCompactList}\item 
+class \hyperlink{classISphRtAccum}{I\-Sph\-Rt\-Accum}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void \hyperlink{sphinxrt_8h_a43b62aa64a0249f12a6a8633b0965a87}{Progress\-Callback\-Simple\-\_\-t} ()
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sphinxrt_8h_ab58538760cbf5e28a103795fafa5dc51}{E\-Sph\-Binlog\-Replay\-Flags} \{ \hyperlink{sphinxrt_8h_ab58538760cbf5e28a103795fafa5dc51a32280a4db1168794f7257811149d7cf9}{S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-D\-E\-S\-C\-\_\-\-T\-I\-M\-E\-S\-T\-A\-M\-P} = 1, 
+\hyperlink{sphinxrt_8h_ab58538760cbf5e28a103795fafa5dc51a54446b5405a902efc68f9b954bc24394}{S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-I\-G\-N\-O\-R\-E\-\_\-\-O\-P\-E\-N\-\_\-\-E\-R\-R\-O\-R} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sphinxrt_8h_ae8eea7bd995dfd4c34db2f379f755020}{sph\-R\-T\-Init} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Searchd, bool b\-Test\-Mode)
+\item 
+void \hyperlink{sphinxrt_8h_a2276393e0d91bacda8e638b0dd8692db}{sph\-R\-T\-Configure} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Searchd, bool b\-Test\-Mode)
+\item 
+bool \hyperlink{sphinxrt_8h_aa09706d1fd7550014379820dcd40b7fe}{sph\-R\-T\-Schema\-Configure} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Index, \hyperlink{classCSphSchema}{C\-Sph\-Schema} $\ast$p\-Schema, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$p\-Error)
+\item 
+void \hyperlink{sphinxrt_8h_a03e5a9cb5c7bd752b01b311452eb5891}{sph\-R\-T\-Set\-Test\-Mode} ()
+\item 
+void \hyperlink{sphinxrt_8h_aeb7af37b012b19f78aa2a27a8b1db495}{sph\-R\-T\-Done} ()
+\begin{DoxyCompactList}\small\item\em deinitialize subsystem \end{DoxyCompactList}\item 
+\hyperlink{classISphRtIndex}{I\-Sph\-Rt\-Index} $\ast$ \hyperlink{sphinxrt_8h_aff8777ee70f802790bafe7a11b212479}{sph\-Create\-Index\-R\-T} (const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Schema, const char $\ast$s\-Index\-Name, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Ram\-Size, const char $\ast$s\-Path, bool b\-Keyword\-Dict)
+\begin{DoxyCompactList}\small\item\em R\-T index factory. \end{DoxyCompactList}\item 
+void \hyperlink{sphinxrt_8h_ac78c05636178356e6e6f8fd4dc67c480}{sph\-Replay\-Binlog} (const \hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T}$<$ \hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$ $>$ \&h\-Indexes, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Replay\-Flags, \hyperlink{sphinxrt_8h_a43b62aa64a0249f12a6a8633b0965a87}{Progress\-Callback\-Simple\-\_\-t} $\ast$pfn\-Progress\-Callback=N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em replay stored binlog \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sphinxrt_8h_a43b62aa64a0249f12a6a8633b0965a87}{\index{sphinxrt.\-h@{sphinxrt.\-h}!Progress\-Callback\-Simple\-\_\-t@{Progress\-Callback\-Simple\-\_\-t}}
+\index{Progress\-Callback\-Simple\-\_\-t@{Progress\-Callback\-Simple\-\_\-t}!sphinxrt.h@{sphinxrt.\-h}}
+\subsubsection[{Progress\-Callback\-Simple\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void Progress\-Callback\-Simple\-\_\-t()}}\label{sphinxrt_8h_a43b62aa64a0249f12a6a8633b0965a87}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sphinxrt_8h_ab58538760cbf5e28a103795fafa5dc51}{\index{sphinxrt.\-h@{sphinxrt.\-h}!E\-Sph\-Binlog\-Replay\-Flags@{E\-Sph\-Binlog\-Replay\-Flags}}
+\index{E\-Sph\-Binlog\-Replay\-Flags@{E\-Sph\-Binlog\-Replay\-Flags}!sphinxrt.h@{sphinxrt.\-h}}
+\subsubsection[{E\-Sph\-Binlog\-Replay\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf E\-Sph\-Binlog\-Replay\-Flags}}}\label{sphinxrt_8h_ab58538760cbf5e28a103795fafa5dc51}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-D\-E\-S\-C\-\_\-\-T\-I\-M\-E\-S\-T\-A\-M\-P@{S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-D\-E\-S\-C\-\_\-\-T\-I\-M\-E\-S\-T\-A\-M\-P}!sphinxrt.\-h@{sphinxrt.\-h}}\index{sphinxrt.\-h@{sphinxrt.\-h}!S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-D\-E\-S\-C\-\_\-\-T\-I\-M\-E\-S\-T\-A\-M\-P@{S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-D\-E\-S\-C\-\_\-\-T\-I\-M\-E\-S\-T\-A\-M\-P}}\item[{\em 
+\hypertarget{sphinxrt_8h_ab58538760cbf5e28a103795fafa5dc51a32280a4db1168794f7257811149d7cf9}{S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-D\-E\-S\-C\-\_\-\-T\-I\-M\-E\-S\-T\-A\-M\-P}\label{sphinxrt_8h_ab58538760cbf5e28a103795fafa5dc51a32280a4db1168794f7257811149d7cf9}
+}]\index{S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-I\-G\-N\-O\-R\-E\-\_\-\-O\-P\-E\-N\-\_\-\-E\-R\-R\-O\-R@{S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-I\-G\-N\-O\-R\-E\-\_\-\-O\-P\-E\-N\-\_\-\-E\-R\-R\-O\-R}!sphinxrt.\-h@{sphinxrt.\-h}}\index{sphinxrt.\-h@{sphinxrt.\-h}!S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-I\-G\-N\-O\-R\-E\-\_\-\-O\-P\-E\-N\-\_\-\-E\-R\-R\-O\-R@{S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-I\-G\-N\-O\-R\-E\-\_\-\-O\-P\-E\-N\-\_\-\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{sphinxrt_8h_ab58538760cbf5e28a103795fafa5dc51a54446b5405a902efc68f9b954bc24394}{S\-P\-H\-\_\-\-R\-E\-P\-L\-A\-Y\-\_\-\-I\-G\-N\-O\-R\-E\-\_\-\-O\-P\-E\-N\-\_\-\-E\-R\-R\-O\-R}\label{sphinxrt_8h_ab58538760cbf5e28a103795fafa5dc51a54446b5405a902efc68f9b954bc24394}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxrt_8h_aff8777ee70f802790bafe7a11b212479}{\index{sphinxrt.\-h@{sphinxrt.\-h}!sph\-Create\-Index\-R\-T@{sph\-Create\-Index\-R\-T}}
+\index{sph\-Create\-Index\-R\-T@{sph\-Create\-Index\-R\-T}!sphinxrt.h@{sphinxrt.\-h}}
+\subsubsection[{sph\-Create\-Index\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Rt\-Index}$\ast$ sph\-Create\-Index\-R\-T (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{const char $\ast$}]{s\-Index\-Name, }
+\item[{{\bf int64\-\_\-t}}]{i\-Ram\-Size, }
+\item[{const char $\ast$}]{s\-Path, }
+\item[{bool}]{b\-Keyword\-Dict}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8h_aff8777ee70f802790bafe7a11b212479}
+
+
+R\-T index factory. 
+
+\hypertarget{sphinxrt_8h_ac78c05636178356e6e6f8fd4dc67c480}{\index{sphinxrt.\-h@{sphinxrt.\-h}!sph\-Replay\-Binlog@{sph\-Replay\-Binlog}}
+\index{sph\-Replay\-Binlog@{sph\-Replay\-Binlog}!sphinxrt.h@{sphinxrt.\-h}}
+\subsubsection[{sph\-Replay\-Binlog}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Replay\-Binlog (
+\begin{DoxyParamCaption}
+\item[{const {\bf Small\-String\-Hash\-\_\-\-T}$<$ {\bf C\-Sph\-Index} $\ast$ $>$ \&}]{h\-Indexes, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Replay\-Flags, }
+\item[{{\bf Progress\-Callback\-Simple\-\_\-t} $\ast$}]{pfn\-Progress\-Callback = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8h_ac78c05636178356e6e6f8fd4dc67c480}
+
+
+replay stored binlog 
+
+\hypertarget{sphinxrt_8h_a2276393e0d91bacda8e638b0dd8692db}{\index{sphinxrt.\-h@{sphinxrt.\-h}!sph\-R\-T\-Configure@{sph\-R\-T\-Configure}}
+\index{sph\-R\-T\-Configure@{sph\-R\-T\-Configure}!sphinxrt.h@{sphinxrt.\-h}}
+\subsubsection[{sph\-R\-T\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-R\-T\-Configure (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Searchd, }
+\item[{bool}]{b\-Test\-Mode}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8h_a2276393e0d91bacda8e638b0dd8692db}
+\hypertarget{sphinxrt_8h_aeb7af37b012b19f78aa2a27a8b1db495}{\index{sphinxrt.\-h@{sphinxrt.\-h}!sph\-R\-T\-Done@{sph\-R\-T\-Done}}
+\index{sph\-R\-T\-Done@{sph\-R\-T\-Done}!sphinxrt.h@{sphinxrt.\-h}}
+\subsubsection[{sph\-R\-T\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-R\-T\-Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8h_aeb7af37b012b19f78aa2a27a8b1db495}
+
+
+deinitialize subsystem 
+
+\hypertarget{sphinxrt_8h_ae8eea7bd995dfd4c34db2f379f755020}{\index{sphinxrt.\-h@{sphinxrt.\-h}!sph\-R\-T\-Init@{sph\-R\-T\-Init}}
+\index{sph\-R\-T\-Init@{sph\-R\-T\-Init}!sphinxrt.h@{sphinxrt.\-h}}
+\subsubsection[{sph\-R\-T\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-R\-T\-Init (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Searchd, }
+\item[{bool}]{b\-Test\-Mode}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8h_ae8eea7bd995dfd4c34db2f379f755020}
+\hypertarget{sphinxrt_8h_aa09706d1fd7550014379820dcd40b7fe}{\index{sphinxrt.\-h@{sphinxrt.\-h}!sph\-R\-T\-Schema\-Configure@{sph\-R\-T\-Schema\-Configure}}
+\index{sph\-R\-T\-Schema\-Configure@{sph\-R\-T\-Schema\-Configure}!sphinxrt.h@{sphinxrt.\-h}}
+\subsubsection[{sph\-R\-T\-Schema\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-R\-T\-Schema\-Configure (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Index, }
+\item[{{\bf C\-Sph\-Schema} $\ast$}]{p\-Schema, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{p\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8h_aa09706d1fd7550014379820dcd40b7fe}
+\hypertarget{sphinxrt_8h_a03e5a9cb5c7bd752b01b311452eb5891}{\index{sphinxrt.\-h@{sphinxrt.\-h}!sph\-R\-T\-Set\-Test\-Mode@{sph\-R\-T\-Set\-Test\-Mode}}
+\index{sph\-R\-T\-Set\-Test\-Mode@{sph\-R\-T\-Set\-Test\-Mode}!sphinxrt.h@{sphinxrt.\-h}}
+\subsubsection[{sph\-R\-T\-Set\-Test\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-R\-T\-Set\-Test\-Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8h_a03e5a9cb5c7bd752b01b311452eb5891}

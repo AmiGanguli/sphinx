@@ -1,0 +1,193 @@
+\hypertarget{classCSphBufferTrait}{\section{C\-Sph\-Buffer\-Trait$<$ T $>$ Class Template Reference}
+\label{classCSphBufferTrait}\index{C\-Sph\-Buffer\-Trait$<$ T $>$@{C\-Sph\-Buffer\-Trait$<$ T $>$}}
+}
+
+
+buffer trait that neither own buffer nor clean-\/up it on destroy  
+
+
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Buffer\-Trait$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphBufferTrait}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphBufferTrait_a30c554af2e51e4d47138fbaa661697d5}{C\-Sph\-Buffer\-Trait} ()
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+virtual \hyperlink{classCSphBufferTrait_a6d7c983e4c24baff22c7429f0518325d}{$\sim$\-C\-Sph\-Buffer\-Trait} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphBufferTrait_a53829c71a4d03323c92112d6c8601cf3}{Reset} ()=0
+\item 
+const T \& \hyperlink{classCSphBufferTrait_a5b14e708de0ef1c7c81c9e39f997c58d}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Index) const 
+\begin{DoxyCompactList}\small\item\em accessor \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classCSphBufferTrait_ac69afa7299b923ff97313ba9d94c81ec}{Get\-Write\-Ptr} () const 
+\begin{DoxyCompactList}\small\item\em get write address \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphBufferTrait_ab488cde06adedef83a0fb0643d435663}{Is\-Empty} () const 
+\begin{DoxyCompactList}\small\item\em check if i'm empty \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCSphBufferTrait_a7762852548af19a4686086f0ef16a16d}{Get\-Length\-Bytes} () const 
+\begin{DoxyCompactList}\small\item\em get length in bytes \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphBufferTrait_adf4c13b18cd2b235f1973727106c24a3}{Get\-Num\-Entries} () const 
+\begin{DoxyCompactList}\small\item\em get length in entries \end{DoxyCompactList}\item 
+void \hyperlink{classCSphBufferTrait_aa6f48edc49b8a59c89c4e26399be60ab}{Set} (T $\ast$p\-Data, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Count)
+\item 
+bool \hyperlink{classCSphBufferTrait_a1d56d27e26ef95a31222c0a78e0cf1f2}{Mem\-Lock} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCSphBufferTrait_a70e9b5e74d8c9c3da6bf2dbac896386d}{Mem\-Unlock} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{classCSphBufferTrait_aefd0a2699b1ead938018859d8d7a3945}{m\-\_\-p\-Data}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphBufferTrait_acfcbe046add6dd1870d1378c1a041f6e}{m\-\_\-i\-Count}
+\item 
+bool \hyperlink{classCSphBufferTrait_af0836984baad89098a039426e31e9d6c}{m\-\_\-b\-Mem\-Locked}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class C\-Sph\-Buffer\-Trait$<$ T $>$}
+
+buffer trait that neither own buffer nor clean-\/up it on destroy 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphBufferTrait_a30c554af2e51e4d47138fbaa661697d5}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}}
+\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{C\-Sph\-Buffer\-Trait}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::{\bf C\-Sph\-Buffer\-Trait} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBufferTrait_a30c554af2e51e4d47138fbaa661697d5}
+
+
+ctor 
+
+\hypertarget{classCSphBufferTrait_a6d7c983e4c24baff22c7429f0518325d}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!$\sim$\-C\-Sph\-Buffer\-Trait@{$\sim$\-C\-Sph\-Buffer\-Trait}}
+\index{$\sim$\-C\-Sph\-Buffer\-Trait@{$\sim$\-C\-Sph\-Buffer\-Trait}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{$\sim$\-C\-Sph\-Buffer\-Trait}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::$\sim${\bf C\-Sph\-Buffer\-Trait} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphBufferTrait_a6d7c983e4c24baff22c7429f0518325d}
+
+
+dtor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphBufferTrait_a7762852548af19a4686086f0ef16a16d}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!Get\-Length\-Bytes@{Get\-Length\-Bytes}}
+\index{Get\-Length\-Bytes@{Get\-Length\-Bytes}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{Get\-Length\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ size\-\_\-t {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::Get\-Length\-Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBufferTrait_a7762852548af19a4686086f0ef16a16d}
+
+
+get length in bytes 
+
+\hypertarget{classCSphBufferTrait_adf4c13b18cd2b235f1973727106c24a3}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!Get\-Num\-Entries@{Get\-Num\-Entries}}
+\index{Get\-Num\-Entries@{Get\-Num\-Entries}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{Get\-Num\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf int64\-\_\-t} {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::Get\-Num\-Entries (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBufferTrait_adf4c13b18cd2b235f1973727106c24a3}
+
+
+get length in entries 
+
+\hypertarget{classCSphBufferTrait_ac69afa7299b923ff97313ba9d94c81ec}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!Get\-Write\-Ptr@{Get\-Write\-Ptr}}
+\index{Get\-Write\-Ptr@{Get\-Write\-Ptr}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{Get\-Write\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::Get\-Write\-Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBufferTrait_ac69afa7299b923ff97313ba9d94c81ec}
+
+
+get write address 
+
+\hypertarget{classCSphBufferTrait_ab488cde06adedef83a0fb0643d435663}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::Is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBufferTrait_ab488cde06adedef83a0fb0643d435663}
+
+
+check if i'm empty 
+
+\hypertarget{classCSphBufferTrait_a1d56d27e26ef95a31222c0a78e0cf1f2}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!Mem\-Lock@{Mem\-Lock}}
+\index{Mem\-Lock@{Mem\-Lock}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{Mem\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::Mem\-Lock (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBufferTrait_a1d56d27e26ef95a31222c0a78e0cf1f2}
+\hypertarget{classCSphBufferTrait_a70e9b5e74d8c9c3da6bf2dbac896386d}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!Mem\-Unlock@{Mem\-Unlock}}
+\index{Mem\-Unlock@{Mem\-Unlock}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{Mem\-Unlock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::Mem\-Unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCSphBufferTrait_a70e9b5e74d8c9c3da6bf2dbac896386d}
+\hypertarget{classCSphBufferTrait_a5b14e708de0ef1c7c81c9e39f997c58d}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{i\-Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBufferTrait_a5b14e708de0ef1c7c81c9e39f997c58d}
+
+
+accessor 
+
+\hypertarget{classCSphBufferTrait_a53829c71a4d03323c92112d6c8601cf3}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual void {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphBufferTrait_a53829c71a4d03323c92112d6c8601cf3}
+
+
+Implemented in \hyperlink{classCSphMappedBuffer_a37fcc7d49b28fe4b5f22d3cd6222bf34}{C\-Sph\-Mapped\-Buffer$<$ T $>$}, \hyperlink{classCSphMappedBuffer_a37fcc7d49b28fe4b5f22d3cd6222bf34}{C\-Sph\-Mapped\-Buffer$<$ Sph\-Doc\-I\-D\-\_\-t $>$}, \hyperlink{classCSphMappedBuffer_a37fcc7d49b28fe4b5f22d3cd6222bf34}{C\-Sph\-Mapped\-Buffer$<$ B\-Y\-T\-E $>$}, \hyperlink{classCSphMappedBuffer_a37fcc7d49b28fe4b5f22d3cd6222bf34}{C\-Sph\-Mapped\-Buffer$<$ D\-W\-O\-R\-D $>$}, \hyperlink{classCSphLargeBuffer_ac53d97c812c3a7e426fdfaff94eea9dc}{C\-Sph\-Large\-Buffer$<$ T, S\-H\-A\-R\-E\-D $>$}, \hyperlink{classCSphLargeBuffer_ac53d97c812c3a7e426fdfaff94eea9dc}{C\-Sph\-Large\-Buffer$<$ int64\-\_\-t $>$}, \hyperlink{classCSphLargeBuffer_ac53d97c812c3a7e426fdfaff94eea9dc}{C\-Sph\-Large\-Buffer$<$ I\-D\-F\-Word\-\_\-t $>$}, \hyperlink{classCSphLargeBuffer_ac53d97c812c3a7e426fdfaff94eea9dc}{C\-Sph\-Large\-Buffer$<$ Sph\-Doc\-I\-D\-\_\-t, false $>$}, \hyperlink{classCSphLargeBuffer_ac53d97c812c3a7e426fdfaff94eea9dc}{C\-Sph\-Large\-Buffer$<$ D\-W\-O\-R\-D $>$}, and \hyperlink{classCSphLargeBuffer_ac53d97c812c3a7e426fdfaff94eea9dc}{C\-Sph\-Large\-Buffer$<$ D\-W\-O\-R\-D, false $>$}.
+
+\hypertarget{classCSphBufferTrait_aa6f48edc49b8a59c89c4e26399be60ab}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!Set@{Set}}
+\index{Set@{Set}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::Set (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Data, }
+\item[{{\bf int64\-\_\-t}}]{i\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBufferTrait_aa6f48edc49b8a59c89c4e26399be60ab}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphBufferTrait_af0836984baad89098a039426e31e9d6c}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!m\-\_\-b\-Mem\-Locked@{m\-\_\-b\-Mem\-Locked}}
+\index{m\-\_\-b\-Mem\-Locked@{m\-\_\-b\-Mem\-Locked}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{m\-\_\-b\-Mem\-Locked}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::m\-\_\-b\-Mem\-Locked\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBufferTrait_af0836984baad89098a039426e31e9d6c}
+\hypertarget{classCSphBufferTrait_acfcbe046add6dd1870d1378c1a041f6e}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!m\-\_\-i\-Count@{m\-\_\-i\-Count}}
+\index{m\-\_\-i\-Count@{m\-\_\-i\-Count}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{m\-\_\-i\-Count}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf int64\-\_\-t} {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::m\-\_\-i\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBufferTrait_acfcbe046add6dd1870d1378c1a041f6e}
+\hypertarget{classCSphBufferTrait_aefd0a2699b1ead938018859d8d7a3945}{\index{C\-Sph\-Buffer\-Trait@{C\-Sph\-Buffer\-Trait}!m\-\_\-p\-Data@{m\-\_\-p\-Data}}
+\index{m\-\_\-p\-Data@{m\-\_\-p\-Data}!CSphBufferTrait@{C\-Sph\-Buffer\-Trait}}
+\subsubsection[{m\-\_\-p\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Buffer\-Trait}$<$ T $>$\-::m\-\_\-p\-Data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBufferTrait_aefd0a2699b1ead938018859d8d7a3945}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

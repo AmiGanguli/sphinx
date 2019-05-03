@@ -1,0 +1,727 @@
+\hypertarget{classExprParser__t}{\section{Expr\-Parser\-\_\-t Class Reference}
+\label{classExprParser__t}\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}}
+}
+
+
+expression parser  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExprParser__t_a39e9a2e70c76cca100b062d4f145c80d}{Expr\-Parser\-\_\-t} (\hyperlink{structISphExprHook}{I\-Sph\-Expr\-Hook} $\ast$p\-Hook, \hyperlink{classCSphQueryProfile}{C\-Sph\-Query\-Profile} $\ast$p\-Profiler, \hyperlink{sphinxexpr_8h_a78197b7b74319074237ecaf5d99cfbe5}{E\-Sph\-Collation} e\-Collation)
+\item 
+\hyperlink{classExprParser__t_a21678d06ce6db058360311b2f6681925}{$\sim$\-Expr\-Parser\-\_\-t} ()
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_aea98905a1ad2ef005f768abfedf90717}{Parse} (const char $\ast$s\-Expr, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Schema, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} $\ast$p\-Attr\-Type, bool $\ast$p\-Uses\-Weight, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classExprParser__t_a128540ad6f861a13a651a5a605bc51bf}{m\-\_\-b\-Has\-Zonespanlist}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classExprParser__t_a98dfb1fb9e4498b7289cb9591e6766a0}{m\-\_\-u\-Packed\-Factor\-Flags}
+\item 
+\hyperlink{sphinxexpr_8h_ae5eb5e13e926842882703cd0bd53ee46}{E\-Sph\-Eval\-Stage} \hyperlink{classExprParser__t_a3bdf9eb2abc2d2fcbf023a04e962c50a}{m\-\_\-e\-Eval\-Stage}
+\item 
+\hyperlink{sphinxexpr_8h_a78197b7b74319074237ecaf5d99cfbe5}{E\-Sph\-Collation} \hyperlink{classExprParser__t_ae5a38bee01844d020923825c999968d6}{m\-\_\-e\-Collation}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} \hyperlink{classExprParser__t_a631dda826b81594b5cfc161c0945c208}{Get\-Widest\-Ret} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Left, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Right)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a26d515786b19a9c3128a561ff372b688}{Add\-Node\-Int} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Value)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a8ec29b490970876b05b60b7b23193403}{Add\-Node\-Float} (\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} f\-Value)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_acb5837679dcc68f85ce29bc54b661bf1}{Add\-Node\-String} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Value)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a047a78318a5657f2602dd6c8929f4659}{Add\-Node\-Attr} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Token\-Type, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Attr\-Locator)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a99b4bfc0631a7976a2afe75cd9163ee1}{Add\-Node\-I\-D} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_ae7f40744671280e06c5b350fd3eaa301}{Add\-Node\-Weight} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a9ddc48ca545d05a19e37c6969b7a43bc}{Add\-Node\-Op} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Op, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Left, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Right)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_ad7af2c991687f27a92acaf052370ba79}{Add\-Node\-Func} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Func, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-First, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Second=-\/1, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Third=-\/1, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Fourth=-\/1)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a7a0ff196086f3b4ce2a75b80d840b9b9}{Add\-Node\-Udf} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Call, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Arg)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a364a20ce447d018d80d69acbb080c1a6}{Add\-Node\-P\-F} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Func, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Arg)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a7e47f688af91e19f09daf8c53e0fc87a}{Add\-Node\-Constlist} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Value)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a53603b823261d635d76ba8b87fce8e20}{Add\-Node\-Constlist} (\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} i\-Value)
+\item 
+void \hyperlink{classExprParser__t_a3e8ede5a3e41ee48f2533216db2be7ff}{Append\-To\-Constlist} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Value)
+\item 
+void \hyperlink{classExprParser__t_a7b2029dbde3477b094d83aefcfa6f8c4}{Append\-To\-Constlist} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node, \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} i\-Value)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_afcbdc7c1b5542bea960696bd3347611c}{Add\-Node\-Uservar} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Uservar)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a31fa2dee046bcf1351fdcad5d32e8a59}{Add\-Node\-Hook\-Ident} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-I\-D)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a25d811a727cd9cf9132578d8eb954711}{Add\-Node\-Hook\-Func} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-I\-D, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Left)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a399cc3ba50a9fb3279cce14ac59190c6}{Add\-Node\-Map\-Arg} (const char $\ast$s\-Key, const char $\ast$s\-Value, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Value)
+\item 
+void \hyperlink{classExprParser__t_abe7a23d9bf13b0e9e3c4b40ba6943caa}{Append\-To\-Map\-Arg} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node, const char $\ast$s\-Key, const char $\ast$s\-Value, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Value)
+\item 
+const char $\ast$ \hyperlink{classExprParser__t_a8da806929f26afc62899fe2d5e31fe98}{Attr2\-Ident} (\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Attr\-Loc)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_aef09b06a53d6e264a2f14abd4c3389e6}{Add\-Node\-Json\-Field} (\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Attr\-Locator, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Left)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a8f317aa80ef8d91a12756533d6ff4547}{Add\-Node\-Json\-Subkey} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Value)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a9f1c931cf68b08fe4d9e8c847b2e0c35}{Add\-Node\-Dot\-Number} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Value)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_af124a36a8a44766ecdca604616d7a989}{Add\-Node\-Ident} (const char $\ast$s\-Key, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Left)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_aba3a3f30a0d2dfb9328d0e2704521f62}{m\-\_\-i\-Parsed}
+\begin{DoxyCompactList}\small\item\em filled by \hyperlink{classExprParser__t_ab2a3c65be4ab0f1397955f13bc449882}{yyparse()} at the very end \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classExprParser__t_a6d7581b6081e3ece130da320127b5567}{m\-\_\-s\-Lexer\-Error}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classExprParser__t_ac5b3f0ac3ff816672f3a53910fe1cab9}{m\-\_\-s\-Parser\-Error}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classExprParser__t_a8c068b7d7601894faac60b246b8121f5}{m\-\_\-s\-Create\-Error}
+\item 
+\hyperlink{structISphExprHook}{I\-Sph\-Expr\-Hook} $\ast$ \hyperlink{classExprParser__t_ac16eb0ef48c64efb2399b3d7d619a503}{m\-\_\-p\-Hook}
+\item 
+\hyperlink{classCSphQueryProfile}{C\-Sph\-Query\-Profile} $\ast$ \hyperlink{classExprParser__t_a4d9a86a0994fdb3082077239d5dc7c09}{m\-\_\-p\-Profiler}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a197396f58e42c52e638bc7a6f4c41621}{Get\-Token} (\hyperlink{unionYYSTYPE}{Y\-Y\-S\-T\-Y\-P\-E} $\ast$lvalp)
+\item 
+void \hyperlink{classExprParser__t_a01e8e2b2361b328648800e63f7bb3f51}{Gather\-Arg\-Types} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \&d\-Types)
+\item 
+void \hyperlink{classExprParser__t_ac797adf4e35505c9cd62c71fc4a601cf}{Gather\-Arg\-Nodes} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \&d\-Nodes)
+\item 
+void \hyperlink{classExprParser__t_a77c58fe6bb35d78ba4dfbf0903bef9f7}{Gather\-Arg\-Ret\-Types} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} $>$ \&d\-Types)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classExprParser__t_a19607d599e33856d253a280195a53dc3}{Gather\-Arg\-T} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node, T \&F\-U\-N\-C\-T\-O\-R)
+\item 
+bool \hyperlink{classExprParser__t_a0d54e936920ec68dd9c7211afc820049}{Check\-For\-Const\-Set} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Args\-Node, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Skip)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_af289ac8bb0f09ff8bd3c50976bf10c14}{Parse\-Attr} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Attr, const char $\ast$s\-Tok, \hyperlink{unionYYSTYPE}{Y\-Y\-S\-T\-Y\-P\-E} $\ast$lvalp)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classExprParser__t_a67b0ae1b47761deea47634a309c9ef13}{Walk\-Tree} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Root, T \&F\-U\-N\-C\-T\-O\-R)
+\item 
+void \hyperlink{classExprParser__t_a00b8121ab8ab54ba834b25e00a3a349a}{Optimize} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node)
+\begin{DoxyCompactList}\small\item\em optimize subtree \end{DoxyCompactList}\item 
+void \hyperlink{classExprParser__t_afd5ce676b83d3588e5c3522d3095e32a}{Canonize\-Pass} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node)
+\item 
+void \hyperlink{classExprParser__t_afa6da2b74eac5775ad8e2586638d0186}{Constant\-Fold\-Pass} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node)
+\item 
+void \hyperlink{classExprParser__t_afdd2616779ece56eb4a7646b4890b784}{Various\-Optimizations\-Pass} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node)
+\item 
+void \hyperlink{classExprParser__t_a44bb95929d2d960aba3c07d3558578c8}{Dump} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_a5db17f0a4fb7360eb2439b112a098d47}{Create\-Tree} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node)
+\begin{DoxyCompactList}\small\item\em fold nodes subtree into opcodes \end{DoxyCompactList}\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_a446769eedb5a6b020484dbeae4d102e7}{Create\-Interval\-Node} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Args\-Node, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ $>$ \&d\-Args)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_a436d58135e5b8c1d531a471d80e23b7b}{Create\-In\-Node} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_aafb759ad509bf213e4ad823429ed304e}{Create\-Length\-Node} (const \hyperlink{structExprNode__t}{Expr\-Node\-\_\-t} \&t\-Node, \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Left)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_a5eb12fad37be43e2fada325c83ca442f}{Create\-Geodist\-Node} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Args)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_a5535603f653a23ede68949998d579fa4}{Create\-P\-F\-Node} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Arg)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_a08957fb69602a2d98678bc9c1896ff94}{Create\-Bitdot\-Node} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Args\-Node, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ $>$ \&d\-Args)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_a2f9ac7f8690d716eff5f5f6a513b0199}{Create\-Udf\-Node} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Call, \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Left)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_a791ce59c26f306f3061cde486f9a11a9}{Create\-Exist\-Node} (const \hyperlink{structExprNode__t}{Expr\-Node\-\_\-t} \&t\-Node)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_a47c86358b8bba34d7319963fbe3a6fd6}{Create\-Contains\-Node} (const \hyperlink{structExprNode__t}{Expr\-Node\-\_\-t} \&t\-Node)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_ab67be3bdaa7e4ec1adc4f4bb2a0a8ac3}{Create\-Aggregate\-Node} (const \hyperlink{structExprNode__t}{Expr\-Node\-\_\-t} \&t\-Node, \hyperlink{sphinx_8h_a92532037c3ec9dad4a636e957fff58c9}{E\-Sph\-Aggr\-Func} e\-Func, \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Left)
+\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{classExprParser__t_ae04b1bccb7d9b69d64230678e728ee16}{Create\-For\-In\-Node} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node)
+\item 
+void \hyperlink{classExprParser__t_a98150e333e7bd11806adb101b82a1010}{Fixup\-Iterators} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node, const char $\ast$s\-Key, \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} $\ast$p\-Attr)
+\item 
+bool \hyperlink{classExprParser__t_a7add5a1bde320a356a40f0747031d56c}{Get\-Error} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{classExprParser__t_a094a9e621fcbaf794e7d5772f4d770a1}{m\-\_\-s\-Expr}
+\item 
+const char $\ast$ \hyperlink{classExprParser__t_a752c228c4b5d69533333e0d96142b2ea}{m\-\_\-p\-Cur}
+\item 
+const char $\ast$ \hyperlink{classExprParser__t_a655f2b85ad1922c75c9a398bfa564f18}{m\-\_\-p\-Last\-Token\-Start}
+\item 
+const \hyperlink{classISphSchema}{I\-Sph\-Schema} $\ast$ \hyperlink{classExprParser__t_ae8732abac23a2d42e5c4fb4b24d8fc50}{m\-\_\-p\-Schema}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structExprNode__t}{Expr\-Node\-\_\-t} $>$ \hyperlink{classExprParser__t_aa073e2efec96d566f99e165a6cbebc1e}{m\-\_\-d\-Nodes}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \hyperlink{classExprParser__t_aff645d42872da01c45141459d66b8784}{m\-\_\-d\-Uservars}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ char $\ast$ $>$ \hyperlink{classExprParser__t_a13189365df48da1f8410f1f7742d2ded}{m\-\_\-d\-Idents}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_aa981091ba939b742f87fdd127cdcf36d}{m\-\_\-i\-Const\-Now}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structStackNode__t}{Stack\-Node\-\_\-t} $>$ \hyperlink{classExprParser__t_a088cd58a0ec9a5668d3777ae487ce564}{m\-\_\-d\-Gather\-Stack}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structUdfCall__t}{Udf\-Call\-\_\-t} $\ast$ $>$ \hyperlink{classExprParser__t_a4eb723b6c3c0658a400955ae78e86206}{m\-\_\-d\-Udf\-Calls}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_a59e6ffcee4b94eb6ad0a62de3fd9e7ee}{yylex} (\hyperlink{unionYYSTYPE}{Y\-Y\-S\-T\-Y\-P\-E} $\ast$lvalp, \hyperlink{classExprParser__t}{Expr\-Parser\-\_\-t} $\ast$p\-Parser)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExprParser__t_ab2a3c65be4ab0f1397955f13bc449882}{yyparse} (\hyperlink{classExprParser__t}{Expr\-Parser\-\_\-t} $\ast$p\-Parser)
+\item 
+void \hyperlink{classExprParser__t_ae0ec2be8acad512f52708b3fcdc98066}{yyerror} (\hyperlink{classExprParser__t}{Expr\-Parser\-\_\-t} $\ast$p\-Parser, const char $\ast$s\-Message)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+expression parser 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExprParser__t_a39e9a2e70c76cca100b062d4f145c80d}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}}
+\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Expr\-Parser\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Expr\-Parser\-\_\-t\-::\-Expr\-Parser\-\_\-t (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Expr\-Hook} $\ast$}]{p\-Hook, }
+\item[{{\bf C\-Sph\-Query\-Profile} $\ast$}]{p\-Profiler, }
+\item[{{\bf E\-Sph\-Collation}}]{e\-Collation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExprParser__t_a39e9a2e70c76cca100b062d4f145c80d}
+\hypertarget{classExprParser__t_a21678d06ce6db058360311b2f6681925}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!$\sim$\-Expr\-Parser\-\_\-t@{$\sim$\-Expr\-Parser\-\_\-t}}
+\index{$\sim$\-Expr\-Parser\-\_\-t@{$\sim$\-Expr\-Parser\-\_\-t}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{$\sim$\-Expr\-Parser\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Expr\-Parser\-\_\-t\-::$\sim$\-Expr\-Parser\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classExprParser__t_a21678d06ce6db058360311b2f6681925}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExprParser__t_a047a78318a5657f2602dd6c8929f4659}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Attr@{Add\-Node\-Attr}}
+\index{Add\-Node\-Attr@{Add\-Node\-Attr}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Attr (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Token\-Type, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Attr\-Locator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a047a78318a5657f2602dd6c8929f4659}
+\hypertarget{classExprParser__t_a7e47f688af91e19f09daf8c53e0fc87a}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Constlist@{Add\-Node\-Constlist}}
+\index{Add\-Node\-Constlist@{Add\-Node\-Constlist}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Constlist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Constlist (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{i\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a7e47f688af91e19f09daf8c53e0fc87a}
+\hypertarget{classExprParser__t_a53603b823261d635d76ba8b87fce8e20}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Constlist@{Add\-Node\-Constlist}}
+\index{Add\-Node\-Constlist@{Add\-Node\-Constlist}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Constlist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Constlist (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{i\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a53603b823261d635d76ba8b87fce8e20}
+\hypertarget{classExprParser__t_a9f1c931cf68b08fe4d9e8c847b2e0c35}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Dot\-Number@{Add\-Node\-Dot\-Number}}
+\index{Add\-Node\-Dot\-Number@{Add\-Node\-Dot\-Number}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Dot\-Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Dot\-Number (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{i\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a9f1c931cf68b08fe4d9e8c847b2e0c35}
+\hypertarget{classExprParser__t_a8ec29b490970876b05b60b7b23193403}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Float@{Add\-Node\-Float}}
+\index{Add\-Node\-Float@{Add\-Node\-Float}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Float}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Float (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{f\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a8ec29b490970876b05b60b7b23193403}
+\hypertarget{classExprParser__t_ad7af2c991687f27a92acaf052370ba79}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Func@{Add\-Node\-Func}}
+\index{Add\-Node\-Func@{Add\-Node\-Func}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Func (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Func, }
+\item[{{\bf int}}]{i\-First, }
+\item[{{\bf int}}]{i\-Second = {\ttfamily -\/1}, }
+\item[{{\bf int}}]{i\-Third = {\ttfamily -\/1}, }
+\item[{{\bf int}}]{i\-Fourth = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_ad7af2c991687f27a92acaf052370ba79}
+\hypertarget{classExprParser__t_a25d811a727cd9cf9132578d8eb954711}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Hook\-Func@{Add\-Node\-Hook\-Func}}
+\index{Add\-Node\-Hook\-Func@{Add\-Node\-Hook\-Func}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Hook\-Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Hook\-Func (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-I\-D, }
+\item[{{\bf int}}]{i\-Left}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a25d811a727cd9cf9132578d8eb954711}
+\hypertarget{classExprParser__t_a31fa2dee046bcf1351fdcad5d32e8a59}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Hook\-Ident@{Add\-Node\-Hook\-Ident}}
+\index{Add\-Node\-Hook\-Ident@{Add\-Node\-Hook\-Ident}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Hook\-Ident}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Hook\-Ident (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a31fa2dee046bcf1351fdcad5d32e8a59}
+\hypertarget{classExprParser__t_a99b4bfc0631a7976a2afe75cd9163ee1}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-I\-D@{Add\-Node\-I\-D}}
+\index{Add\-Node\-I\-D@{Add\-Node\-I\-D}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a99b4bfc0631a7976a2afe75cd9163ee1}
+\hypertarget{classExprParser__t_af124a36a8a44766ecdca604616d7a989}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Ident@{Add\-Node\-Ident}}
+\index{Add\-Node\-Ident@{Add\-Node\-Ident}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Ident}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Ident (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key, }
+\item[{{\bf int}}]{i\-Left}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_af124a36a8a44766ecdca604616d7a989}
+\hypertarget{classExprParser__t_a26d515786b19a9c3128a561ff372b688}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Int@{Add\-Node\-Int}}
+\index{Add\-Node\-Int@{Add\-Node\-Int}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Int}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Int (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{i\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a26d515786b19a9c3128a561ff372b688}
+\hypertarget{classExprParser__t_aef09b06a53d6e264a2f14abd4c3389e6}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Json\-Field@{Add\-Node\-Json\-Field}}
+\index{Add\-Node\-Json\-Field@{Add\-Node\-Json\-Field}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Json\-Field}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Json\-Field (
+\begin{DoxyParamCaption}
+\item[{{\bf uint64\-\_\-t}}]{u\-Attr\-Locator, }
+\item[{{\bf int}}]{i\-Left}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_aef09b06a53d6e264a2f14abd4c3389e6}
+\hypertarget{classExprParser__t_a8f317aa80ef8d91a12756533d6ff4547}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Json\-Subkey@{Add\-Node\-Json\-Subkey}}
+\index{Add\-Node\-Json\-Subkey@{Add\-Node\-Json\-Subkey}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Json\-Subkey}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Json\-Subkey (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{i\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a8f317aa80ef8d91a12756533d6ff4547}
+\hypertarget{classExprParser__t_a399cc3ba50a9fb3279cce14ac59190c6}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Map\-Arg@{Add\-Node\-Map\-Arg}}
+\index{Add\-Node\-Map\-Arg@{Add\-Node\-Map\-Arg}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Map\-Arg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Map\-Arg (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key, }
+\item[{const char $\ast$}]{s\-Value, }
+\item[{{\bf int64\-\_\-t}}]{i\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a399cc3ba50a9fb3279cce14ac59190c6}
+\hypertarget{classExprParser__t_a9ddc48ca545d05a19e37c6969b7a43bc}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Op@{Add\-Node\-Op}}
+\index{Add\-Node\-Op@{Add\-Node\-Op}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Op}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Op (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Op, }
+\item[{{\bf int}}]{i\-Left, }
+\item[{{\bf int}}]{i\-Right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a9ddc48ca545d05a19e37c6969b7a43bc}
+\hypertarget{classExprParser__t_a364a20ce447d018d80d69acbb080c1a6}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-P\-F@{Add\-Node\-P\-F}}
+\index{Add\-Node\-P\-F@{Add\-Node\-P\-F}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-P\-F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-P\-F (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Func, }
+\item[{{\bf int}}]{i\-Arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a364a20ce447d018d80d69acbb080c1a6}
+\hypertarget{classExprParser__t_acb5837679dcc68f85ce29bc54b661bf1}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-String@{Add\-Node\-String}}
+\index{Add\-Node\-String@{Add\-Node\-String}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{i\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_acb5837679dcc68f85ce29bc54b661bf1}
+\hypertarget{classExprParser__t_a7a0ff196086f3b4ce2a75b80d840b9b9}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Udf@{Add\-Node\-Udf}}
+\index{Add\-Node\-Udf@{Add\-Node\-Udf}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Udf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Udf (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Call, }
+\item[{{\bf int}}]{i\-Arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a7a0ff196086f3b4ce2a75b80d840b9b9}
+\hypertarget{classExprParser__t_afcbdc7c1b5542bea960696bd3347611c}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Uservar@{Add\-Node\-Uservar}}
+\index{Add\-Node\-Uservar@{Add\-Node\-Uservar}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Uservar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Uservar (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Uservar}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_afcbdc7c1b5542bea960696bd3347611c}
+\hypertarget{classExprParser__t_ae7f40744671280e06c5b350fd3eaa301}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Add\-Node\-Weight@{Add\-Node\-Weight}}
+\index{Add\-Node\-Weight@{Add\-Node\-Weight}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Add\-Node\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Add\-Node\-Weight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_ae7f40744671280e06c5b350fd3eaa301}
+\hypertarget{classExprParser__t_a3e8ede5a3e41ee48f2533216db2be7ff}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Append\-To\-Constlist@{Append\-To\-Constlist}}
+\index{Append\-To\-Constlist@{Append\-To\-Constlist}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Append\-To\-Constlist}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Append\-To\-Constlist (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node, }
+\item[{{\bf int64\-\_\-t}}]{i\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a3e8ede5a3e41ee48f2533216db2be7ff}
+\hypertarget{classExprParser__t_a7b2029dbde3477b094d83aefcfa6f8c4}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Append\-To\-Constlist@{Append\-To\-Constlist}}
+\index{Append\-To\-Constlist@{Append\-To\-Constlist}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Append\-To\-Constlist}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Append\-To\-Constlist (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node, }
+\item[{{\bf float}}]{i\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a7b2029dbde3477b094d83aefcfa6f8c4}
+\hypertarget{classExprParser__t_abe7a23d9bf13b0e9e3c4b40ba6943caa}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Append\-To\-Map\-Arg@{Append\-To\-Map\-Arg}}
+\index{Append\-To\-Map\-Arg@{Append\-To\-Map\-Arg}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Append\-To\-Map\-Arg}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Append\-To\-Map\-Arg (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node, }
+\item[{const char $\ast$}]{s\-Key, }
+\item[{const char $\ast$}]{s\-Value, }
+\item[{{\bf int64\-\_\-t}}]{i\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_abe7a23d9bf13b0e9e3c4b40ba6943caa}
+\hypertarget{classExprParser__t_a8da806929f26afc62899fe2d5e31fe98}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Attr2\-Ident@{Attr2\-Ident}}
+\index{Attr2\-Ident@{Attr2\-Ident}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Attr2\-Ident}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Expr\-Parser\-\_\-t\-::\-Attr2\-Ident (
+\begin{DoxyParamCaption}
+\item[{{\bf uint64\-\_\-t}}]{u\-Attr\-Loc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a8da806929f26afc62899fe2d5e31fe98}
+\hypertarget{classExprParser__t_afd5ce676b83d3588e5c3522d3095e32a}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Canonize\-Pass@{Canonize\-Pass}}
+\index{Canonize\-Pass@{Canonize\-Pass}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Canonize\-Pass}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Canonize\-Pass (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_afd5ce676b83d3588e5c3522d3095e32a}
+\hypertarget{classExprParser__t_a0d54e936920ec68dd9c7211afc820049}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Check\-For\-Const\-Set@{Check\-For\-Const\-Set}}
+\index{Check\-For\-Const\-Set@{Check\-For\-Const\-Set}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Check\-For\-Const\-Set}]{\setlength{\rightskip}{0pt plus 5cm}bool Expr\-Parser\-\_\-t\-::\-Check\-For\-Const\-Set (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Args\-Node, }
+\item[{{\bf int}}]{i\-Skip}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a0d54e936920ec68dd9c7211afc820049}
+\hypertarget{classExprParser__t_afa6da2b74eac5775ad8e2586638d0186}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Constant\-Fold\-Pass@{Constant\-Fold\-Pass}}
+\index{Constant\-Fold\-Pass@{Constant\-Fold\-Pass}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Constant\-Fold\-Pass}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Constant\-Fold\-Pass (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_afa6da2b74eac5775ad8e2586638d0186}
+\hypertarget{classExprParser__t_ab67be3bdaa7e4ec1adc4f4bb2a0a8ac3}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-Aggregate\-Node@{Create\-Aggregate\-Node}}
+\index{Create\-Aggregate\-Node@{Create\-Aggregate\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-Aggregate\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-Aggregate\-Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf Expr\-Node\-\_\-t} \&}]{t\-Node, }
+\item[{{\bf E\-Sph\-Aggr\-Func}}]{e\-Func, }
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Left}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_ab67be3bdaa7e4ec1adc4f4bb2a0a8ac3}
+\hypertarget{classExprParser__t_a08957fb69602a2d98678bc9c1896ff94}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-Bitdot\-Node@{Create\-Bitdot\-Node}}
+\index{Create\-Bitdot\-Node@{Create\-Bitdot\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-Bitdot\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-Bitdot\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Args\-Node, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf I\-Sph\-Expr} $\ast$ $>$ \&}]{d\-Args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a08957fb69602a2d98678bc9c1896ff94}
+\hypertarget{classExprParser__t_a47c86358b8bba34d7319963fbe3a6fd6}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-Contains\-Node@{Create\-Contains\-Node}}
+\index{Create\-Contains\-Node@{Create\-Contains\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-Contains\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-Contains\-Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf Expr\-Node\-\_\-t} \&}]{t\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a47c86358b8bba34d7319963fbe3a6fd6}
+\hypertarget{classExprParser__t_a791ce59c26f306f3061cde486f9a11a9}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-Exist\-Node@{Create\-Exist\-Node}}
+\index{Create\-Exist\-Node@{Create\-Exist\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-Exist\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-Exist\-Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf Expr\-Node\-\_\-t} \&}]{t\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a791ce59c26f306f3061cde486f9a11a9}
+\hypertarget{classExprParser__t_ae04b1bccb7d9b69d64230678e728ee16}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-For\-In\-Node@{Create\-For\-In\-Node}}
+\index{Create\-For\-In\-Node@{Create\-For\-In\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-For\-In\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-For\-In\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_ae04b1bccb7d9b69d64230678e728ee16}
+\hypertarget{classExprParser__t_a5eb12fad37be43e2fada325c83ca442f}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-Geodist\-Node@{Create\-Geodist\-Node}}
+\index{Create\-Geodist\-Node@{Create\-Geodist\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-Geodist\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-Geodist\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a5eb12fad37be43e2fada325c83ca442f}
+\hypertarget{classExprParser__t_a436d58135e5b8c1d531a471d80e23b7b}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-In\-Node@{Create\-In\-Node}}
+\index{Create\-In\-Node@{Create\-In\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-In\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-In\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a436d58135e5b8c1d531a471d80e23b7b}
+\hypertarget{classExprParser__t_a446769eedb5a6b020484dbeae4d102e7}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-Interval\-Node@{Create\-Interval\-Node}}
+\index{Create\-Interval\-Node@{Create\-Interval\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-Interval\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-Interval\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Args\-Node, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf I\-Sph\-Expr} $\ast$ $>$ \&}]{d\-Args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a446769eedb5a6b020484dbeae4d102e7}
+\hypertarget{classExprParser__t_aafb759ad509bf213e4ad823429ed304e}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-Length\-Node@{Create\-Length\-Node}}
+\index{Create\-Length\-Node@{Create\-Length\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-Length\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-Length\-Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf Expr\-Node\-\_\-t} \&}]{t\-Node, }
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Left}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_aafb759ad509bf213e4ad823429ed304e}
+\hypertarget{classExprParser__t_a5535603f653a23ede68949998d579fa4}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-P\-F\-Node@{Create\-P\-F\-Node}}
+\index{Create\-P\-F\-Node@{Create\-P\-F\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-P\-F\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-P\-F\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a5535603f653a23ede68949998d579fa4}
+\hypertarget{classExprParser__t_a5db17f0a4fb7360eb2439b112a098d47}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-Tree@{Create\-Tree}}
+\index{Create\-Tree@{Create\-Tree}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a5db17f0a4fb7360eb2439b112a098d47}
+
+
+fold nodes subtree into opcodes 
+
+\hypertarget{classExprParser__t_a2f9ac7f8690d716eff5f5f6a513b0199}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Create\-Udf\-Node@{Create\-Udf\-Node}}
+\index{Create\-Udf\-Node@{Create\-Udf\-Node}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Create\-Udf\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Create\-Udf\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Call, }
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Left}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a2f9ac7f8690d716eff5f5f6a513b0199}
+\hypertarget{classExprParser__t_a44bb95929d2d960aba3c07d3558578c8}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Dump@{Dump}}
+\index{Dump@{Dump}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Dump}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Dump (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a44bb95929d2d960aba3c07d3558578c8}
+\hypertarget{classExprParser__t_a98150e333e7bd11806adb101b82a1010}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Fixup\-Iterators@{Fixup\-Iterators}}
+\index{Fixup\-Iterators@{Fixup\-Iterators}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Fixup\-Iterators}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Fixup\-Iterators (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node, }
+\item[{const char $\ast$}]{s\-Key, }
+\item[{{\bf Sph\-Attr\-\_\-t} $\ast$}]{p\-Attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a98150e333e7bd11806adb101b82a1010}
+\hypertarget{classExprParser__t_ac797adf4e35505c9cd62c71fc4a601cf}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Gather\-Arg\-Nodes@{Gather\-Arg\-Nodes}}
+\index{Gather\-Arg\-Nodes@{Gather\-Arg\-Nodes}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Gather\-Arg\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Gather\-Arg\-Nodes (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf int} $>$ \&}]{d\-Nodes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_ac797adf4e35505c9cd62c71fc4a601cf}
+\hypertarget{classExprParser__t_a77c58fe6bb35d78ba4dfbf0903bef9f7}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Gather\-Arg\-Ret\-Types@{Gather\-Arg\-Ret\-Types}}
+\index{Gather\-Arg\-Ret\-Types@{Gather\-Arg\-Ret\-Types}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Gather\-Arg\-Ret\-Types}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Gather\-Arg\-Ret\-Types (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf E\-Sph\-Attr} $>$ \&}]{d\-Types}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a77c58fe6bb35d78ba4dfbf0903bef9f7}
+\hypertarget{classExprParser__t_a19607d599e33856d253a280195a53dc3}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Gather\-Arg\-T@{Gather\-Arg\-T}}
+\index{Gather\-Arg\-T@{Gather\-Arg\-T}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Gather\-Arg\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Expr\-Parser\-\_\-t\-::\-Gather\-Arg\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node, }
+\item[{T \&}]{F\-U\-N\-C\-T\-O\-R}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a19607d599e33856d253a280195a53dc3}
+\hypertarget{classExprParser__t_a01e8e2b2361b328648800e63f7bb3f51}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Gather\-Arg\-Types@{Gather\-Arg\-Types}}
+\index{Gather\-Arg\-Types@{Gather\-Arg\-Types}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Gather\-Arg\-Types}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Gather\-Arg\-Types (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf int} $>$ \&}]{d\-Types}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a01e8e2b2361b328648800e63f7bb3f51}
+\hypertarget{classExprParser__t_a7add5a1bde320a356a40f0747031d56c}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Get\-Error@{Get\-Error}}
+\index{Get\-Error@{Get\-Error}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Get\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool Expr\-Parser\-\_\-t\-::\-Get\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classExprParser__t_a7add5a1bde320a356a40f0747031d56c}
+\hypertarget{classExprParser__t_a197396f58e42c52e638bc7a6f4c41621}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Get\-Token@{Get\-Token}}
+\index{Get\-Token@{Get\-Token}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Get\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Get\-Token (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-S\-T\-Y\-P\-E} $\ast$}]{lvalp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a197396f58e42c52e638bc7a6f4c41621}
+a lexer of my own returns token id and fills lvalp on success returns -\/1 and fills s\-Error on failure \hypertarget{classExprParser__t_a631dda826b81594b5cfc161c0945c208}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Get\-Widest\-Ret@{Get\-Widest\-Ret}}
+\index{Get\-Widest\-Ret@{Get\-Widest\-Ret}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Get\-Widest\-Ret}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Attr} Expr\-Parser\-\_\-t\-::\-Get\-Widest\-Ret (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Left, }
+\item[{{\bf int}}]{i\-Right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a631dda826b81594b5cfc161c0945c208}
+\hypertarget{classExprParser__t_a00b8121ab8ab54ba834b25e00a3a349a}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Optimize@{Optimize}}
+\index{Optimize@{Optimize}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Optimize}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Optimize (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a00b8121ab8ab54ba834b25e00a3a349a}
+
+
+optimize subtree 
+
+\hypertarget{classExprParser__t_aea98905a1ad2ef005f768abfedf90717}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Parse@{Parse}}
+\index{Parse@{Parse}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr} $\ast$ Expr\-Parser\-\_\-t\-::\-Parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Expr, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{{\bf E\-Sph\-Attr} $\ast$}]{p\-Attr\-Type, }
+\item[{bool $\ast$}]{p\-Uses\-Weight, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classExprParser__t_aea98905a1ad2ef005f768abfedf90717}
+\hypertarget{classExprParser__t_af289ac8bb0f09ff8bd3c50976bf10c14}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Parse\-Attr@{Parse\-Attr}}
+\index{Parse\-Attr@{Parse\-Attr}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Parse\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::\-Parse\-Attr (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Attr, }
+\item[{const char $\ast$}]{s\-Tok, }
+\item[{{\bf Y\-Y\-S\-T\-Y\-P\-E} $\ast$}]{lvalp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_af289ac8bb0f09ff8bd3c50976bf10c14}
+\hypertarget{classExprParser__t_afdd2616779ece56eb4a7646b4890b784}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Various\-Optimizations\-Pass@{Various\-Optimizations\-Pass}}
+\index{Various\-Optimizations\-Pass@{Various\-Optimizations\-Pass}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Various\-Optimizations\-Pass}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Parser\-\_\-t\-::\-Various\-Optimizations\-Pass (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_afdd2616779ece56eb4a7646b4890b784}
+\hypertarget{classExprParser__t_a67b0ae1b47761deea47634a309c9ef13}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!Walk\-Tree@{Walk\-Tree}}
+\index{Walk\-Tree@{Walk\-Tree}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{Walk\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Expr\-Parser\-\_\-t\-::\-Walk\-Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Root, }
+\item[{T \&}]{F\-U\-N\-C\-T\-O\-R}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a67b0ae1b47761deea47634a309c9ef13}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classExprParser__t_ae0ec2be8acad512f52708b3fcdc98066}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!yyerror@{yyerror}}
+\index{yyerror@{yyerror}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{yyerror}]{\setlength{\rightskip}{0pt plus 5cm}void yyerror (
+\begin{DoxyParamCaption}
+\item[{{\bf Expr\-Parser\-\_\-t} $\ast$}]{p\-Parser, }
+\item[{const char $\ast$}]{s\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classExprParser__t_ae0ec2be8acad512f52708b3fcdc98066}
+\hypertarget{classExprParser__t_a59e6ffcee4b94eb6ad0a62de3fd9e7ee}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!yylex@{yylex}}
+\index{yylex@{yylex}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{yylex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yylex (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-S\-T\-Y\-P\-E} $\ast$}]{lvalp, }
+\item[{{\bf Expr\-Parser\-\_\-t} $\ast$}]{p\-Parser}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classExprParser__t_a59e6ffcee4b94eb6ad0a62de3fd9e7ee}
+\hypertarget{classExprParser__t_ab2a3c65be4ab0f1397955f13bc449882}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!yyparse@{yyparse}}
+\index{yyparse@{yyparse}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{yyparse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yyparse (
+\begin{DoxyParamCaption}
+\item[{{\bf Expr\-Parser\-\_\-t} $\ast$}]{p\-Parser}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classExprParser__t_ab2a3c65be4ab0f1397955f13bc449882}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExprParser__t_a128540ad6f861a13a651a5a605bc51bf}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-b\-Has\-Zonespanlist@{m\-\_\-b\-Has\-Zonespanlist}}
+\index{m\-\_\-b\-Has\-Zonespanlist@{m\-\_\-b\-Has\-Zonespanlist}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Has\-Zonespanlist}]{\setlength{\rightskip}{0pt plus 5cm}bool Expr\-Parser\-\_\-t\-::m\-\_\-b\-Has\-Zonespanlist}}\label{classExprParser__t_a128540ad6f861a13a651a5a605bc51bf}
+\hypertarget{classExprParser__t_a088cd58a0ec9a5668d3777ae487ce564}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-d\-Gather\-Stack@{m\-\_\-d\-Gather\-Stack}}
+\index{m\-\_\-d\-Gather\-Stack@{m\-\_\-d\-Gather\-Stack}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Gather\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Stack\-Node\-\_\-t}$>$ Expr\-Parser\-\_\-t\-::m\-\_\-d\-Gather\-Stack\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a088cd58a0ec9a5668d3777ae487ce564}
+\hypertarget{classExprParser__t_a13189365df48da1f8410f1f7742d2ded}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-d\-Idents@{m\-\_\-d\-Idents}}
+\index{m\-\_\-d\-Idents@{m\-\_\-d\-Idents}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Idents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<$char$\ast$$>$ Expr\-Parser\-\_\-t\-::m\-\_\-d\-Idents\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a13189365df48da1f8410f1f7742d2ded}
+\hypertarget{classExprParser__t_aa073e2efec96d566f99e165a6cbebc1e}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-d\-Nodes@{m\-\_\-d\-Nodes}}
+\index{m\-\_\-d\-Nodes@{m\-\_\-d\-Nodes}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Expr\-Node\-\_\-t}$>$ Expr\-Parser\-\_\-t\-::m\-\_\-d\-Nodes\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_aa073e2efec96d566f99e165a6cbebc1e}
+\hypertarget{classExprParser__t_a4eb723b6c3c0658a400955ae78e86206}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-d\-Udf\-Calls@{m\-\_\-d\-Udf\-Calls}}
+\index{m\-\_\-d\-Udf\-Calls@{m\-\_\-d\-Udf\-Calls}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Udf\-Calls}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Udf\-Call\-\_\-t}$\ast$$>$ Expr\-Parser\-\_\-t\-::m\-\_\-d\-Udf\-Calls\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a4eb723b6c3c0658a400955ae78e86206}
+\hypertarget{classExprParser__t_aff645d42872da01c45141459d66b8784}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-d\-Uservars@{m\-\_\-d\-Uservars}}
+\index{m\-\_\-d\-Uservars@{m\-\_\-d\-Uservars}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Uservars}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-String}$>$ Expr\-Parser\-\_\-t\-::m\-\_\-d\-Uservars\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_aff645d42872da01c45141459d66b8784}
+\hypertarget{classExprParser__t_ae5a38bee01844d020923825c999968d6}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-e\-Collation@{m\-\_\-e\-Collation}}
+\index{m\-\_\-e\-Collation@{m\-\_\-e\-Collation}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-e\-Collation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Collation} Expr\-Parser\-\_\-t\-::m\-\_\-e\-Collation}}\label{classExprParser__t_ae5a38bee01844d020923825c999968d6}
+\hypertarget{classExprParser__t_a3bdf9eb2abc2d2fcbf023a04e962c50a}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-e\-Eval\-Stage@{m\-\_\-e\-Eval\-Stage}}
+\index{m\-\_\-e\-Eval\-Stage@{m\-\_\-e\-Eval\-Stage}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-e\-Eval\-Stage}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Eval\-Stage} Expr\-Parser\-\_\-t\-::m\-\_\-e\-Eval\-Stage}}\label{classExprParser__t_a3bdf9eb2abc2d2fcbf023a04e962c50a}
+\hypertarget{classExprParser__t_aa981091ba939b742f87fdd127cdcf36d}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-i\-Const\-Now@{m\-\_\-i\-Const\-Now}}
+\index{m\-\_\-i\-Const\-Now@{m\-\_\-i\-Const\-Now}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Const\-Now}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::m\-\_\-i\-Const\-Now\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_aa981091ba939b742f87fdd127cdcf36d}
+\hypertarget{classExprParser__t_aba3a3f30a0d2dfb9328d0e2704521f62}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-i\-Parsed@{m\-\_\-i\-Parsed}}
+\index{m\-\_\-i\-Parsed@{m\-\_\-i\-Parsed}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Parsed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Parser\-\_\-t\-::m\-\_\-i\-Parsed\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_aba3a3f30a0d2dfb9328d0e2704521f62}
+
+
+filled by \hyperlink{classExprParser__t_ab2a3c65be4ab0f1397955f13bc449882}{yyparse()} at the very end 
+
+\hypertarget{classExprParser__t_a752c228c4b5d69533333e0d96142b2ea}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-p\-Cur@{m\-\_\-p\-Cur}}
+\index{m\-\_\-p\-Cur@{m\-\_\-p\-Cur}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Cur}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Expr\-Parser\-\_\-t\-::m\-\_\-p\-Cur\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a752c228c4b5d69533333e0d96142b2ea}
+\hypertarget{classExprParser__t_ac16eb0ef48c64efb2399b3d7d619a503}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-p\-Hook@{m\-\_\-p\-Hook}}
+\index{m\-\_\-p\-Hook@{m\-\_\-p\-Hook}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Hook}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr\-Hook}$\ast$ Expr\-Parser\-\_\-t\-::m\-\_\-p\-Hook\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_ac16eb0ef48c64efb2399b3d7d619a503}
+\hypertarget{classExprParser__t_a655f2b85ad1922c75c9a398bfa564f18}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-p\-Last\-Token\-Start@{m\-\_\-p\-Last\-Token\-Start}}
+\index{m\-\_\-p\-Last\-Token\-Start@{m\-\_\-p\-Last\-Token\-Start}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Last\-Token\-Start}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Expr\-Parser\-\_\-t\-::m\-\_\-p\-Last\-Token\-Start\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a655f2b85ad1922c75c9a398bfa564f18}
+\hypertarget{classExprParser__t_a4d9a86a0994fdb3082077239d5dc7c09}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-p\-Profiler@{m\-\_\-p\-Profiler}}
+\index{m\-\_\-p\-Profiler@{m\-\_\-p\-Profiler}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Profiler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Query\-Profile}$\ast$ Expr\-Parser\-\_\-t\-::m\-\_\-p\-Profiler\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a4d9a86a0994fdb3082077239d5dc7c09}
+\hypertarget{classExprParser__t_ae8732abac23a2d42e5c4fb4b24d8fc50}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-p\-Schema@{m\-\_\-p\-Schema}}
+\index{m\-\_\-p\-Schema@{m\-\_\-p\-Schema}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf I\-Sph\-Schema}$\ast$ Expr\-Parser\-\_\-t\-::m\-\_\-p\-Schema\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_ae8732abac23a2d42e5c4fb4b24d8fc50}
+\hypertarget{classExprParser__t_a8c068b7d7601894faac60b246b8121f5}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-s\-Create\-Error@{m\-\_\-s\-Create\-Error}}
+\index{m\-\_\-s\-Create\-Error@{m\-\_\-s\-Create\-Error}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Create\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Expr\-Parser\-\_\-t\-::m\-\_\-s\-Create\-Error\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a8c068b7d7601894faac60b246b8121f5}
+\hypertarget{classExprParser__t_a094a9e621fcbaf794e7d5772f4d770a1}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-s\-Expr@{m\-\_\-s\-Expr}}
+\index{m\-\_\-s\-Expr@{m\-\_\-s\-Expr}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Expr\-Parser\-\_\-t\-::m\-\_\-s\-Expr\hspace{0.3cm}{\ttfamily [private]}}}\label{classExprParser__t_a094a9e621fcbaf794e7d5772f4d770a1}
+\hypertarget{classExprParser__t_a6d7581b6081e3ece130da320127b5567}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-s\-Lexer\-Error@{m\-\_\-s\-Lexer\-Error}}
+\index{m\-\_\-s\-Lexer\-Error@{m\-\_\-s\-Lexer\-Error}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Lexer\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Expr\-Parser\-\_\-t\-::m\-\_\-s\-Lexer\-Error\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_a6d7581b6081e3ece130da320127b5567}
+\hypertarget{classExprParser__t_ac5b3f0ac3ff816672f3a53910fe1cab9}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-s\-Parser\-Error@{m\-\_\-s\-Parser\-Error}}
+\index{m\-\_\-s\-Parser\-Error@{m\-\_\-s\-Parser\-Error}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Parser\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Expr\-Parser\-\_\-t\-::m\-\_\-s\-Parser\-Error\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprParser__t_ac5b3f0ac3ff816672f3a53910fe1cab9}
+\hypertarget{classExprParser__t_a98dfb1fb9e4498b7289cb9591e6766a0}{\index{Expr\-Parser\-\_\-t@{Expr\-Parser\-\_\-t}!m\-\_\-u\-Packed\-Factor\-Flags@{m\-\_\-u\-Packed\-Factor\-Flags}}
+\index{m\-\_\-u\-Packed\-Factor\-Flags@{m\-\_\-u\-Packed\-Factor\-Flags}!ExprParser_t@{Expr\-Parser\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Packed\-Factor\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} Expr\-Parser\-\_\-t\-::m\-\_\-u\-Packed\-Factor\-Flags}}\label{classExprParser__t_a98dfb1fb9e4498b7289cb9591e6766a0}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexpr_8cpp}{sphinxexpr.\-cpp}\end{DoxyCompactItemize}

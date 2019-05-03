@@ -1,0 +1,524 @@
+\hypertarget{sphinxaot_8cpp}{\section{src/sphinxaot.cpp File Reference}
+\label{sphinxaot_8cpp}\index{src/sphinxaot.\-cpp@{src/sphinxaot.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCMorphForm}{C\-Morph\-Form}
+\begin{DoxyCompactList}\small\item\em morpohological form info \end{DoxyCompactList}\item 
+struct \hyperlink{structAlphabetDesc__t}{Alphabet\-Desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em alphabet descriptor \end{DoxyCompactList}\item 
+class \hyperlink{classCABCEncoder}{C\-A\-B\-C\-Encoder}
+\begin{DoxyCompactList}\small\item\em alphabet codec \end{DoxyCompactList}\item 
+struct \hyperlink{structCMorphAutomNode}{C\-Morph\-Autom\-Node}
+\item 
+struct \hyperlink{structCMorphAutomRelation}{C\-Morph\-Autom\-Relation}
+\item 
+class \hyperlink{classCMorphAutomat}{C\-Morph\-Automat}
+\begin{DoxyCompactList}\small\item\em morphology automaton \end{DoxyCompactList}\item 
+struct \hyperlink{structCPredictTuple}{C\-Predict\-Tuple}
+\begin{DoxyCompactList}\small\item\em prediction data tuple \end{DoxyCompactList}\item 
+class \hyperlink{classCLemmatizer}{C\-Lemmatizer}
+\begin{DoxyCompactList}\small\item\em lemmatizer \end{DoxyCompactList}\item 
+class \hyperlink{classCSphAotTokenizerTmpl}{C\-Sph\-Aot\-Tokenizer\-Tmpl}
+\item 
+class \hyperlink{classCSphAotTokenizerRu}{C\-Sph\-Aot\-Tokenizer\-Ru}
+\item 
+class \hyperlink{classCSphAotTokenizer}{C\-Sph\-Aot\-Tokenizer}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxaot_8cpp_ae3ce3545b614827290f8d939e9eb5d4f}{A\-O\-T\-\_\-\-M\-O\-D\-E\-L\-\_\-\-N\-O}(\-\_\-a)~((\-\_\-a)$>$$>$18)
+\item 
+\#define \hyperlink{sphinxaot_8cpp_a851ed4c2dba3cdd90a696e80ac41e8bb}{A\-O\-T\-\_\-\-I\-T\-E\-M\-\_\-\-N\-O}(\-\_\-a)~(((\-\_\-a)\&0x3\-F\-F\-F\-F)$>$$>$9)
+\item 
+\#define \hyperlink{sphinxaot_8cpp_a9b00d747f12fbda0220f1e06cc09a3dd}{A\-O\-T\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-N\-O}(\-\_\-a)~((\-\_\-a)\&0x1\-F\-F)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCMorphForm}{C\-Morph\-Form} $>$ \hyperlink{sphinxaot_8cpp_af0b2c6d1d1a82df73c3ba2ec360442df}{C\-Flexia\-Model}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9}{E\-M\-M\-I\-T\-E\-R\-S} \{ \hyperlink{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9acd7a4e582ca11d4af4c405dca61d1284}{E\-M\-I\-T\-\_\-1\-B\-Y\-T\-E}, 
+\hyperlink{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9af68c87a3870d696b7e96a8a586e68aab}{E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U}, 
+\hyperlink{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9a149eeebfd3db93b47e95261d6eab5512}{E\-M\-I\-T\-\_\-\-U\-T\-F8}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sphinxaot_8cpp_a4fb4f2d758a48bda57dba7cac95251b1}{sph\-Aot\-Set\-Cache\-Size} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Cache\-Size)
+\begin{DoxyCompactList}\small\item\em pre-\/init A\-O\-T setup, cache size (in bytes) \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxaot_8cpp_a618d0f6789fd73258bc09b00e15f68f4}{Aot\-Init} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Dict\-File, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Lang)
+\item 
+bool \hyperlink{sphinxaot_8cpp_aba89f7a4ccddedb0bbee176a2e52f1d2}{sph\-Aot\-Init} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Dict\-File, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Lang)
+\begin{DoxyCompactList}\small\item\em init A\-O\-T lemmatizer \end{DoxyCompactList}\item 
+static bool \hyperlink{sphinxaot_8cpp_a8f2b1a34ea800f4771b46c49d7d96af8}{Is\-Alpha1251} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} c)
+\item 
+static bool \hyperlink{sphinxaot_8cpp_aadfde60600f06c4d1e4234aa313af92d}{Is\-German\-Alpha1252} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} c)
+\item 
+static bool \hyperlink{sphinxaot_8cpp_a0292a17366367ddb20b9a30f70f4432b}{Is\-Alpha\-Ascii} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} c)
+\item 
+{\footnotesize template$<$E\-M\-M\-I\-T\-E\-R\-S $>$ }\\\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{sphinxaot_8cpp_a0be2a5d93915779526b9c72993f8e39f}{Emit} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Out, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} u\-Char)
+\item 
+{\footnotesize template$<$$>$ }\\\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{sphinxaot_8cpp_a779866fe98bf2ae0a320e52bde6c8188}{Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U $>$} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Out, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} u\-Char)
+\item 
+{\footnotesize template$<$$>$ }\\\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{sphinxaot_8cpp_a82e116fb87d16510dadf1cb2d3daed9c}{Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8 $>$} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Out, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} u\-Char)
+\item 
+{\footnotesize template$<$E\-M\-M\-I\-T\-E\-R\-S I\-S\-\_\-\-U\-T\-F8$>$ }\\void \hyperlink{sphinxaot_8cpp_a7fbabe0fd50926ae0ae84ffb956ef18e}{Create\-Lemma} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Out, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Base, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Base\-Len, bool b\-Found, const \hyperlink{sphinxaot_8cpp_af0b2c6d1d1a82df73c3ba2ec360442df}{C\-Flexia\-Model} \&M, const \hyperlink{structCMorphForm}{C\-Morph\-Form} \&F)
+\item 
+static bool \hyperlink{sphinxaot_8cpp_a6f1b74b99c8c7113e06cad308c95229b}{Is\-Ru\-Freq2} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+static bool \hyperlink{sphinxaot_8cpp_a37eb5faeb6ab748c67e2095f77e0ad48}{Is\-En\-Freq2} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$)
+\item 
+static bool \hyperlink{sphinxaot_8cpp_abeb9d80bddae45243f3fcc2aaee8e740}{Is\-De\-Freq2} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$)
+\item 
+static bool \hyperlink{sphinxaot_8cpp_ae2d6c9aa56b48670ee109eda8f257e44}{Is\-Ru\-Freq3} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+static bool \hyperlink{sphinxaot_8cpp_a886b1e28e26128172659f4c47d81c8e5}{Is\-En\-Freq3} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$)
+\item 
+static bool \hyperlink{sphinxaot_8cpp_af2ea0456ef40a4836dadb45bc3dca426}{Is\-De\-Freq3} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$)
+\item 
+void \hyperlink{sphinxaot_8cpp_a0d07b1032ac7075256e0d31113a4b38d}{sph\-Aot\-Lemmatize\-Ru1251} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\begin{DoxyCompactList}\small\item\em lemmatize (or guess a normal form) a Russian word in Windows-\/1251 encoding \end{DoxyCompactList}\item 
+void \hyperlink{sphinxaot_8cpp_a693efe6cfd0fd91868f019185de2feff}{sph\-Aot\-Lemmatize} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Lang)
+\begin{DoxyCompactList}\small\item\em lemmatize (or guess a normal form) a word in single-\/byte A\-S\-C\-I\-I encoding, return a single \char`\"{}best\char`\"{} lemma \end{DoxyCompactList}\item 
+static bool \hyperlink{sphinxaot_8cpp_ad72dcead3ff4c827f879466d232d763b}{Is\-Russian\-Alpha\-Utf8} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+void \hyperlink{sphinxaot_8cpp_a1220bc7642fa4be79a37c94cb3543c8f}{sph\-Aot\-Lemmatize\-De1252} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\begin{DoxyCompactList}\small\item\em lemmatize (or guess a normal form) a German word in Windows-\/1252 encoding \end{DoxyCompactList}\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxaot_8cpp_aa277844e54035eef601d530b28b063fd}{Utf8\-To\-Win1251} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Out, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxaot_8cpp_ae3c13983f8c3e89a1d919fc446dab1f0}{Utf8\-To\-Win1252} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Out, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+static bool \hyperlink{sphinxaot_8cpp_a8fb888cc407eaf830a9f35fcea93608a}{Is\-German\-Alpha\-Utf8} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+static void \hyperlink{sphinxaot_8cpp_a436dcc06a6390155f74a181452756c01}{Win1251\-To\-Lowercase\-Utf8} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Out, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+static void \hyperlink{sphinxaot_8cpp_a35182ca7f4972787dbddcfcf4df0afc7}{Win1252\-To\-Lowercase\-Utf8} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Out, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+void \hyperlink{sphinxaot_8cpp_abd0fcb03f331d490299f23e8e4617e21}{sph\-Aot\-Lemmatize\-Ru\-U\-T\-F8} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\begin{DoxyCompactList}\small\item\em lemmatize (or guess a normal form) a Russian word in U\-T\-F-\/8 encoding, return a single \char`\"{}best\char`\"{} lemma \end{DoxyCompactList}\item 
+void \hyperlink{sphinxaot_8cpp_acde7debb936e13204533d3b3b5130ef6}{sph\-Aot\-Lemmatize\-De\-U\-T\-F8} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\begin{DoxyCompactList}\small\item\em lemmatize (or guess a normal form) a German word in U\-T\-F-\/8 encoding, return a single \char`\"{}best\char`\"{} lemma \end{DoxyCompactList}\item 
+void \hyperlink{sphinxaot_8cpp_a435d87e02e9baca9c3b8d90500fc9755}{sph\-Aot\-Lemmatize\-Ru} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Lemmas, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\begin{DoxyCompactList}\small\item\em lemmatize (or guess a normal form) a Russian word, return all lemmas \end{DoxyCompactList}\item 
+void \hyperlink{sphinxaot_8cpp_a365108da61bcf3280caa975503766c91}{sph\-Aot\-Lemmatize\-De} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Lemmas, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+void \hyperlink{sphinxaot_8cpp_a08832bd8afaac45173f7b02e1b4d9112}{sph\-Aot\-Lemmatize} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Lemmas, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Lang)
+\item 
+const \hyperlink{structCSphNamedInt}{C\-Sph\-Named\-Int} \& \hyperlink{sphinxaot_8cpp_aa7325a99e5d254e7cd7986b3e923df3c}{sph\-Aot\-Dictinfo} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Lang)
+\begin{DoxyCompactList}\small\item\em get lemmatizer dictionary info (file name, crc) \end{DoxyCompactList}\item 
+\hyperlink{classCSphTokenFilter}{C\-Sph\-Token\-Filter} $\ast$ \hyperlink{sphinxaot_8cpp_af56d932850b24b9d1aabe85b845f052b}{sph\-Aot\-Create\-Filter} (\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, bool b\-Index\-Exact, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Lang\-Mask)
+\item 
+void \hyperlink{sphinxaot_8cpp_a6f446d0e1a7e4947123ca0eaf24e87b9}{sph\-Aot\-Shutdown} ()
+\begin{DoxyCompactList}\small\item\em free lemmatizers on shutdown \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{sphinxaot_8cpp_ac17864556a357ad3129c7f4f7f23fdaf}{A\-O\-T\-\_\-\-P\-O\-S\-\_\-\-U\-N\-K\-N\-O\-W\-N} = 0xff
+\item 
+const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxaot_8cpp_ad9d006f049ce2efff04943fa1622cec8}{A\-O\-T\-\_\-\-M\-I\-N\-\_\-\-P\-R\-E\-D\-I\-C\-T\-I\-O\-N\-\_\-\-S\-U\-F\-F\-I\-X} = 3
+\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{sphinxaot_8cpp_afa5663f1007dd05a33909ef2b19bfcce}{A\-O\-T\-\_\-\-M\-O\-R\-P\-H\-\_\-\-A\-N\-N\-O\-T\-\_\-\-C\-H\-A\-R} = '+'
+\item 
+const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxaot_8cpp_a87f523db93d66f0e415a7080e742e5fc}{A\-O\-T\-\_\-\-M\-A\-X\-\_\-\-A\-L\-P\-H\-A\-B\-E\-T\-\_\-\-S\-I\-Z\-E} = 54
+\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxaot_8cpp_a56c63731a4e074499070ef1d00191e9f}{A\-O\-T\-\_\-\-N\-O\-F\-O\-R\-M} = 0xffffffff\-U\-L
+\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxaot_8cpp_a4d5dd58205773f79b0b8810a47600ae3}{A\-O\-T\-\_\-\-O\-R\-I\-G\-F\-O\-R\-M} = 0xfffffffe\-U\-L
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxaot_8cpp_a67a0b42d6f2aa733cadd5911e1ed0a7f}{g\-\_\-i\-Cache\-Size} = 262144
+\item 
+const char $\ast$ \hyperlink{sphinxaot_8cpp_a5bd96881986421395217ef1d38ab2137}{A\-O\-T\-\_\-\-L\-A\-N\-G\-U\-A\-G\-E\-S} \mbox{[}\hyperlink{sphinxstem_8h_a6680df2ddacbd01ccdcc6ed78a7b246caf24dc9a1b6c8bc2f3c7e0b2936996466}{A\-O\-T\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]} = \{\char`\"{}ru\char`\"{}, \char`\"{}en\char`\"{}, \char`\"{}de\char`\"{} \}
+\item 
+static \hyperlink{classCLemmatizer}{C\-Lemmatizer} $\ast$ \hyperlink{sphinxaot_8cpp_a31547c2ed940926290a47b9e924208b9}{g\-\_\-p\-Lemmatizers} \mbox{[}\hyperlink{sphinxstem_8h_a6680df2ddacbd01ccdcc6ed78a7b246caf24dc9a1b6c8bc2f3c7e0b2936996466}{A\-O\-T\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]} = \{0\}
+\item 
+static \hyperlink{structCSphNamedInt}{C\-Sph\-Named\-Int} \hyperlink{sphinxaot_8cpp_ac05adc44c313d16953820f35cf380691}{g\-\_\-t\-Dictinfos} \mbox{[}\hyperlink{sphinxstem_8h_a6680df2ddacbd01ccdcc6ed78a7b246caf24dc9a1b6c8bc2f3c7e0b2936996466}{A\-O\-T\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxaot_8cpp_a851ed4c2dba3cdd90a696e80ac41e8bb}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!A\-O\-T\-\_\-\-I\-T\-E\-M\-\_\-\-N\-O@{A\-O\-T\-\_\-\-I\-T\-E\-M\-\_\-\-N\-O}}
+\index{A\-O\-T\-\_\-\-I\-T\-E\-M\-\_\-\-N\-O@{A\-O\-T\-\_\-\-I\-T\-E\-M\-\_\-\-N\-O}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{A\-O\-T\-\_\-\-I\-T\-E\-M\-\_\-\-N\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-O\-T\-\_\-\-I\-T\-E\-M\-\_\-\-N\-O(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-a}
+\end{DoxyParamCaption}
+)~(((\-\_\-a)\&0x3\-F\-F\-F\-F)$>$$>$9)}}\label{sphinxaot_8cpp_a851ed4c2dba3cdd90a696e80ac41e8bb}
+\hypertarget{sphinxaot_8cpp_ae3ce3545b614827290f8d939e9eb5d4f}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!A\-O\-T\-\_\-\-M\-O\-D\-E\-L\-\_\-\-N\-O@{A\-O\-T\-\_\-\-M\-O\-D\-E\-L\-\_\-\-N\-O}}
+\index{A\-O\-T\-\_\-\-M\-O\-D\-E\-L\-\_\-\-N\-O@{A\-O\-T\-\_\-\-M\-O\-D\-E\-L\-\_\-\-N\-O}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{A\-O\-T\-\_\-\-M\-O\-D\-E\-L\-\_\-\-N\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-O\-T\-\_\-\-M\-O\-D\-E\-L\-\_\-\-N\-O(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-a}
+\end{DoxyParamCaption}
+)~((\-\_\-a)$>$$>$18)}}\label{sphinxaot_8cpp_ae3ce3545b614827290f8d939e9eb5d4f}
+\hypertarget{sphinxaot_8cpp_a9b00d747f12fbda0220f1e06cc09a3dd}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!A\-O\-T\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-N\-O@{A\-O\-T\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-N\-O}}
+\index{A\-O\-T\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-N\-O@{A\-O\-T\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-N\-O}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{A\-O\-T\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-N\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-O\-T\-\_\-\-P\-R\-E\-F\-I\-X\-\_\-\-N\-O(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-a}
+\end{DoxyParamCaption}
+)~((\-\_\-a)\&0x1\-F\-F)}}\label{sphinxaot_8cpp_a9b00d747f12fbda0220f1e06cc09a3dd}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sphinxaot_8cpp_af0b2c6d1d1a82df73c3ba2ec360442df}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!C\-Flexia\-Model@{C\-Flexia\-Model}}
+\index{C\-Flexia\-Model@{C\-Flexia\-Model}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{C\-Flexia\-Model}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf C\-Sph\-Vector}$<${\bf C\-Morph\-Form}$>$ {\bf C\-Flexia\-Model}}}\label{sphinxaot_8cpp_af0b2c6d1d1a82df73c3ba2ec360442df}
+flexia model is basically a vector of morphology forms (there is other meta suff like per-\/model comments but that is now stripped) 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!E\-M\-M\-I\-T\-E\-R\-S@{E\-M\-M\-I\-T\-E\-R\-S}}
+\index{E\-M\-M\-I\-T\-E\-R\-S@{E\-M\-M\-I\-T\-E\-R\-S}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{E\-M\-M\-I\-T\-E\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf E\-M\-M\-I\-T\-E\-R\-S}}}\label{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-M\-I\-T\-\_\-1\-B\-Y\-T\-E@{E\-M\-I\-T\-\_\-1\-B\-Y\-T\-E}!sphinxaot.\-cpp@{sphinxaot.\-cpp}}\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!E\-M\-I\-T\-\_\-1\-B\-Y\-T\-E@{E\-M\-I\-T\-\_\-1\-B\-Y\-T\-E}}\item[{\em 
+\hypertarget{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9acd7a4e582ca11d4af4c405dca61d1284}{E\-M\-I\-T\-\_\-1\-B\-Y\-T\-E}\label{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9acd7a4e582ca11d4af4c405dca61d1284}
+}]\index{E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U@{E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U}!sphinxaot.\-cpp@{sphinxaot.\-cpp}}\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U@{E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U}}\item[{\em 
+\hypertarget{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9af68c87a3870d696b7e96a8a586e68aab}{E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U}\label{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9af68c87a3870d696b7e96a8a586e68aab}
+}]\index{E\-M\-I\-T\-\_\-\-U\-T\-F8@{E\-M\-I\-T\-\_\-\-U\-T\-F8}!sphinxaot.\-cpp@{sphinxaot.\-cpp}}\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!E\-M\-I\-T\-\_\-\-U\-T\-F8@{E\-M\-I\-T\-\_\-\-U\-T\-F8}}\item[{\em 
+\hypertarget{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9a149eeebfd3db93b47e95261d6eab5512}{E\-M\-I\-T\-\_\-\-U\-T\-F8}\label{sphinxaot_8cpp_aff2d1bc682c0f0f9d1a8f581a871dbc9a149eeebfd3db93b47e95261d6eab5512}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxaot_8cpp_a618d0f6789fd73258bc09b00e15f68f4}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Aot\-Init@{Aot\-Init}}
+\index{Aot\-Init@{Aot\-Init}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Aot\-Init}]{\setlength{\rightskip}{0pt plus 5cm}bool Aot\-Init (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Dict\-File, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf int}}]{i\-Lang}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_a618d0f6789fd73258bc09b00e15f68f4}
+\hypertarget{sphinxaot_8cpp_a7fbabe0fd50926ae0ae84ffb956ef18e}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Create\-Lemma@{Create\-Lemma}}
+\index{Create\-Lemma@{Create\-Lemma}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Create\-Lemma}]{\setlength{\rightskip}{0pt plus 5cm}template$<$E\-M\-M\-I\-T\-E\-R\-S I\-S\-\_\-\-U\-T\-F8$>$ void Create\-Lemma (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Out, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-Base, }
+\item[{{\bf int}}]{i\-Base\-Len, }
+\item[{bool}]{b\-Found, }
+\item[{const {\bf C\-Flexia\-Model} \&}]{M, }
+\item[{const {\bf C\-Morph\-Form} \&}]{F}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxaot_8cpp_a7fbabe0fd50926ae0ae84ffb956ef18e}
+\hypertarget{sphinxaot_8cpp_a0be2a5d93915779526b9c72993f8e39f}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Emit@{Emit}}
+\index{Emit@{Emit}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Emit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$E\-M\-M\-I\-T\-E\-R\-S $>$ {\bf B\-Y\-T\-E}$\ast$ Emit (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Out, }
+\item[{{\bf B\-Y\-T\-E}}]{u\-Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxaot_8cpp_a0be2a5d93915779526b9c72993f8e39f}
+\hypertarget{sphinxaot_8cpp_a82e116fb87d16510dadf1cb2d3daed9c}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8 $>$@{Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8 $>$}}
+\index{Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8 $>$@{Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8 $>$}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8 $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ {\bf B\-Y\-T\-E}$\ast$ {\bf Emit}$<$ {\bf E\-M\-I\-T\-\_\-\-U\-T\-F8} $>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Out, }
+\item[{{\bf B\-Y\-T\-E}}]{u\-Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxaot_8cpp_a82e116fb87d16510dadf1cb2d3daed9c}
+\hypertarget{sphinxaot_8cpp_a779866fe98bf2ae0a320e52bde6c8188}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U $>$@{Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U $>$}}
+\index{Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U $>$@{Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U $>$}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Emit$<$ E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ {\bf B\-Y\-T\-E}$\ast$ {\bf Emit}$<$ {\bf E\-M\-I\-T\-\_\-\-U\-T\-F8\-R\-U} $>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Out, }
+\item[{{\bf B\-Y\-T\-E}}]{u\-Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxaot_8cpp_a779866fe98bf2ae0a320e52bde6c8188}
+\hypertarget{sphinxaot_8cpp_a8f2b1a34ea800f4771b46c49d7d96af8}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-Alpha1251@{Is\-Alpha1251}}
+\index{Is\-Alpha1251@{Is\-Alpha1251}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-Alpha1251}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Alpha1251 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_a8f2b1a34ea800f4771b46c49d7d96af8}
+\hypertarget{sphinxaot_8cpp_a0292a17366367ddb20b9a30f70f4432b}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-Alpha\-Ascii@{Is\-Alpha\-Ascii}}
+\index{Is\-Alpha\-Ascii@{Is\-Alpha\-Ascii}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-Alpha\-Ascii}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Alpha\-Ascii (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_a0292a17366367ddb20b9a30f70f4432b}
+\hypertarget{sphinxaot_8cpp_abeb9d80bddae45243f3fcc2aaee8e740}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-De\-Freq2@{Is\-De\-Freq2}}
+\index{Is\-De\-Freq2@{Is\-De\-Freq2}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-De\-Freq2}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-De\-Freq2 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_abeb9d80bddae45243f3fcc2aaee8e740}
+\hypertarget{sphinxaot_8cpp_af2ea0456ef40a4836dadb45bc3dca426}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-De\-Freq3@{Is\-De\-Freq3}}
+\index{Is\-De\-Freq3@{Is\-De\-Freq3}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-De\-Freq3}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-De\-Freq3 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_af2ea0456ef40a4836dadb45bc3dca426}
+\hypertarget{sphinxaot_8cpp_a37eb5faeb6ab748c67e2095f77e0ad48}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-En\-Freq2@{Is\-En\-Freq2}}
+\index{Is\-En\-Freq2@{Is\-En\-Freq2}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-En\-Freq2}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-En\-Freq2 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_a37eb5faeb6ab748c67e2095f77e0ad48}
+\hypertarget{sphinxaot_8cpp_a886b1e28e26128172659f4c47d81c8e5}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-En\-Freq3@{Is\-En\-Freq3}}
+\index{Is\-En\-Freq3@{Is\-En\-Freq3}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-En\-Freq3}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-En\-Freq3 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_a886b1e28e26128172659f4c47d81c8e5}
+\hypertarget{sphinxaot_8cpp_aadfde60600f06c4d1e4234aa313af92d}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-German\-Alpha1252@{Is\-German\-Alpha1252}}
+\index{Is\-German\-Alpha1252@{Is\-German\-Alpha1252}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-German\-Alpha1252}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-German\-Alpha1252 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_aadfde60600f06c4d1e4234aa313af92d}
+\hypertarget{sphinxaot_8cpp_a8fb888cc407eaf830a9f35fcea93608a}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-German\-Alpha\-Utf8@{Is\-German\-Alpha\-Utf8}}
+\index{Is\-German\-Alpha\-Utf8@{Is\-German\-Alpha\-Utf8}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-German\-Alpha\-Utf8}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-German\-Alpha\-Utf8 (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_a8fb888cc407eaf830a9f35fcea93608a}
+\hypertarget{sphinxaot_8cpp_a6f1b74b99c8c7113e06cad308c95229b}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-Ru\-Freq2@{Is\-Ru\-Freq2}}
+\index{Is\-Ru\-Freq2@{Is\-Ru\-Freq2}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-Ru\-Freq2}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Ru\-Freq2 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_a6f1b74b99c8c7113e06cad308c95229b}
+\hypertarget{sphinxaot_8cpp_ae2d6c9aa56b48670ee109eda8f257e44}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-Ru\-Freq3@{Is\-Ru\-Freq3}}
+\index{Is\-Ru\-Freq3@{Is\-Ru\-Freq3}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-Ru\-Freq3}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Ru\-Freq3 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_ae2d6c9aa56b48670ee109eda8f257e44}
+\hypertarget{sphinxaot_8cpp_ad72dcead3ff4c827f879466d232d763b}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Is\-Russian\-Alpha\-Utf8@{Is\-Russian\-Alpha\-Utf8}}
+\index{Is\-Russian\-Alpha\-Utf8@{Is\-Russian\-Alpha\-Utf8}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Is\-Russian\-Alpha\-Utf8}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Russian\-Alpha\-Utf8 (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_ad72dcead3ff4c827f879466d232d763b}
+\hypertarget{sphinxaot_8cpp_af56d932850b24b9d1aabe85b845f052b}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Create\-Filter@{sph\-Aot\-Create\-Filter}}
+\index{sph\-Aot\-Create\-Filter@{sph\-Aot\-Create\-Filter}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Create\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Token\-Filter}$\ast$ sph\-Aot\-Create\-Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{bool}]{b\-Index\-Exact, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Lang\-Mask}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_af56d932850b24b9d1aabe85b845f052b}
+\hypertarget{sphinxaot_8cpp_aa7325a99e5d254e7cd7986b3e923df3c}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Dictinfo@{sph\-Aot\-Dictinfo}}
+\index{sph\-Aot\-Dictinfo@{sph\-Aot\-Dictinfo}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Dictinfo}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Named\-Int}\& sph\-Aot\-Dictinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Lang}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_aa7325a99e5d254e7cd7986b3e923df3c}
+
+
+get lemmatizer dictionary info (file name, crc) 
+
+\hypertarget{sphinxaot_8cpp_aba89f7a4ccddedb0bbee176a2e52f1d2}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Init@{sph\-Aot\-Init}}
+\index{sph\-Aot\-Init@{sph\-Aot\-Init}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Init}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Aot\-Init (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Dict\-File, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf int}}]{i\-Lang}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_aba89f7a4ccddedb0bbee176a2e52f1d2}
+
+
+init A\-O\-T lemmatizer 
+
+\hypertarget{sphinxaot_8cpp_a693efe6cfd0fd91868f019185de2feff}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Lemmatize@{sph\-Aot\-Lemmatize}}
+\index{sph\-Aot\-Lemmatize@{sph\-Aot\-Lemmatize}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Lemmatize}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Aot\-Lemmatize (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word, }
+\item[{{\bf int}}]{i\-Lang}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_a693efe6cfd0fd91868f019185de2feff}
+
+
+lemmatize (or guess a normal form) a word in single-\/byte A\-S\-C\-I\-I encoding, return a single \char`\"{}best\char`\"{} lemma 
+
+\hypertarget{sphinxaot_8cpp_a08832bd8afaac45173f7b02e1b4d9112}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Lemmatize@{sph\-Aot\-Lemmatize}}
+\index{sph\-Aot\-Lemmatize@{sph\-Aot\-Lemmatize}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Lemmatize}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Aot\-Lemmatize (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Lemmas, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word, }
+\item[{{\bf int}}]{i\-Lang}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_a08832bd8afaac45173f7b02e1b4d9112}
+\hypertarget{sphinxaot_8cpp_a365108da61bcf3280caa975503766c91}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Lemmatize\-De@{sph\-Aot\-Lemmatize\-De}}
+\index{sph\-Aot\-Lemmatize\-De@{sph\-Aot\-Lemmatize\-De}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Lemmatize\-De}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Aot\-Lemmatize\-De (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Lemmas, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_a365108da61bcf3280caa975503766c91}
+\hypertarget{sphinxaot_8cpp_a1220bc7642fa4be79a37c94cb3543c8f}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Lemmatize\-De1252@{sph\-Aot\-Lemmatize\-De1252}}
+\index{sph\-Aot\-Lemmatize\-De1252@{sph\-Aot\-Lemmatize\-De1252}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Lemmatize\-De1252}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Aot\-Lemmatize\-De1252 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_a1220bc7642fa4be79a37c94cb3543c8f}
+
+
+lemmatize (or guess a normal form) a German word in Windows-\/1252 encoding 
+
+\hypertarget{sphinxaot_8cpp_acde7debb936e13204533d3b3b5130ef6}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Lemmatize\-De\-U\-T\-F8@{sph\-Aot\-Lemmatize\-De\-U\-T\-F8}}
+\index{sph\-Aot\-Lemmatize\-De\-U\-T\-F8@{sph\-Aot\-Lemmatize\-De\-U\-T\-F8}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Lemmatize\-De\-U\-T\-F8}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Aot\-Lemmatize\-De\-U\-T\-F8 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_acde7debb936e13204533d3b3b5130ef6}
+
+
+lemmatize (or guess a normal form) a German word in U\-T\-F-\/8 encoding, return a single \char`\"{}best\char`\"{} lemma 
+
+\hypertarget{sphinxaot_8cpp_a435d87e02e9baca9c3b8d90500fc9755}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Lemmatize\-Ru@{sph\-Aot\-Lemmatize\-Ru}}
+\index{sph\-Aot\-Lemmatize\-Ru@{sph\-Aot\-Lemmatize\-Ru}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Lemmatize\-Ru}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Aot\-Lemmatize\-Ru (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Lemmas, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_a435d87e02e9baca9c3b8d90500fc9755}
+
+
+lemmatize (or guess a normal form) a Russian word, return all lemmas 
+
+\hypertarget{sphinxaot_8cpp_a0d07b1032ac7075256e0d31113a4b38d}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Lemmatize\-Ru1251@{sph\-Aot\-Lemmatize\-Ru1251}}
+\index{sph\-Aot\-Lemmatize\-Ru1251@{sph\-Aot\-Lemmatize\-Ru1251}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Lemmatize\-Ru1251}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Aot\-Lemmatize\-Ru1251 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_a0d07b1032ac7075256e0d31113a4b38d}
+
+
+lemmatize (or guess a normal form) a Russian word in Windows-\/1251 encoding 
+
+\hypertarget{sphinxaot_8cpp_abd0fcb03f331d490299f23e8e4617e21}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Lemmatize\-Ru\-U\-T\-F8@{sph\-Aot\-Lemmatize\-Ru\-U\-T\-F8}}
+\index{sph\-Aot\-Lemmatize\-Ru\-U\-T\-F8@{sph\-Aot\-Lemmatize\-Ru\-U\-T\-F8}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Lemmatize\-Ru\-U\-T\-F8}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Aot\-Lemmatize\-Ru\-U\-T\-F8 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_abd0fcb03f331d490299f23e8e4617e21}
+
+
+lemmatize (or guess a normal form) a Russian word in U\-T\-F-\/8 encoding, return a single \char`\"{}best\char`\"{} lemma 
+
+\hypertarget{sphinxaot_8cpp_a4fb4f2d758a48bda57dba7cac95251b1}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Set\-Cache\-Size@{sph\-Aot\-Set\-Cache\-Size}}
+\index{sph\-Aot\-Set\-Cache\-Size@{sph\-Aot\-Set\-Cache\-Size}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Set\-Cache\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Aot\-Set\-Cache\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Cache\-Size}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_a4fb4f2d758a48bda57dba7cac95251b1}
+
+
+pre-\/init A\-O\-T setup, cache size (in bytes) 
+
+\hypertarget{sphinxaot_8cpp_a6f446d0e1a7e4947123ca0eaf24e87b9}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!sph\-Aot\-Shutdown@{sph\-Aot\-Shutdown}}
+\index{sph\-Aot\-Shutdown@{sph\-Aot\-Shutdown}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{sph\-Aot\-Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Aot\-Shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxaot_8cpp_a6f446d0e1a7e4947123ca0eaf24e87b9}
+
+
+free lemmatizers on shutdown 
+
+\hypertarget{sphinxaot_8cpp_aa277844e54035eef601d530b28b063fd}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Utf8\-To\-Win1251@{Utf8\-To\-Win1251}}
+\index{Utf8\-To\-Win1251@{Utf8\-To\-Win1251}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Utf8\-To\-Win1251}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Utf8\-To\-Win1251 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Out, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_aa277844e54035eef601d530b28b063fd}
+returns length in bytes (aka chars) if all letters were russian and converted returns 0 and aborts early if non-\/russian letters are encountered \hypertarget{sphinxaot_8cpp_ae3c13983f8c3e89a1d919fc446dab1f0}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Utf8\-To\-Win1252@{Utf8\-To\-Win1252}}
+\index{Utf8\-To\-Win1252@{Utf8\-To\-Win1252}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Utf8\-To\-Win1252}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Utf8\-To\-Win1252 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Out, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_ae3c13983f8c3e89a1d919fc446dab1f0}
+returns length in bytes (aka chars) if all letters were converted returns 0 and aborts early if non-\/western letters are encountered \hypertarget{sphinxaot_8cpp_a436dcc06a6390155f74a181452756c01}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Win1251\-To\-Lowercase\-Utf8@{Win1251\-To\-Lowercase\-Utf8}}
+\index{Win1251\-To\-Lowercase\-Utf8@{Win1251\-To\-Lowercase\-Utf8}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Win1251\-To\-Lowercase\-Utf8}]{\setlength{\rightskip}{0pt plus 5cm}static void Win1251\-To\-Lowercase\-Utf8 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Out, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_a436dcc06a6390155f74a181452756c01}
+\hypertarget{sphinxaot_8cpp_a35182ca7f4972787dbddcfcf4df0afc7}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!Win1252\-To\-Lowercase\-Utf8@{Win1252\-To\-Lowercase\-Utf8}}
+\index{Win1252\-To\-Lowercase\-Utf8@{Win1252\-To\-Lowercase\-Utf8}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{Win1252\-To\-Lowercase\-Utf8}]{\setlength{\rightskip}{0pt plus 5cm}static void Win1252\-To\-Lowercase\-Utf8 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Out, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxaot_8cpp_a35182ca7f4972787dbddcfcf4df0afc7}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxaot_8cpp_a5bd96881986421395217ef1d38ab2137}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!A\-O\-T\-\_\-\-L\-A\-N\-G\-U\-A\-G\-E\-S@{A\-O\-T\-\_\-\-L\-A\-N\-G\-U\-A\-G\-E\-S}}
+\index{A\-O\-T\-\_\-\-L\-A\-N\-G\-U\-A\-G\-E\-S@{A\-O\-T\-\_\-\-L\-A\-N\-G\-U\-A\-G\-E\-S}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{A\-O\-T\-\_\-\-L\-A\-N\-G\-U\-A\-G\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ A\-O\-T\-\_\-\-L\-A\-N\-G\-U\-A\-G\-E\-S\mbox{[}{\bf A\-O\-T\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]} = \{\char`\"{}ru\char`\"{}, \char`\"{}en\char`\"{}, \char`\"{}de\char`\"{} \}}}\label{sphinxaot_8cpp_a5bd96881986421395217ef1d38ab2137}
+\hypertarget{sphinxaot_8cpp_a87f523db93d66f0e415a7080e742e5fc}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!A\-O\-T\-\_\-\-M\-A\-X\-\_\-\-A\-L\-P\-H\-A\-B\-E\-T\-\_\-\-S\-I\-Z\-E@{A\-O\-T\-\_\-\-M\-A\-X\-\_\-\-A\-L\-P\-H\-A\-B\-E\-T\-\_\-\-S\-I\-Z\-E}}
+\index{A\-O\-T\-\_\-\-M\-A\-X\-\_\-\-A\-L\-P\-H\-A\-B\-E\-T\-\_\-\-S\-I\-Z\-E@{A\-O\-T\-\_\-\-M\-A\-X\-\_\-\-A\-L\-P\-H\-A\-B\-E\-T\-\_\-\-S\-I\-Z\-E}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{A\-O\-T\-\_\-\-M\-A\-X\-\_\-\-A\-L\-P\-H\-A\-B\-E\-T\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} A\-O\-T\-\_\-\-M\-A\-X\-\_\-\-A\-L\-P\-H\-A\-B\-E\-T\-\_\-\-S\-I\-Z\-E = 54}}\label{sphinxaot_8cpp_a87f523db93d66f0e415a7080e742e5fc}
+\hypertarget{sphinxaot_8cpp_ad9d006f049ce2efff04943fa1622cec8}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!A\-O\-T\-\_\-\-M\-I\-N\-\_\-\-P\-R\-E\-D\-I\-C\-T\-I\-O\-N\-\_\-\-S\-U\-F\-F\-I\-X@{A\-O\-T\-\_\-\-M\-I\-N\-\_\-\-P\-R\-E\-D\-I\-C\-T\-I\-O\-N\-\_\-\-S\-U\-F\-F\-I\-X}}
+\index{A\-O\-T\-\_\-\-M\-I\-N\-\_\-\-P\-R\-E\-D\-I\-C\-T\-I\-O\-N\-\_\-\-S\-U\-F\-F\-I\-X@{A\-O\-T\-\_\-\-M\-I\-N\-\_\-\-P\-R\-E\-D\-I\-C\-T\-I\-O\-N\-\_\-\-S\-U\-F\-F\-I\-X}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{A\-O\-T\-\_\-\-M\-I\-N\-\_\-\-P\-R\-E\-D\-I\-C\-T\-I\-O\-N\-\_\-\-S\-U\-F\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} A\-O\-T\-\_\-\-M\-I\-N\-\_\-\-P\-R\-E\-D\-I\-C\-T\-I\-O\-N\-\_\-\-S\-U\-F\-F\-I\-X = 3}}\label{sphinxaot_8cpp_ad9d006f049ce2efff04943fa1622cec8}
+\hypertarget{sphinxaot_8cpp_afa5663f1007dd05a33909ef2b19bfcce}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!A\-O\-T\-\_\-\-M\-O\-R\-P\-H\-\_\-\-A\-N\-N\-O\-T\-\_\-\-C\-H\-A\-R@{A\-O\-T\-\_\-\-M\-O\-R\-P\-H\-\_\-\-A\-N\-N\-O\-T\-\_\-\-C\-H\-A\-R}}
+\index{A\-O\-T\-\_\-\-M\-O\-R\-P\-H\-\_\-\-A\-N\-N\-O\-T\-\_\-\-C\-H\-A\-R@{A\-O\-T\-\_\-\-M\-O\-R\-P\-H\-\_\-\-A\-N\-N\-O\-T\-\_\-\-C\-H\-A\-R}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{A\-O\-T\-\_\-\-M\-O\-R\-P\-H\-\_\-\-A\-N\-N\-O\-T\-\_\-\-C\-H\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E} A\-O\-T\-\_\-\-M\-O\-R\-P\-H\-\_\-\-A\-N\-N\-O\-T\-\_\-\-C\-H\-A\-R = '+'}}\label{sphinxaot_8cpp_afa5663f1007dd05a33909ef2b19bfcce}
+\hypertarget{sphinxaot_8cpp_a56c63731a4e074499070ef1d00191e9f}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!A\-O\-T\-\_\-\-N\-O\-F\-O\-R\-M@{A\-O\-T\-\_\-\-N\-O\-F\-O\-R\-M}}
+\index{A\-O\-T\-\_\-\-N\-O\-F\-O\-R\-M@{A\-O\-T\-\_\-\-N\-O\-F\-O\-R\-M}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{A\-O\-T\-\_\-\-N\-O\-F\-O\-R\-M}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D} A\-O\-T\-\_\-\-N\-O\-F\-O\-R\-M = 0xffffffff\-U\-L}}\label{sphinxaot_8cpp_a56c63731a4e074499070ef1d00191e9f}
+\hypertarget{sphinxaot_8cpp_a4d5dd58205773f79b0b8810a47600ae3}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!A\-O\-T\-\_\-\-O\-R\-I\-G\-F\-O\-R\-M@{A\-O\-T\-\_\-\-O\-R\-I\-G\-F\-O\-R\-M}}
+\index{A\-O\-T\-\_\-\-O\-R\-I\-G\-F\-O\-R\-M@{A\-O\-T\-\_\-\-O\-R\-I\-G\-F\-O\-R\-M}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{A\-O\-T\-\_\-\-O\-R\-I\-G\-F\-O\-R\-M}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D} A\-O\-T\-\_\-\-O\-R\-I\-G\-F\-O\-R\-M = 0xfffffffe\-U\-L}}\label{sphinxaot_8cpp_a4d5dd58205773f79b0b8810a47600ae3}
+\hypertarget{sphinxaot_8cpp_ac17864556a357ad3129c7f4f7f23fdaf}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!A\-O\-T\-\_\-\-P\-O\-S\-\_\-\-U\-N\-K\-N\-O\-W\-N@{A\-O\-T\-\_\-\-P\-O\-S\-\_\-\-U\-N\-K\-N\-O\-W\-N}}
+\index{A\-O\-T\-\_\-\-P\-O\-S\-\_\-\-U\-N\-K\-N\-O\-W\-N@{A\-O\-T\-\_\-\-P\-O\-S\-\_\-\-U\-N\-K\-N\-O\-W\-N}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{A\-O\-T\-\_\-\-P\-O\-S\-\_\-\-U\-N\-K\-N\-O\-W\-N}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E} A\-O\-T\-\_\-\-P\-O\-S\-\_\-\-U\-N\-K\-N\-O\-W\-N = 0xff}}\label{sphinxaot_8cpp_ac17864556a357ad3129c7f4f7f23fdaf}
+\hypertarget{sphinxaot_8cpp_a67a0b42d6f2aa733cadd5911e1ed0a7f}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!g\-\_\-i\-Cache\-Size@{g\-\_\-i\-Cache\-Size}}
+\index{g\-\_\-i\-Cache\-Size@{g\-\_\-i\-Cache\-Size}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{g\-\_\-i\-Cache\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Cache\-Size = 262144\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxaot_8cpp_a67a0b42d6f2aa733cadd5911e1ed0a7f}
+\hypertarget{sphinxaot_8cpp_a31547c2ed940926290a47b9e924208b9}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!g\-\_\-p\-Lemmatizers@{g\-\_\-p\-Lemmatizers}}
+\index{g\-\_\-p\-Lemmatizers@{g\-\_\-p\-Lemmatizers}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{g\-\_\-p\-Lemmatizers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Lemmatizer}$\ast$ g\-\_\-p\-Lemmatizers\mbox{[}{\bf A\-O\-T\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]} = \{0\}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxaot_8cpp_a31547c2ed940926290a47b9e924208b9}
+\hypertarget{sphinxaot_8cpp_ac05adc44c313d16953820f35cf380691}{\index{sphinxaot.\-cpp@{sphinxaot.\-cpp}!g\-\_\-t\-Dictinfos@{g\-\_\-t\-Dictinfos}}
+\index{g\-\_\-t\-Dictinfos@{g\-\_\-t\-Dictinfos}!sphinxaot.cpp@{sphinxaot.\-cpp}}
+\subsubsection[{g\-\_\-t\-Dictinfos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Named\-Int} g\-\_\-t\-Dictinfos\mbox{[}{\bf A\-O\-T\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxaot_8cpp_ac05adc44c313d16953820f35cf380691}

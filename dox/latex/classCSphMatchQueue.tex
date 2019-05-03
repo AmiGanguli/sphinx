@@ -1,0 +1,161 @@
+\hypertarget{classCSphMatchQueue}{\section{C\-Sph\-Match\-Queue$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$ Class Template Reference}
+\label{classCSphMatchQueue}\index{C\-Sph\-Match\-Queue$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$@{C\-Sph\-Match\-Queue$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}}
+}
+Inheritance diagram for C\-Sph\-Match\-Queue$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.896552cm]{classCSphMatchQueue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphMatchQueue_ac7878d123995bf2382563471bfaee493}{C\-Sph\-Match\-Queue} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size, bool b\-Uses\-Attrs)
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphMatchQueue_a7e13a3a98146b887606119df9c6a1a5c}{Is\-Groupby} () const 
+\begin{DoxyCompactList}\small\item\em check if this sorter does groupby \end{DoxyCompactList}\item 
+virtual const \hyperlink{classCSphMatch}{C\-Sph\-Match} $\ast$ \hyperlink{classCSphMatchQueue_af24e8fe8977e2cc4bab34a395511a863}{Get\-Worst} () const 
+\begin{DoxyCompactList}\small\item\em get a pointer to the worst element, N\-U\-L\-L if there is no fixed location \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphMatchQueue_aee1ed20b718996ad390c246d6a8ffe53}{Push} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Entry)
+\begin{DoxyCompactList}\small\item\em add entry to the queue \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphMatchQueue_a8c6bf819aa2a99a6cb3461d4254ba5b6}{Push\-Grouped} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&, bool)
+\begin{DoxyCompactList}\small\item\em add grouped entry (must not happen) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphMatchQueue_a91df367a6c82d3d03526c83358a5c87c}{Pop} ()
+\begin{DoxyCompactList}\small\item\em remove root (ie. top priority) entry \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphMatchQueue_a6787b6ba57e11f63431cb71bc0ed5a3e}{Flatten} (\hyperlink{classCSphMatch}{C\-Sph\-Match} $\ast$p\-To, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Tag)
+\begin{DoxyCompactList}\small\item\em store all entries into specified location in sorted order, and remove them from queue \end{DoxyCompactList}\item 
+void \hyperlink{classCSphMatchQueue_aec3b87e10dfd5297ab6e4a17df6218bc}{Finalize} (\hyperlink{structISphMatchProcessor}{I\-Sph\-Match\-Processor} \&t\-Processor, bool b\-Call\-Process\-In\-Result\-Set\-Order)
+\begin{DoxyCompactList}\small\item\em process collected entries up to length count \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename C\-O\-M\-P, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$class C\-Sph\-Match\-Queue$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+
+heap sorter plain binary heap based P\-Q 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphMatchQueue_ac7878d123995bf2382563471bfaee493}{\index{C\-Sph\-Match\-Queue@{C\-Sph\-Match\-Queue}!C\-Sph\-Match\-Queue@{C\-Sph\-Match\-Queue}}
+\index{C\-Sph\-Match\-Queue@{C\-Sph\-Match\-Queue}!CSphMatchQueue@{C\-Sph\-Match\-Queue}}
+\subsubsection[{C\-Sph\-Match\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P , bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf C\-Sph\-Match\-Queue}$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::{\bf C\-Sph\-Match\-Queue} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size, }
+\item[{bool}]{b\-Uses\-Attrs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMatchQueue_ac7878d123995bf2382563471bfaee493}
+
+
+ctor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphMatchQueue_aec3b87e10dfd5297ab6e4a17df6218bc}{\index{C\-Sph\-Match\-Queue@{C\-Sph\-Match\-Queue}!Finalize@{Finalize}}
+\index{Finalize@{Finalize}!CSphMatchQueue@{C\-Sph\-Match\-Queue}}
+\subsubsection[{Finalize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P , bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ void {\bf C\-Sph\-Match\-Queue}$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Finalize (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Match\-Processor} \&}]{t\-Processor, }
+\item[{bool}]{b\-Call\-Process\-In\-Result\-Set\-Order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueue_aec3b87e10dfd5297ab6e4a17df6218bc}
+
+
+process collected entries up to length count 
+
+
+
+Implements \hyperlink{classISphMatchSorter_acdeae07ed32a5497c3fd814ba57314fb}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphMatchQueue_a6787b6ba57e11f63431cb71bc0ed5a3e}{\index{C\-Sph\-Match\-Queue@{C\-Sph\-Match\-Queue}!Flatten@{Flatten}}
+\index{Flatten@{Flatten}!CSphMatchQueue@{C\-Sph\-Match\-Queue}}
+\subsubsection[{Flatten}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P , bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf int} {\bf C\-Sph\-Match\-Queue}$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Flatten (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Match} $\ast$}]{p\-To, }
+\item[{{\bf int}}]{i\-Tag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueue_a6787b6ba57e11f63431cb71bc0ed5a3e}
+
+
+store all entries into specified location in sorted order, and remove them from queue 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a28951c480b6b221de739f2cbe98c1572}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphMatchQueue_af24e8fe8977e2cc4bab34a395511a863}{\index{C\-Sph\-Match\-Queue@{C\-Sph\-Match\-Queue}!Get\-Worst@{Get\-Worst}}
+\index{Get\-Worst@{Get\-Worst}!CSphMatchQueue@{C\-Sph\-Match\-Queue}}
+\subsubsection[{Get\-Worst}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P , bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual const {\bf C\-Sph\-Match}$\ast$ {\bf C\-Sph\-Match\-Queue}$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Get\-Worst (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueue_af24e8fe8977e2cc4bab34a395511a863}
+
+
+get a pointer to the worst element, N\-U\-L\-L if there is no fixed location 
+
+
+
+Reimplemented from \hyperlink{classISphMatchSorter_a806098c790bb095a076e868028fb5f52}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphMatchQueue_a7e13a3a98146b887606119df9c6a1a5c}{\index{C\-Sph\-Match\-Queue@{C\-Sph\-Match\-Queue}!Is\-Groupby@{Is\-Groupby}}
+\index{Is\-Groupby@{Is\-Groupby}!CSphMatchQueue@{C\-Sph\-Match\-Queue}}
+\subsubsection[{Is\-Groupby}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P , bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-Match\-Queue}$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Is\-Groupby (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueue_a7e13a3a98146b887606119df9c6a1a5c}
+
+
+check if this sorter does groupby 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a4597c0e4843dfa1ad2a4b1408fae6b38}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphMatchQueue_a91df367a6c82d3d03526c83358a5c87c}{\index{C\-Sph\-Match\-Queue@{C\-Sph\-Match\-Queue}!Pop@{Pop}}
+\index{Pop@{Pop}!CSphMatchQueue@{C\-Sph\-Match\-Queue}}
+\subsubsection[{Pop}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P , bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual void {\bf C\-Sph\-Match\-Queue}$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueue_a91df367a6c82d3d03526c83358a5c87c}
+
+
+remove root (ie. top priority) entry 
+
+\hypertarget{classCSphMatchQueue_aee1ed20b718996ad390c246d6a8ffe53}{\index{C\-Sph\-Match\-Queue@{C\-Sph\-Match\-Queue}!Push@{Push}}
+\index{Push@{Push}!CSphMatchQueue@{C\-Sph\-Match\-Queue}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P , bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-Match\-Queue}$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Push (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueue_aee1ed20b718996ad390c246d6a8ffe53}
+
+
+add entry to the queue 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a2b3e3dfad4c9da1c4d014dcbab585760}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphMatchQueue_a8c6bf819aa2a99a6cb3461d4254ba5b6}{\index{C\-Sph\-Match\-Queue@{C\-Sph\-Match\-Queue}!Push\-Grouped@{Push\-Grouped}}
+\index{Push\-Grouped@{Push\-Grouped}!CSphMatchQueue@{C\-Sph\-Match\-Queue}}
+\subsubsection[{Push\-Grouped}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P , bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-Match\-Queue}$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Push\-Grouped (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{, }
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueue_a8c6bf819aa2a99a6cb3461d4254ba5b6}
+
+
+add grouped entry (must not happen) 
+
+
+
+Implements \hyperlink{classISphMatchSorter_aefd6f5b67faf49cc6d7d52bba8679fe0}{I\-Sph\-Match\-Sorter}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

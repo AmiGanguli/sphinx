@@ -1,0 +1,830 @@
+\hypertarget{sphinxrt_8cpp}{\section{src/sphinxrt.cpp File Reference}
+\label{sphinxrt_8cpp}\index{src/sphinxrt.\-cpp@{src/sphinxrt.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxrt.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxsearch.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxjson.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxplugin.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxrlp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxqcache.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCmpHitPlain__fn}{Cmp\-Hit\-Plain\-\_\-fn}
+\item 
+struct \hyperlink{structCmpHitKeywords__fn}{Cmp\-Hit\-Keywords\-\_\-fn}
+\item 
+struct \hyperlink{structRtDoc__T}{Rt\-Doc\-\_\-\-T$<$ D\-O\-C\-I\-D $>$}
+\item 
+struct \hyperlink{structRtWord__T}{Rt\-Word\-\_\-\-T$<$ W\-O\-R\-D\-I\-D $>$}
+\item 
+struct \hyperlink{structRtWordCheckpoint__t}{Rt\-Word\-Checkpoint\-\_\-t}
+\item 
+class \hyperlink{classCSphKilllist}{C\-Sph\-Killlist}
+\item 
+struct \hyperlink{structKlistRefcounted__t}{Klist\-Refcounted\-\_\-t}
+\item 
+struct \hyperlink{structRtSegment__t}{Rt\-Segment\-\_\-t}
+\item 
+struct \hyperlink{structRtDocWriter__t}{Rt\-Doc\-Writer\-\_\-t}
+\item 
+struct \hyperlink{structRtDocReader__T}{Rt\-Doc\-Reader\-\_\-\-T$<$ D\-O\-C\-I\-D $>$}
+\item 
+struct \hyperlink{structRtWordWriter__t}{Rt\-Word\-Writer\-\_\-t}
+\item 
+struct \hyperlink{structRtWordReader__T}{Rt\-Word\-Reader\-\_\-\-T$<$ W\-O\-R\-D\-I\-D $>$}
+\item 
+struct \hyperlink{structRtHitWriter__t}{Rt\-Hit\-Writer\-\_\-t}
+\item 
+struct \hyperlink{structRtHitReader__t}{Rt\-Hit\-Reader\-\_\-t}
+\item 
+struct \hyperlink{structRtHitReader2__t}{Rt\-Hit\-Reader2\-\_\-t}
+\item 
+struct \hyperlink{structJSONAttr__t}{J\-S\-O\-N\-Attr\-\_\-t}
+\item 
+class \hyperlink{classRtAccum__t}{Rt\-Accum\-\_\-t}
+\begin{DoxyCompactList}\small\item\em indexing accumulator \end{DoxyCompactList}\item 
+struct \hyperlink{structBinlogIndexInfo__t}{Binlog\-Index\-Info\-\_\-t}
+\item 
+struct \hyperlink{structBinlogFileDesc__t}{Binlog\-File\-Desc\-\_\-t}
+\item 
+class \hyperlink{classBinlogWriter__c}{Binlog\-Writer\-\_\-c}
+\item 
+class \hyperlink{classBinlogReader__c}{Binlog\-Reader\-\_\-c}
+\item 
+class \hyperlink{classRtBinlog__c}{Rt\-Binlog\-\_\-c}
+\item 
+struct \hyperlink{structSphChunkGuard__t}{Sph\-Chunk\-Guard\-\_\-t}
+\item 
+struct \hyperlink{structChunkStats__t}{Chunk\-Stats\-\_\-t}
+\item 
+struct \hyperlink{structRtIndex__t}{Rt\-Index\-\_\-t}
+\item 
+class \hyperlink{classCSphSource__StringVector}{C\-Sph\-Source\-\_\-\-String\-Vector}
+\item 
+struct \hyperlink{structAccumDocHits__t}{Accum\-Doc\-Hits\-\_\-t}
+\item 
+struct \hyperlink{structCmpDocHitIndex__t}{Cmp\-Doc\-Hit\-Index\-\_\-t}
+\item 
+struct \hyperlink{structRtRowIterator__T}{Rt\-Row\-Iterator\-\_\-\-T$<$ D\-O\-C\-I\-D $>$}
+\item 
+class \hyperlink{classStorageStringWriter__t}{Storage\-String\-Writer\-\_\-t}
+\item 
+class \hyperlink{classStorageStringVector__t}{Storage\-String\-Vector\-\_\-t}
+\item 
+class \hyperlink{classStorageMvaWriter__t}{Storage\-Mva\-Writer\-\_\-t}
+\item 
+class \hyperlink{classStorageMvaVector__t}{Storage\-Mva\-Vector\-\_\-t}
+\item 
+struct \hyperlink{structCmpSegments__fn}{Cmp\-Segments\-\_\-fn}
+\item 
+struct \hyperlink{structCheckpoint__t}{Checkpoint\-\_\-t}
+\item 
+struct \hyperlink{structSaveSegment__t}{Save\-Segment\-\_\-t}
+\item 
+struct \hyperlink{structIsPodType}{Is\-Pod\-Type$<$ T $>$}
+\item 
+struct \hyperlink{structIsPodType_3_01char_01_4}{Is\-Pod\-Type$<$ char $>$}
+\item 
+struct \hyperlink{structIsPodType_3_01BYTE_01_4}{Is\-Pod\-Type$<$ B\-Y\-T\-E $>$}
+\item 
+struct \hyperlink{structIsPodType_3_01int_01_4}{Is\-Pod\-Type$<$ int $>$}
+\item 
+struct \hyperlink{structIsPodType_3_01DWORD_01_4}{Is\-Pod\-Type$<$ D\-W\-O\-R\-D $>$}
+\item 
+struct \hyperlink{structIsPodType_3_01uint64__t_01_4}{Is\-Pod\-Type$<$ uint64\-\_\-t $>$}
+\item 
+struct \hyperlink{structIsPodType_3_01float_01_4}{Is\-Pod\-Type$<$ float $>$}
+\item 
+struct \hyperlink{structRtQwordTraits__t}{Rt\-Qword\-Traits\-\_\-t}
+\item 
+struct \hyperlink{structRtQword__t}{Rt\-Qword\-\_\-t}
+\item 
+struct \hyperlink{structRtSubstringPayload__t}{Rt\-Substring\-Payload\-\_\-t}
+\item 
+struct \hyperlink{structRtQwordPayload__t}{Rt\-Qword\-Payload\-\_\-t}
+\item 
+class \hyperlink{classRtQwordSetup__t}{Rt\-Qword\-Setup\-\_\-t}
+\item 
+struct \hyperlink{structRtExpandedEntry__t}{Rt\-Expanded\-Entry\-\_\-t}
+\item 
+struct \hyperlink{structRtExpandedPayload__t}{Rt\-Expanded\-Payload\-\_\-t}
+\item 
+struct \hyperlink{structRtExpandedTraits__fn}{Rt\-Expanded\-Traits\-\_\-fn}
+\item 
+struct \hyperlink{structDictEntryRtPayload__t}{Dict\-Entry\-Rt\-Payload\-\_\-t}
+\item 
+struct \hyperlink{structCSphAttrTypedLocator}{C\-Sph\-Attr\-Typed\-Locator}
+\item 
+struct \hyperlink{structSphFinalMatchCounter__t}{Sph\-Final\-Match\-Counter\-\_\-t}
+\item 
+struct \hyperlink{structSphFinalMatchCopy__t}{Sph\-Final\-Match\-Copy\-\_\-t}
+\item 
+struct \hyperlink{structSphFinalArenaCopy__t}{Sph\-Final\-Arena\-Copy\-\_\-t}
+\item 
+struct \hyperlink{structSphRtFinalMatchCalc__t}{Sph\-Rt\-Final\-Match\-Calc\-\_\-t}
+\item 
+struct \hyperlink{structCSphRtQueryFilter}{C\-Sph\-Rt\-Query\-Filter}
+\item 
+struct \hyperlink{structSphOptimizeGuard__t}{Sph\-Optimize\-Guard\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a07bf9105404126da0345b89d88165aab}{B\-I\-N\-L\-O\-G\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}~256$\ast$1024
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a2e2e1e2a862de0c6967576f5b8422601}{B\-I\-N\-L\-O\-G\-\_\-\-A\-U\-T\-O\-\_\-\-F\-L\-U\-S\-H}~1000000
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a35affcceacef21f41c0a0e00d63c682b}{R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V3}~1024
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a926d25a6eac0fec9c8954dd98d5dc3bd}{R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V5}~48
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a4b0f06ba55c2892a21be87b507e4ae4f}{S\-P\-H\-\_\-\-R\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T}~10
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a6ae2b3707df3d091017288216915511c}{W\-O\-R\-D\-I\-D\-\_\-\-M\-A\-X}~\hyperlink{sphinxstd_8h_aacd3c5c8d31b9feb66db4120d5a263a0}{U64\-C}(0xffffffffffffffff)
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a86505f75dca8cc171f7220c8a703e3ea}{Verify}(\-\_\-expr)~assert(\-\_\-expr)
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a2a5ab8d4e33920caf11c982b80da97d9}{P\-A\-R\-A\-N\-O\-I\-D}~1
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a6abe47ca36f488aa67e21c574b9fe4f6}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-L\-E\-N}~(3$\ast$\hyperlink{sphinx_8h_ab0f6d383751adea7c80ed4ff4c36532c}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N}+4)
+\item 
+\#define \hyperlink{sphinxrt_8cpp_ad91b6d2063eb606463c5f795b1f8a423}{Zip\-Dword}~\hyperlink{sphinxrt_8cpp_ac75a9402f26e73cd7b68ad08e9fd9327}{Zip\-T}$<$\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D}$>$
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a68bc0b45c41ff2b6a957370a32e287c2}{Zip\-Qword}~\hyperlink{sphinxrt_8cpp_ac75a9402f26e73cd7b68ad08e9fd9327}{Zip\-T}$<$\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t}$>$
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a5082943efef32b5c4d7900e9a5b6f54c}{Unzip\-Dword}~\hyperlink{sphinxrt_8cpp_ae61b2abc1214a23fa6886197541d66fe}{Unzip\-T}$<$\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D}$>$
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a1d9a72d57dbd3c7266a953f38c879bc8}{Unzip\-Qword}~\hyperlink{sphinxrt_8cpp_ae61b2abc1214a23fa6886197541d66fe}{Unzip\-T}$<$\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t}$>$
+\item 
+\#define \hyperlink{sphinxrt_8cpp_aea4596a1d693a6b650590b7a3332a2f0}{Zip\-Docid}~\hyperlink{sphinxrt_8cpp_a68bc0b45c41ff2b6a957370a32e287c2}{Zip\-Qword}
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a82f1f0735df4c816822b2af50c3c11a1}{Zip\-Wordid}~\hyperlink{sphinxrt_8cpp_a68bc0b45c41ff2b6a957370a32e287c2}{Zip\-Qword}
+\item 
+\#define \hyperlink{sphinxrt_8cpp_af1b86dc7e606ad6d134241eb02e9191d}{Unzip\-Docid}~\hyperlink{sphinxrt_8cpp_a1d9a72d57dbd3c7266a953f38c879bc8}{Unzip\-Qword}
+\item 
+\#define \hyperlink{sphinxrt_8cpp_ac5119ddedb4f3fec963f3e69417372a1}{Unzip\-Wordid}~\hyperlink{sphinxrt_8cpp_a1d9a72d57dbd3c7266a953f38c879bc8}{Unzip\-Qword}
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a5d79998f11859c90b2f059b6e4ad694e}{B\-L\-O\-O\-M\-\_\-\-P\-E\-R\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-V\-A\-L\-S\-\_\-\-C\-O\-U\-N\-T}~8
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a21961ad5a2caa4a53554940a5eba16f7}{B\-L\-O\-O\-M\-\_\-\-H\-A\-S\-H\-E\-S\-\_\-\-C\-O\-U\-N\-T}~2
+\item 
+\#define \hyperlink{sphinxrt_8cpp_ab4b686ae26d241b818f0636f61713945}{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1}(\-\_\-seg, \-\_\-vec)~(\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})( ( (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t})\-\_\-seg-\/$>$\-\_\-vec.\-Get\-Length() ) $\ast$ \-\_\-seg-\/$>$m\-\_\-i\-Alive\-Rows / \-\_\-seg-\/$>$m\-\_\-i\-Rows )
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a31fc79cf03c0832737ed4994a72375a3}{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E}(\-\_\-vec)~( \hyperlink{sphinxrt_8cpp_ab4b686ae26d241b818f0636f61713945}{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1} ( d\-Segments\mbox{[}i\-Len-\/1\mbox{]}, \-\_\-vec ) + \hyperlink{sphinxrt_8cpp_ab4b686ae26d241b818f0636f61713945}{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1} ( d\-Segments\mbox{[}i\-Len-\/2\mbox{]}, \-\_\-vec ) )
+\item 
+\#define \hyperlink{sphinxrt_8cpp_af730c96735bb8753759faa3b9e122e7d}{L\-O\-C\-\_\-\-F\-A\-I\-L}(\-\_\-args)
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a89685e4c50070371d8861f34ec8d4b79}{L\-O\-C\-\_\-\-E\-R\-R\-O\-R}(\-\_\-arg)~\{ s\-Error = \-\_\-arg; \hyperlink{sphinxsort_8cpp_a3a3a0de38f503963432a78b8a36aa74c}{return} false; \}
+\item 
+\#define \hyperlink{sphinxrt_8cpp_a17897dbbc6ff46c90212d087f60f38c4}{D\-A\-T\-A\-D\-I\-R}~\char`\"{}.\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structRtDoc__T}{Rt\-Doc\-\_\-\-T} \hyperlink{sphinxrt_8cpp_adc07e5f08f0225f3eba168a8a20cd6fe}{Rt\-Doc\-\_\-t}
+\item 
+typedef \hyperlink{structRtWord__T}{Rt\-Word\-\_\-\-T} \hyperlink{sphinxrt_8cpp_a97c12606a1350afbcdc489ed3428b1bb}{Rt\-Word\-\_\-t}
+\item 
+typedef \hyperlink{structRtDocReader__T}{Rt\-Doc\-Reader\-\_\-\-T} \hyperlink{sphinxrt_8cpp_acaa8c500c048602767c77a69d2e71173}{Rt\-Doc\-Reader\-\_\-t}
+\item 
+typedef \hyperlink{structRtWordReader__T}{Rt\-Word\-Reader\-\_\-\-T}\\*
+$<$ \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} $>$ \hyperlink{sphinxrt_8cpp_a314a2f62307a0483c3c465f3fc4ed438}{Rt\-Word\-Reader\-\_\-t}
+\item 
+typedef \hyperlink{structRtRowIterator__T}{Rt\-Row\-Iterator\-\_\-\-T} \hyperlink{sphinxrt_8cpp_ab53ce75d9eacf989e54a50fe114686de}{Rt\-Row\-Iterator\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8}{Blop\-\_\-e} \{ \\*
+\hyperlink{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a53be1a7a505abca973a151e7b32b2256}{B\-L\-O\-P\-\_\-\-C\-O\-M\-M\-I\-T} = 1, 
+\hyperlink{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a6acff564eb85dc567ea2a845ee6e9554}{B\-L\-O\-P\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-A\-T\-T\-R\-S} = 2, 
+\hyperlink{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a00c00821a7f2cccbf9dc56aee4bcf71f}{B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-I\-N\-D\-E\-X} = 3, 
+\hyperlink{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8abfdd860009f37aec213106048f97eec2}{B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-C\-A\-C\-H\-E} = 4, 
+\\*
+\hyperlink{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8ae5594a150a9a6202b8ce8845688cf603}{B\-L\-O\-P\-\_\-\-R\-E\-C\-O\-N\-F\-I\-G\-U\-R\-E} = 5, 
+\hyperlink{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a4e16cd78dd351b04c70e9f1d99f8d3fd}{B\-L\-O\-P\-\_\-\-T\-O\-T\-A\-L}
+ \}
+\begin{DoxyCompactList}\small\item\em Bin Log Operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sphinxrt_8cpp_acd51970c0bf8880363ba3e8e9baf06f4}{sph\-Sort\-Docinfos} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Buf, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Stride)
+\item 
+{\footnotesize template$<$typename T , typename P $>$ }\\static void \hyperlink{sphinxrt_8cpp_ab6340375bb206da952cb95b8b6d8739e}{Zip\-T} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E}, P $>$ $\ast$p\-Out, T \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \hyperlink{sphinxrt_8cpp_ac75a9402f26e73cd7b68ad08e9fd9327}{Zip\-T} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$\&p\-Out, T \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\item 
+\hyperlink{sphinxrt_8cpp_acfd4cee185c428a13e0ed8a93ed18ac4}{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T} (\hyperlink{sphinxrt_8cpp_a6abe47ca36f488aa67e21c574b9fe4f6}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-L\-E\-N}$<$ 255, M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-L\-E\-N\-\_\-\-S\-H\-O\-U\-L\-D\-\_\-\-F\-I\-T\-S\-\_\-\-B\-Y\-T\-E)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{sphinxrt_8cpp_ae61b2abc1214a23fa6886197541d66fe}{Unzip\-T} (T $\ast$p\-Value, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-In)
+\item 
+{\footnotesize template$<$typename V\-E\-C\-T\-O\-R $>$ }\\static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxrt_8cpp_a355f85ee6dde55b7d59508697f8bc6b0}{sph\-Put\-Bytes} (V\-E\-C\-T\-O\-R $\ast$p\-Out, const void $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+void \hyperlink{sphinxrt_8cpp_a5a40f4902242de4f03403ff693cccdb7}{Accum\-Cleanup} (void $\ast$p\-Arg)
+\item 
+static void \hyperlink{sphinxrt_8cpp_ae25bb429069c9d29a9388ceac2fcc0a5}{Fixup\-Segment\-Checkpoints} (\hyperlink{structRtSegment__t}{Rt\-Segment\-\_\-t} $\ast$p\-Seg)
+\item 
+static void \hyperlink{sphinxrt_8cpp_ad82dfa1f229c0be402b7d15d128dba05}{Check\-Segment\-Rows} (const \hyperlink{structRtSegment__t}{Rt\-Segment\-\_\-t} $\ast$p\-Seg, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Stride)
+\item 
+void \hyperlink{sphinxrt_8cpp_a7922e5a34802a35273d529b625f378da}{Verify\-Empty\-Strings} (const \hyperlink{classCSphTightVector}{C\-Sph\-Tight\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Storage, const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Schema, const \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$p\-Row)
+\item 
+static \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxrt_8cpp_a1a9ffc3fb108ecf79a652c1a2ccd8cfa}{Copy\-Packed\-String} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Src, \hyperlink{classCSphTightVector}{C\-Sph\-Tight\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Dst)
+\item 
+static \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxrt_8cpp_a8943bb753306db62100f555377521015}{Copy\-Mva} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Src, \hyperlink{classCSphTightVector}{C\-Sph\-Tight\-Vector}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \&d\-Dst)
+\item 
+static void \hyperlink{sphinxrt_8cpp_a1886c018427596003ab87db8d40c3bc7}{Extract\-Locators} (const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Schema, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-Attr\-Type, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} $>$ \&d\-Locators)
+\item 
+{\footnotesize template$<$typename S\-T\-O\-R\-A\-G\-E , typename S\-R\-C $>$ }\\void \hyperlink{sphinxrt_8cpp_a0ce48ea23b406b562ae270bb17367b71}{Copy\-Fixup\-Storage\-Attrs} (const \hyperlink{classCSphTightVector}{C\-Sph\-Tight\-Vector}$<$ S\-R\-C $>$ \&d\-Src, S\-T\-O\-R\-A\-G\-E \&t\-Storage, \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$p\-Row)
+\item 
+static bool \hyperlink{sphinxrt_8cpp_a34aba823abb3ba81965be6810ae47603}{Build\-Bloom} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Infix\-Codepoint\-Count, bool b\-Utf8, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} $\ast$p\-Bloom, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Key\-Val\-Count)
+\item 
+static bool \hyperlink{sphinxrt_8cpp_a2601aed78b065fec8a480dff69a683de}{Check\-Vector\-Length} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Sane\-Len, const char $\ast$s\-At, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+{\footnotesize template$<$typename T , typename P $>$ }\\static void \hyperlink{sphinxrt_8cpp_a4f8cfaeafe178203255973bb8d845532}{Save\-Vector} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&t\-Writer, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T, P $>$ \&t\-Vector)
+\item 
+{\footnotesize template$<$typename T , typename P $>$ }\\static bool \hyperlink{sphinxrt_8cpp_a4a5bc77c7788240a32776e960a75a0db}{Load\-Vector} (\hyperlink{classCSphReader}{C\-Sph\-Reader} \&t\-Reader, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T, P $>$ \&t\-Vector, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Sane\-Len, const char $\ast$s\-At, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+{\footnotesize template$<$typename T , typename P $>$ }\\static void \hyperlink{sphinxrt_8cpp_ae13a29e234a524189f570d11aa25a991}{Save\-Vector} (\hyperlink{classBinlogWriter__c}{Binlog\-Writer\-\_\-c} \&t\-Writer, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T, P $>$ \&t\-Vector)
+\item 
+{\footnotesize template$<$typename T , typename P $>$ }\\static bool \hyperlink{sphinxrt_8cpp_abbe1e7142c71786fb9c3fc2269e18e0e}{Load\-Vector} (\hyperlink{classBinlogReader__c}{Binlog\-Reader\-\_\-c} \&t\-Reader, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T, P $>$ \&t\-Vector)
+\item 
+static bool \hyperlink{sphinxrt_8cpp_ab91549901aac3979c2b97ea2d1e6891d}{Match\-Bloom\-Checkpoint} (const \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} $\ast$p\-Bloom, const \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} $\ast$p\-Vals, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Words\-Stride, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-C\-P, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Hashes)
+\item 
+static bool \hyperlink{sphinxrt_8cpp_a18400abcbc1e1f7b27ae425fc937c9cd}{Extract\-Infix\-Checkpoints} (const char $\ast$s\-Infix, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Bytes, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Max\-Codepoint\-Length, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-C\-Ps, const \hyperlink{classCSphTightVector}{C\-Sph\-Tight\-Vector}$<$ \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} $>$ \&d\-Filter, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \&d\-Checkpoints)
+\item 
+static const \hyperlink{structRtSegment__t}{Rt\-Segment\-\_\-t} $\ast$ \hyperlink{sphinxrt_8cpp_a7551ab008583bee376c2f37330fbc43d}{Update\-Find\-Segment} (const \hyperlink{structSphChunkGuard__t}{Sph\-Chunk\-Guard\-\_\-t} \&t\-Guard, const \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$$\ast$pp\-Row, \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Doc\-I\-D)
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{sphinxrt_8cpp_a4c342cfdfc6ef3482cd14b284dfa917a}{Get\-Chunk\-Size} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$ $>$ \&d\-Disk\-Chunks, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxrt_8cpp_a5145bd3acd3cda10c117de27388f8e7f}{Get\-Next\-Smallest\-Chunk} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$ $>$ \&d\-Disk\-Chunks, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index=-\/1)
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxrt_8cpp_afcb4bc0e314e7a9a22f0b4d0442d0d50}{sph\-Get\-Settings\-F\-N\-V} (const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings)
+\item 
+static \hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{sphinxrt_8cpp_adbd984c81476b74b53d9328feef85139}{Make\-Binlog\-Name} (const char $\ast$s\-Path, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Ext)
+\item 
+static \hyperlink{structBinlogIndexInfo__t}{Binlog\-Index\-Info\-\_\-t} \& \hyperlink{sphinxrt_8cpp_ae4f91e43e28b923a0582144604ee80c3}{Replay\-Index\-I\-D} (\hyperlink{classBinlogReader__c}{Binlog\-Reader\-\_\-c} \&t\-Reader, \hyperlink{structBinlogFileDesc__t}{Binlog\-File\-Desc\-\_\-t} \&t\-Log, const char $\ast$s\-Place)
+\item 
+\hyperlink{classISphRtIndex}{I\-Sph\-Rt\-Index} $\ast$ \hyperlink{sphinxrt_8cpp_a302f0ce15ba9a67baba1b62f1bb37e60}{sph\-Get\-Current\-Index\-R\-T} ()
+\begin{DoxyCompactList}\small\item\em Get current thread local index -\/ internal do not use. \end{DoxyCompactList}\item 
+\hyperlink{classISphRtIndex}{I\-Sph\-Rt\-Index} $\ast$ \hyperlink{sphinxrt_8cpp_aff8777ee70f802790bafe7a11b212479}{sph\-Create\-Index\-R\-T} (const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Schema, const char $\ast$s\-Index\-Name, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Ram\-Size, const char $\ast$s\-Path, bool b\-Keyword\-Dict)
+\begin{DoxyCompactList}\small\item\em R\-T index factory. \end{DoxyCompactList}\item 
+void \hyperlink{sphinxrt_8cpp_ae8eea7bd995dfd4c34db2f379f755020}{sph\-R\-T\-Init} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Searchd, bool b\-Test\-Mode)
+\item 
+void \hyperlink{sphinxrt_8cpp_a2276393e0d91bacda8e638b0dd8692db}{sph\-R\-T\-Configure} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Searchd, bool b\-Test\-Mode)
+\item 
+void \hyperlink{sphinxrt_8cpp_aeb7af37b012b19f78aa2a27a8b1db495}{sph\-R\-T\-Done} ()
+\begin{DoxyCompactList}\small\item\em deinitialize subsystem \end{DoxyCompactList}\item 
+void \hyperlink{sphinxrt_8cpp_a49d0c7b292ba36b192779159ee7ecf3d}{sph\-Replay\-Binlog} (const \hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T}$<$ \hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$ $>$ \&h\-Indexes, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Replay\-Flags, \hyperlink{sphinxrt_8h_a43b62aa64a0249f12a6a8633b0965a87}{Progress\-Callback\-Simple\-\_\-t} $\ast$pfn\-Progress\-Callback)
+\begin{DoxyCompactList}\small\item\em replay stored binlog \end{DoxyCompactList}\item 
+void \hyperlink{sphinxrt_8cpp_a03e5a9cb5c7bd752b01b311452eb5891}{sph\-R\-T\-Set\-Test\-Mode} ()
+\item 
+bool \hyperlink{sphinxrt_8cpp_aa09706d1fd7550014379820dcd40b7fe}{sph\-R\-T\-Schema\-Configure} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Index, \hyperlink{classCSphSchema}{C\-Sph\-Schema} $\ast$p\-Schema, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$p\-Error)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classISphBinlog}{I\-Sph\-Binlog} $\ast$ \hyperlink{sphinxrt_8cpp_a95d9449034db351089f0511fa878627e}{g\-\_\-p\-Binlog} = N\-U\-L\-L
+\begin{DoxyCompactList}\small\item\em publicly exposed binlog interface \end{DoxyCompactList}\item 
+static \hyperlink{classRtBinlog__c}{Rt\-Binlog\-\_\-c} $\ast$ \hyperlink{sphinxrt_8cpp_a7a1872c68e2a1c9eba464a10c7a144a3}{g\-\_\-p\-Rt\-Binlog} = N\-U\-L\-L
+\item 
+static bool \hyperlink{sphinxrt_8cpp_a832aa57971532c3c6d0eda0dd724429e}{g\-\_\-b\-R\-T\-Changes\-Allowed} = false
+\begin{DoxyCompactList}\small\item\em protection from concurrent changes during binlog replay \end{DoxyCompactList}\item 
+static \hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} \hyperlink{sphinxrt_8cpp_a16de39cb6f9a74bf8ccaacdd27e16e50}{g\-\_\-t\-Tls\-Accum\-Key}
+\begin{DoxyCompactList}\small\item\em T\-L\-S indexing accumulator (we disallow two uncommitted adds within one thread; and so need at most one) \end{DoxyCompactList}\item 
+static \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{sphinxrt_8cpp_a84a4bc6adf76aad37da03285ec5d32c2}{g\-\_\-i\-Rt\-Flush\-Period} = 10$\ast$60$\ast$60
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxrt_8cpp_af76ebfe4e183caf58b899b71aa488ce3}{g\-\_\-d\-Sphinx\-C\-R\-C32} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em Sphinx C\-R\-C32 implementation. \end{DoxyCompactList}\item 
+static bool \hyperlink{sphinxrt_8cpp_a22ac972cd16cfc24a4a0bd61ad1b044d}{g\-\_\-b\-Test\-Mode} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxrt_8cpp_a2e2e1e2a862de0c6967576f5b8422601}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!B\-I\-N\-L\-O\-G\-\_\-\-A\-U\-T\-O\-\_\-\-F\-L\-U\-S\-H@{B\-I\-N\-L\-O\-G\-\_\-\-A\-U\-T\-O\-\_\-\-F\-L\-U\-S\-H}}
+\index{B\-I\-N\-L\-O\-G\-\_\-\-A\-U\-T\-O\-\_\-\-F\-L\-U\-S\-H@{B\-I\-N\-L\-O\-G\-\_\-\-A\-U\-T\-O\-\_\-\-F\-L\-U\-S\-H}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{B\-I\-N\-L\-O\-G\-\_\-\-A\-U\-T\-O\-\_\-\-F\-L\-U\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-I\-N\-L\-O\-G\-\_\-\-A\-U\-T\-O\-\_\-\-F\-L\-U\-S\-H~1000000}}\label{sphinxrt_8cpp_a2e2e1e2a862de0c6967576f5b8422601}
+\hypertarget{sphinxrt_8cpp_a07bf9105404126da0345b89d88165aab}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!B\-I\-N\-L\-O\-G\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R@{B\-I\-N\-L\-O\-G\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}}
+\index{B\-I\-N\-L\-O\-G\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R@{B\-I\-N\-L\-O\-G\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{B\-I\-N\-L\-O\-G\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-I\-N\-L\-O\-G\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R~256$\ast$1024}}\label{sphinxrt_8cpp_a07bf9105404126da0345b89d88165aab}
+\hypertarget{sphinxrt_8cpp_a21961ad5a2caa4a53554940a5eba16f7}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!B\-L\-O\-O\-M\-\_\-\-H\-A\-S\-H\-E\-S\-\_\-\-C\-O\-U\-N\-T@{B\-L\-O\-O\-M\-\_\-\-H\-A\-S\-H\-E\-S\-\_\-\-C\-O\-U\-N\-T}}
+\index{B\-L\-O\-O\-M\-\_\-\-H\-A\-S\-H\-E\-S\-\_\-\-C\-O\-U\-N\-T@{B\-L\-O\-O\-M\-\_\-\-H\-A\-S\-H\-E\-S\-\_\-\-C\-O\-U\-N\-T}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{B\-L\-O\-O\-M\-\_\-\-H\-A\-S\-H\-E\-S\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-L\-O\-O\-M\-\_\-\-H\-A\-S\-H\-E\-S\-\_\-\-C\-O\-U\-N\-T~2}}\label{sphinxrt_8cpp_a21961ad5a2caa4a53554940a5eba16f7}
+\hypertarget{sphinxrt_8cpp_a5d79998f11859c90b2f059b6e4ad694e}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!B\-L\-O\-O\-M\-\_\-\-P\-E\-R\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-V\-A\-L\-S\-\_\-\-C\-O\-U\-N\-T@{B\-L\-O\-O\-M\-\_\-\-P\-E\-R\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-V\-A\-L\-S\-\_\-\-C\-O\-U\-N\-T}}
+\index{B\-L\-O\-O\-M\-\_\-\-P\-E\-R\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-V\-A\-L\-S\-\_\-\-C\-O\-U\-N\-T@{B\-L\-O\-O\-M\-\_\-\-P\-E\-R\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-V\-A\-L\-S\-\_\-\-C\-O\-U\-N\-T}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{B\-L\-O\-O\-M\-\_\-\-P\-E\-R\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-V\-A\-L\-S\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-L\-O\-O\-M\-\_\-\-P\-E\-R\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-V\-A\-L\-S\-\_\-\-C\-O\-U\-N\-T~8}}\label{sphinxrt_8cpp_a5d79998f11859c90b2f059b6e4ad694e}
+\hypertarget{sphinxrt_8cpp_a17897dbbc6ff46c90212d087f60f38c4}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!D\-A\-T\-A\-D\-I\-R@{D\-A\-T\-A\-D\-I\-R}}
+\index{D\-A\-T\-A\-D\-I\-R@{D\-A\-T\-A\-D\-I\-R}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{D\-A\-T\-A\-D\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-A\-T\-A\-D\-I\-R~\char`\"{}.\char`\"{}}}\label{sphinxrt_8cpp_a17897dbbc6ff46c90212d087f60f38c4}
+\hypertarget{sphinxrt_8cpp_a89685e4c50070371d8861f34ec8d4b79}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!L\-O\-C\-\_\-\-E\-R\-R\-O\-R@{L\-O\-C\-\_\-\-E\-R\-R\-O\-R}}
+\index{L\-O\-C\-\_\-\-E\-R\-R\-O\-R@{L\-O\-C\-\_\-\-E\-R\-R\-O\-R}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-E\-R\-R\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg}
+\end{DoxyParamCaption}
+)~\{ s\-Error = \-\_\-arg; {\bf return} false; \}}}\label{sphinxrt_8cpp_a89685e4c50070371d8861f34ec8d4b79}
+\hypertarget{sphinxrt_8cpp_a31fc79cf03c0832737ed4994a72375a3}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E@{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E}}
+\index{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E@{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-vec}
+\end{DoxyParamCaption}
+)~( {\bf L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1} ( d\-Segments\mbox{[}i\-Len-\/1\mbox{]}, \-\_\-vec ) + {\bf L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1} ( d\-Segments\mbox{[}i\-Len-\/2\mbox{]}, \-\_\-vec ) )}}\label{sphinxrt_8cpp_a31fc79cf03c0832737ed4994a72375a3}
+\hypertarget{sphinxrt_8cpp_ab4b686ae26d241b818f0636f61713945}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1@{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1}}
+\index{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1@{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E1(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-seg, }
+\item[{}]{\-\_\-vec}
+\end{DoxyParamCaption}
+)~({\bf int})( ( ({\bf int64\-\_\-t})\-\_\-seg-\/$>$\-\_\-vec.\-Get\-Length() ) $\ast$ \-\_\-seg-\/$>$m\-\_\-i\-Alive\-Rows / \-\_\-seg-\/$>$m\-\_\-i\-Rows )}}\label{sphinxrt_8cpp_ab4b686ae26d241b818f0636f61713945}
+\hypertarget{sphinxrt_8cpp_af730c96735bb8753759faa3b9e122e7d}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!L\-O\-C\-\_\-\-F\-A\-I\-L@{L\-O\-C\-\_\-\-F\-A\-I\-L}}
+\index{L\-O\-C\-\_\-\-F\-A\-I\-L@{L\-O\-C\-\_\-\-F\-A\-I\-L}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-F\-A\-I\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-F\-A\-I\-L(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-args}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_af730c96735bb8753759faa3b9e122e7d}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( ++iFails<=FAILS\_THRESH ) \(\backslash\)
+\{ \(\backslash\)
+    fprintf ( fp, \textcolor{stringliteral}{"FAILED, "} ); \(\backslash\)
+    fprintf \_args; \(\backslash\)
+    fprintf ( fp, \textcolor{stringliteral}{"\(\backslash\)n"} ); \(\backslash\)
+    iFailsPrinted++; \hyperlink{llsphinxjson_8c_a33e91cd0cef6786e9e3a27ac67707207}{\(\backslash\)}
+\hyperlink{llsphinxjson_8c_a33e91cd0cef6786e9e3a27ac67707207}{    \(\backslash\)}
+\hyperlink{llsphinxjson_8c_a33e91cd0cef6786e9e3a27ac67707207}{    if} ( iFails==FAILS\_THRESH ) \(\backslash\)
+    fprintf ( fp, \textcolor{stringliteral}{"(threshold reached; suppressing further output)\(\backslash\)n"} ); \(\backslash\)
+\}
+\end{DoxyCode}
+\hypertarget{sphinxrt_8cpp_a2a5ab8d4e33920caf11c982b80da97d9}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!P\-A\-R\-A\-N\-O\-I\-D@{P\-A\-R\-A\-N\-O\-I\-D}}
+\index{P\-A\-R\-A\-N\-O\-I\-D@{P\-A\-R\-A\-N\-O\-I\-D}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{P\-A\-R\-A\-N\-O\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-A\-R\-A\-N\-O\-I\-D~1}}\label{sphinxrt_8cpp_a2a5ab8d4e33920caf11c982b80da97d9}
+\hypertarget{sphinxrt_8cpp_a35affcceacef21f41c0a0e00d63c682b}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V3@{R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V3}}
+\index{R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V3@{R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V3}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V3}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V3~1024}}\label{sphinxrt_8cpp_a35affcceacef21f41c0a0e00d63c682b}
+\hypertarget{sphinxrt_8cpp_a926d25a6eac0fec9c8954dd98d5dc3bd}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V5@{R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V5}}
+\index{R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V5@{R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V5}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V5}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-D\-I\-C\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T\-\_\-\-V5~48}}\label{sphinxrt_8cpp_a926d25a6eac0fec9c8954dd98d5dc3bd}
+\hypertarget{sphinxrt_8cpp_a6abe47ca36f488aa67e21c574b9fe4f6}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-L\-E\-N@{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-L\-E\-N}}
+\index{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-L\-E\-N@{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-L\-E\-N}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-L\-E\-N~(3$\ast${\bf S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N}+4)}}\label{sphinxrt_8cpp_a6abe47ca36f488aa67e21c574b9fe4f6}
+\hypertarget{sphinxrt_8cpp_a4b0f06ba55c2892a21be87b507e4ae4f}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!S\-P\-H\-\_\-\-R\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T@{S\-P\-H\-\_\-\-R\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T}}
+\index{S\-P\-H\-\_\-\-R\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T@{S\-P\-H\-\_\-\-R\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{S\-P\-H\-\_\-\-R\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-R\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T~10}}\label{sphinxrt_8cpp_a4b0f06ba55c2892a21be87b507e4ae4f}
+\hypertarget{sphinxrt_8cpp_af1b86dc7e606ad6d134241eb02e9191d}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Unzip\-Docid@{Unzip\-Docid}}
+\index{Unzip\-Docid@{Unzip\-Docid}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Unzip\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}\#define Unzip\-Docid~{\bf Unzip\-Qword}}}\label{sphinxrt_8cpp_af1b86dc7e606ad6d134241eb02e9191d}
+\hypertarget{sphinxrt_8cpp_a5082943efef32b5c4d7900e9a5b6f54c}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Unzip\-Dword@{Unzip\-Dword}}
+\index{Unzip\-Dword@{Unzip\-Dword}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Unzip\-Dword}]{\setlength{\rightskip}{0pt plus 5cm}\#define Unzip\-Dword~{\bf Unzip\-T}$<${\bf D\-W\-O\-R\-D}$>$}}\label{sphinxrt_8cpp_a5082943efef32b5c4d7900e9a5b6f54c}
+\hypertarget{sphinxrt_8cpp_a1d9a72d57dbd3c7266a953f38c879bc8}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Unzip\-Qword@{Unzip\-Qword}}
+\index{Unzip\-Qword@{Unzip\-Qword}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Unzip\-Qword}]{\setlength{\rightskip}{0pt plus 5cm}\#define Unzip\-Qword~{\bf Unzip\-T}$<${\bf uint64\-\_\-t}$>$}}\label{sphinxrt_8cpp_a1d9a72d57dbd3c7266a953f38c879bc8}
+\hypertarget{sphinxrt_8cpp_ac5119ddedb4f3fec963f3e69417372a1}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Unzip\-Wordid@{Unzip\-Wordid}}
+\index{Unzip\-Wordid@{Unzip\-Wordid}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Unzip\-Wordid}]{\setlength{\rightskip}{0pt plus 5cm}\#define Unzip\-Wordid~{\bf Unzip\-Qword}}}\label{sphinxrt_8cpp_ac5119ddedb4f3fec963f3e69417372a1}
+\hypertarget{sphinxrt_8cpp_a86505f75dca8cc171f7220c8a703e3ea}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Verify@{Verify}}
+\index{Verify@{Verify}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Verify}]{\setlength{\rightskip}{0pt plus 5cm}\#define Verify(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-expr}
+\end{DoxyParamCaption}
+)~assert(\-\_\-expr)}}\label{sphinxrt_8cpp_a86505f75dca8cc171f7220c8a703e3ea}
+\hypertarget{sphinxrt_8cpp_a6ae2b3707df3d091017288216915511c}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!W\-O\-R\-D\-I\-D\-\_\-\-M\-A\-X@{W\-O\-R\-D\-I\-D\-\_\-\-M\-A\-X}}
+\index{W\-O\-R\-D\-I\-D\-\_\-\-M\-A\-X@{W\-O\-R\-D\-I\-D\-\_\-\-M\-A\-X}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{W\-O\-R\-D\-I\-D\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-O\-R\-D\-I\-D\-\_\-\-M\-A\-X~{\bf U64\-C}(0xffffffffffffffff)}}\label{sphinxrt_8cpp_a6ae2b3707df3d091017288216915511c}
+\hypertarget{sphinxrt_8cpp_aea4596a1d693a6b650590b7a3332a2f0}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Zip\-Docid@{Zip\-Docid}}
+\index{Zip\-Docid@{Zip\-Docid}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Zip\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}\#define Zip\-Docid~{\bf Zip\-Qword}}}\label{sphinxrt_8cpp_aea4596a1d693a6b650590b7a3332a2f0}
+\hypertarget{sphinxrt_8cpp_ad91b6d2063eb606463c5f795b1f8a423}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Zip\-Dword@{Zip\-Dword}}
+\index{Zip\-Dword@{Zip\-Dword}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Zip\-Dword}]{\setlength{\rightskip}{0pt plus 5cm}\#define Zip\-Dword~{\bf Zip\-T}$<${\bf D\-W\-O\-R\-D}$>$}}\label{sphinxrt_8cpp_ad91b6d2063eb606463c5f795b1f8a423}
+\hypertarget{sphinxrt_8cpp_a68bc0b45c41ff2b6a957370a32e287c2}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Zip\-Qword@{Zip\-Qword}}
+\index{Zip\-Qword@{Zip\-Qword}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Zip\-Qword}]{\setlength{\rightskip}{0pt plus 5cm}\#define Zip\-Qword~{\bf Zip\-T}$<${\bf uint64\-\_\-t}$>$}}\label{sphinxrt_8cpp_a68bc0b45c41ff2b6a957370a32e287c2}
+\hypertarget{sphinxrt_8cpp_a82f1f0735df4c816822b2af50c3c11a1}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Zip\-Wordid@{Zip\-Wordid}}
+\index{Zip\-Wordid@{Zip\-Wordid}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Zip\-Wordid}]{\setlength{\rightskip}{0pt plus 5cm}\#define Zip\-Wordid~{\bf Zip\-Qword}}}\label{sphinxrt_8cpp_a82f1f0735df4c816822b2af50c3c11a1}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sphinxrt_8cpp_adc07e5f08f0225f3eba168a8a20cd6fe}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Rt\-Doc\-\_\-t@{Rt\-Doc\-\_\-t}}
+\index{Rt\-Doc\-\_\-t@{Rt\-Doc\-\_\-t}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Rt\-Doc\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Rt\-Doc\-\_\-\-T} {\bf Rt\-Doc\-\_\-t}}}\label{sphinxrt_8cpp_adc07e5f08f0225f3eba168a8a20cd6fe}
+\hypertarget{sphinxrt_8cpp_acaa8c500c048602767c77a69d2e71173}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Rt\-Doc\-Reader\-\_\-t@{Rt\-Doc\-Reader\-\_\-t}}
+\index{Rt\-Doc\-Reader\-\_\-t@{Rt\-Doc\-Reader\-\_\-t}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Rt\-Doc\-Reader\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Rt\-Doc\-Reader\-\_\-\-T} {\bf Rt\-Doc\-Reader\-\_\-t}}}\label{sphinxrt_8cpp_acaa8c500c048602767c77a69d2e71173}
+\hypertarget{sphinxrt_8cpp_ab53ce75d9eacf989e54a50fe114686de}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Rt\-Row\-Iterator\-\_\-t@{Rt\-Row\-Iterator\-\_\-t}}
+\index{Rt\-Row\-Iterator\-\_\-t@{Rt\-Row\-Iterator\-\_\-t}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Rt\-Row\-Iterator\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Rt\-Row\-Iterator\-\_\-\-T} {\bf Rt\-Row\-Iterator\-\_\-t}}}\label{sphinxrt_8cpp_ab53ce75d9eacf989e54a50fe114686de}
+\hypertarget{sphinxrt_8cpp_a97c12606a1350afbcdc489ed3428b1bb}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Rt\-Word\-\_\-t@{Rt\-Word\-\_\-t}}
+\index{Rt\-Word\-\_\-t@{Rt\-Word\-\_\-t}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Rt\-Word\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Rt\-Word\-\_\-\-T} {\bf Rt\-Word\-\_\-t}}}\label{sphinxrt_8cpp_a97c12606a1350afbcdc489ed3428b1bb}
+\hypertarget{sphinxrt_8cpp_a314a2f62307a0483c3c465f3fc4ed438}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Rt\-Word\-Reader\-\_\-t@{Rt\-Word\-Reader\-\_\-t}}
+\index{Rt\-Word\-Reader\-\_\-t@{Rt\-Word\-Reader\-\_\-t}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Rt\-Word\-Reader\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Rt\-Word\-Reader\-\_\-\-T}$<${\bf Sph\-Word\-I\-D\-\_\-t}$>$ {\bf Rt\-Word\-Reader\-\_\-t}}}\label{sphinxrt_8cpp_a314a2f62307a0483c3c465f3fc4ed438}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Blop\-\_\-e@{Blop\-\_\-e}}
+\index{Blop\-\_\-e@{Blop\-\_\-e}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Blop\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Blop\-\_\-e}}}\label{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8}
+
+
+Bin Log Operation. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{B\-L\-O\-P\-\_\-\-C\-O\-M\-M\-I\-T@{B\-L\-O\-P\-\_\-\-C\-O\-M\-M\-I\-T}!sphinxrt.\-cpp@{sphinxrt.\-cpp}}\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!B\-L\-O\-P\-\_\-\-C\-O\-M\-M\-I\-T@{B\-L\-O\-P\-\_\-\-C\-O\-M\-M\-I\-T}}\item[{\em 
+\hypertarget{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a53be1a7a505abca973a151e7b32b2256}{B\-L\-O\-P\-\_\-\-C\-O\-M\-M\-I\-T}\label{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a53be1a7a505abca973a151e7b32b2256}
+}]\index{B\-L\-O\-P\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-A\-T\-T\-R\-S@{B\-L\-O\-P\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-A\-T\-T\-R\-S}!sphinxrt.\-cpp@{sphinxrt.\-cpp}}\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!B\-L\-O\-P\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-A\-T\-T\-R\-S@{B\-L\-O\-P\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-A\-T\-T\-R\-S}}\item[{\em 
+\hypertarget{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a6acff564eb85dc567ea2a845ee6e9554}{B\-L\-O\-P\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-A\-T\-T\-R\-S}\label{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a6acff564eb85dc567ea2a845ee6e9554}
+}]\index{B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-I\-N\-D\-E\-X@{B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-I\-N\-D\-E\-X}!sphinxrt.\-cpp@{sphinxrt.\-cpp}}\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-I\-N\-D\-E\-X@{B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-I\-N\-D\-E\-X}}\item[{\em 
+\hypertarget{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a00c00821a7f2cccbf9dc56aee4bcf71f}{B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-I\-N\-D\-E\-X}\label{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a00c00821a7f2cccbf9dc56aee4bcf71f}
+}]\index{B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-C\-A\-C\-H\-E@{B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-C\-A\-C\-H\-E}!sphinxrt.\-cpp@{sphinxrt.\-cpp}}\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-C\-A\-C\-H\-E@{B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-C\-A\-C\-H\-E}}\item[{\em 
+\hypertarget{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8abfdd860009f37aec213106048f97eec2}{B\-L\-O\-P\-\_\-\-A\-D\-D\-\_\-\-C\-A\-C\-H\-E}\label{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8abfdd860009f37aec213106048f97eec2}
+}]\index{B\-L\-O\-P\-\_\-\-R\-E\-C\-O\-N\-F\-I\-G\-U\-R\-E@{B\-L\-O\-P\-\_\-\-R\-E\-C\-O\-N\-F\-I\-G\-U\-R\-E}!sphinxrt.\-cpp@{sphinxrt.\-cpp}}\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!B\-L\-O\-P\-\_\-\-R\-E\-C\-O\-N\-F\-I\-G\-U\-R\-E@{B\-L\-O\-P\-\_\-\-R\-E\-C\-O\-N\-F\-I\-G\-U\-R\-E}}\item[{\em 
+\hypertarget{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8ae5594a150a9a6202b8ce8845688cf603}{B\-L\-O\-P\-\_\-\-R\-E\-C\-O\-N\-F\-I\-G\-U\-R\-E}\label{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8ae5594a150a9a6202b8ce8845688cf603}
+}]\index{B\-L\-O\-P\-\_\-\-T\-O\-T\-A\-L@{B\-L\-O\-P\-\_\-\-T\-O\-T\-A\-L}!sphinxrt.\-cpp@{sphinxrt.\-cpp}}\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!B\-L\-O\-P\-\_\-\-T\-O\-T\-A\-L@{B\-L\-O\-P\-\_\-\-T\-O\-T\-A\-L}}\item[{\em 
+\hypertarget{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a4e16cd78dd351b04c70e9f1d99f8d3fd}{B\-L\-O\-P\-\_\-\-T\-O\-T\-A\-L}\label{sphinxrt_8cpp_af2fa1ca6a0f127fc9af24ad1561ff5d8a4e16cd78dd351b04c70e9f1d99f8d3fd}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxrt_8cpp_a5a40f4902242de4f03403ff693cccdb7}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Accum\-Cleanup@{Accum\-Cleanup}}
+\index{Accum\-Cleanup@{Accum\-Cleanup}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Accum\-Cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void Accum\-Cleanup (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_a5a40f4902242de4f03403ff693cccdb7}
+\hypertarget{sphinxrt_8cpp_a34aba823abb3ba81965be6810ae47603}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Build\-Bloom@{Build\-Bloom}}
+\index{Build\-Bloom@{Build\-Bloom}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Build\-Bloom}]{\setlength{\rightskip}{0pt plus 5cm}static bool Build\-Bloom (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf int}}]{i\-Infix\-Codepoint\-Count, }
+\item[{bool}]{b\-Utf8, }
+\item[{{\bf uint64\-\_\-t} $\ast$}]{p\-Bloom, }
+\item[{{\bf int}}]{i\-Key\-Val\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a34aba823abb3ba81965be6810ae47603}
+\hypertarget{sphinxrt_8cpp_ad82dfa1f229c0be402b7d15d128dba05}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Check\-Segment\-Rows@{Check\-Segment\-Rows}}
+\index{Check\-Segment\-Rows@{Check\-Segment\-Rows}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Check\-Segment\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}static void Check\-Segment\-Rows (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rt\-Segment\-\_\-t} $\ast$}]{p\-Seg, }
+\item[{{\bf int}}]{i\-Stride}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_ad82dfa1f229c0be402b7d15d128dba05}
+\hypertarget{sphinxrt_8cpp_a2601aed78b065fec8a480dff69a683de}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Check\-Vector\-Length@{Check\-Vector\-Length}}
+\index{Check\-Vector\-Length@{Check\-Vector\-Length}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Check\-Vector\-Length}]{\setlength{\rightskip}{0pt plus 5cm}static bool Check\-Vector\-Length (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf int64\-\_\-t}}]{i\-Sane\-Len, }
+\item[{const char $\ast$}]{s\-At, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a2601aed78b065fec8a480dff69a683de}
+\hypertarget{sphinxrt_8cpp_a0ce48ea23b406b562ae270bb17367b71}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Copy\-Fixup\-Storage\-Attrs@{Copy\-Fixup\-Storage\-Attrs}}
+\index{Copy\-Fixup\-Storage\-Attrs@{Copy\-Fixup\-Storage\-Attrs}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Copy\-Fixup\-Storage\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-T\-O\-R\-A\-G\-E , typename S\-R\-C $>$ void Copy\-Fixup\-Storage\-Attrs (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Tight\-Vector}$<$ S\-R\-C $>$ \&}]{d\-Src, }
+\item[{S\-T\-O\-R\-A\-G\-E \&}]{t\-Storage, }
+\item[{{\bf C\-Sph\-Rowitem} $\ast$}]{p\-Row}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_a0ce48ea23b406b562ae270bb17367b71}
+\hypertarget{sphinxrt_8cpp_a8943bb753306db62100f555377521015}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Copy\-Mva@{Copy\-Mva}}
+\index{Copy\-Mva@{Copy\-Mva}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Copy\-Mva}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf D\-W\-O\-R\-D} Copy\-Mva (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Src, }
+\item[{{\bf C\-Sph\-Tight\-Vector}$<$ {\bf D\-W\-O\-R\-D} $>$ \&}]{d\-Dst}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a8943bb753306db62100f555377521015}
+\hypertarget{sphinxrt_8cpp_a1a9ffc3fb108ecf79a652c1a2ccd8cfa}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Copy\-Packed\-String@{Copy\-Packed\-String}}
+\index{Copy\-Packed\-String@{Copy\-Packed\-String}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Copy\-Packed\-String}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf D\-W\-O\-R\-D} Copy\-Packed\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Src, }
+\item[{{\bf C\-Sph\-Tight\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Dst}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a1a9ffc3fb108ecf79a652c1a2ccd8cfa}
+\hypertarget{sphinxrt_8cpp_a18400abcbc1e1f7b27ae425fc937c9cd}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Extract\-Infix\-Checkpoints@{Extract\-Infix\-Checkpoints}}
+\index{Extract\-Infix\-Checkpoints@{Extract\-Infix\-Checkpoints}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Extract\-Infix\-Checkpoints}]{\setlength{\rightskip}{0pt plus 5cm}static bool Extract\-Infix\-Checkpoints (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Infix, }
+\item[{{\bf int}}]{i\-Bytes, }
+\item[{{\bf int}}]{i\-Max\-Codepoint\-Length, }
+\item[{{\bf int}}]{i\-C\-Ps, }
+\item[{const {\bf C\-Sph\-Tight\-Vector}$<$ {\bf uint64\-\_\-t} $>$ \&}]{d\-Filter, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf D\-W\-O\-R\-D} $>$ \&}]{d\-Checkpoints}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a18400abcbc1e1f7b27ae425fc937c9cd}
+\hypertarget{sphinxrt_8cpp_a1886c018427596003ab87db8d40c3bc7}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Extract\-Locators@{Extract\-Locators}}
+\index{Extract\-Locators@{Extract\-Locators}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Extract\-Locators}]{\setlength{\rightskip}{0pt plus 5cm}static void Extract\-Locators (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{{\bf E\-Sph\-Attr}}]{e\-Attr\-Type, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Attr\-Locator} $>$ \&}]{d\-Locators}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a1886c018427596003ab87db8d40c3bc7}
+\hypertarget{sphinxrt_8cpp_ae25bb429069c9d29a9388ceac2fcc0a5}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Fixup\-Segment\-Checkpoints@{Fixup\-Segment\-Checkpoints}}
+\index{Fixup\-Segment\-Checkpoints@{Fixup\-Segment\-Checkpoints}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Fixup\-Segment\-Checkpoints}]{\setlength{\rightskip}{0pt plus 5cm}static void Fixup\-Segment\-Checkpoints (
+\begin{DoxyParamCaption}
+\item[{{\bf Rt\-Segment\-\_\-t} $\ast$}]{p\-Seg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_ae25bb429069c9d29a9388ceac2fcc0a5}
+\hypertarget{sphinxrt_8cpp_a4c342cfdfc6ef3482cd14b284dfa917a}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Get\-Chunk\-Size@{Get\-Chunk\-Size}}
+\index{Get\-Chunk\-Size@{Get\-Chunk\-Size}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Get\-Chunk\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Get\-Chunk\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Index} $\ast$ $>$ \&}]{d\-Disk\-Chunks, }
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_a4c342cfdfc6ef3482cd14b284dfa917a}
+\hypertarget{sphinxrt_8cpp_a5145bd3acd3cda10c117de27388f8e7f}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Get\-Next\-Smallest\-Chunk@{Get\-Next\-Smallest\-Chunk}}
+\index{Get\-Next\-Smallest\-Chunk@{Get\-Next\-Smallest\-Chunk}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Get\-Next\-Smallest\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Get\-Next\-Smallest\-Chunk (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Index} $\ast$ $>$ \&}]{d\-Disk\-Chunks, }
+\item[{{\bf int}}]{i\-Index = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_a5145bd3acd3cda10c117de27388f8e7f}
+\hypertarget{sphinxrt_8cpp_a4a5bc77c7788240a32776e960a75a0db}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Load\-Vector@{Load\-Vector}}
+\index{Load\-Vector@{Load\-Vector}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Load\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename P $>$ static bool Load\-Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Reader} \&}]{t\-Reader, }
+\item[{{\bf C\-Sph\-Vector}$<$ T, P $>$ \&}]{t\-Vector, }
+\item[{{\bf int64\-\_\-t}}]{i\-Sane\-Len, }
+\item[{const char $\ast$}]{s\-At, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a4a5bc77c7788240a32776e960a75a0db}
+\hypertarget{sphinxrt_8cpp_abbe1e7142c71786fb9c3fc2269e18e0e}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Load\-Vector@{Load\-Vector}}
+\index{Load\-Vector@{Load\-Vector}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Load\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename P $>$ static bool Load\-Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf Binlog\-Reader\-\_\-c} \&}]{t\-Reader, }
+\item[{{\bf C\-Sph\-Vector}$<$ T, P $>$ \&}]{t\-Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_abbe1e7142c71786fb9c3fc2269e18e0e}
+\hypertarget{sphinxrt_8cpp_adbd984c81476b74b53d9328feef85139}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Make\-Binlog\-Name@{Make\-Binlog\-Name}}
+\index{Make\-Binlog\-Name@{Make\-Binlog\-Name}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Make\-Binlog\-Name}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf C\-Sph\-String} Make\-Binlog\-Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Path, }
+\item[{{\bf int}}]{i\-Ext}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_adbd984c81476b74b53d9328feef85139}
+\hypertarget{sphinxrt_8cpp_ab91549901aac3979c2b97ea2d1e6891d}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Match\-Bloom\-Checkpoint@{Match\-Bloom\-Checkpoint}}
+\index{Match\-Bloom\-Checkpoint@{Match\-Bloom\-Checkpoint}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Match\-Bloom\-Checkpoint}]{\setlength{\rightskip}{0pt plus 5cm}static bool Match\-Bloom\-Checkpoint (
+\begin{DoxyParamCaption}
+\item[{const {\bf uint64\-\_\-t} $\ast$}]{p\-Bloom, }
+\item[{const {\bf uint64\-\_\-t} $\ast$}]{p\-Vals, }
+\item[{{\bf int}}]{i\-Words\-Stride, }
+\item[{{\bf int}}]{i\-C\-P, }
+\item[{{\bf int}}]{i\-Hashes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_ab91549901aac3979c2b97ea2d1e6891d}
+\hypertarget{sphinxrt_8cpp_ae4f91e43e28b923a0582144604ee80c3}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Replay\-Index\-I\-D@{Replay\-Index\-I\-D}}
+\index{Replay\-Index\-I\-D@{Replay\-Index\-I\-D}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Replay\-Index\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Binlog\-Index\-Info\-\_\-t}\& Replay\-Index\-I\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf Binlog\-Reader\-\_\-c} \&}]{t\-Reader, }
+\item[{{\bf Binlog\-File\-Desc\-\_\-t} \&}]{t\-Log, }
+\item[{const char $\ast$}]{s\-Place}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_ae4f91e43e28b923a0582144604ee80c3}
+\hypertarget{sphinxrt_8cpp_a4f8cfaeafe178203255973bb8d845532}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Save\-Vector@{Save\-Vector}}
+\index{Save\-Vector@{Save\-Vector}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Save\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename P $>$ static void Save\-Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{t\-Writer, }
+\item[{const {\bf C\-Sph\-Vector}$<$ T, P $>$ \&}]{t\-Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a4f8cfaeafe178203255973bb8d845532}
+\hypertarget{sphinxrt_8cpp_ae13a29e234a524189f570d11aa25a991}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Save\-Vector@{Save\-Vector}}
+\index{Save\-Vector@{Save\-Vector}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Save\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename P $>$ static void Save\-Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf Binlog\-Writer\-\_\-c} \&}]{t\-Writer, }
+\item[{const {\bf C\-Sph\-Vector}$<$ T, P $>$ \&}]{t\-Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_ae13a29e234a524189f570d11aa25a991}
+\hypertarget{sphinxrt_8cpp_aff8777ee70f802790bafe7a11b212479}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-Create\-Index\-R\-T@{sph\-Create\-Index\-R\-T}}
+\index{sph\-Create\-Index\-R\-T@{sph\-Create\-Index\-R\-T}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-Create\-Index\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Rt\-Index}$\ast$ sph\-Create\-Index\-R\-T (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{const char $\ast$}]{s\-Index\-Name, }
+\item[{{\bf int64\-\_\-t}}]{i\-Ram\-Size, }
+\item[{const char $\ast$}]{s\-Path, }
+\item[{bool}]{b\-Keyword\-Dict}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_aff8777ee70f802790bafe7a11b212479}
+
+
+R\-T index factory. 
+
+\hypertarget{sphinxrt_8cpp_a302f0ce15ba9a67baba1b62f1bb37e60}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-Get\-Current\-Index\-R\-T@{sph\-Get\-Current\-Index\-R\-T}}
+\index{sph\-Get\-Current\-Index\-R\-T@{sph\-Get\-Current\-Index\-R\-T}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-Get\-Current\-Index\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Rt\-Index}$\ast$ sph\-Get\-Current\-Index\-R\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_a302f0ce15ba9a67baba1b62f1bb37e60}
+
+
+Get current thread local index -\/ internal do not use. 
+
+\hypertarget{sphinxrt_8cpp_afcb4bc0e314e7a9a22f0b4d0442d0d50}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-Get\-Settings\-F\-N\-V@{sph\-Get\-Settings\-F\-N\-V}}
+\index{sph\-Get\-Settings\-F\-N\-V@{sph\-Get\-Settings\-F\-N\-V}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-Get\-Settings\-F\-N\-V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} sph\-Get\-Settings\-F\-N\-V (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_afcb4bc0e314e7a9a22f0b4d0442d0d50}
+\hypertarget{sphinxrt_8cpp_a355f85ee6dde55b7d59508697f8bc6b0}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-Put\-Bytes@{sph\-Put\-Bytes}}
+\index{sph\-Put\-Bytes@{sph\-Put\-Bytes}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-Put\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-E\-C\-T\-O\-R $>$ static {\bf int} sph\-Put\-Bytes (
+\begin{DoxyParamCaption}
+\item[{V\-E\-C\-T\-O\-R $\ast$}]{p\-Out, }
+\item[{const void $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a355f85ee6dde55b7d59508697f8bc6b0}
+\hypertarget{sphinxrt_8cpp_a49d0c7b292ba36b192779159ee7ecf3d}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-Replay\-Binlog@{sph\-Replay\-Binlog}}
+\index{sph\-Replay\-Binlog@{sph\-Replay\-Binlog}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-Replay\-Binlog}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Replay\-Binlog (
+\begin{DoxyParamCaption}
+\item[{const {\bf Small\-String\-Hash\-\_\-\-T}$<$ {\bf C\-Sph\-Index} $\ast$ $>$ \&}]{h\-Indexes, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Replay\-Flags, }
+\item[{{\bf Progress\-Callback\-Simple\-\_\-t} $\ast$}]{pfn\-Progress\-Callback}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_a49d0c7b292ba36b192779159ee7ecf3d}
+
+
+replay stored binlog 
+
+\hypertarget{sphinxrt_8cpp_a2276393e0d91bacda8e638b0dd8692db}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-R\-T\-Configure@{sph\-R\-T\-Configure}}
+\index{sph\-R\-T\-Configure@{sph\-R\-T\-Configure}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-R\-T\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-R\-T\-Configure (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Searchd, }
+\item[{bool}]{b\-Test\-Mode}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_a2276393e0d91bacda8e638b0dd8692db}
+\hypertarget{sphinxrt_8cpp_aeb7af37b012b19f78aa2a27a8b1db495}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-R\-T\-Done@{sph\-R\-T\-Done}}
+\index{sph\-R\-T\-Done@{sph\-R\-T\-Done}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-R\-T\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-R\-T\-Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_aeb7af37b012b19f78aa2a27a8b1db495}
+
+
+deinitialize subsystem 
+
+\hypertarget{sphinxrt_8cpp_ae8eea7bd995dfd4c34db2f379f755020}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-R\-T\-Init@{sph\-R\-T\-Init}}
+\index{sph\-R\-T\-Init@{sph\-R\-T\-Init}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-R\-T\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-R\-T\-Init (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Searchd, }
+\item[{bool}]{b\-Test\-Mode}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_ae8eea7bd995dfd4c34db2f379f755020}
+\hypertarget{sphinxrt_8cpp_aa09706d1fd7550014379820dcd40b7fe}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-R\-T\-Schema\-Configure@{sph\-R\-T\-Schema\-Configure}}
+\index{sph\-R\-T\-Schema\-Configure@{sph\-R\-T\-Schema\-Configure}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-R\-T\-Schema\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-R\-T\-Schema\-Configure (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Index, }
+\item[{{\bf C\-Sph\-Schema} $\ast$}]{p\-Schema, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{p\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_aa09706d1fd7550014379820dcd40b7fe}
+\hypertarget{sphinxrt_8cpp_a03e5a9cb5c7bd752b01b311452eb5891}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-R\-T\-Set\-Test\-Mode@{sph\-R\-T\-Set\-Test\-Mode}}
+\index{sph\-R\-T\-Set\-Test\-Mode@{sph\-R\-T\-Set\-Test\-Mode}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-R\-T\-Set\-Test\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-R\-T\-Set\-Test\-Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_a03e5a9cb5c7bd752b01b311452eb5891}
+\hypertarget{sphinxrt_8cpp_acd51970c0bf8880363ba3e8e9baf06f4}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!sph\-Sort\-Docinfos@{sph\-Sort\-Docinfos}}
+\index{sph\-Sort\-Docinfos@{sph\-Sort\-Docinfos}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{sph\-Sort\-Docinfos}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Sort\-Docinfos (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Buf, }
+\item[{{\bf int}}]{i\-Count, }
+\item[{{\bf int}}]{i\-Stride}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_acd51970c0bf8880363ba3e8e9baf06f4}
+\hypertarget{sphinxrt_8cpp_acfd4cee185c428a13e0ed8a93ed18ac4}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_acfd4cee185c428a13e0ed8a93ed18ac4}
+\hypertarget{sphinxrt_8cpp_ae61b2abc1214a23fa6886197541d66fe}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Unzip\-T@{Unzip\-T}}
+\index{Unzip\-T@{Unzip\-T}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Unzip\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static const {\bf B\-Y\-T\-E}$\ast$ Unzip\-T (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Value, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxrt_8cpp_ae61b2abc1214a23fa6886197541d66fe}
+\hypertarget{sphinxrt_8cpp_a7551ab008583bee376c2f37330fbc43d}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Update\-Find\-Segment@{Update\-Find\-Segment}}
+\index{Update\-Find\-Segment@{Update\-Find\-Segment}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Update\-Find\-Segment}]{\setlength{\rightskip}{0pt plus 5cm}static const {\bf Rt\-Segment\-\_\-t}$\ast$ Update\-Find\-Segment (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sph\-Chunk\-Guard\-\_\-t} \&}]{t\-Guard, }
+\item[{const {\bf C\-Sph\-Rowitem} $\ast$$\ast$}]{pp\-Row, }
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Doc\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a7551ab008583bee376c2f37330fbc43d}
+\hypertarget{sphinxrt_8cpp_a7922e5a34802a35273d529b625f378da}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Verify\-Empty\-Strings@{Verify\-Empty\-Strings}}
+\index{Verify\-Empty\-Strings@{Verify\-Empty\-Strings}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Verify\-Empty\-Strings}]{\setlength{\rightskip}{0pt plus 5cm}void Verify\-Empty\-Strings (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Tight\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Storage, }
+\item[{const {\bf C\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{const {\bf C\-Sph\-Rowitem} $\ast$}]{p\-Row}
+\end{DoxyParamCaption}
+)}}\label{sphinxrt_8cpp_a7922e5a34802a35273d529b625f378da}
+\hypertarget{sphinxrt_8cpp_ab6340375bb206da952cb95b8b6d8739e}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Zip\-T@{Zip\-T}}
+\index{Zip\-T@{Zip\-T}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Zip\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename P $>$ static void Zip\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E}, P $>$ $\ast$}]{p\-Out, }
+\item[{T}]{u\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxrt_8cpp_ab6340375bb206da952cb95b8b6d8739e}
+\hypertarget{sphinxrt_8cpp_ac75a9402f26e73cd7b68ad08e9fd9327}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!Zip\-T@{Zip\-T}}
+\index{Zip\-T@{Zip\-T}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{Zip\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static void Zip\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$\&}]{p\-Out, }
+\item[{T}]{u\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxrt_8cpp_ac75a9402f26e73cd7b68ad08e9fd9327}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxrt_8cpp_a832aa57971532c3c6d0eda0dd724429e}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!g\-\_\-b\-R\-T\-Changes\-Allowed@{g\-\_\-b\-R\-T\-Changes\-Allowed}}
+\index{g\-\_\-b\-R\-T\-Changes\-Allowed@{g\-\_\-b\-R\-T\-Changes\-Allowed}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{g\-\_\-b\-R\-T\-Changes\-Allowed}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-R\-T\-Changes\-Allowed = false\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a832aa57971532c3c6d0eda0dd724429e}
+
+
+protection from concurrent changes during binlog replay 
+
+\hypertarget{sphinxrt_8cpp_a22ac972cd16cfc24a4a0bd61ad1b044d}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!g\-\_\-b\-Test\-Mode@{g\-\_\-b\-Test\-Mode}}
+\index{g\-\_\-b\-Test\-Mode@{g\-\_\-b\-Test\-Mode}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{g\-\_\-b\-Test\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Test\-Mode = false\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a22ac972cd16cfc24a4a0bd61ad1b044d}
+\hypertarget{sphinxrt_8cpp_af76ebfe4e183caf58b899b71aa488ce3}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!g\-\_\-d\-Sphinx\-C\-R\-C32@{g\-\_\-d\-Sphinx\-C\-R\-C32}}
+\index{g\-\_\-d\-Sphinx\-C\-R\-C32@{g\-\_\-d\-Sphinx\-C\-R\-C32}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{g\-\_\-d\-Sphinx\-C\-R\-C32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} g\-\_\-d\-Sphinx\-C\-R\-C32\mbox{[}256\mbox{]}}}\label{sphinxrt_8cpp_af76ebfe4e183caf58b899b71aa488ce3}
+
+
+Sphinx C\-R\-C32 implementation. 
+
+\hypertarget{sphinxrt_8cpp_a84a4bc6adf76aad37da03285ec5d32c2}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!g\-\_\-i\-Rt\-Flush\-Period@{g\-\_\-i\-Rt\-Flush\-Period}}
+\index{g\-\_\-i\-Rt\-Flush\-Period@{g\-\_\-i\-Rt\-Flush\-Period}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{g\-\_\-i\-Rt\-Flush\-Period}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} g\-\_\-i\-Rt\-Flush\-Period = 10$\ast$60$\ast$60\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a84a4bc6adf76aad37da03285ec5d32c2}
+\hypertarget{sphinxrt_8cpp_a95d9449034db351089f0511fa878627e}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!g\-\_\-p\-Binlog@{g\-\_\-p\-Binlog}}
+\index{g\-\_\-p\-Binlog@{g\-\_\-p\-Binlog}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{g\-\_\-p\-Binlog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Binlog}$\ast$ g\-\_\-p\-Binlog = N\-U\-L\-L}}\label{sphinxrt_8cpp_a95d9449034db351089f0511fa878627e}
+
+
+publicly exposed binlog interface 
+
+binlog, defined in \hyperlink{sphinxrt_8cpp}{sphinxrt.\-cpp} \hypertarget{sphinxrt_8cpp_a7a1872c68e2a1c9eba464a10c7a144a3}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!g\-\_\-p\-Rt\-Binlog@{g\-\_\-p\-Rt\-Binlog}}
+\index{g\-\_\-p\-Rt\-Binlog@{g\-\_\-p\-Rt\-Binlog}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{g\-\_\-p\-Rt\-Binlog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rt\-Binlog\-\_\-c}$\ast$ g\-\_\-p\-Rt\-Binlog = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a7a1872c68e2a1c9eba464a10c7a144a3}
+\hypertarget{sphinxrt_8cpp_a16de39cb6f9a74bf8ccaacdd27e16e50}{\index{sphinxrt.\-cpp@{sphinxrt.\-cpp}!g\-\_\-t\-Tls\-Accum\-Key@{g\-\_\-t\-Tls\-Accum\-Key}}
+\index{g\-\_\-t\-Tls\-Accum\-Key@{g\-\_\-t\-Tls\-Accum\-Key}!sphinxrt.cpp@{sphinxrt.\-cpp}}
+\subsubsection[{g\-\_\-t\-Tls\-Accum\-Key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Thread\-Key\-\_\-t} g\-\_\-t\-Tls\-Accum\-Key\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxrt_8cpp_a16de39cb6f9a74bf8ccaacdd27e16e50}
+
+
+T\-L\-S indexing accumulator (we disallow two uncommitted adds within one thread; and so need at most one) 
+

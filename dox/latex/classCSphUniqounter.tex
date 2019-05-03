@@ -1,0 +1,105 @@
+\hypertarget{classCSphUniqounter}{\section{C\-Sph\-Uniqounter Class Reference}
+\label{classCSphUniqounter}\index{C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}}
+}
+Inheritance diagram for C\-Sph\-Uniqounter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphUniqounter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphUniqounter_ae40b34085865707da59d2f5f86d86415}{C\-Sph\-Uniqounter} ()
+\item 
+void \hyperlink{classCSphUniqounter_aee6a828a64de677f53b4c4c8bdbf2ea2}{Add} (const \hyperlink{structSphGroupedValue__t}{Sph\-Grouped\-Value\-\_\-t} \&t\-Value)
+\item 
+void \hyperlink{classCSphUniqounter_ab369e67c05594537064283694302ae7a}{Sort} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphUniqounter_aee16a9a64ef875970c5a8599901b3c3d}{Count\-Start} (\hyperlink{sphinxsort_8cpp_ab18dbc744a7e1518a776845191f194c8}{Sph\-Group\-Key\-\_\-t} $\ast$p\-Out\-Group)
+\begin{DoxyCompactList}\small\item\em starting counting distinct values, returns count and group key (0 if empty) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphUniqounter_a5d5aa8712275583ea47f806f063e3a4d}{Count\-Next} (\hyperlink{sphinxsort_8cpp_ab18dbc744a7e1518a776845191f194c8}{Sph\-Group\-Key\-\_\-t} $\ast$p\-Out\-Group)
+\begin{DoxyCompactList}\small\item\em continues counting distinct values, returns count and group key (0 if done) \end{DoxyCompactList}\item 
+void \hyperlink{classCSphUniqounter_a4b500c225202d6649d0558b9f99c3a69}{Compact} (\hyperlink{sphinxsort_8cpp_ab18dbc744a7e1518a776845191f194c8}{Sph\-Group\-Key\-\_\-t} $\ast$p\-Remove\-Groups, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Remove\-Groups)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphUniqounter_ad029618f1fe40c6bdc94f631a631d89d}{m\-\_\-i\-Count\-Pos}
+\item 
+bool \hyperlink{classCSphUniqounter_afb542ed27b39c66795ece88dbf4cac15}{m\-\_\-b\-Sorted}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+unique values counter used for C\-O\-U\-N\-T(\-D\-I\-S\-T\-I\-N\-C\-T xxx) G\-R\-O\-U\-P B\-Y yyy queries 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphUniqounter_ae40b34085865707da59d2f5f86d86415}{\index{C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}!C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}}
+\index{C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}!CSphUniqounter@{C\-Sph\-Uniqounter}}
+\subsubsection[{C\-Sph\-Uniqounter}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Uniqounter\-::\-C\-Sph\-Uniqounter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphUniqounter_ae40b34085865707da59d2f5f86d86415}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphUniqounter_aee6a828a64de677f53b4c4c8bdbf2ea2}{\index{C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}!Add@{Add}}
+\index{Add@{Add}!CSphUniqounter@{C\-Sph\-Uniqounter}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Uniqounter\-::\-Add (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sph\-Grouped\-Value\-\_\-t} \&}]{t\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphUniqounter_aee6a828a64de677f53b4c4c8bdbf2ea2}
+\hypertarget{classCSphUniqounter_a4b500c225202d6649d0558b9f99c3a69}{\index{C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}!Compact@{Compact}}
+\index{Compact@{Compact}!CSphUniqounter@{C\-Sph\-Uniqounter}}
+\subsubsection[{Compact}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Uniqounter\-::\-Compact (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Group\-Key\-\_\-t} $\ast$}]{p\-Remove\-Groups, }
+\item[{{\bf int}}]{i\-Remove\-Groups}
+\end{DoxyParamCaption}
+)}}\label{classCSphUniqounter_a4b500c225202d6649d0558b9f99c3a69}
+\hypertarget{classCSphUniqounter_a5d5aa8712275583ea47f806f063e3a4d}{\index{C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}!Count\-Next@{Count\-Next}}
+\index{Count\-Next@{Count\-Next}!CSphUniqounter@{C\-Sph\-Uniqounter}}
+\subsubsection[{Count\-Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Uniqounter\-::\-Count\-Next (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Group\-Key\-\_\-t} $\ast$}]{p\-Out\-Group}
+\end{DoxyParamCaption}
+)}}\label{classCSphUniqounter_a5d5aa8712275583ea47f806f063e3a4d}
+
+
+continues counting distinct values, returns count and group key (0 if done) 
+
+\hypertarget{classCSphUniqounter_aee16a9a64ef875970c5a8599901b3c3d}{\index{C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}!Count\-Start@{Count\-Start}}
+\index{Count\-Start@{Count\-Start}!CSphUniqounter@{C\-Sph\-Uniqounter}}
+\subsubsection[{Count\-Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Uniqounter\-::\-Count\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Group\-Key\-\_\-t} $\ast$}]{p\-Out\-Group}
+\end{DoxyParamCaption}
+)}}\label{classCSphUniqounter_aee16a9a64ef875970c5a8599901b3c3d}
+
+
+starting counting distinct values, returns count and group key (0 if empty) 
+
+\hypertarget{classCSphUniqounter_ab369e67c05594537064283694302ae7a}{\index{C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}!Sort@{Sort}}
+\index{Sort@{Sort}!CSphUniqounter@{C\-Sph\-Uniqounter}}
+\subsubsection[{Sort}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Uniqounter\-::\-Sort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphUniqounter_ab369e67c05594537064283694302ae7a}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphUniqounter_afb542ed27b39c66795ece88dbf4cac15}{\index{C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}!m\-\_\-b\-Sorted@{m\-\_\-b\-Sorted}}
+\index{m\-\_\-b\-Sorted@{m\-\_\-b\-Sorted}!CSphUniqounter@{C\-Sph\-Uniqounter}}
+\subsubsection[{m\-\_\-b\-Sorted}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Uniqounter\-::m\-\_\-b\-Sorted\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphUniqounter_afb542ed27b39c66795ece88dbf4cac15}
+\hypertarget{classCSphUniqounter_ad029618f1fe40c6bdc94f631a631d89d}{\index{C\-Sph\-Uniqounter@{C\-Sph\-Uniqounter}!m\-\_\-i\-Count\-Pos@{m\-\_\-i\-Count\-Pos}}
+\index{m\-\_\-i\-Count\-Pos@{m\-\_\-i\-Count\-Pos}!CSphUniqounter@{C\-Sph\-Uniqounter}}
+\subsubsection[{m\-\_\-i\-Count\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Uniqounter\-::m\-\_\-i\-Count\-Pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphUniqounter_ad029618f1fe40c6bdc94f631a631d89d}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

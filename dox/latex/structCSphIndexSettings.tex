@@ -1,0 +1,141 @@
+\hypertarget{structCSphIndexSettings}{\section{C\-Sph\-Index\-Settings Struct Reference}
+\label{structCSphIndexSettings}\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}}
+}
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Index\-Settings\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structCSphIndexSettings}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphIndexSettings_a8866949b31ba8a53e50d8fc6bfcc6c68}{C\-Sph\-Index\-Settings} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a50cf3b43c4c88b77dd63c2e8866524de}{E\-Sph\-Docinfo} \hyperlink{structCSphIndexSettings_a81ce517ddd7ea1a0109a99f3e5241df9}{m\-\_\-e\-Docinfo}
+\item 
+\hyperlink{sphinx_8h_a82ffff53ad1eb4da2ba352fcd9b2626c}{E\-Sph\-Hit\-Format} \hyperlink{structCSphIndexSettings_a5340224a86abea819cac6855d179d141}{m\-\_\-e\-Hit\-Format}
+\item 
+bool \hyperlink{structCSphIndexSettings_ae1dd4ac8cdbd6ad56f69a8c30b69a34c}{m\-\_\-b\-Html\-Strip}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphIndexSettings_a1b4ed025d401d167c9ecada92b20ef74}{m\-\_\-s\-Html\-Index\-Attrs}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphIndexSettings_a578cf0f2e803907f7f2b7e5cd7bfbce6}{m\-\_\-s\-Html\-Remove\-Elements}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphIndexSettings_a0ca140973f3fb0924ef0517bc2c7af2f}{m\-\_\-s\-Zones}
+\item 
+\hyperlink{sphinx_8h_a1920852c5151009d65cf2bc8204a685b}{E\-Sph\-Hitless} \hyperlink{structCSphIndexSettings_a72de6ec3c1d3603e0e4aa13747325d1d}{m\-\_\-e\-Hitless}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphIndexSettings_a54763be66ecf6ad50679947d32916900}{m\-\_\-s\-Hitless\-Files}
+\item 
+bool \hyperlink{structCSphIndexSettings_a70c5bbc07620bf5aeb1147a96e2d3187}{m\-\_\-b\-Verbose}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphIndexSettings_a8bbf7ab94d586324a2050de80ca999b3}{m\-\_\-i\-Embedded\-Limit}
+\item 
+\hyperlink{sphinx_8h_a4900146967791908ab838925add48e43}{E\-Sph\-Bigram} \hyperlink{structCSphIndexSettings_a7cca7fd0ef446a388f38ad1080d8ad59}{m\-\_\-e\-Bigram\-Index}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphIndexSettings_a9ebddbbb5ad262087aa3817f8dd6fced}{m\-\_\-s\-Bigram\-Words}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \hyperlink{structCSphIndexSettings_a95319351433dbf22a5585640a87bd0ca}{m\-\_\-d\-Bigram\-Words}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structCSphIndexSettings_a402ca3e248f758413ee9947d5af1467b}{m\-\_\-u\-Aot\-Filter\-Mask}
+\begin{DoxyCompactList}\small\item\em lemmatize\-\_\-\-X\-X\-\_\-all forces us to transform queries on the index level too \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a39d5548839215c457c388fc7709b284a}{E\-Sph\-R\-L\-P\-Filter} \hyperlink{structCSphIndexSettings_a342499b35e5e92ada2478df1d8349cda}{m\-\_\-e\-Chinese\-R\-L\-P}
+\begin{DoxyCompactList}\small\item\em chinese R\-L\-P filter \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphIndexSettings_a83e4e399bd7d4fa6d4ef1f8cb26b6263}{m\-\_\-s\-R\-L\-P\-Context}
+\begin{DoxyCompactList}\small\item\em path to R\-L\-P context file \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphIndexSettings_ab9f1eef309f1845879a3429ec2211b7c}{m\-\_\-s\-Index\-Token\-Filter}
+\begin{DoxyCompactList}\small\item\em indexing time token filter spec string (pretty useless for disk, vital for R\-T) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphIndexSettings_a8866949b31ba8a53e50d8fc6bfcc6c68}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}}
+\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{C\-Sph\-Index\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Index\-Settings\-::\-C\-Sph\-Index\-Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structCSphIndexSettings_a8866949b31ba8a53e50d8fc6bfcc6c68}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphIndexSettings_ae1dd4ac8cdbd6ad56f69a8c30b69a34c}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-b\-Html\-Strip@{m\-\_\-b\-Html\-Strip}}
+\index{m\-\_\-b\-Html\-Strip@{m\-\_\-b\-Html\-Strip}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-b\-Html\-Strip}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-Settings\-::m\-\_\-b\-Html\-Strip}}\label{structCSphIndexSettings_ae1dd4ac8cdbd6ad56f69a8c30b69a34c}
+\hypertarget{structCSphIndexSettings_a70c5bbc07620bf5aeb1147a96e2d3187}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-b\-Verbose@{m\-\_\-b\-Verbose}}
+\index{m\-\_\-b\-Verbose@{m\-\_\-b\-Verbose}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-b\-Verbose}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Index\-Settings\-::m\-\_\-b\-Verbose}}\label{structCSphIndexSettings_a70c5bbc07620bf5aeb1147a96e2d3187}
+\hypertarget{structCSphIndexSettings_a95319351433dbf22a5585640a87bd0ca}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-d\-Bigram\-Words@{m\-\_\-d\-Bigram\-Words}}
+\index{m\-\_\-d\-Bigram\-Words@{m\-\_\-d\-Bigram\-Words}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-d\-Bigram\-Words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-String}$>$ C\-Sph\-Index\-Settings\-::m\-\_\-d\-Bigram\-Words}}\label{structCSphIndexSettings_a95319351433dbf22a5585640a87bd0ca}
+\hypertarget{structCSphIndexSettings_a7cca7fd0ef446a388f38ad1080d8ad59}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-e\-Bigram\-Index@{m\-\_\-e\-Bigram\-Index}}
+\index{m\-\_\-e\-Bigram\-Index@{m\-\_\-e\-Bigram\-Index}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-e\-Bigram\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Bigram} C\-Sph\-Index\-Settings\-::m\-\_\-e\-Bigram\-Index}}\label{structCSphIndexSettings_a7cca7fd0ef446a388f38ad1080d8ad59}
+\hypertarget{structCSphIndexSettings_a342499b35e5e92ada2478df1d8349cda}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-e\-Chinese\-R\-L\-P@{m\-\_\-e\-Chinese\-R\-L\-P}}
+\index{m\-\_\-e\-Chinese\-R\-L\-P@{m\-\_\-e\-Chinese\-R\-L\-P}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-e\-Chinese\-R\-L\-P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-R\-L\-P\-Filter} C\-Sph\-Index\-Settings\-::m\-\_\-e\-Chinese\-R\-L\-P}}\label{structCSphIndexSettings_a342499b35e5e92ada2478df1d8349cda}
+
+
+chinese R\-L\-P filter 
+
+\hypertarget{structCSphIndexSettings_a81ce517ddd7ea1a0109a99f3e5241df9}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-e\-Docinfo@{m\-\_\-e\-Docinfo}}
+\index{m\-\_\-e\-Docinfo@{m\-\_\-e\-Docinfo}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-e\-Docinfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Docinfo} C\-Sph\-Index\-Settings\-::m\-\_\-e\-Docinfo}}\label{structCSphIndexSettings_a81ce517ddd7ea1a0109a99f3e5241df9}
+\hypertarget{structCSphIndexSettings_a5340224a86abea819cac6855d179d141}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-e\-Hit\-Format@{m\-\_\-e\-Hit\-Format}}
+\index{m\-\_\-e\-Hit\-Format@{m\-\_\-e\-Hit\-Format}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-e\-Hit\-Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Hit\-Format} C\-Sph\-Index\-Settings\-::m\-\_\-e\-Hit\-Format}}\label{structCSphIndexSettings_a5340224a86abea819cac6855d179d141}
+\hypertarget{structCSphIndexSettings_a72de6ec3c1d3603e0e4aa13747325d1d}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-e\-Hitless@{m\-\_\-e\-Hitless}}
+\index{m\-\_\-e\-Hitless@{m\-\_\-e\-Hitless}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-e\-Hitless}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Hitless} C\-Sph\-Index\-Settings\-::m\-\_\-e\-Hitless}}\label{structCSphIndexSettings_a72de6ec3c1d3603e0e4aa13747325d1d}
+\hypertarget{structCSphIndexSettings_a8bbf7ab94d586324a2050de80ca999b3}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-i\-Embedded\-Limit@{m\-\_\-i\-Embedded\-Limit}}
+\index{m\-\_\-i\-Embedded\-Limit@{m\-\_\-i\-Embedded\-Limit}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-i\-Embedded\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Index\-Settings\-::m\-\_\-i\-Embedded\-Limit}}\label{structCSphIndexSettings_a8bbf7ab94d586324a2050de80ca999b3}
+\hypertarget{structCSphIndexSettings_a9ebddbbb5ad262087aa3817f8dd6fced}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-s\-Bigram\-Words@{m\-\_\-s\-Bigram\-Words}}
+\index{m\-\_\-s\-Bigram\-Words@{m\-\_\-s\-Bigram\-Words}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-s\-Bigram\-Words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Index\-Settings\-::m\-\_\-s\-Bigram\-Words}}\label{structCSphIndexSettings_a9ebddbbb5ad262087aa3817f8dd6fced}
+\hypertarget{structCSphIndexSettings_a54763be66ecf6ad50679947d32916900}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-s\-Hitless\-Files@{m\-\_\-s\-Hitless\-Files}}
+\index{m\-\_\-s\-Hitless\-Files@{m\-\_\-s\-Hitless\-Files}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-s\-Hitless\-Files}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Index\-Settings\-::m\-\_\-s\-Hitless\-Files}}\label{structCSphIndexSettings_a54763be66ecf6ad50679947d32916900}
+\hypertarget{structCSphIndexSettings_a1b4ed025d401d167c9ecada92b20ef74}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-s\-Html\-Index\-Attrs@{m\-\_\-s\-Html\-Index\-Attrs}}
+\index{m\-\_\-s\-Html\-Index\-Attrs@{m\-\_\-s\-Html\-Index\-Attrs}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-s\-Html\-Index\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Index\-Settings\-::m\-\_\-s\-Html\-Index\-Attrs}}\label{structCSphIndexSettings_a1b4ed025d401d167c9ecada92b20ef74}
+\hypertarget{structCSphIndexSettings_a578cf0f2e803907f7f2b7e5cd7bfbce6}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-s\-Html\-Remove\-Elements@{m\-\_\-s\-Html\-Remove\-Elements}}
+\index{m\-\_\-s\-Html\-Remove\-Elements@{m\-\_\-s\-Html\-Remove\-Elements}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-s\-Html\-Remove\-Elements}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Index\-Settings\-::m\-\_\-s\-Html\-Remove\-Elements}}\label{structCSphIndexSettings_a578cf0f2e803907f7f2b7e5cd7bfbce6}
+\hypertarget{structCSphIndexSettings_ab9f1eef309f1845879a3429ec2211b7c}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-s\-Index\-Token\-Filter@{m\-\_\-s\-Index\-Token\-Filter}}
+\index{m\-\_\-s\-Index\-Token\-Filter@{m\-\_\-s\-Index\-Token\-Filter}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-s\-Index\-Token\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Index\-Settings\-::m\-\_\-s\-Index\-Token\-Filter}}\label{structCSphIndexSettings_ab9f1eef309f1845879a3429ec2211b7c}
+
+
+indexing time token filter spec string (pretty useless for disk, vital for R\-T) 
+
+\hypertarget{structCSphIndexSettings_a83e4e399bd7d4fa6d4ef1f8cb26b6263}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-s\-R\-L\-P\-Context@{m\-\_\-s\-R\-L\-P\-Context}}
+\index{m\-\_\-s\-R\-L\-P\-Context@{m\-\_\-s\-R\-L\-P\-Context}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-s\-R\-L\-P\-Context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Index\-Settings\-::m\-\_\-s\-R\-L\-P\-Context}}\label{structCSphIndexSettings_a83e4e399bd7d4fa6d4ef1f8cb26b6263}
+
+
+path to R\-L\-P context file 
+
+\hypertarget{structCSphIndexSettings_a0ca140973f3fb0924ef0517bc2c7af2f}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-s\-Zones@{m\-\_\-s\-Zones}}
+\index{m\-\_\-s\-Zones@{m\-\_\-s\-Zones}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-s\-Zones}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Index\-Settings\-::m\-\_\-s\-Zones}}\label{structCSphIndexSettings_a0ca140973f3fb0924ef0517bc2c7af2f}
+\hypertarget{structCSphIndexSettings_a402ca3e248f758413ee9947d5af1467b}{\index{C\-Sph\-Index\-Settings@{C\-Sph\-Index\-Settings}!m\-\_\-u\-Aot\-Filter\-Mask@{m\-\_\-u\-Aot\-Filter\-Mask}}
+\index{m\-\_\-u\-Aot\-Filter\-Mask@{m\-\_\-u\-Aot\-Filter\-Mask}!CSphIndexSettings@{C\-Sph\-Index\-Settings}}
+\subsubsection[{m\-\_\-u\-Aot\-Filter\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Index\-Settings\-::m\-\_\-u\-Aot\-Filter\-Mask}}\label{structCSphIndexSettings_a402ca3e248f758413ee9947d5af1467b}
+
+
+lemmatize\-\_\-\-X\-X\-\_\-all forces us to transform queries on the index level too 
+
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

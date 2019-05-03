@@ -1,0 +1,259 @@
+\hypertarget{classCWordlist}{\section{C\-Wordlist Class Reference}
+\label{classCWordlist}\index{C\-Wordlist@{C\-Wordlist}}
+}
+Inheritance diagram for C\-Wordlist\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCWordlist}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCWordlist_a842ca1290d73156b9ef1abde841f2dcd}{C\-Wordlist} ()
+\item 
+\hyperlink{classCWordlist_a9ea86b57d00ad0eef3206e542578f086}{$\sim$\-C\-Wordlist} ()
+\item 
+void \hyperlink{classCWordlist_aaff63c6a3305d95f26aea4a5ab38fd17}{Reset} ()
+\item 
+bool \hyperlink{classCWordlist_a693380293dfca7da97ffb88ba49a8698}{Preread} (const char $\ast$s\-Name, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Version, bool b\-Word\-Dict, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+const \hyperlink{structCSphWordlistCheckpoint}{C\-Sph\-Wordlist\-Checkpoint} $\ast$ \hyperlink{classCWordlist_ae60149da194aa4e72c40bd30750b7b38}{Find\-Checkpoint} (const char $\ast$s\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Word\-Len, \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} i\-Word\-I\-D, bool b\-Star\-Mode) const 
+\item 
+bool \hyperlink{classCWordlist_a6cb222811e0d8fcba2216ef3039bbf0d}{Get\-Word} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Buf, \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} i\-Word\-I\-D, \hyperlink{structCSphDictEntry}{C\-Sph\-Dict\-Entry} \&t\-Word) const 
+\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCWordlist_a64cc5e9bcabbc48fc5f74276016847ae}{Acquire\-Dict} (const \hyperlink{structCSphWordlistCheckpoint}{C\-Sph\-Wordlist\-Checkpoint} $\ast$p\-Checkpoint) const 
+\item 
+virtual void \hyperlink{classCWordlist_ab0d586e1f52c5e7f444fe83578fda297}{Get\-Prefixed\-Words} (const char $\ast$s\-Substring, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Sub\-Len, const char $\ast$s\-Wildcard, \hyperlink{structISphWordlist_1_1Args__t}{Args\-\_\-t} \&t\-Args) const 
+\item 
+virtual void \hyperlink{classCWordlist_a63ffa1995a29ec8eeec96f1ed79f2e42}{Get\-Infixed\-Words} (const char $\ast$s\-Substring, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Sub\-Len, const char $\ast$s\-Wildcard, \hyperlink{structISphWordlist_1_1Args__t}{Args\-\_\-t} \&t\-Args) const 
+\item 
+virtual void \hyperlink{classCWordlist_a38b80f7f41d3f7519e89d99bb547a734}{Suffix\-Get\-Chekpoints} (const \hyperlink{structSuggestResult__t}{Suggest\-Result\-\_\-t} \&t\-Res, const char $\ast$s\-Suffix, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \&d\-Checkpoints) const 
+\item 
+virtual void \hyperlink{classCWordlist_a2712a9b65d2def207f8fbcf451f6723c}{Set\-Checkpoint} (\hyperlink{structSuggestResult__t}{Suggest\-Result\-\_\-t} \&t\-Res, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} i\-C\-P) const 
+\item 
+virtual bool \hyperlink{classCWordlist_ada851fcce9f2e150ea48370ffa7f7e8f}{Read\-Next\-Word} (\hyperlink{structSuggestResult__t}{Suggest\-Result\-\_\-t} \&t\-Res, \hyperlink{structISphWordlistSuggest_1_1DictWord__t}{Dict\-Word\-\_\-t} \&t\-Word) const 
+\item 
+void \hyperlink{classCWordlist_a5ed392944f37ab2c1acd0ab82b447289}{Debug\-Populate\-Checkpoints} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphMappedBuffer}{C\-Sph\-Mapped\-Buffer}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classCWordlist_aa08038abe1363d3da8f707084329ecd4}{m\-\_\-t\-Buf}
+\begin{DoxyCompactList}\small\item\em my cache \end{DoxyCompactList}\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}\\*
+$<$ \hyperlink{structCSphWordlistCheckpoint}{C\-Sph\-Wordlist\-Checkpoint} $>$ \hyperlink{classCWordlist_a2f52708e559f3a2e5318dec6289c403e}{m\-\_\-d\-Checkpoints}
+\begin{DoxyCompactList}\small\item\em checkpoint offsets \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structInfixBlock__t}{Infix\-Block\-\_\-t} $>$ \hyperlink{classCWordlist_a86a597d2bc66b2e016f4e978f5be458b}{m\-\_\-d\-Infix\-Blocks}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classCWordlist_a6079074dc4ddc2b9fd8bd380fe0b811e}{m\-\_\-p\-Words}
+\begin{DoxyCompactList}\small\item\em arena for checkpoint's words \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCWordlist_ac857c9efec46e02df54da78b8215491d}{m\-\_\-p\-Infix\-Blocks\-Words}
+\begin{DoxyCompactList}\small\item\em arena for infix checkpoint's words \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCWordlist_a3b018fb3c0a440481a2a7d1f7bec851d}{m\-\_\-i\-Words\-End}
+\begin{DoxyCompactList}\small\item\em end of wordlist \end{DoxyCompactList}\item 
+bool \hyperlink{classCWordlist_ad4589e965e3c6bab74f7d03e69472228}{m\-\_\-b\-Have\-Skips}
+\begin{DoxyCompactList}\small\item\em whether there are skiplists \end{DoxyCompactList}\item 
+\hyperlink{classCSphScopedPtr}{C\-Sph\-Scoped\-Ptr}\\*
+$<$ \hyperlink{structISphCheckpointReader}{I\-Sph\-Checkpoint\-Reader} $>$ \hyperlink{classCWordlist_a3ac9dd8e620c7965dcc142b73535b621}{m\-\_\-t\-Maped\-Cp\-Reader}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCWordlist_a5ccb70a09c3082e54de27feacb0f0607}{m\-\_\-b\-Word\-Dict}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCWordlist_a842ca1290d73156b9ef1abde841f2dcd}{\index{C\-Wordlist@{C\-Wordlist}!C\-Wordlist@{C\-Wordlist}}
+\index{C\-Wordlist@{C\-Wordlist}!CWordlist@{C\-Wordlist}}
+\subsubsection[{C\-Wordlist}]{\setlength{\rightskip}{0pt plus 5cm}C\-Wordlist\-::\-C\-Wordlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCWordlist_a842ca1290d73156b9ef1abde841f2dcd}
+\hypertarget{classCWordlist_a9ea86b57d00ad0eef3206e542578f086}{\index{C\-Wordlist@{C\-Wordlist}!$\sim$\-C\-Wordlist@{$\sim$\-C\-Wordlist}}
+\index{$\sim$\-C\-Wordlist@{$\sim$\-C\-Wordlist}!CWordlist@{C\-Wordlist}}
+\subsubsection[{$\sim$\-C\-Wordlist}]{\setlength{\rightskip}{0pt plus 5cm}C\-Wordlist\-::$\sim$\-C\-Wordlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCWordlist_a9ea86b57d00ad0eef3206e542578f086}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCWordlist_a64cc5e9bcabbc48fc5f74276016847ae}{\index{C\-Wordlist@{C\-Wordlist}!Acquire\-Dict@{Acquire\-Dict}}
+\index{Acquire\-Dict@{Acquire\-Dict}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Acquire\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E} $\ast$ C\-Wordlist\-::\-Acquire\-Dict (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Wordlist\-Checkpoint} $\ast$}]{p\-Checkpoint}
+\end{DoxyParamCaption}
+) const}}\label{classCWordlist_a64cc5e9bcabbc48fc5f74276016847ae}
+\hypertarget{classCWordlist_a5ed392944f37ab2c1acd0ab82b447289}{\index{C\-Wordlist@{C\-Wordlist}!Debug\-Populate\-Checkpoints@{Debug\-Populate\-Checkpoints}}
+\index{Debug\-Populate\-Checkpoints@{Debug\-Populate\-Checkpoints}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Debug\-Populate\-Checkpoints}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Wordlist\-::\-Debug\-Populate\-Checkpoints (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCWordlist_a5ed392944f37ab2c1acd0ab82b447289}
+\hypertarget{classCWordlist_ae60149da194aa4e72c40bd30750b7b38}{\index{C\-Wordlist@{C\-Wordlist}!Find\-Checkpoint@{Find\-Checkpoint}}
+\index{Find\-Checkpoint@{Find\-Checkpoint}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Find\-Checkpoint}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Wordlist\-Checkpoint} $\ast$ C\-Wordlist\-::\-Find\-Checkpoint (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Word, }
+\item[{{\bf int}}]{i\-Word\-Len, }
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{i\-Word\-I\-D, }
+\item[{bool}]{b\-Star\-Mode}
+\end{DoxyParamCaption}
+) const}}\label{classCWordlist_ae60149da194aa4e72c40bd30750b7b38}
+\hypertarget{classCWordlist_a63ffa1995a29ec8eeec96f1ed79f2e42}{\index{C\-Wordlist@{C\-Wordlist}!Get\-Infixed\-Words@{Get\-Infixed\-Words}}
+\index{Get\-Infixed\-Words@{Get\-Infixed\-Words}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Get\-Infixed\-Words}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Wordlist\-::\-Get\-Infixed\-Words (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Substring, }
+\item[{{\bf int}}]{i\-Sub\-Len, }
+\item[{const char $\ast$}]{s\-Wildcard, }
+\item[{{\bf Args\-\_\-t} \&}]{t\-Args}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCWordlist_a63ffa1995a29ec8eeec96f1ed79f2e42}
+
+
+Implements \hyperlink{classISphWordlist_a75d22847698fb4b6bd09acc2503b5e70}{I\-Sph\-Wordlist}.
+
+\hypertarget{classCWordlist_ab0d586e1f52c5e7f444fe83578fda297}{\index{C\-Wordlist@{C\-Wordlist}!Get\-Prefixed\-Words@{Get\-Prefixed\-Words}}
+\index{Get\-Prefixed\-Words@{Get\-Prefixed\-Words}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Get\-Prefixed\-Words}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Wordlist\-::\-Get\-Prefixed\-Words (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Substring, }
+\item[{{\bf int}}]{i\-Sub\-Len, }
+\item[{const char $\ast$}]{s\-Wildcard, }
+\item[{{\bf Args\-\_\-t} \&}]{t\-Args}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCWordlist_ab0d586e1f52c5e7f444fe83578fda297}
+
+
+Implements \hyperlink{classISphWordlist_a34625625fce4c85a0f02fcdfd445359c}{I\-Sph\-Wordlist}.
+
+\hypertarget{classCWordlist_a6cb222811e0d8fcba2216ef3039bbf0d}{\index{C\-Wordlist@{C\-Wordlist}!Get\-Word@{Get\-Word}}
+\index{Get\-Word@{Get\-Word}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Get\-Word}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Wordlist\-::\-Get\-Word (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Buf, }
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{i\-Word\-I\-D, }
+\item[{{\bf C\-Sph\-Dict\-Entry} \&}]{t\-Word}
+\end{DoxyParamCaption}
+) const}}\label{classCWordlist_a6cb222811e0d8fcba2216ef3039bbf0d}
+\hypertarget{classCWordlist_a693380293dfca7da97ffb88ba49a8698}{\index{C\-Wordlist@{C\-Wordlist}!Preread@{Preread}}
+\index{Preread@{Preread}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Preread}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Wordlist\-::\-Preread (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Version, }
+\item[{bool}]{b\-Word\-Dict, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCWordlist_a693380293dfca7da97ffb88ba49a8698}
+\hypertarget{classCWordlist_ada851fcce9f2e150ea48370ffa7f7e8f}{\index{C\-Wordlist@{C\-Wordlist}!Read\-Next\-Word@{Read\-Next\-Word}}
+\index{Read\-Next\-Word@{Read\-Next\-Word}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Read\-Next\-Word}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Wordlist\-::\-Read\-Next\-Word (
+\begin{DoxyParamCaption}
+\item[{{\bf Suggest\-Result\-\_\-t} \&}]{t\-Res, }
+\item[{{\bf Dict\-Word\-\_\-t} \&}]{t\-Word}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCWordlist_ada851fcce9f2e150ea48370ffa7f7e8f}
+
+
+Implements \hyperlink{classISphWordlistSuggest_a2912302ed28ecd2650f9f1a84cb7c8ea}{I\-Sph\-Wordlist\-Suggest}.
+
+\hypertarget{classCWordlist_aaff63c6a3305d95f26aea4a5ab38fd17}{\index{C\-Wordlist@{C\-Wordlist}!Reset@{Reset}}
+\index{Reset@{Reset}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Wordlist\-::\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCWordlist_aaff63c6a3305d95f26aea4a5ab38fd17}
+\hypertarget{classCWordlist_a2712a9b65d2def207f8fbcf451f6723c}{\index{C\-Wordlist@{C\-Wordlist}!Set\-Checkpoint@{Set\-Checkpoint}}
+\index{Set\-Checkpoint@{Set\-Checkpoint}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Set\-Checkpoint}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Wordlist\-::\-Set\-Checkpoint (
+\begin{DoxyParamCaption}
+\item[{{\bf Suggest\-Result\-\_\-t} \&}]{t\-Res, }
+\item[{{\bf D\-W\-O\-R\-D}}]{i\-C\-P}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCWordlist_a2712a9b65d2def207f8fbcf451f6723c}
+
+
+Implements \hyperlink{classISphWordlistSuggest_a35cd48bc4d3654a9286e14949f826768}{I\-Sph\-Wordlist\-Suggest}.
+
+\hypertarget{classCWordlist_a38b80f7f41d3f7519e89d99bb547a734}{\index{C\-Wordlist@{C\-Wordlist}!Suffix\-Get\-Chekpoints@{Suffix\-Get\-Chekpoints}}
+\index{Suffix\-Get\-Chekpoints@{Suffix\-Get\-Chekpoints}!CWordlist@{C\-Wordlist}}
+\subsubsection[{Suffix\-Get\-Chekpoints}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Wordlist\-::\-Suffix\-Get\-Chekpoints (
+\begin{DoxyParamCaption}
+\item[{const {\bf Suggest\-Result\-\_\-t} \&}]{t\-Res, }
+\item[{const char $\ast$}]{s\-Suffix, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf D\-W\-O\-R\-D} $>$ \&}]{d\-Checkpoints}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCWordlist_a38b80f7f41d3f7519e89d99bb547a734}
+
+
+Implements \hyperlink{classISphWordlistSuggest_a4ef3fd1eb857d09e17113400b3aedab1}{I\-Sph\-Wordlist\-Suggest}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCWordlist_ad4589e965e3c6bab74f7d03e69472228}{\index{C\-Wordlist@{C\-Wordlist}!m\-\_\-b\-Have\-Skips@{m\-\_\-b\-Have\-Skips}}
+\index{m\-\_\-b\-Have\-Skips@{m\-\_\-b\-Have\-Skips}!CWordlist@{C\-Wordlist}}
+\subsubsection[{m\-\_\-b\-Have\-Skips}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Wordlist\-::m\-\_\-b\-Have\-Skips}}\label{classCWordlist_ad4589e965e3c6bab74f7d03e69472228}
+
+
+whether there are skiplists 
+
+\hypertarget{classCWordlist_a5ccb70a09c3082e54de27feacb0f0607}{\index{C\-Wordlist@{C\-Wordlist}!m\-\_\-b\-Word\-Dict@{m\-\_\-b\-Word\-Dict}}
+\index{m\-\_\-b\-Word\-Dict@{m\-\_\-b\-Word\-Dict}!CWordlist@{C\-Wordlist}}
+\subsubsection[{m\-\_\-b\-Word\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Wordlist\-::m\-\_\-b\-Word\-Dict\hspace{0.3cm}{\ttfamily [private]}}}\label{classCWordlist_a5ccb70a09c3082e54de27feacb0f0607}
+\hypertarget{classCWordlist_a2f52708e559f3a2e5318dec6289c403e}{\index{C\-Wordlist@{C\-Wordlist}!m\-\_\-d\-Checkpoints@{m\-\_\-d\-Checkpoints}}
+\index{m\-\_\-d\-Checkpoints@{m\-\_\-d\-Checkpoints}!CWordlist@{C\-Wordlist}}
+\subsubsection[{m\-\_\-d\-Checkpoints}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf C\-Sph\-Wordlist\-Checkpoint}$>$ C\-Wordlist\-::m\-\_\-d\-Checkpoints}}\label{classCWordlist_a2f52708e559f3a2e5318dec6289c403e}
+
+
+checkpoint offsets 
+
+\hypertarget{classCWordlist_a86a597d2bc66b2e016f4e978f5be458b}{\index{C\-Wordlist@{C\-Wordlist}!m\-\_\-d\-Infix\-Blocks@{m\-\_\-d\-Infix\-Blocks}}
+\index{m\-\_\-d\-Infix\-Blocks@{m\-\_\-d\-Infix\-Blocks}!CWordlist@{C\-Wordlist}}
+\subsubsection[{m\-\_\-d\-Infix\-Blocks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Infix\-Block\-\_\-t}$>$ C\-Wordlist\-::m\-\_\-d\-Infix\-Blocks}}\label{classCWordlist_a86a597d2bc66b2e016f4e978f5be458b}
+\hypertarget{classCWordlist_a3b018fb3c0a440481a2a7d1f7bec851d}{\index{C\-Wordlist@{C\-Wordlist}!m\-\_\-i\-Words\-End@{m\-\_\-i\-Words\-End}}
+\index{m\-\_\-i\-Words\-End@{m\-\_\-i\-Words\-End}!CWordlist@{C\-Wordlist}}
+\subsubsection[{m\-\_\-i\-Words\-End}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Wordlist\-::m\-\_\-i\-Words\-End}}\label{classCWordlist_a3b018fb3c0a440481a2a7d1f7bec851d}
+
+
+end of wordlist 
+
+\hypertarget{classCWordlist_ac857c9efec46e02df54da78b8215491d}{\index{C\-Wordlist@{C\-Wordlist}!m\-\_\-p\-Infix\-Blocks\-Words@{m\-\_\-p\-Infix\-Blocks\-Words}}
+\index{m\-\_\-p\-Infix\-Blocks\-Words@{m\-\_\-p\-Infix\-Blocks\-Words}!CWordlist@{C\-Wordlist}}
+\subsubsection[{m\-\_\-p\-Infix\-Blocks\-Words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ C\-Wordlist\-::m\-\_\-p\-Infix\-Blocks\-Words}}\label{classCWordlist_ac857c9efec46e02df54da78b8215491d}
+
+
+arena for infix checkpoint's words 
+
+\hypertarget{classCWordlist_a6079074dc4ddc2b9fd8bd380fe0b811e}{\index{C\-Wordlist@{C\-Wordlist}!m\-\_\-p\-Words@{m\-\_\-p\-Words}}
+\index{m\-\_\-p\-Words@{m\-\_\-p\-Words}!CWordlist@{C\-Wordlist}}
+\subsubsection[{m\-\_\-p\-Words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf B\-Y\-T\-E}$>$ C\-Wordlist\-::m\-\_\-p\-Words}}\label{classCWordlist_a6079074dc4ddc2b9fd8bd380fe0b811e}
+
+
+arena for checkpoint's words 
+
+\hypertarget{classCWordlist_aa08038abe1363d3da8f707084329ecd4}{\index{C\-Wordlist@{C\-Wordlist}!m\-\_\-t\-Buf@{m\-\_\-t\-Buf}}
+\index{m\-\_\-t\-Buf@{m\-\_\-t\-Buf}!CWordlist@{C\-Wordlist}}
+\subsubsection[{m\-\_\-t\-Buf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Mapped\-Buffer}$<${\bf B\-Y\-T\-E}$>$ C\-Wordlist\-::m\-\_\-t\-Buf}}\label{classCWordlist_aa08038abe1363d3da8f707084329ecd4}
+
+
+my cache 
+
+\hypertarget{classCWordlist_a3ac9dd8e620c7965dcc142b73535b621}{\index{C\-Wordlist@{C\-Wordlist}!m\-\_\-t\-Maped\-Cp\-Reader@{m\-\_\-t\-Maped\-Cp\-Reader}}
+\index{m\-\_\-t\-Maped\-Cp\-Reader@{m\-\_\-t\-Maped\-Cp\-Reader}!CWordlist@{C\-Wordlist}}
+\subsubsection[{m\-\_\-t\-Maped\-Cp\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Scoped\-Ptr}$<${\bf I\-Sph\-Checkpoint\-Reader}$>$ C\-Wordlist\-::m\-\_\-t\-Maped\-Cp\-Reader}}\label{classCWordlist_a3ac9dd8e620c7965dcc142b73535b621}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

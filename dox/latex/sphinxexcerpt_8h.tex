@@ -1,0 +1,63 @@
+\hypertarget{sphinxexcerpt_8h}{\section{src/sphinxexcerpt.h File Reference}
+\label{sphinxexcerpt_8h}\index{src/sphinxexcerpt.\-h@{src/sphinxexcerpt.\-h}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398ae}{E\-Sph\-Spz} \{ \hyperlink{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aea3384d3bd05426c69812f759a355c092a}{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-N\-O\-N\-E} = 0, 
+\hyperlink{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aeacf8bf6db5b31863bbebf9c641349f4b1}{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E} = 1\-U\-L$<$$<$0, 
+\hyperlink{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aea2ee8bd83f9743b679435e4e49288a589}{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H} = 1\-U\-L$<$$<$1, 
+\hyperlink{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aea681e26b83ae760cc9f0e429a73f1328c}{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-Z\-O\-N\-E} = 1\-U\-L$<$$<$2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sphinxexcerpt_8h_a6ea0d9f196669235bfd4d358c79e39a9}{sph\-Build\-Excerpt} (\hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t} \&t\-Options, const \hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$p\-Index, const \hyperlink{classCSphHTMLStripper}{C\-Sph\-H\-T\-M\-L\-Stripper} $\ast$p\-Stripper, const \hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} \&t\-Ext\-Query, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} e\-Ext\-Query\-S\-P\-Z, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Doc\-Tokenizer, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Query\-Tokenizer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398ae}{\index{sphinxexcerpt.\-h@{sphinxexcerpt.\-h}!E\-Sph\-Spz@{E\-Sph\-Spz}}
+\index{E\-Sph\-Spz@{E\-Sph\-Spz}!sphinxexcerpt.h@{sphinxexcerpt.\-h}}
+\subsubsection[{E\-Sph\-Spz}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf E\-Sph\-Spz}}}\label{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398ae}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-N\-O\-N\-E@{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-N\-O\-N\-E}!sphinxexcerpt.\-h@{sphinxexcerpt.\-h}}\index{sphinxexcerpt.\-h@{sphinxexcerpt.\-h}!S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-N\-O\-N\-E@{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-N\-O\-N\-E}}\item[{\em 
+\hypertarget{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aea3384d3bd05426c69812f759a355c092a}{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-N\-O\-N\-E}\label{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aea3384d3bd05426c69812f759a355c092a}
+}]\index{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E@{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}!sphinxexcerpt.\-h@{sphinxexcerpt.\-h}}\index{sphinxexcerpt.\-h@{sphinxexcerpt.\-h}!S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E@{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}}\item[{\em 
+\hypertarget{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aeacf8bf6db5b31863bbebf9c641349f4b1}{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}\label{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aeacf8bf6db5b31863bbebf9c641349f4b1}
+}]\index{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H@{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}!sphinxexcerpt.\-h@{sphinxexcerpt.\-h}}\index{sphinxexcerpt.\-h@{sphinxexcerpt.\-h}!S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H@{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}}\item[{\em 
+\hypertarget{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aea2ee8bd83f9743b679435e4e49288a589}{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}\label{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aea2ee8bd83f9743b679435e4e49288a589}
+}]\index{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-Z\-O\-N\-E@{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-Z\-O\-N\-E}!sphinxexcerpt.\-h@{sphinxexcerpt.\-h}}\index{sphinxexcerpt.\-h@{sphinxexcerpt.\-h}!S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-Z\-O\-N\-E@{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-Z\-O\-N\-E}}\item[{\em 
+\hypertarget{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aea681e26b83ae760cc9f0e429a73f1328c}{S\-P\-H\-\_\-\-S\-P\-Z\-\_\-\-Z\-O\-N\-E}\label{sphinxexcerpt_8h_a6b36e56689b7d6d3c81f3c0c450398aea681e26b83ae760cc9f0e429a73f1328c}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxexcerpt_8h_a6ea0d9f196669235bfd4d358c79e39a9}{\index{sphinxexcerpt.\-h@{sphinxexcerpt.\-h}!sph\-Build\-Excerpt@{sph\-Build\-Excerpt}}
+\index{sph\-Build\-Excerpt@{sph\-Build\-Excerpt}!sphinxexcerpt.h@{sphinxexcerpt.\-h}}
+\subsubsection[{sph\-Build\-Excerpt}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Build\-Excerpt (
+\begin{DoxyParamCaption}
+\item[{{\bf Excerpt\-Query\-\_\-t} \&}]{t\-Options, }
+\item[{const {\bf C\-Sph\-Index} $\ast$}]{p\-Index, }
+\item[{const {\bf C\-Sph\-H\-T\-M\-L\-Stripper} $\ast$}]{p\-Stripper, }
+\item[{const {\bf X\-Q\-Query\-\_\-t} \&}]{t\-Ext\-Query, }
+\item[{{\bf D\-W\-O\-R\-D}}]{e\-Ext\-Query\-S\-P\-Z, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Doc\-Tokenizer, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Query\-Tokenizer}
+\end{DoxyParamCaption}
+)}}\label{sphinxexcerpt_8h_a6ea0d9f196669235bfd4d358c79e39a9}
+an excerpt generator returns a newly allocated string in encoding specified by tokenizer on success returns N\-U\-L\-L on failure 

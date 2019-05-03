@@ -1,0 +1,180 @@
+\hypertarget{classExpr__MVAAggr__c}{\section{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c$<$ M\-V\-A64 $>$ Class Template Reference}
+\label{classExpr__MVAAggr__c}\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c$<$ M\-V\-A64 $>$@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c$<$ M\-V\-A64 $>$}}
+}
+
+
+aggregate functions evaluator for M\-V\-A attribute  
+
+
+Inheritance diagram for Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c$<$ M\-V\-A64 $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classExpr__MVAAggr__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExpr__MVAAggr__c_abba0cafb5e74e31d6e48b5e9b4121eb4}{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c} (const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&t\-Loc, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Locator, \hyperlink{sphinx_8h_a92532037c3ec9dad4a636e957fff58c9}{E\-Sph\-Aggr\-Func} e\-Func)
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classExpr__MVAAggr__c_a21b7a05d7eff0baf56db2d3c337d779f}{Mva\-Aggr} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mva, \hyperlink{sphinx_8h_a92532037c3ec9dad4a636e957fff58c9}{E\-Sph\-Aggr\-Func} e\-Func) const 
+\item 
+virtual \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classExpr__MVAAggr__c_a7aede15d7a4b541ea88ca1421bd9cfbf}{Int64\-Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\begin{DoxyCompactList}\small\item\em evaluate this expression for that match, using int64 math \end{DoxyCompactList}\item 
+virtual void \hyperlink{classExpr__MVAAggr__c_aa96dcf807cf92456a6781bf01709cb21}{Command} (\hyperlink{sphinxexpr_8h_a30be184fb07bd80c271360fc6094c818}{E\-Sph\-Expr\-Command} e\-Cmd, void $\ast$p\-Arg)
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classExpr__MVAAggr__c_a6b6394ba158aed25b5a021129537db67}{Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\begin{DoxyCompactList}\small\item\em evaluate this expression for that match \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExpr__MVAAggr__c_a2d7fcfc7e019615e6c98efede738dc2b}{Int\-Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\begin{DoxyCompactList}\small\item\em evaluate this expression for that match, using int math \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classExpr__MVAAggr__c_acf891900d9c346c14055bae09757d9ba}{Get\-Hash} (const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Prev\-Hash, bool \&b\-Disable)
+\begin{DoxyCompactList}\small\item\em get expression hash (for query cache) \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classExpr__MVAAggr__c_ac6d44666c2e14a2a7c9926c2975740fa}{Mva\-Aggr} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mva, \hyperlink{sphinx_8h_a92532037c3ec9dad4a636e957fff58c9}{E\-Sph\-Aggr\-Func} e\-Func) const
+\item 
+{\footnotesize template$<$$>$ }\\\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classExpr__MVAAggr__c_ad1f79d111b83a6581173992333d586bc}{Mva\-Aggr} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mva, \hyperlink{sphinx_8h_a92532037c3ec9dad4a636e957fff58c9}{E\-Sph\-Aggr\-Func} e\-Func) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$ \hyperlink{classExpr__MVAAggr__c_a928aea58ba316b1c727583886d6954bc}{m\-\_\-p\-Mva\-Pool}
+\item 
+bool \hyperlink{classExpr__MVAAggr__c_aa627ac458abf03a80b9a29c004869b23}{m\-\_\-b\-Arena\-Prohibit}
+\item 
+\hyperlink{sphinx_8h_a92532037c3ec9dad4a636e957fff58c9}{E\-Sph\-Aggr\-Func} \hyperlink{classExpr__MVAAggr__c_a4b1db304df7400f5697429b7cb8fe330}{m\-\_\-e\-Func}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$bool M\-V\-A64$>$class Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c$<$ M\-V\-A64 $>$}
+
+aggregate functions evaluator for M\-V\-A attribute 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExpr__MVAAggr__c_abba0cafb5e74e31d6e48b5e9b4121eb4}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool M\-V\-A64$>$ {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ M\-V\-A64 $>$\-::{\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c} (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Locator} \&}]{t\-Loc, }
+\item[{{\bf int}}]{i\-Locator, }
+\item[{{\bf E\-Sph\-Aggr\-Func}}]{e\-Func}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExpr__MVAAggr__c_abba0cafb5e74e31d6e48b5e9b4121eb4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExpr__MVAAggr__c_aa96dcf807cf92456a6781bf01709cb21}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!Command@{Command}}
+\index{Command@{Command}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool M\-V\-A64$>$ virtual void {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ M\-V\-A64 $>$\-::Command (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Expr\-Command}}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__MVAAggr__c_aa96dcf807cf92456a6781bf01709cb21}
+run a tree wide action (1st arg is an action, 2nd is its parameter) usually sets something into \hyperlink{structISphExpr}{I\-Sph\-Expr} like string pool or gets something from it like dependent columns 
+
+Reimplemented from \hyperlink{structExpr__WithLocator__c_aefe201aaeaf3ae437c2814fd06ad21ef}{Expr\-\_\-\-With\-Locator\-\_\-c}.
+
+\hypertarget{classExpr__MVAAggr__c_a6b6394ba158aed25b5a021129537db67}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!Eval@{Eval}}
+\index{Eval@{Eval}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool M\-V\-A64$>$ virtual {\bf float} {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ M\-V\-A64 $>$\-::Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__MVAAggr__c_a6b6394ba158aed25b5a021129537db67}
+
+
+evaluate this expression for that match 
+
+
+
+Implements \hyperlink{structISphExpr_a63f27958b0f1664ca8fe7d201e4d9f8c}{I\-Sph\-Expr}.
+
+\hypertarget{classExpr__MVAAggr__c_acf891900d9c346c14055bae09757d9ba}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!Get\-Hash@{Get\-Hash}}
+\index{Get\-Hash@{Get\-Hash}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool M\-V\-A64$>$ virtual {\bf uint64\-\_\-t} {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ M\-V\-A64 $>$\-::Get\-Hash (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Prev\-Hash, }
+\item[{bool \&}]{b\-Disable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__MVAAggr__c_acf891900d9c346c14055bae09757d9ba}
+
+
+get expression hash (for query cache) 
+
+
+
+Implements \hyperlink{structISphExpr_aabc4c95ac6f190f6ebb15fabd7e54b08}{I\-Sph\-Expr}.
+
+\hypertarget{classExpr__MVAAggr__c_a7aede15d7a4b541ea88ca1421bd9cfbf}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!Int64\-Eval@{Int64\-Eval}}
+\index{Int64\-Eval@{Int64\-Eval}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{Int64\-Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool M\-V\-A64$>$ virtual {\bf int64\-\_\-t} {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ M\-V\-A64 $>$\-::Int64\-Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__MVAAggr__c_a7aede15d7a4b541ea88ca1421bd9cfbf}
+
+
+evaluate this expression for that match, using int64 math 
+
+
+
+Reimplemented from \hyperlink{structISphExpr_a4f14fae00cc5ebd877ce86419d4fed03}{I\-Sph\-Expr}.
+
+\hypertarget{classExpr__MVAAggr__c_a2d7fcfc7e019615e6c98efede738dc2b}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!Int\-Eval@{Int\-Eval}}
+\index{Int\-Eval@{Int\-Eval}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{Int\-Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool M\-V\-A64$>$ virtual {\bf int} {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ M\-V\-A64 $>$\-::Int\-Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__MVAAggr__c_a2d7fcfc7e019615e6c98efede738dc2b}
+
+
+evaluate this expression for that match, using int math 
+
+
+
+Reimplemented from \hyperlink{structISphExpr_a32fb4380bed5d788ce29c0c659b2e917}{I\-Sph\-Expr}.
+
+\hypertarget{classExpr__MVAAggr__c_a21b7a05d7eff0baf56db2d3c337d779f}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!Mva\-Aggr@{Mva\-Aggr}}
+\index{Mva\-Aggr@{Mva\-Aggr}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{Mva\-Aggr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool M\-V\-A64$>$ {\bf int64\-\_\-t} {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ M\-V\-A64 $>$\-::Mva\-Aggr (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mva, }
+\item[{{\bf E\-Sph\-Aggr\-Func}}]{e\-Func}
+\end{DoxyParamCaption}
+) const}}\label{classExpr__MVAAggr__c_a21b7a05d7eff0baf56db2d3c337d779f}
+\hypertarget{classExpr__MVAAggr__c_ac6d44666c2e14a2a7c9926c2975740fa}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!Mva\-Aggr@{Mva\-Aggr}}
+\index{Mva\-Aggr@{Mva\-Aggr}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{Mva\-Aggr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ {\bf int64\-\_\-t} {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ false $>$\-::Mva\-Aggr (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mva, }
+\item[{{\bf E\-Sph\-Aggr\-Func}}]{e\-Func}
+\end{DoxyParamCaption}
+) const}}\label{classExpr__MVAAggr__c_ac6d44666c2e14a2a7c9926c2975740fa}
+\hypertarget{classExpr__MVAAggr__c_ad1f79d111b83a6581173992333d586bc}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!Mva\-Aggr@{Mva\-Aggr}}
+\index{Mva\-Aggr@{Mva\-Aggr}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{Mva\-Aggr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ {\bf int64\-\_\-t} {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ true $>$\-::Mva\-Aggr (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mva, }
+\item[{{\bf E\-Sph\-Aggr\-Func}}]{e\-Func}
+\end{DoxyParamCaption}
+) const}}\label{classExpr__MVAAggr__c_ad1f79d111b83a6581173992333d586bc}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExpr__MVAAggr__c_aa627ac458abf03a80b9a29c004869b23}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!m\-\_\-b\-Arena\-Prohibit@{m\-\_\-b\-Arena\-Prohibit}}
+\index{m\-\_\-b\-Arena\-Prohibit@{m\-\_\-b\-Arena\-Prohibit}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{m\-\_\-b\-Arena\-Prohibit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool M\-V\-A64$>$ bool {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ M\-V\-A64 $>$\-::m\-\_\-b\-Arena\-Prohibit\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExpr__MVAAggr__c_aa627ac458abf03a80b9a29c004869b23}
+\hypertarget{classExpr__MVAAggr__c_a4b1db304df7400f5697429b7cb8fe330}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!m\-\_\-e\-Func@{m\-\_\-e\-Func}}
+\index{m\-\_\-e\-Func@{m\-\_\-e\-Func}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{m\-\_\-e\-Func}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool M\-V\-A64$>$ {\bf E\-Sph\-Aggr\-Func} {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ M\-V\-A64 $>$\-::m\-\_\-e\-Func\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExpr__MVAAggr__c_a4b1db304df7400f5697429b7cb8fe330}
+\hypertarget{classExpr__MVAAggr__c_a928aea58ba316b1c727583886d6954bc}{\index{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}!m\-\_\-p\-Mva\-Pool@{m\-\_\-p\-Mva\-Pool}}
+\index{m\-\_\-p\-Mva\-Pool@{m\-\_\-p\-Mva\-Pool}!Expr_MVAAggr_c@{Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}}
+\subsubsection[{m\-\_\-p\-Mva\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool M\-V\-A64$>$ const {\bf D\-W\-O\-R\-D}$\ast$ {\bf Expr\-\_\-\-M\-V\-A\-Aggr\-\_\-c}$<$ M\-V\-A64 $>$\-::m\-\_\-p\-Mva\-Pool\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExpr__MVAAggr__c_a928aea58ba316b1c727583886d6954bc}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexpr_8cpp}{sphinxexpr.\-cpp}\end{DoxyCompactItemize}

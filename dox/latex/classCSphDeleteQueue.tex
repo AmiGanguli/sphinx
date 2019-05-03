@@ -1,0 +1,145 @@
+\hypertarget{classCSphDeleteQueue}{\section{C\-Sph\-Delete\-Queue Class Reference}
+\label{classCSphDeleteQueue}\index{C\-Sph\-Delete\-Queue@{C\-Sph\-Delete\-Queue}}
+}
+
+
+collector for D\-E\-L\-E\-T\-E statement  
+
+
+Inheritance diagram for C\-Sph\-Delete\-Queue\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphDeleteQueue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphDeleteQueue_a9d39a7a5055078c5f76c9ec45485f470}{C\-Sph\-Delete\-Queue} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ $\ast$p\-Deletes)
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDeleteQueue_a2e549eb8b7bae5b82c1f2ab0b91c0d7e}{Is\-Groupby} () const 
+\begin{DoxyCompactList}\small\item\em check if this sorter does groupby \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDeleteQueue_a8d3291db74bb720af6c0bdcdb6ab24c4}{Push} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Entry)
+\begin{DoxyCompactList}\small\item\em add entry to the queue \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDeleteQueue_a506f6b3688d381ec54420694d74a08a9}{Push\-Grouped} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&, bool)
+\begin{DoxyCompactList}\small\item\em add grouped entry (must not happen) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDeleteQueue_a6854f7a4d0e3fdda80b41eccab76b288}{Flatten} (\hyperlink{classCSphMatch}{C\-Sph\-Match} $\ast$, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\begin{DoxyCompactList}\small\item\em store all entries into specified location in sorted order, and remove them from queue \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDeleteQueue_aa20f33712096d51fee04ef18b4fc609d}{Finalize} (\hyperlink{structISphMatchProcessor}{I\-Sph\-Match\-Processor} \&, bool)
+\begin{DoxyCompactList}\small\item\em process collected entries up to length count \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ $\ast$ \hyperlink{classCSphDeleteQueue_acb886657ed713ddfa67b80e1e30c435a}{m\-\_\-p\-Values}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+collector for D\-E\-L\-E\-T\-E statement 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphDeleteQueue_a9d39a7a5055078c5f76c9ec45485f470}{\index{C\-Sph\-Delete\-Queue@{C\-Sph\-Delete\-Queue}!C\-Sph\-Delete\-Queue@{C\-Sph\-Delete\-Queue}}
+\index{C\-Sph\-Delete\-Queue@{C\-Sph\-Delete\-Queue}!CSphDeleteQueue@{C\-Sph\-Delete\-Queue}}
+\subsubsection[{C\-Sph\-Delete\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Delete\-Queue\-::\-C\-Sph\-Delete\-Queue (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Sph\-Doc\-I\-D\-\_\-t} $>$ $\ast$}]{p\-Deletes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDeleteQueue_a9d39a7a5055078c5f76c9ec45485f470}
+
+
+ctor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphDeleteQueue_aa20f33712096d51fee04ef18b4fc609d}{\index{C\-Sph\-Delete\-Queue@{C\-Sph\-Delete\-Queue}!Finalize@{Finalize}}
+\index{Finalize@{Finalize}!CSphDeleteQueue@{C\-Sph\-Delete\-Queue}}
+\subsubsection[{Finalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Delete\-Queue\-::\-Finalize (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Match\-Processor} \&}]{t\-Processor, }
+\item[{bool}]{b\-Call\-Process\-In\-Result\-Set\-Order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDeleteQueue_aa20f33712096d51fee04ef18b4fc609d}
+
+
+process collected entries up to length count 
+
+
+
+Implements \hyperlink{classISphMatchSorter_acdeae07ed32a5497c3fd814ba57314fb}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphDeleteQueue_a6854f7a4d0e3fdda80b41eccab76b288}{\index{C\-Sph\-Delete\-Queue@{C\-Sph\-Delete\-Queue}!Flatten@{Flatten}}
+\index{Flatten@{Flatten}!CSphDeleteQueue@{C\-Sph\-Delete\-Queue}}
+\subsubsection[{Flatten}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Delete\-Queue\-::\-Flatten (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Match} $\ast$}]{, }
+\item[{{\bf int}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDeleteQueue_a6854f7a4d0e3fdda80b41eccab76b288}
+
+
+store all entries into specified location in sorted order, and remove them from queue 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a28951c480b6b221de739f2cbe98c1572}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphDeleteQueue_a2e549eb8b7bae5b82c1f2ab0b91c0d7e}{\index{C\-Sph\-Delete\-Queue@{C\-Sph\-Delete\-Queue}!Is\-Groupby@{Is\-Groupby}}
+\index{Is\-Groupby@{Is\-Groupby}!CSphDeleteQueue@{C\-Sph\-Delete\-Queue}}
+\subsubsection[{Is\-Groupby}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Delete\-Queue\-::\-Is\-Groupby (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDeleteQueue_a2e549eb8b7bae5b82c1f2ab0b91c0d7e}
+
+
+check if this sorter does groupby 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a4597c0e4843dfa1ad2a4b1408fae6b38}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphDeleteQueue_a8d3291db74bb720af6c0bdcdb6ab24c4}{\index{C\-Sph\-Delete\-Queue@{C\-Sph\-Delete\-Queue}!Push@{Push}}
+\index{Push@{Push}!CSphDeleteQueue@{C\-Sph\-Delete\-Queue}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Delete\-Queue\-::\-Push (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDeleteQueue_a8d3291db74bb720af6c0bdcdb6ab24c4}
+
+
+add entry to the queue 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a2b3e3dfad4c9da1c4d014dcbab585760}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphDeleteQueue_a506f6b3688d381ec54420694d74a08a9}{\index{C\-Sph\-Delete\-Queue@{C\-Sph\-Delete\-Queue}!Push\-Grouped@{Push\-Grouped}}
+\index{Push\-Grouped@{Push\-Grouped}!CSphDeleteQueue@{C\-Sph\-Delete\-Queue}}
+\subsubsection[{Push\-Grouped}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Delete\-Queue\-::\-Push\-Grouped (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{, }
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDeleteQueue_a506f6b3688d381ec54420694d74a08a9}
+
+
+add grouped entry (must not happen) 
+
+
+
+Implements \hyperlink{classISphMatchSorter_aefd6f5b67faf49cc6d7d52bba8679fe0}{I\-Sph\-Match\-Sorter}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphDeleteQueue_acb886657ed713ddfa67b80e1e30c435a}{\index{C\-Sph\-Delete\-Queue@{C\-Sph\-Delete\-Queue}!m\-\_\-p\-Values@{m\-\_\-p\-Values}}
+\index{m\-\_\-p\-Values@{m\-\_\-p\-Values}!CSphDeleteQueue@{C\-Sph\-Delete\-Queue}}
+\subsubsection[{m\-\_\-p\-Values}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Sph\-Doc\-I\-D\-\_\-t}$>$$\ast$ C\-Sph\-Delete\-Queue\-::m\-\_\-p\-Values\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDeleteQueue_acb886657ed713ddfa67b80e1e30c435a}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

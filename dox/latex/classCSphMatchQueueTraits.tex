@@ -1,0 +1,169 @@
+\hypertarget{classCSphMatchQueueTraits}{\section{C\-Sph\-Match\-Queue\-Traits Class Reference}
+\label{classCSphMatchQueueTraits}\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}}
+}
+
+
+match-\/sorting priority queue traits  
+
+
+Inheritance diagram for C\-Sph\-Match\-Queue\-Traits\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.801144cm]{classCSphMatchQueueTraits}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphMatchQueueTraits_abdfa529bee1fbaf7479079c9fb07209c}{C\-Sph\-Match\-Queue\-Traits} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size, bool b\-Uses\-Attrs)
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+virtual \hyperlink{classCSphMatchQueueTraits_a0766e401a85f55989b00fad9c47bd8e7}{$\sim$\-C\-Sph\-Match\-Queue\-Traits} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphMatchQueueTraits_ab0f800b1c762654b2f50fdaaad379bf1}{Uses\-Attrs} () const 
+\begin{DoxyCompactList}\small\item\em check if this sorter needs attr values \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphMatchQueueTraits_af9674dc23ec129c23bdd4031b0a5d6ee}{Get\-Length} () const 
+\begin{DoxyCompactList}\small\item\em get rough entries count, due of aggregate filtering phase \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphMatchQueueTraits_aad3cdd471c2c6c76929a2709138c9cde}{Get\-Data\-Length} () const 
+\begin{DoxyCompactList}\small\item\em get internal buffer length \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphMatchQueueTraits_aa39f653cf2da72afccc17806cff0acb0}{Can\-Multi} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphMatch}{C\-Sph\-Match} $\ast$ \hyperlink{classCSphMatchQueueTraits_a2fe4eba7fda1aebb934e4651c08b4f65}{m\-\_\-p\-Data}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphMatchQueueTraits_a79d40a751ae08d2693fbf52c8444b4c2}{m\-\_\-i\-Used}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphMatchQueueTraits_a162ecbce6bdcc3b700835548b8e1a437}{m\-\_\-i\-Size}
+\item 
+const bool \hyperlink{classCSphMatchQueueTraits_ae1b172fd47189997ff938ef9d6228752}{m\-\_\-b\-Uses\-Attrs}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphMatchQueueTraits_a9b091659866defd25f33ba9cacd447f1}{m\-\_\-i\-Data\-Length}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+match-\/sorting priority queue traits 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphMatchQueueTraits_abdfa529bee1fbaf7479079c9fb07209c}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}}
+\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{C\-Sph\-Match\-Queue\-Traits}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Match\-Queue\-Traits\-::\-C\-Sph\-Match\-Queue\-Traits (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size, }
+\item[{bool}]{b\-Uses\-Attrs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMatchQueueTraits_abdfa529bee1fbaf7479079c9fb07209c}
+
+
+ctor 
+
+\hypertarget{classCSphMatchQueueTraits_a0766e401a85f55989b00fad9c47bd8e7}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!$\sim$\-C\-Sph\-Match\-Queue\-Traits@{$\sim$\-C\-Sph\-Match\-Queue\-Traits}}
+\index{$\sim$\-C\-Sph\-Match\-Queue\-Traits@{$\sim$\-C\-Sph\-Match\-Queue\-Traits}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{$\sim$\-C\-Sph\-Match\-Queue\-Traits}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\-Sph\-Match\-Queue\-Traits\-::$\sim$\-C\-Sph\-Match\-Queue\-Traits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueueTraits_a0766e401a85f55989b00fad9c47bd8e7}
+
+
+dtor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphMatchQueueTraits_aa39f653cf2da72afccc17806cff0acb0}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!Can\-Multi@{Can\-Multi}}
+\index{Can\-Multi@{Can\-Multi}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{Can\-Multi}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Match\-Queue\-Traits\-::\-Can\-Multi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueueTraits_aa39f653cf2da72afccc17806cff0acb0}
+
+
+Implements \hyperlink{classISphMatchSorter_a5135a59708021dfa6893d7e600877f94}{I\-Sph\-Match\-Sorter}.
+
+
+
+Reimplemented in \hyperlink{classCSphKBufferNGroupSorter_a4f83ef27b945497d8000a61c932a6e81}{C\-Sph\-K\-Buffer\-N\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}, and \hyperlink{classCSphKBufferGroupSorter_a65ddfdf1bfe408aadec043fdde4dedba}{C\-Sph\-K\-Buffer\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}.
+
+\hypertarget{classCSphMatchQueueTraits_aad3cdd471c2c6c76929a2709138c9cde}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!Get\-Data\-Length@{Get\-Data\-Length}}
+\index{Get\-Data\-Length@{Get\-Data\-Length}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{Get\-Data\-Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Match\-Queue\-Traits\-::\-Get\-Data\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueueTraits_aad3cdd471c2c6c76929a2709138c9cde}
+
+
+get internal buffer length 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a9e43da1f0e20a96132a8fb6746c97e1d}{I\-Sph\-Match\-Sorter}.
+
+
+
+Reimplemented in \hyperlink{classCSphKBufferNGroupSorter_a43c873729cf4aad6433fae159a0f91b5}{C\-Sph\-K\-Buffer\-N\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}.
+
+\hypertarget{classCSphMatchQueueTraits_af9674dc23ec129c23bdd4031b0a5d6ee}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!Get\-Length@{Get\-Length}}
+\index{Get\-Length@{Get\-Length}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{Get\-Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Match\-Queue\-Traits\-::\-Get\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueueTraits_af9674dc23ec129c23bdd4031b0a5d6ee}
+
+
+get rough entries count, due of aggregate filtering phase 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a8873597f6c8bb7eaeb7ece3d0144fc8c}{I\-Sph\-Match\-Sorter}.
+
+
+
+Reimplemented in \hyperlink{classCSphKBufferNGroupSorter_a67852a9351305dfe283ab0533db63486}{C\-Sph\-K\-Buffer\-N\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}, \hyperlink{classCSphKBufferGroupSorter_adf17b66728bef959d0cc6412cfe3f558}{C\-Sph\-K\-Buffer\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}, and \hyperlink{classCSphKbufferMatchQueue_a5a05214290ef8e1d835cff0dbfcd6ddc}{C\-Sph\-Kbuffer\-Match\-Queue$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}.
+
+\hypertarget{classCSphMatchQueueTraits_ab0f800b1c762654b2f50fdaaad379bf1}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!Uses\-Attrs@{Uses\-Attrs}}
+\index{Uses\-Attrs@{Uses\-Attrs}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{Uses\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Match\-Queue\-Traits\-::\-Uses\-Attrs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphMatchQueueTraits_ab0f800b1c762654b2f50fdaaad379bf1}
+
+
+check if this sorter needs attr values 
+
+
+
+Implements \hyperlink{classISphMatchSorter_ae44238460e92263e6dda7de35e24d32c}{I\-Sph\-Match\-Sorter}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphMatchQueueTraits_ae1b172fd47189997ff938ef9d6228752}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!m\-\_\-b\-Uses\-Attrs@{m\-\_\-b\-Uses\-Attrs}}
+\index{m\-\_\-b\-Uses\-Attrs@{m\-\_\-b\-Uses\-Attrs}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{m\-\_\-b\-Uses\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}const bool C\-Sph\-Match\-Queue\-Traits\-::m\-\_\-b\-Uses\-Attrs\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphMatchQueueTraits_ae1b172fd47189997ff938ef9d6228752}
+\hypertarget{classCSphMatchQueueTraits_a9b091659866defd25f33ba9cacd447f1}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!m\-\_\-i\-Data\-Length@{m\-\_\-i\-Data\-Length}}
+\index{m\-\_\-i\-Data\-Length@{m\-\_\-i\-Data\-Length}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{m\-\_\-i\-Data\-Length}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Match\-Queue\-Traits\-::m\-\_\-i\-Data\-Length\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphMatchQueueTraits_a9b091659866defd25f33ba9cacd447f1}
+\hypertarget{classCSphMatchQueueTraits_a162ecbce6bdcc3b700835548b8e1a437}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!m\-\_\-i\-Size@{m\-\_\-i\-Size}}
+\index{m\-\_\-i\-Size@{m\-\_\-i\-Size}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{m\-\_\-i\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Match\-Queue\-Traits\-::m\-\_\-i\-Size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphMatchQueueTraits_a162ecbce6bdcc3b700835548b8e1a437}
+\hypertarget{classCSphMatchQueueTraits_a79d40a751ae08d2693fbf52c8444b4c2}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!m\-\_\-i\-Used@{m\-\_\-i\-Used}}
+\index{m\-\_\-i\-Used@{m\-\_\-i\-Used}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{m\-\_\-i\-Used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Match\-Queue\-Traits\-::m\-\_\-i\-Used\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphMatchQueueTraits_a79d40a751ae08d2693fbf52c8444b4c2}
+\hypertarget{classCSphMatchQueueTraits_a2fe4eba7fda1aebb934e4651c08b4f65}{\index{C\-Sph\-Match\-Queue\-Traits@{C\-Sph\-Match\-Queue\-Traits}!m\-\_\-p\-Data@{m\-\_\-p\-Data}}
+\index{m\-\_\-p\-Data@{m\-\_\-p\-Data}!CSphMatchQueueTraits@{C\-Sph\-Match\-Queue\-Traits}}
+\subsubsection[{m\-\_\-p\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Match}$\ast$ C\-Sph\-Match\-Queue\-Traits\-::m\-\_\-p\-Data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphMatchQueueTraits_a2fe4eba7fda1aebb934e4651c08b4f65}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

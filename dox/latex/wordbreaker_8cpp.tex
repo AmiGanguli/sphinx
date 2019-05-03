@@ -1,0 +1,170 @@
+\hypertarget{wordbreaker_8cpp}{\section{src/wordbreaker.cpp File Reference}
+\label{wordbreaker_8cpp}\index{src/wordbreaker.\-cpp@{src/wordbreaker.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinxstd.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structProb__t}{Prob\-\_\-t}
+\begin{DoxyCompactList}\small\item\em probability descriptor \end{DoxyCompactList}\item 
+class \hyperlink{classLangModel__c}{Lang\-Model\-\_\-c}
+\begin{DoxyCompactList}\small\item\em stupid easy unigram model \end{DoxyCompactList}\item 
+struct \hyperlink{structSplit__t}{Split\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{wordbreaker_8cpp_a838ff272f4e484db7cebf5f99503ca4a}{P\-R\-E\-F\-E\-R\-\_\-\-A\-L\-L\-D\-I\-C\-T}~0
+\item 
+\#define \hyperlink{wordbreaker_8cpp_ac2b72dabf9bbcea29d2db5c42e0891a0}{U\-N\-K\-N\-O\-W\-N\-\_\-\-W\-O\-R\-D\-\_\-\-C\-O\-E\-F\-F}~3.\-0f
+\item 
+\#define \hyperlink{wordbreaker_8cpp_ae381907cf1a05cc525182d46a9803c80}{D\-I\-C\-T\-\_\-\-T\-H\-R\-E\-S\-H}~12
+\item 
+\#define \hyperlink{wordbreaker_8cpp_a8c596ed0efaf9d67e4a029b9a162ad24}{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-C\-T}~\char`\"{}wordbreaker-\/dict.\-txt\char`\"{}
+\item 
+\#define \hyperlink{wordbreaker_8cpp_a747560f6d5698034c7aa7ea78191ad83}{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-M\-I\-N}~6
+\item 
+\#define \hyperlink{wordbreaker_8cpp_ad2ea0515442524b07244186785546ec1}{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-T\-H\-R\-E\-S\-H}~0.\-0001f
+\item 
+\#define \hyperlink{wordbreaker_8cpp_a39ced41ed2af37e9316c162ce6ae1c9c}{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-C\-O\-E\-F\-F}~1.\-53f
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{wordbreaker_8cpp_a841b388b117fa23546c9cff87829295e}{Is\-Alpha} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} c)
+\begin{DoxyCompactList}\small\item\em my own isalpha (let's build our own theme park!) \end{DoxyCompactList}\item 
+void \hyperlink{wordbreaker_8cpp_a39962170a97545dd6fdc1fde3e610a1f}{Str\-Split} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Out, const char $\ast$s\-In)
+\item 
+void \hyperlink{wordbreaker_8cpp_a07417ae753bda20b4e1f03719537939e}{Url\-Break\-Init} (const char $\ast$s\-Dict, bool b\-Verbose)
+\item 
+void \hyperlink{wordbreaker_8cpp_aba2e9f437f4719ab152cc92198f57496}{Url\-Break} (\hyperlink{structSplit__t}{Split\-\_\-t} \&t\-Best, const char $\ast$s\-Word)
+\item 
+char $\ast$ \hyperlink{wordbreaker_8cpp_aab134eea9f87525b669e22d37497a787}{Strip} (char $\ast$s\-Buf)
+\item 
+void \hyperlink{wordbreaker_8cpp_a08684a209af38f22db2023c230787677}{Url\-Break\-Test} (const char $\ast$s\-Test\-File)
+\item 
+bool \hyperlink{wordbreaker_8cpp_adec7f52b615958085acb98aac6140885}{Url\-Break\-Is\-Char} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} c)
+\item 
+void \hyperlink{wordbreaker_8cpp_a77b5ce213895bb89a93132a0bcfe3376}{Url\-Break\-Bench} (const char $\ast$s\-Bench\-File)
+\item 
+void \hyperlink{wordbreaker_8cpp_af4a1f9346c487498ff6a18a214ec8204}{Url\-Break\-Split} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{wordbreaker_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classLangModel__c}{Lang\-Model\-\_\-c} \hyperlink{wordbreaker_8cpp_a5709c723e27bedf4c79776946796a80f}{g\-\_\-\-L\-M}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{wordbreaker_8cpp_a8c596ed0efaf9d67e4a029b9a162ad24}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-C\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-C\-T}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-C\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-C\-T}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-I\-C\-T~\char`\"{}wordbreaker-\/dict.\-txt\char`\"{}}}\label{wordbreaker_8cpp_a8c596ed0efaf9d67e4a029b9a162ad24}
+\hypertarget{wordbreaker_8cpp_a39ced41ed2af37e9316c162ce6ae1c9c}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-C\-O\-E\-F\-F@{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-C\-O\-E\-F\-F}}
+\index{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-C\-O\-E\-F\-F@{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-C\-O\-E\-F\-F}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-C\-O\-E\-F\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-C\-O\-E\-F\-F~1.\-53f}}\label{wordbreaker_8cpp_a39ced41ed2af37e9316c162ce6ae1c9c}
+\hypertarget{wordbreaker_8cpp_a747560f6d5698034c7aa7ea78191ad83}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-M\-I\-N@{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-M\-I\-N}}
+\index{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-M\-I\-N@{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-M\-I\-N}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-M\-I\-N~6}}\label{wordbreaker_8cpp_a747560f6d5698034c7aa7ea78191ad83}
+\hypertarget{wordbreaker_8cpp_ad2ea0515442524b07244186785546ec1}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-T\-H\-R\-E\-S\-H@{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-T\-H\-R\-E\-S\-H}}
+\index{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-T\-H\-R\-E\-S\-H@{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-T\-H\-R\-E\-S\-H}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-T\-H\-R\-E\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-C\-T\-\_\-\-C\-O\-M\-P\-O\-U\-N\-D\-\_\-\-T\-H\-R\-E\-S\-H~0.\-0001f}}\label{wordbreaker_8cpp_ad2ea0515442524b07244186785546ec1}
+\hypertarget{wordbreaker_8cpp_ae381907cf1a05cc525182d46a9803c80}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!D\-I\-C\-T\-\_\-\-T\-H\-R\-E\-S\-H@{D\-I\-C\-T\-\_\-\-T\-H\-R\-E\-S\-H}}
+\index{D\-I\-C\-T\-\_\-\-T\-H\-R\-E\-S\-H@{D\-I\-C\-T\-\_\-\-T\-H\-R\-E\-S\-H}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{D\-I\-C\-T\-\_\-\-T\-H\-R\-E\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-C\-T\-\_\-\-T\-H\-R\-E\-S\-H~12}}\label{wordbreaker_8cpp_ae381907cf1a05cc525182d46a9803c80}
+\hypertarget{wordbreaker_8cpp_a838ff272f4e484db7cebf5f99503ca4a}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!P\-R\-E\-F\-E\-R\-\_\-\-A\-L\-L\-D\-I\-C\-T@{P\-R\-E\-F\-E\-R\-\_\-\-A\-L\-L\-D\-I\-C\-T}}
+\index{P\-R\-E\-F\-E\-R\-\_\-\-A\-L\-L\-D\-I\-C\-T@{P\-R\-E\-F\-E\-R\-\_\-\-A\-L\-L\-D\-I\-C\-T}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{P\-R\-E\-F\-E\-R\-\_\-\-A\-L\-L\-D\-I\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-E\-F\-E\-R\-\_\-\-A\-L\-L\-D\-I\-C\-T~0}}\label{wordbreaker_8cpp_a838ff272f4e484db7cebf5f99503ca4a}
+\hypertarget{wordbreaker_8cpp_ac2b72dabf9bbcea29d2db5c42e0891a0}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!U\-N\-K\-N\-O\-W\-N\-\_\-\-W\-O\-R\-D\-\_\-\-C\-O\-E\-F\-F@{U\-N\-K\-N\-O\-W\-N\-\_\-\-W\-O\-R\-D\-\_\-\-C\-O\-E\-F\-F}}
+\index{U\-N\-K\-N\-O\-W\-N\-\_\-\-W\-O\-R\-D\-\_\-\-C\-O\-E\-F\-F@{U\-N\-K\-N\-O\-W\-N\-\_\-\-W\-O\-R\-D\-\_\-\-C\-O\-E\-F\-F}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{U\-N\-K\-N\-O\-W\-N\-\_\-\-W\-O\-R\-D\-\_\-\-C\-O\-E\-F\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-K\-N\-O\-W\-N\-\_\-\-W\-O\-R\-D\-\_\-\-C\-O\-E\-F\-F~3.\-0f}}\label{wordbreaker_8cpp_ac2b72dabf9bbcea29d2db5c42e0891a0}
+
+
+\subsection{Function Documentation}
+\hypertarget{wordbreaker_8cpp_a841b388b117fa23546c9cff87829295e}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!Is\-Alpha@{Is\-Alpha}}
+\index{Is\-Alpha@{Is\-Alpha}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{Is\-Alpha}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Is\-Alpha (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{wordbreaker_8cpp_a841b388b117fa23546c9cff87829295e}
+
+
+my own isalpha (let's build our own theme park!) 
+
+\hypertarget{wordbreaker_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!main@{main}}
+\index{main@{main}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} main (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{wordbreaker_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+\hypertarget{wordbreaker_8cpp_aab134eea9f87525b669e22d37497a787}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!Strip@{Strip}}
+\index{Strip@{Strip}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{Strip}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Strip (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s\-Buf}
+\end{DoxyParamCaption}
+)}}\label{wordbreaker_8cpp_aab134eea9f87525b669e22d37497a787}
+\hypertarget{wordbreaker_8cpp_a39962170a97545dd6fdc1fde3e610a1f}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!Str\-Split@{Str\-Split}}
+\index{Str\-Split@{Str\-Split}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{Str\-Split}]{\setlength{\rightskip}{0pt plus 5cm}void Str\-Split (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Out, }
+\item[{const char $\ast$}]{s\-In}
+\end{DoxyParamCaption}
+)}}\label{wordbreaker_8cpp_a39962170a97545dd6fdc1fde3e610a1f}
+\hypertarget{wordbreaker_8cpp_aba2e9f437f4719ab152cc92198f57496}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!Url\-Break@{Url\-Break}}
+\index{Url\-Break@{Url\-Break}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{Url\-Break}]{\setlength{\rightskip}{0pt plus 5cm}void Url\-Break (
+\begin{DoxyParamCaption}
+\item[{{\bf Split\-\_\-t} \&}]{t\-Best, }
+\item[{const char $\ast$}]{s\-Word}
+\end{DoxyParamCaption}
+)}}\label{wordbreaker_8cpp_aba2e9f437f4719ab152cc92198f57496}
+\hypertarget{wordbreaker_8cpp_a77b5ce213895bb89a93132a0bcfe3376}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!Url\-Break\-Bench@{Url\-Break\-Bench}}
+\index{Url\-Break\-Bench@{Url\-Break\-Bench}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{Url\-Break\-Bench}]{\setlength{\rightskip}{0pt plus 5cm}void Url\-Break\-Bench (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Bench\-File}
+\end{DoxyParamCaption}
+)}}\label{wordbreaker_8cpp_a77b5ce213895bb89a93132a0bcfe3376}
+\hypertarget{wordbreaker_8cpp_a07417ae753bda20b4e1f03719537939e}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!Url\-Break\-Init@{Url\-Break\-Init}}
+\index{Url\-Break\-Init@{Url\-Break\-Init}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{Url\-Break\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Url\-Break\-Init (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Dict, }
+\item[{bool}]{b\-Verbose}
+\end{DoxyParamCaption}
+)}}\label{wordbreaker_8cpp_a07417ae753bda20b4e1f03719537939e}
+\hypertarget{wordbreaker_8cpp_adec7f52b615958085acb98aac6140885}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!Url\-Break\-Is\-Char@{Url\-Break\-Is\-Char}}
+\index{Url\-Break\-Is\-Char@{Url\-Break\-Is\-Char}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{Url\-Break\-Is\-Char}]{\setlength{\rightskip}{0pt plus 5cm}bool Url\-Break\-Is\-Char (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{c}
+\end{DoxyParamCaption}
+)}}\label{wordbreaker_8cpp_adec7f52b615958085acb98aac6140885}
+\hypertarget{wordbreaker_8cpp_af4a1f9346c487498ff6a18a214ec8204}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!Url\-Break\-Split@{Url\-Break\-Split}}
+\index{Url\-Break\-Split@{Url\-Break\-Split}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{Url\-Break\-Split}]{\setlength{\rightskip}{0pt plus 5cm}void Url\-Break\-Split (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{wordbreaker_8cpp_af4a1f9346c487498ff6a18a214ec8204}
+\hypertarget{wordbreaker_8cpp_a08684a209af38f22db2023c230787677}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!Url\-Break\-Test@{Url\-Break\-Test}}
+\index{Url\-Break\-Test@{Url\-Break\-Test}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{Url\-Break\-Test}]{\setlength{\rightskip}{0pt plus 5cm}void Url\-Break\-Test (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Test\-File}
+\end{DoxyParamCaption}
+)}}\label{wordbreaker_8cpp_a08684a209af38f22db2023c230787677}
+
+
+\subsection{Variable Documentation}
+\hypertarget{wordbreaker_8cpp_a5709c723e27bedf4c79776946796a80f}{\index{wordbreaker.\-cpp@{wordbreaker.\-cpp}!g\-\_\-\-L\-M@{g\-\_\-\-L\-M}}
+\index{g\-\_\-\-L\-M@{g\-\_\-\-L\-M}!wordbreaker.cpp@{wordbreaker.\-cpp}}
+\subsubsection[{g\-\_\-\-L\-M}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lang\-Model\-\_\-c} g\-\_\-\-L\-M\hspace{0.3cm}{\ttfamily [static]}}}\label{wordbreaker_8cpp_a5709c723e27bedf4c79776946796a80f}

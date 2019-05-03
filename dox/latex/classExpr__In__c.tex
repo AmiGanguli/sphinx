@@ -1,0 +1,84 @@
+\hypertarget{classExpr__In__c}{\section{Expr\-\_\-\-In\-\_\-c$<$ T $>$ Class Template Reference}
+\label{classExpr__In__c}\index{Expr\-\_\-\-In\-\_\-c$<$ T $>$@{Expr\-\_\-\-In\-\_\-c$<$ T $>$}}
+}
+
+
+I\-N() evaluator, arbitrary scalar expression vs. constant values.  
+
+
+Inheritance diagram for Expr\-\_\-\-In\-\_\-c$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classExpr__In__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExpr__In__c_a784f9fa9f33d538e196232794cec18bd}{Expr\-\_\-\-In\-\_\-c} (\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Arg, \hyperlink{classConstList__c}{Const\-List\-\_\-c} $\ast$p\-Consts)
+\begin{DoxyCompactList}\small\item\em pre-\/sort values for binary search \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExpr__In__c_aeb76ed9147966eb30ae302b57eca622a}{Int\-Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\begin{DoxyCompactList}\small\item\em evaluate arg, check if the value is within set \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classExpr__In__c_a6b599b2dc4164abe75e58e3f10e146e3}{Get\-Hash} (const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Prev\-Hash, bool \&b\-Disable)
+\begin{DoxyCompactList}\small\item\em get expression hash (for query cache) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Expr\-\_\-\-In\-\_\-c$<$ T $>$}
+
+I\-N() evaluator, arbitrary scalar expression vs. constant values. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExpr__In__c_a784f9fa9f33d538e196232794cec18bd}{\index{Expr\-\_\-\-In\-\_\-c@{Expr\-\_\-\-In\-\_\-c}!Expr\-\_\-\-In\-\_\-c@{Expr\-\_\-\-In\-\_\-c}}
+\index{Expr\-\_\-\-In\-\_\-c@{Expr\-\_\-\-In\-\_\-c}!Expr_In_c@{Expr\-\_\-\-In\-\_\-c}}
+\subsubsection[{Expr\-\_\-\-In\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Expr\-\_\-\-In\-\_\-c}$<$ T $>$\-::{\bf Expr\-\_\-\-In\-\_\-c} (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Arg, }
+\item[{{\bf Const\-List\-\_\-c} $\ast$}]{p\-Consts}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExpr__In__c_a784f9fa9f33d538e196232794cec18bd}
+
+
+pre-\/sort values for binary search 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExpr__In__c_a6b599b2dc4164abe75e58e3f10e146e3}{\index{Expr\-\_\-\-In\-\_\-c@{Expr\-\_\-\-In\-\_\-c}!Get\-Hash@{Get\-Hash}}
+\index{Get\-Hash@{Get\-Hash}!Expr_In_c@{Expr\-\_\-\-In\-\_\-c}}
+\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf uint64\-\_\-t} {\bf Expr\-\_\-\-In\-\_\-c}$<$ T $>$\-::Get\-Hash (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Prev\-Hash, }
+\item[{bool \&}]{b\-Disable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__In__c_a6b599b2dc4164abe75e58e3f10e146e3}
+
+
+get expression hash (for query cache) 
+
+
+
+Reimplemented from \hyperlink{classExpr__ArgVsConstSet__c_a4be34d5625a4960dbea8ca47e6d867ad}{Expr\-\_\-\-Arg\-Vs\-Const\-Set\-\_\-c$<$ T $>$}.
+
+\hypertarget{classExpr__In__c_aeb76ed9147966eb30ae302b57eca622a}{\index{Expr\-\_\-\-In\-\_\-c@{Expr\-\_\-\-In\-\_\-c}!Int\-Eval@{Int\-Eval}}
+\index{Int\-Eval@{Int\-Eval}!Expr_In_c@{Expr\-\_\-\-In\-\_\-c}}
+\subsubsection[{Int\-Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf int} {\bf Expr\-\_\-\-In\-\_\-c}$<$ T $>$\-::Int\-Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__In__c_aeb76ed9147966eb30ae302b57eca622a}
+
+
+evaluate arg, check if the value is within set 
+
+
+
+Implements \hyperlink{classExpr__ArgVsSet__c_a2b37f6f558473937dff6330f7cff7897}{Expr\-\_\-\-Arg\-Vs\-Set\-\_\-c$<$ T $>$}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexpr_8cpp}{sphinxexpr.\-cpp}\end{DoxyCompactItemize}

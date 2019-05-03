@@ -1,0 +1,203 @@
+\hypertarget{structCSphColumnInfo}{\section{C\-Sph\-Column\-Info Struct Reference}
+\label{structCSphColumnInfo}\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}}
+}
+
+
+source column info  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphColumnInfo_ab7fb288c06e900895763e215667e81fc}{C\-Sph\-Column\-Info} (const char $\ast$s\-Name=N\-U\-L\-L, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-Type=\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3ab7fa01b194212d4ffe0f3d8cb9c55c81}{S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-N\-O\-N\-E})
+\begin{DoxyCompactList}\small\item\em handy ctor \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphColumnInfo_ad2976a895824c450726abd8369454689}{operator==} (const \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} \&rhs) const 
+\begin{DoxyCompactList}\small\item\em equality comparison checks name, type, and locator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphColumnInfo_ac8b08ca8f69d7bfa2dddbf080027f09e}{m\-\_\-s\-Name}
+\begin{DoxyCompactList}\small\item\em column name \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} \hyperlink{structCSphColumnInfo_af245356e2540a4cd90aaf095045a477c}{m\-\_\-e\-Attr\-Type}
+\begin{DoxyCompactList}\small\item\em attribute type \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a7a49c09fe68a444e69a19f051bf9b04f}{E\-Sph\-Wordpart} \hyperlink{structCSphColumnInfo_a2aa14fd1e59d61f608ca46c9a653d8e8}{m\-\_\-e\-Wordpart}
+\begin{DoxyCompactList}\small\item\em wordpart processing type \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphColumnInfo_ab5606279a04ace1c11ccd5be1939b10a}{m\-\_\-b\-Indexed}
+\begin{DoxyCompactList}\small\item\em whether to index this column as fulltext field too \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphColumnInfo_aa9a9247300b6dd70ea3106e34628ff23}{m\-\_\-i\-Index}
+\begin{DoxyCompactList}\small\item\em index into source result set (-\/1 for joined fields) \end{DoxyCompactList}\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{structCSphColumnInfo_add79fe460a5cecd6360fd1e2c7c15479}{m\-\_\-t\-Locator}
+\begin{DoxyCompactList}\small\item\em attribute locator in the row \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a12f94ed24e910d07293d589938013df9}{E\-Sph\-Attr\-Src} \hyperlink{structCSphColumnInfo_afe3902493f80436499d412c0f24b5d77}{m\-\_\-e\-Src}
+\begin{DoxyCompactList}\small\item\em attr source (for multi-\/valued attrs only) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphColumnInfo_a699eab7d433023dd1566699496006457}{m\-\_\-s\-Query}
+\begin{DoxyCompactList}\small\item\em query to retrieve values (for multi-\/valued attrs only) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphColumnInfo_ab115d56d74ce42d937c1fd785411c00e}{m\-\_\-s\-Query\-Range}
+\begin{DoxyCompactList}\small\item\em query to retrieve range (for multi-\/valued attrs only) \end{DoxyCompactList}\item 
+\hyperlink{classCSphRefcountedPtr}{C\-Sph\-Refcounted\-Ptr}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $>$ \hyperlink{structCSphColumnInfo_a552429a383e387ec79a70899e0444d0c}{m\-\_\-p\-Expr}
+\begin{DoxyCompactList}\small\item\em evaluator for expression items \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a92532037c3ec9dad4a636e957fff58c9}{E\-Sph\-Aggr\-Func} \hyperlink{structCSphColumnInfo_a5426129bbf0e925048f14f741fec79e4}{m\-\_\-e\-Aggr\-Func}
+\begin{DoxyCompactList}\small\item\em aggregate function on top of expression (for G\-R\-O\-U\-P B\-Y) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8h_ae5eb5e13e926842882703cd0bd53ee46}{E\-Sph\-Eval\-Stage} \hyperlink{structCSphColumnInfo_aeeba6f3600e5aad690b1fbcc104eb163}{m\-\_\-e\-Stage}
+\begin{DoxyCompactList}\small\item\em column evaluation stage (who and how computes this column) \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphColumnInfo_a2052963e97837238106e08824f7d52fd}{m\-\_\-b\-Payload}
+\item 
+bool \hyperlink{structCSphColumnInfo_a39877dee18e180d478804f292203cb2d}{m\-\_\-b\-Filename}
+\begin{DoxyCompactList}\small\item\em column is a file name \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphColumnInfo_a247e4a846b54372c1dd6e30a8dc73bbe}{m\-\_\-b\-Weight}
+\begin{DoxyCompactList}\small\item\em is a weight column \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} \hyperlink{structCSphColumnInfo_af8e24ae07a148ef5edba4a34574d4223}{m\-\_\-u\-Next}
+\begin{DoxyCompactList}\small\item\em next in linked list for hash in \hyperlink{classCSphSchema}{C\-Sph\-Schema} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+source column info 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphColumnInfo_ab7fb288c06e900895763e215667e81fc}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}}
+\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{C\-Sph\-Column\-Info}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Column\-Info\-::\-C\-Sph\-Column\-Info (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name = {\ttfamily NULL}, }
+\item[{{\bf E\-Sph\-Attr}}]{e\-Type = {\ttfamily {\bf S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-N\-O\-N\-E}}}
+\end{DoxyParamCaption}
+)}}\label{structCSphColumnInfo_ab7fb288c06e900895763e215667e81fc}
+
+
+handy ctor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphColumnInfo_ad2976a895824c450726abd8369454689}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!operator==@{operator==}}
+\index{operator==@{operator==}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Column\-Info\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Column\-Info} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphColumnInfo_ad2976a895824c450726abd8369454689}
+
+
+equality comparison checks name, type, and locator 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphColumnInfo_a39877dee18e180d478804f292203cb2d}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-b\-Filename@{m\-\_\-b\-Filename}}
+\index{m\-\_\-b\-Filename@{m\-\_\-b\-Filename}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-b\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Column\-Info\-::m\-\_\-b\-Filename}}\label{structCSphColumnInfo_a39877dee18e180d478804f292203cb2d}
+
+
+column is a file name 
+
+\hypertarget{structCSphColumnInfo_ab5606279a04ace1c11ccd5be1939b10a}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-b\-Indexed@{m\-\_\-b\-Indexed}}
+\index{m\-\_\-b\-Indexed@{m\-\_\-b\-Indexed}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-b\-Indexed}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Column\-Info\-::m\-\_\-b\-Indexed}}\label{structCSphColumnInfo_ab5606279a04ace1c11ccd5be1939b10a}
+
+
+whether to index this column as fulltext field too 
+
+\hypertarget{structCSphColumnInfo_a2052963e97837238106e08824f7d52fd}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-b\-Payload@{m\-\_\-b\-Payload}}
+\index{m\-\_\-b\-Payload@{m\-\_\-b\-Payload}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-b\-Payload}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Column\-Info\-::m\-\_\-b\-Payload}}\label{structCSphColumnInfo_a2052963e97837238106e08824f7d52fd}
+\hypertarget{structCSphColumnInfo_a247e4a846b54372c1dd6e30a8dc73bbe}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-b\-Weight@{m\-\_\-b\-Weight}}
+\index{m\-\_\-b\-Weight@{m\-\_\-b\-Weight}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-b\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Column\-Info\-::m\-\_\-b\-Weight}}\label{structCSphColumnInfo_a247e4a846b54372c1dd6e30a8dc73bbe}
+
+
+is a weight column 
+
+\hypertarget{structCSphColumnInfo_a5426129bbf0e925048f14f741fec79e4}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-e\-Aggr\-Func@{m\-\_\-e\-Aggr\-Func}}
+\index{m\-\_\-e\-Aggr\-Func@{m\-\_\-e\-Aggr\-Func}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-e\-Aggr\-Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Aggr\-Func} C\-Sph\-Column\-Info\-::m\-\_\-e\-Aggr\-Func}}\label{structCSphColumnInfo_a5426129bbf0e925048f14f741fec79e4}
+
+
+aggregate function on top of expression (for G\-R\-O\-U\-P B\-Y) 
+
+\hypertarget{structCSphColumnInfo_af245356e2540a4cd90aaf095045a477c}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-e\-Attr\-Type@{m\-\_\-e\-Attr\-Type}}
+\index{m\-\_\-e\-Attr\-Type@{m\-\_\-e\-Attr\-Type}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-e\-Attr\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Attr} C\-Sph\-Column\-Info\-::m\-\_\-e\-Attr\-Type}}\label{structCSphColumnInfo_af245356e2540a4cd90aaf095045a477c}
+
+
+attribute type 
+
+\hypertarget{structCSphColumnInfo_afe3902493f80436499d412c0f24b5d77}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-e\-Src@{m\-\_\-e\-Src}}
+\index{m\-\_\-e\-Src@{m\-\_\-e\-Src}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-e\-Src}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Attr\-Src} C\-Sph\-Column\-Info\-::m\-\_\-e\-Src}}\label{structCSphColumnInfo_afe3902493f80436499d412c0f24b5d77}
+
+
+attr source (for multi-\/valued attrs only) 
+
+\hypertarget{structCSphColumnInfo_aeeba6f3600e5aad690b1fbcc104eb163}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-e\-Stage@{m\-\_\-e\-Stage}}
+\index{m\-\_\-e\-Stage@{m\-\_\-e\-Stage}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-e\-Stage}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Eval\-Stage} C\-Sph\-Column\-Info\-::m\-\_\-e\-Stage}}\label{structCSphColumnInfo_aeeba6f3600e5aad690b1fbcc104eb163}
+
+
+column evaluation stage (who and how computes this column) 
+
+\hypertarget{structCSphColumnInfo_a2aa14fd1e59d61f608ca46c9a653d8e8}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-e\-Wordpart@{m\-\_\-e\-Wordpart}}
+\index{m\-\_\-e\-Wordpart@{m\-\_\-e\-Wordpart}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-e\-Wordpart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Wordpart} C\-Sph\-Column\-Info\-::m\-\_\-e\-Wordpart}}\label{structCSphColumnInfo_a2aa14fd1e59d61f608ca46c9a653d8e8}
+
+
+wordpart processing type 
+
+\hypertarget{structCSphColumnInfo_aa9a9247300b6dd70ea3106e34628ff23}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-i\-Index@{m\-\_\-i\-Index}}
+\index{m\-\_\-i\-Index@{m\-\_\-i\-Index}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-i\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Column\-Info\-::m\-\_\-i\-Index}}\label{structCSphColumnInfo_aa9a9247300b6dd70ea3106e34628ff23}
+
+
+index into source result set (-\/1 for joined fields) 
+
+\hypertarget{structCSphColumnInfo_a552429a383e387ec79a70899e0444d0c}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-p\-Expr@{m\-\_\-p\-Expr}}
+\index{m\-\_\-p\-Expr@{m\-\_\-p\-Expr}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-p\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Refcounted\-Ptr}$<${\bf I\-Sph\-Expr}$>$ C\-Sph\-Column\-Info\-::m\-\_\-p\-Expr}}\label{structCSphColumnInfo_a552429a383e387ec79a70899e0444d0c}
+
+
+evaluator for expression items 
+
+\hypertarget{structCSphColumnInfo_ac8b08ca8f69d7bfa2dddbf080027f09e}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-s\-Name@{m\-\_\-s\-Name}}
+\index{m\-\_\-s\-Name@{m\-\_\-s\-Name}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-s\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Column\-Info\-::m\-\_\-s\-Name}}\label{structCSphColumnInfo_ac8b08ca8f69d7bfa2dddbf080027f09e}
+
+
+column name 
+
+\hypertarget{structCSphColumnInfo_a699eab7d433023dd1566699496006457}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-s\-Query@{m\-\_\-s\-Query}}
+\index{m\-\_\-s\-Query@{m\-\_\-s\-Query}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-s\-Query}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Column\-Info\-::m\-\_\-s\-Query}}\label{structCSphColumnInfo_a699eab7d433023dd1566699496006457}
+
+
+query to retrieve values (for multi-\/valued attrs only) 
+
+\hypertarget{structCSphColumnInfo_ab115d56d74ce42d937c1fd785411c00e}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-s\-Query\-Range@{m\-\_\-s\-Query\-Range}}
+\index{m\-\_\-s\-Query\-Range@{m\-\_\-s\-Query\-Range}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-s\-Query\-Range}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Column\-Info\-::m\-\_\-s\-Query\-Range}}\label{structCSphColumnInfo_ab115d56d74ce42d937c1fd785411c00e}
+
+
+query to retrieve range (for multi-\/valued attrs only) 
+
+\hypertarget{structCSphColumnInfo_add79fe460a5cecd6360fd1e2c7c15479}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-t\-Locator@{m\-\_\-t\-Locator}}
+\index{m\-\_\-t\-Locator@{m\-\_\-t\-Locator}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-t\-Locator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Attr\-Locator} C\-Sph\-Column\-Info\-::m\-\_\-t\-Locator}}\label{structCSphColumnInfo_add79fe460a5cecd6360fd1e2c7c15479}
+
+
+attribute locator in the row 
+
+\hypertarget{structCSphColumnInfo_af8e24ae07a148ef5edba4a34574d4223}{\index{C\-Sph\-Column\-Info@{C\-Sph\-Column\-Info}!m\-\_\-u\-Next@{m\-\_\-u\-Next}}
+\index{m\-\_\-u\-Next@{m\-\_\-u\-Next}!CSphColumnInfo@{C\-Sph\-Column\-Info}}
+\subsubsection[{m\-\_\-u\-Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-O\-R\-D} C\-Sph\-Column\-Info\-::m\-\_\-u\-Next}}\label{structCSphColumnInfo_af8e24ae07a148ef5edba4a34574d4223}
+
+
+next in linked list for hash in \hyperlink{classCSphSchema}{C\-Sph\-Schema} 
+
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

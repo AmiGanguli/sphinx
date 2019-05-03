@@ -1,0 +1,281 @@
+\hypertarget{classAttrIndexBuilder__t}{\section{Attr\-Index\-Builder\-\_\-t$<$ D\-O\-C\-I\-D $>$ Class Template Reference}
+\label{classAttrIndexBuilder__t}\index{Attr\-Index\-Builder\-\_\-t$<$ D\-O\-C\-I\-D $>$@{Attr\-Index\-Builder\-\_\-t$<$ D\-O\-C\-I\-D $>$}}
+}
+
+
+attr min-\/max builder  
+
+
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+Inheritance diagram for Attr\-Index\-Builder\-\_\-t$<$ D\-O\-C\-I\-D $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAttrIndexBuilder__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAttrIndexBuilder__t_a71d062d94bfdbb5e61d8c8fbbb336bfe}{Attr\-Index\-Builder\-\_\-t} (const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Schema)
+\item 
+void \hyperlink{classAttrIndexBuilder__t_ae28f6c66df2182b4e243ec47123c2fd4}{Prepare} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Out\-Buffer, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Out\-Max)
+\item 
+bool \hyperlink{classAttrIndexBuilder__t_ae6b926b095b016cf4f5de34815acf871}{Collect} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Cur, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mvas, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Mvas\-Count, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Has\-Mva\-I\-D)
+\item 
+void \hyperlink{classAttrIndexBuilder__t_ad51162d55c70e1f3e3c074aa7d135031}{Finish\-Collect} ()
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classAttrIndexBuilder__t_ae197f9fe3698f40469af24e9a67539de}{Get\-Actual\-Size} () const 
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classAttrIndexBuilder__t_a23471c5dceee242b6aa48546e70b0049}{Get\-Expected\-Size} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Max\-Docs) const 
+\begin{DoxyCompactList}\small\item\em how many D\-W\-O\-R\-Ds will we need for block index \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAttrIndexBuilder__t_a227f1dbb6d0fb1033b981ae5cb452170}{Reset\-Local} ()
+\item 
+void \hyperlink{classAttrIndexBuilder__t_a1761813026908faf29c0d141918ea6cb}{Flush\-Computed} ()
+\item 
+void \hyperlink{classAttrIndexBuilder__t_aa98c07634ad244029e944ab717c566df}{Update\-Min\-Max\-Docids} (D\-O\-C\-I\-D u\-Doc\-I\-D)
+\item 
+void \hyperlink{classAttrIndexBuilder__t_afae151c0433d61cff90a90c4bcfbb07f}{Collect\-Row\-M\-V\-A} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Attr, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Count, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mva)
+\item 
+void \hyperlink{classAttrIndexBuilder__t_a708a8ff3615b7613bbcc0e2067a5c6ab}{Collect\-Without\-Mvas} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Cur)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} $>$ \hyperlink{classAttrIndexBuilder__t_af1d84506819b5d03c89c8e1fd1ac7eef}{m\-\_\-d\-Int\-Attrs}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} $>$ \hyperlink{classAttrIndexBuilder__t_abfa55e87fb3522a3da3e1618aa735ed2}{m\-\_\-d\-Float\-Attrs}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} $>$ \hyperlink{classAttrIndexBuilder__t_a93044612daa6c5014232d65ac244b929}{m\-\_\-d\-Mva\-Attrs}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} $>$ \hyperlink{classAttrIndexBuilder__t_a67e4137dd4df1d5b23aaaaa42abd87ac}{m\-\_\-d\-Int\-Min}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} $>$ \hyperlink{classAttrIndexBuilder__t_aa08e50525c47ead7e28a304929fd0163}{m\-\_\-d\-Int\-Max}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} $>$ \hyperlink{classAttrIndexBuilder__t_aa12e412aa68109a80bf563b01c030444}{m\-\_\-d\-Int\-Index\-Min}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} $>$ \hyperlink{classAttrIndexBuilder__t_a5fcd007cce05f4aedab96831c85fc1cb}{m\-\_\-d\-Int\-Index\-Max}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} $>$ \hyperlink{classAttrIndexBuilder__t_a89dc803219d68492d04aa0d6a1e28a2c}{m\-\_\-d\-Float\-Min}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} $>$ \hyperlink{classAttrIndexBuilder__t_ab351806adf13405734f13b951ffd9618}{m\-\_\-d\-Float\-Max}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} $>$ \hyperlink{classAttrIndexBuilder__t_a863127f1f79a220a50f7b7592e356776}{m\-\_\-d\-Float\-Index\-Min}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} $>$ \hyperlink{classAttrIndexBuilder__t_af8a895727cac205bac709a9dc90ed8fe}{m\-\_\-d\-Float\-Index\-Max}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $>$ \hyperlink{classAttrIndexBuilder__t_a7710364ecf78939b3fcac7888066a854}{m\-\_\-d\-Mva\-Min}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $>$ \hyperlink{classAttrIndexBuilder__t_a8113ec4e80166abca4b595374f848816}{m\-\_\-d\-Mva\-Max}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $>$ \hyperlink{classAttrIndexBuilder__t_a595ecd7b9b0bca9541029e6169d4e7cd}{m\-\_\-d\-Mva\-Index\-Min}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $>$ \hyperlink{classAttrIndexBuilder__t_a4343408a218405a1c9e07f707a928090}{m\-\_\-d\-Mva\-Index\-Max}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classAttrIndexBuilder__t_a8018fbae14ab733b2ad584a09ab5881c}{m\-\_\-u\-Stride}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classAttrIndexBuilder__t_aa00b7e274246ea48a0c8238888206754}{m\-\_\-u\-Elements}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classAttrIndexBuilder__t_aeab17a1a912318a2223d618b6897b09f}{m\-\_\-i\-Loop}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$ \hyperlink{classAttrIndexBuilder__t_ab3d8486dbc0c32dd6a4f7791658d96b2}{m\-\_\-p\-Out\-Buffer}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} const $\ast$ \hyperlink{classAttrIndexBuilder__t_a41bf49c1c105aac8f17b8d84c8247c20}{m\-\_\-p\-Out\-Max}
+\item 
+D\-O\-C\-I\-D \hyperlink{classAttrIndexBuilder__t_ad19cc055d67fa5dbcd64300b8dd54df0}{m\-\_\-u\-Start}
+\item 
+D\-O\-C\-I\-D \hyperlink{classAttrIndexBuilder__t_a7f8c31acecb690d097e8e929d24428c3}{m\-\_\-u\-Last}
+\item 
+D\-O\-C\-I\-D \hyperlink{classAttrIndexBuilder__t_a272b2558b849ba268d2d723f489c600b}{m\-\_\-u\-Index\-Start}
+\item 
+D\-O\-C\-I\-D \hyperlink{classAttrIndexBuilder__t_a3032185497a931732aed32d2a4f4b3f7}{m\-\_\-u\-Index\-Last}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classAttrIndexBuilder__t_a7f12212b7c460eb36bb40b39b459f3de}{m\-\_\-i\-Mva64}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename D\-O\-C\-I\-D = Sph\-Doc\-I\-D\-\_\-t$>$class Attr\-Index\-Builder\-\_\-t$<$ D\-O\-C\-I\-D $>$}
+
+attr min-\/max builder 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAttrIndexBuilder__t_a71d062d94bfdbb5e61d8c8fbbb336bfe}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}}
+\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Attr\-Index\-Builder\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D $>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::{\bf Attr\-Index\-Builder\-\_\-t} (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Schema} \&}]{t\-Schema}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classAttrIndexBuilder__t_a71d062d94bfdbb5e61d8c8fbbb336bfe}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAttrIndexBuilder__t_ae6b926b095b016cf4f5de34815acf871}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Collect@{Collect}}
+\index{Collect@{Collect}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Collect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D $>$ bool {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::Collect (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Cur, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mvas, }
+\item[{{\bf int64\-\_\-t}}]{i\-Mvas\-Count, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Has\-Mva\-I\-D}
+\end{DoxyParamCaption}
+)}}\label{classAttrIndexBuilder__t_ae6b926b095b016cf4f5de34815acf871}
+\hypertarget{classAttrIndexBuilder__t_afae151c0433d61cff90a90c4bcfbb07f}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Collect\-Row\-M\-V\-A@{Collect\-Row\-M\-V\-A}}
+\index{Collect\-Row\-M\-V\-A@{Collect\-Row\-M\-V\-A}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Collect\-Row\-M\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D $>$ void {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::Collect\-Row\-M\-V\-A (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Attr, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Count, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mva}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_afae151c0433d61cff90a90c4bcfbb07f}
+\hypertarget{classAttrIndexBuilder__t_a708a8ff3615b7613bbcc0e2067a5c6ab}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Collect\-Without\-Mvas@{Collect\-Without\-Mvas}}
+\index{Collect\-Without\-Mvas@{Collect\-Without\-Mvas}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Collect\-Without\-Mvas}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D $>$ void {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::Collect\-Without\-Mvas (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Cur}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a708a8ff3615b7613bbcc0e2067a5c6ab}
+\hypertarget{classAttrIndexBuilder__t_ad51162d55c70e1f3e3c074aa7d135031}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Finish\-Collect@{Finish\-Collect}}
+\index{Finish\-Collect@{Finish\-Collect}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Finish\-Collect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D $>$ void {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::Finish\-Collect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAttrIndexBuilder__t_ad51162d55c70e1f3e3c074aa7d135031}
+\hypertarget{classAttrIndexBuilder__t_a1761813026908faf29c0d141918ea6cb}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Flush\-Computed@{Flush\-Computed}}
+\index{Flush\-Computed@{Flush\-Computed}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Flush\-Computed}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D $>$ void {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::Flush\-Computed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a1761813026908faf29c0d141918ea6cb}
+\hypertarget{classAttrIndexBuilder__t_ae197f9fe3698f40469af24e9a67539de}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Get\-Actual\-Size@{Get\-Actual\-Size}}
+\index{Get\-Actual\-Size@{Get\-Actual\-Size}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Get\-Actual\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf int64\-\_\-t} {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::Get\-Actual\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classAttrIndexBuilder__t_ae197f9fe3698f40469af24e9a67539de}
+actually used part of output buffer, only used with index merge (we reserve space for rows from both indexes, but might kill some rows) \hypertarget{classAttrIndexBuilder__t_a23471c5dceee242b6aa48546e70b0049}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Get\-Expected\-Size@{Get\-Expected\-Size}}
+\index{Get\-Expected\-Size@{Get\-Expected\-Size}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Get\-Expected\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf int64\-\_\-t} {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::Get\-Expected\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{i\-Max\-Docs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classAttrIndexBuilder__t_a23471c5dceee242b6aa48546e70b0049}
+
+
+how many D\-W\-O\-R\-Ds will we need for block index 
+
+\hypertarget{classAttrIndexBuilder__t_ae28f6c66df2182b4e243ec47123c2fd4}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Prepare@{Prepare}}
+\index{Prepare@{Prepare}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Prepare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D $>$ void {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::Prepare (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Out\-Buffer, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Out\-Max}
+\end{DoxyParamCaption}
+)}}\label{classAttrIndexBuilder__t_ae28f6c66df2182b4e243ec47123c2fd4}
+\hypertarget{classAttrIndexBuilder__t_a227f1dbb6d0fb1033b981ae5cb452170}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Reset\-Local@{Reset\-Local}}
+\index{Reset\-Local@{Reset\-Local}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Reset\-Local}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D $>$ void {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::Reset\-Local (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a227f1dbb6d0fb1033b981ae5cb452170}
+\hypertarget{classAttrIndexBuilder__t_aa98c07634ad244029e944ab717c566df}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!Update\-Min\-Max\-Docids@{Update\-Min\-Max\-Docids}}
+\index{Update\-Min\-Max\-Docids@{Update\-Min\-Max\-Docids}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{Update\-Min\-Max\-Docids}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D $>$ void {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::Update\-Min\-Max\-Docids (
+\begin{DoxyParamCaption}
+\item[{D\-O\-C\-I\-D}]{u\-Doc\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_aa98c07634ad244029e944ab717c566df}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classAttrIndexBuilder__t_abfa55e87fb3522a3da3e1618aa735ed2}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Float\-Attrs@{m\-\_\-d\-Float\-Attrs}}
+\index{m\-\_\-d\-Float\-Attrs@{m\-\_\-d\-Float\-Attrs}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Float\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Attr\-Locator}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Float\-Attrs\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_abfa55e87fb3522a3da3e1618aa735ed2}
+\hypertarget{classAttrIndexBuilder__t_af8a895727cac205bac709a9dc90ed8fe}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Float\-Index\-Max@{m\-\_\-d\-Float\-Index\-Max}}
+\index{m\-\_\-d\-Float\-Index\-Max@{m\-\_\-d\-Float\-Index\-Max}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Float\-Index\-Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf float}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Float\-Index\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_af8a895727cac205bac709a9dc90ed8fe}
+\hypertarget{classAttrIndexBuilder__t_a863127f1f79a220a50f7b7592e356776}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Float\-Index\-Min@{m\-\_\-d\-Float\-Index\-Min}}
+\index{m\-\_\-d\-Float\-Index\-Min@{m\-\_\-d\-Float\-Index\-Min}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Float\-Index\-Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf float}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Float\-Index\-Min\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a863127f1f79a220a50f7b7592e356776}
+\hypertarget{classAttrIndexBuilder__t_ab351806adf13405734f13b951ffd9618}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Float\-Max@{m\-\_\-d\-Float\-Max}}
+\index{m\-\_\-d\-Float\-Max@{m\-\_\-d\-Float\-Max}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Float\-Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf float}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Float\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_ab351806adf13405734f13b951ffd9618}
+\hypertarget{classAttrIndexBuilder__t_a89dc803219d68492d04aa0d6a1e28a2c}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Float\-Min@{m\-\_\-d\-Float\-Min}}
+\index{m\-\_\-d\-Float\-Min@{m\-\_\-d\-Float\-Min}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Float\-Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf float}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Float\-Min\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a89dc803219d68492d04aa0d6a1e28a2c}
+\hypertarget{classAttrIndexBuilder__t_af1d84506819b5d03c89c8e1fd1ac7eef}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Int\-Attrs@{m\-\_\-d\-Int\-Attrs}}
+\index{m\-\_\-d\-Int\-Attrs@{m\-\_\-d\-Int\-Attrs}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Int\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Attr\-Locator}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Int\-Attrs\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_af1d84506819b5d03c89c8e1fd1ac7eef}
+\hypertarget{classAttrIndexBuilder__t_a5fcd007cce05f4aedab96831c85fc1cb}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Int\-Index\-Max@{m\-\_\-d\-Int\-Index\-Max}}
+\index{m\-\_\-d\-Int\-Index\-Max@{m\-\_\-d\-Int\-Index\-Max}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Int\-Index\-Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf Sph\-Attr\-\_\-t}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Int\-Index\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a5fcd007cce05f4aedab96831c85fc1cb}
+\hypertarget{classAttrIndexBuilder__t_aa12e412aa68109a80bf563b01c030444}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Int\-Index\-Min@{m\-\_\-d\-Int\-Index\-Min}}
+\index{m\-\_\-d\-Int\-Index\-Min@{m\-\_\-d\-Int\-Index\-Min}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Int\-Index\-Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf Sph\-Attr\-\_\-t}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Int\-Index\-Min\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_aa12e412aa68109a80bf563b01c030444}
+\hypertarget{classAttrIndexBuilder__t_aa08e50525c47ead7e28a304929fd0163}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Int\-Max@{m\-\_\-d\-Int\-Max}}
+\index{m\-\_\-d\-Int\-Max@{m\-\_\-d\-Int\-Max}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Int\-Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf Sph\-Attr\-\_\-t}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Int\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_aa08e50525c47ead7e28a304929fd0163}
+\hypertarget{classAttrIndexBuilder__t_a67e4137dd4df1d5b23aaaaa42abd87ac}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Int\-Min@{m\-\_\-d\-Int\-Min}}
+\index{m\-\_\-d\-Int\-Min@{m\-\_\-d\-Int\-Min}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Int\-Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf Sph\-Attr\-\_\-t}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Int\-Min\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a67e4137dd4df1d5b23aaaaa42abd87ac}
+\hypertarget{classAttrIndexBuilder__t_a93044612daa6c5014232d65ac244b929}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Mva\-Attrs@{m\-\_\-d\-Mva\-Attrs}}
+\index{m\-\_\-d\-Mva\-Attrs@{m\-\_\-d\-Mva\-Attrs}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Mva\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Attr\-Locator}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Mva\-Attrs\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a93044612daa6c5014232d65ac244b929}
+\hypertarget{classAttrIndexBuilder__t_a4343408a218405a1c9e07f707a928090}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Mva\-Index\-Max@{m\-\_\-d\-Mva\-Index\-Max}}
+\index{m\-\_\-d\-Mva\-Index\-Max@{m\-\_\-d\-Mva\-Index\-Max}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Mva\-Index\-Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf int64\-\_\-t}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Mva\-Index\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a4343408a218405a1c9e07f707a928090}
+\hypertarget{classAttrIndexBuilder__t_a595ecd7b9b0bca9541029e6169d4e7cd}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Mva\-Index\-Min@{m\-\_\-d\-Mva\-Index\-Min}}
+\index{m\-\_\-d\-Mva\-Index\-Min@{m\-\_\-d\-Mva\-Index\-Min}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Mva\-Index\-Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf int64\-\_\-t}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Mva\-Index\-Min\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a595ecd7b9b0bca9541029e6169d4e7cd}
+\hypertarget{classAttrIndexBuilder__t_a8113ec4e80166abca4b595374f848816}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Mva\-Max@{m\-\_\-d\-Mva\-Max}}
+\index{m\-\_\-d\-Mva\-Max@{m\-\_\-d\-Mva\-Max}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Mva\-Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf int64\-\_\-t}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Mva\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a8113ec4e80166abca4b595374f848816}
+\hypertarget{classAttrIndexBuilder__t_a7710364ecf78939b3fcac7888066a854}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-d\-Mva\-Min@{m\-\_\-d\-Mva\-Min}}
+\index{m\-\_\-d\-Mva\-Min@{m\-\_\-d\-Mva\-Min}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Mva\-Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf C\-Sph\-Vector}$<${\bf int64\-\_\-t}$>$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-d\-Mva\-Min\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a7710364ecf78939b3fcac7888066a854}
+\hypertarget{classAttrIndexBuilder__t_aeab17a1a912318a2223d618b6897b09f}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-i\-Loop@{m\-\_\-i\-Loop}}
+\index{m\-\_\-i\-Loop@{m\-\_\-i\-Loop}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf int} {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-i\-Loop\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_aeab17a1a912318a2223d618b6897b09f}
+\hypertarget{classAttrIndexBuilder__t_a7f12212b7c460eb36bb40b39b459f3de}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-i\-Mva64@{m\-\_\-i\-Mva64}}
+\index{m\-\_\-i\-Mva64@{m\-\_\-i\-Mva64}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Mva64}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf int} {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-i\-Mva64\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a7f12212b7c460eb36bb40b39b459f3de}
+\hypertarget{classAttrIndexBuilder__t_ab3d8486dbc0c32dd6a4f7791658d96b2}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-p\-Out\-Buffer@{m\-\_\-p\-Out\-Buffer}}
+\index{m\-\_\-p\-Out\-Buffer@{m\-\_\-p\-Out\-Buffer}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Out\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf D\-W\-O\-R\-D}$\ast$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-p\-Out\-Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_ab3d8486dbc0c32dd6a4f7791658d96b2}
+\hypertarget{classAttrIndexBuilder__t_a41bf49c1c105aac8f17b8d84c8247c20}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-p\-Out\-Max@{m\-\_\-p\-Out\-Max}}
+\index{m\-\_\-p\-Out\-Max@{m\-\_\-p\-Out\-Max}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Out\-Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf D\-W\-O\-R\-D} const$\ast$ {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-p\-Out\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a41bf49c1c105aac8f17b8d84c8247c20}
+\hypertarget{classAttrIndexBuilder__t_aa00b7e274246ea48a0c8238888206754}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-u\-Elements@{m\-\_\-u\-Elements}}
+\index{m\-\_\-u\-Elements@{m\-\_\-u\-Elements}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf D\-W\-O\-R\-D} {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-u\-Elements\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_aa00b7e274246ea48a0c8238888206754}
+\hypertarget{classAttrIndexBuilder__t_a3032185497a931732aed32d2a4f4b3f7}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-u\-Index\-Last@{m\-\_\-u\-Index\-Last}}
+\index{m\-\_\-u\-Index\-Last@{m\-\_\-u\-Index\-Last}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Index\-Last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ D\-O\-C\-I\-D {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-u\-Index\-Last\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a3032185497a931732aed32d2a4f4b3f7}
+\hypertarget{classAttrIndexBuilder__t_a272b2558b849ba268d2d723f489c600b}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-u\-Index\-Start@{m\-\_\-u\-Index\-Start}}
+\index{m\-\_\-u\-Index\-Start@{m\-\_\-u\-Index\-Start}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Index\-Start}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ D\-O\-C\-I\-D {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-u\-Index\-Start\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a272b2558b849ba268d2d723f489c600b}
+\hypertarget{classAttrIndexBuilder__t_a7f8c31acecb690d097e8e929d24428c3}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-u\-Last@{m\-\_\-u\-Last}}
+\index{m\-\_\-u\-Last@{m\-\_\-u\-Last}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ D\-O\-C\-I\-D {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-u\-Last\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a7f8c31acecb690d097e8e929d24428c3}
+\hypertarget{classAttrIndexBuilder__t_ad19cc055d67fa5dbcd64300b8dd54df0}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-u\-Start@{m\-\_\-u\-Start}}
+\index{m\-\_\-u\-Start@{m\-\_\-u\-Start}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Start}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ D\-O\-C\-I\-D {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-u\-Start\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_ad19cc055d67fa5dbcd64300b8dd54df0}
+\hypertarget{classAttrIndexBuilder__t_a8018fbae14ab733b2ad584a09ab5881c}{\index{Attr\-Index\-Builder\-\_\-t@{Attr\-Index\-Builder\-\_\-t}!m\-\_\-u\-Stride@{m\-\_\-u\-Stride}}
+\index{m\-\_\-u\-Stride@{m\-\_\-u\-Stride}!AttrIndexBuilder_t@{Attr\-Index\-Builder\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Stride}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename D\-O\-C\-I\-D  = Sph\-Doc\-I\-D\-\_\-t$>$ {\bf D\-W\-O\-R\-D} {\bf Attr\-Index\-Builder\-\_\-t}$<$ D\-O\-C\-I\-D $>$\-::m\-\_\-u\-Stride\hspace{0.3cm}{\ttfamily [private]}}}\label{classAttrIndexBuilder__t_a8018fbae14ab733b2ad584a09ab5881c}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\end{DoxyCompactItemize}

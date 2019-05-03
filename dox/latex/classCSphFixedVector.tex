@@ -1,0 +1,224 @@
+\hypertarget{classCSphFixedVector}{\section{C\-Sph\-Fixed\-Vector$<$ T $>$ Class Template Reference}
+\label{classCSphFixedVector}\index{C\-Sph\-Fixed\-Vector$<$ T $>$@{C\-Sph\-Fixed\-Vector$<$ T $>$}}
+}
+
+
+dynamically allocated fixed-\/size vector  
+
+
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Fixed\-Vector$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphFixedVector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphFixedVector_ae15d1b4714a7648fb3558a7c3429e271}{C\-Sph\-Fixed\-Vector} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size)
+\item 
+\hyperlink{classCSphFixedVector_aae9aaa13a4e86a49a21485f94b1ba417}{$\sim$\-C\-Sph\-Fixed\-Vector} ()
+\item 
+\hyperlink{classCSphFixedVector_a247f3ca1aa39d479d095f1fd8356b074}{C\-Sph\-Fixed\-Vector} (\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector} \&\&rhs)
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector} \& \hyperlink{classCSphFixedVector_a5ff381ebf3d542996c6a05091226a81d}{operator=} (\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector} \&\&rhs)
+\item 
+T \& \hyperlink{classCSphFixedVector_ae643bbc83c96038576a5ecf08b8754b1}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index) const 
+\item 
+T $\ast$ \hyperlink{classCSphFixedVector_a3a0cd5818d5f0ab0a6e41e51e5b95b7a}{Begin} () const 
+\item 
+T $\ast$ \hyperlink{classCSphFixedVector_a5ed509981e6ab248998283ec4798b974}{begin} ()
+\begin{DoxyCompactList}\small\item\em make happy C++11 ranged for loops \end{DoxyCompactList}\item 
+const T $\ast$ \hyperlink{classCSphFixedVector_aea7a129269837cd4bbc73abc68376af7}{begin} () const 
+\item 
+T $\ast$ \hyperlink{classCSphFixedVector_a92d87d26f950b62028aec1500ce7c944}{end} ()
+\item 
+const T $\ast$ \hyperlink{classCSphFixedVector_a755b86d8156e887426ad8a2cc4861e20}{end} () const 
+\item 
+T \& \hyperlink{classCSphFixedVector_a479948a1f9419f4afae95551dddd6cc9}{Last} () const 
+\item 
+void \hyperlink{classCSphFixedVector_a1e5c691f16703bb591c30f2b95622b62}{Reset} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFixedVector_a55a4c6944b335bb03b1b4c47cbc762eb}{Get\-Length} () const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFixedVector_a55d9a00526f9c16e8f291c5d35b8df18}{Get\-Size\-Bytes} () const 
+\item 
+T $\ast$ \hyperlink{classCSphFixedVector_a98c0b15221862ef78b88d803989bf316}{Leak\-Data} ()
+\item 
+void \hyperlink{classCSphFixedVector_a330c4f18f82b455ccc88689531762bb4}{Swap\-Data} (\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em swap \end{DoxyCompactList}\item 
+void \hyperlink{classCSphFixedVector_a9e369f456d4352bc65bd0c558ae89754}{Set} (T $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size)
+\item 
+const T $\ast$ \hyperlink{classCSphFixedVector_a68256dc9b2d0404c5bf5075ded324105}{Binary\-Search} (T t\-Ref) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{classCSphFixedVector_a672980c14ae13d3bc1045c4f51f179c6}{m\-\_\-p\-Data}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFixedVector_aeb1180497024693b2160fbac1f80b941}{m\-\_\-i\-Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class C\-Sph\-Fixed\-Vector$<$ T $>$}
+
+dynamically allocated fixed-\/size vector 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphFixedVector_ae15d1b4714a7648fb3558a7c3429e271}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}}
+\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{C\-Sph\-Fixed\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::{\bf C\-Sph\-Fixed\-Vector} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphFixedVector_ae15d1b4714a7648fb3558a7c3429e271}
+\hypertarget{classCSphFixedVector_aae9aaa13a4e86a49a21485f94b1ba417}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!$\sim$\-C\-Sph\-Fixed\-Vector@{$\sim$\-C\-Sph\-Fixed\-Vector}}
+\index{$\sim$\-C\-Sph\-Fixed\-Vector@{$\sim$\-C\-Sph\-Fixed\-Vector}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{$\sim$\-C\-Sph\-Fixed\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::$\sim${\bf C\-Sph\-Fixed\-Vector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_aae9aaa13a4e86a49a21485f94b1ba417}
+\hypertarget{classCSphFixedVector_a247f3ca1aa39d479d095f1fd8356b074}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}}
+\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{C\-Sph\-Fixed\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::{\bf C\-Sph\-Fixed\-Vector} (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Fixed\-Vector}$<$ T $>$ \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a247f3ca1aa39d479d095f1fd8356b074}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphFixedVector_a3a0cd5818d5f0ab0a6e41e51e5b95b7a}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!Begin@{Begin}}
+\index{Begin@{Begin}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{Begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a3a0cd5818d5f0ab0a6e41e51e5b95b7a}
+\hypertarget{classCSphFixedVector_a5ed509981e6ab248998283ec4798b974}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!begin@{begin}}
+\index{begin@{begin}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a5ed509981e6ab248998283ec4798b974}
+
+
+make happy C++11 ranged for loops 
+
+\hypertarget{classCSphFixedVector_aea7a129269837cd4bbc73abc68376af7}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!begin@{begin}}
+\index{begin@{begin}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T$\ast$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_aea7a129269837cd4bbc73abc68376af7}
+\hypertarget{classCSphFixedVector_a68256dc9b2d0404c5bf5075ded324105}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!Binary\-Search@{Binary\-Search}}
+\index{Binary\-Search@{Binary\-Search}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{Binary\-Search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T$\ast$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::Binary\-Search (
+\begin{DoxyParamCaption}
+\item[{T}]{t\-Ref}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a68256dc9b2d0404c5bf5075ded324105}
+\hypertarget{classCSphFixedVector_a92d87d26f950b62028aec1500ce7c944}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!end@{end}}
+\index{end@{end}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a92d87d26f950b62028aec1500ce7c944}
+\hypertarget{classCSphFixedVector_a755b86d8156e887426ad8a2cc4861e20}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!end@{end}}
+\index{end@{end}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T$\ast$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a755b86d8156e887426ad8a2cc4861e20}
+\hypertarget{classCSphFixedVector_a55a4c6944b335bb03b1b4c47cbc762eb}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!Get\-Length@{Get\-Length}}
+\index{Get\-Length@{Get\-Length}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{Get\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf int} {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::Get\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a55a4c6944b335bb03b1b4c47cbc762eb}
+\hypertarget{classCSphFixedVector_a55d9a00526f9c16e8f291c5d35b8df18}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!Get\-Size\-Bytes@{Get\-Size\-Bytes}}
+\index{Get\-Size\-Bytes@{Get\-Size\-Bytes}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{Get\-Size\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf int} {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::Get\-Size\-Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a55d9a00526f9c16e8f291c5d35b8df18}
+\hypertarget{classCSphFixedVector_a479948a1f9419f4afae95551dddd6cc9}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!Last@{Last}}
+\index{Last@{Last}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{Last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T\& {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::Last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a479948a1f9419f4afae95551dddd6cc9}
+\hypertarget{classCSphFixedVector_a98c0b15221862ef78b88d803989bf316}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!Leak\-Data@{Leak\-Data}}
+\index{Leak\-Data@{Leak\-Data}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{Leak\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::Leak\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a98c0b15221862ef78b88d803989bf316}
+\hypertarget{classCSphFixedVector_a5ff381ebf3d542996c6a05091226a81d}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Fixed\-Vector}\& {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Fixed\-Vector}$<$ T $>$ \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a5ff381ebf3d542996c6a05091226a81d}
+\hypertarget{classCSphFixedVector_ae643bbc83c96038576a5ecf08b8754b1}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T\& {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_ae643bbc83c96038576a5ecf08b8754b1}
+\hypertarget{classCSphFixedVector_a1e5c691f16703bb591c30f2b95622b62}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::Reset (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a1e5c691f16703bb591c30f2b95622b62}
+\hypertarget{classCSphFixedVector_a9e369f456d4352bc65bd0c558ae89754}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!Set@{Set}}
+\index{Set@{Set}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::Set (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a9e369f456d4352bc65bd0c558ae89754}
+\hypertarget{classCSphFixedVector_a330c4f18f82b455ccc88689531762bb4}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!Swap\-Data@{Swap\-Data}}
+\index{Swap\-Data@{Swap\-Data}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{Swap\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::Swap\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Fixed\-Vector}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFixedVector_a330c4f18f82b455ccc88689531762bb4}
+
+
+swap 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphFixedVector_aeb1180497024693b2160fbac1f80b941}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!m\-\_\-i\-Size@{m\-\_\-i\-Size}}
+\index{m\-\_\-i\-Size@{m\-\_\-i\-Size}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{m\-\_\-i\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf int} {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::m\-\_\-i\-Size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphFixedVector_aeb1180497024693b2160fbac1f80b941}
+\hypertarget{classCSphFixedVector_a672980c14ae13d3bc1045c4f51f179c6}{\index{C\-Sph\-Fixed\-Vector@{C\-Sph\-Fixed\-Vector}!m\-\_\-p\-Data@{m\-\_\-p\-Data}}
+\index{m\-\_\-p\-Data@{m\-\_\-p\-Data}!CSphFixedVector@{C\-Sph\-Fixed\-Vector}}
+\subsubsection[{m\-\_\-p\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Fixed\-Vector}$<$ T $>$\-::m\-\_\-p\-Data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphFixedVector_a672980c14ae13d3bc1045c4f51f179c6}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,308 @@
+\hypertarget{structCSphBin}{\section{C\-Sph\-Bin Struct Reference}
+\label{structCSphBin}\index{C\-Sph\-Bin@{C\-Sph\-Bin}}
+}
+
+
+bin, block input buffer  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphBin_a56390f68af2b17dc1fa7fce36aff7da3}{C\-Sph\-Bin} (\hyperlink{sphinx_8h_a1920852c5151009d65cf2bc8204a685b}{E\-Sph\-Hitless} e\-Mode=\hyperlink{sphinx_8h_a1920852c5151009d65cf2bc8204a685bab717040a78109532d033c43c9066bfb4}{S\-P\-H\-\_\-\-H\-I\-T\-L\-E\-S\-S\-\_\-\-N\-O\-N\-E}, bool b\-Word\-Dict=false)
+\item 
+\hyperlink{structCSphBin_a6c096a330f87e66512786a8b71dc9e03}{$\sim$\-C\-Sph\-Bin} ()
+\item 
+void \hyperlink{structCSphBin_a2c38b2d71959f86907bacdac66869814}{Init} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-F\-D, \hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} $\ast$p\-Shared\-Offset, const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Bin\-Size)
+\item 
+\hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{structCSphBin_aae8155e54e16d8d4002302a7261ae765}{Read\-V\-L\-B} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphBin_a4eb6516c0e9058a9e6a61dbbfe1fc7ec}{Read\-Byte} ()
+\item 
+\hyperlink{sphinx_8cpp_ac9b00943d3f5ca56056fdc4c7cb8f58c}{E\-Sph\-Bin\-Read} \hyperlink{structCSphBin_ad5c6ae711b3ec1b7a8f08c27af3e8b58}{Read\-Bytes} (void $\ast$p\-Dest, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Bytes)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphBin_ae7318babf0207548eb696d319eac4822}{Read\-Hit} (\hyperlink{structCSphAggregateHit}{C\-Sph\-Aggregate\-Hit} $\ast$p\-Hit, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Rowitems, \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$p\-Rowitems)
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structCSphBin_a929258783306bf28fb654b918edd42b0}{Unzip\-Int} ()
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{structCSphBin_ad2fe4990afa264b29a5c10e964e8612e}{Unzip\-Offset} ()
+\item 
+bool \hyperlink{structCSphBin_ae1a5af7c469e49d9bef69bbc7b7016f3}{Is\-E\-O\-F} () const 
+\item 
+bool \hyperlink{structCSphBin_afc65d17a53403e591001b92ee3fe11cf}{Is\-Done} () const 
+\item 
+bool \hyperlink{structCSphBin_a5ad7a8354b8522ca42dbad3375a0eb4f}{Is\-Error} () const 
+\item 
+\hyperlink{sphinx_8cpp_ac9b00943d3f5ca56056fdc4c7cb8f58c}{E\-Sph\-Bin\-Read} \hyperlink{structCSphBin_a884ee51d51808e5e04cddfd8bcb23244}{Precache} ()
+\item 
+void \hyperlink{structCSphBin_a85fa51786a734bd68dc05982fafb5bda}{Set\-Throttle} (\hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-State)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphBin_ac16842058b2b905551ef1bf5b9a3e89e}{Calc\-Bin\-Size} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Memory\-Limit, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Blocks, const char $\ast$s\-Phase, bool b\-Warn=true)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{structCSphBin_a585e1b9422f4de962b993a4991f560eb}{m\-\_\-i\-File\-Pos}
+\begin{DoxyCompactList}\small\item\em my current offset in file \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphBin_abc84b9fa20cbb58c6b96999903da4576}{m\-\_\-i\-File\-Left}
+\begin{DoxyCompactList}\small\item\em how much data is still unread from the file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphBin_ae7e93ba8f3286a49b1c9c2e18cd53b8b}{M\-I\-N\-\_\-\-S\-I\-Z\-E} = 8192
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphBin_ae687edd7f3d0ce8cfe4090134d4517a9}{W\-A\-R\-N\-\_\-\-S\-I\-Z\-E} = 262144
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a1920852c5151009d65cf2bc8204a685b}{E\-Sph\-Hitless} \hyperlink{structCSphBin_a861ee78370a6e41c28521f7644b874f0}{m\-\_\-e\-Mode}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphBin_a320121da925a58ab1c97119100c37c9d}{m\-\_\-i\-Size}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{structCSphBin_a06fb6c2e84ee5ba5089f71f079c23cf8}{m\-\_\-d\-Buffer}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{structCSphBin_a2cbc4fc1ca50a07597654190a3209dcf}{m\-\_\-p\-Current}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphBin_aadb0f5bb65619974edc37480aadb571b}{m\-\_\-i\-Left}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphBin_aec500a6bd93797cf5b40fbfb262fb094}{m\-\_\-i\-Done}
+\item 
+\hyperlink{sphinx_8cpp_af6c4ab1ba3d444485726f59d66c706bb}{E\-Sph\-Bin\-State} \hyperlink{structCSphBin_a1d747189b986248a22e575f0da2fb61d}{m\-\_\-e\-State}
+\item 
+bool \hyperlink{structCSphBin_a30101558ae0ed600d3775cf605237610}{m\-\_\-b\-Word\-Dict}
+\item 
+bool \hyperlink{structCSphBin_a32c5fd379eadb75083b8fb585a54d549}{m\-\_\-b\-Error}
+\item 
+\hyperlink{structCSphAggregateHit}{C\-Sph\-Aggregate\-Hit} \hyperlink{structCSphBin_a94ae6f84db17c75dde3391de09696026}{m\-\_\-t\-Hit}
+\begin{DoxyCompactList}\small\item\em currently decoded hit \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{structCSphBin_a9751f2b14dfee0519796ddea19e2df28}{m\-\_\-s\-Keyword} \mbox{[}\hyperlink{sphinx_8cpp_aeb328d19a9780d5c5defcd7e9b08239b}{M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em currently decoded hit keyword (in keywords dict mode) \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{structCSphBin_a24f8945a71004edb1208939b546a7673}{m\-\_\-i\-Last\-Word\-I\-D}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{structCSphBin_ab3d45d1754daa2e7175ece1785856551}{m\-\_\-s\-Last\-Keyword} \mbox{[}\hyperlink{sphinx_8cpp_aeb328d19a9780d5c5defcd7e9b08239b}{M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphBin_a032b4e8ece9f3c7a457f5cf9ab1abc33}{m\-\_\-i\-File}
+\begin{DoxyCompactList}\small\item\em my file \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} $\ast$ \hyperlink{structCSphBin_acfd4d417ade3bda7c77436723a9654ec}{m\-\_\-p\-File\-Pos}
+\begin{DoxyCompactList}\small\item\em shared current offset in file \end{DoxyCompactList}\item 
+\hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$ \hyperlink{structCSphBin_ad11523bd78eae596117257d4556a1773}{m\-\_\-p\-Throttle}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+bin, block input buffer 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphBin_a56390f68af2b17dc1fa7fce36aff7da3}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!C\-Sph\-Bin@{C\-Sph\-Bin}}
+\index{C\-Sph\-Bin@{C\-Sph\-Bin}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{C\-Sph\-Bin}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Bin\-::\-C\-Sph\-Bin (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Hitless}}]{e\-Mode = {\ttfamily {\bf S\-P\-H\-\_\-\-H\-I\-T\-L\-E\-S\-S\-\_\-\-N\-O\-N\-E}}, }
+\item[{bool}]{b\-Word\-Dict = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{structCSphBin_a56390f68af2b17dc1fa7fce36aff7da3}
+\hypertarget{structCSphBin_a6c096a330f87e66512786a8b71dc9e03}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!$\sim$\-C\-Sph\-Bin@{$\sim$\-C\-Sph\-Bin}}
+\index{$\sim$\-C\-Sph\-Bin@{$\sim$\-C\-Sph\-Bin}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{$\sim$\-C\-Sph\-Bin}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Bin\-::$\sim$\-C\-Sph\-Bin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structCSphBin_a6c096a330f87e66512786a8b71dc9e03}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphBin_ac16842058b2b905551ef1bf5b9a3e89e}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Calc\-Bin\-Size@{Calc\-Bin\-Size}}
+\index{Calc\-Bin\-Size@{Calc\-Bin\-Size}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Calc\-Bin\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bin\-::\-Calc\-Bin\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Memory\-Limit, }
+\item[{{\bf int}}]{i\-Blocks, }
+\item[{const char $\ast$}]{s\-Phase, }
+\item[{bool}]{b\-Warn = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{structCSphBin_ac16842058b2b905551ef1bf5b9a3e89e}
+\hypertarget{structCSphBin_a2c38b2d71959f86907bacdac66869814}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Init@{Init}}
+\index{Init@{Init}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Bin\-::\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-F\-D, }
+\item[{{\bf Sph\-Offset\-\_\-t} $\ast$}]{p\-Shared\-Offset, }
+\item[{const {\bf int}}]{i\-Bin\-Size}
+\end{DoxyParamCaption}
+)}}\label{structCSphBin_a2c38b2d71959f86907bacdac66869814}
+\hypertarget{structCSphBin_afc65d17a53403e591001b92ee3fe11cf}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Is\-Done@{Is\-Done}}
+\index{Is\-Done@{Is\-Done}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Is\-Done}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Bin\-::\-Is\-Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structCSphBin_afc65d17a53403e591001b92ee3fe11cf}
+\hypertarget{structCSphBin_ae1a5af7c469e49d9bef69bbc7b7016f3}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Is\-E\-O\-F@{Is\-E\-O\-F}}
+\index{Is\-E\-O\-F@{Is\-E\-O\-F}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Is\-E\-O\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Bin\-::\-Is\-E\-O\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structCSphBin_ae1a5af7c469e49d9bef69bbc7b7016f3}
+\hypertarget{structCSphBin_a5ad7a8354b8522ca42dbad3375a0eb4f}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Is\-Error@{Is\-Error}}
+\index{Is\-Error@{Is\-Error}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Is\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Bin\-::\-Is\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphBin_a5ad7a8354b8522ca42dbad3375a0eb4f}
+\hypertarget{structCSphBin_a884ee51d51808e5e04cddfd8bcb23244}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Precache@{Precache}}
+\index{Precache@{Precache}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Precache}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Bin\-Read} C\-Sph\-Bin\-::\-Precache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structCSphBin_a884ee51d51808e5e04cddfd8bcb23244}
+\hypertarget{structCSphBin_a4eb6516c0e9058a9e6a61dbbfe1fc7ec}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Read\-Byte@{Read\-Byte}}
+\index{Read\-Byte@{Read\-Byte}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Read\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bin\-::\-Read\-Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structCSphBin_a4eb6516c0e9058a9e6a61dbbfe1fc7ec}
+\hypertarget{structCSphBin_ad5c6ae711b3ec1b7a8f08c27af3e8b58}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Read\-Bytes@{Read\-Bytes}}
+\index{Read\-Bytes@{Read\-Bytes}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Read\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Bin\-Read} C\-Sph\-Bin\-::\-Read\-Bytes (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Dest, }
+\item[{{\bf int}}]{i\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{structCSphBin_ad5c6ae711b3ec1b7a8f08c27af3e8b58}
+\hypertarget{structCSphBin_ae7318babf0207548eb696d319eac4822}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Read\-Hit@{Read\-Hit}}
+\index{Read\-Hit@{Read\-Hit}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Read\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bin\-::\-Read\-Hit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Aggregate\-Hit} $\ast$}]{p\-Hit, }
+\item[{{\bf int}}]{i\-Rowitems, }
+\item[{{\bf C\-Sph\-Rowitem} $\ast$}]{p\-Rowitems}
+\end{DoxyParamCaption}
+)}}\label{structCSphBin_ae7318babf0207548eb696d319eac4822}
+\hypertarget{structCSphBin_aae8155e54e16d8d4002302a7261ae765}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Read\-V\-L\-B@{Read\-V\-L\-B}}
+\index{Read\-V\-L\-B@{Read\-V\-L\-B}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Read\-V\-L\-B}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Bin\-::\-Read\-V\-L\-B (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structCSphBin_aae8155e54e16d8d4002302a7261ae765}
+\hypertarget{structCSphBin_a85fa51786a734bd68dc05982fafb5bda}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Set\-Throttle@{Set\-Throttle}}
+\index{Set\-Throttle@{Set\-Throttle}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Set\-Throttle}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Bin\-::\-Set\-Throttle (
+\begin{DoxyParamCaption}
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-State}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphBin_a85fa51786a734bd68dc05982fafb5bda}
+\hypertarget{structCSphBin_a929258783306bf28fb654b918edd42b0}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Unzip\-Int@{Unzip\-Int}}
+\index{Unzip\-Int@{Unzip\-Int}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Unzip\-Int}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Bin\-::\-Unzip\-Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structCSphBin_a929258783306bf28fb654b918edd42b0}
+\hypertarget{structCSphBin_ad2fe4990afa264b29a5c10e964e8612e}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!Unzip\-Offset@{Unzip\-Offset}}
+\index{Unzip\-Offset@{Unzip\-Offset}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{Unzip\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Bin\-::\-Unzip\-Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structCSphBin_ad2fe4990afa264b29a5c10e964e8612e}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphBin_a32c5fd379eadb75083b8fb585a54d549}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-b\-Error@{m\-\_\-b\-Error}}
+\index{m\-\_\-b\-Error@{m\-\_\-b\-Error}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-b\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Bin\-::m\-\_\-b\-Error\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a32c5fd379eadb75083b8fb585a54d549}
+\hypertarget{structCSphBin_a30101558ae0ed600d3775cf605237610}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-b\-Word\-Dict@{m\-\_\-b\-Word\-Dict}}
+\index{m\-\_\-b\-Word\-Dict@{m\-\_\-b\-Word\-Dict}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-b\-Word\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Bin\-::m\-\_\-b\-Word\-Dict\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a30101558ae0ed600d3775cf605237610}
+\hypertarget{structCSphBin_a06fb6c2e84ee5ba5089f71f079c23cf8}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-d\-Buffer@{m\-\_\-d\-Buffer}}
+\index{m\-\_\-d\-Buffer@{m\-\_\-d\-Buffer}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-d\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Bin\-::m\-\_\-d\-Buffer\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a06fb6c2e84ee5ba5089f71f079c23cf8}
+\hypertarget{structCSphBin_a861ee78370a6e41c28521f7644b874f0}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-e\-Mode@{m\-\_\-e\-Mode}}
+\index{m\-\_\-e\-Mode@{m\-\_\-e\-Mode}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-e\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Hitless} C\-Sph\-Bin\-::m\-\_\-e\-Mode\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a861ee78370a6e41c28521f7644b874f0}
+\hypertarget{structCSphBin_a1d747189b986248a22e575f0da2fb61d}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-e\-State@{m\-\_\-e\-State}}
+\index{m\-\_\-e\-State@{m\-\_\-e\-State}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-e\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Bin\-State} C\-Sph\-Bin\-::m\-\_\-e\-State\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a1d747189b986248a22e575f0da2fb61d}
+\hypertarget{structCSphBin_aec500a6bd93797cf5b40fbfb262fb094}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-i\-Done@{m\-\_\-i\-Done}}
+\index{m\-\_\-i\-Done@{m\-\_\-i\-Done}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-i\-Done}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bin\-::m\-\_\-i\-Done\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_aec500a6bd93797cf5b40fbfb262fb094}
+\hypertarget{structCSphBin_a032b4e8ece9f3c7a457f5cf9ab1abc33}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-i\-File@{m\-\_\-i\-File}}
+\index{m\-\_\-i\-File@{m\-\_\-i\-File}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-i\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bin\-::m\-\_\-i\-File\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a032b4e8ece9f3c7a457f5cf9ab1abc33}
+
+
+my file 
+
+\hypertarget{structCSphBin_abc84b9fa20cbb58c6b96999903da4576}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-i\-File\-Left@{m\-\_\-i\-File\-Left}}
+\index{m\-\_\-i\-File\-Left@{m\-\_\-i\-File\-Left}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-i\-File\-Left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bin\-::m\-\_\-i\-File\-Left}}\label{structCSphBin_abc84b9fa20cbb58c6b96999903da4576}
+
+
+how much data is still unread from the file 
+
+\hypertarget{structCSphBin_a585e1b9422f4de962b993a4991f560eb}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-i\-File\-Pos@{m\-\_\-i\-File\-Pos}}
+\index{m\-\_\-i\-File\-Pos@{m\-\_\-i\-File\-Pos}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-i\-File\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Bin\-::m\-\_\-i\-File\-Pos}}\label{structCSphBin_a585e1b9422f4de962b993a4991f560eb}
+
+
+my current offset in file 
+
+\hypertarget{structCSphBin_a24f8945a71004edb1208939b546a7673}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-i\-Last\-Word\-I\-D@{m\-\_\-i\-Last\-Word\-I\-D}}
+\index{m\-\_\-i\-Last\-Word\-I\-D@{m\-\_\-i\-Last\-Word\-I\-D}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-i\-Last\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Bin\-::m\-\_\-i\-Last\-Word\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a24f8945a71004edb1208939b546a7673}
+\hypertarget{structCSphBin_aadb0f5bb65619974edc37480aadb571b}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-i\-Left@{m\-\_\-i\-Left}}
+\index{m\-\_\-i\-Left@{m\-\_\-i\-Left}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-i\-Left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bin\-::m\-\_\-i\-Left\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_aadb0f5bb65619974edc37480aadb571b}
+\hypertarget{structCSphBin_a320121da925a58ab1c97119100c37c9d}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-i\-Size@{m\-\_\-i\-Size}}
+\index{m\-\_\-i\-Size@{m\-\_\-i\-Size}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-i\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bin\-::m\-\_\-i\-Size\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a320121da925a58ab1c97119100c37c9d}
+\hypertarget{structCSphBin_a2cbc4fc1ca50a07597654190a3209dcf}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-p\-Current@{m\-\_\-p\-Current}}
+\index{m\-\_\-p\-Current@{m\-\_\-p\-Current}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-p\-Current}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Bin\-::m\-\_\-p\-Current\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a2cbc4fc1ca50a07597654190a3209dcf}
+\hypertarget{structCSphBin_acfd4d417ade3bda7c77436723a9654ec}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-p\-File\-Pos@{m\-\_\-p\-File\-Pos}}
+\index{m\-\_\-p\-File\-Pos@{m\-\_\-p\-File\-Pos}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-p\-File\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t}$\ast$ C\-Sph\-Bin\-::m\-\_\-p\-File\-Pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_acfd4d417ade3bda7c77436723a9654ec}
+
+
+shared current offset in file 
+
+\hypertarget{structCSphBin_ad11523bd78eae596117257d4556a1773}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-p\-Throttle@{m\-\_\-p\-Throttle}}
+\index{m\-\_\-p\-Throttle@{m\-\_\-p\-Throttle}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-p\-Throttle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Throttle\-State\-\_\-t}$\ast$ C\-Sph\-Bin\-::m\-\_\-p\-Throttle\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_ad11523bd78eae596117257d4556a1773}
+\hypertarget{structCSphBin_a9751f2b14dfee0519796ddea19e2df28}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-s\-Keyword@{m\-\_\-s\-Keyword}}
+\index{m\-\_\-s\-Keyword@{m\-\_\-s\-Keyword}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-s\-Keyword}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} C\-Sph\-Bin\-::m\-\_\-s\-Keyword\mbox{[}{\bf M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a9751f2b14dfee0519796ddea19e2df28}
+
+
+currently decoded hit keyword (in keywords dict mode) 
+
+\hypertarget{structCSphBin_ab3d45d1754daa2e7175ece1785856551}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-s\-Last\-Keyword@{m\-\_\-s\-Last\-Keyword}}
+\index{m\-\_\-s\-Last\-Keyword@{m\-\_\-s\-Last\-Keyword}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-s\-Last\-Keyword}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} C\-Sph\-Bin\-::m\-\_\-s\-Last\-Keyword\mbox{[}{\bf M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_ab3d45d1754daa2e7175ece1785856551}
+\hypertarget{structCSphBin_a94ae6f84db17c75dde3391de09696026}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!m\-\_\-t\-Hit@{m\-\_\-t\-Hit}}
+\index{m\-\_\-t\-Hit@{m\-\_\-t\-Hit}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{m\-\_\-t\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Aggregate\-Hit} C\-Sph\-Bin\-::m\-\_\-t\-Hit\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphBin_a94ae6f84db17c75dde3391de09696026}
+
+
+currently decoded hit 
+
+\hypertarget{structCSphBin_ae7e93ba8f3286a49b1c9c2e18cd53b8b}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!M\-I\-N\-\_\-\-S\-I\-Z\-E@{M\-I\-N\-\_\-\-S\-I\-Z\-E}}
+\index{M\-I\-N\-\_\-\-S\-I\-Z\-E@{M\-I\-N\-\_\-\-S\-I\-Z\-E}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{M\-I\-N\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Bin\-::\-M\-I\-N\-\_\-\-S\-I\-Z\-E = 8192\hspace{0.3cm}{\ttfamily [static]}}}\label{structCSphBin_ae7e93ba8f3286a49b1c9c2e18cd53b8b}
+\hypertarget{structCSphBin_ae687edd7f3d0ce8cfe4090134d4517a9}{\index{C\-Sph\-Bin@{C\-Sph\-Bin}!W\-A\-R\-N\-\_\-\-S\-I\-Z\-E@{W\-A\-R\-N\-\_\-\-S\-I\-Z\-E}}
+\index{W\-A\-R\-N\-\_\-\-S\-I\-Z\-E@{W\-A\-R\-N\-\_\-\-S\-I\-Z\-E}!CSphBin@{C\-Sph\-Bin}}
+\subsubsection[{W\-A\-R\-N\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Bin\-::\-W\-A\-R\-N\-\_\-\-S\-I\-Z\-E = 262144\hspace{0.3cm}{\ttfamily [static]}}}\label{structCSphBin_ae687edd7f3d0ce8cfe4090134d4517a9}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

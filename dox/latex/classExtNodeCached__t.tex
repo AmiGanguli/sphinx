@@ -1,0 +1,270 @@
+\hypertarget{classExtNodeCached__t}{\section{Ext\-Node\-Cached\-\_\-t Class Reference}
+\label{classExtNodeCached__t}\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}}
+}
+Inheritance diagram for Ext\-Node\-Cached\-\_\-t\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classExtNodeCached__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classExtNodeCached__t_aac40d1cb5a186e5c8782e7500b568504}{$\sim$\-Ext\-Node\-Cached\-\_\-t} ()
+\item 
+virtual void \hyperlink{classExtNodeCached__t_af392a1a331cce71b93215c15dcb3f6c2}{Reset} (const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\item 
+virtual void \hyperlink{classExtNodeCached__t_a28e13f5745b43cc859eb8ff7bae78123}{Hint\-Docid} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t})
+\item 
+virtual const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$ \hyperlink{classExtNodeCached__t_a3f16526caad3bd9e4a846db9007ea950}{Get\-Docs\-Chunk} ()
+\item 
+virtual const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classExtNodeCached__t_a0b357bc4f7153168b4919433a4ffb747}{Get\-Hits\-Chunk} (const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$p\-Matched)
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtNodeCached__t_a27b6f6f3332973db08a9940edb7f5f5e}{Get\-Qwords} (\hyperlink{sphinxsearch_8cpp_a814fc096e1ffb29d072d79b72b702fe6}{Ext\-Qwords\-Hash\-\_\-t} \&h\-Qwords)
+\item 
+virtual void \hyperlink{classExtNodeCached__t_a261d7090726cbe7da5ce4df8164e454a}{Set\-Qwords\-I\-D\-F} (const \hyperlink{sphinxsearch_8cpp_a814fc096e1ffb29d072d79b72b702fe6}{Ext\-Qwords\-Hash\-\_\-t} \&h\-Qwords)
+\item 
+virtual void \hyperlink{classExtNodeCached__t_ac2e67b94bbcb2e9fedb750e707935d76}{Get\-Terms} (const \hyperlink{sphinxsearch_8cpp_a814fc096e1ffb29d072d79b72b702fe6}{Ext\-Qwords\-Hash\-\_\-t} \&h\-Qwords, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structTermPos__t}{Term\-Pos\-\_\-t} $>$ \&d\-Term\-Dupes) const 
+\item 
+virtual bool \hyperlink{classExtNodeCached__t_ade6d4c065ef7fab6863e184c93e3c1f4}{Got\-Hitless} ()
+\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classExtNodeCached__t_a6b575185e6a1a5e96463f6e914a0892d}{Get\-Word\-I\-D} () const 
+\begin{DoxyCompactList}\small\item\em for now, only used for duplicate keyword checks in quorum operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classExtNodeCached__t_a7ddc329c384f42d5e170a6ec52eec645}{Step\-Forward\-To\-Hits\-For} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Doc\-Id)
+\item 
+\hyperlink{classExtNodeCached__t_adbc9ac571aecdbb880def62ec40c8d65}{Ext\-Node\-Cached\-\_\-t} (\hyperlink{classNodeCacheContainer__t}{Node\-Cache\-Container\-\_\-t} $\ast$p\-Node, \hyperlink{classExtNode__i}{Ext\-Node\-\_\-i} $\ast$p\-Child)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNodeCacheContainer__t}{Node\-Cache\-Container\-\_\-t} $\ast$ \hyperlink{classExtNodeCached__t_ad6f644a8b54f3f30f8fbc46b4f8b41b5}{m\-\_\-p\-Node}
+\item 
+\hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$ \hyperlink{classExtNodeCached__t_a3db29986e63869150824a3966835df93}{m\-\_\-p\-Hit\-Doc}
+\begin{DoxyCompactList}\small\item\em points to entry in m\-\_\-d\-Docs which \hyperlink{classExtNodeCached__t_a0b357bc4f7153168b4919433a4ffb747}{Get\-Hits\-Chunk()} currently emits hits for \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classExtNodeCached__t_a84a67429327afeaaa967f5f5a9fa4ad6}{m\-\_\-u\-Hits\-Over\-For}
+\begin{DoxyCompactList}\small\item\em there are no more hits for matches block starting with this I\-D \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} $\ast$ \hyperlink{classExtNodeCached__t_a81332257ff6e159ba82b8103ae1dc317}{m\-\_\-p\-Warning}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classExtNodeCached__t_a452ccbcf4398b2aa51c70e222cff7fb7}{m\-\_\-i\-Max\-Timer}
+\begin{DoxyCompactList}\small\item\em work until this timestamp \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtNodeCached__t_a668473b25ec6f1df2163bd4a6f18da9e}{m\-\_\-i\-Hit\-Index}
+\begin{DoxyCompactList}\small\item\em store the current position in m\-\_\-\-Hits for \hyperlink{classExtNodeCached__t_a0b357bc4f7153168b4919433a4ffb747}{Get\-Hits\-Chunk()} \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtNodeCached__t_ac5fb49a1b0412d2368169b2908e72abe}{m\-\_\-i\-Doc\-Index}
+\begin{DoxyCompactList}\small\item\em store the current position in m\-\_\-\-Docs for \hyperlink{classExtNodeCached__t_a3f16526caad3bd9e4a846db9007ea950}{Get\-Docs\-Chunk()} \end{DoxyCompactList}\item 
+\hyperlink{classExtNode__i}{Ext\-Node\-\_\-i} $\ast$ \hyperlink{classExtNodeCached__t_af2ff5acd56311745d3eb4dc63b4ce5f9}{m\-\_\-p\-Child}
+\begin{DoxyCompactList}\small\item\em pointer to donor for the sake of Atom\-Pos procession \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtNodeCached__t_a580c8b573809e90bf4bde6059e3f6132}{m\-\_\-i\-Qwords}
+\begin{DoxyCompactList}\small\item\em number of tokens in parent query \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classExtNodeCached__t_ad23beeca56c9f2e242551a4306c1f8ab}{Node\-Cache\-Container\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+cached node wrapper to be injected into actual search trees (special container actually carries all the data and does the work, see below) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExtNodeCached__t_adbc9ac571aecdbb880def62ec40c8d65}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}}
+\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Ext\-Node\-Cached\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Ext\-Node\-Cached\-\_\-t\-::\-Ext\-Node\-Cached\-\_\-t (
+\begin{DoxyParamCaption}
+\item[{{\bf Node\-Cache\-Container\-\_\-t} $\ast$}]{p\-Node, }
+\item[{{\bf Ext\-Node\-\_\-i} $\ast$}]{p\-Child}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [private]}}}\label{classExtNodeCached__t_adbc9ac571aecdbb880def62ec40c8d65}
+\hypertarget{classExtNodeCached__t_aac40d1cb5a186e5c8782e7500b568504}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!$\sim$\-Ext\-Node\-Cached\-\_\-t@{$\sim$\-Ext\-Node\-Cached\-\_\-t}}
+\index{$\sim$\-Ext\-Node\-Cached\-\_\-t@{$\sim$\-Ext\-Node\-Cached\-\_\-t}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{$\sim$\-Ext\-Node\-Cached\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}virtual Ext\-Node\-Cached\-\_\-t\-::$\sim$\-Ext\-Node\-Cached\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtNodeCached__t_aac40d1cb5a186e5c8782e7500b568504}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExtNodeCached__t_a3f16526caad3bd9e4a846db9007ea950}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Get\-Docs\-Chunk@{Get\-Docs\-Chunk}}
+\index{Get\-Docs\-Chunk@{Get\-Docs\-Chunk}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Get\-Docs\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Doc\-\_\-t} $\ast$ Ext\-Node\-Cached\-\_\-t\-::\-Get\-Docs\-Chunk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtNodeCached__t_a3f16526caad3bd9e4a846db9007ea950}
+
+
+Implements \hyperlink{classExtNode__i_a729fb08a7ad224275224ec3c9e89751a}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNodeCached__t_a0b357bc4f7153168b4919433a4ffb747}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Get\-Hits\-Chunk@{Get\-Hits\-Chunk}}
+\index{Get\-Hits\-Chunk@{Get\-Hits\-Chunk}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Get\-Hits\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Hit\-\_\-t} $\ast$ Ext\-Node\-Cached\-\_\-t\-::\-Get\-Hits\-Chunk (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Doc\-\_\-t} $\ast$}]{p\-Matched}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtNodeCached__t_a0b357bc4f7153168b4919433a4ffb747}
+
+
+Implements \hyperlink{classExtNode__i_a486fcc633078a57c60de634c5c35f084}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNodeCached__t_a27b6f6f3332973db08a9940edb7f5f5e}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Get\-Qwords@{Get\-Qwords}}
+\index{Get\-Qwords@{Get\-Qwords}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Get\-Qwords}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} Ext\-Node\-Cached\-\_\-t\-::\-Get\-Qwords (
+\begin{DoxyParamCaption}
+\item[{{\bf Ext\-Qwords\-Hash\-\_\-t} \&}]{h\-Qwords}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtNodeCached__t_a27b6f6f3332973db08a9940edb7f5f5e}
+
+
+Implements \hyperlink{classExtNode__i_a11e49c90db27942ee8f5a174ebfe7212}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNodeCached__t_ac2e67b94bbcb2e9fedb750e707935d76}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Get\-Terms@{Get\-Terms}}
+\index{Get\-Terms@{Get\-Terms}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Get\-Terms}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ext\-Node\-Cached\-\_\-t\-::\-Get\-Terms (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Qwords\-Hash\-\_\-t} \&}]{h\-Qwords, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Term\-Pos\-\_\-t} $>$ \&}]{d\-Term\-Dupes}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtNodeCached__t_ac2e67b94bbcb2e9fedb750e707935d76}
+
+
+Implements \hyperlink{classExtNode__i_a54f48b44df2f712dc1282a401a14e108}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNodeCached__t_a6b575185e6a1a5e96463f6e914a0892d}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf uint64\-\_\-t} Ext\-Node\-Cached\-\_\-t\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtNodeCached__t_a6b575185e6a1a5e96463f6e914a0892d}
+
+
+for now, only used for duplicate keyword checks in quorum operator 
+
+
+
+Implements \hyperlink{classExtNode__i_ac05a844939491a1875fb8dbf84ba9f97}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNodeCached__t_ade6d4c065ef7fab6863e184c93e3c1f4}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Got\-Hitless@{Got\-Hitless}}
+\index{Got\-Hitless@{Got\-Hitless}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Got\-Hitless}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Ext\-Node\-Cached\-\_\-t\-::\-Got\-Hitless (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtNodeCached__t_ade6d4c065ef7fab6863e184c93e3c1f4}
+
+
+Implements \hyperlink{classExtNode__i_a08afc9f33bb800121ef8dccca67bdd75}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNodeCached__t_a28e13f5745b43cc859eb8ff7bae78123}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Hint\-Docid@{Hint\-Docid}}
+\index{Hint\-Docid@{Hint\-Docid}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Hint\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ext\-Node\-Cached\-\_\-t\-::\-Hint\-Docid (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtNodeCached__t_a28e13f5745b43cc859eb8ff7bae78123}
+
+
+Implements \hyperlink{classExtNode__i_a83fface58e270a2074023d441d902ad1}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNodeCached__t_af392a1a331cce71b93215c15dcb3f6c2}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Reset@{Reset}}
+\index{Reset@{Reset}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ext\-Node\-Cached\-\_\-t\-::\-Reset (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtNodeCached__t_af392a1a331cce71b93215c15dcb3f6c2}
+
+
+Implements \hyperlink{classExtNode__i_adb612662cec19c54649244bec75d0e82}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNodeCached__t_a261d7090726cbe7da5ce4df8164e454a}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Set\-Qwords\-I\-D\-F@{Set\-Qwords\-I\-D\-F}}
+\index{Set\-Qwords\-I\-D\-F@{Set\-Qwords\-I\-D\-F}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Set\-Qwords\-I\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ext\-Node\-Cached\-\_\-t\-::\-Set\-Qwords\-I\-D\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Qwords\-Hash\-\_\-t} \&}]{h\-Qwords}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtNodeCached__t_a261d7090726cbe7da5ce4df8164e454a}
+
+
+Implements \hyperlink{classExtNode__i_a73f0d94f75d927ace362079f4794d702}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNodeCached__t_a7ddc329c384f42d5e170a6ec52eec645}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Step\-Forward\-To\-Hits\-For@{Step\-Forward\-To\-Hits\-For}}
+\index{Step\-Forward\-To\-Hits\-For@{Step\-Forward\-To\-Hits\-For}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Step\-Forward\-To\-Hits\-For}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-Node\-Cached\-\_\-t\-::\-Step\-Forward\-To\-Hits\-For (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Doc\-Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtNodeCached__t_a7ddc329c384f42d5e170a6ec52eec645}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classExtNodeCached__t_ad23beeca56c9f2e242551a4306c1f8ab}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!Node\-Cache\-Container\-\_\-t@{Node\-Cache\-Container\-\_\-t}}
+\index{Node\-Cache\-Container\-\_\-t@{Node\-Cache\-Container\-\_\-t}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{Node\-Cache\-Container\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Node\-Cache\-Container\-\_\-t}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classExtNodeCached__t_ad23beeca56c9f2e242551a4306c1f8ab}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExtNodeCached__t_ac5fb49a1b0412d2368169b2908e72abe}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!m\-\_\-i\-Doc\-Index@{m\-\_\-i\-Doc\-Index}}
+\index{m\-\_\-i\-Doc\-Index@{m\-\_\-i\-Doc\-Index}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Doc\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Ext\-Node\-Cached\-\_\-t\-::m\-\_\-i\-Doc\-Index\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtNodeCached__t_ac5fb49a1b0412d2368169b2908e72abe}
+
+
+store the current position in m\-\_\-\-Docs for \hyperlink{classExtNodeCached__t_a3f16526caad3bd9e4a846db9007ea950}{Get\-Docs\-Chunk()} 
+
+\hypertarget{classExtNodeCached__t_a668473b25ec6f1df2163bd4a6f18da9e}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!m\-\_\-i\-Hit\-Index@{m\-\_\-i\-Hit\-Index}}
+\index{m\-\_\-i\-Hit\-Index@{m\-\_\-i\-Hit\-Index}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Hit\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Ext\-Node\-Cached\-\_\-t\-::m\-\_\-i\-Hit\-Index\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtNodeCached__t_a668473b25ec6f1df2163bd4a6f18da9e}
+
+
+store the current position in m\-\_\-\-Hits for \hyperlink{classExtNodeCached__t_a0b357bc4f7153168b4919433a4ffb747}{Get\-Hits\-Chunk()} 
+
+\hypertarget{classExtNodeCached__t_a452ccbcf4398b2aa51c70e222cff7fb7}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!m\-\_\-i\-Max\-Timer@{m\-\_\-i\-Max\-Timer}}
+\index{m\-\_\-i\-Max\-Timer@{m\-\_\-i\-Max\-Timer}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Max\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Ext\-Node\-Cached\-\_\-t\-::m\-\_\-i\-Max\-Timer\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtNodeCached__t_a452ccbcf4398b2aa51c70e222cff7fb7}
+
+
+work until this timestamp 
+
+\hypertarget{classExtNodeCached__t_a580c8b573809e90bf4bde6059e3f6132}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!m\-\_\-i\-Qwords@{m\-\_\-i\-Qwords}}
+\index{m\-\_\-i\-Qwords@{m\-\_\-i\-Qwords}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Qwords}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Ext\-Node\-Cached\-\_\-t\-::m\-\_\-i\-Qwords\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtNodeCached__t_a580c8b573809e90bf4bde6059e3f6132}
+
+
+number of tokens in parent query 
+
+\hypertarget{classExtNodeCached__t_af2ff5acd56311745d3eb4dc63b4ce5f9}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!m\-\_\-p\-Child@{m\-\_\-p\-Child}}
+\index{m\-\_\-p\-Child@{m\-\_\-p\-Child}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ext\-Node\-\_\-i}$\ast$ Ext\-Node\-Cached\-\_\-t\-::m\-\_\-p\-Child\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtNodeCached__t_af2ff5acd56311745d3eb4dc63b4ce5f9}
+
+
+pointer to donor for the sake of Atom\-Pos procession 
+
+\hypertarget{classExtNodeCached__t_a3db29986e63869150824a3966835df93}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!m\-\_\-p\-Hit\-Doc@{m\-\_\-p\-Hit\-Doc}}
+\index{m\-\_\-p\-Hit\-Doc@{m\-\_\-p\-Hit\-Doc}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Hit\-Doc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ext\-Doc\-\_\-t}$\ast$ Ext\-Node\-Cached\-\_\-t\-::m\-\_\-p\-Hit\-Doc\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtNodeCached__t_a3db29986e63869150824a3966835df93}
+
+
+points to entry in m\-\_\-d\-Docs which \hyperlink{classExtNodeCached__t_a0b357bc4f7153168b4919433a4ffb747}{Get\-Hits\-Chunk()} currently emits hits for 
+
+\hypertarget{classExtNodeCached__t_ad6f644a8b54f3f30f8fbc46b4f8b41b5}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!m\-\_\-p\-Node@{m\-\_\-p\-Node}}
+\index{m\-\_\-p\-Node@{m\-\_\-p\-Node}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node\-Cache\-Container\-\_\-t}$\ast$ Ext\-Node\-Cached\-\_\-t\-::m\-\_\-p\-Node\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtNodeCached__t_ad6f644a8b54f3f30f8fbc46b4f8b41b5}
+\hypertarget{classExtNodeCached__t_a81332257ff6e159ba82b8103ae1dc317}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!m\-\_\-p\-Warning@{m\-\_\-p\-Warning}}
+\index{m\-\_\-p\-Warning@{m\-\_\-p\-Warning}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Warning}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String}$\ast$ Ext\-Node\-Cached\-\_\-t\-::m\-\_\-p\-Warning\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtNodeCached__t_a81332257ff6e159ba82b8103ae1dc317}
+\hypertarget{classExtNodeCached__t_a84a67429327afeaaa967f5f5a9fa4ad6}{\index{Ext\-Node\-Cached\-\_\-t@{Ext\-Node\-Cached\-\_\-t}!m\-\_\-u\-Hits\-Over\-For@{m\-\_\-u\-Hits\-Over\-For}}
+\index{m\-\_\-u\-Hits\-Over\-For@{m\-\_\-u\-Hits\-Over\-For}!ExtNodeCached_t@{Ext\-Node\-Cached\-\_\-t}}
+\subsubsection[{m\-\_\-u\-Hits\-Over\-For}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} Ext\-Node\-Cached\-\_\-t\-::m\-\_\-u\-Hits\-Over\-For\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtNodeCached__t_a84a67429327afeaaa967f5f5a9fa4ad6}
+
+
+there are no more hits for matches block starting with this I\-D 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsearch_8cpp}{sphinxsearch.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,97 @@
+\hypertarget{testrt_8cpp}{\section{src/testrt.cpp File Reference}
+\label{testrt_8cpp}\index{src/testrt.\-cpp@{src/testrt.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxrt.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{testrt_8cpp_a6acb584e22f8aafa1da3732fe4188d2e}{Setup\-Indexing} (C\-Sph\-Source\-\_\-\-My\-S\-Q\-L $\ast$p\-Src, const C\-Sph\-Source\-Params\-\_\-\-My\-S\-Q\-L \&t\-Params)
+\item 
+void \hyperlink{testrt_8cpp_a588622dfff43f7f08e3b846d2c5dad52}{Do\-Search} (\hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$p\-Index)
+\item 
+void \hyperlink{testrt_8cpp_a928caf98ec6e99f2a4da1199fe211459}{Do\-Indexing} (C\-Sph\-Source\-\_\-\-My\-S\-Q\-L $\ast$p\-Src, \hyperlink{classISphRtIndex}{I\-Sph\-Rt\-Index} $\ast$p\-Index)
+\item 
+C\-Sph\-Source\-\_\-\-My\-S\-Q\-L $\ast$ \hyperlink{testrt_8cpp_ac86f34acf346dc63663dce727f10a916}{Spawn\-Source} (const char $\ast$s\-Query, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tok, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict)
+\item 
+void \hyperlink{testrt_8cpp_ae4cd3b381c8151c5bc33f28e163ec250}{Indexing\-Thread} (void $\ast$p\-Arg)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{testrt_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{testrt_8cpp_ad0363e57db6ce1487114897fc6f53dc9}{C\-O\-M\-M\-I\-T\-\_\-\-S\-T\-E\-P} = 1
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{testrt_8cpp_aedfbfd791d8e7ec7de8414cd72ea9627}{g\-\_\-f\-Total\-M\-B} = 0.\-0f
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{testrt_8cpp_a2c5c157c5ec59303f3c35d02d74d6a68}{g\-\_\-i\-Fields\-Count} = 0
+\item 
+static \hyperlink{classISphRtIndex}{I\-Sph\-Rt\-Index} $\ast$ \hyperlink{testrt_8cpp_a05a6194b5f0c4f2b35833d6eb0c19c18}{g\-\_\-p\-Index} = N\-U\-L\-L
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{testrt_8cpp_a928caf98ec6e99f2a4da1199fe211459}{\index{testrt.\-cpp@{testrt.\-cpp}!Do\-Indexing@{Do\-Indexing}}
+\index{Do\-Indexing@{Do\-Indexing}!testrt.cpp@{testrt.\-cpp}}
+\subsubsection[{Do\-Indexing}]{\setlength{\rightskip}{0pt plus 5cm}void Do\-Indexing (
+\begin{DoxyParamCaption}
+\item[{C\-Sph\-Source\-\_\-\-My\-S\-Q\-L $\ast$}]{p\-Src, }
+\item[{{\bf I\-Sph\-Rt\-Index} $\ast$}]{p\-Index}
+\end{DoxyParamCaption}
+)}}\label{testrt_8cpp_a928caf98ec6e99f2a4da1199fe211459}
+\hypertarget{testrt_8cpp_a588622dfff43f7f08e3b846d2c5dad52}{\index{testrt.\-cpp@{testrt.\-cpp}!Do\-Search@{Do\-Search}}
+\index{Do\-Search@{Do\-Search}!testrt.cpp@{testrt.\-cpp}}
+\subsubsection[{Do\-Search}]{\setlength{\rightskip}{0pt plus 5cm}void Do\-Search (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index} $\ast$}]{p\-Index}
+\end{DoxyParamCaption}
+)}}\label{testrt_8cpp_a588622dfff43f7f08e3b846d2c5dad52}
+\hypertarget{testrt_8cpp_ae4cd3b381c8151c5bc33f28e163ec250}{\index{testrt.\-cpp@{testrt.\-cpp}!Indexing\-Thread@{Indexing\-Thread}}
+\index{Indexing\-Thread@{Indexing\-Thread}!testrt.cpp@{testrt.\-cpp}}
+\subsubsection[{Indexing\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Indexing\-Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{testrt_8cpp_ae4cd3b381c8151c5bc33f28e163ec250}
+\hypertarget{testrt_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{testrt.\-cpp@{testrt.\-cpp}!main@{main}}
+\index{main@{main}!testrt.cpp@{testrt.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} main (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{testrt_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+\hypertarget{testrt_8cpp_a6acb584e22f8aafa1da3732fe4188d2e}{\index{testrt.\-cpp@{testrt.\-cpp}!Setup\-Indexing@{Setup\-Indexing}}
+\index{Setup\-Indexing@{Setup\-Indexing}!testrt.cpp@{testrt.\-cpp}}
+\subsubsection[{Setup\-Indexing}]{\setlength{\rightskip}{0pt plus 5cm}void Setup\-Indexing (
+\begin{DoxyParamCaption}
+\item[{C\-Sph\-Source\-\_\-\-My\-S\-Q\-L $\ast$}]{p\-Src, }
+\item[{const C\-Sph\-Source\-Params\-\_\-\-My\-S\-Q\-L \&}]{t\-Params}
+\end{DoxyParamCaption}
+)}}\label{testrt_8cpp_a6acb584e22f8aafa1da3732fe4188d2e}
+\hypertarget{testrt_8cpp_ac86f34acf346dc63663dce727f10a916}{\index{testrt.\-cpp@{testrt.\-cpp}!Spawn\-Source@{Spawn\-Source}}
+\index{Spawn\-Source@{Spawn\-Source}!testrt.cpp@{testrt.\-cpp}}
+\subsubsection[{Spawn\-Source}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Source\-\_\-\-My\-S\-Q\-L$\ast$ Spawn\-Source (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Query, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tok, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict}
+\end{DoxyParamCaption}
+)}}\label{testrt_8cpp_ac86f34acf346dc63663dce727f10a916}
+
+
+\subsection{Variable Documentation}
+\hypertarget{testrt_8cpp_ad0363e57db6ce1487114897fc6f53dc9}{\index{testrt.\-cpp@{testrt.\-cpp}!C\-O\-M\-M\-I\-T\-\_\-\-S\-T\-E\-P@{C\-O\-M\-M\-I\-T\-\_\-\-S\-T\-E\-P}}
+\index{C\-O\-M\-M\-I\-T\-\_\-\-S\-T\-E\-P@{C\-O\-M\-M\-I\-T\-\_\-\-S\-T\-E\-P}!testrt.cpp@{testrt.\-cpp}}
+\subsubsection[{C\-O\-M\-M\-I\-T\-\_\-\-S\-T\-E\-P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-O\-M\-M\-I\-T\-\_\-\-S\-T\-E\-P = 1}}\label{testrt_8cpp_ad0363e57db6ce1487114897fc6f53dc9}
+\hypertarget{testrt_8cpp_aedfbfd791d8e7ec7de8414cd72ea9627}{\index{testrt.\-cpp@{testrt.\-cpp}!g\-\_\-f\-Total\-M\-B@{g\-\_\-f\-Total\-M\-B}}
+\index{g\-\_\-f\-Total\-M\-B@{g\-\_\-f\-Total\-M\-B}!testrt.cpp@{testrt.\-cpp}}
+\subsubsection[{g\-\_\-f\-Total\-M\-B}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} g\-\_\-f\-Total\-M\-B = 0.\-0f}}\label{testrt_8cpp_aedfbfd791d8e7ec7de8414cd72ea9627}
+\hypertarget{testrt_8cpp_a2c5c157c5ec59303f3c35d02d74d6a68}{\index{testrt.\-cpp@{testrt.\-cpp}!g\-\_\-i\-Fields\-Count@{g\-\_\-i\-Fields\-Count}}
+\index{g\-\_\-i\-Fields\-Count@{g\-\_\-i\-Fields\-Count}!testrt.cpp@{testrt.\-cpp}}
+\subsubsection[{g\-\_\-i\-Fields\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Fields\-Count = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{testrt_8cpp_a2c5c157c5ec59303f3c35d02d74d6a68}
+\hypertarget{testrt_8cpp_a05a6194b5f0c4f2b35833d6eb0c19c18}{\index{testrt.\-cpp@{testrt.\-cpp}!g\-\_\-p\-Index@{g\-\_\-p\-Index}}
+\index{g\-\_\-p\-Index@{g\-\_\-p\-Index}!testrt.cpp@{testrt.\-cpp}}
+\subsubsection[{g\-\_\-p\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Rt\-Index}$\ast$ g\-\_\-p\-Index = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}}}\label{testrt_8cpp_a05a6194b5f0c4f2b35833d6eb0c19c18}

@@ -1,0 +1,415 @@
+\hypertarget{sphinxstemru_8inl}{\section{src/sphinxstemru.inl File Reference}
+\label{sphinxstemru_8inl}\index{src/sphinxstemru.\-inl@{src/sphinxstemru.\-inl}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structLOC__TABLE__ENTRY}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y}
+\item 
+struct \hyperlink{structLOC__TABLE__INDEX}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a69a52cd83db63767cd7b7b3759167736}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y}~\hyperlink{sphinxstemru_8inl_a239cc7b2d29b4af3b38b5c1871a09587}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}(stem\-\_\-table\-\_\-entry\-\_\-)
+\item 
+\#define \hyperlink{sphinxstemru_8inl_aaf372d440210e65a7745e17c2b589036}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X}~\hyperlink{sphinxstemru_8inl_a239cc7b2d29b4af3b38b5c1871a09587}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}(stem\-\_\-table\-\_\-index\-\_\-)
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a96d8df9f396f6badae25ad4f3fc85f8c}{T\-S1}(c1)~\{ R\-U\-S\-::c1 \}
+\item 
+\#define \hyperlink{sphinxstemru_8inl_ad4df4fe2a5893d873ac3bc5b61d12f83}{T\-S2}(c1, c2)~\{ R\-U\-S\-::c1, R\-U\-S\-::c2 \}
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a3904e45baa612d7dd78080b8b7d43a0d}{T\-S3}(c1, c2, c3)~\{ R\-U\-S\-::c1, R\-U\-S\-::c2, R\-U\-S\-::c3 \}
+\item 
+\#define \hyperlink{sphinxstemru_8inl_abde8eea4803507d7be5f8d57310911dd}{T\-S4}(c1, c2, c3, c4)~\{ R\-U\-S\-::c1, R\-U\-S\-::c2, R\-U\-S\-::c3, R\-U\-S\-::c4 \}
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a59efeb3cd21f84c68e9d2549be4efb49}{T\-S5}(c1, c2, c3, c4, c5)~\{ R\-U\-S\-::c1, R\-U\-S\-::c2, R\-U\-S\-::c3, R\-U\-S\-::c4, R\-U\-S\-::c5 \}
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a36c00b15c00a042d74c0849d6b25e862}{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C}(func, table)
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a6e7f6bd54e6ef2a83d0da0c5e559870e}{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C\-\_\-\-I}(table)
+\item 
+\#define \hyperlink{sphinxstemru_8inl_ae41a9a4a6115e8f0b80e3aa7e9700bc8}{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-I\-N\-I\-T\-\_\-\-T\-A\-B\-L\-E}(table)
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a4cbdff86fa3b51b26929d1fddc418342}{I\-V}(c)
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a901d969e54b3eefac55649418c355e09}{E\-O\-W}(\-\_\-arg)~(!($\ast$((unsigned char$\ast$)(\-\_\-arg))))
+\item 
+\#define \hyperlink{sphinxstemru_8inl_adb9bc29996ff9b1fe0f69f11ef99444a}{C}(p)~word\mbox{[}len-\/p\mbox{]}
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(p, c)~( \hyperlink{sphinxstemru_8inl_adb9bc29996ff9b1fe0f69f11ef99444a}{C}(p)==c )
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a6934aaa816e6d492db7fee51a676b6cb}{X\-S\-U\-F\-F2}(c2, c1)~( \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(1,c1) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) )
+\item 
+\#define \hyperlink{sphinxstemru_8inl_acc1d03553f28f387de64f3f8528226e3}{X\-S\-U\-F\-F3}(c3, c2, c1)~( \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(1,c1) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) )
+\item 
+\#define \hyperlink{sphinxstemru_8inl_abaeebedcacc70a36999e0a1079470e66}{X\-S\-U\-F\-F4}(c4, c3, c2, c1)~( \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(1,c1) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(4,c4) )
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a0216a91473f81d295f108fd939597b44}{X\-S\-U\-F\-F5}(c5, c4, c3, c2, c1)~( \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(1,c1) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(2,c2) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(3,c3) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(4,c4) \&\& \hyperlink{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{W}(5,c5) )
+\item 
+\#define \hyperlink{sphinxstemru_8inl_aedfece91756041fb82eccb28a953f700}{B\-R\-K}(\-\_\-arg)~\{ len -\/= \-\_\-arg; break; \}
+\item 
+\#define \hyperlink{sphinxstemru_8inl_a8feb1bda7113da53176c51babd173105}{C\-H\-K}(\-\_\-func)~\{ i = \hyperlink{sphinxstemru_8inl_a239cc7b2d29b4af3b38b5c1871a09587}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}(\-\_\-func) ( word, len ); \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} ( i ) \hyperlink{sphinxstemru_8inl_aedfece91756041fb82eccb28a953f700}{B\-R\-K} ( i ); \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structLOC__TABLE__ENTRY}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} \hyperlink{sphinxstemru_8inl_ad8f4f2fc58fe22a03851d4fd490bc419}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X} (ru\-\_\-adj)\mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structLOC__TABLE__INDEX}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} \hyperlink{sphinxstemru_8inl_afb51e93f89e9eae061746fd9f39ee13d}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X} (ru\-\_\-part\-\_\-i)\mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structLOC__TABLE__ENTRY}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} \hyperlink{sphinxstemru_8inl_a2b9b173d4feef2d7c98b13d18f18d0c4}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X} (ru\-\_\-part)\mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structLOC__TABLE__INDEX}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} \hyperlink{sphinxstemru_8inl_a185fff3dd5d68c06ec6ea7d08c4b09d1}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X} (ru\-\_\-verb\-\_\-i)\mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structLOC__TABLE__ENTRY}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} \hyperlink{sphinxstemru_8inl_ac7034a1d58cb6a43d7b33cbf4b668ee1}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X} (ru\-\_\-verb)\mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structLOC__TABLE__INDEX}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} \hyperlink{sphinxstemru_8inl_afcc8e44ce80432eac219a95666e2584e}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X} (ru\-\_\-dear\-\_\-i)\mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structLOC__TABLE__ENTRY}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} \hyperlink{sphinxstemru_8inl_a717dfdabed0079294cf5957590809637}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X} (ru\-\_\-dear)\mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structLOC__TABLE__INDEX}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} \hyperlink{sphinxstemru_8inl_acbe46377119793e6f2914f71be7f83ff}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X} (ru\-\_\-noun\-\_\-i)\mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structLOC__TABLE__ENTRY}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} \hyperlink{sphinxstemru_8inl_a239cc7b2d29b4af3b38b5c1871a09587}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X} (ru\-\_\-noun)\mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstemru_8inl_a041878a0901c8b1459c45a82da45fe30}{stem\-\_\-ru\-\_\-table\-\_\-i} (\hyperlink{sphinxstemru_8cpp_abfbd757779fad3c24ae46017861aec77}{L\-O\-C\-\_\-\-C\-H\-A\-R\-\_\-\-T\-Y\-P\-E} $\ast$word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} len, \hyperlink{structLOC__TABLE__ENTRY}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} $\ast$table, \hyperlink{structLOC__TABLE__INDEX}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} $\ast$itable, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} icount)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstemru_8inl_a239cc7b2d29b4af3b38b5c1871a09587}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}() \hyperlink{sphinxstemru_8inl_a5ad68670bc726ba8175491f8c1a23782}{stem\-\_\-ru\-\_\-adjectival} (\hyperlink{sphinxstemru_8cpp_abfbd757779fad3c24ae46017861aec77}{L\-O\-C\-\_\-\-C\-H\-A\-R\-\_\-\-T\-Y\-P\-E} $\ast$word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} len)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstemru_8inl_a239cc7b2d29b4af3b38b5c1871a09587}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}() \hyperlink{sphinxstemru_8inl_aac53c767e3a8118b89aa18c3b234ded9}{stem\-\_\-ru\-\_\-verb\-\_\-ov} (\hyperlink{sphinxstemru_8cpp_abfbd757779fad3c24ae46017861aec77}{L\-O\-C\-\_\-\-C\-H\-A\-R\-\_\-\-T\-Y\-P\-E} $\ast$word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} len)
+\item 
+void \hyperlink{sphinxstemru_8inl_a239cc7b2d29b4af3b38b5c1871a09587}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}() \hyperlink{sphinxstemru_8inl_ae88e93e6d4b75bb79b79cd5546a66861}{stem\-\_\-ru\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em initialize Russian stemmar \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstemru_8inl_a239cc7b2d29b4af3b38b5c1871a09587}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}() \hyperlink{sphinxstemru_8inl_a8ccd2b75cd24c79d83c680811ad42277}{stem\-\_\-ru} (\hyperlink{sphinxstemru_8cpp_abfbd757779fad3c24ae46017861aec77}{L\-O\-C\-\_\-\-C\-H\-A\-R\-\_\-\-T\-Y\-P\-E} $\ast$word)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structLOC__TABLE__INDEX}{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} \hyperlink{sphinxstemru_8inl_abcaf6d3a288b987898e1a11d1b4ef1b9}{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X} (ru\-\_\-adj\-\_\-i)\mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxstemru_8inl_aedfece91756041fb82eccb28a953f700}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!B\-R\-K@{B\-R\-K}}
+\index{B\-R\-K@{B\-R\-K}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{B\-R\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-R\-K(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg}
+\end{DoxyParamCaption}
+)~\{ len -\/= \-\_\-arg; break; \}}}\label{sphinxstemru_8inl_aedfece91756041fb82eccb28a953f700}
+\hypertarget{sphinxstemru_8inl_adb9bc29996ff9b1fe0f69f11ef99444a}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!C@{C}}
+\index{C@{C}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{C}]{\setlength{\rightskip}{0pt plus 5cm}\#define C(
+\begin{DoxyParamCaption}
+\item[{}]{p}
+\end{DoxyParamCaption}
+)~word\mbox{[}len-\/p\mbox{]}}}\label{sphinxstemru_8inl_adb9bc29996ff9b1fe0f69f11ef99444a}
+\hypertarget{sphinxstemru_8inl_a8feb1bda7113da53176c51babd173105}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!C\-H\-K@{C\-H\-K}}
+\index{C\-H\-K@{C\-H\-K}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{C\-H\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-K(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-func}
+\end{DoxyParamCaption}
+)~\{ i = {\bf L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}(\-\_\-func) ( word, len ); {\bf if} ( i ) {\bf B\-R\-K} ( i ); \}}}\label{sphinxstemru_8inl_a8feb1bda7113da53176c51babd173105}
+\hypertarget{sphinxstemru_8inl_a901d969e54b3eefac55649418c355e09}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!E\-O\-W@{E\-O\-W}}
+\index{E\-O\-W@{E\-O\-W}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{E\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-O\-W(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg}
+\end{DoxyParamCaption}
+)~(!($\ast$((unsigned char$\ast$)(\-\_\-arg))))}}\label{sphinxstemru_8inl_a901d969e54b3eefac55649418c355e09}
+\hypertarget{sphinxstemru_8inl_a4cbdff86fa3b51b26929d1fddc418342}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!I\-V@{I\-V}}
+\index{I\-V@{I\-V}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{I\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-V(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemru_8inl_a4cbdff86fa3b51b26929d1fddc418342}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+( \(\backslash\)
+        c==RUS::A || c==RUS::E || c==RUS::YO || c==RUS::I || c==RUS::O || \(\backslash\)
+        c==RUS::U || c==RUS::Y || c==RUS::EE || c==RUS::YU || c==RUS::YA )
+\end{DoxyCode}
+\hypertarget{sphinxstemru_8inl_a69a52cd83db63767cd7b7b3759167736}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y@{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y}}
+\index{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y@{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y}~{\bf L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}(stem\-\_\-table\-\_\-entry\-\_\-)}}\label{sphinxstemru_8inl_a69a52cd83db63767cd7b7b3759167736}
+\hypertarget{sphinxstemru_8inl_aaf372d440210e65a7745e17c2b589036}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X@{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X}}
+\index{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X@{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X}~{\bf L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}(stem\-\_\-table\-\_\-index\-\_\-)}}\label{sphinxstemru_8inl_aaf372d440210e65a7745e17c2b589036}
+\hypertarget{sphinxstemru_8inl_a36c00b15c00a042d74c0849d6b25e862}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C@{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C}}
+\index{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C@{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C(
+\begin{DoxyParamCaption}
+\item[{}]{func, }
+\item[{}]{table}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemru_8inl_a36c00b15c00a042d74c0849d6b25e862}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} func ( \hyperlink{sphinxstemru_8cpp_abfbd757779fad3c24ae46017861aec77}{LOC\_CHAR\_TYPE} * word, \textcolor{keywordtype}{int} len ) \(\backslash\)
+    \{ \(\backslash\)
+        return stem\_ru\_table ( word, len, \hyperlink{sphinxstemru_8cpp_a458d64e656b91696f7bf423d76b3db0d}{LOC\_PREFIX}(table), \(\backslash\)
+            \textcolor{keyword}{sizeof}(\hyperlink{sphinxstemru_8cpp_a458d64e656b91696f7bf423d76b3db0d}{LOC\_PREFIX}(table))/\textcolor{keyword}{sizeof}(\hyperlink{structLOC__TABLE__ENTRY}{LOC\_TABLE\_ENTRY}
+      ) ); \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{sphinxstemru_8inl_a6e7f6bd54e6ef2a83d0da0c5e559870e}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C\-\_\-\-I@{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C\-\_\-\-I}}
+\index{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C\-\_\-\-I@{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C\-\_\-\-I}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C\-\_\-\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-F\-U\-N\-C\-\_\-\-I(
+\begin{DoxyParamCaption}
+\item[{}]{table}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemru_8inl_a6e7f6bd54e6ef2a83d0da0c5e559870e}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} \hyperlink{sphinxstemru_8cpp_a458d64e656b91696f7bf423d76b3db0d}{LOC\_PREFIX}(stem\_##table##\_i) ( \hyperlink{sphinxstemru_8cpp_abfbd757779fad3c24ae46017861aec77}{LOC\_CHAR\_TYPE} * word,
+       \textcolor{keywordtype}{int} len ) \(\backslash\)
+    \{ \(\backslash\)
+        return \hyperlink{sphinxstemru_8inl_a041878a0901c8b1459c45a82da45fe30}{stem\_ru\_table\_i} ( word, len, \hyperlink{sphinxstemru_8cpp_a458d64e656b91696f7bf423d76b3db0d}{LOC\_PREFIX}
+      (table), \hyperlink{sphinxstemru_8cpp_a458d64e656b91696f7bf423d76b3db0d}{LOC\_PREFIX}(table##\_i), \(\backslash\)
+            \textcolor{keyword}{sizeof}(\hyperlink{sphinxstemru_8cpp_a458d64e656b91696f7bf423d76b3db0d}{LOC\_PREFIX}(table##\_i))/\textcolor{keyword}{sizeof}(\hyperlink{structLOC__TABLE__INDEX}{LOC\_TABLE\_INDEX}
+      ) ); \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{sphinxstemru_8inl_ae41a9a4a6115e8f0b80e3aa7e9700bc8}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-I\-N\-I\-T\-\_\-\-T\-A\-B\-L\-E@{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-I\-N\-I\-T\-\_\-\-T\-A\-B\-L\-E}}
+\index{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-I\-N\-I\-T\-\_\-\-T\-A\-B\-L\-E@{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-I\-N\-I\-T\-\_\-\-T\-A\-B\-L\-E}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-I\-N\-I\-T\-\_\-\-T\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-E\-M\-\_\-\-R\-U\-\_\-\-I\-N\-I\-T\-\_\-\-T\-A\-B\-L\-E(
+\begin{DoxyParamCaption}
+\item[{}]{table}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemru_8inl_ae41a9a4a6115e8f0b80e3aa7e9700bc8}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{for} ( i=0; i<\hyperlink{sphinxexpr_8cpp_ae1c677d28873cd6f6145ab2068069c29}{int}(\textcolor{keyword}{sizeof}(\hyperlink{sphinxstemru_8cpp_a458d64e656b91696f7bf423d76b3db0d}{LOC\_PREFIX}(table))/\textcolor{keyword}{sizeof}(\hyperlink{structLOC__TABLE__ENTRY}{LOC\_TABLE\_ENTRY}
+      )); i++ ) \(\backslash\)
+            \hyperlink{sphinxstemru_8cpp_a458d64e656b91696f7bf423d76b3db0d}{LOC\_PREFIX}(table)[i].len = ((\hyperlink{sphinxexpr_8cpp_ae1c677d28873cd6f6145ab2068069c29}{int})strlen((\textcolor{keywordtype}{char}*)
+      \hyperlink{sphinxstemru_8cpp_a458d64e656b91696f7bf423d76b3db0d}{LOC\_PREFIX}(table)[i].suffix)/\textcolor{keyword}{sizeof}(\hyperlink{sphinxstemru_8cpp_abfbd757779fad3c24ae46017861aec77}{LOC\_CHAR\_TYPE}))- 1;
+\end{DoxyCode}
+\hypertarget{sphinxstemru_8inl_a96d8df9f396f6badae25ad4f3fc85f8c}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!T\-S1@{T\-S1}}
+\index{T\-S1@{T\-S1}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{T\-S1}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-S1(
+\begin{DoxyParamCaption}
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~\{ R\-U\-S\-::c1 \}}}\label{sphinxstemru_8inl_a96d8df9f396f6badae25ad4f3fc85f8c}
+\hypertarget{sphinxstemru_8inl_ad4df4fe2a5893d873ac3bc5b61d12f83}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!T\-S2@{T\-S2}}
+\index{T\-S2@{T\-S2}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{T\-S2}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-S2(
+\begin{DoxyParamCaption}
+\item[{}]{c1, }
+\item[{}]{c2}
+\end{DoxyParamCaption}
+)~\{ R\-U\-S\-::c1, R\-U\-S\-::c2 \}}}\label{sphinxstemru_8inl_ad4df4fe2a5893d873ac3bc5b61d12f83}
+\hypertarget{sphinxstemru_8inl_a3904e45baa612d7dd78080b8b7d43a0d}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!T\-S3@{T\-S3}}
+\index{T\-S3@{T\-S3}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{T\-S3}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-S3(
+\begin{DoxyParamCaption}
+\item[{}]{c1, }
+\item[{}]{c2, }
+\item[{}]{c3}
+\end{DoxyParamCaption}
+)~\{ R\-U\-S\-::c1, R\-U\-S\-::c2, R\-U\-S\-::c3 \}}}\label{sphinxstemru_8inl_a3904e45baa612d7dd78080b8b7d43a0d}
+\hypertarget{sphinxstemru_8inl_abde8eea4803507d7be5f8d57310911dd}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!T\-S4@{T\-S4}}
+\index{T\-S4@{T\-S4}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{T\-S4}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-S4(
+\begin{DoxyParamCaption}
+\item[{}]{c1, }
+\item[{}]{c2, }
+\item[{}]{c3, }
+\item[{}]{c4}
+\end{DoxyParamCaption}
+)~\{ R\-U\-S\-::c1, R\-U\-S\-::c2, R\-U\-S\-::c3, R\-U\-S\-::c4 \}}}\label{sphinxstemru_8inl_abde8eea4803507d7be5f8d57310911dd}
+\hypertarget{sphinxstemru_8inl_a59efeb3cd21f84c68e9d2549be4efb49}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!T\-S5@{T\-S5}}
+\index{T\-S5@{T\-S5}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{T\-S5}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-S5(
+\begin{DoxyParamCaption}
+\item[{}]{c1, }
+\item[{}]{c2, }
+\item[{}]{c3, }
+\item[{}]{c4, }
+\item[{}]{c5}
+\end{DoxyParamCaption}
+)~\{ R\-U\-S\-::c1, R\-U\-S\-::c2, R\-U\-S\-::c3, R\-U\-S\-::c4, R\-U\-S\-::c5 \}}}\label{sphinxstemru_8inl_a59efeb3cd21f84c68e9d2549be4efb49}
+\hypertarget{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!W@{W}}
+\index{W@{W}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{W}]{\setlength{\rightskip}{0pt plus 5cm}\#define W(
+\begin{DoxyParamCaption}
+\item[{}]{p, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~( {\bf C}(p)==c )}}\label{sphinxstemru_8inl_a6517260a8b67f7380c81a3fef7a5cdfb}
+\hypertarget{sphinxstemru_8inl_a6934aaa816e6d492db7fee51a676b6cb}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!X\-S\-U\-F\-F2@{X\-S\-U\-F\-F2}}
+\index{X\-S\-U\-F\-F2@{X\-S\-U\-F\-F2}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{X\-S\-U\-F\-F2}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-S\-U\-F\-F2(
+\begin{DoxyParamCaption}
+\item[{}]{c2, }
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~( {\bf W}(1,c1) \&\& {\bf W}(2,c2) )}}\label{sphinxstemru_8inl_a6934aaa816e6d492db7fee51a676b6cb}
+\hypertarget{sphinxstemru_8inl_acc1d03553f28f387de64f3f8528226e3}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!X\-S\-U\-F\-F3@{X\-S\-U\-F\-F3}}
+\index{X\-S\-U\-F\-F3@{X\-S\-U\-F\-F3}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{X\-S\-U\-F\-F3}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-S\-U\-F\-F3(
+\begin{DoxyParamCaption}
+\item[{}]{c3, }
+\item[{}]{c2, }
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~( {\bf W}(1,c1) \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) )}}\label{sphinxstemru_8inl_acc1d03553f28f387de64f3f8528226e3}
+\hypertarget{sphinxstemru_8inl_abaeebedcacc70a36999e0a1079470e66}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!X\-S\-U\-F\-F4@{X\-S\-U\-F\-F4}}
+\index{X\-S\-U\-F\-F4@{X\-S\-U\-F\-F4}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{X\-S\-U\-F\-F4}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-S\-U\-F\-F4(
+\begin{DoxyParamCaption}
+\item[{}]{c4, }
+\item[{}]{c3, }
+\item[{}]{c2, }
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~( {\bf W}(1,c1) \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) \&\& {\bf W}(4,c4) )}}\label{sphinxstemru_8inl_abaeebedcacc70a36999e0a1079470e66}
+\hypertarget{sphinxstemru_8inl_a0216a91473f81d295f108fd939597b44}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!X\-S\-U\-F\-F5@{X\-S\-U\-F\-F5}}
+\index{X\-S\-U\-F\-F5@{X\-S\-U\-F\-F5}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{X\-S\-U\-F\-F5}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-S\-U\-F\-F5(
+\begin{DoxyParamCaption}
+\item[{}]{c5, }
+\item[{}]{c4, }
+\item[{}]{c3, }
+\item[{}]{c2, }
+\item[{}]{c1}
+\end{DoxyParamCaption}
+)~( {\bf W}(1,c1) \&\& {\bf W}(2,c2) \&\& {\bf W}(3,c3) \&\& {\bf W}(4,c4) \&\& {\bf W}(5,c5) )}}\label{sphinxstemru_8inl_a0216a91473f81d295f108fd939597b44}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxstemru_8inl_ad8f4f2fc58fe22a03851d4fd490bc419}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}}
+\index{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X (
+\begin{DoxyParamCaption}
+\item[{ru\-\_\-adj}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_ad8f4f2fc58fe22a03851d4fd490bc419}
+\hypertarget{sphinxstemru_8inl_afb51e93f89e9eae061746fd9f39ee13d}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}}
+\index{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X (
+\begin{DoxyParamCaption}
+\item[{ru\-\_\-part\-\_\-i}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_afb51e93f89e9eae061746fd9f39ee13d}
+\hypertarget{sphinxstemru_8inl_a2b9b173d4feef2d7c98b13d18f18d0c4}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}}
+\index{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X (
+\begin{DoxyParamCaption}
+\item[{ru\-\_\-part}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_a2b9b173d4feef2d7c98b13d18f18d0c4}
+\hypertarget{sphinxstemru_8inl_a185fff3dd5d68c06ec6ea7d08c4b09d1}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}}
+\index{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X (
+\begin{DoxyParamCaption}
+\item[{ru\-\_\-verb\-\_\-i}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_a185fff3dd5d68c06ec6ea7d08c4b09d1}
+\hypertarget{sphinxstemru_8inl_ac7034a1d58cb6a43d7b33cbf4b668ee1}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}}
+\index{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X (
+\begin{DoxyParamCaption}
+\item[{ru\-\_\-verb}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_ac7034a1d58cb6a43d7b33cbf4b668ee1}
+\hypertarget{sphinxstemru_8inl_afcc8e44ce80432eac219a95666e2584e}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}}
+\index{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X (
+\begin{DoxyParamCaption}
+\item[{ru\-\_\-dear\-\_\-i}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_afcc8e44ce80432eac219a95666e2584e}
+\hypertarget{sphinxstemru_8inl_a717dfdabed0079294cf5957590809637}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}}
+\index{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X (
+\begin{DoxyParamCaption}
+\item[{ru\-\_\-dear}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_a717dfdabed0079294cf5957590809637}
+\hypertarget{sphinxstemru_8inl_acbe46377119793e6f2914f71be7f83ff}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}}
+\index{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X (
+\begin{DoxyParamCaption}
+\item[{ru\-\_\-noun\-\_\-i}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_acbe46377119793e6f2914f71be7f83ff}
+\hypertarget{sphinxstemru_8inl_a239cc7b2d29b4af3b38b5c1871a09587}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}}
+\index{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X (
+\begin{DoxyParamCaption}
+\item[{ru\-\_\-noun}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_a239cc7b2d29b4af3b38b5c1871a09587}
+\hypertarget{sphinxstemru_8inl_a8ccd2b75cd24c79d83c680811ad42277}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!stem\-\_\-ru@{stem\-\_\-ru}}
+\index{stem\-\_\-ru@{stem\-\_\-ru}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{stem\-\_\-ru}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}() stem\-\_\-ru (
+\begin{DoxyParamCaption}
+\item[{{\bf L\-O\-C\-\_\-\-C\-H\-A\-R\-\_\-\-T\-Y\-P\-E} $\ast$}]{word}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemru_8inl_a8ccd2b75cd24c79d83c680811ad42277}
+\hypertarget{sphinxstemru_8inl_a5ad68670bc726ba8175491f8c1a23782}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!stem\-\_\-ru\-\_\-adjectival@{stem\-\_\-ru\-\_\-adjectival}}
+\index{stem\-\_\-ru\-\_\-adjectival@{stem\-\_\-ru\-\_\-adjectival}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{stem\-\_\-ru\-\_\-adjectival}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} {\bf L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}() stem\-\_\-ru\-\_\-adjectival (
+\begin{DoxyParamCaption}
+\item[{{\bf L\-O\-C\-\_\-\-C\-H\-A\-R\-\_\-\-T\-Y\-P\-E} $\ast$}]{word, }
+\item[{{\bf int}}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_a5ad68670bc726ba8175491f8c1a23782}
+\hypertarget{sphinxstemru_8inl_ae88e93e6d4b75bb79b79cd5546a66861}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!stem\-\_\-ru\-\_\-init@{stem\-\_\-ru\-\_\-init}}
+\index{stem\-\_\-ru\-\_\-init@{stem\-\_\-ru\-\_\-init}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{stem\-\_\-ru\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}() stem\-\_\-ru\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemru_8inl_ae88e93e6d4b75bb79b79cd5546a66861}
+
+
+initialize Russian stemmar 
+
+\hypertarget{sphinxstemru_8inl_a041878a0901c8b1459c45a82da45fe30}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!stem\-\_\-ru\-\_\-table\-\_\-i@{stem\-\_\-ru\-\_\-table\-\_\-i}}
+\index{stem\-\_\-ru\-\_\-table\-\_\-i@{stem\-\_\-ru\-\_\-table\-\_\-i}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{stem\-\_\-ru\-\_\-table\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} stem\-\_\-ru\-\_\-table\-\_\-i (
+\begin{DoxyParamCaption}
+\item[{{\bf L\-O\-C\-\_\-\-C\-H\-A\-R\-\_\-\-T\-Y\-P\-E} $\ast$}]{word, }
+\item[{{\bf int}}]{len, }
+\item[{{\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} $\ast$}]{table, }
+\item[{{\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-I\-N\-D\-E\-X} $\ast$}]{itable, }
+\item[{{\bf int}}]{icount}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemru_8inl_a041878a0901c8b1459c45a82da45fe30}
+\hypertarget{sphinxstemru_8inl_aac53c767e3a8118b89aa18c3b234ded9}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!stem\-\_\-ru\-\_\-verb\-\_\-ov@{stem\-\_\-ru\-\_\-verb\-\_\-ov}}
+\index{stem\-\_\-ru\-\_\-verb\-\_\-ov@{stem\-\_\-ru\-\_\-verb\-\_\-ov}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{stem\-\_\-ru\-\_\-verb\-\_\-ov}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} {\bf L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}() stem\-\_\-ru\-\_\-verb\-\_\-ov (
+\begin{DoxyParamCaption}
+\item[{{\bf L\-O\-C\-\_\-\-C\-H\-A\-R\-\_\-\-T\-Y\-P\-E} $\ast$}]{word, }
+\item[{{\bf int}}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_aac53c767e3a8118b89aa18c3b234ded9}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxstemru_8inl_abcaf6d3a288b987898e1a11d1b4ef1b9}{\index{sphinxstemru.\-inl@{sphinxstemru.\-inl}!L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}}
+\index{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X@{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}!sphinxstemru.inl@{sphinxstemru.\-inl}}
+\subsubsection[{L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\-O\-C\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} L\-O\-C\-\_\-\-P\-R\-E\-F\-I\-X(ru\-\_\-noun)\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{ru\-\_\-adj\-\_\-i}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemru_8inl_abcaf6d3a288b987898e1a11d1b4ef1b9}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{ RUS::E,   4 \},
+    \{ RUS::I,   2 \},
+    \{ RUS::IY,  4 \},
+    \{ RUS::M,   7 \},
+    \{ RUS::O,   2 \},
+    \{ RUS::U,   2 \},
+    \{ RUS::H,   2 \},
+    \{ RUS::YU,  4 \},
+    \{ RUS::YA,  2 \},
+\}
+\end{DoxyCode}

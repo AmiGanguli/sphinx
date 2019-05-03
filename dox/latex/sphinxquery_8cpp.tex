@@ -1,0 +1,365 @@
+\hypertarget{sphinxquery_8cpp}{\section{src/sphinxquery.cpp File Reference}
+\label{sphinxquery_8cpp}\index{src/sphinxquery.\-cpp@{src/sphinxquery.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxquery.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxplugin.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdarg.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}yysphinxquery.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}yysphinxquery.\-c\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMultiformNode__t}{Multiform\-Node\-\_\-t}
+\item 
+class \hyperlink{classXQParser__t}{X\-Q\-Parser\-\_\-t}
+\item 
+class \hyperlink{classBitMask__t}{Bit\-Mask\-\_\-t}
+\item 
+class \hyperlink{classAssociations__t}{Associations\-\_\-t}
+\item 
+class \hyperlink{classBitAssociation__t}{Bit\-Association\-\_\-t}
+\item 
+class \hyperlink{classCAssociations__t}{C\-Associations\-\_\-t}
+\item 
+class \hyperlink{classRevealCommon__t}{Reveal\-Common\-\_\-t}
+\item 
+struct \hyperlink{structMarkedNode__t}{Marked\-Node\-\_\-t}
+\item 
+struct \hyperlink{structXqTreeComparator__t}{Xq\-Tree\-Comparator\-\_\-t}
+\item 
+struct \hyperlink{structCmpTermQPos__fn}{Cmp\-Term\-Q\-Pos\-\_\-fn}
+\item 
+class \hyperlink{classCSphTransformation}{C\-Sph\-Transformation}
+\item 
+struct \hyperlink{structCSphTransformation_1_1NullNode}{C\-Sph\-Transformation\-::\-Null\-Node}
+\item 
+struct \hyperlink{structCSphTransformation_1_1CurrentNode}{C\-Sph\-Transformation\-::\-Current\-Node}
+\item 
+struct \hyperlink{structCSphTransformation_1_1ParentNode}{C\-Sph\-Transformation\-::\-Parent\-Node}
+\item 
+struct \hyperlink{structCSphTransformation_1_1GrandNode}{C\-Sph\-Transformation\-::\-Grand\-Node}
+\item 
+struct \hyperlink{structCSphTransformation_1_1Grand2Node}{C\-Sph\-Transformation\-::\-Grand2\-Node}
+\item 
+struct \hyperlink{structCSphTransformation_1_1Grand3Node}{C\-Sph\-Transformation\-::\-Grand3\-Node}
+\item 
+struct \hyperlink{structCommonInfo__t}{Common\-Info\-\_\-t}
+\item 
+struct \hyperlink{structNode2Common__t}{Node2\-Common\-\_\-t}
+\item 
+struct \hyperlink{structCommonDupElemination__fn}{Common\-Dup\-Elemination\-\_\-fn}
+\item 
+struct \hyperlink{structXQNodeAtomPos__fn}{X\-Q\-Node\-Atom\-Pos\-\_\-fn}
+\item 
+struct \hyperlink{structXQNodeHash__fn}{X\-Q\-Node\-Hash\-\_\-fn}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D}, \\*
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t}, \hyperlink{structIdentityHash__fn}{Identity\-Hash\-\_\-fn}, 128 $>$ \hyperlink{sphinxquery_8cpp_ad1d8ed94dc80ec124d82f10344095fb7}{C\-Dword\-Hash}
+\item 
+typedef \hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}\\*
+$<$ \hyperlink{structMarkedNode__t}{Marked\-Node\-\_\-t}, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t}, \\*
+\hyperlink{structIdentityHash__fn}{Identity\-Hash\-\_\-fn}, 128 $>$ \hyperlink{sphinxquery_8cpp_a75e078e97defd78fba481da27a4f0ed1}{C\-Subtree\-Hash}
+\item 
+typedef \hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}\\*
+$<$ \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$\\*
+, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t}, \hyperlink{structIdentityHash__fn}{Identity\-Hash\-\_\-fn}, 128 $>$ \hyperlink{sphinxquery_8cpp_abed3bc6049155f910d9d7ef525808689}{Bigram\-Hash\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxquery_8cpp_a578cb94c0ca859f1e00f4a0ab5c0a8a6}{yylex} (\hyperlink{unionYYSTYPE}{Y\-Y\-S\-T\-Y\-P\-E} $\ast$lvalp, \hyperlink{classXQParser__t}{X\-Q\-Parser\-\_\-t} $\ast$p\-Parser)
+\item 
+void \hyperlink{sphinxquery_8cpp_a178bcafed8bfe03da190072055b8dd37}{yyerror} (\hyperlink{classXQParser__t}{X\-Q\-Parser\-\_\-t} $\ast$p\-Parser, const char $\ast$s\-Message)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxquery_8cpp_a1a3e5a2556ff7d765eaa9a1671de2abd}{Get\-Node\-Child\-Index} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Parent, const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\begin{DoxyCompactList}\small\item\em return either index of p\-Node among Parent.\-m\-\_\-d\-Children, or -\/1 \end{DoxyCompactList}\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxquery_8cpp_ac2b2e9d361e9c1058b31f988d684c1f8}{Get\-Zone\-Index} (\hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} $\ast$p\-Query, const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Zone)
+\begin{DoxyCompactList}\small\item\em helper find-\/or-\/add (make it generic and move to sphinxstd?) \end{DoxyCompactList}\item 
+static bool \hyperlink{sphinxquery_8cpp_a72ea44d3f8be1cd614a6ef94325ef3ef}{Has\-Missed\-Field} (const \hyperlink{structXQLimitSpec__t}{X\-Q\-Limit\-Spec\-\_\-t} \&t\-Spec)
+\item 
+static void \hyperlink{sphinxquery_8cpp_a95c91c6d6606292a7ac0c96a2cd4387e}{Collect\-Children} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-Children)
+\item 
+static bool \hyperlink{sphinxquery_8cpp_a5c33e75f6077edc914b6f98898f22587}{Check\-Quorum\-Proximity} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$p\-Error)
+\item 
+static void \hyperlink{sphinxquery_8cpp_abc6c236f6762beef808a8f7c281f2191}{Fixup\-Degenerates} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning)
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{sphinxquery_8cpp_adb1268c2c2a0f63a876beeb95087ebfc}{sph\-Reconstruct\-Node} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, const \hyperlink{classCSphSchema}{C\-Sph\-Schema} $\ast$p\-Schema)
+\item 
+bool \hyperlink{sphinxquery_8cpp_a1ac58329a8a32743889cfe0002b45443}{sph\-Parse\-Extended\-Query} (\hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} \&t\-Parsed, const char $\ast$s\-Query, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, const \hyperlink{classCSphSchema}{C\-Sph\-Schema} $\ast$p\-Schema, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings)
+\item 
+static bool \hyperlink{sphinxquery_8cpp_acacc3555c1251be07b845d8a41712638}{Is\-Appropriate} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Tree)
+\item 
+static void \hyperlink{sphinxquery_8cpp_a6d7218028fd084a4b955cc73b43e7a95}{Flag\-Common\-Subtrees} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Tree, \hyperlink{sphinxquery_8cpp_a75e078e97defd78fba481da27a4f0ed1}{C\-Subtree\-Hash} \&h\-Sub\-Trees, \hyperlink{structXqTreeComparator__t}{Xq\-Tree\-Comparator\-\_\-t} \&t\-Cmp, bool b\-Flag, bool b\-Mark\-It)
+\begin{DoxyCompactList}\small\item\em check hashes, then check subtrees, then flag \end{DoxyCompactList}\item 
+static void \hyperlink{sphinxquery_8cpp_a5a7f017cdb53a8dab17cccfc7acda688}{Sign\-Common\-Subtrees} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Tree, const \hyperlink{sphinxquery_8cpp_a75e078e97defd78fba481da27a4f0ed1}{C\-Subtree\-Hash} \&h\-Sub\-Trees)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxquery_8cpp_a89700d3de9b8b626a3688fdff79f7708}{sph\-Mark\-Common\-Subtrees} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-X\-Q, const \hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} $\ast$p\-X\-Q)
+\begin{DoxyCompactList}\small\item\em analyze vector of trees and tag common parts of them (to cache them later) \end{DoxyCompactList}\item 
+static bool \hyperlink{sphinxquery_8cpp_aa5937ed6d7edb2c9f2f92f2364ec344d}{Subtree\-Remove\-Empty} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static void \hyperlink{sphinxquery_8cpp_a0c9d54e98b62347be1517a58208afea3}{Composite\-Fixup} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$$\ast$pp\-Root)
+\item 
+static void \hyperlink{sphinxquery_8cpp_aa0112557d51e8a3bb395fc8f5520d0a7}{Cleanup\-Subtree} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$$\ast$pp\-Root)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxquery_8cpp_a6bff08b0c73ea0eac9701b665c164d26}{sph\-Bigram\-Add\-Node} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} u\-Hash, \hyperlink{sphinxquery_8cpp_abed3bc6049155f910d9d7ef525808689}{Bigram\-Hash\-\_\-t} \&h\-Birgam)
+\item 
+static \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxquery_8cpp_aec4178562f2d6381ed5f4a2bfc632681}{sph\-Hash\-Phrase} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static void \hyperlink{sphinxquery_8cpp_ae1ed4635179f829b3cd34dc6744a2075}{sph\-Hash\-Subphrases} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, \hyperlink{sphinxquery_8cpp_abed3bc6049155f910d9d7ef525808689}{Bigram\-Hash\-\_\-t} \&h\-Birgam)
+\item 
+bool \hyperlink{sphinxquery_8cpp_ab81281e858a01724e0187752b1f65653}{sph\-Is\-Node\-Strongest} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-Similar)
+\item 
+static \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ \hyperlink{sphinxquery_8cpp_af4a037dbad9c27bf0f2ff72777eb7752}{sph\-Move\-Siblings\-Up} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+void \hyperlink{sphinxquery_8cpp_ae312d505e9362e4c012a26357076801a}{sph\-Optimize\-Boolean} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$$\ast$pp\-Root, const \hyperlink{structISphKeywordsStat}{I\-Sph\-Keywords\-Stat} $\ast$p\-Keywords)
+\item 
+void \hyperlink{sphinxquery_8cpp_a244272d5eefb4f4dde77d87f1ce4aa02}{sph\-Setup\-Query\-Tokenizer} (\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, bool b\-Wildcards, bool b\-Exact)
+\begin{DoxyCompactList}\small\item\em setup tokenizer for query parsing (ie. add all specials and whatnot) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{sphinxquery_8cpp_aeb0b082c606ce0d7c4c13f24cebd48c6}{g\-\_\-s\-Phrase\-Delimiter} \mbox{[}$\,$\mbox{]} = \{ 1 \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sphinxquery_8cpp_abed3bc6049155f910d9d7ef525808689}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Bigram\-Hash\-\_\-t@{Bigram\-Hash\-\_\-t}}
+\index{Bigram\-Hash\-\_\-t@{Bigram\-Hash\-\_\-t}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Bigram\-Hash\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf C\-Sph\-Ordered\-Hash}$<${\bf C\-Sph\-Vector}$<${\bf X\-Q\-Node\-\_\-t} $\ast$$>$, {\bf uint64\-\_\-t}, {\bf Identity\-Hash\-\_\-fn}, 128$>$ {\bf Bigram\-Hash\-\_\-t}}}\label{sphinxquery_8cpp_abed3bc6049155f910d9d7ef525808689}
+\hypertarget{sphinxquery_8cpp_ad1d8ed94dc80ec124d82f10344095fb7}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!C\-Dword\-Hash@{C\-Dword\-Hash}}
+\index{C\-Dword\-Hash@{C\-Dword\-Hash}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{C\-Dword\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf C\-Sph\-Ordered\-Hash}$<$ {\bf D\-W\-O\-R\-D}, {\bf uint64\-\_\-t}, {\bf Identity\-Hash\-\_\-fn}, 128 $>$ {\bf C\-Dword\-Hash}}}\label{sphinxquery_8cpp_ad1d8ed94dc80ec124d82f10344095fb7}
+\hypertarget{sphinxquery_8cpp_a75e078e97defd78fba481da27a4f0ed1}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!C\-Subtree\-Hash@{C\-Subtree\-Hash}}
+\index{C\-Subtree\-Hash@{C\-Subtree\-Hash}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{C\-Subtree\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf C\-Sph\-Ordered\-Hash}$<$ {\bf Marked\-Node\-\_\-t}, {\bf uint64\-\_\-t}, {\bf Identity\-Hash\-\_\-fn}, 128 $>$ {\bf C\-Subtree\-Hash}}}\label{sphinxquery_8cpp_a75e078e97defd78fba481da27a4f0ed1}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxquery_8cpp_a5c33e75f6077edc914b6f98898f22587}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Check\-Quorum\-Proximity@{Check\-Quorum\-Proximity}}
+\index{Check\-Quorum\-Proximity@{Check\-Quorum\-Proximity}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Check\-Quorum\-Proximity}]{\setlength{\rightskip}{0pt plus 5cm}static bool Check\-Quorum\-Proximity (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{p\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_a5c33e75f6077edc914b6f98898f22587}
+\hypertarget{sphinxquery_8cpp_aa0112557d51e8a3bb395fc8f5520d0a7}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Cleanup\-Subtree@{Cleanup\-Subtree}}
+\index{Cleanup\-Subtree@{Cleanup\-Subtree}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Cleanup\-Subtree}]{\setlength{\rightskip}{0pt plus 5cm}static void Cleanup\-Subtree (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$$\ast$}]{pp\-Root}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_aa0112557d51e8a3bb395fc8f5520d0a7}
+\hypertarget{sphinxquery_8cpp_a95c91c6d6606292a7ac0c96a2cd4387e}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Collect\-Children@{Collect\-Children}}
+\index{Collect\-Children@{Collect\-Children}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Collect\-Children}]{\setlength{\rightskip}{0pt plus 5cm}static void Collect\-Children (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-Children}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_a95c91c6d6606292a7ac0c96a2cd4387e}
+\hypertarget{sphinxquery_8cpp_a0c9d54e98b62347be1517a58208afea3}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Composite\-Fixup@{Composite\-Fixup}}
+\index{Composite\-Fixup@{Composite\-Fixup}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Composite\-Fixup}]{\setlength{\rightskip}{0pt plus 5cm}static void Composite\-Fixup (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$$\ast$}]{pp\-Root}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_a0c9d54e98b62347be1517a58208afea3}
+\hypertarget{sphinxquery_8cpp_abc6c236f6762beef808a8f7c281f2191}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Fixup\-Degenerates@{Fixup\-Degenerates}}
+\index{Fixup\-Degenerates@{Fixup\-Degenerates}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Fixup\-Degenerates}]{\setlength{\rightskip}{0pt plus 5cm}static void Fixup\-Degenerates (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_abc6c236f6762beef808a8f7c281f2191}
+\hypertarget{sphinxquery_8cpp_a6d7218028fd084a4b955cc73b43e7a95}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Flag\-Common\-Subtrees@{Flag\-Common\-Subtrees}}
+\index{Flag\-Common\-Subtrees@{Flag\-Common\-Subtrees}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Flag\-Common\-Subtrees}]{\setlength{\rightskip}{0pt plus 5cm}static void Flag\-Common\-Subtrees (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Tree, }
+\item[{{\bf C\-Subtree\-Hash} \&}]{h\-Sub\-Trees, }
+\item[{{\bf Xq\-Tree\-Comparator\-\_\-t} \&}]{t\-Cmp, }
+\item[{bool}]{b\-Flag, }
+\item[{bool}]{b\-Mark\-It}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_a6d7218028fd084a4b955cc73b43e7a95}
+
+
+check hashes, then check subtrees, then flag 
+
+\hypertarget{sphinxquery_8cpp_a1a3e5a2556ff7d765eaa9a1671de2abd}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Get\-Node\-Child\-Index@{Get\-Node\-Child\-Index}}
+\index{Get\-Node\-Child\-Index@{Get\-Node\-Child\-Index}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Get\-Node\-Child\-Index}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Get\-Node\-Child\-Index (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Parent, }
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_a1a3e5a2556ff7d765eaa9a1671de2abd}
+
+
+return either index of p\-Node among Parent.\-m\-\_\-d\-Children, or -\/1 
+
+\hypertarget{sphinxquery_8cpp_ac2b2e9d361e9c1058b31f988d684c1f8}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Get\-Zone\-Index@{Get\-Zone\-Index}}
+\index{Get\-Zone\-Index@{Get\-Zone\-Index}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Get\-Zone\-Index}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Get\-Zone\-Index (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Query\-\_\-t} $\ast$}]{p\-Query, }
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Zone}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_ac2b2e9d361e9c1058b31f988d684c1f8}
+
+
+helper find-\/or-\/add (make it generic and move to sphinxstd?) 
+
+\hypertarget{sphinxquery_8cpp_a72ea44d3f8be1cd614a6ef94325ef3ef}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Has\-Missed\-Field@{Has\-Missed\-Field}}
+\index{Has\-Missed\-Field@{Has\-Missed\-Field}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Has\-Missed\-Field}]{\setlength{\rightskip}{0pt plus 5cm}static bool Has\-Missed\-Field (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Limit\-Spec\-\_\-t} \&}]{t\-Spec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_a72ea44d3f8be1cd614a6ef94325ef3ef}
+\hypertarget{sphinxquery_8cpp_acacc3555c1251be07b845d8a41712638}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Is\-Appropriate@{Is\-Appropriate}}
+\index{Is\-Appropriate@{Is\-Appropriate}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Is\-Appropriate}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Appropriate (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Tree}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_acacc3555c1251be07b845d8a41712638}
+Decides if given p\-Tree is appropriate for caching or not. Currently we don't cache the end values (leafs). \hypertarget{sphinxquery_8cpp_a5a7f017cdb53a8dab17cccfc7acda688}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Sign\-Common\-Subtrees@{Sign\-Common\-Subtrees}}
+\index{Sign\-Common\-Subtrees@{Sign\-Common\-Subtrees}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Sign\-Common\-Subtrees}]{\setlength{\rightskip}{0pt plus 5cm}static void Sign\-Common\-Subtrees (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Tree, }
+\item[{const {\bf C\-Subtree\-Hash} \&}]{h\-Sub\-Trees}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_a5a7f017cdb53a8dab17cccfc7acda688}
+\hypertarget{sphinxquery_8cpp_a6bff08b0c73ea0eac9701b665c164d26}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!sph\-Bigram\-Add\-Node@{sph\-Bigram\-Add\-Node}}
+\index{sph\-Bigram\-Add\-Node@{sph\-Bigram\-Add\-Node}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{sph\-Bigram\-Add\-Node}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} sph\-Bigram\-Add\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{{\bf int64\-\_\-t}}]{u\-Hash, }
+\item[{{\bf Bigram\-Hash\-\_\-t} \&}]{h\-Birgam}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_a6bff08b0c73ea0eac9701b665c164d26}
+\hypertarget{sphinxquery_8cpp_aec4178562f2d6381ed5f4a2bfc632681}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!sph\-Hash\-Phrase@{sph\-Hash\-Phrase}}
+\index{sph\-Hash\-Phrase@{sph\-Hash\-Phrase}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{sph\-Hash\-Phrase}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf uint64\-\_\-t} sph\-Hash\-Phrase (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_aec4178562f2d6381ed5f4a2bfc632681}
+\hypertarget{sphinxquery_8cpp_ae1ed4635179f829b3cd34dc6744a2075}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!sph\-Hash\-Subphrases@{sph\-Hash\-Subphrases}}
+\index{sph\-Hash\-Subphrases@{sph\-Hash\-Subphrases}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{sph\-Hash\-Subphrases}]{\setlength{\rightskip}{0pt plus 5cm}static void sph\-Hash\-Subphrases (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{{\bf Bigram\-Hash\-\_\-t} \&}]{h\-Birgam}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_ae1ed4635179f829b3cd34dc6744a2075}
+\hypertarget{sphinxquery_8cpp_ab81281e858a01724e0187752b1f65653}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!sph\-Is\-Node\-Strongest@{sph\-Is\-Node\-Strongest}}
+\index{sph\-Is\-Node\-Strongest@{sph\-Is\-Node\-Strongest}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{sph\-Is\-Node\-Strongest}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Is\-Node\-Strongest (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-Similar}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8cpp_ab81281e858a01724e0187752b1f65653}
+\hypertarget{sphinxquery_8cpp_a89700d3de9b8b626a3688fdff79f7708}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!sph\-Mark\-Common\-Subtrees@{sph\-Mark\-Common\-Subtrees}}
+\index{sph\-Mark\-Common\-Subtrees@{sph\-Mark\-Common\-Subtrees}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{sph\-Mark\-Common\-Subtrees}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Mark\-Common\-Subtrees (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-X\-Q, }
+\item[{const {\bf X\-Q\-Query\-\_\-t} $\ast$}]{p\-X\-Q}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8cpp_a89700d3de9b8b626a3688fdff79f7708}
+
+
+analyze vector of trees and tag common parts of them (to cache them later) 
+
+\hypertarget{sphinxquery_8cpp_af4a037dbad9c27bf0f2ff72777eb7752}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!sph\-Move\-Siblings\-Up@{sph\-Move\-Siblings\-Up}}
+\index{sph\-Move\-Siblings\-Up@{sph\-Move\-Siblings\-Up}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{sph\-Move\-Siblings\-Up}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf X\-Q\-Node\-\_\-t}$\ast$ sph\-Move\-Siblings\-Up (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_af4a037dbad9c27bf0f2ff72777eb7752}
+\hypertarget{sphinxquery_8cpp_ae312d505e9362e4c012a26357076801a}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!sph\-Optimize\-Boolean@{sph\-Optimize\-Boolean}}
+\index{sph\-Optimize\-Boolean@{sph\-Optimize\-Boolean}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{sph\-Optimize\-Boolean}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Optimize\-Boolean (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$$\ast$}]{pp\-Root, }
+\item[{const {\bf I\-Sph\-Keywords\-Stat} $\ast$}]{p\-Keywords}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8cpp_ae312d505e9362e4c012a26357076801a}
+\hypertarget{sphinxquery_8cpp_a1ac58329a8a32743889cfe0002b45443}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!sph\-Parse\-Extended\-Query@{sph\-Parse\-Extended\-Query}}
+\index{sph\-Parse\-Extended\-Query@{sph\-Parse\-Extended\-Query}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{sph\-Parse\-Extended\-Query}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Parse\-Extended\-Query (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Query\-\_\-t} \&}]{t\-Query, }
+\item[{const char $\ast$}]{s\-Query, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const {\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{const {\bf C\-Sph\-Schema} $\ast$}]{p\-Schema, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8cpp_a1ac58329a8a32743889cfe0002b45443}
+parses the query and returns the resulting tree return false and fills t\-Query.\-m\-\_\-s\-Parse\-Error on error W\-A\-R\-N\-I\-N\-G, parsed tree might be N\-U\-L\-L (eg. if query was empty) lots of arguments here instead of simply the index pointer, because a) we do not always have an actual real index class, and b) might need to tweak stuff even we do F\-I\-X\-M\-E! remove either p\-Query or s\-Query \hypertarget{sphinxquery_8cpp_adb1268c2c2a0f63a876beeb95087ebfc}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!sph\-Reconstruct\-Node@{sph\-Reconstruct\-Node}}
+\index{sph\-Reconstruct\-Node@{sph\-Reconstruct\-Node}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{sph\-Reconstruct\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} sph\-Reconstruct\-Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{const {\bf C\-Sph\-Schema} $\ast$}]{p\-Schema}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8cpp_adb1268c2c2a0f63a876beeb95087ebfc}
+\hypertarget{sphinxquery_8cpp_a244272d5eefb4f4dde77d87f1ce4aa02}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!sph\-Setup\-Query\-Tokenizer@{sph\-Setup\-Query\-Tokenizer}}
+\index{sph\-Setup\-Query\-Tokenizer@{sph\-Setup\-Query\-Tokenizer}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{sph\-Setup\-Query\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Setup\-Query\-Tokenizer (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{bool}]{b\-Wildcards, }
+\item[{bool}]{b\-Exact}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8cpp_a244272d5eefb4f4dde77d87f1ce4aa02}
+
+
+setup tokenizer for query parsing (ie. add all specials and whatnot) 
+
+\hypertarget{sphinxquery_8cpp_aa5937ed6d7edb2c9f2f92f2364ec344d}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!Subtree\-Remove\-Empty@{Subtree\-Remove\-Empty}}
+\index{Subtree\-Remove\-Empty@{Subtree\-Remove\-Empty}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{Subtree\-Remove\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}static bool Subtree\-Remove\-Empty (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_aa5937ed6d7edb2c9f2f92f2364ec344d}
+\hypertarget{sphinxquery_8cpp_a178bcafed8bfe03da190072055b8dd37}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!yyerror@{yyerror}}
+\index{yyerror@{yyerror}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{yyerror}]{\setlength{\rightskip}{0pt plus 5cm}void yyerror (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Parser\-\_\-t} $\ast$}]{p\-Parser, }
+\item[{const char $\ast$}]{s\-Message}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8cpp_a178bcafed8bfe03da190072055b8dd37}
+\hypertarget{sphinxquery_8cpp_a578cb94c0ca859f1e00f4a0ab5c0a8a6}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!yylex@{yylex}}
+\index{yylex@{yylex}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{yylex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yylex (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-S\-T\-Y\-P\-E} $\ast$}]{lvalp, }
+\item[{{\bf X\-Q\-Parser\-\_\-t} $\ast$}]{p\-Parser}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8cpp_a578cb94c0ca859f1e00f4a0ab5c0a8a6}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxquery_8cpp_aeb0b082c606ce0d7c4c13f24cebd48c6}{\index{sphinxquery.\-cpp@{sphinxquery.\-cpp}!g\-\_\-s\-Phrase\-Delimiter@{g\-\_\-s\-Phrase\-Delimiter}}
+\index{g\-\_\-s\-Phrase\-Delimiter@{g\-\_\-s\-Phrase\-Delimiter}!sphinxquery.cpp@{sphinxquery.\-cpp}}
+\subsubsection[{g\-\_\-s\-Phrase\-Delimiter}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E} g\-\_\-s\-Phrase\-Delimiter\mbox{[}$\,$\mbox{]} = \{ 1 \}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxquery_8cpp_aeb0b082c606ce0d7c4c13f24cebd48c6}

@@ -1,0 +1,166 @@
+\hypertarget{classCSphAotTokenizerTmpl}{\section{C\-Sph\-Aot\-Tokenizer\-Tmpl Class Reference}
+\label{classCSphAotTokenizerTmpl}\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+}
+Inheritance diagram for C\-Sph\-Aot\-Tokenizer\-Tmpl\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCSphAotTokenizerTmpl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphAotTokenizerTmpl_a7d4f80459207176ec823dd7f81b8260f}{C\-Sph\-Aot\-Tokenizer\-Tmpl} (\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tok, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, bool b\-Index\-Exact, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8h_aea24330ad33ca20415a6729b2e46ef2d}{D\-E\-B\-U\-G\-A\-R\-G}(i\-Lang))
+\item 
+void \hyperlink{classCSphAotTokenizerTmpl_acf6f6e296f3e034c3c09081f8f566648}{Set\-Buffer} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Buffer, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Length)
+\begin{DoxyCompactList}\small\item\em pass next buffer \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphAotTokenizerTmpl_a899c57ec1ab2b3d6e66220d049ac09cc}{Token\-Is\-Blended} () const 
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classCSphAotTokenizerTmpl_ae1decc1ff015ab05493e561fe2d70c4f}{Get\-Settings\-F\-N\-V} () const 
+\begin{DoxyCompactList}\small\item\em get settings hash \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{classCSphAotTokenizerTmpl_ac35cfe3d9fd0f9800e672931235d0190}{m\-\_\-s\-Form} \mbox{[}\hyperlink{sphinx_8h_ab0f6d383751adea7c80ed4ff4c36532c}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N} $\ast$3+4\mbox{]}
+\begin{DoxyCompactList}\small\item\em aka M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphAotTokenizerTmpl_a8d4006ffbf0fde5cd103bcbd55086253}{m\-\_\-i\-Form\-Len}
+\begin{DoxyCompactList}\small\item\em in bytes, but in windows-\/1251 that is characters, too \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphAotTokenizerTmpl_a30c0c1975f67f53e133833faadd6b971}{m\-\_\-b\-Found}
+\begin{DoxyCompactList}\small\item\em found or predicted? \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphAotTokenizerTmpl_acfe01b47934c1d285da378c9f3be1189}{m\-\_\-\-Find\-Results} \mbox{[}12\mbox{]}
+\begin{DoxyCompactList}\small\item\em max results is like 6 \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphAotTokenizerTmpl_aebade03c728c748c57b305217d05e1c9}{m\-\_\-i\-Current}
+\begin{DoxyCompactList}\small\item\em index in m\-\_\-\-Find\-Results that was just returned, -\/1 means no blending \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{classCSphAotTokenizerTmpl_a83ceca1f2abf18599dc9a4ac056bd44e}{m\-\_\-s\-Token} \mbox{[}\hyperlink{sphinx_8h_ab0f6d383751adea7c80ed4ff4c36532c}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N} $\ast$3+4\mbox{]}
+\begin{DoxyCompactList}\small\item\em to hold generated lemmas \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{classCSphAotTokenizerTmpl_a2cae76380b2d69ef981785ae74e439ac}{m\-\_\-s\-Orig\-Token} \mbox{[}\hyperlink{sphinx_8h_ab0f6d383751adea7c80ed4ff4c36532c}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N} $\ast$3+4\mbox{]}
+\begin{DoxyCompactList}\small\item\em to hold original token \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphAotTokenizerTmpl_a94a7875edac900830441691861a852c3}{m\-\_\-b\-Index\-Exact}
+\item 
+const \hyperlink{structCSphWordforms}{C\-Sph\-Wordforms} $\ast$ \hyperlink{classCSphAotTokenizerTmpl_a11d6d02186f62c29aff635f7e7c19a1d}{m\-\_\-p\-Wordforms}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+token filter for A\-O\-T morphology indexing A\-O\-T may return multiple (!) morphological hypotheses for a single token we return such additional hypotheses as blended tokens 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphAotTokenizerTmpl_a7d4f80459207176ec823dd7f81b8260f}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{C\-Sph\-Aot\-Tokenizer\-Tmpl}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Aot\-Tokenizer\-Tmpl\-::\-C\-Sph\-Aot\-Tokenizer\-Tmpl (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tok, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{bool}]{b\-Index\-Exact, }
+\item[{{\bf int} }]{D\-E\-B\-U\-G\-A\-R\-Gi\-Lang}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphAotTokenizerTmpl_a7d4f80459207176ec823dd7f81b8260f}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphAotTokenizerTmpl_ae1decc1ff015ab05493e561fe2d70c4f}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!Get\-Settings\-F\-N\-V@{Get\-Settings\-F\-N\-V}}
+\index{Get\-Settings\-F\-N\-V@{Get\-Settings\-F\-N\-V}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{Get\-Settings\-F\-N\-V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} C\-Sph\-Aot\-Tokenizer\-Tmpl\-::\-Get\-Settings\-F\-N\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphAotTokenizerTmpl_ae1decc1ff015ab05493e561fe2d70c4f}
+
+
+get settings hash 
+
+
+
+Reimplemented from \hyperlink{classCSphTokenFilter_aa8515a36b5d84b6d56856b80007cb11b}{C\-Sph\-Token\-Filter}.
+
+\hypertarget{classCSphAotTokenizerTmpl_acf6f6e296f3e034c3c09081f8f566648}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!Set\-Buffer@{Set\-Buffer}}
+\index{Set\-Buffer@{Set\-Buffer}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{Set\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Aot\-Tokenizer\-Tmpl\-::\-Set\-Buffer (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-Buffer, }
+\item[{{\bf int}}]{i\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphAotTokenizerTmpl_acf6f6e296f3e034c3c09081f8f566648}
+
+
+pass next buffer 
+
+
+
+Reimplemented from \hyperlink{classCSphTokenFilter_af2e40a7ad8e6abc189f1053db3b3b3cf}{C\-Sph\-Token\-Filter}.
+
+\hypertarget{classCSphAotTokenizerTmpl_a899c57ec1ab2b3d6e66220d049ac09cc}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!Token\-Is\-Blended@{Token\-Is\-Blended}}
+\index{Token\-Is\-Blended@{Token\-Is\-Blended}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{Token\-Is\-Blended}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Aot\-Tokenizer\-Tmpl\-::\-Token\-Is\-Blended (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphAotTokenizerTmpl_a899c57ec1ab2b3d6e66220d049ac09cc}
+
+
+Reimplemented from \hyperlink{classISphTokenizer_ae17c42859d6e0cd6487cf2b6020fd0f6}{I\-Sph\-Tokenizer}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphAotTokenizerTmpl_a30c0c1975f67f53e133833faadd6b971}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!m\-\_\-b\-Found@{m\-\_\-b\-Found}}
+\index{m\-\_\-b\-Found@{m\-\_\-b\-Found}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{m\-\_\-b\-Found}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Aot\-Tokenizer\-Tmpl\-::m\-\_\-b\-Found\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAotTokenizerTmpl_a30c0c1975f67f53e133833faadd6b971}
+
+
+found or predicted? 
+
+\hypertarget{classCSphAotTokenizerTmpl_a94a7875edac900830441691861a852c3}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!m\-\_\-b\-Index\-Exact@{m\-\_\-b\-Index\-Exact}}
+\index{m\-\_\-b\-Index\-Exact@{m\-\_\-b\-Index\-Exact}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{m\-\_\-b\-Index\-Exact}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Aot\-Tokenizer\-Tmpl\-::m\-\_\-b\-Index\-Exact\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAotTokenizerTmpl_a94a7875edac900830441691861a852c3}
+\hypertarget{classCSphAotTokenizerTmpl_acfe01b47934c1d285da378c9f3be1189}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!m\-\_\-\-Find\-Results@{m\-\_\-\-Find\-Results}}
+\index{m\-\_\-\-Find\-Results@{m\-\_\-\-Find\-Results}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{m\-\_\-\-Find\-Results}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Aot\-Tokenizer\-Tmpl\-::m\-\_\-\-Find\-Results\mbox{[}12\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAotTokenizerTmpl_acfe01b47934c1d285da378c9f3be1189}
+
+
+max results is like 6 
+
+\hypertarget{classCSphAotTokenizerTmpl_aebade03c728c748c57b305217d05e1c9}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!m\-\_\-i\-Current@{m\-\_\-i\-Current}}
+\index{m\-\_\-i\-Current@{m\-\_\-i\-Current}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{m\-\_\-i\-Current}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Aot\-Tokenizer\-Tmpl\-::m\-\_\-i\-Current\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAotTokenizerTmpl_aebade03c728c748c57b305217d05e1c9}
+
+
+index in m\-\_\-\-Find\-Results that was just returned, -\/1 means no blending 
+
+\hypertarget{classCSphAotTokenizerTmpl_a8d4006ffbf0fde5cd103bcbd55086253}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!m\-\_\-i\-Form\-Len@{m\-\_\-i\-Form\-Len}}
+\index{m\-\_\-i\-Form\-Len@{m\-\_\-i\-Form\-Len}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{m\-\_\-i\-Form\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Aot\-Tokenizer\-Tmpl\-::m\-\_\-i\-Form\-Len\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAotTokenizerTmpl_a8d4006ffbf0fde5cd103bcbd55086253}
+
+
+in bytes, but in windows-\/1251 that is characters, too 
+
+\hypertarget{classCSphAotTokenizerTmpl_a11d6d02186f62c29aff635f7e7c19a1d}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!m\-\_\-p\-Wordforms@{m\-\_\-p\-Wordforms}}
+\index{m\-\_\-p\-Wordforms@{m\-\_\-p\-Wordforms}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{m\-\_\-p\-Wordforms}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Wordforms}$\ast$ C\-Sph\-Aot\-Tokenizer\-Tmpl\-::m\-\_\-p\-Wordforms\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAotTokenizerTmpl_a11d6d02186f62c29aff635f7e7c19a1d}
+\hypertarget{classCSphAotTokenizerTmpl_ac35cfe3d9fd0f9800e672931235d0190}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!m\-\_\-s\-Form@{m\-\_\-s\-Form}}
+\index{m\-\_\-s\-Form@{m\-\_\-s\-Form}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{m\-\_\-s\-Form}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} C\-Sph\-Aot\-Tokenizer\-Tmpl\-::m\-\_\-s\-Form\mbox{[}{\bf S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N} $\ast$3+4\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAotTokenizerTmpl_ac35cfe3d9fd0f9800e672931235d0190}
+
+
+aka M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S 
+
+\hypertarget{classCSphAotTokenizerTmpl_a2cae76380b2d69ef981785ae74e439ac}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!m\-\_\-s\-Orig\-Token@{m\-\_\-s\-Orig\-Token}}
+\index{m\-\_\-s\-Orig\-Token@{m\-\_\-s\-Orig\-Token}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{m\-\_\-s\-Orig\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} C\-Sph\-Aot\-Tokenizer\-Tmpl\-::m\-\_\-s\-Orig\-Token\mbox{[}{\bf S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N} $\ast$3+4\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAotTokenizerTmpl_a2cae76380b2d69ef981785ae74e439ac}
+
+
+to hold original token 
+
+\hypertarget{classCSphAotTokenizerTmpl_a83ceca1f2abf18599dc9a4ac056bd44e}{\index{C\-Sph\-Aot\-Tokenizer\-Tmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}!m\-\_\-s\-Token@{m\-\_\-s\-Token}}
+\index{m\-\_\-s\-Token@{m\-\_\-s\-Token}!CSphAotTokenizerTmpl@{C\-Sph\-Aot\-Tokenizer\-Tmpl}}
+\subsubsection[{m\-\_\-s\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} C\-Sph\-Aot\-Tokenizer\-Tmpl\-::m\-\_\-s\-Token\mbox{[}{\bf S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N} $\ast$3+4\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAotTokenizerTmpl_a83ceca1f2abf18599dc9a4ac056bd44e}
+
+
+to hold generated lemmas 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxaot_8cpp}{sphinxaot.\-cpp}\end{DoxyCompactItemize}

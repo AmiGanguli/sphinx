@@ -1,0 +1,172 @@
+\hypertarget{classCSphConfigParser}{\section{C\-Sph\-Config\-Parser Class Reference}
+\label{classCSphConfigParser}\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}}
+}
+
+
+simple config file  
+
+
+
+
+{\ttfamily \#include $<$sphinxutils.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphConfigParser_a25849060d3d1bbcde1aacc8c1ff96903}{C\-Sph\-Config\-Parser} ()
+\item 
+bool \hyperlink{classCSphConfigParser_a670e9a4000689588d41feb015e0d16a6}{Parse} (const char $\ast$s\-File\-Name, const char $\ast$p\-Buffer=N\-U\-L\-L)
+\item 
+bool \hyperlink{classCSphConfigParser_ac4b575e059fb61ed9c0039bb9a82ee72}{Re\-Parse} (const char $\ast$s\-File\-Name, const char $\ast$p\-Buffer=N\-U\-L\-L)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxutils_8h_a48ca2d6437aae9aaa279d7993e6ade56}{C\-Sph\-Config} \hyperlink{classCSphConfigParser_a6221f2ed1927dd73b0f01469a9985097}{m\-\_\-t\-Conf}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCSphConfigParser_ac748efc2cd4bf410c70bd658e827a683}{Is\-Plain\-Section} (const char $\ast$s\-Key)
+\item 
+bool \hyperlink{classCSphConfigParser_a16697bf4066a4481a6e4c4c0473dc76d}{Is\-Named\-Section} (const char $\ast$s\-Key)
+\item 
+bool \hyperlink{classCSphConfigParser_ab6492020e24c5f1a32f79aaca70b888c}{Add\-Section} (const char $\ast$s\-Type, const char $\ast$s\-Section)
+\item 
+void \hyperlink{classCSphConfigParser_a7d5e7edb12cb241c054ff35d7a7f845a}{Add\-Key} (const char $\ast$s\-Key, char $\ast$s\-Value)
+\item 
+bool \hyperlink{classCSphConfigParser_a938d559935671cf6ee44c570f0f47fc3}{Validate\-Key} (const char $\ast$s\-Key)
+\item 
+char $\ast$ \hyperlink{classCSphConfigParser_a560454bebf023d2ec69ad936e3c36291}{Get\-Buffer\-String} (char $\ast$sz\-Dest, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Max, const char $\ast$\&sz\-Source)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphConfigParser_ac5023c857235d9ab1649f69b6937fd03}{m\-\_\-s\-File\-Name}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphConfigParser_aa928dbd9a23014593c416ba11a259a9c}{m\-\_\-i\-Line}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphConfigParser_aee98856a91de6866b13b1bcc311d19b3}{m\-\_\-s\-Section\-Type}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphConfigParser_a2b27b7a6dc0325826be8251809c47978}{m\-\_\-s\-Section\-Name}
+\item 
+char \hyperlink{classCSphConfigParser_a615a238196d0ace41a3665270f4ca75b}{m\-\_\-s\-Error} \mbox{[}1024\mbox{]}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphConfigParser_ac0e07431f0be63bb9ebb8eadd72c24fc}{m\-\_\-i\-Warnings}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphConfigParser_a0a90b1213c5d9073677aa98da209b630}{W\-A\-R\-N\-S\-\_\-\-T\-H\-R\-E\-S\-H} = 5
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+simple config file 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphConfigParser_a25849060d3d1bbcde1aacc8c1ff96903}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}}
+\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{C\-Sph\-Config\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Config\-Parser\-::\-C\-Sph\-Config\-Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphConfigParser_a25849060d3d1bbcde1aacc8c1ff96903}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphConfigParser_a7d5e7edb12cb241c054ff35d7a7f845a}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!Add\-Key@{Add\-Key}}
+\index{Add\-Key@{Add\-Key}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{Add\-Key}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Config\-Parser\-::\-Add\-Key (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key, }
+\item[{char $\ast$}]{s\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_a7d5e7edb12cb241c054ff35d7a7f845a}
+\hypertarget{classCSphConfigParser_ab6492020e24c5f1a32f79aaca70b888c}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!Add\-Section@{Add\-Section}}
+\index{Add\-Section@{Add\-Section}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{Add\-Section}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Config\-Parser\-::\-Add\-Section (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Type, }
+\item[{const char $\ast$}]{s\-Section}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_ab6492020e24c5f1a32f79aaca70b888c}
+\hypertarget{classCSphConfigParser_a560454bebf023d2ec69ad936e3c36291}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!Get\-Buffer\-String@{Get\-Buffer\-String}}
+\index{Get\-Buffer\-String@{Get\-Buffer\-String}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{Get\-Buffer\-String}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ C\-Sph\-Config\-Parser\-::\-Get\-Buffer\-String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{sz\-Dest, }
+\item[{{\bf int}}]{i\-Max, }
+\item[{const char $\ast$\&}]{sz\-Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_a560454bebf023d2ec69ad936e3c36291}
+\hypertarget{classCSphConfigParser_a16697bf4066a4481a6e4c4c0473dc76d}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!Is\-Named\-Section@{Is\-Named\-Section}}
+\index{Is\-Named\-Section@{Is\-Named\-Section}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{Is\-Named\-Section}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Config\-Parser\-::\-Is\-Named\-Section (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_a16697bf4066a4481a6e4c4c0473dc76d}
+\hypertarget{classCSphConfigParser_ac748efc2cd4bf410c70bd658e827a683}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!Is\-Plain\-Section@{Is\-Plain\-Section}}
+\index{Is\-Plain\-Section@{Is\-Plain\-Section}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{Is\-Plain\-Section}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Config\-Parser\-::\-Is\-Plain\-Section (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_ac748efc2cd4bf410c70bd658e827a683}
+\hypertarget{classCSphConfigParser_a670e9a4000689588d41feb015e0d16a6}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!Parse@{Parse}}
+\index{Parse@{Parse}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{Parse}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Config\-Parser\-::\-Parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-File\-Name, }
+\item[{const char $\ast$}]{p\-Buffer = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classCSphConfigParser_a670e9a4000689588d41feb015e0d16a6}
+\hypertarget{classCSphConfigParser_ac4b575e059fb61ed9c0039bb9a82ee72}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!Re\-Parse@{Re\-Parse}}
+\index{Re\-Parse@{Re\-Parse}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{Re\-Parse}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Config\-Parser\-::\-Re\-Parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-File\-Name, }
+\item[{const char $\ast$}]{p\-Buffer = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classCSphConfigParser_ac4b575e059fb61ed9c0039bb9a82ee72}
+\hypertarget{classCSphConfigParser_a938d559935671cf6ee44c570f0f47fc3}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!Validate\-Key@{Validate\-Key}}
+\index{Validate\-Key@{Validate\-Key}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{Validate\-Key}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Config\-Parser\-::\-Validate\-Key (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_a938d559935671cf6ee44c570f0f47fc3}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphConfigParser_aa928dbd9a23014593c416ba11a259a9c}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!m\-\_\-i\-Line@{m\-\_\-i\-Line}}
+\index{m\-\_\-i\-Line@{m\-\_\-i\-Line}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{m\-\_\-i\-Line}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Config\-Parser\-::m\-\_\-i\-Line\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_aa928dbd9a23014593c416ba11a259a9c}
+\hypertarget{classCSphConfigParser_ac0e07431f0be63bb9ebb8eadd72c24fc}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!m\-\_\-i\-Warnings@{m\-\_\-i\-Warnings}}
+\index{m\-\_\-i\-Warnings@{m\-\_\-i\-Warnings}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{m\-\_\-i\-Warnings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Config\-Parser\-::m\-\_\-i\-Warnings\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_ac0e07431f0be63bb9ebb8eadd72c24fc}
+\hypertarget{classCSphConfigParser_a615a238196d0ace41a3665270f4ca75b}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!m\-\_\-s\-Error@{m\-\_\-s\-Error}}
+\index{m\-\_\-s\-Error@{m\-\_\-s\-Error}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{m\-\_\-s\-Error}]{\setlength{\rightskip}{0pt plus 5cm}char C\-Sph\-Config\-Parser\-::m\-\_\-s\-Error\mbox{[}1024\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_a615a238196d0ace41a3665270f4ca75b}
+\hypertarget{classCSphConfigParser_ac5023c857235d9ab1649f69b6937fd03}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!m\-\_\-s\-File\-Name@{m\-\_\-s\-File\-Name}}
+\index{m\-\_\-s\-File\-Name@{m\-\_\-s\-File\-Name}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{m\-\_\-s\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Config\-Parser\-::m\-\_\-s\-File\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_ac5023c857235d9ab1649f69b6937fd03}
+\hypertarget{classCSphConfigParser_a2b27b7a6dc0325826be8251809c47978}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!m\-\_\-s\-Section\-Name@{m\-\_\-s\-Section\-Name}}
+\index{m\-\_\-s\-Section\-Name@{m\-\_\-s\-Section\-Name}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{m\-\_\-s\-Section\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Config\-Parser\-::m\-\_\-s\-Section\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_a2b27b7a6dc0325826be8251809c47978}
+\hypertarget{classCSphConfigParser_aee98856a91de6866b13b1bcc311d19b3}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!m\-\_\-s\-Section\-Type@{m\-\_\-s\-Section\-Type}}
+\index{m\-\_\-s\-Section\-Type@{m\-\_\-s\-Section\-Type}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{m\-\_\-s\-Section\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Config\-Parser\-::m\-\_\-s\-Section\-Type\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphConfigParser_aee98856a91de6866b13b1bcc311d19b3}
+\hypertarget{classCSphConfigParser_a6221f2ed1927dd73b0f01469a9985097}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!m\-\_\-t\-Conf@{m\-\_\-t\-Conf}}
+\index{m\-\_\-t\-Conf@{m\-\_\-t\-Conf}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{m\-\_\-t\-Conf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Config} C\-Sph\-Config\-Parser\-::m\-\_\-t\-Conf}}\label{classCSphConfigParser_a6221f2ed1927dd73b0f01469a9985097}
+\hypertarget{classCSphConfigParser_a0a90b1213c5d9073677aa98da209b630}{\index{C\-Sph\-Config\-Parser@{C\-Sph\-Config\-Parser}!W\-A\-R\-N\-S\-\_\-\-T\-H\-R\-E\-S\-H@{W\-A\-R\-N\-S\-\_\-\-T\-H\-R\-E\-S\-H}}
+\index{W\-A\-R\-N\-S\-\_\-\-T\-H\-R\-E\-S\-H@{W\-A\-R\-N\-S\-\_\-\-T\-H\-R\-E\-S\-H}!CSphConfigParser@{C\-Sph\-Config\-Parser}}
+\subsubsection[{W\-A\-R\-N\-S\-\_\-\-T\-H\-R\-E\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Config\-Parser\-::\-W\-A\-R\-N\-S\-\_\-\-T\-H\-R\-E\-S\-H = 5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphConfigParser_a0a90b1213c5d9073677aa98da209b630}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxutils_8h}{sphinxutils.\-h}\item 
+src/\hyperlink{sphinxutils_8cpp}{sphinxutils.\-cpp}\end{DoxyCompactItemize}

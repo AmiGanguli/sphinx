@@ -1,0 +1,128 @@
+\hypertarget{classCSphQueryProfile}{\section{C\-Sph\-Query\-Profile Class Reference}
+\label{classCSphQueryProfile}\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}}
+}
+
+
+search query profile  
+
+
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphQueryProfile_a0497fe1687f808e073bddad7f827aae0}{C\-Sph\-Query\-Profile} ()
+\begin{DoxyCompactList}\small\item\em create empty and stopped profile \end{DoxyCompactList}\item 
+\hyperlink{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06}{E\-Sph\-Query\-State} \hyperlink{classCSphQueryProfile_a7ee3ca174f6ba8970feea0ae387de323}{Switch} (\hyperlink{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06}{E\-Sph\-Query\-State} e\-New)
+\item 
+void \hyperlink{classCSphQueryProfile_a2bccb0cb9cd2d9ff060f21529a9ab6de}{Start} (\hyperlink{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06}{E\-Sph\-Query\-State} e\-New)
+\begin{DoxyCompactList}\small\item\em reset everything and start profiling from a given state \end{DoxyCompactList}\item 
+void \hyperlink{classCSphQueryProfile_a80650953b71884bcb1e03a8e23054cbd}{Stop} ()
+\begin{DoxyCompactList}\small\item\em stop profiling \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06}{E\-Sph\-Query\-State} \hyperlink{classCSphQueryProfile_a51951e40aadac8284bf6bcc512de84a6}{m\-\_\-e\-State}
+\begin{DoxyCompactList}\small\item\em current state \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQueryProfile_a59b27df0757e1d1a3087d83c14dfbee9}{m\-\_\-tm\-Stamp}
+\begin{DoxyCompactList}\small\item\em timestamp when we entered the current state \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryProfile_aa99e1f4ee788c704f11bb510199b72dc}{m\-\_\-d\-Switches} \mbox{[}\hyperlink{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06ae270d5641ecc03dcb7311b79bba3b473}{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-T\-O\-T\-A\-L}+1\mbox{]}
+\begin{DoxyCompactList}\small\item\em number of switches to given state \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQueryProfile_a314603ebfbe41b032c282ff047394cdd}{m\-\_\-tm\-Total} \mbox{[}\hyperlink{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06ae270d5641ecc03dcb7311b79bba3b473}{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-T\-O\-T\-A\-L}+1\mbox{]}
+\begin{DoxyCompactList}\small\item\em total time spent per state \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_af544895cdc9dcfd4532460c3b08cda1b}{C\-Sph\-String\-Builder} \hyperlink{classCSphQueryProfile_a1b07b39dc8543da115ddce681cba4315}{m\-\_\-s\-Transformed\-Tree}
+\begin{DoxyCompactList}\small\item\em transformed query tree \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+search query profile 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphQueryProfile_a0497fe1687f808e073bddad7f827aae0}{\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}!C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}}
+\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}!CSphQueryProfile@{C\-Sph\-Query\-Profile}}
+\subsubsection[{C\-Sph\-Query\-Profile}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-Profile\-::\-C\-Sph\-Query\-Profile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphQueryProfile_a0497fe1687f808e073bddad7f827aae0}
+
+
+create empty and stopped profile 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphQueryProfile_a2bccb0cb9cd2d9ff060f21529a9ab6de}{\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}!Start@{Start}}
+\index{Start@{Start}!CSphQueryProfile@{C\-Sph\-Query\-Profile}}
+\subsubsection[{Start}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Profile\-::\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Query\-State}}]{e\-New}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphQueryProfile_a2bccb0cb9cd2d9ff060f21529a9ab6de}
+
+
+reset everything and start profiling from a given state 
+
+\hypertarget{classCSphQueryProfile_a80650953b71884bcb1e03a8e23054cbd}{\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}!Stop@{Stop}}
+\index{Stop@{Stop}!CSphQueryProfile@{C\-Sph\-Query\-Profile}}
+\subsubsection[{Stop}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Profile\-::\-Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphQueryProfile_a80650953b71884bcb1e03a8e23054cbd}
+
+
+stop profiling 
+
+\hypertarget{classCSphQueryProfile_a7ee3ca174f6ba8970feea0ae387de323}{\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}!Switch@{Switch}}
+\index{Switch@{Switch}!CSphQueryProfile@{C\-Sph\-Query\-Profile}}
+\subsubsection[{Switch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Query\-State} C\-Sph\-Query\-Profile\-::\-Switch (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Query\-State}}]{e\-New}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphQueryProfile_a7ee3ca174f6ba8970feea0ae387de323}
+switch to a new query state, and record a timestamp returns previous state, to simplify Push/\-Pop like scenarios 
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphQueryProfile_aa99e1f4ee788c704f11bb510199b72dc}{\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}!m\-\_\-d\-Switches@{m\-\_\-d\-Switches}}
+\index{m\-\_\-d\-Switches@{m\-\_\-d\-Switches}!CSphQueryProfile@{C\-Sph\-Query\-Profile}}
+\subsubsection[{m\-\_\-d\-Switches}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Profile\-::m\-\_\-d\-Switches\mbox{[}{\bf S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-T\-O\-T\-A\-L}+1\mbox{]}}}\label{classCSphQueryProfile_aa99e1f4ee788c704f11bb510199b72dc}
+
+
+number of switches to given state 
+
+\hypertarget{classCSphQueryProfile_a51951e40aadac8284bf6bcc512de84a6}{\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}!m\-\_\-e\-State@{m\-\_\-e\-State}}
+\index{m\-\_\-e\-State@{m\-\_\-e\-State}!CSphQueryProfile@{C\-Sph\-Query\-Profile}}
+\subsubsection[{m\-\_\-e\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Query\-State} C\-Sph\-Query\-Profile\-::m\-\_\-e\-State}}\label{classCSphQueryProfile_a51951e40aadac8284bf6bcc512de84a6}
+
+
+current state 
+
+\hypertarget{classCSphQueryProfile_a1b07b39dc8543da115ddce681cba4315}{\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}!m\-\_\-s\-Transformed\-Tree@{m\-\_\-s\-Transformed\-Tree}}
+\index{m\-\_\-s\-Transformed\-Tree@{m\-\_\-s\-Transformed\-Tree}!CSphQueryProfile@{C\-Sph\-Query\-Profile}}
+\subsubsection[{m\-\_\-s\-Transformed\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String\-Builder} C\-Sph\-Query\-Profile\-::m\-\_\-s\-Transformed\-Tree}}\label{classCSphQueryProfile_a1b07b39dc8543da115ddce681cba4315}
+
+
+transformed query tree 
+
+\hypertarget{classCSphQueryProfile_a59b27df0757e1d1a3087d83c14dfbee9}{\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}!m\-\_\-tm\-Stamp@{m\-\_\-tm\-Stamp}}
+\index{m\-\_\-tm\-Stamp@{m\-\_\-tm\-Stamp}!CSphQueryProfile@{C\-Sph\-Query\-Profile}}
+\subsubsection[{m\-\_\-tm\-Stamp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-Profile\-::m\-\_\-tm\-Stamp}}\label{classCSphQueryProfile_a59b27df0757e1d1a3087d83c14dfbee9}
+
+
+timestamp when we entered the current state 
+
+\hypertarget{classCSphQueryProfile_a314603ebfbe41b032c282ff047394cdd}{\index{C\-Sph\-Query\-Profile@{C\-Sph\-Query\-Profile}!m\-\_\-tm\-Total@{m\-\_\-tm\-Total}}
+\index{m\-\_\-tm\-Total@{m\-\_\-tm\-Total}!CSphQueryProfile@{C\-Sph\-Query\-Profile}}
+\subsubsection[{m\-\_\-tm\-Total}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-Profile\-::m\-\_\-tm\-Total\mbox{[}{\bf S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-T\-O\-T\-A\-L}+1\mbox{]}}}\label{classCSphQueryProfile_a314603ebfbe41b032c282ff047394cdd}
+
+
+total time spent per state 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\end{DoxyCompactItemize}

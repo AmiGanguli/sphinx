@@ -1,0 +1,108 @@
+\hypertarget{classExtConditional}{\section{Ext\-Conditional$<$ T, Ext\-Base $>$ Class Template Reference}
+\label{classExtConditional}\index{Ext\-Conditional$<$ T, Ext\-Base $>$@{Ext\-Conditional$<$ T, Ext\-Base $>$}}
+}
+
+
+single keyword streamer, with term position filtering  
+
+
+Inheritance diagram for Ext\-Conditional$<$ T, Ext\-Base $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classExtConditional}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classExtConditional_ac43b4ab4271edeb1c0b9d87579a005a0}{Reset} (const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\item 
+virtual const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$ \hyperlink{classExtConditional_a81ab9366dcef98d27598850b938446d5}{Get\-Docs\-Chunk} ()
+\item 
+virtual const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classExtConditional_acb7bc17d9b44a428bf29f50aafcc25a1}{Get\-Hits\-Chunk} (const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$p\-Docs)
+\item 
+virtual bool \hyperlink{classExtConditional_a462498e5383ae65d4fc81ff53fe15f6e}{Got\-Hitless} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExtConditional_a2dc87b759134b0d1f576c422129fe000}{Ext\-Conditional} (\hyperlink{classISphQword}{I\-Sph\-Qword} $\ast$p\-Qword, const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classTermAcceptor__c}{Term\-Acceptor\-\_\-c}$<$ T $>$ \hyperlink{classExtConditional_a08f04a7f9532f6b28beb31c7eab2f558}{t\-\_\-\-Acceptor}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classExtConditional_a328facf878c476420e15565c0bb7edfa}{Extra\-Data\-Impl} (\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88}{Extra\-Data\-\_\-e} e\-Data, void $\ast$$\ast$pp\-Result)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$Term\-Pos\-Filter\-\_\-e T, class Ext\-Base = Ext\-Term\-\_\-c$>$class Ext\-Conditional$<$ T, Ext\-Base $>$}
+
+single keyword streamer, with term position filtering 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classExtConditional_a08f04a7f9532f6b28beb31c7eab2f558}{\index{Ext\-Conditional@{Ext\-Conditional}!t\-\_\-\-Acceptor@{t\-\_\-\-Acceptor}}
+\index{t\-\_\-\-Acceptor@{t\-\_\-\-Acceptor}!ExtConditional@{Ext\-Conditional}}
+\subsubsection[{t\-\_\-\-Acceptor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Term\-Pos\-Filter\-\_\-e T, class Ext\-Base = Ext\-Term\-\_\-c$>$ typedef {\bf Term\-Acceptor\-\_\-c}$<$T$>$ {\bf Ext\-Conditional}$<$ T, Ext\-Base $>$\-::{\bf t\-\_\-\-Acceptor}\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtConditional_a08f04a7f9532f6b28beb31c7eab2f558}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExtConditional_a2dc87b759134b0d1f576c422129fe000}{\index{Ext\-Conditional@{Ext\-Conditional}!Ext\-Conditional@{Ext\-Conditional}}
+\index{Ext\-Conditional@{Ext\-Conditional}!ExtConditional@{Ext\-Conditional}}
+\subsubsection[{Ext\-Conditional}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Term\-Pos\-Filter\-\_\-e T, class Ext\-Base $>$ {\bf Ext\-Conditional}$<$ T, Ext\-Base $>$\-::{\bf Ext\-Conditional} (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Qword} $\ast$}]{p\-Qword, }
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtConditional_a2dc87b759134b0d1f576c422129fe000}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExtConditional_a328facf878c476420e15565c0bb7edfa}{\index{Ext\-Conditional@{Ext\-Conditional}!Extra\-Data\-Impl@{Extra\-Data\-Impl}}
+\index{Extra\-Data\-Impl@{Extra\-Data\-Impl}!ExtConditional@{Ext\-Conditional}}
+\subsubsection[{Extra\-Data\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Term\-Pos\-Filter\-\_\-e T, class Ext\-Base $>$ bool {\bf Ext\-Conditional}$<$ T, Ext\-Base $>$\-::Extra\-Data\-Impl (
+\begin{DoxyParamCaption}
+\item[{{\bf Extra\-Data\-\_\-e}}]{e\-Data, }
+\item[{void $\ast$$\ast$}]{pp\-Result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classExtConditional_a328facf878c476420e15565c0bb7edfa}
+\hypertarget{classExtConditional_a81ab9366dcef98d27598850b938446d5}{\index{Ext\-Conditional@{Ext\-Conditional}!Get\-Docs\-Chunk@{Get\-Docs\-Chunk}}
+\index{Get\-Docs\-Chunk@{Get\-Docs\-Chunk}!ExtConditional@{Ext\-Conditional}}
+\subsubsection[{Get\-Docs\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Term\-Pos\-Filter\-\_\-e T, class Ext\-Base $>$ const {\bf Ext\-Doc\-\_\-t} $\ast$ {\bf Ext\-Conditional}$<$ T, Ext\-Base $>$\-::Get\-Docs\-Chunk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtConditional_a81ab9366dcef98d27598850b938446d5}
+\hypertarget{classExtConditional_acb7bc17d9b44a428bf29f50aafcc25a1}{\index{Ext\-Conditional@{Ext\-Conditional}!Get\-Hits\-Chunk@{Get\-Hits\-Chunk}}
+\index{Get\-Hits\-Chunk@{Get\-Hits\-Chunk}!ExtConditional@{Ext\-Conditional}}
+\subsubsection[{Get\-Hits\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Term\-Pos\-Filter\-\_\-e T, class Ext\-Base $>$ const {\bf Ext\-Hit\-\_\-t} $\ast$ {\bf Ext\-Conditional}$<$ T, Ext\-Base $>$\-::Get\-Hits\-Chunk (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Doc\-\_\-t} $\ast$}]{p\-Docs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtConditional_acb7bc17d9b44a428bf29f50aafcc25a1}
+\hypertarget{classExtConditional_a462498e5383ae65d4fc81ff53fe15f6e}{\index{Ext\-Conditional@{Ext\-Conditional}!Got\-Hitless@{Got\-Hitless}}
+\index{Got\-Hitless@{Got\-Hitless}!ExtConditional@{Ext\-Conditional}}
+\subsubsection[{Got\-Hitless}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Term\-Pos\-Filter\-\_\-e T, class Ext\-Base = Ext\-Term\-\_\-c$>$ virtual bool {\bf Ext\-Conditional}$<$ T, Ext\-Base $>$\-::Got\-Hitless (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtConditional_a462498e5383ae65d4fc81ff53fe15f6e}
+\hypertarget{classExtConditional_ac43b4ab4271edeb1c0b9d87579a005a0}{\index{Ext\-Conditional@{Ext\-Conditional}!Reset@{Reset}}
+\index{Reset@{Reset}!ExtConditional@{Ext\-Conditional}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Term\-Pos\-Filter\-\_\-e T, class Ext\-Base $>$ void {\bf Ext\-Conditional}$<$ T, Ext\-Base $>$\-::Reset (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtConditional_ac43b4ab4271edeb1c0b9d87579a005a0}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsearch_8cpp}{sphinxsearch.\-cpp}\end{DoxyCompactItemize}

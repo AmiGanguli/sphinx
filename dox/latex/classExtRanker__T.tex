@@ -1,0 +1,103 @@
+\hypertarget{classExtRanker__T}{\section{Ext\-Ranker\-\_\-\-T$<$ S\-T\-A\-T\-E $>$ Class Template Reference}
+\label{classExtRanker__T}\index{Ext\-Ranker\-\_\-\-T$<$ S\-T\-A\-T\-E $>$@{Ext\-Ranker\-\_\-\-T$<$ S\-T\-A\-T\-E $>$}}
+}
+Inheritance diagram for Ext\-Ranker\-\_\-\-T$<$ S\-T\-A\-T\-E $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classExtRanker__T}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExtRanker__T_a6e41a9717808fd0e581272ce1c3f17ce}{Ext\-Ranker\-\_\-\-T} (const \hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} \&t\-X\-Q, const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtRanker__T_a926402ffb354feeec6ce6c02424cba82}{Get\-Matches} ()
+\item 
+virtual bool \hyperlink{classExtRanker__T_af1f9241b079426b28f4e44f7d4099972}{Init\-State} (const \hyperlink{classCSphQueryContext}{C\-Sph\-Query\-Context} \&t\-Ctx, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+S\-T\-A\-T\-E \hyperlink{classExtRanker__T_a4b11599de85f4a4c4c2215b83b1c32ec}{m\-\_\-t\-State}
+\item 
+const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classExtRanker__T_ae4e04420ed78cb0e82ee8d4e48de87b3}{m\-\_\-p\-Hit\-Base}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classExtRanker__T_ab50730851677755c1067bfc4b967e057}{m\-\_\-d\-Zonespans}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classExtRanker__T_abbc792c447d96f2430bca22f9b0cbe4f}{Extra\-Data\-Impl} (\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88}{Extra\-Data\-\_\-e} e\-Type, void $\ast$$\ast$pp\-Result)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExtRanker__T_a6e41a9717808fd0e581272ce1c3f17ce}{\index{Ext\-Ranker\-\_\-\-T@{Ext\-Ranker\-\_\-\-T}!Ext\-Ranker\-\_\-\-T@{Ext\-Ranker\-\_\-\-T}}
+\index{Ext\-Ranker\-\_\-\-T@{Ext\-Ranker\-\_\-\-T}!ExtRanker_T@{Ext\-Ranker\-\_\-\-T}}
+\subsubsection[{Ext\-Ranker\-\_\-\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-T\-A\-T\-E $>$ {\bf Ext\-Ranker\-\_\-\-T}$<$ S\-T\-A\-T\-E $>$\-::{\bf Ext\-Ranker\-\_\-\-T} (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Query\-\_\-t} \&}]{t\-X\-Q, }
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)}}\label{classExtRanker__T_a6e41a9717808fd0e581272ce1c3f17ce}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExtRanker__T_abbc792c447d96f2430bca22f9b0cbe4f}{\index{Ext\-Ranker\-\_\-\-T@{Ext\-Ranker\-\_\-\-T}!Extra\-Data\-Impl@{Extra\-Data\-Impl}}
+\index{Extra\-Data\-Impl@{Extra\-Data\-Impl}!ExtRanker_T@{Ext\-Ranker\-\_\-\-T}}
+\subsubsection[{Extra\-Data\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-T\-A\-T\-E$>$ virtual bool {\bf Ext\-Ranker\-\_\-\-T}$<$ S\-T\-A\-T\-E $>$\-::Extra\-Data\-Impl (
+\begin{DoxyParamCaption}
+\item[{{\bf Extra\-Data\-\_\-e}}]{e\-Type, }
+\item[{void $\ast$$\ast$}]{pp\-Result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classExtRanker__T_abbc792c447d96f2430bca22f9b0cbe4f}
+
+
+Reimplemented from \hyperlink{classISphExtra_abb7ec9aff3ed68a8dc3509d2f605878c}{I\-Sph\-Extra}.
+
+\hypertarget{classExtRanker__T_a926402ffb354feeec6ce6c02424cba82}{\index{Ext\-Ranker\-\_\-\-T@{Ext\-Ranker\-\_\-\-T}!Get\-Matches@{Get\-Matches}}
+\index{Get\-Matches@{Get\-Matches}!ExtRanker_T@{Ext\-Ranker\-\_\-\-T}}
+\subsubsection[{Get\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-T\-A\-T\-E $>$ {\bf int} {\bf Ext\-Ranker\-\_\-\-T}$<$ S\-T\-A\-T\-E $>$\-::Get\-Matches (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtRanker__T_a926402ffb354feeec6ce6c02424cba82}
+
+
+Implements \hyperlink{classISphRanker_a9867bc00bad492c080becc38c94b8d73}{I\-Sph\-Ranker}.
+
+
+
+Reimplemented in \hyperlink{classExtRanker__Expr__T_a65971cb8c963aecc2860fff216fe0761}{Ext\-Ranker\-\_\-\-Expr\-\_\-\-T$<$ N\-E\-E\-D\-\_\-\-P\-A\-C\-K\-E\-D\-F\-A\-C\-T\-O\-R\-S, H\-A\-N\-D\-L\-E\-\_\-\-D\-U\-P\-E\-S $>$}.
+
+\hypertarget{classExtRanker__T_af1f9241b079426b28f4e44f7d4099972}{\index{Ext\-Ranker\-\_\-\-T@{Ext\-Ranker\-\_\-\-T}!Init\-State@{Init\-State}}
+\index{Init\-State@{Init\-State}!ExtRanker_T@{Ext\-Ranker\-\_\-\-T}}
+\subsubsection[{Init\-State}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-T\-A\-T\-E$>$ virtual bool {\bf Ext\-Ranker\-\_\-\-T}$<$ S\-T\-A\-T\-E $>$\-::Init\-State (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query\-Context} \&}]{t\-Ctx, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtRanker__T_af1f9241b079426b28f4e44f7d4099972}
+
+
+Reimplemented from \hyperlink{classExtRanker__c_aa7bb9acb4259f8c5d4098f9dee0d192e}{Ext\-Ranker\-\_\-c}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExtRanker__T_ab50730851677755c1067bfc4b967e057}{\index{Ext\-Ranker\-\_\-\-T@{Ext\-Ranker\-\_\-\-T}!m\-\_\-d\-Zonespans@{m\-\_\-d\-Zonespans}}
+\index{m\-\_\-d\-Zonespans@{m\-\_\-d\-Zonespans}!ExtRanker_T@{Ext\-Ranker\-\_\-\-T}}
+\subsubsection[{m\-\_\-d\-Zonespans}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-T\-A\-T\-E$>$ {\bf C\-Sph\-Vector}$<${\bf int}$>$ {\bf Ext\-Ranker\-\_\-\-T}$<$ S\-T\-A\-T\-E $>$\-::m\-\_\-d\-Zonespans\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtRanker__T_ab50730851677755c1067bfc4b967e057}
+\hypertarget{classExtRanker__T_ae4e04420ed78cb0e82ee8d4e48de87b3}{\index{Ext\-Ranker\-\_\-\-T@{Ext\-Ranker\-\_\-\-T}!m\-\_\-p\-Hit\-Base@{m\-\_\-p\-Hit\-Base}}
+\index{m\-\_\-p\-Hit\-Base@{m\-\_\-p\-Hit\-Base}!ExtRanker_T@{Ext\-Ranker\-\_\-\-T}}
+\subsubsection[{m\-\_\-p\-Hit\-Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-T\-A\-T\-E$>$ const {\bf Ext\-Hit\-\_\-t}$\ast$ {\bf Ext\-Ranker\-\_\-\-T}$<$ S\-T\-A\-T\-E $>$\-::m\-\_\-p\-Hit\-Base\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtRanker__T_ae4e04420ed78cb0e82ee8d4e48de87b3}
+\hypertarget{classExtRanker__T_a4b11599de85f4a4c4c2215b83b1c32ec}{\index{Ext\-Ranker\-\_\-\-T@{Ext\-Ranker\-\_\-\-T}!m\-\_\-t\-State@{m\-\_\-t\-State}}
+\index{m\-\_\-t\-State@{m\-\_\-t\-State}!ExtRanker_T@{Ext\-Ranker\-\_\-\-T}}
+\subsubsection[{m\-\_\-t\-State}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-T\-A\-T\-E$>$ S\-T\-A\-T\-E {\bf Ext\-Ranker\-\_\-\-T}$<$ S\-T\-A\-T\-E $>$\-::m\-\_\-t\-State\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtRanker__T_a4b11599de85f4a4c4c2215b83b1c32ec}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsearch_8cpp}{sphinxsearch.\-cpp}\end{DoxyCompactItemize}

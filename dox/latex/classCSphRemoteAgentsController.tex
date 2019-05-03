@@ -1,0 +1,160 @@
+\hypertarget{classCSphRemoteAgentsController}{\section{C\-Sph\-Remote\-Agents\-Controller Class Reference}
+\label{classCSphRemoteAgentsController}\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}}
+}
+Inheritance diagram for C\-Sph\-Remote\-Agents\-Controller\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphRemoteAgentsController}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphRemoteAgentsController_aa6e4d8f8ef9353b81707c9892ecd9e53}{C\-Sph\-Remote\-Agents\-Controller} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Threads, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} $>$ \&d\-Agents, const \hyperlink{structIRequestBuilder__t}{I\-Request\-Builder\-\_\-t} \&t\-Builder, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Timeout, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Retry\-Max=0, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Delay=0)
+\item 
+virtual \hyperlink{classCSphRemoteAgentsController_ad910e2d1d893b26a5b38d25cfd8b4be7}{$\sim$\-C\-Sph\-Remote\-Agents\-Controller} ()
+\item 
+virtual bool \hyperlink{classCSphRemoteAgentsController_a0cf98e2817021e221a1415a575662f14}{Is\-Done} () const override
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRemoteAgentsController_aebcfc69d5d8307b2efc39b80c4137b26}{Finish} () override
+\item 
+virtual bool \hyperlink{classCSphRemoteAgentsController_aabd3e4854d0c12f8cf8019d5b9ac07f2}{Has\-Ready\-Agents} () const override
+\item 
+virtual bool \hyperlink{classCSphRemoteAgentsController_aa3ec0b3ebc62c348d156c1ef20296481}{Fetch\-Ready\-Agents} () override
+\item 
+virtual void \hyperlink{classCSphRemoteAgentsController_a805cdddb797c5ed1ea172d9ad72a03a2}{Wait\-Agents\-Event} () override
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRemoteAgentsController_afe1477b4cf1916add2d415cabb0433fd}{Retry\-Failed} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classThdWorkPool__c}{Thd\-Work\-Pool\-\_\-c} $\ast$ \hyperlink{classCSphRemoteAgentsController_a1761bc177b4e266d5d4dfef5bcf77946}{m\-\_\-p\-Worker\-Pool}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_ad728334ec85e8a6b4db5bc1efd06447a}{Sph\-Thread\-\_\-t} $>$ \hyperlink{classCSphRemoteAgentsController_a10f53cd45e7c356412cb9610c0cab229}{m\-\_\-d\-Thds}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} $>$ $\ast$ \hyperlink{classCSphRemoteAgentsController_a5ef815200dcdfa2b27d5bdae767cdfd1}{m\-\_\-p\-Agents}
+\item 
+const \hyperlink{structIRequestBuilder__t}{I\-Request\-Builder\-\_\-t} $\ast$ \hyperlink{classCSphRemoteAgentsController_a47d889a791191212a3a8d559aa69accf}{m\-\_\-p\-Builder}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRemoteAgentsController_ad4578eba80fbf39c4dc8acdd596dfbf4}{m\-\_\-i\-Timeout}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRemoteAgentsController_ac731d12587b2a906b25f65e4c88140bb}{m\-\_\-i\-Delay}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphRemoteAgentsController_aa6e4d8f8ef9353b81707c9892ecd9e53}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}}
+\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{C\-Sph\-Remote\-Agents\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Remote\-Agents\-Controller\-::\-C\-Sph\-Remote\-Agents\-Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Threads, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Agent\-Conn\-\_\-t} $>$ \&}]{d\-Agents, }
+\item[{const {\bf I\-Request\-Builder\-\_\-t} \&}]{t\-Builder, }
+\item[{{\bf int}}]{i\-Timeout, }
+\item[{{\bf int}}]{i\-Retry\-Max = {\ttfamily 0}, }
+\item[{{\bf int}}]{i\-Delay = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classCSphRemoteAgentsController_aa6e4d8f8ef9353b81707c9892ecd9e53}
+\hypertarget{classCSphRemoteAgentsController_ad910e2d1d893b26a5b38d25cfd8b4be7}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!$\sim$\-C\-Sph\-Remote\-Agents\-Controller@{$\sim$\-C\-Sph\-Remote\-Agents\-Controller}}
+\index{$\sim$\-C\-Sph\-Remote\-Agents\-Controller@{$\sim$\-C\-Sph\-Remote\-Agents\-Controller}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{$\sim$\-C\-Sph\-Remote\-Agents\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Remote\-Agents\-Controller\-::$\sim$\-C\-Sph\-Remote\-Agents\-Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphRemoteAgentsController_ad910e2d1d893b26a5b38d25cfd8b4be7}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphRemoteAgentsController_aa3ec0b3ebc62c348d156c1ef20296481}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!Fetch\-Ready\-Agents@{Fetch\-Ready\-Agents}}
+\index{Fetch\-Ready\-Agents@{Fetch\-Ready\-Agents}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{Fetch\-Ready\-Agents}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Remote\-Agents\-Controller\-::\-Fetch\-Ready\-Agents (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCSphRemoteAgentsController_aa3ec0b3ebc62c348d156c1ef20296481}
+
+
+Implements \hyperlink{classISphRemoteAgentsController_a5e3cee353e0052cf580eda886fced640}{I\-Sph\-Remote\-Agents\-Controller}.
+
+\hypertarget{classCSphRemoteAgentsController_aebcfc69d5d8307b2efc39b80c4137b26}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!Finish@{Finish}}
+\index{Finish@{Finish}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{Finish}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Remote\-Agents\-Controller\-::\-Finish (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCSphRemoteAgentsController_aebcfc69d5d8307b2efc39b80c4137b26}
+
+
+Implements \hyperlink{classISphRemoteAgentsController_a43540084ea2729360a14c05a5eb536b8}{I\-Sph\-Remote\-Agents\-Controller}.
+
+\hypertarget{classCSphRemoteAgentsController_aabd3e4854d0c12f8cf8019d5b9ac07f2}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!Has\-Ready\-Agents@{Has\-Ready\-Agents}}
+\index{Has\-Ready\-Agents@{Has\-Ready\-Agents}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{Has\-Ready\-Agents}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Remote\-Agents\-Controller\-::\-Has\-Ready\-Agents (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCSphRemoteAgentsController_aabd3e4854d0c12f8cf8019d5b9ac07f2}
+
+
+Implements \hyperlink{classISphRemoteAgentsController_a6d00e382c63f4a680a0e95007955a228}{I\-Sph\-Remote\-Agents\-Controller}.
+
+\hypertarget{classCSphRemoteAgentsController_a0cf98e2817021e221a1415a575662f14}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!Is\-Done@{Is\-Done}}
+\index{Is\-Done@{Is\-Done}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{Is\-Done}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Remote\-Agents\-Controller\-::\-Is\-Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCSphRemoteAgentsController_a0cf98e2817021e221a1415a575662f14}
+
+
+Implements \hyperlink{classISphRemoteAgentsController_ab8618bbf9861d48ee8d43413ce9bce2d}{I\-Sph\-Remote\-Agents\-Controller}.
+
+\hypertarget{classCSphRemoteAgentsController_afe1477b4cf1916add2d415cabb0433fd}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!Retry\-Failed@{Retry\-Failed}}
+\index{Retry\-Failed@{Retry\-Failed}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{Retry\-Failed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Remote\-Agents\-Controller\-::\-Retry\-Failed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCSphRemoteAgentsController_afe1477b4cf1916add2d415cabb0433fd}
+
+
+Implements \hyperlink{classISphRemoteAgentsController_a2488051cdbae9ab61c5fbd150ac6ac0f}{I\-Sph\-Remote\-Agents\-Controller}.
+
+\hypertarget{classCSphRemoteAgentsController_a805cdddb797c5ed1ea172d9ad72a03a2}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!Wait\-Agents\-Event@{Wait\-Agents\-Event}}
+\index{Wait\-Agents\-Event@{Wait\-Agents\-Event}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{Wait\-Agents\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Remote\-Agents\-Controller\-::\-Wait\-Agents\-Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCSphRemoteAgentsController_a805cdddb797c5ed1ea172d9ad72a03a2}
+
+
+Implements \hyperlink{classISphRemoteAgentsController_a8ba58cf0135bab401ef0551292470c13}{I\-Sph\-Remote\-Agents\-Controller}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphRemoteAgentsController_a10f53cd45e7c356412cb9610c0cab229}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!m\-\_\-d\-Thds@{m\-\_\-d\-Thds}}
+\index{m\-\_\-d\-Thds@{m\-\_\-d\-Thds}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{m\-\_\-d\-Thds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Sph\-Thread\-\_\-t}$>$ C\-Sph\-Remote\-Agents\-Controller\-::m\-\_\-d\-Thds\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphRemoteAgentsController_a10f53cd45e7c356412cb9610c0cab229}
+\hypertarget{classCSphRemoteAgentsController_ac731d12587b2a906b25f65e4c88140bb}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!m\-\_\-i\-Delay@{m\-\_\-i\-Delay}}
+\index{m\-\_\-i\-Delay@{m\-\_\-i\-Delay}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{m\-\_\-i\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Remote\-Agents\-Controller\-::m\-\_\-i\-Delay\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphRemoteAgentsController_ac731d12587b2a906b25f65e4c88140bb}
+\hypertarget{classCSphRemoteAgentsController_ad4578eba80fbf39c4dc8acdd596dfbf4}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!m\-\_\-i\-Timeout@{m\-\_\-i\-Timeout}}
+\index{m\-\_\-i\-Timeout@{m\-\_\-i\-Timeout}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{m\-\_\-i\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Remote\-Agents\-Controller\-::m\-\_\-i\-Timeout\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphRemoteAgentsController_ad4578eba80fbf39c4dc8acdd596dfbf4}
+\hypertarget{classCSphRemoteAgentsController_a5ef815200dcdfa2b27d5bdae767cdfd1}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!m\-\_\-p\-Agents@{m\-\_\-p\-Agents}}
+\index{m\-\_\-p\-Agents@{m\-\_\-p\-Agents}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{m\-\_\-p\-Agents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Agent\-Conn\-\_\-t}$>$$\ast$ C\-Sph\-Remote\-Agents\-Controller\-::m\-\_\-p\-Agents\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphRemoteAgentsController_a5ef815200dcdfa2b27d5bdae767cdfd1}
+\hypertarget{classCSphRemoteAgentsController_a47d889a791191212a3a8d559aa69accf}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!m\-\_\-p\-Builder@{m\-\_\-p\-Builder}}
+\index{m\-\_\-p\-Builder@{m\-\_\-p\-Builder}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{m\-\_\-p\-Builder}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf I\-Request\-Builder\-\_\-t}$\ast$ C\-Sph\-Remote\-Agents\-Controller\-::m\-\_\-p\-Builder\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphRemoteAgentsController_a47d889a791191212a3a8d559aa69accf}
+\hypertarget{classCSphRemoteAgentsController_a1761bc177b4e266d5d4dfef5bcf77946}{\index{C\-Sph\-Remote\-Agents\-Controller@{C\-Sph\-Remote\-Agents\-Controller}!m\-\_\-p\-Worker\-Pool@{m\-\_\-p\-Worker\-Pool}}
+\index{m\-\_\-p\-Worker\-Pool@{m\-\_\-p\-Worker\-Pool}!CSphRemoteAgentsController@{C\-Sph\-Remote\-Agents\-Controller}}
+\subsubsection[{m\-\_\-p\-Worker\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thd\-Work\-Pool\-\_\-c}$\ast$ C\-Sph\-Remote\-Agents\-Controller\-::m\-\_\-p\-Worker\-Pool\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphRemoteAgentsController_a1761bc177b4e266d5d4dfef5bcf77946}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{searchdha_8cpp}{searchdha.\-cpp}\end{DoxyCompactItemize}

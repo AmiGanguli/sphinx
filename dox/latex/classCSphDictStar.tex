@@ -1,0 +1,76 @@
+\hypertarget{classCSphDictStar}{\section{C\-Sph\-Dict\-Star Class Reference}
+\label{classCSphDictStar}\index{C\-Sph\-Dict\-Star@{C\-Sph\-Dict\-Star}}
+}
+
+
+dict wrapper for star-\/syntax support in prefix-\/indexes  
+
+
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Dict\-Star\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCSphDictStar}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphDictStar_a4a3f451c0496acff0da4b9a33d2dad58}{C\-Sph\-Dict\-Star} (\hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDictStar_a4e569ff418bf922b57c9c22c30d40bc9}{Get\-Word\-I\-D} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDictStar_af3f3be1b8c5c4cb4fccc39bc595c3778}{Get\-Word\-I\-D\-Non\-Stemmed} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+dict wrapper for star-\/syntax support in prefix-\/indexes 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphDictStar_a4a3f451c0496acff0da4b9a33d2dad58}{\index{C\-Sph\-Dict\-Star@{C\-Sph\-Dict\-Star}!C\-Sph\-Dict\-Star@{C\-Sph\-Dict\-Star}}
+\index{C\-Sph\-Dict\-Star@{C\-Sph\-Dict\-Star}!CSphDictStar@{C\-Sph\-Dict\-Star}}
+\subsubsection[{C\-Sph\-Dict\-Star}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Dict\-Star\-::\-C\-Sph\-Dict\-Star (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphDictStar_a4a3f451c0496acff0da4b9a33d2dad58}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphDictStar_a4e569ff418bf922b57c9c22c30d40bc9}{\index{C\-Sph\-Dict\-Star@{C\-Sph\-Dict\-Star}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!CSphDictStar@{C\-Sph\-Dict\-Star}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Star\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictStar_a4e569ff418bf922b57c9c22c30d40bc9}
+Get word I\-D by word, \char`\"{}text\char`\"{} version may apply stemming and modify word inplace modified word may become bigger than the original one, so make sure you have enough space in buffer which is pointer by p\-Word a general practice is to use char\mbox{[}3$\ast$\-S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N+4\mbox{]} as a buffer returns 0 for stopwords 
+
+Reimplemented from \hyperlink{classCSphDictTraits_a234301b970b1fb86fa60f0fe2d1020dc}{C\-Sph\-Dict\-Traits}.
+
+
+
+Reimplemented in \hyperlink{classCSphDictStarV8_a643a9893a9c825a807ba0892ccf52fd8}{C\-Sph\-Dict\-Star\-V8}.
+
+\hypertarget{classCSphDictStar_af3f3be1b8c5c4cb4fccc39bc595c3778}{\index{C\-Sph\-Dict\-Star@{C\-Sph\-Dict\-Star}!Get\-Word\-I\-D\-Non\-Stemmed@{Get\-Word\-I\-D\-Non\-Stemmed}}
+\index{Get\-Word\-I\-D\-Non\-Stemmed@{Get\-Word\-I\-D\-Non\-Stemmed}!CSphDictStar@{C\-Sph\-Dict\-Star}}
+\subsubsection[{Get\-Word\-I\-D\-Non\-Stemmed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Star\-::\-Get\-Word\-I\-D\-Non\-Stemmed (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictStar_af3f3be1b8c5c4cb4fccc39bc595c3778}
+get word I\-D by word, \char`\"{}text\char`\"{} version does N\-O\-T apply stemming accepts words with already prepended M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D returns 0 for stopwords 
+
+Reimplemented from \hyperlink{classCSphDictTraits_a68965b76a9bd85fe3a161ee4d904ec4e}{C\-Sph\-Dict\-Traits}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

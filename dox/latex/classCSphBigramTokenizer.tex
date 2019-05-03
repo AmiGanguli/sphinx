@@ -1,0 +1,242 @@
+\hypertarget{classCSphBigramTokenizer}{\section{C\-Sph\-Bigram\-Tokenizer Class Reference}
+\label{classCSphBigramTokenizer}\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+}
+Inheritance diagram for C\-Sph\-Bigram\-Tokenizer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphBigramTokenizer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphBigramTokenizer_aceeeb2e49a681575010e563d4d1bf33a}{C\-Sph\-Bigram\-Tokenizer} (\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tok, \hyperlink{sphinx_8h_a4900146967791908ab838925add48e43}{E\-Sph\-Bigram} e\-Mode, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Words)
+\item 
+\hyperlink{classCSphBigramTokenizer_ae7ffbf890b1ef03fe12029227929f803}{C\-Sph\-Bigram\-Tokenizer} (\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tok, const \hyperlink{classCSphBigramTokenizer}{C\-Sph\-Bigram\-Tokenizer} $\ast$p\-Base)
+\item 
+\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$ \hyperlink{classCSphBigramTokenizer_ae52f7c3b214e1593abd470e102f0150f}{Clone} (\hyperlink{sphinx_8h_adc6a6e1ffce224f14950be604087978c}{E\-Sph\-Tokenizer\-Clone} e\-Mode) const 
+\begin{DoxyCompactList}\small\item\em spawn a clone of my own \end{DoxyCompactList}\item 
+void \hyperlink{classCSphBigramTokenizer_a670f40c1fdc2fb057ddcd0636f4a3c9d}{Set\-Buffer} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Buffer, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Length)
+\begin{DoxyCompactList}\small\item\em pass next buffer \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphBigramTokenizer_ab6c85268d6c4b6610d3349c2be64c1df}{Token\-Is\-Blended} () const 
+\item 
+bool \hyperlink{classCSphBigramTokenizer_a06c1852b5a5c20854e8be294502f5b97}{Is\-Freq} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Word)
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphBigramTokenizer_ab0fa4224967186e7d2595bd50c994029}{Get\-Token} ()
+\begin{DoxyCompactList}\small\item\em get next token \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classCSphBigramTokenizer_aac43c456e1aff3b46036241c530711f2}{Get\-Settings\-F\-N\-V} () const 
+\begin{DoxyCompactList}\small\item\em get settings hash \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49af8817da5962ff9d77cdc2595ea217130}{B\-I\-G\-R\-A\-M\-\_\-\-C\-L\-E\-A\-N}, 
+\hyperlink{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49a7dcb5140f2f0dece5869ac7412fba6e5}{B\-I\-G\-R\-A\-M\-\_\-\-P\-A\-I\-R}, 
+\hyperlink{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49a0c66a664fc41f9bb29e7b362d58f031c}{B\-I\-G\-R\-A\-M\-\_\-\-F\-I\-R\-S\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum C\-Sph\-Bigram\-Tokenizer\-:: \{ ... \}  \hyperlink{classCSphBigramTokenizer_a927126ea4786d959bb574ae2981b64e4}{m\-\_\-e\-State}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{classCSphBigramTokenizer_abd50444095d9fc8a7436e4bf8066d0d8}{m\-\_\-s\-Buf} \mbox{[}\hyperlink{sphinx_8cpp_aeb328d19a9780d5c5defcd7e9b08239b}{M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em pair buffer \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphBigramTokenizer_ab0f20a5139727c93bf3b4a4d9bb1eeaa}{m\-\_\-p\-Second}
+\begin{DoxyCompactList}\small\item\em second token pointer \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphBigramTokenizer_a15614fd61426d2aa7e489adbd40e234f}{m\-\_\-i\-First}
+\begin{DoxyCompactList}\small\item\em first token length, bytes \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a4900146967791908ab838925add48e43}{E\-Sph\-Bigram} \hyperlink{classCSphBigramTokenizer_a07c3c025edb022bb4be3e6a959bcc9ba}{m\-\_\-e\-Mode}
+\begin{DoxyCompactList}\small\item\em bigram indexing mode \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphBigramTokenizer_a91b8c82bbaf189e3fdd87288ab75a050}{m\-\_\-i\-Max\-Len}
+\begin{DoxyCompactList}\small\item\em max bigram\-\_\-freq\-\_\-words length \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphBigramTokenizer_a820f4e5e208fe9668b7716dbb956753e}{m\-\_\-d\-Words\-Hash} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em offsets into m\-\_\-d\-Words hashed by 1st byte \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classCSphBigramTokenizer_a86e765410f9204eace7dee93253bbed4}{m\-\_\-d\-Words}
+\begin{DoxyCompactList}\small\item\em case-\/folded, sorted bigram\-\_\-freq\-\_\-words \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+token filter for bigram indexing
+
+passes tokens through until an eligible pair is found then buffers and returns that pair as a blended token then returns the first token as a regular one then pops the first one and cycles again
+
+pair (aka bigram) eligibility depends on bigram\-\_\-index value \char`\"{}all\char`\"{} means that all token pairs gets indexed \char`\"{}first\-\_\-freq\char`\"{} means that 1st token must be from bigram\-\_\-freq\-\_\-words \char`\"{}both\-\_\-freq\char`\"{} means that both tokens must be from bigram\-\_\-freq\-\_\-words 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{B\-I\-G\-R\-A\-M\-\_\-\-C\-L\-E\-A\-N@{B\-I\-G\-R\-A\-M\-\_\-\-C\-L\-E\-A\-N}!C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}}\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!B\-I\-G\-R\-A\-M\-\_\-\-C\-L\-E\-A\-N@{B\-I\-G\-R\-A\-M\-\_\-\-C\-L\-E\-A\-N}}\item[{\em 
+\hypertarget{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49af8817da5962ff9d77cdc2595ea217130}{B\-I\-G\-R\-A\-M\-\_\-\-C\-L\-E\-A\-N}\label{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49af8817da5962ff9d77cdc2595ea217130}
+}]clean slate, nothing accumulated \index{B\-I\-G\-R\-A\-M\-\_\-\-P\-A\-I\-R@{B\-I\-G\-R\-A\-M\-\_\-\-P\-A\-I\-R}!C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}}\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!B\-I\-G\-R\-A\-M\-\_\-\-P\-A\-I\-R@{B\-I\-G\-R\-A\-M\-\_\-\-P\-A\-I\-R}}\item[{\em 
+\hypertarget{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49a7dcb5140f2f0dece5869ac7412fba6e5}{B\-I\-G\-R\-A\-M\-\_\-\-P\-A\-I\-R}\label{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49a7dcb5140f2f0dece5869ac7412fba6e5}
+}]just returned a pair from m\-\_\-s\-Buf, and m\-\_\-i\-First/m\-\_\-p\-Second are correct \index{B\-I\-G\-R\-A\-M\-\_\-\-F\-I\-R\-S\-T@{B\-I\-G\-R\-A\-M\-\_\-\-F\-I\-R\-S\-T}!C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}}\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!B\-I\-G\-R\-A\-M\-\_\-\-F\-I\-R\-S\-T@{B\-I\-G\-R\-A\-M\-\_\-\-F\-I\-R\-S\-T}}\item[{\em 
+\hypertarget{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49a0c66a664fc41f9bb29e7b362d58f031c}{B\-I\-G\-R\-A\-M\-\_\-\-F\-I\-R\-S\-T}\label{classCSphBigramTokenizer_a38a865c09d1720954d9817f4ae6cbf49a0c66a664fc41f9bb29e7b362d58f031c}
+}]just returned a first token from m\-\_\-s\-Buf, so m\-\_\-i\-First/m\-\_\-p\-Second are still good \end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphBigramTokenizer_aceeeb2e49a681575010e563d4d1bf33a}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{C\-Sph\-Bigram\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Bigram\-Tokenizer\-::\-C\-Sph\-Bigram\-Tokenizer (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tok, }
+\item[{{\bf E\-Sph\-Bigram}}]{e\-Mode, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Words}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBigramTokenizer_aceeeb2e49a681575010e563d4d1bf33a}
+\hypertarget{classCSphBigramTokenizer_ae7ffbf890b1ef03fe12029227929f803}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{C\-Sph\-Bigram\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Bigram\-Tokenizer\-::\-C\-Sph\-Bigram\-Tokenizer (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tok, }
+\item[{const {\bf C\-Sph\-Bigram\-Tokenizer} $\ast$}]{p\-Base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBigramTokenizer_ae7ffbf890b1ef03fe12029227929f803}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphBigramTokenizer_ae52f7c3b214e1593abd470e102f0150f}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!Clone@{Clone}}
+\index{Clone@{Clone}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Tokenizer}$\ast$ C\-Sph\-Bigram\-Tokenizer\-::\-Clone (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Tokenizer\-Clone}}]{e\-Mode}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphBigramTokenizer_ae52f7c3b214e1593abd470e102f0150f}
+
+
+spawn a clone of my own 
+
+
+
+Implements \hyperlink{classISphTokenizer_ae4cd1214cb67d81ab5fe2d85aa2e54a1}{I\-Sph\-Tokenizer}.
+
+\hypertarget{classCSphBigramTokenizer_aac43c456e1aff3b46036241c530711f2}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!Get\-Settings\-F\-N\-V@{Get\-Settings\-F\-N\-V}}
+\index{Get\-Settings\-F\-N\-V@{Get\-Settings\-F\-N\-V}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{Get\-Settings\-F\-N\-V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} C\-Sph\-Bigram\-Tokenizer\-::\-Get\-Settings\-F\-N\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphBigramTokenizer_aac43c456e1aff3b46036241c530711f2}
+
+
+get settings hash 
+
+
+
+Reimplemented from \hyperlink{classCSphTokenFilter_aa8515a36b5d84b6d56856b80007cb11b}{C\-Sph\-Token\-Filter}.
+
+\hypertarget{classCSphBigramTokenizer_ab0fa4224967186e7d2595bd50c994029}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!Get\-Token@{Get\-Token}}
+\index{Get\-Token@{Get\-Token}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{Get\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Bigram\-Tokenizer\-::\-Get\-Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphBigramTokenizer_ab0fa4224967186e7d2595bd50c994029}
+
+
+get next token 
+
+
+
+Reimplemented from \hyperlink{classCSphTokenFilter_a3da18c0660751c7aca16d6e218eba5ab}{C\-Sph\-Token\-Filter}.
+
+\hypertarget{classCSphBigramTokenizer_a06c1852b5a5c20854e8be294502f5b97}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!Is\-Freq@{Is\-Freq}}
+\index{Is\-Freq@{Is\-Freq}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{Is\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Bigram\-Tokenizer\-::\-Is\-Freq (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBigramTokenizer_a06c1852b5a5c20854e8be294502f5b97}
+\hypertarget{classCSphBigramTokenizer_a670f40c1fdc2fb057ddcd0636f4a3c9d}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!Set\-Buffer@{Set\-Buffer}}
+\index{Set\-Buffer@{Set\-Buffer}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{Set\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Bigram\-Tokenizer\-::\-Set\-Buffer (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-Buffer, }
+\item[{{\bf int}}]{i\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphBigramTokenizer_a670f40c1fdc2fb057ddcd0636f4a3c9d}
+
+
+pass next buffer 
+
+
+
+Reimplemented from \hyperlink{classCSphTokenFilter_af2e40a7ad8e6abc189f1053db3b3b3cf}{C\-Sph\-Token\-Filter}.
+
+\hypertarget{classCSphBigramTokenizer_ab6c85268d6c4b6610d3349c2be64c1df}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!Token\-Is\-Blended@{Token\-Is\-Blended}}
+\index{Token\-Is\-Blended@{Token\-Is\-Blended}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{Token\-Is\-Blended}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Bigram\-Tokenizer\-::\-Token\-Is\-Blended (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphBigramTokenizer_ab6c85268d6c4b6610d3349c2be64c1df}
+
+
+Reimplemented from \hyperlink{classISphTokenizer_ae17c42859d6e0cd6487cf2b6020fd0f6}{I\-Sph\-Tokenizer}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphBigramTokenizer_a86e765410f9204eace7dee93253bbed4}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!m\-\_\-d\-Words@{m\-\_\-d\-Words}}
+\index{m\-\_\-d\-Words@{m\-\_\-d\-Words}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{m\-\_\-d\-Words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf B\-Y\-T\-E}$>$ C\-Sph\-Bigram\-Tokenizer\-::m\-\_\-d\-Words\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBigramTokenizer_a86e765410f9204eace7dee93253bbed4}
+
+
+case-\/folded, sorted bigram\-\_\-freq\-\_\-words 
+
+\hypertarget{classCSphBigramTokenizer_a820f4e5e208fe9668b7716dbb956753e}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!m\-\_\-d\-Words\-Hash@{m\-\_\-d\-Words\-Hash}}
+\index{m\-\_\-d\-Words\-Hash@{m\-\_\-d\-Words\-Hash}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{m\-\_\-d\-Words\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bigram\-Tokenizer\-::m\-\_\-d\-Words\-Hash\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBigramTokenizer_a820f4e5e208fe9668b7716dbb956753e}
+
+
+offsets into m\-\_\-d\-Words hashed by 1st byte 
+
+\hypertarget{classCSphBigramTokenizer_a07c3c025edb022bb4be3e6a959bcc9ba}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!m\-\_\-e\-Mode@{m\-\_\-e\-Mode}}
+\index{m\-\_\-e\-Mode@{m\-\_\-e\-Mode}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{m\-\_\-e\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Bigram} C\-Sph\-Bigram\-Tokenizer\-::m\-\_\-e\-Mode\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBigramTokenizer_a07c3c025edb022bb4be3e6a959bcc9ba}
+
+
+bigram indexing mode 
+
+\hypertarget{classCSphBigramTokenizer_a927126ea4786d959bb574ae2981b64e4}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!m\-\_\-e\-State@{m\-\_\-e\-State}}
+\index{m\-\_\-e\-State@{m\-\_\-e\-State}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{m\-\_\-e\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum \{ ... \} 		 C\-Sph\-Bigram\-Tokenizer\-::m\-\_\-e\-State\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBigramTokenizer_a927126ea4786d959bb574ae2981b64e4}
+\hypertarget{classCSphBigramTokenizer_a15614fd61426d2aa7e489adbd40e234f}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!m\-\_\-i\-First@{m\-\_\-i\-First}}
+\index{m\-\_\-i\-First@{m\-\_\-i\-First}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{m\-\_\-i\-First}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bigram\-Tokenizer\-::m\-\_\-i\-First\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBigramTokenizer_a15614fd61426d2aa7e489adbd40e234f}
+
+
+first token length, bytes 
+
+\hypertarget{classCSphBigramTokenizer_a91b8c82bbaf189e3fdd87288ab75a050}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!m\-\_\-i\-Max\-Len@{m\-\_\-i\-Max\-Len}}
+\index{m\-\_\-i\-Max\-Len@{m\-\_\-i\-Max\-Len}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{m\-\_\-i\-Max\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bigram\-Tokenizer\-::m\-\_\-i\-Max\-Len\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBigramTokenizer_a91b8c82bbaf189e3fdd87288ab75a050}
+
+
+max bigram\-\_\-freq\-\_\-words length 
+
+\hypertarget{classCSphBigramTokenizer_ab0f20a5139727c93bf3b4a4d9bb1eeaa}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!m\-\_\-p\-Second@{m\-\_\-p\-Second}}
+\index{m\-\_\-p\-Second@{m\-\_\-p\-Second}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{m\-\_\-p\-Second}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Bigram\-Tokenizer\-::m\-\_\-p\-Second\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBigramTokenizer_ab0f20a5139727c93bf3b4a4d9bb1eeaa}
+
+
+second token pointer 
+
+\hypertarget{classCSphBigramTokenizer_abd50444095d9fc8a7436e4bf8066d0d8}{\index{C\-Sph\-Bigram\-Tokenizer@{C\-Sph\-Bigram\-Tokenizer}!m\-\_\-s\-Buf@{m\-\_\-s\-Buf}}
+\index{m\-\_\-s\-Buf@{m\-\_\-s\-Buf}!CSphBigramTokenizer@{C\-Sph\-Bigram\-Tokenizer}}
+\subsubsection[{m\-\_\-s\-Buf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} C\-Sph\-Bigram\-Tokenizer\-::m\-\_\-s\-Buf\mbox{[}{\bf M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBigramTokenizer_abd50444095d9fc8a7436e4bf8066d0d8}
+
+
+pair buffer 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

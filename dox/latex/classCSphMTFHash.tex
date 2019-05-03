@@ -1,0 +1,91 @@
+\hypertarget{classCSphMTFHash}{\section{C\-Sph\-M\-T\-F\-Hash$<$ T, S\-I\-Z\-E, H\-A\-S\-H\-F\-U\-N\-C $>$ Class Template Reference}
+\label{classCSphMTFHash}\index{C\-Sph\-M\-T\-F\-Hash$<$ T, S\-I\-Z\-E, H\-A\-S\-H\-F\-U\-N\-C $>$@{C\-Sph\-M\-T\-F\-Hash$<$ T, S\-I\-Z\-E, H\-A\-S\-H\-F\-U\-N\-C $>$}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphMTFHash_ad78bf41ec4c9d6836112041c1bc3a9c5}{C\-Sph\-M\-T\-F\-Hash} ()
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+\hyperlink{classCSphMTFHash_a97d50fed540cc53f7caffd0ac70b32f6}{$\sim$\-C\-Sph\-M\-T\-F\-Hash} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+T \& \hyperlink{classCSphMTFHash_a5e1dc7d876c16b395b08d9de9a3e5bb0}{Add} (const char $\ast$s\-Key, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Key\-Len, T \&t\-Value)
+\item 
+const \hyperlink{structCSphMTFHashEntry}{C\-Sph\-M\-T\-F\-Hash\-Entry}$<$ T $>$ $\ast$ \hyperlink{classCSphMTFHash_a4c8e0f4e867f593285b8429cfdd94896}{Find\-First} ()
+\begin{DoxyCompactList}\small\item\em find first non-\/empty entry \end{DoxyCompactList}\item 
+const \hyperlink{structCSphMTFHashEntry}{C\-Sph\-M\-T\-F\-Hash\-Entry}$<$ T $>$ $\ast$ \hyperlink{classCSphMTFHash_a921fc7c8f69f7b9fce9b29d6be6cf782}{Find\-Next} (const \hyperlink{structCSphMTFHashEntry}{C\-Sph\-M\-T\-F\-Hash\-Entry}$<$ T $>$ $\ast$p\-Entry)
+\begin{DoxyCompactList}\small\item\em find next non-\/empty entry \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphMTFHashEntry}{C\-Sph\-M\-T\-F\-Hash\-Entry}$<$ T $>$ $\ast$$\ast$ \hyperlink{classCSphMTFHash_a7d2dbf4759cf3fa1d5dd36cc7272c4a2}{m\-\_\-p\-Data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphMTFHash_ad78bf41ec4c9d6836112041c1bc3a9c5}{\index{C\-Sph\-M\-T\-F\-Hash@{C\-Sph\-M\-T\-F\-Hash}!C\-Sph\-M\-T\-F\-Hash@{C\-Sph\-M\-T\-F\-Hash}}
+\index{C\-Sph\-M\-T\-F\-Hash@{C\-Sph\-M\-T\-F\-Hash}!CSphMTFHash@{C\-Sph\-M\-T\-F\-Hash}}
+\subsubsection[{C\-Sph\-M\-T\-F\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, int S\-I\-Z\-E, class H\-A\-S\-H\-F\-U\-N\-C$>$ {\bf C\-Sph\-M\-T\-F\-Hash}$<$ T, S\-I\-Z\-E, H\-A\-S\-H\-F\-U\-N\-C $>$\-::{\bf C\-Sph\-M\-T\-F\-Hash} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMTFHash_ad78bf41ec4c9d6836112041c1bc3a9c5}
+
+
+ctor 
+
+\hypertarget{classCSphMTFHash_a97d50fed540cc53f7caffd0ac70b32f6}{\index{C\-Sph\-M\-T\-F\-Hash@{C\-Sph\-M\-T\-F\-Hash}!$\sim$\-C\-Sph\-M\-T\-F\-Hash@{$\sim$\-C\-Sph\-M\-T\-F\-Hash}}
+\index{$\sim$\-C\-Sph\-M\-T\-F\-Hash@{$\sim$\-C\-Sph\-M\-T\-F\-Hash}!CSphMTFHash@{C\-Sph\-M\-T\-F\-Hash}}
+\subsubsection[{$\sim$\-C\-Sph\-M\-T\-F\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, int S\-I\-Z\-E, class H\-A\-S\-H\-F\-U\-N\-C$>$ {\bf C\-Sph\-M\-T\-F\-Hash}$<$ T, S\-I\-Z\-E, H\-A\-S\-H\-F\-U\-N\-C $>$\-::$\sim${\bf C\-Sph\-M\-T\-F\-Hash} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMTFHash_a97d50fed540cc53f7caffd0ac70b32f6}
+
+
+dtor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphMTFHash_a5e1dc7d876c16b395b08d9de9a3e5bb0}{\index{C\-Sph\-M\-T\-F\-Hash@{C\-Sph\-M\-T\-F\-Hash}!Add@{Add}}
+\index{Add@{Add}!CSphMTFHash@{C\-Sph\-M\-T\-F\-Hash}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, int S\-I\-Z\-E, class H\-A\-S\-H\-F\-U\-N\-C$>$ T\& {\bf C\-Sph\-M\-T\-F\-Hash}$<$ T, S\-I\-Z\-E, H\-A\-S\-H\-F\-U\-N\-C $>$\-::Add (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key, }
+\item[{{\bf int}}]{i\-Key\-Len, }
+\item[{T \&}]{t\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMTFHash_a5e1dc7d876c16b395b08d9de9a3e5bb0}
+add record to hash O\-P\-T\-I\-M\-I\-Z\-E\-: should pass T not by reference for simple types \hypertarget{classCSphMTFHash_a4c8e0f4e867f593285b8429cfdd94896}{\index{C\-Sph\-M\-T\-F\-Hash@{C\-Sph\-M\-T\-F\-Hash}!Find\-First@{Find\-First}}
+\index{Find\-First@{Find\-First}!CSphMTFHash@{C\-Sph\-M\-T\-F\-Hash}}
+\subsubsection[{Find\-First}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, int S\-I\-Z\-E, class H\-A\-S\-H\-F\-U\-N\-C$>$ const {\bf C\-Sph\-M\-T\-F\-Hash\-Entry}$<$T$>$$\ast$ {\bf C\-Sph\-M\-T\-F\-Hash}$<$ T, S\-I\-Z\-E, H\-A\-S\-H\-F\-U\-N\-C $>$\-::Find\-First (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMTFHash_a4c8e0f4e867f593285b8429cfdd94896}
+
+
+find first non-\/empty entry 
+
+\hypertarget{classCSphMTFHash_a921fc7c8f69f7b9fce9b29d6be6cf782}{\index{C\-Sph\-M\-T\-F\-Hash@{C\-Sph\-M\-T\-F\-Hash}!Find\-Next@{Find\-Next}}
+\index{Find\-Next@{Find\-Next}!CSphMTFHash@{C\-Sph\-M\-T\-F\-Hash}}
+\subsubsection[{Find\-Next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, int S\-I\-Z\-E, class H\-A\-S\-H\-F\-U\-N\-C$>$ const {\bf C\-Sph\-M\-T\-F\-Hash\-Entry}$<$T$>$$\ast$ {\bf C\-Sph\-M\-T\-F\-Hash}$<$ T, S\-I\-Z\-E, H\-A\-S\-H\-F\-U\-N\-C $>$\-::Find\-Next (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-M\-T\-F\-Hash\-Entry}$<$ T $>$ $\ast$}]{p\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMTFHash_a921fc7c8f69f7b9fce9b29d6be6cf782}
+
+
+find next non-\/empty entry 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphMTFHash_a7d2dbf4759cf3fa1d5dd36cc7272c4a2}{\index{C\-Sph\-M\-T\-F\-Hash@{C\-Sph\-M\-T\-F\-Hash}!m\-\_\-p\-Data@{m\-\_\-p\-Data}}
+\index{m\-\_\-p\-Data@{m\-\_\-p\-Data}!CSphMTFHash@{C\-Sph\-M\-T\-F\-Hash}}
+\subsubsection[{m\-\_\-p\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, int S\-I\-Z\-E, class H\-A\-S\-H\-F\-U\-N\-C$>$ {\bf C\-Sph\-M\-T\-F\-Hash\-Entry}$<$T$>$$\ast$$\ast$ {\bf C\-Sph\-M\-T\-F\-Hash}$<$ T, S\-I\-Z\-E, H\-A\-S\-H\-F\-U\-N\-C $>$\-::m\-\_\-p\-Data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphMTFHash_a7d2dbf4759cf3fa1d5dd36cc7272c4a2}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{indexer_8cpp}{indexer.\-cpp}\end{DoxyCompactItemize}

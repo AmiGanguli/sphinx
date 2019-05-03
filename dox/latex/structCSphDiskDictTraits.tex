@@ -1,0 +1,210 @@
+\hypertarget{structCSphDiskDictTraits}{\section{C\-Sph\-Disk\-Dict\-Traits Struct Reference}
+\label{structCSphDiskDictTraits}\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}}
+}
+
+
+common C\-R\-C32/64 dictionary stuff  
+
+
+Inheritance diagram for C\-Sph\-Disk\-Dict\-Traits\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{structCSphDiskDictTraits}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphDiskDictTraits_a69d7a88ec23a22354b28b31e90f9e4d1}{C\-Sph\-Disk\-Dict\-Traits} ()
+\item 
+virtual \hyperlink{structCSphDiskDictTraits_a86d0f2bfa07eb7fcf43c93aa1495c0c8}{$\sim$\-C\-Sph\-Disk\-Dict\-Traits} ()
+\item 
+virtual void \hyperlink{structCSphDiskDictTraits_a5d01013f2caeddf6e0f76574bfd78ffb}{Dict\-Begin} (\hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \&t\-Temp\-Dict, \hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \&t\-Dict, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Dict\-Limit, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle)
+\begin{DoxyCompactList}\small\item\em begin creating dictionary file, setup any needed internal structures \end{DoxyCompactList}\item 
+virtual void \hyperlink{structCSphDiskDictTraits_ad5b4cf8ac8c387aa2e56e3122efce9b0}{Dict\-Entry} (const \hyperlink{structCSphDictEntry}{C\-Sph\-Dict\-Entry} \&t\-Entry)
+\begin{DoxyCompactList}\small\item\em add next keyword entry to final dict \end{DoxyCompactList}\item 
+virtual void \hyperlink{structCSphDiskDictTraits_a9bca14c2361261d754784c2164965b9f}{Dict\-End\-Entries} (\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} i\-Doclist\-Offset)
+\begin{DoxyCompactList}\small\item\em flush last entry \end{DoxyCompactList}\item 
+virtual bool \hyperlink{structCSphDiskDictTraits_af64e1b88d97caf649a6503310a513755}{Dict\-End} (\hyperlink{structDictHeader__t}{Dict\-Header\-\_\-t} $\ast$p\-Header, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Mem\-Limit, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em end indexing, store dictionary and checkpoints \end{DoxyCompactList}\item 
+virtual bool \hyperlink{structCSphDiskDictTraits_ae23188eb87d7bc16a37f33688a1083bc}{Dict\-Is\-Error} () const 
+\begin{DoxyCompactList}\small\item\em check whether there were any errors during indexing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphTightVector}{C\-Sph\-Tight\-Vector}\\*
+$<$ \hyperlink{structCSphWordlistCheckpoint}{C\-Sph\-Wordlist\-Checkpoint} $>$ \hyperlink{structCSphDiskDictTraits_afaf80fefaa07457d5761e738fbea17b0}{m\-\_\-d\-Checkpoints}
+\begin{DoxyCompactList}\small\item\em checkpoint offsets \end{DoxyCompactList}\item 
+\hyperlink{classCSphWriter}{C\-Sph\-Writer} \hyperlink{structCSphDiskDictTraits_a26d5a54b1e88f3d32123f1d413abbf8c}{m\-\_\-wr\-Dict}
+\begin{DoxyCompactList}\small\item\em final dict file writer \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphDiskDictTraits_a0b8b8efb9285052a4afb7b29d7f0c18d}{m\-\_\-s\-Writer\-Error}
+\begin{DoxyCompactList}\small\item\em writer error message storage \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphDiskDictTraits_af87102e0467a427665052bf14d7a96ac}{m\-\_\-i\-Entries}
+\begin{DoxyCompactList}\small\item\em dictionary entries stored \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{structCSphDiskDictTraits_a3ab5c5e6f9d6f7a448e2035af1cc7804}{m\-\_\-i\-Last\-Doclist\-Pos}
+\item 
+\hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{structCSphDiskDictTraits_a133b44831f4467b4775e4e341ee8cd49}{m\-\_\-i\-Last\-Word\-I\-D}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+common C\-R\-C32/64 dictionary stuff 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphDiskDictTraits_a69d7a88ec23a22354b28b31e90f9e4d1}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}}
+\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{C\-Sph\-Disk\-Dict\-Traits}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Disk\-Dict\-Traits\-::\-C\-Sph\-Disk\-Dict\-Traits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphDiskDictTraits_a69d7a88ec23a22354b28b31e90f9e4d1}
+\hypertarget{structCSphDiskDictTraits_a86d0f2bfa07eb7fcf43c93aa1495c0c8}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!$\sim$\-C\-Sph\-Disk\-Dict\-Traits@{$\sim$\-C\-Sph\-Disk\-Dict\-Traits}}
+\index{$\sim$\-C\-Sph\-Disk\-Dict\-Traits@{$\sim$\-C\-Sph\-Disk\-Dict\-Traits}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{$\sim$\-C\-Sph\-Disk\-Dict\-Traits}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\-Sph\-Disk\-Dict\-Traits\-::$\sim$\-C\-Sph\-Disk\-Dict\-Traits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structCSphDiskDictTraits_a86d0f2bfa07eb7fcf43c93aa1495c0c8}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphDiskDictTraits_a5d01013f2caeddf6e0f76574bfd78ffb}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!Dict\-Begin@{Dict\-Begin}}
+\index{Dict\-Begin@{Dict\-Begin}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{Dict\-Begin}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Disk\-Dict\-Traits\-::\-Dict\-Begin (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Autofile} \&}]{t\-Temp\-Dict, }
+\item[{{\bf C\-Sph\-Autofile} \&}]{t\-Dict, }
+\item[{{\bf int}}]{i\-Dict\-Limit, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphDiskDictTraits_a5d01013f2caeddf6e0f76574bfd78ffb}
+
+
+begin creating dictionary file, setup any needed internal structures 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_acbc0935ebde0242f8dd6daffaf72beb3}{C\-Sph\-Dict}.
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_a2863f18e86bfd28265a1d5c66a5486c6}{C\-Sph\-Dict\-Keywords}.
+
+\hypertarget{structCSphDiskDictTraits_af64e1b88d97caf649a6503310a513755}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!Dict\-End@{Dict\-End}}
+\index{Dict\-End@{Dict\-End}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{Dict\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Disk\-Dict\-Traits\-::\-Dict\-End (
+\begin{DoxyParamCaption}
+\item[{{\bf Dict\-Header\-\_\-t} $\ast$}]{p\-Header, }
+\item[{{\bf int}}]{i\-Mem\-Limit, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphDiskDictTraits_af64e1b88d97caf649a6503310a513755}
+
+
+end indexing, store dictionary and checkpoints 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_a33ed99b9fd18682b5d6dfd72a05608f6}{C\-Sph\-Dict}.
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_a272cd1168c539a4b5ce44dd23ba0870b}{C\-Sph\-Dict\-Keywords}.
+
+\hypertarget{structCSphDiskDictTraits_a9bca14c2361261d754784c2164965b9f}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!Dict\-End\-Entries@{Dict\-End\-Entries}}
+\index{Dict\-End\-Entries@{Dict\-End\-Entries}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{Dict\-End\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Disk\-Dict\-Traits\-::\-Dict\-End\-Entries (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Offset\-\_\-t}}]{i\-Doclist\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphDiskDictTraits_a9bca14c2361261d754784c2164965b9f}
+
+
+flush last entry 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_ac5e6881b6942c3ba27d5d8d9d8505a2f}{C\-Sph\-Dict}.
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_af5d107a4490a398e614bd927530db10b}{C\-Sph\-Dict\-Keywords}.
+
+\hypertarget{structCSphDiskDictTraits_ad5b4cf8ac8c387aa2e56e3122efce9b0}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!Dict\-Entry@{Dict\-Entry}}
+\index{Dict\-Entry@{Dict\-Entry}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{Dict\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Disk\-Dict\-Traits\-::\-Dict\-Entry (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Dict\-Entry} \&}]{t\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphDiskDictTraits_ad5b4cf8ac8c387aa2e56e3122efce9b0}
+
+
+add next keyword entry to final dict 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_a82a05e4d4e075166fc1f1942af9b2a61}{C\-Sph\-Dict}.
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_a0d41d8455da3ab719d31e4273bec3d06}{C\-Sph\-Dict\-Keywords}.
+
+\hypertarget{structCSphDiskDictTraits_ae23188eb87d7bc16a37f33688a1083bc}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!Dict\-Is\-Error@{Dict\-Is\-Error}}
+\index{Dict\-Is\-Error@{Dict\-Is\-Error}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{Dict\-Is\-Error}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Disk\-Dict\-Traits\-::\-Dict\-Is\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structCSphDiskDictTraits_ae23188eb87d7bc16a37f33688a1083bc}
+
+
+check whether there were any errors during indexing 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_a1ee34dbab570265eff0c018f0e120e7b}{C\-Sph\-Dict}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphDiskDictTraits_afaf80fefaa07457d5761e738fbea17b0}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!m\-\_\-d\-Checkpoints@{m\-\_\-d\-Checkpoints}}
+\index{m\-\_\-d\-Checkpoints@{m\-\_\-d\-Checkpoints}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{m\-\_\-d\-Checkpoints}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Tight\-Vector}$<${\bf C\-Sph\-Wordlist\-Checkpoint}$>$ C\-Sph\-Disk\-Dict\-Traits\-::m\-\_\-d\-Checkpoints\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphDiskDictTraits_afaf80fefaa07457d5761e738fbea17b0}
+
+
+checkpoint offsets 
+
+\hypertarget{structCSphDiskDictTraits_af87102e0467a427665052bf14d7a96ac}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!m\-\_\-i\-Entries@{m\-\_\-i\-Entries}}
+\index{m\-\_\-i\-Entries@{m\-\_\-i\-Entries}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{m\-\_\-i\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Disk\-Dict\-Traits\-::m\-\_\-i\-Entries\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphDiskDictTraits_af87102e0467a427665052bf14d7a96ac}
+
+
+dictionary entries stored 
+
+\hypertarget{structCSphDiskDictTraits_a3ab5c5e6f9d6f7a448e2035af1cc7804}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!m\-\_\-i\-Last\-Doclist\-Pos@{m\-\_\-i\-Last\-Doclist\-Pos}}
+\index{m\-\_\-i\-Last\-Doclist\-Pos@{m\-\_\-i\-Last\-Doclist\-Pos}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{m\-\_\-i\-Last\-Doclist\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Disk\-Dict\-Traits\-::m\-\_\-i\-Last\-Doclist\-Pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphDiskDictTraits_a3ab5c5e6f9d6f7a448e2035af1cc7804}
+\hypertarget{structCSphDiskDictTraits_a133b44831f4467b4775e4e341ee8cd49}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!m\-\_\-i\-Last\-Word\-I\-D@{m\-\_\-i\-Last\-Word\-I\-D}}
+\index{m\-\_\-i\-Last\-Word\-I\-D@{m\-\_\-i\-Last\-Word\-I\-D}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{m\-\_\-i\-Last\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Disk\-Dict\-Traits\-::m\-\_\-i\-Last\-Word\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphDiskDictTraits_a133b44831f4467b4775e4e341ee8cd49}
+\hypertarget{structCSphDiskDictTraits_a0b8b8efb9285052a4afb7b29d7f0c18d}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!m\-\_\-s\-Writer\-Error@{m\-\_\-s\-Writer\-Error}}
+\index{m\-\_\-s\-Writer\-Error@{m\-\_\-s\-Writer\-Error}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{m\-\_\-s\-Writer\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Disk\-Dict\-Traits\-::m\-\_\-s\-Writer\-Error\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphDiskDictTraits_a0b8b8efb9285052a4afb7b29d7f0c18d}
+
+
+writer error message storage 
+
+\hypertarget{structCSphDiskDictTraits_a26d5a54b1e88f3d32123f1d413abbf8c}{\index{C\-Sph\-Disk\-Dict\-Traits@{C\-Sph\-Disk\-Dict\-Traits}!m\-\_\-wr\-Dict@{m\-\_\-wr\-Dict}}
+\index{m\-\_\-wr\-Dict@{m\-\_\-wr\-Dict}!CSphDiskDictTraits@{C\-Sph\-Disk\-Dict\-Traits}}
+\subsubsection[{m\-\_\-wr\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Writer} C\-Sph\-Disk\-Dict\-Traits\-::m\-\_\-wr\-Dict\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphDiskDictTraits_a26d5a54b1e88f3d32123f1d413abbf8c}
+
+
+final dict file writer 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

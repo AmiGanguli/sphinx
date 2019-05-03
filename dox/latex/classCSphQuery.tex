@@ -1,0 +1,675 @@
+\hypertarget{classCSphQuery}{\section{C\-Sph\-Query Class Reference}
+\label{classCSphQuery}\index{C\-Sph\-Query@{C\-Sph\-Query}}
+}
+
+
+search query  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphQuery_a9570ab122eb9be85b5e87316b9cdf895}{C\-Sph\-Query} ()
+\begin{DoxyCompactList}\small\item\em ctor, fills defaults \end{DoxyCompactList}\item 
+\hyperlink{classCSphQuery_a751bfefecaf69db8916e58bdcbd42521}{$\sim$\-C\-Sph\-Query} ()
+\begin{DoxyCompactList}\small\item\em dtor, frees owned stuff \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_a1ca4b4c4bdbd1de5abdaa8d69602eefd}{Parse\-Select\-List} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em parse select list string into items \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a45a23107b5561879993db1c25161b7ac}{m\-\_\-s\-Indexes}
+\begin{DoxyCompactList}\small\item\em indexes to search \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a532a2ff6c5f30e1d8d7ae2261763d460}{m\-\_\-s\-Query}
+\begin{DoxyCompactList}\small\item\em cooked query string for the engine (possibly transformed during legacy matching modes fixup) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a2d086a1ba48cad3f3ca95f34d86a24e3}{m\-\_\-s\-Raw\-Query}
+\begin{DoxyCompactList}\small\item\em raw query string from the client for searchd log, agents, etc \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_a6db8997e8178e6a3e6e8f07dcb326d00}{m\-\_\-i\-Offset}
+\begin{DoxyCompactList}\small\item\em offset into result set (as X in My\-S\-Q\-L L\-I\-M\-I\-T X,Y clause) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_a298bca477453ebef5bd1eaef40271b59}{m\-\_\-i\-Limit}
+\begin{DoxyCompactList}\small\item\em limit into result set (as Y in My\-S\-Q\-L L\-I\-M\-I\-T X,Y clause) \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \hyperlink{classCSphQuery_a691bd7f7c26b1ba472448961724306d0}{m\-\_\-d\-Weights}
+\begin{DoxyCompactList}\small\item\em user-\/supplied per-\/field weights. may be N\-U\-L\-L. default is N\-U\-L\-L \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a979560e74394b50176bf50ce8ff238d1}{E\-Sph\-Match\-Mode} \hyperlink{classCSphQuery_a4bcc406daa74d2db796cfece980cad0e}{m\-\_\-e\-Mode}
+\begin{DoxyCompactList}\small\item\em match mode. default is \char`\"{}match all\char`\"{} \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a1561ec7d12bb80bd0262ef55184578b2}{E\-Sph\-Rank\-Mode} \hyperlink{classCSphQuery_aeecfd9ad18482d811bc30c38cc45a1b7}{m\-\_\-e\-Ranker}
+\begin{DoxyCompactList}\small\item\em ranking mode, default is proximity+\-B\-M25 \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_adafccf145800d5cd305aa38023ba22e5}{m\-\_\-s\-Ranker\-Expr}
+\begin{DoxyCompactList}\small\item\em ranking expression for S\-P\-H\-\_\-\-R\-A\-N\-K\-\_\-\-E\-X\-P\-R \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a2bc7044d50dffe9b164caf1b92ea904c}{m\-\_\-s\-U\-D\-Ranker}
+\begin{DoxyCompactList}\small\item\em user-\/defined ranker name \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a1a8713b8e60edf27647a37890c4637ff}{m\-\_\-s\-U\-D\-Ranker\-Opts}
+\begin{DoxyCompactList}\small\item\em user-\/defined ranker options \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_ae1a4167bd63e8760850a5df3e36eb0a8}{E\-Sph\-Sort\-Order} \hyperlink{classCSphQuery_a2da4282d6340a2a90b3c6d19ef439e90}{m\-\_\-e\-Sort}
+\begin{DoxyCompactList}\small\item\em sort mode \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a2bc9ee6fd6cfb8756b441d55ff95c3c0}{m\-\_\-s\-Sort\-By}
+\begin{DoxyCompactList}\small\item\em attribute to sort by \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphQuery_a20f54c618276daa5d4f3b8df8fb14e61}{m\-\_\-i\-Rand\-Seed}
+\begin{DoxyCompactList}\small\item\em random seed for O\-R\-D\-E\-R B\-Y R\-A\-N\-D(), -\/1 means do not set \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_a3fd20aed8d54fac63b9a3a2b8b0d9065}{m\-\_\-i\-Max\-Matches}
+\begin{DoxyCompactList}\small\item\em max matches to retrieve, default is 1000. more matches use more memory and C\-P\-U time to hold and sort them \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_a1231bf2abf4df49e559d9288e4bb02f1}{m\-\_\-b\-Sort\-Kbuffer}
+\begin{DoxyCompactList}\small\item\em whether to use P\-Q or K-\/buffer sorting algorithm \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_a5ebb66c5b5cebc70a288a503afdf5d04}{m\-\_\-b\-Z\-Slist}
+\begin{DoxyCompactList}\small\item\em whether the ranker has to fetch the zonespanlist with this query \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_ac3dddf973cfef68ecdb4ce81f3120312}{m\-\_\-b\-Simplify}
+\begin{DoxyCompactList}\small\item\em whether to apply boolean simplification \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_a7fcc6af7a9ba80651515e767ba3aab30}{m\-\_\-b\-Plain\-I\-D\-F}
+\begin{DoxyCompactList}\small\item\em whether to use Plain\-I\-D\-F=log(N/n) or Normalized\-I\-D\-F=log((N-\/n+1)/n) \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_a2f65d3d6c473175e9ab10d6d54ef3edf}{m\-\_\-b\-Global\-I\-D\-F}
+\begin{DoxyCompactList}\small\item\em whether to use local indexes or a global idf file \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_a519eff08a0311ee531b99d232fa4542f}{m\-\_\-b\-Normalized\-T\-F\-I\-D\-F}
+\begin{DoxyCompactList}\small\item\em whether to scale I\-D\-Fs by query word count, so that T\-F$\ast$\-I\-D\-F is normalized \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_acb2dafa5753a50ada9e5bb51670e658b}{m\-\_\-b\-Local\-D\-F}
+\begin{DoxyCompactList}\small\item\em whether to use calculate D\-F among local indexes \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_af46ec4b566c3cf271e8486caf8d27169}{m\-\_\-b\-Low\-Priority}
+\begin{DoxyCompactList}\small\item\em set low thread priority for this query \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphQuery_aacb54cc52df6df9cc9201f375915638b}{m\-\_\-u\-Debug\-Flags}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} $>$ \hyperlink{classCSphQuery_a890769b9fb74908995e5e5335aee572c}{m\-\_\-d\-Filters}
+\begin{DoxyCompactList}\small\item\em filters \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a203ace139c1feadd62f726a682527395}{m\-\_\-s\-Group\-By}
+\begin{DoxyCompactList}\small\item\em group-\/by attribute name(s) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_aaf5e150cf9573eaf96bfd77698def569}{m\-\_\-s\-Facet\-By}
+\begin{DoxyCompactList}\small\item\em facet-\/by attribute name(s) \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a54472d41a76434c6d6535d438bc080bf}{E\-Sph\-Group\-By} \hyperlink{classCSphQuery_ae921237bec923323f4462c09508d05d3}{m\-\_\-e\-Group\-Func}
+\begin{DoxyCompactList}\small\item\em function to pre-\/process group-\/by attribute value with \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_ab15fa0d113e9aa216ffeb96a8d89ce2f}{m\-\_\-s\-Group\-Sort\-By}
+\begin{DoxyCompactList}\small\item\em sorting clause for groups in group-\/by mode \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_ac3cb46ce8599772486bbc7a49aac0fb3}{m\-\_\-s\-Group\-Distinct}
+\begin{DoxyCompactList}\small\item\em count distinct values for this attribute \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_a8ce53c13bb1c039139f86e5726bc0f9b}{m\-\_\-i\-Cutoff}
+\begin{DoxyCompactList}\small\item\em matches count threshold to stop searching at (default is 0; means to search until all matches are found) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_afe77175090de03ece5fcfe69053aed07}{m\-\_\-i\-Retry\-Count}
+\begin{DoxyCompactList}\small\item\em retry count, for distributed queries \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_adb2b972d9fc1a92333e878625c9fc6c7}{m\-\_\-i\-Retry\-Delay}
+\begin{DoxyCompactList}\small\item\em retry delay, for distributed queries \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_a501ee30c34993b5644a58f3cdc48ef6a}{m\-\_\-i\-Agent\-Query\-Timeout}
+\begin{DoxyCompactList}\small\item\em agent query timeout override, for distributed queries \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_a6cac40b6180ec85cd7f535219fd50300}{m\-\_\-b\-Geo\-Anchor}
+\begin{DoxyCompactList}\small\item\em do we have an anchor \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a574047391f7256e1fa0355f358d86391}{m\-\_\-s\-Geo\-Lat\-Attr}
+\begin{DoxyCompactList}\small\item\em latitude attr name \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a30f3f434382a8160ab7536bbb760f418}{m\-\_\-s\-Geo\-Long\-Attr}
+\begin{DoxyCompactList}\small\item\em longitude attr name \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classCSphQuery_a4b33b32f89324d816460e210e183ef6d}{m\-\_\-f\-Geo\-Latitude}
+\begin{DoxyCompactList}\small\item\em anchor latitude \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classCSphQuery_a9f142b82596ebc0dec6b69edb9467ac9}{m\-\_\-f\-Geo\-Longitude}
+\begin{DoxyCompactList}\small\item\em anchor longitude \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphNamedInt}{C\-Sph\-Named\-Int} $>$ \hyperlink{classCSphQuery_a66895de5443f7850e52a65805b05be9b}{m\-\_\-d\-Index\-Weights}
+\begin{DoxyCompactList}\small\item\em per-\/index weights \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphNamedInt}{C\-Sph\-Named\-Int} $>$ \hyperlink{classCSphQuery_a8741671a2fc4c617f23d4c8e2eec0392}{m\-\_\-d\-Field\-Weights}
+\begin{DoxyCompactList}\small\item\em per-\/field weights \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphQuery_a2b9c353ae3e5ad81b62c6de63918260b}{m\-\_\-u\-Max\-Query\-Msec}
+\begin{DoxyCompactList}\small\item\em max local index search time, in milliseconds (default is 0; means no limit) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_a185042a2181d82c8d67b7ef14b399f90}{m\-\_\-i\-Max\-Predicted\-Msec}
+\begin{DoxyCompactList}\small\item\em max predicted (!) search time limit, in milliseconds (0 means no limit) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a579757d29ee1b6cf6483326f8a8f4178}{m\-\_\-s\-Comment}
+\begin{DoxyCompactList}\small\item\em comment to pass verbatim in the log file \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphAttrOverride}{C\-Sph\-Attr\-Override} $>$ \hyperlink{classCSphQuery_ab2f5d9d2129f4916c24df3b7ce34a08a}{m\-\_\-d\-Overrides}
+\begin{DoxyCompactList}\small\item\em per-\/query attribute value overrides \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a6376053048cd37a5fbceb32b636a9051}{m\-\_\-s\-Select}
+\begin{DoxyCompactList}\small\item\em select-\/list (attributes and/or expressions) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a91973e6042966eea08b88b56a8950da5}{m\-\_\-s\-Order\-By}
+\begin{DoxyCompactList}\small\item\em order-\/by clause \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a964070184c2d3aff30550fe2d7da73dd}{m\-\_\-s\-Outer\-Order\-By}
+\begin{DoxyCompactList}\small\item\em temporary (?) subselect hack \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_a92854a548ba9feba57791dec1f64c80b}{m\-\_\-i\-Outer\-Offset}
+\begin{DoxyCompactList}\small\item\em keep and apply outer offset at master \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_a144ed2a1aa4ff60fb8f1d3f2a8f42741}{m\-\_\-i\-Outer\-Limit}
+\item 
+bool \hyperlink{classCSphQuery_ab18a4f8710e145740e274d94a77a8764}{m\-\_\-b\-Has\-Outer}
+\item 
+bool \hyperlink{classCSphQuery_a7412f89477542f7f5b87d1f16a7f068c}{m\-\_\-b\-Reverse\-Scan}
+\begin{DoxyCompactList}\small\item\em perform scan in reverse order \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_ae41f8c8748a013d131f2c24ce7424adb}{m\-\_\-b\-Ignore\-Nonexistent}
+\begin{DoxyCompactList}\small\item\em whether to warning or not about non-\/existent columns in select list \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_afd12259370b1d3c693fcba4de46eb2f3}{m\-\_\-b\-Ignore\-Nonexistent\-Indexes}
+\begin{DoxyCompactList}\small\item\em whether to error or not about non-\/existent indexes in index list \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_a30bb3c386034e7a14c6599439d378d19}{m\-\_\-b\-Strict}
+\begin{DoxyCompactList}\small\item\em whether to warning or not about incompatible types \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_a7e09b2bec22311e40299abc8220e794f}{m\-\_\-b\-Sync}
+\begin{DoxyCompactList}\small\item\em whether or not use synchronous operations (optimize, etc.) \end{DoxyCompactList}\item 
+\hyperlink{classISphTableFunc}{I\-Sph\-Table\-Func} $\ast$ \hyperlink{classCSphQuery_ac1cbf2083d8fb68cf7643182660639af}{m\-\_\-p\-Table\-Func}
+\begin{DoxyCompactList}\small\item\em post-\/query N\-O\-T O\-W\-N\-E\-D, W\-I\-L\-L N\-O\-T B\-E F\-R\-E\-E\-D in dtor. \end{DoxyCompactList}\item 
+\hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} \hyperlink{classCSphQuery_ad2f3489882b02218dd9924fe21ad767b}{m\-\_\-t\-Having}
+\begin{DoxyCompactList}\small\item\em post aggregate filtering (got applied only on master) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_a64b893fbd1975d6ebce6bf7baa8471fa}{m\-\_\-i\-S\-Q\-L\-Select\-Start}
+\begin{DoxyCompactList}\small\item\em S\-Q\-L parser helper. \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_a61f3b213ff219c4fdd8fd548a4401790}{m\-\_\-i\-S\-Q\-L\-Select\-End}
+\begin{DoxyCompactList}\small\item\em S\-Q\-L parser helper. \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQuery_abdb3ca6adb1e4816a1704b6b7f5f096a}{m\-\_\-i\-Groupby\-Limit}
+\begin{DoxyCompactList}\small\item\em number of elems within group \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphQueryItem}{C\-Sph\-Query\-Item} $>$ \hyperlink{classCSphQuery_a7d256ea9cf0ed85d7da6111537f02f50}{m\-\_\-d\-Items}
+\begin{DoxyCompactList}\small\item\em parsed select-\/list \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8h_a78197b7b74319074237ecaf5d99cfbe5}{E\-Sph\-Collation} \hyperlink{classCSphQuery_a58cef95cb041643d36d29e8109aa5ebf}{m\-\_\-e\-Collation}
+\begin{DoxyCompactList}\small\item\em O\-R\-D\-E\-R B\-Y collation. \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_ae8159385c051f3d4b46df93488cd0c00}{m\-\_\-b\-Agent}
+\begin{DoxyCompactList}\small\item\em agent mode (may need extra cols on output) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a18df87b6e5709334636cdf6ecf987a6e}{m\-\_\-s\-Query\-Token\-Filter\-Lib}
+\begin{DoxyCompactList}\small\item\em token filter library name \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_a5ed04255f875d4b81fae92b06be57114}{m\-\_\-s\-Query\-Token\-Filter\-Name}
+\begin{DoxyCompactList}\small\item\em token filter name \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphQuery_afac78b8292278a669085040550823aeb}{m\-\_\-s\-Query\-Token\-Filter\-Opts}
+\begin{DoxyCompactList}\small\item\em token filter options \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQuery_abf94cbbcea956dbea12220a1f3b85903}{m\-\_\-b\-Facet}
+\begin{DoxyCompactList}\small\item\em whether this a facet query \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+search query 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphQuery_a9570ab122eb9be85b5e87316b9cdf895}{\index{C\-Sph\-Query@{C\-Sph\-Query}!C\-Sph\-Query@{C\-Sph\-Query}}
+\index{C\-Sph\-Query@{C\-Sph\-Query}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{C\-Sph\-Query}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-::\-C\-Sph\-Query (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphQuery_a9570ab122eb9be85b5e87316b9cdf895}
+
+
+ctor, fills defaults 
+
+\hypertarget{classCSphQuery_a751bfefecaf69db8916e58bdcbd42521}{\index{C\-Sph\-Query@{C\-Sph\-Query}!$\sim$\-C\-Sph\-Query@{$\sim$\-C\-Sph\-Query}}
+\index{$\sim$\-C\-Sph\-Query@{$\sim$\-C\-Sph\-Query}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{$\sim$\-C\-Sph\-Query}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-::$\sim$\-C\-Sph\-Query (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphQuery_a751bfefecaf69db8916e58bdcbd42521}
+
+
+dtor, frees owned stuff 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphQuery_a1ca4b4c4bdbd1de5abdaa8d69602eefd}{\index{C\-Sph\-Query@{C\-Sph\-Query}!Parse\-Select\-List@{Parse\-Select\-List}}
+\index{Parse\-Select\-List@{Parse\-Select\-List}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{Parse\-Select\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::\-Parse\-Select\-List (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphQuery_a1ca4b4c4bdbd1de5abdaa8d69602eefd}
+
+
+parse select list string into items 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphQuery_ae8159385c051f3d4b46df93488cd0c00}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Agent@{m\-\_\-b\-Agent}}
+\index{m\-\_\-b\-Agent@{m\-\_\-b\-Agent}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Agent}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Agent}}\label{classCSphQuery_ae8159385c051f3d4b46df93488cd0c00}
+
+
+agent mode (may need extra cols on output) 
+
+\hypertarget{classCSphQuery_abf94cbbcea956dbea12220a1f3b85903}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Facet@{m\-\_\-b\-Facet}}
+\index{m\-\_\-b\-Facet@{m\-\_\-b\-Facet}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Facet}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Facet}}\label{classCSphQuery_abf94cbbcea956dbea12220a1f3b85903}
+
+
+whether this a facet query 
+
+\hypertarget{classCSphQuery_a6cac40b6180ec85cd7f535219fd50300}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Geo\-Anchor@{m\-\_\-b\-Geo\-Anchor}}
+\index{m\-\_\-b\-Geo\-Anchor@{m\-\_\-b\-Geo\-Anchor}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Geo\-Anchor}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Geo\-Anchor}}\label{classCSphQuery_a6cac40b6180ec85cd7f535219fd50300}
+
+
+do we have an anchor 
+
+\hypertarget{classCSphQuery_a2f65d3d6c473175e9ab10d6d54ef3edf}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Global\-I\-D\-F@{m\-\_\-b\-Global\-I\-D\-F}}
+\index{m\-\_\-b\-Global\-I\-D\-F@{m\-\_\-b\-Global\-I\-D\-F}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Global\-I\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Global\-I\-D\-F}}\label{classCSphQuery_a2f65d3d6c473175e9ab10d6d54ef3edf}
+
+
+whether to use local indexes or a global idf file 
+
+\hypertarget{classCSphQuery_ab18a4f8710e145740e274d94a77a8764}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Has\-Outer@{m\-\_\-b\-Has\-Outer}}
+\index{m\-\_\-b\-Has\-Outer@{m\-\_\-b\-Has\-Outer}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Has\-Outer}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Has\-Outer}}\label{classCSphQuery_ab18a4f8710e145740e274d94a77a8764}
+\hypertarget{classCSphQuery_ae41f8c8748a013d131f2c24ce7424adb}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Ignore\-Nonexistent@{m\-\_\-b\-Ignore\-Nonexistent}}
+\index{m\-\_\-b\-Ignore\-Nonexistent@{m\-\_\-b\-Ignore\-Nonexistent}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Ignore\-Nonexistent}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Ignore\-Nonexistent}}\label{classCSphQuery_ae41f8c8748a013d131f2c24ce7424adb}
+
+
+whether to warning or not about non-\/existent columns in select list 
+
+\hypertarget{classCSphQuery_afd12259370b1d3c693fcba4de46eb2f3}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Ignore\-Nonexistent\-Indexes@{m\-\_\-b\-Ignore\-Nonexistent\-Indexes}}
+\index{m\-\_\-b\-Ignore\-Nonexistent\-Indexes@{m\-\_\-b\-Ignore\-Nonexistent\-Indexes}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Ignore\-Nonexistent\-Indexes}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Ignore\-Nonexistent\-Indexes}}\label{classCSphQuery_afd12259370b1d3c693fcba4de46eb2f3}
+
+
+whether to error or not about non-\/existent indexes in index list 
+
+\hypertarget{classCSphQuery_acb2dafa5753a50ada9e5bb51670e658b}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Local\-D\-F@{m\-\_\-b\-Local\-D\-F}}
+\index{m\-\_\-b\-Local\-D\-F@{m\-\_\-b\-Local\-D\-F}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Local\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Local\-D\-F}}\label{classCSphQuery_acb2dafa5753a50ada9e5bb51670e658b}
+
+
+whether to use calculate D\-F among local indexes 
+
+\hypertarget{classCSphQuery_af46ec4b566c3cf271e8486caf8d27169}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Low\-Priority@{m\-\_\-b\-Low\-Priority}}
+\index{m\-\_\-b\-Low\-Priority@{m\-\_\-b\-Low\-Priority}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Low\-Priority}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Low\-Priority}}\label{classCSphQuery_af46ec4b566c3cf271e8486caf8d27169}
+
+
+set low thread priority for this query 
+
+\hypertarget{classCSphQuery_a519eff08a0311ee531b99d232fa4542f}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Normalized\-T\-F\-I\-D\-F@{m\-\_\-b\-Normalized\-T\-F\-I\-D\-F}}
+\index{m\-\_\-b\-Normalized\-T\-F\-I\-D\-F@{m\-\_\-b\-Normalized\-T\-F\-I\-D\-F}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Normalized\-T\-F\-I\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Normalized\-T\-F\-I\-D\-F}}\label{classCSphQuery_a519eff08a0311ee531b99d232fa4542f}
+
+
+whether to scale I\-D\-Fs by query word count, so that T\-F$\ast$\-I\-D\-F is normalized 
+
+\hypertarget{classCSphQuery_a7fcc6af7a9ba80651515e767ba3aab30}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Plain\-I\-D\-F@{m\-\_\-b\-Plain\-I\-D\-F}}
+\index{m\-\_\-b\-Plain\-I\-D\-F@{m\-\_\-b\-Plain\-I\-D\-F}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Plain\-I\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Plain\-I\-D\-F}}\label{classCSphQuery_a7fcc6af7a9ba80651515e767ba3aab30}
+
+
+whether to use Plain\-I\-D\-F=log(N/n) or Normalized\-I\-D\-F=log((N-\/n+1)/n) 
+
+\hypertarget{classCSphQuery_a7412f89477542f7f5b87d1f16a7f068c}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Reverse\-Scan@{m\-\_\-b\-Reverse\-Scan}}
+\index{m\-\_\-b\-Reverse\-Scan@{m\-\_\-b\-Reverse\-Scan}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Reverse\-Scan}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Reverse\-Scan}}\label{classCSphQuery_a7412f89477542f7f5b87d1f16a7f068c}
+
+
+perform scan in reverse order 
+
+\hypertarget{classCSphQuery_ac3dddf973cfef68ecdb4ce81f3120312}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Simplify@{m\-\_\-b\-Simplify}}
+\index{m\-\_\-b\-Simplify@{m\-\_\-b\-Simplify}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Simplify}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Simplify}}\label{classCSphQuery_ac3dddf973cfef68ecdb4ce81f3120312}
+
+
+whether to apply boolean simplification 
+
+\hypertarget{classCSphQuery_a1231bf2abf4df49e559d9288e4bb02f1}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Sort\-Kbuffer@{m\-\_\-b\-Sort\-Kbuffer}}
+\index{m\-\_\-b\-Sort\-Kbuffer@{m\-\_\-b\-Sort\-Kbuffer}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Sort\-Kbuffer}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Sort\-Kbuffer}}\label{classCSphQuery_a1231bf2abf4df49e559d9288e4bb02f1}
+
+
+whether to use P\-Q or K-\/buffer sorting algorithm 
+
+\hypertarget{classCSphQuery_a30bb3c386034e7a14c6599439d378d19}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Strict@{m\-\_\-b\-Strict}}
+\index{m\-\_\-b\-Strict@{m\-\_\-b\-Strict}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Strict}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Strict}}\label{classCSphQuery_a30bb3c386034e7a14c6599439d378d19}
+
+
+whether to warning or not about incompatible types 
+
+\hypertarget{classCSphQuery_a7e09b2bec22311e40299abc8220e794f}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Sync@{m\-\_\-b\-Sync}}
+\index{m\-\_\-b\-Sync@{m\-\_\-b\-Sync}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Sync}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Sync}}\label{classCSphQuery_a7e09b2bec22311e40299abc8220e794f}
+
+
+whether or not use synchronous operations (optimize, etc.) 
+
+\hypertarget{classCSphQuery_a5ebb66c5b5cebc70a288a503afdf5d04}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-b\-Z\-Slist@{m\-\_\-b\-Z\-Slist}}
+\index{m\-\_\-b\-Z\-Slist@{m\-\_\-b\-Z\-Slist}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-b\-Z\-Slist}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-::m\-\_\-b\-Z\-Slist}}\label{classCSphQuery_a5ebb66c5b5cebc70a288a503afdf5d04}
+
+
+whether the ranker has to fetch the zonespanlist with this query 
+
+\hypertarget{classCSphQuery_a8741671a2fc4c617f23d4c8e2eec0392}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-d\-Field\-Weights@{m\-\_\-d\-Field\-Weights}}
+\index{m\-\_\-d\-Field\-Weights@{m\-\_\-d\-Field\-Weights}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-d\-Field\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Named\-Int}$>$ C\-Sph\-Query\-::m\-\_\-d\-Field\-Weights}}\label{classCSphQuery_a8741671a2fc4c617f23d4c8e2eec0392}
+
+
+per-\/field weights 
+
+\hypertarget{classCSphQuery_a890769b9fb74908995e5e5335aee572c}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-d\-Filters@{m\-\_\-d\-Filters}}
+\index{m\-\_\-d\-Filters@{m\-\_\-d\-Filters}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-d\-Filters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Filter\-Settings}$>$ C\-Sph\-Query\-::m\-\_\-d\-Filters}}\label{classCSphQuery_a890769b9fb74908995e5e5335aee572c}
+
+
+filters 
+
+\hypertarget{classCSphQuery_a66895de5443f7850e52a65805b05be9b}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-d\-Index\-Weights@{m\-\_\-d\-Index\-Weights}}
+\index{m\-\_\-d\-Index\-Weights@{m\-\_\-d\-Index\-Weights}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-d\-Index\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Named\-Int}$>$ C\-Sph\-Query\-::m\-\_\-d\-Index\-Weights}}\label{classCSphQuery_a66895de5443f7850e52a65805b05be9b}
+
+
+per-\/index weights 
+
+\hypertarget{classCSphQuery_a7d256ea9cf0ed85d7da6111537f02f50}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-d\-Items@{m\-\_\-d\-Items}}
+\index{m\-\_\-d\-Items@{m\-\_\-d\-Items}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-d\-Items}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Query\-Item}$>$ C\-Sph\-Query\-::m\-\_\-d\-Items}}\label{classCSphQuery_a7d256ea9cf0ed85d7da6111537f02f50}
+
+
+parsed select-\/list 
+
+\hypertarget{classCSphQuery_ab2f5d9d2129f4916c24df3b7ce34a08a}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-d\-Overrides@{m\-\_\-d\-Overrides}}
+\index{m\-\_\-d\-Overrides@{m\-\_\-d\-Overrides}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-d\-Overrides}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Attr\-Override}$>$ C\-Sph\-Query\-::m\-\_\-d\-Overrides}}\label{classCSphQuery_ab2f5d9d2129f4916c24df3b7ce34a08a}
+
+
+per-\/query attribute value overrides 
+
+\hypertarget{classCSphQuery_a691bd7f7c26b1ba472448961724306d0}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-d\-Weights@{m\-\_\-d\-Weights}}
+\index{m\-\_\-d\-Weights@{m\-\_\-d\-Weights}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-d\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf D\-W\-O\-R\-D}$>$ C\-Sph\-Query\-::m\-\_\-d\-Weights}}\label{classCSphQuery_a691bd7f7c26b1ba472448961724306d0}
+
+
+user-\/supplied per-\/field weights. may be N\-U\-L\-L. default is N\-U\-L\-L 
+
+\hypertarget{classCSphQuery_a58cef95cb041643d36d29e8109aa5ebf}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-e\-Collation@{m\-\_\-e\-Collation}}
+\index{m\-\_\-e\-Collation@{m\-\_\-e\-Collation}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-e\-Collation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Collation} C\-Sph\-Query\-::m\-\_\-e\-Collation}}\label{classCSphQuery_a58cef95cb041643d36d29e8109aa5ebf}
+
+
+O\-R\-D\-E\-R B\-Y collation. 
+
+\hypertarget{classCSphQuery_ae921237bec923323f4462c09508d05d3}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-e\-Group\-Func@{m\-\_\-e\-Group\-Func}}
+\index{m\-\_\-e\-Group\-Func@{m\-\_\-e\-Group\-Func}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-e\-Group\-Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Group\-By} C\-Sph\-Query\-::m\-\_\-e\-Group\-Func}}\label{classCSphQuery_ae921237bec923323f4462c09508d05d3}
+
+
+function to pre-\/process group-\/by attribute value with 
+
+\hypertarget{classCSphQuery_a4bcc406daa74d2db796cfece980cad0e}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-e\-Mode@{m\-\_\-e\-Mode}}
+\index{m\-\_\-e\-Mode@{m\-\_\-e\-Mode}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-e\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Match\-Mode} C\-Sph\-Query\-::m\-\_\-e\-Mode}}\label{classCSphQuery_a4bcc406daa74d2db796cfece980cad0e}
+
+
+match mode. default is \char`\"{}match all\char`\"{} 
+
+\hypertarget{classCSphQuery_aeecfd9ad18482d811bc30c38cc45a1b7}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-e\-Ranker@{m\-\_\-e\-Ranker}}
+\index{m\-\_\-e\-Ranker@{m\-\_\-e\-Ranker}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-e\-Ranker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Rank\-Mode} C\-Sph\-Query\-::m\-\_\-e\-Ranker}}\label{classCSphQuery_aeecfd9ad18482d811bc30c38cc45a1b7}
+
+
+ranking mode, default is proximity+\-B\-M25 
+
+\hypertarget{classCSphQuery_a2da4282d6340a2a90b3c6d19ef439e90}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-e\-Sort@{m\-\_\-e\-Sort}}
+\index{m\-\_\-e\-Sort@{m\-\_\-e\-Sort}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-e\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Sort\-Order} C\-Sph\-Query\-::m\-\_\-e\-Sort}}\label{classCSphQuery_a2da4282d6340a2a90b3c6d19ef439e90}
+
+
+sort mode 
+
+\hypertarget{classCSphQuery_a4b33b32f89324d816460e210e183ef6d}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-f\-Geo\-Latitude@{m\-\_\-f\-Geo\-Latitude}}
+\index{m\-\_\-f\-Geo\-Latitude@{m\-\_\-f\-Geo\-Latitude}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-f\-Geo\-Latitude}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} C\-Sph\-Query\-::m\-\_\-f\-Geo\-Latitude}}\label{classCSphQuery_a4b33b32f89324d816460e210e183ef6d}
+
+
+anchor latitude 
+
+\hypertarget{classCSphQuery_a9f142b82596ebc0dec6b69edb9467ac9}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-f\-Geo\-Longitude@{m\-\_\-f\-Geo\-Longitude}}
+\index{m\-\_\-f\-Geo\-Longitude@{m\-\_\-f\-Geo\-Longitude}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-f\-Geo\-Longitude}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} C\-Sph\-Query\-::m\-\_\-f\-Geo\-Longitude}}\label{classCSphQuery_a9f142b82596ebc0dec6b69edb9467ac9}
+
+
+anchor longitude 
+
+\hypertarget{classCSphQuery_a501ee30c34993b5644a58f3cdc48ef6a}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Agent\-Query\-Timeout@{m\-\_\-i\-Agent\-Query\-Timeout}}
+\index{m\-\_\-i\-Agent\-Query\-Timeout@{m\-\_\-i\-Agent\-Query\-Timeout}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Agent\-Query\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Agent\-Query\-Timeout}}\label{classCSphQuery_a501ee30c34993b5644a58f3cdc48ef6a}
+
+
+agent query timeout override, for distributed queries 
+
+\hypertarget{classCSphQuery_a8ce53c13bb1c039139f86e5726bc0f9b}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Cutoff@{m\-\_\-i\-Cutoff}}
+\index{m\-\_\-i\-Cutoff@{m\-\_\-i\-Cutoff}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Cutoff}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Cutoff}}\label{classCSphQuery_a8ce53c13bb1c039139f86e5726bc0f9b}
+
+
+matches count threshold to stop searching at (default is 0; means to search until all matches are found) 
+
+\hypertarget{classCSphQuery_abdb3ca6adb1e4816a1704b6b7f5f096a}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Groupby\-Limit@{m\-\_\-i\-Groupby\-Limit}}
+\index{m\-\_\-i\-Groupby\-Limit@{m\-\_\-i\-Groupby\-Limit}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Groupby\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Groupby\-Limit}}\label{classCSphQuery_abdb3ca6adb1e4816a1704b6b7f5f096a}
+
+
+number of elems within group 
+
+\hypertarget{classCSphQuery_a298bca477453ebef5bd1eaef40271b59}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Limit@{m\-\_\-i\-Limit}}
+\index{m\-\_\-i\-Limit@{m\-\_\-i\-Limit}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Limit}}\label{classCSphQuery_a298bca477453ebef5bd1eaef40271b59}
+
+
+limit into result set (as Y in My\-S\-Q\-L L\-I\-M\-I\-T X,Y clause) 
+
+\hypertarget{classCSphQuery_a3fd20aed8d54fac63b9a3a2b8b0d9065}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Max\-Matches@{m\-\_\-i\-Max\-Matches}}
+\index{m\-\_\-i\-Max\-Matches@{m\-\_\-i\-Max\-Matches}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Max\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Max\-Matches}}\label{classCSphQuery_a3fd20aed8d54fac63b9a3a2b8b0d9065}
+
+
+max matches to retrieve, default is 1000. more matches use more memory and C\-P\-U time to hold and sort them 
+
+\hypertarget{classCSphQuery_a185042a2181d82c8d67b7ef14b399f90}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Max\-Predicted\-Msec@{m\-\_\-i\-Max\-Predicted\-Msec}}
+\index{m\-\_\-i\-Max\-Predicted\-Msec@{m\-\_\-i\-Max\-Predicted\-Msec}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Max\-Predicted\-Msec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Max\-Predicted\-Msec}}\label{classCSphQuery_a185042a2181d82c8d67b7ef14b399f90}
+
+
+max predicted (!) search time limit, in milliseconds (0 means no limit) 
+
+\hypertarget{classCSphQuery_a6db8997e8178e6a3e6e8f07dcb326d00}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Offset@{m\-\_\-i\-Offset}}
+\index{m\-\_\-i\-Offset@{m\-\_\-i\-Offset}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Offset}}\label{classCSphQuery_a6db8997e8178e6a3e6e8f07dcb326d00}
+
+
+offset into result set (as X in My\-S\-Q\-L L\-I\-M\-I\-T X,Y clause) 
+
+\hypertarget{classCSphQuery_a144ed2a1aa4ff60fb8f1d3f2a8f42741}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Outer\-Limit@{m\-\_\-i\-Outer\-Limit}}
+\index{m\-\_\-i\-Outer\-Limit@{m\-\_\-i\-Outer\-Limit}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Outer\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Outer\-Limit}}\label{classCSphQuery_a144ed2a1aa4ff60fb8f1d3f2a8f42741}
+\hypertarget{classCSphQuery_a92854a548ba9feba57791dec1f64c80b}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Outer\-Offset@{m\-\_\-i\-Outer\-Offset}}
+\index{m\-\_\-i\-Outer\-Offset@{m\-\_\-i\-Outer\-Offset}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Outer\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Outer\-Offset}}\label{classCSphQuery_a92854a548ba9feba57791dec1f64c80b}
+
+
+keep and apply outer offset at master 
+
+\hypertarget{classCSphQuery_a20f54c618276daa5d4f3b8df8fb14e61}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Rand\-Seed@{m\-\_\-i\-Rand\-Seed}}
+\index{m\-\_\-i\-Rand\-Seed@{m\-\_\-i\-Rand\-Seed}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Rand\-Seed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Query\-::m\-\_\-i\-Rand\-Seed}}\label{classCSphQuery_a20f54c618276daa5d4f3b8df8fb14e61}
+
+
+random seed for O\-R\-D\-E\-R B\-Y R\-A\-N\-D(), -\/1 means do not set 
+
+\hypertarget{classCSphQuery_afe77175090de03ece5fcfe69053aed07}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Retry\-Count@{m\-\_\-i\-Retry\-Count}}
+\index{m\-\_\-i\-Retry\-Count@{m\-\_\-i\-Retry\-Count}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Retry\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Retry\-Count}}\label{classCSphQuery_afe77175090de03ece5fcfe69053aed07}
+
+
+retry count, for distributed queries 
+
+\hypertarget{classCSphQuery_adb2b972d9fc1a92333e878625c9fc6c7}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-Retry\-Delay@{m\-\_\-i\-Retry\-Delay}}
+\index{m\-\_\-i\-Retry\-Delay@{m\-\_\-i\-Retry\-Delay}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-Retry\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-Retry\-Delay}}\label{classCSphQuery_adb2b972d9fc1a92333e878625c9fc6c7}
+
+
+retry delay, for distributed queries 
+
+\hypertarget{classCSphQuery_a61f3b213ff219c4fdd8fd548a4401790}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-S\-Q\-L\-Select\-End@{m\-\_\-i\-S\-Q\-L\-Select\-End}}
+\index{m\-\_\-i\-S\-Q\-L\-Select\-End@{m\-\_\-i\-S\-Q\-L\-Select\-End}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-S\-Q\-L\-Select\-End}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-S\-Q\-L\-Select\-End}}\label{classCSphQuery_a61f3b213ff219c4fdd8fd548a4401790}
+
+
+S\-Q\-L parser helper. 
+
+\hypertarget{classCSphQuery_a64b893fbd1975d6ebce6bf7baa8471fa}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-i\-S\-Q\-L\-Select\-Start@{m\-\_\-i\-S\-Q\-L\-Select\-Start}}
+\index{m\-\_\-i\-S\-Q\-L\-Select\-Start@{m\-\_\-i\-S\-Q\-L\-Select\-Start}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-i\-S\-Q\-L\-Select\-Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-::m\-\_\-i\-S\-Q\-L\-Select\-Start}}\label{classCSphQuery_a64b893fbd1975d6ebce6bf7baa8471fa}
+
+
+S\-Q\-L parser helper. 
+
+\hypertarget{classCSphQuery_ac1cbf2083d8fb68cf7643182660639af}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-p\-Table\-Func@{m\-\_\-p\-Table\-Func}}
+\index{m\-\_\-p\-Table\-Func@{m\-\_\-p\-Table\-Func}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-p\-Table\-Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Table\-Func}$\ast$ C\-Sph\-Query\-::m\-\_\-p\-Table\-Func}}\label{classCSphQuery_ac1cbf2083d8fb68cf7643182660639af}
+
+
+post-\/query N\-O\-T O\-W\-N\-E\-D, W\-I\-L\-L N\-O\-T B\-E F\-R\-E\-E\-D in dtor. 
+
+\hypertarget{classCSphQuery_a579757d29ee1b6cf6483326f8a8f4178}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Comment@{m\-\_\-s\-Comment}}
+\index{m\-\_\-s\-Comment@{m\-\_\-s\-Comment}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Comment}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Comment}}\label{classCSphQuery_a579757d29ee1b6cf6483326f8a8f4178}
+
+
+comment to pass verbatim in the log file 
+
+\hypertarget{classCSphQuery_aaf5e150cf9573eaf96bfd77698def569}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Facet\-By@{m\-\_\-s\-Facet\-By}}
+\index{m\-\_\-s\-Facet\-By@{m\-\_\-s\-Facet\-By}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Facet\-By}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Facet\-By}}\label{classCSphQuery_aaf5e150cf9573eaf96bfd77698def569}
+
+
+facet-\/by attribute name(s) 
+
+\hypertarget{classCSphQuery_a574047391f7256e1fa0355f358d86391}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Geo\-Lat\-Attr@{m\-\_\-s\-Geo\-Lat\-Attr}}
+\index{m\-\_\-s\-Geo\-Lat\-Attr@{m\-\_\-s\-Geo\-Lat\-Attr}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Geo\-Lat\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Geo\-Lat\-Attr}}\label{classCSphQuery_a574047391f7256e1fa0355f358d86391}
+
+
+latitude attr name 
+
+\hypertarget{classCSphQuery_a30f3f434382a8160ab7536bbb760f418}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Geo\-Long\-Attr@{m\-\_\-s\-Geo\-Long\-Attr}}
+\index{m\-\_\-s\-Geo\-Long\-Attr@{m\-\_\-s\-Geo\-Long\-Attr}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Geo\-Long\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Geo\-Long\-Attr}}\label{classCSphQuery_a30f3f434382a8160ab7536bbb760f418}
+
+
+longitude attr name 
+
+\hypertarget{classCSphQuery_a203ace139c1feadd62f726a682527395}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Group\-By@{m\-\_\-s\-Group\-By}}
+\index{m\-\_\-s\-Group\-By@{m\-\_\-s\-Group\-By}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Group\-By}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Group\-By}}\label{classCSphQuery_a203ace139c1feadd62f726a682527395}
+
+
+group-\/by attribute name(s) 
+
+\hypertarget{classCSphQuery_ac3cb46ce8599772486bbc7a49aac0fb3}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Group\-Distinct@{m\-\_\-s\-Group\-Distinct}}
+\index{m\-\_\-s\-Group\-Distinct@{m\-\_\-s\-Group\-Distinct}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Group\-Distinct}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Group\-Distinct}}\label{classCSphQuery_ac3cb46ce8599772486bbc7a49aac0fb3}
+
+
+count distinct values for this attribute 
+
+\hypertarget{classCSphQuery_ab15fa0d113e9aa216ffeb96a8d89ce2f}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Group\-Sort\-By@{m\-\_\-s\-Group\-Sort\-By}}
+\index{m\-\_\-s\-Group\-Sort\-By@{m\-\_\-s\-Group\-Sort\-By}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Group\-Sort\-By}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Group\-Sort\-By}}\label{classCSphQuery_ab15fa0d113e9aa216ffeb96a8d89ce2f}
+
+
+sorting clause for groups in group-\/by mode 
+
+\hypertarget{classCSphQuery_a45a23107b5561879993db1c25161b7ac}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Indexes@{m\-\_\-s\-Indexes}}
+\index{m\-\_\-s\-Indexes@{m\-\_\-s\-Indexes}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Indexes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Indexes}}\label{classCSphQuery_a45a23107b5561879993db1c25161b7ac}
+
+
+indexes to search 
+
+\hypertarget{classCSphQuery_a91973e6042966eea08b88b56a8950da5}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Order\-By@{m\-\_\-s\-Order\-By}}
+\index{m\-\_\-s\-Order\-By@{m\-\_\-s\-Order\-By}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Order\-By}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Order\-By}}\label{classCSphQuery_a91973e6042966eea08b88b56a8950da5}
+
+
+order-\/by clause 
+
+\hypertarget{classCSphQuery_a964070184c2d3aff30550fe2d7da73dd}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Outer\-Order\-By@{m\-\_\-s\-Outer\-Order\-By}}
+\index{m\-\_\-s\-Outer\-Order\-By@{m\-\_\-s\-Outer\-Order\-By}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Outer\-Order\-By}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Outer\-Order\-By}}\label{classCSphQuery_a964070184c2d3aff30550fe2d7da73dd}
+
+
+temporary (?) subselect hack 
+
+\hypertarget{classCSphQuery_a532a2ff6c5f30e1d8d7ae2261763d460}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Query@{m\-\_\-s\-Query}}
+\index{m\-\_\-s\-Query@{m\-\_\-s\-Query}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Query}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Query}}\label{classCSphQuery_a532a2ff6c5f30e1d8d7ae2261763d460}
+
+
+cooked query string for the engine (possibly transformed during legacy matching modes fixup) 
+
+\hypertarget{classCSphQuery_a18df87b6e5709334636cdf6ecf987a6e}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Query\-Token\-Filter\-Lib@{m\-\_\-s\-Query\-Token\-Filter\-Lib}}
+\index{m\-\_\-s\-Query\-Token\-Filter\-Lib@{m\-\_\-s\-Query\-Token\-Filter\-Lib}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Query\-Token\-Filter\-Lib}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Query\-Token\-Filter\-Lib}}\label{classCSphQuery_a18df87b6e5709334636cdf6ecf987a6e}
+
+
+token filter library name 
+
+\hypertarget{classCSphQuery_a5ed04255f875d4b81fae92b06be57114}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Query\-Token\-Filter\-Name@{m\-\_\-s\-Query\-Token\-Filter\-Name}}
+\index{m\-\_\-s\-Query\-Token\-Filter\-Name@{m\-\_\-s\-Query\-Token\-Filter\-Name}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Query\-Token\-Filter\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Query\-Token\-Filter\-Name}}\label{classCSphQuery_a5ed04255f875d4b81fae92b06be57114}
+
+
+token filter name 
+
+\hypertarget{classCSphQuery_afac78b8292278a669085040550823aeb}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Query\-Token\-Filter\-Opts@{m\-\_\-s\-Query\-Token\-Filter\-Opts}}
+\index{m\-\_\-s\-Query\-Token\-Filter\-Opts@{m\-\_\-s\-Query\-Token\-Filter\-Opts}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Query\-Token\-Filter\-Opts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Query\-Token\-Filter\-Opts}}\label{classCSphQuery_afac78b8292278a669085040550823aeb}
+
+
+token filter options 
+
+\hypertarget{classCSphQuery_adafccf145800d5cd305aa38023ba22e5}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Ranker\-Expr@{m\-\_\-s\-Ranker\-Expr}}
+\index{m\-\_\-s\-Ranker\-Expr@{m\-\_\-s\-Ranker\-Expr}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Ranker\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Ranker\-Expr}}\label{classCSphQuery_adafccf145800d5cd305aa38023ba22e5}
+
+
+ranking expression for S\-P\-H\-\_\-\-R\-A\-N\-K\-\_\-\-E\-X\-P\-R 
+
+\hypertarget{classCSphQuery_a2d086a1ba48cad3f3ca95f34d86a24e3}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Raw\-Query@{m\-\_\-s\-Raw\-Query}}
+\index{m\-\_\-s\-Raw\-Query@{m\-\_\-s\-Raw\-Query}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Raw\-Query}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Raw\-Query}}\label{classCSphQuery_a2d086a1ba48cad3f3ca95f34d86a24e3}
+
+
+raw query string from the client for searchd log, agents, etc 
+
+\hypertarget{classCSphQuery_a6376053048cd37a5fbceb32b636a9051}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Select@{m\-\_\-s\-Select}}
+\index{m\-\_\-s\-Select@{m\-\_\-s\-Select}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Select}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Select}}\label{classCSphQuery_a6376053048cd37a5fbceb32b636a9051}
+
+
+select-\/list (attributes and/or expressions) 
+
+\hypertarget{classCSphQuery_a2bc9ee6fd6cfb8756b441d55ff95c3c0}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-Sort\-By@{m\-\_\-s\-Sort\-By}}
+\index{m\-\_\-s\-Sort\-By@{m\-\_\-s\-Sort\-By}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-Sort\-By}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-Sort\-By}}\label{classCSphQuery_a2bc9ee6fd6cfb8756b441d55ff95c3c0}
+
+
+attribute to sort by 
+
+\hypertarget{classCSphQuery_a2bc7044d50dffe9b164caf1b92ea904c}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-U\-D\-Ranker@{m\-\_\-s\-U\-D\-Ranker}}
+\index{m\-\_\-s\-U\-D\-Ranker@{m\-\_\-s\-U\-D\-Ranker}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-U\-D\-Ranker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-U\-D\-Ranker}}\label{classCSphQuery_a2bc7044d50dffe9b164caf1b92ea904c}
+
+
+user-\/defined ranker name 
+
+\hypertarget{classCSphQuery_a1a8713b8e60edf27647a37890c4637ff}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-s\-U\-D\-Ranker\-Opts@{m\-\_\-s\-U\-D\-Ranker\-Opts}}
+\index{m\-\_\-s\-U\-D\-Ranker\-Opts@{m\-\_\-s\-U\-D\-Ranker\-Opts}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-s\-U\-D\-Ranker\-Opts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Query\-::m\-\_\-s\-U\-D\-Ranker\-Opts}}\label{classCSphQuery_a1a8713b8e60edf27647a37890c4637ff}
+
+
+user-\/defined ranker options 
+
+\hypertarget{classCSphQuery_ad2f3489882b02218dd9924fe21ad767b}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-t\-Having@{m\-\_\-t\-Having}}
+\index{m\-\_\-t\-Having@{m\-\_\-t\-Having}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-t\-Having}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Filter\-Settings} C\-Sph\-Query\-::m\-\_\-t\-Having}}\label{classCSphQuery_ad2f3489882b02218dd9924fe21ad767b}
+
+
+post aggregate filtering (got applied only on master) 
+
+\hypertarget{classCSphQuery_aacb54cc52df6df9cc9201f375915638b}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-u\-Debug\-Flags@{m\-\_\-u\-Debug\-Flags}}
+\index{m\-\_\-u\-Debug\-Flags@{m\-\_\-u\-Debug\-Flags}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-u\-Debug\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Query\-::m\-\_\-u\-Debug\-Flags}}\label{classCSphQuery_aacb54cc52df6df9cc9201f375915638b}
+\hypertarget{classCSphQuery_a2b9c353ae3e5ad81b62c6de63918260b}{\index{C\-Sph\-Query@{C\-Sph\-Query}!m\-\_\-u\-Max\-Query\-Msec@{m\-\_\-u\-Max\-Query\-Msec}}
+\index{m\-\_\-u\-Max\-Query\-Msec@{m\-\_\-u\-Max\-Query\-Msec}!CSphQuery@{C\-Sph\-Query}}
+\subsubsection[{m\-\_\-u\-Max\-Query\-Msec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Query\-::m\-\_\-u\-Max\-Query\-Msec}}\label{classCSphQuery_a2b9c353ae3e5ad81b62c6de63918260b}
+
+
+max local index search time, in milliseconds (default is 0; means no limit) 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

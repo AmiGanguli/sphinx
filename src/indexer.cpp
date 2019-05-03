@@ -1,8 +1,5 @@
 //
-// $Id$
-//
-
-//
+// Copyright (c) 2019, Amitavo Ganguli
 // Copyright (c) 2001-2016, Andrew Aksyonoff
 // Copyright (c) 2008-2016, Sphinx Technologies Inc
 // All rights reserved
@@ -42,22 +39,22 @@
 
 static bool			g_bQuiet		= false;
 static bool			g_bProgress		= true;
-static bool			g_bPrintQueries	= false;
-static bool			g_bKeepAttrs	= false;
-static CSphString	g_sKeepAttrsPath;
-static CSphVector<CSphString> g_dKeepAttrs;
+static bool			g_bPrintQueries		= false;
+static bool			g_bKeepAttrs		= false;
+static CSphString		g_sKeepAttrsPath;
+static CSphVector<CSphString> 	g_dKeepAttrs;
 
-static const char *	g_sBuildStops	= NULL;
-static int				g_iTopStops		= 100;
+static const char *		g_sBuildStops		= NULL;
+static int			g_iTopStops		= 100;
 static bool			g_bRotate		= false;
-static bool			g_bRotateEach	= false;
-static bool			g_bBuildFreqs	= false;
+static bool			g_bRotateEach		= false;
+static bool			g_bBuildFreqs		= false;
 static bool			g_bSendHUP		= true;
 
-static int				g_iMemLimit				= 128*1024*1024;
-static int				g_iMaxXmlpipe2Field		= 0;
-static int				g_iWriteBuffer			= 0;
-static int				g_iMaxFileFieldBuffer	= 1024*1024;
+static int			g_iMemLimit		= 128*1024*1024;
+static int			g_iMaxXmlpipe2Field	= 0;
+static int			g_iWriteBuffer		= 0;
+static int			g_iMaxFileFieldBuffer	= 1024*1024;
 
 static ESphOnFileFieldError	g_eOnFileFieldError = FFE_IGNORE_FIELD;
 
@@ -65,20 +62,22 @@ static ESphOnFileFieldError	g_eOnFileFieldError = FFE_IGNORE_FIELD;
 static char			g_sMinidump[256];
 #endif
 
-#define			ROTATE_MIN_INTERVAL 100000 // rotate interval 100 ms
+#define	ROTATE_MIN_INTERVAL 100000 // rotate interval 100 ms
 
 /////////////////////////////////////////////////////////////////////////////
 
-template < typename T > struct CSphMTFHashEntry
+template < typename T >
+struct CSphMTFHashEntry
 {
-	CSphString				m_sKey;
+	CSphString		m_sKey;
 	CSphMTFHashEntry<T> *	m_pNext;
-	int						m_iSlot;
-	T						m_tValue;
+	int			m_iSlot;
+	T			m_tValue;
 };
 
 
-template < typename T, int SIZE, class HASHFUNC > class CSphMTFHash
+template < typename T, int SIZE, class HASHFUNC > 
+class CSphMTFHash
 {
 public:
 	/// ctor
@@ -1562,7 +1561,8 @@ bool SendRotate ( const CSphConfig & hConf, bool bForce )
 }
 
 
-int main ( int argc, char ** argv )
+int 
+main ( int argc, char ** argv )
 {
 	const char * sOptConfig = NULL;
 	bool bMerge = false;
@@ -1960,6 +1960,3 @@ int main ( int argc, char ** argv )
 	return iExitCode;
 }
 
-//
-// $Id$
-//

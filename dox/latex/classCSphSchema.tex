@@ -1,0 +1,457 @@
+\hypertarget{classCSphSchema}{\section{C\-Sph\-Schema Class Reference}
+\label{classCSphSchema}\index{C\-Sph\-Schema@{C\-Sph\-Schema}}
+}
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Schema\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphSchema}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphSchema_aa74c86ed3b2cd3be70be7e759b400540}{C\-Sph\-Schema} (const char $\ast$s\-Name=\char`\"{}(nameless)\char`\"{})
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_adc27620c661b206a4d39dc58359be831}{Get\-Field\-Index} (const char $\ast$s\-Name) const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_abc1a78819c98473bf413ee2113392d65}{Get\-Attr\-Index} (const char $\ast$s\-Name) const 
+\item 
+bool \hyperlink{classCSphSchema_a865b3e684893a133c0252562eca2670d}{Compare\-To} (const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&rhs, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Full\-Comparison=true) const 
+\item 
+void \hyperlink{classCSphSchema_aa5d8cee88cf63cd8d89bf6088c114179}{Reset} ()
+\begin{DoxyCompactList}\small\item\em reset fields and attrs \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_a17fe9adba0a1dd20072c80fcda3ccdb6}{Get\-Row\-Size} () const 
+\begin{DoxyCompactList}\small\item\em get row size (static+dynamic combined) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_ac50ab0879879ccd940e6ed99b812d61e}{Get\-Static\-Size} () const 
+\begin{DoxyCompactList}\small\item\em get static row part size \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_a18b6830a1285302d1c4652e19431c91b}{Get\-Dynamic\-Size} () const 
+\begin{DoxyCompactList}\small\item\em get dynamic row part size \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_a161cef3327616087c9df7c8f4f2ddd4a}{Get\-Attrs\-Count} () const 
+\begin{DoxyCompactList}\small\item\em get attrs count \end{DoxyCompactList}\item 
+const \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} \& \hyperlink{classCSphSchema_a5ded2f2dbca6600b6643b2ffa764eda2}{Get\-Attr} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index) const 
+\begin{DoxyCompactList}\small\item\em get attr by index \end{DoxyCompactList}\item 
+const \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} $\ast$ \hyperlink{classCSphSchema_a21edfa34e461bebbea5a2317fa105015}{Get\-Attr} (const char $\ast$s\-Name) const 
+\begin{DoxyCompactList}\small\item\em get attr by name \end{DoxyCompactList}\item 
+void \hyperlink{classCSphSchema_aec6e5c88cea5b751a9c8afd8be0a8649}{Insert\-Attr} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Pos, const \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} \&t\-Aggr, bool b\-Dynamic)
+\begin{DoxyCompactList}\small\item\em insert attr \end{DoxyCompactList}\item 
+void \hyperlink{classCSphSchema_aedd18131dbf9c3e2b326052b8a656ee6}{Add\-Attr} (const \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} \&t\-Attr, bool b\-Dynamic)
+\begin{DoxyCompactList}\small\item\em add attr \end{DoxyCompactList}\item 
+void \hyperlink{classCSphSchema_af47fcbfbf3a7b074e9c1b9375463b021}{Remove\-Attr} (const char $\ast$sz\-Attr, bool b\-Dynamic)
+\begin{DoxyCompactList}\small\item\em remove attr \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_a791a6c4e72482b22c8b093bea71e7db4}{Get\-Attr\-Id\-\_\-\-First\-Field\-Len} () const 
+\begin{DoxyCompactList}\small\item\em get the first one of field length attributes. return -\/1 if none exist \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_ab70819471e0c45af4f5747e8699310bf}{Get\-Attr\-Id\-\_\-\-Last\-Field\-Len} () const 
+\begin{DoxyCompactList}\small\item\em get the last one of field length attributes. return -\/1 if none exist \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classCSphSchema_ad0111029643a7f688eb05d38228b0423}{Is\-Reserved} (const char $\ast$sz\-Token)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphSchema_ab00ee49c53efc1c7cca2a3bafdd32e5b}{m\-\_\-s\-Name}
+\begin{DoxyCompactList}\small\item\em my human-\/readable name \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} $>$ \hyperlink{classCSphSchema_a5bc8bc08c16e65a336cf3a90e721de73}{m\-\_\-d\-Fields}
+\begin{DoxyCompactList}\small\item\em my fulltext-\/searchable fields \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} $>$ \hyperlink{classCSphSchema_a94fe33df4b82a02dd2581053d0832331}{m\-\_\-d\-Attrs}
+\begin{DoxyCompactList}\small\item\em all my attributes \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCSphSchema_a320ab896c9b8e29a71a91d2eff830773}{m\-\_\-d\-Static\-Used}
+\begin{DoxyCompactList}\small\item\em static row part map (amount of used bits in each rowitem) \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCSphSchema_abc2a31434964af188a792a209c5da8c3}{m\-\_\-d\-Dynamic\-Used}
+\begin{DoxyCompactList}\small\item\em dynamic row part map \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_a76308bc7520f1114f074351fac29d106}{m\-\_\-i\-Static\-Size}
+\begin{DoxyCompactList}\small\item\em static row size (can be different from m\-\_\-d\-Static\-Used.\-Get\-Length() because of gaps) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} \& \hyperlink{classCSphSchema_a7a06e51c2994c8aa4e1e1d1a959c178c}{Get\-Bucket\-Pos} (const char $\ast$s\-Name)
+\begin{DoxyCompactList}\small\item\em returns 0xffff if bucket list is empty and position otherwise \end{DoxyCompactList}\item 
+void \hyperlink{classCSphSchema_a390c329fef233bb45e1c5035a93459b9}{Rebuild\-Hash} ()
+\begin{DoxyCompactList}\small\item\em reset hash and re-\/add all attributes \end{DoxyCompactList}\item 
+void \hyperlink{classCSphSchema_afcde9b749bec5e98140e8b84ec2b8bfc}{Update\-Hash} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start\-Idx, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Add\-Val)
+\begin{DoxyCompactList}\small\item\em add i\-Add\-Val to all indexes strictly greater than i\-Start\-Idx in hash structures \end{DoxyCompactList}\item 
+void \hyperlink{classCSphSchema_a807d4ab581aafd1b94c36901812d26e7}{Assign\-To} (\hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} \&lhs) const 
+\begin{DoxyCompactList}\small\item\em visitor-\/style uber-\/virtual assignment implementation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} \hyperlink{classCSphSchema_ae45e9f7aa6c6689c55207315b723cb4a}{m\-\_\-d\-Buckets} \mbox{[}\hyperlink{classCSphSchema_aeb38dfa5e7b6aa1b575487d67b73cf9e}{B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T}\mbox{]}
+\begin{DoxyCompactList}\small\item\em uses indexes in m\-\_\-d\-Attrs as ptrs; 0xffff is like N\-U\-L\-L in this hash \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_a51e341999cdda7154b60b536ff09bd15}{m\-\_\-i\-First\-Field\-Len\-Attr}
+\begin{DoxyCompactList}\small\item\em position of the first field length attribute (cached on insert/delete) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_aae2d47f85e1897dc10517f9af57ad7b7}{m\-\_\-i\-Last\-Field\-Len\-Attr}
+\begin{DoxyCompactList}\small\item\em position of the last field length attribute (cached on insert/delete) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_a06381a7bc923a8ebc3c77cabb9330078}{H\-A\-S\-H\-\_\-\-T\-H\-R\-E\-S\-H} = 32
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSchema_aeb38dfa5e7b6aa1b575487d67b73cf9e}{B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T} = 256
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCSphSchema_ae9fc32f1e11e9afd5d44b12b60e68c65}{C\-Sph\-Rset\-Schema}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+plain good old schema container that actually holds and owns all the fields, columns, etc
+
+N\-O\-T\-E that while this one can be used everywhere where we need a schema it might be huge (say 1000+ attributes) and expensive to copy, modify, etc! so for most of the online query work, consider \hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphSchema_aa74c86ed3b2cd3be70be7e759b400540}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!C\-Sph\-Schema@{C\-Sph\-Schema}}
+\index{C\-Sph\-Schema@{C\-Sph\-Schema}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{C\-Sph\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Schema\-::\-C\-Sph\-Schema (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name = {\ttfamily \char`\"{}(nameless)\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCSphSchema_aa74c86ed3b2cd3be70be7e759b400540}
+
+
+ctor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphSchema_aedd18131dbf9c3e2b326052b8a656ee6}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Add\-Attr@{Add\-Attr}}
+\index{Add\-Attr@{Add\-Attr}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Add\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Schema\-::\-Add\-Attr (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Column\-Info} \&}]{t\-Attr, }
+\item[{bool}]{b\-Dynamic}
+\end{DoxyParamCaption}
+)}}\label{classCSphSchema_aedd18131dbf9c3e2b326052b8a656ee6}
+
+
+add attr 
+
+\hypertarget{classCSphSchema_a807d4ab581aafd1b94c36901812d26e7}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Assign\-To@{Assign\-To}}
+\index{Assign\-To@{Assign\-To}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Assign\-To}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Schema\-::\-Assign\-To (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Rset\-Schema} \&}]{lhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classCSphSchema_a807d4ab581aafd1b94c36901812d26e7}
+
+
+visitor-\/style uber-\/virtual assignment implementation 
+
+
+
+Implements \hyperlink{classISphSchema_a0a181d8ba43454809403978d349be4a3}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphSchema_a865b3e684893a133c0252562eca2670d}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Compare\-To@{Compare\-To}}
+\index{Compare\-To@{Compare\-To}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Compare\-To}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Schema\-::\-Compare\-To (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Schema} \&}]{rhs, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Full\-Comparison = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const}}\label{classCSphSchema_a865b3e684893a133c0252562eca2670d}
+checks if two schemas fully match (ie. fields names, attr names, types and locators are the same) describe mismatch (if any) to s\-Error \hypertarget{classCSphSchema_a5ded2f2dbca6600b6643b2ffa764eda2}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Attr@{Get\-Attr}}
+\index{Get\-Attr@{Get\-Attr}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Column\-Info}\& C\-Sph\-Schema\-::\-Get\-Attr (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSchema_a5ded2f2dbca6600b6643b2ffa764eda2}
+
+
+get attr by index 
+
+
+
+Implements \hyperlink{classISphSchema_a4ed2ed2ca4403a877f6f3234931ebadc}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphSchema_a21edfa34e461bebbea5a2317fa105015}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Attr@{Get\-Attr}}
+\index{Get\-Attr@{Get\-Attr}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Column\-Info} $\ast$ C\-Sph\-Schema\-::\-Get\-Attr (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSchema_a21edfa34e461bebbea5a2317fa105015}
+
+
+get attr by name 
+
+
+
+Implements \hyperlink{classISphSchema_a87b047c720faa0be791ae53341b91b2b}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphSchema_a791a6c4e72482b22c8b093bea71e7db4}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Attr\-Id\-\_\-\-First\-Field\-Len@{Get\-Attr\-Id\-\_\-\-First\-Field\-Len}}
+\index{Get\-Attr\-Id\-\_\-\-First\-Field\-Len@{Get\-Attr\-Id\-\_\-\-First\-Field\-Len}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Attr\-Id\-\_\-\-First\-Field\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::\-Get\-Attr\-Id\-\_\-\-First\-Field\-Len (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSchema_a791a6c4e72482b22c8b093bea71e7db4}
+
+
+get the first one of field length attributes. return -\/1 if none exist 
+
+
+
+Implements \hyperlink{classISphSchema_af844f2a01f79894efed990c90b3c7d9d}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphSchema_ab70819471e0c45af4f5747e8699310bf}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Attr\-Id\-\_\-\-Last\-Field\-Len@{Get\-Attr\-Id\-\_\-\-Last\-Field\-Len}}
+\index{Get\-Attr\-Id\-\_\-\-Last\-Field\-Len@{Get\-Attr\-Id\-\_\-\-Last\-Field\-Len}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Attr\-Id\-\_\-\-Last\-Field\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::\-Get\-Attr\-Id\-\_\-\-Last\-Field\-Len (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSchema_ab70819471e0c45af4f5747e8699310bf}
+
+
+get the last one of field length attributes. return -\/1 if none exist 
+
+
+
+Implements \hyperlink{classISphSchema_ad9a04e2b4ef55f836e5646c116bfd4be}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphSchema_abc1a78819c98473bf413ee2113392d65}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Attr\-Index@{Get\-Attr\-Index}}
+\index{Get\-Attr\-Index@{Get\-Attr\-Index}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Attr\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::\-Get\-Attr\-Index (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSchema_abc1a78819c98473bf413ee2113392d65}
+get attribute index by name returns -\/1 if not found 
+
+Implements \hyperlink{classISphSchema_a3761d8421bd874f20e719a03ec2b4182}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphSchema_a161cef3327616087c9df7c8f4f2ddd4a}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Attrs\-Count@{Get\-Attrs\-Count}}
+\index{Get\-Attrs\-Count@{Get\-Attrs\-Count}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Attrs\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::\-Get\-Attrs\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSchema_a161cef3327616087c9df7c8f4f2ddd4a}
+
+
+get attrs count 
+
+
+
+Implements \hyperlink{classISphSchema_a8fc1cc764fe38efc2f09122da41a8513}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphSchema_a7a06e51c2994c8aa4e1e1d1a959c178c}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Bucket\-Pos@{Get\-Bucket\-Pos}}
+\index{Get\-Bucket\-Pos@{Get\-Bucket\-Pos}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Bucket\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-O\-R\-D} \& C\-Sph\-Schema\-::\-Get\-Bucket\-Pos (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSchema_a7a06e51c2994c8aa4e1e1d1a959c178c}
+
+
+returns 0xffff if bucket list is empty and position otherwise 
+
+\hypertarget{classCSphSchema_a18b6830a1285302d1c4652e19431c91b}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Dynamic\-Size@{Get\-Dynamic\-Size}}
+\index{Get\-Dynamic\-Size@{Get\-Dynamic\-Size}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Dynamic\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::\-Get\-Dynamic\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSchema_a18b6830a1285302d1c4652e19431c91b}
+
+
+get dynamic row part size 
+
+
+
+Implements \hyperlink{classISphSchema_a463fd24309d0d5b2ece986d763326d00}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphSchema_adc27620c661b206a4d39dc58359be831}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Field\-Index@{Get\-Field\-Index}}
+\index{Get\-Field\-Index@{Get\-Field\-Index}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Field\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::\-Get\-Field\-Index (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+) const}}\label{classCSphSchema_adc27620c661b206a4d39dc58359be831}
+get field index by name returns -\/1 if not found \hypertarget{classCSphSchema_a17fe9adba0a1dd20072c80fcda3ccdb6}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Row\-Size@{Get\-Row\-Size}}
+\index{Get\-Row\-Size@{Get\-Row\-Size}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Row\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::\-Get\-Row\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSchema_a17fe9adba0a1dd20072c80fcda3ccdb6}
+
+
+get row size (static+dynamic combined) 
+
+
+
+Implements \hyperlink{classISphSchema_a754ad9f4419091d46294d93a4626e892}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphSchema_ac50ab0879879ccd940e6ed99b812d61e}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Get\-Static\-Size@{Get\-Static\-Size}}
+\index{Get\-Static\-Size@{Get\-Static\-Size}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Get\-Static\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::\-Get\-Static\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSchema_ac50ab0879879ccd940e6ed99b812d61e}
+
+
+get static row part size 
+
+
+
+Implements \hyperlink{classISphSchema_a2fa17738407d39a12dd5a780dc709e76}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphSchema_aec6e5c88cea5b751a9c8afd8be0a8649}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Insert\-Attr@{Insert\-Attr}}
+\index{Insert\-Attr@{Insert\-Attr}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Insert\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Schema\-::\-Insert\-Attr (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Pos, }
+\item[{const {\bf C\-Sph\-Column\-Info} \&}]{t\-Aggr, }
+\item[{bool}]{b\-Dynamic}
+\end{DoxyParamCaption}
+)}}\label{classCSphSchema_aec6e5c88cea5b751a9c8afd8be0a8649}
+
+
+insert attr 
+
+\hypertarget{classCSphSchema_ad0111029643a7f688eb05d38228b0423}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Is\-Reserved@{Is\-Reserved}}
+\index{Is\-Reserved@{Is\-Reserved}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Is\-Reserved}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Schema\-::\-Is\-Reserved (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{sz\-Token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classCSphSchema_ad0111029643a7f688eb05d38228b0423}
+\hypertarget{classCSphSchema_a390c329fef233bb45e1c5035a93459b9}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Rebuild\-Hash@{Rebuild\-Hash}}
+\index{Rebuild\-Hash@{Rebuild\-Hash}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Rebuild\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Schema\-::\-Rebuild\-Hash (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSchema_a390c329fef233bb45e1c5035a93459b9}
+
+
+reset hash and re-\/add all attributes 
+
+\hypertarget{classCSphSchema_af47fcbfbf3a7b074e9c1b9375463b021}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Remove\-Attr@{Remove\-Attr}}
+\index{Remove\-Attr@{Remove\-Attr}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Remove\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Schema\-::\-Remove\-Attr (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{sz\-Attr, }
+\item[{bool}]{b\-Dynamic}
+\end{DoxyParamCaption}
+)}}\label{classCSphSchema_af47fcbfbf3a7b074e9c1b9375463b021}
+
+
+remove attr 
+
+\hypertarget{classCSphSchema_aa5d8cee88cf63cd8d89bf6088c114179}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Schema\-::\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphSchema_aa5d8cee88cf63cd8d89bf6088c114179}
+
+
+reset fields and attrs 
+
+\hypertarget{classCSphSchema_afcde9b749bec5e98140e8b84ec2b8bfc}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!Update\-Hash@{Update\-Hash}}
+\index{Update\-Hash@{Update\-Hash}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{Update\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Schema\-::\-Update\-Hash (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start\-Idx, }
+\item[{{\bf int}}]{i\-Add\-Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSchema_afcde9b749bec5e98140e8b84ec2b8bfc}
+
+
+add i\-Add\-Val to all indexes strictly greater than i\-Start\-Idx in hash structures 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCSphSchema_ae9fc32f1e11e9afd5d44b12b60e68c65}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}}
+\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{C\-Sph\-Rset\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf C\-Sph\-Rset\-Schema}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphSchema_ae9fc32f1e11e9afd5d44b12b60e68c65}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphSchema_aeb38dfa5e7b6aa1b575487d67b73cf9e}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T@{B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T}}
+\index{B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T@{B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Schema\-::\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T = 256\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphSchema_aeb38dfa5e7b6aa1b575487d67b73cf9e}
+\hypertarget{classCSphSchema_a06381a7bc923a8ebc3c77cabb9330078}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!H\-A\-S\-H\-\_\-\-T\-H\-R\-E\-S\-H@{H\-A\-S\-H\-\_\-\-T\-H\-R\-E\-S\-H}}
+\index{H\-A\-S\-H\-\_\-\-T\-H\-R\-E\-S\-H@{H\-A\-S\-H\-\_\-\-T\-H\-R\-E\-S\-H}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{H\-A\-S\-H\-\_\-\-T\-H\-R\-E\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Schema\-::\-H\-A\-S\-H\-\_\-\-T\-H\-R\-E\-S\-H = 32\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphSchema_a06381a7bc923a8ebc3c77cabb9330078}
+\hypertarget{classCSphSchema_a94fe33df4b82a02dd2581053d0832331}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!m\-\_\-d\-Attrs@{m\-\_\-d\-Attrs}}
+\index{m\-\_\-d\-Attrs@{m\-\_\-d\-Attrs}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{m\-\_\-d\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Column\-Info}$>$ C\-Sph\-Schema\-::m\-\_\-d\-Attrs}}\label{classCSphSchema_a94fe33df4b82a02dd2581053d0832331}
+
+
+all my attributes 
+
+\hypertarget{classCSphSchema_ae45e9f7aa6c6689c55207315b723cb4a}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!m\-\_\-d\-Buckets@{m\-\_\-d\-Buckets}}
+\index{m\-\_\-d\-Buckets@{m\-\_\-d\-Buckets}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{m\-\_\-d\-Buckets}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-O\-R\-D} C\-Sph\-Schema\-::m\-\_\-d\-Buckets\mbox{[}{\bf B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSchema_ae45e9f7aa6c6689c55207315b723cb4a}
+
+
+uses indexes in m\-\_\-d\-Attrs as ptrs; 0xffff is like N\-U\-L\-L in this hash 
+
+\hypertarget{classCSphSchema_abc2a31434964af188a792a209c5da8c3}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!m\-\_\-d\-Dynamic\-Used@{m\-\_\-d\-Dynamic\-Used}}
+\index{m\-\_\-d\-Dynamic\-Used@{m\-\_\-d\-Dynamic\-Used}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{m\-\_\-d\-Dynamic\-Used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf int}$>$ C\-Sph\-Schema\-::m\-\_\-d\-Dynamic\-Used}}\label{classCSphSchema_abc2a31434964af188a792a209c5da8c3}
+
+
+dynamic row part map 
+
+\hypertarget{classCSphSchema_a5bc8bc08c16e65a336cf3a90e721de73}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!m\-\_\-d\-Fields@{m\-\_\-d\-Fields}}
+\index{m\-\_\-d\-Fields@{m\-\_\-d\-Fields}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{m\-\_\-d\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Column\-Info}$>$ C\-Sph\-Schema\-::m\-\_\-d\-Fields}}\label{classCSphSchema_a5bc8bc08c16e65a336cf3a90e721de73}
+
+
+my fulltext-\/searchable fields 
+
+\hypertarget{classCSphSchema_a320ab896c9b8e29a71a91d2eff830773}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!m\-\_\-d\-Static\-Used@{m\-\_\-d\-Static\-Used}}
+\index{m\-\_\-d\-Static\-Used@{m\-\_\-d\-Static\-Used}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{m\-\_\-d\-Static\-Used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf int}$>$ C\-Sph\-Schema\-::m\-\_\-d\-Static\-Used}}\label{classCSphSchema_a320ab896c9b8e29a71a91d2eff830773}
+
+
+static row part map (amount of used bits in each rowitem) 
+
+\hypertarget{classCSphSchema_a51e341999cdda7154b60b536ff09bd15}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!m\-\_\-i\-First\-Field\-Len\-Attr@{m\-\_\-i\-First\-Field\-Len\-Attr}}
+\index{m\-\_\-i\-First\-Field\-Len\-Attr@{m\-\_\-i\-First\-Field\-Len\-Attr}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{m\-\_\-i\-First\-Field\-Len\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::m\-\_\-i\-First\-Field\-Len\-Attr\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSchema_a51e341999cdda7154b60b536ff09bd15}
+
+
+position of the first field length attribute (cached on insert/delete) 
+
+\hypertarget{classCSphSchema_aae2d47f85e1897dc10517f9af57ad7b7}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!m\-\_\-i\-Last\-Field\-Len\-Attr@{m\-\_\-i\-Last\-Field\-Len\-Attr}}
+\index{m\-\_\-i\-Last\-Field\-Len\-Attr@{m\-\_\-i\-Last\-Field\-Len\-Attr}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{m\-\_\-i\-Last\-Field\-Len\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::m\-\_\-i\-Last\-Field\-Len\-Attr\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSchema_aae2d47f85e1897dc10517f9af57ad7b7}
+
+
+position of the last field length attribute (cached on insert/delete) 
+
+\hypertarget{classCSphSchema_a76308bc7520f1114f074351fac29d106}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!m\-\_\-i\-Static\-Size@{m\-\_\-i\-Static\-Size}}
+\index{m\-\_\-i\-Static\-Size@{m\-\_\-i\-Static\-Size}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{m\-\_\-i\-Static\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Schema\-::m\-\_\-i\-Static\-Size}}\label{classCSphSchema_a76308bc7520f1114f074351fac29d106}
+
+
+static row size (can be different from m\-\_\-d\-Static\-Used.\-Get\-Length() because of gaps) 
+
+\hypertarget{classCSphSchema_ab00ee49c53efc1c7cca2a3bafdd32e5b}{\index{C\-Sph\-Schema@{C\-Sph\-Schema}!m\-\_\-s\-Name@{m\-\_\-s\-Name}}
+\index{m\-\_\-s\-Name@{m\-\_\-s\-Name}!CSphSchema@{C\-Sph\-Schema}}
+\subsubsection[{m\-\_\-s\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Schema\-::m\-\_\-s\-Name}}\label{classCSphSchema_ab00ee49c53efc1c7cca2a3bafdd32e5b}
+
+
+my human-\/readable name 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

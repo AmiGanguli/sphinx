@@ -1,0 +1,126 @@
+\hypertarget{classExceptionsTrie__c}{\section{Exceptions\-Trie\-\_\-c Class Reference}
+\label{classExceptionsTrie__c}\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classExceptionsTrie__c_afe816a1ae131ad6d5fb9744dd5bd0f6a}{Get\-Mapping} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i) const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExceptionsTrie__c_ab588c81748d8e43b0f42247ea3843319}{Get\-First} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} v) const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExceptionsTrie__c_a487243163d29899111167c02f118f7a5}{Get\-Next} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} v) const 
+\item 
+void \hyperlink{classExceptionsTrie__c_a87a0a1d284a99d08f6d9f841911df665}{Export} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&w) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classExceptionsTrie__c_a4a22cbd12d8c39c48463d9469d1bc93f}{Export} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&w, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Prefix, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Node, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$p\-Count) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExceptionsTrie__c_af5ef1a96af3696fd67c25f98966fb132}{m\-\_\-d\-First} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em table to speedup 1st byte lookup \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classExceptionsTrie__c_ad345df1e9df368e943698c49142972eb}{m\-\_\-d\-Data}
+\begin{DoxyCompactList}\small\item\em data blob \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExceptionsTrie__c_abe897f188365bfb27cd2a9f48428abb1}{m\-\_\-i\-Count}
+\begin{DoxyCompactList}\small\item\em number of exceptions \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExceptionsTrie__c_a3d3c390cfc017b064a309fefa688e901}{m\-\_\-i\-Mappings}
+\begin{DoxyCompactList}\small\item\em offset where the nodes end, and output mappings start \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classExceptionsTrie__c_a824c99a12cb6475c31a4a450c7337e64}{Exceptions\-Trie\-Gen\-\_\-c}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+exceptions trie, stored in a tidy simple blob we serialize each trie node as follows\-:
+
+int result\-\_\-offset, 0 if no output mapping B\-Y\-T\-E num\-\_\-bytes, 0 if no further valid bytes can be accepted B\-Y\-T\-E values\mbox{[}num\-\_\-bytes\mbox{]}, known accepted byte values B\-Y\-T\-E offsets\mbox{[}num\-\_\-bytes\mbox{]}, and the respective next node offsets
+
+output mappings themselves are serialized just after the nodes, as plain old A\-S\-C\-I\-I\-Z strings 
+
+\subsection{Member Function Documentation}
+\hypertarget{classExceptionsTrie__c_a87a0a1d284a99d08f6d9f841911df665}{\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}!Export@{Export}}
+\index{Export@{Export}!ExceptionsTrie_c@{Exceptions\-Trie\-\_\-c}}
+\subsubsection[{Export}]{\setlength{\rightskip}{0pt plus 5cm}void Exceptions\-Trie\-\_\-c\-::\-Export (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{w}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrie__c_a87a0a1d284a99d08f6d9f841911df665}
+\hypertarget{classExceptionsTrie__c_a4a22cbd12d8c39c48463d9469d1bc93f}{\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}!Export@{Export}}
+\index{Export@{Export}!ExceptionsTrie_c@{Exceptions\-Trie\-\_\-c}}
+\subsubsection[{Export}]{\setlength{\rightskip}{0pt plus 5cm}void Exceptions\-Trie\-\_\-c\-::\-Export (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{w, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Prefix, }
+\item[{{\bf int}}]{i\-Node, }
+\item[{{\bf int} $\ast$}]{p\-Count}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classExceptionsTrie__c_a4a22cbd12d8c39c48463d9469d1bc93f}
+\hypertarget{classExceptionsTrie__c_ab588c81748d8e43b0f42247ea3843319}{\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}!Get\-First@{Get\-First}}
+\index{Get\-First@{Get\-First}!ExceptionsTrie_c@{Exceptions\-Trie\-\_\-c}}
+\subsubsection[{Get\-First}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Exceptions\-Trie\-\_\-c\-::\-Get\-First (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{v}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrie__c_ab588c81748d8e43b0f42247ea3843319}
+\hypertarget{classExceptionsTrie__c_afe816a1ae131ad6d5fb9744dd5bd0f6a}{\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}!Get\-Mapping@{Get\-Mapping}}
+\index{Get\-Mapping@{Get\-Mapping}!ExceptionsTrie_c@{Exceptions\-Trie\-\_\-c}}
+\subsubsection[{Get\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E}$\ast$ Exceptions\-Trie\-\_\-c\-::\-Get\-Mapping (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrie__c_afe816a1ae131ad6d5fb9744dd5bd0f6a}
+\hypertarget{classExceptionsTrie__c_a487243163d29899111167c02f118f7a5}{\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}!Get\-Next@{Get\-Next}}
+\index{Get\-Next@{Get\-Next}!ExceptionsTrie_c@{Exceptions\-Trie\-\_\-c}}
+\subsubsection[{Get\-Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Exceptions\-Trie\-\_\-c\-::\-Get\-Next (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i, }
+\item[{{\bf B\-Y\-T\-E}}]{v}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrie__c_a487243163d29899111167c02f118f7a5}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classExceptionsTrie__c_a824c99a12cb6475c31a4a450c7337e64}{\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}!Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!ExceptionsTrie_c@{Exceptions\-Trie\-\_\-c}}
+\subsubsection[{Exceptions\-Trie\-Gen\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Exceptions\-Trie\-Gen\-\_\-c}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classExceptionsTrie__c_a824c99a12cb6475c31a4a450c7337e64}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExceptionsTrie__c_ad345df1e9df368e943698c49142972eb}{\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}!m\-\_\-d\-Data@{m\-\_\-d\-Data}}
+\index{m\-\_\-d\-Data@{m\-\_\-d\-Data}!ExceptionsTrie_c@{Exceptions\-Trie\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf B\-Y\-T\-E}$>$ Exceptions\-Trie\-\_\-c\-::m\-\_\-d\-Data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExceptionsTrie__c_ad345df1e9df368e943698c49142972eb}
+
+
+data blob 
+
+\hypertarget{classExceptionsTrie__c_af5ef1a96af3696fd67c25f98966fb132}{\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}!m\-\_\-d\-First@{m\-\_\-d\-First}}
+\index{m\-\_\-d\-First@{m\-\_\-d\-First}!ExceptionsTrie_c@{Exceptions\-Trie\-\_\-c}}
+\subsubsection[{m\-\_\-d\-First}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Exceptions\-Trie\-\_\-c\-::m\-\_\-d\-First\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExceptionsTrie__c_af5ef1a96af3696fd67c25f98966fb132}
+
+
+table to speedup 1st byte lookup 
+
+\hypertarget{classExceptionsTrie__c_abe897f188365bfb27cd2a9f48428abb1}{\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}!m\-\_\-i\-Count@{m\-\_\-i\-Count}}
+\index{m\-\_\-i\-Count@{m\-\_\-i\-Count}!ExceptionsTrie_c@{Exceptions\-Trie\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Exceptions\-Trie\-\_\-c\-::m\-\_\-i\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExceptionsTrie__c_abe897f188365bfb27cd2a9f48428abb1}
+
+
+number of exceptions 
+
+\hypertarget{classExceptionsTrie__c_a3d3c390cfc017b064a309fefa688e901}{\index{Exceptions\-Trie\-\_\-c@{Exceptions\-Trie\-\_\-c}!m\-\_\-i\-Mappings@{m\-\_\-i\-Mappings}}
+\index{m\-\_\-i\-Mappings@{m\-\_\-i\-Mappings}!ExceptionsTrie_c@{Exceptions\-Trie\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Mappings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Exceptions\-Trie\-\_\-c\-::m\-\_\-i\-Mappings\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExceptionsTrie__c_a3d3c390cfc017b064a309fefa688e901}
+
+
+offset where the nodes end, and output mappings start 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

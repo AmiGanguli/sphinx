@@ -1,0 +1,752 @@
+\hypertarget{sphinxsort_8cpp}{\section{src/sphinxsort.cpp File Reference}
+\label{sphinxsort_8cpp}\index{src/sphinxsort.\-cpp@{src/sphinxsort.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxjson.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCSphGrouper}{C\-Sph\-Grouper}
+\begin{DoxyCompactList}\small\item\em base grouper (class that computes groupby key) \end{DoxyCompactList}\item 
+class \hyperlink{classCSphMatchQueueTraits}{C\-Sph\-Match\-Queue\-Traits}
+\begin{DoxyCompactList}\small\item\em match-\/sorting priority queue traits \end{DoxyCompactList}\item 
+struct \hyperlink{structCompareIndex__fn}{Compare\-Index\-\_\-fn$<$ C\-O\-M\-P $>$}
+\item 
+class \hyperlink{classCSphMatchQueue}{C\-Sph\-Match\-Queue$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+\item 
+struct \hyperlink{structMatchSort__fn}{Match\-Sort\-\_\-fn$<$ C\-O\-M\-P $>$}
+\begin{DoxyCompactList}\small\item\em match sorting functor \end{DoxyCompactList}\item 
+class \hyperlink{classCSphKbufferMatchQueue}{C\-Sph\-Kbuffer\-Match\-Queue$<$ C\-O\-M\-P, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+\item 
+class \hyperlink{classCSphUpdateQueue}{C\-Sph\-Update\-Queue}
+\begin{DoxyCompactList}\small\item\em collector for U\-P\-D\-A\-T\-E statement \end{DoxyCompactList}\item 
+class \hyperlink{classCSphDeleteQueue}{C\-Sph\-Delete\-Queue}
+\begin{DoxyCompactList}\small\item\em collector for D\-E\-L\-E\-T\-E statement \end{DoxyCompactList}\item 
+class \hyperlink{classCSphGrouperString}{C\-Sph\-Grouper\-String$<$ P\-R\-E\-D $>$}
+\item 
+class \hyperlink{classBinaryHash__fn}{Binary\-Hash\-\_\-fn}
+\item 
+class \hyperlink{classCSphGrouperJsonField}{C\-Sph\-Grouper\-Json\-Field}
+\begin{DoxyCompactList}\small\item\em lookup J\-S\-O\-N key, group by looked up value (used in \hyperlink{classCSphKBufferJsonGroupSorter}{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}) \end{DoxyCompactList}\item 
+class \hyperlink{classCSphGrouperMulti}{C\-Sph\-Grouper\-Multi$<$ P\-R\-E\-D $>$}
+\item 
+class \hyperlink{classCSphFixedHash}{C\-Sph\-Fixed\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$}
+\item 
+struct \hyperlink{structCSphFixedHash_1_1HashEntry__t}{C\-Sph\-Fixed\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C $>$\-::\-Hash\-Entry\-\_\-t}
+\item 
+struct \hyperlink{structSphGroupedValue__t}{Sph\-Grouped\-Value\-\_\-t}
+\begin{DoxyCompactList}\small\item\em (group,attrvalue) pair \end{DoxyCompactList}\item 
+struct \hyperlink{structSphUngroupedValue__t}{Sph\-Ungrouped\-Value\-\_\-t}
+\begin{DoxyCompactList}\small\item\em same as \hyperlink{structSphGroupedValue__t}{Sph\-Grouped\-Value\-\_\-t} but without group \end{DoxyCompactList}\item 
+class \hyperlink{classCSphUniqounter}{C\-Sph\-Uniqounter}
+\item 
+struct \hyperlink{structISphMatchComparator}{I\-Sph\-Match\-Comparator}
+\begin{DoxyCompactList}\small\item\em match comparator interface from group-\/by sorter point of view \end{DoxyCompactList}\item 
+struct \hyperlink{structCSphGroupSorterSettings}{C\-Sph\-Group\-Sorter\-Settings}
+\begin{DoxyCompactList}\small\item\em additional group-\/by sorter settings \end{DoxyCompactList}\item 
+class \hyperlink{classIAggrFunc}{I\-Aggr\-Func}
+\begin{DoxyCompactList}\small\item\em aggregate function interface \end{DoxyCompactList}\item 
+class \hyperlink{classIAggrFuncTraits}{I\-Aggr\-Func\-Traits$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em aggregate traits for different attribute types \end{DoxyCompactList}\item 
+class \hyperlink{classAggrSum__t}{Aggr\-Sum\-\_\-t$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em S\-U\-M() implementation. \end{DoxyCompactList}\item 
+class \hyperlink{classAggrAvg__t}{Aggr\-Avg\-\_\-t$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em A\-V\-G() implementation. \end{DoxyCompactList}\item 
+class \hyperlink{classAggrMax__t}{Aggr\-Max\-\_\-t$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em M\-A\-X() implementation. \end{DoxyCompactList}\item 
+class \hyperlink{classAggrMin__t}{Aggr\-Min\-\_\-t$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em M\-I\-N() implementation. \end{DoxyCompactList}\item 
+class \hyperlink{classAggrConcat__t}{Aggr\-Concat\-\_\-t}
+\begin{DoxyCompactList}\small\item\em G\-R\-O\-U\-P\-\_\-\-C\-O\-N\-C\-A\-T() implementation. \end{DoxyCompactList}\item 
+struct \hyperlink{structGroupSorter__fn}{Group\-Sorter\-\_\-fn$<$ C\-O\-M\-P\-G\-R\-O\-U\-P $>$}
+\begin{DoxyCompactList}\small\item\em group sorting functor \end{DoxyCompactList}\item 
+struct \hyperlink{structMatchCloner__t}{Match\-Cloner\-\_\-t}
+\item 
+class \hyperlink{classCSphKBufferGroupSorter}{C\-Sph\-K\-Buffer\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+\begin{DoxyCompactList}\small\item\em match sorter with k-\/buffering and group-\/by \end{DoxyCompactList}\item 
+class \hyperlink{classCSphKBufferNGroupSorter}{C\-Sph\-K\-Buffer\-N\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+\begin{DoxyCompactList}\small\item\em match sorter with k-\/buffering and N-\/best group-\/by \end{DoxyCompactList}\item 
+class \hyperlink{classCSphKBufferMVAGroupSorter}{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+\begin{DoxyCompactList}\small\item\em match sorter with k-\/buffering and group-\/by for M\-V\-As \end{DoxyCompactList}\item 
+class \hyperlink{classCSphKBufferJsonGroupSorter}{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+\begin{DoxyCompactList}\small\item\em match sorter with k-\/buffering and group-\/by for J\-S\-O\-N arrays \end{DoxyCompactList}\item 
+class \hyperlink{classCSphImplicitGroupSorter}{C\-Sph\-Implicit\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+\begin{DoxyCompactList}\small\item\em implicit group-\/by sorter \end{DoxyCompactList}\item 
+struct \hyperlink{structMatchRelevanceLt__fn}{Match\-Relevance\-Lt\-\_\-fn}
+\begin{DoxyCompactList}\small\item\em match sorter \end{DoxyCompactList}\item 
+struct \hyperlink{structMatchAttrLt__fn}{Match\-Attr\-Lt\-\_\-fn}
+\begin{DoxyCompactList}\small\item\em match sorter \end{DoxyCompactList}\item 
+struct \hyperlink{structMatchAttrGt__fn}{Match\-Attr\-Gt\-\_\-fn}
+\begin{DoxyCompactList}\small\item\em match sorter \end{DoxyCompactList}\item 
+struct \hyperlink{structMatchTimeSegments__fn}{Match\-Time\-Segments\-\_\-fn}
+\begin{DoxyCompactList}\small\item\em match sorter \end{DoxyCompactList}\item 
+struct \hyperlink{structMatchExpr__fn}{Match\-Expr\-\_\-fn}
+\begin{DoxyCompactList}\small\item\em match sorter \end{DoxyCompactList}\item 
+struct \hyperlink{structMatchGeneric2__fn}{Match\-Generic2\-\_\-fn}
+\item 
+struct \hyperlink{structMatchGeneric3__fn}{Match\-Generic3\-\_\-fn}
+\item 
+struct \hyperlink{structMatchGeneric4__fn}{Match\-Generic4\-\_\-fn}
+\item 
+struct \hyperlink{structMatchGeneric5__fn}{Match\-Generic5\-\_\-fn}
+\item 
+class \hyperlink{classSortClauseTokenizer__t}{Sort\-Clause\-Tokenizer\-\_\-t}
+\item 
+struct \hyperlink{structExprGeodist__t}{Expr\-Geodist\-\_\-t}
+\item 
+struct \hyperlink{structExprSortStringAttrFixup__c}{Expr\-Sort\-String\-Attr\-Fixup\-\_\-c}
+\item 
+struct \hyperlink{structExprSortJson2StringPtr__c}{Expr\-Sort\-Json2\-String\-Ptr\-\_\-c}
+\item 
+class \hyperlink{classLibcCSHash__fn}{Libc\-C\-S\-Hash\-\_\-fn}
+\item 
+class \hyperlink{classLibcCIHash__fn}{Libc\-C\-I\-Hash\-\_\-fn}
+\item 
+class \hyperlink{classUtf8CIHash__fn}{Utf8\-C\-I\-Hash\-\_\-fn}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxsort_8cpp_a6e25b09a62fa2f4b298b51bf747f7e57}{G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N}(\-\_\-name)
+\begin{DoxyCompactList}\small\item\em groupers \end{DoxyCompactList}\item 
+\#define \hyperlink{sphinxsort_8cpp_ac890bb6942519ac6abba03ea1beec123}{G\-R\-O\-U\-P\-E\-R\-\_\-\-E\-N\-D}
+\item 
+\#define \hyperlink{sphinxsort_8cpp_a70989fc30750da5965fd12abf0e93ee0}{G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N\-\_\-\-S\-P\-L\-I\-T}(\-\_\-name)
+\item 
+\#define \hyperlink{sphinxsort_8cpp_a440f6b143109db8b7d8e10d74ee43bb1}{C\-H\-E\-C\-K\-I\-N\-T\-E\-G\-R\-I\-T\-Y}()~Check\-Integrity()
+\item 
+\#define \hyperlink{sphinxsort_8cpp_a5039c933a50a0273ed5aeb8ca476f9ec}{S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-I\-R}(\-\_\-aa, \-\_\-bb, \-\_\-idx)
+\item 
+\#define \hyperlink{sphinxsort_8cpp_aebeb0ba865fd13ba656b83ba49d80a3f}{S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-K\-E\-Y\-P\-A\-R\-T}(\-\_\-idx)
+\item 
+\#define \hyperlink{sphinxsort_8cpp_a44fd9a659b4f20a9431d8267b5916802}{C\-O\-L\-L\-A\-T\-E\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-U\-F\-F\-E\-R}~1024
+\item 
+\#define \hyperlink{sphinxsort_8cpp_a6d6b2b37f312e81634ab4c88e21db826}{L\-O\-C\-\_\-\-C\-H\-E\-C\-K}(\-\_\-cond, \-\_\-msg)~\hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} (!(\-\_\-cond)) \{ s\-Error = \char`\"{}invalid schema\-: \char`\"{} \-\_\-msg; \hyperlink{sphinxsort_8cpp_a3a3a0de38f503963432a78b8a36aa74c}{return} N\-U\-L\-L; \}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{sphinxsort_8cpp_ab18dbc744a7e1518a776845191f194c8}{Sph\-Group\-Key\-\_\-t}
+\begin{DoxyCompactList}\small\item\em groupby key type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122a6210d0ffead1020f4de9235beb9ad3ae}{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-I\-D} = -\/1, 
+\hyperlink{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122aa3fbecdf2e4666f0f5be94a7ddd5a0de}{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-R\-E\-L\-E\-V\-A\-N\-C\-E} = -\/2, 
+\hyperlink{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122a45c745438f3619c3e05ed5682d2d2bf7}{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-F\-L\-O\-A\-T} = 10000
+ \}
+\begin{DoxyCompactList}\small\item\em attribute magic \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{sphinxsort_8cpp_ad305dae49961d37207a393c050d25412}{Has\-String} (const \hyperlink{structCSphMatchComparatorState}{C\-Sph\-Match\-Comparator\-State} $\ast$p\-State)
+\item 
+static bool \hyperlink{sphinxsort_8cpp_a955ebf2bdfc804a5e670f03cfac0676d}{Is\-Count} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s)
+\item 
+static bool \hyperlink{sphinxsort_8cpp_a8b788bb839da83c7f78ff104ffffdc3d}{Is\-Groupby} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s)
+\item 
+static bool \hyperlink{sphinxsort_8cpp_a36405f082bbc107122514c61f204f442}{Is\-Groupby\-Magic} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s)
+\item 
+\hyperlink{sphinxsort_8cpp_ac890bb6942519ac6abba03ea1beec123}{G\-R\-O\-U\-P\-E\-R\-\_\-\-E\-N\-D} \hyperlink{sphinxsort_8cpp_a3a3a0de38f503963432a78b8a36aa74c}{return} (t\-Split.\-tm\-\_\-year+1900)$\ast$10000+(1+t\-Split.\-tm\-\_\-mon)$\ast$100+t\-Split.\-tm\-\_\-mday
+\item 
+\hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} (\hyperlink{sphinxsort_8cpp_aac03df48f7148c7235b81582b80651c4}{i\-Prev\-Sunday}$<$=0)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static char $\ast$ \hyperlink{sphinxsort_8cpp_a3b4b40afccb3f8f5f090a40bc4c306e2}{Format\-Int} (char s\-Buf\mbox{[}32\mbox{]}, T v)
+\item 
+static void \hyperlink{sphinxsort_8cpp_a03b83adf7ebd7142cab2031b3699984d}{Extract\-Aggregates} (const \hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} \&t\-Schema, const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&t\-Loc\-Count, const \hyperlink{sphinx_8h_aac27c366506093037ef354974cf5d0a0}{E\-Sph\-Sort\-Key\-Part} $\ast$m\-\_\-p\-Group\-Sorter\-Keyparts, const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} $\ast$m\-\_\-p\-Group\-Sorter\-Locator, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classIAggrFunc}{I\-Aggr\-Func} $\ast$ $>$ \&d\-Aggregates, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classIAggrFunc}{I\-Aggr\-Func} $\ast$ $>$ \&d\-Avgs, \hyperlink{structMatchCloner__t}{Match\-Cloner\-\_\-t} \&t\-Cloner)
+\item 
+static \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} \hyperlink{sphinxsort_8cpp_a604660e282e06003e8715b9e0b691c47}{Get\-Distinct\-Key} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Entry, const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&t\-Distinct\-Loc, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-Distinct\-Attr, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-String\-Base)
+\item 
+static \hyperlink{sphinx_8h_aac27c366506093037ef354974cf5d0a0}{E\-Sph\-Sort\-Key\-Part} \hyperlink{sphinxsort_8cpp_abc9556ef119b6ac5fe8bc267af76b62b}{Attr2\-Keypart} (\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-Type)
+\item 
+\hyperlink{sphinx_8h_a9c83aa1030b7b7b5525b348f450206c1}{E\-Sort\-Clause\-Parse\-Result} \hyperlink{sphinxsort_8cpp_a3d7fc54f61bfea33eb3d8621bdc4a7bc}{sph\-Parse\-Sort\-Clause} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const char $\ast$s\-Clause, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Schema, \hyperlink{sphinx_8h_a7da4ad16a48ad03d692d87fad70d097f}{E\-Sph\-Sort\-Func} \&e\-Func, \hyperlink{structCSphMatchComparatorState}{C\-Sph\-Match\-Comparator\-State} \&t\-State, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+{\footnotesize template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P $>$ }\\static \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$ \hyperlink{sphinxsort_8cpp_a94d2183bc3b94a073671d852f008a7c4}{sph\-Create\-Sorter3rd} (const \hyperlink{structISphMatchComparator}{I\-Sph\-Match\-Comparator} $\ast$p\-Comp, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const \hyperlink{structCSphGroupSorterSettings}{C\-Sph\-Group\-Sorter\-Settings} \&t\-Settings, bool b\-Has\-Packed\-Factors)
+\item 
+static \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$ \hyperlink{sphinxsort_8cpp_a09d1f642ced8d242d01859e3f218257d}{sph\-Create\-Sorter2nd} (\hyperlink{sphinx_8h_a7da4ad16a48ad03d692d87fad70d097f}{E\-Sph\-Sort\-Func} e\-Group\-Func, const \hyperlink{structISphMatchComparator}{I\-Sph\-Match\-Comparator} $\ast$p\-Comp, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const \hyperlink{structCSphGroupSorterSettings}{C\-Sph\-Group\-Sorter\-Settings} \&t\-Settings, bool b\-Has\-Packed\-Factors)
+\item 
+static \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$ \hyperlink{sphinxsort_8cpp_a84775fc254fd4d50ce63c04e03f1e791}{sph\-Create\-Sorter1st} (\hyperlink{sphinx_8h_a7da4ad16a48ad03d692d87fad70d097f}{E\-Sph\-Sort\-Func} e\-Match\-Func, \hyperlink{sphinx_8h_a7da4ad16a48ad03d692d87fad70d097f}{E\-Sph\-Sort\-Func} e\-Group\-Func, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const \hyperlink{structCSphGroupSorterSettings}{C\-Sph\-Group\-Sorter\-Settings} \&t\-Settings, bool b\-Has\-Packed\-Factors)
+\item 
+static double \hyperlink{sphinxsort_8cpp_a786a2fe203fd87281d67dbaebc2c48b1}{sph\-Sqr} (double v)
+\item 
+static \hyperlink{classCSphGrouper}{C\-Sph\-Grouper} $\ast$ \hyperlink{sphinxsort_8cpp_a539e9a53bc8fde4d2a3db0c8711a06e1}{sph\-Create\-Grouper\-String} (const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&t\-Loc, \hyperlink{sphinxexpr_8h_a78197b7b74319074237ecaf5d99cfbe5}{E\-Sph\-Collation} e\-Collation)
+\item 
+static \hyperlink{classCSphGrouper}{C\-Sph\-Grouper} $\ast$ \hyperlink{sphinxsort_8cpp_acfcd99b3d582f800f541a8212035498c}{sph\-Create\-Grouper\-Multi} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} $>$ \&d\-Locators, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} $>$ \&d\-Attr\-Types, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ $>$ \&d\-Json\-Keys, \hyperlink{sphinxexpr_8h_a78197b7b74319074237ecaf5d99cfbe5}{E\-Sph\-Collation} e\-Collation)
+\item 
+static bool \hyperlink{sphinxsort_8cpp_a12f7937c9968b494ca10fdcd8814c179}{Setup\-Groupby\-Settings} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Schema, \hyperlink{structCSphGroupSorterSettings}{C\-Sph\-Group\-Sorter\-Settings} \&t\-Settings, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \&d\-Group\-Columns, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Implicit)
+\item 
+static bool \hyperlink{sphinxsort_8cpp_ae12dc04ad960fdd14d7b653b3f9fc28c}{Fixup\-Dependency} (\hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Schema, const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$p\-Attrs, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Attr\-Count)
+\item 
+bool \hyperlink{sphinxsort_8cpp_abec81568b949db53d7d3eaedfa94bca2}{sph\-Is\-Sort\-String\-Internal} (const char $\ast$s\-Column\-Name)
+\item 
+static void \hyperlink{sphinxsort_8cpp_a228d071a5b4fa940d8952aa4a734303d}{Setup\-Sort\-Remap} (\hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} \&t\-Sorter\-Schema, \hyperlink{structCSphMatchComparatorState}{C\-Sph\-Match\-Comparator\-State} \&t\-State)
+\item 
+bool \hyperlink{sphinxsort_8cpp_a7af81ead1c04ec191065b9522d6c2467}{sph\-Sort\-Get\-String\-Remap} (const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Index\-Schema, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structSphStringSorterRemap__t}{Sph\-String\-Sorter\-Remap\-\_\-t} $>$ \&d\-Attrs)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxsort_8cpp_a66f83973ed60482106aa77b8387b6bc0}{sph\-Collate\-Binary} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str1, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str2, bool b\-Packed)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxsort_8cpp_a48fe79b0d5d3c4871dd7e90b4d74b21f}{sph\-Collate\-Libc\-C\-I} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str1, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str2, bool b\-Packed)
+\begin{DoxyCompactList}\small\item\em libc\-\_\-ci, wrapper for strcasecmp \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxsort_8cpp_a6106d5b56ac4ec38984b66f59f68b821}{sph\-Collate\-Libc\-C\-S} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str1, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str2, bool b\-Packed)
+\begin{DoxyCompactList}\small\item\em libc\-\_\-cs, wrapper for strcoll \end{DoxyCompactList}\item 
+void \hyperlink{sphinxsort_8cpp_a16bae79c273dbd679b2a165847041e35}{sph\-Collation\-Init} ()
+\begin{DoxyCompactList}\small\item\em initialize collation L\-U\-Ts \end{DoxyCompactList}\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxsort_8cpp_ac7caa868134da4e003efa3ee42a2e639}{Collate\-U\-T\-F8\-C\-I} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Code)
+\begin{DoxyCompactList}\small\item\em collate a single codepoint \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxsort_8cpp_a057ea2218614fda23dfc1a69ae90b232}{sph\-Collate\-Utf8\-General\-C\-I} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Arg1, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Arg2, bool b\-Packed)
+\begin{DoxyCompactList}\small\item\em utf8\-\_\-general\-\_\-ci \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename C\-O\-M\-P $>$ }\\static \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$ \hyperlink{sphinxsort_8cpp_a126dc805d99c969308e0ca789caf04d5}{Create\-Plain\-Sorter} (bool b\-Kbuffer, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Max\-Matches, bool b\-Uses\-Attrs, bool b\-Factors)
+\item 
+static \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$ \hyperlink{sphinxsort_8cpp_ab1532b4e225ef320c2fad2db7a44b8cd}{Create\-Plain\-Sorter} (\hyperlink{sphinx_8h_a7da4ad16a48ad03d692d87fad70d097f}{E\-Sph\-Sort\-Func} e\-Match\-Func, bool b\-Kbuffer, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Max\-Matches, bool b\-Uses\-Attrs, bool b\-Factors)
+\item 
+static void \hyperlink{sphinxsort_8cpp_a0fedfbfde9fcaaef8191f4d40ab9dec6}{Extra\-Add\-Sortkeys} (\hyperlink{classCSphSchema}{C\-Sph\-Schema} $\ast$p\-Extra, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$d\-Attrs)
+\item 
+\hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$ \hyperlink{sphinxsort_8cpp_a52259b0437ac921093fc3a8313af5955}{sph\-Create\-Queue} (\hyperlink{structSphQueueSettings__t}{Sph\-Queue\-Settings\-\_\-t} \&t\-Queue)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxsort_8cpp_a059f0e40d854f799f072f830a78915d0}{sph\-Flatten\-Queue} (\hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$p\-Queue, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$p\-Result, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Tag)
+\begin{DoxyCompactList}\small\item\em convert queue to sorted array, and add its entries to result's matches array \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxsort_8cpp_aabb185b2e0e49f41a6a3efb2f6f9f8ce}{sph\-Has\-Expressions} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} \&t\-Query, const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Schema)
+\begin{DoxyCompactList}\small\item\em check query for expressions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxsort_8cpp_a3a3a0de38f503963432a78b8a36aa74c}{return} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value}
+\item 
+\hyperlink{sphinxsort_8cpp_ac890bb6942519ac6abba03ea1beec123}{G\-R\-O\-U\-P\-E\-R\-\_\-\-E\-N\-D} \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxsort_8cpp_aac03df48f7148c7235b81582b80651c4}{i\-Prev\-Sunday} = (1+t\-Split.\-tm\-\_\-yday) -\/ t\-Split.\-tm\-\_\-wday
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxsort_8cpp_aff44b11da9adef57c6766912ab82bf7d}{i\-Year} = t\-Split.\-tm\-\_\-year+1900
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxsort_8cpp_aeed58345f5f77df3fb01e906f195ca86}{M\-A\-X\-\_\-\-S\-O\-R\-T\-\_\-\-F\-I\-E\-L\-D\-S} = 5
+\item 
+static const char \hyperlink{sphinxsort_8cpp_a7f1b44a6628ead9e1794ffe9aa0ed987}{g\-\_\-s\-Int\-Attr\-Prefix} \mbox{[}$\,$\mbox{]} = \char`\"{}@int\-\_\-str2ptr\-\_\-\char`\"{}
+\item 
+static unsigned short $\ast$ \hyperlink{sphinxsort_8cpp_a241c5407ec773343722ac9b1e70494a9}{g\-\_\-d\-Coll\-Planes\-\_\-\-U\-T\-F8\-C\-I} \mbox{[}0x100\mbox{]}
+\begin{DoxyCompactList}\small\item\em 1st level L\-U\-T \end{DoxyCompactList}\item 
+static unsigned short \hyperlink{sphinxsort_8cpp_a2773dba1e7303c318900469a353f9a74}{g\-\_\-d\-Coll\-Weights\-\_\-\-U\-T\-F8\-C\-I} \mbox{[}0xb00\mbox{]}
+\begin{DoxyCompactList}\small\item\em 2nd level L\-U\-T, non-\/trivial collation data \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxsort_8cpp_a440f6b143109db8b7d8e10d74ee43bb1}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!C\-H\-E\-C\-K\-I\-N\-T\-E\-G\-R\-I\-T\-Y@{C\-H\-E\-C\-K\-I\-N\-T\-E\-G\-R\-I\-T\-Y}}
+\index{C\-H\-E\-C\-K\-I\-N\-T\-E\-G\-R\-I\-T\-Y@{C\-H\-E\-C\-K\-I\-N\-T\-E\-G\-R\-I\-T\-Y}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{C\-H\-E\-C\-K\-I\-N\-T\-E\-G\-R\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-I\-N\-T\-E\-G\-R\-I\-T\-Y(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~Check\-Integrity()}}\label{sphinxsort_8cpp_a440f6b143109db8b7d8e10d74ee43bb1}
+\hypertarget{sphinxsort_8cpp_a44fd9a659b4f20a9431d8267b5916802}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!C\-O\-L\-L\-A\-T\-E\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-U\-F\-F\-E\-R@{C\-O\-L\-L\-A\-T\-E\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-U\-F\-F\-E\-R}}
+\index{C\-O\-L\-L\-A\-T\-E\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-U\-F\-F\-E\-R@{C\-O\-L\-L\-A\-T\-E\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-U\-F\-F\-E\-R}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{C\-O\-L\-L\-A\-T\-E\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-U\-F\-F\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-L\-L\-A\-T\-E\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-U\-F\-F\-E\-R~1024}}\label{sphinxsort_8cpp_a44fd9a659b4f20a9431d8267b5916802}
+\hypertarget{sphinxsort_8cpp_a6e25b09a62fa2f4b298b51bf747f7e57}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N@{G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N}}
+\index{G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N@{G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a6e25b09a62fa2f4b298b51bf747f7e57}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keyword}{class }\_name : \textcolor{keyword}{public} \hyperlink{classCSphGrouper}{CSphGrouper} \(\backslash\)
+    \{ \(\backslash\)
+    protected: \hyperlink{structCSphAttrLocator}{\(\backslash\)}
+\hyperlink{structCSphAttrLocator}{        CSphAttrLocator} m\_tLocator; \(\backslash\)
+    public: \(\backslash\)
+        explicit \_name ( \textcolor{keyword}{const} \hyperlink{structCSphAttrLocator}{CSphAttrLocator} & tLoc ) : 
+      m\_tLocator ( tLoc ) \{\} \(\backslash\)
+        virtual \textcolor{keywordtype}{void} \hyperlink{classCSphGrouper_a1f44c7fcc468e8be0f8ff0f459f7df55}{GetLocator} ( \hyperlink{structCSphAttrLocator}{CSphAttrLocator} & 
+      tOut )\textcolor{keyword}{ const }\{ tOut = m\_tLocator; \} \(\backslash\)
+        virtual \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{ESphAttr} \hyperlink{classCSphGrouper_a65601058a482a9c00612190c3b0ce916}{GetResultType} ()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} 
+      m\_tLocator.m\_iBitCount>8*(\hyperlink{sphinxexpr_8cpp_ae1c677d28873cd6f6145ab2068069c29}{int})\textcolor{keyword}{sizeof}(\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{DWORD}) ? \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3aebb6f6647738db48b92db49b234d92cc}{SPH\_ATTR\_BIGINT}
+       : \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3ada7adb5c7eabf1dba13108ef88601fc7}{SPH\_ATTR\_INTEGER}; \} \(\backslash\)
+        virtual \hyperlink{sphinxsort_8cpp_ab18dbc744a7e1518a776845191f194c8}{SphGroupKey\_t} \hyperlink{classCSphGrouper_a4e4e035c9a8e19eeef0e930ec489fe5f}{KeyFromMatch} ( \textcolor{keyword}{const} 
+      \hyperlink{classCSphMatch}{CSphMatch} & tMatch )\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \hyperlink{classCSphGrouper_a1368b3aab58f2f0701dac5e0ffb7e4fb}{KeyFromValue} ( tMatch.
+      \hyperlink{classCSphMatch_a7815028ab8bfbe58ef6748c9eab6e1db}{GetAttr} ( m\_tLocator ) ); \} \(\backslash\)
+        virtual \hyperlink{sphinxsort_8cpp_ab18dbc744a7e1518a776845191f194c8}{SphGroupKey\_t} \hyperlink{classCSphGrouper_a1368b3aab58f2f0701dac5e0ffb7e4fb}{KeyFromValue} ( \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{SphAttr\_t}
+       \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{uValue} ) \textcolor{keyword}{const} \(\backslash\)
+        \{
+\end{DoxyCode}
+
+
+groupers 
+
+\hypertarget{sphinxsort_8cpp_a70989fc30750da5965fd12abf0e93ee0}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N\-\_\-\-S\-P\-L\-I\-T@{G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N\-\_\-\-S\-P\-L\-I\-T}}
+\index{G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N\-\_\-\-S\-P\-L\-I\-T@{G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N\-\_\-\-S\-P\-L\-I\-T}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N\-\_\-\-S\-P\-L\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-R\-O\-U\-P\-E\-R\-\_\-\-B\-E\-G\-I\-N\-\_\-\-S\-P\-L\-I\-T(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a70989fc30750da5965fd12abf0e93ee0}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\hyperlink{sphinxsort_8cpp_a6e25b09a62fa2f4b298b51bf747f7e57}{GROUPER\_BEGIN}(\_name) \(\backslash\)
+    time\_t tStamp = (time\_t)\hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{uValue}; \(\backslash\)
+    struct tm tSplit; \(\backslash\)
+    localtime\_r ( &tStamp, &tSplit );
+\end{DoxyCode}
+\hypertarget{sphinxsort_8cpp_ac890bb6942519ac6abba03ea1beec123}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!G\-R\-O\-U\-P\-E\-R\-\_\-\-E\-N\-D@{G\-R\-O\-U\-P\-E\-R\-\_\-\-E\-N\-D}}
+\index{G\-R\-O\-U\-P\-E\-R\-\_\-\-E\-N\-D@{G\-R\-O\-U\-P\-E\-R\-\_\-\-E\-N\-D}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{G\-R\-O\-U\-P\-E\-R\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-R\-O\-U\-P\-E\-R\-\_\-\-E\-N\-D}}\label{sphinxsort_8cpp_ac890bb6942519ac6abba03ea1beec123}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\} \(\backslash\)
+    \};
+\end{DoxyCode}
+\hypertarget{sphinxsort_8cpp_a6d6b2b37f312e81634ab4c88e21db826}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!L\-O\-C\-\_\-\-C\-H\-E\-C\-K@{L\-O\-C\-\_\-\-C\-H\-E\-C\-K}}
+\index{L\-O\-C\-\_\-\-C\-H\-E\-C\-K@{L\-O\-C\-\_\-\-C\-H\-E\-C\-K}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-C\-H\-E\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-C\-H\-E\-C\-K(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-cond, }
+\item[{}]{\-\_\-msg}
+\end{DoxyParamCaption}
+)~{\bf if} (!(\-\_\-cond)) \{ s\-Error = \char`\"{}invalid schema\-: \char`\"{} \-\_\-msg; {\bf return} N\-U\-L\-L; \}}}\label{sphinxsort_8cpp_a6d6b2b37f312e81634ab4c88e21db826}
+\hypertarget{sphinxsort_8cpp_aebeb0ba865fd13ba656b83ba49d80a3f}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-K\-E\-Y\-P\-A\-R\-T@{S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-K\-E\-Y\-P\-A\-R\-T}}
+\index{S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-K\-E\-Y\-P\-A\-R\-T@{S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-K\-E\-Y\-P\-A\-R\-T}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-K\-E\-Y\-P\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-K\-E\-Y\-P\-A\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-idx}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_aebeb0ba865fd13ba656b83ba49d80a3f}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{switch} ( t.m\_eKeypart[\_idx] ) \(\backslash\)
+    \{ \(\backslash\)
+        case \hyperlink{sphinx_8h_aac27c366506093037ef354974cf5d0a0ad32e0c857d77c0fe3cf2c582e89ca1a4}{SPH\_KEYPART\_ID}:      \hyperlink{sphinxsort_8cpp_a5039c933a50a0273ed5aeb8ca476f9ec}{SPH\_TEST\_PAIR} ( a.
+      m\_uDocID, b.m\_uDocID, \_idx ); \textcolor{keywordflow}{break}; \(\backslash\)
+        case \hyperlink{sphinx_8h_aac27c366506093037ef354974cf5d0a0ab0d839f8fd201f826662c2bd8bcbecb5}{SPH\_KEYPART\_WEIGHT}:  \hyperlink{sphinxsort_8cpp_a5039c933a50a0273ed5aeb8ca476f9ec}{SPH\_TEST\_PAIR} 
+      ( a.m\_iWeight, b.m\_iWeight, \_idx ); \textcolor{keywordflow}{break}; \(\backslash\)
+        case \hyperlink{sphinx_8h_aac27c366506093037ef354974cf5d0a0ad3039ce6d6975a762d62e0490c6ab83d}{SPH\_KEYPART\_INT}: \(\backslash\)
+        \{ \(\backslash\)
+            register \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{SphAttr\_t} aa = a.GetAttr ( t.m\_tLocator[\_idx] ); 
+      \(\backslash\)
+            register \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{SphAttr\_t} bb = b.GetAttr ( t.m\_tLocator[\_idx] ); 
+      \(\backslash\)
+            SPH\_TEST\_PAIR ( aa, bb, \_idx ); \(\backslash\)
+            break; \(\backslash\)
+        \} \(\backslash\)
+        case \hyperlink{sphinx_8h_aac27c366506093037ef354974cf5d0a0a9179667370695104eca6a5497714c0ee}{SPH\_KEYPART\_FLOAT}: \(\backslash\)
+        \{ \(\backslash\)
+            register \textcolor{keywordtype}{float} aa = a.GetAttrFloat ( t.m\_tLocator[\_idx] ); \(\backslash\)
+            register \textcolor{keywordtype}{float} bb = b.GetAttrFloat ( t.m\_tLocator[\_idx] ); \(\backslash\)
+            SPH\_TEST\_PAIR ( aa, bb, \_idx ) \(\backslash\)
+            break; \(\backslash\)
+        \} \(\backslash\)
+        case \hyperlink{sphinx_8h_aac27c366506093037ef354974cf5d0a0a2ce5ca4bfbce1e93de95be8256ef7a6a}{SPH\_KEYPART\_STRINGPTR}: \(\backslash\)
+        case \hyperlink{sphinx_8h_aac27c366506093037ef354974cf5d0a0a19542b3d6b9b643275730afaf97b4fde}{SPH\_KEYPART\_STRING}: \(\backslash\)
+        \{ \(\backslash\)
+            int iCmp = t.CmpStrings ( a, b, \_idx ); \(\backslash\)
+            if ( iCmp!=0 ) \(\backslash\)
+                return ( ( t.m\_uAttrDesc >> (\_idx) ) & 1 ) ^ ( iCmp>0 ); \(\backslash\)
+            break; \(\backslash\)
+        \} \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{sphinxsort_8cpp_a5039c933a50a0273ed5aeb8ca476f9ec}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-I\-R@{S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-I\-R}}
+\index{S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-I\-R@{S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-I\-R}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-I\-R(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-aa, }
+\item[{}]{\-\_\-bb, }
+\item[{}]{\-\_\-idx}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a5039c933a50a0273ed5aeb8ca476f9ec}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( (\_aa)!=(\_bb) ) \(\backslash\)
+        return ( (t.m\_uAttrDesc >> (\_idx)) & 1 ) ^ ( (\_aa) > (\_bb) );
+\end{DoxyCode}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sphinxsort_8cpp_ab18dbc744a7e1518a776845191f194c8}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Sph\-Group\-Key\-\_\-t@{Sph\-Group\-Key\-\_\-t}}
+\index{Sph\-Group\-Key\-\_\-t@{Sph\-Group\-Key\-\_\-t}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Sph\-Group\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int64\-\_\-t} {\bf Sph\-Group\-Key\-\_\-t}}}\label{sphinxsort_8cpp_ab18dbc744a7e1518a776845191f194c8}
+
+
+groupby key type 
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122}
+
+
+attribute magic 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-I\-D@{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-I\-D}!sphinxsort.\-cpp@{sphinxsort.\-cpp}}\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-I\-D@{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-I\-D}}\item[{\em 
+\hypertarget{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122a6210d0ffead1020f4de9235beb9ad3ae}{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-I\-D}\label{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122a6210d0ffead1020f4de9235beb9ad3ae}
+}]tells match sorter to use doc id \index{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-R\-E\-L\-E\-V\-A\-N\-C\-E@{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-R\-E\-L\-E\-V\-A\-N\-C\-E}!sphinxsort.\-cpp@{sphinxsort.\-cpp}}\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-R\-E\-L\-E\-V\-A\-N\-C\-E@{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-R\-E\-L\-E\-V\-A\-N\-C\-E}}\item[{\em 
+\hypertarget{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122aa3fbecdf2e4666f0f5be94a7ddd5a0de}{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-R\-E\-L\-E\-V\-A\-N\-C\-E}\label{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122aa3fbecdf2e4666f0f5be94a7ddd5a0de}
+}]tells match sorter to use match weight \index{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-F\-L\-O\-A\-T@{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-F\-L\-O\-A\-T}!sphinxsort.\-cpp@{sphinxsort.\-cpp}}\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-F\-L\-O\-A\-T@{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-F\-L\-O\-A\-T}}\item[{\em 
+\hypertarget{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122a45c745438f3619c3e05ed5682d2d2bf7}{S\-P\-H\-\_\-\-V\-A\-T\-T\-R\-\_\-\-F\-L\-O\-A\-T}\label{sphinxsort_8cpp_a1fb9092bcdeada2d206bdc74afbbe122a45c745438f3619c3e05ed5682d2d2bf7}
+}]tells match sorter to compare floats \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxsort_8cpp_abc9556ef119b6ac5fe8bc267af76b62b}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Attr2\-Keypart@{Attr2\-Keypart}}
+\index{Attr2\-Keypart@{Attr2\-Keypart}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Attr2\-Keypart}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf E\-Sph\-Sort\-Key\-Part} Attr2\-Keypart (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Attr}}]{e\-Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxsort_8cpp_abc9556ef119b6ac5fe8bc267af76b62b}
+\hypertarget{sphinxsort_8cpp_ac7caa868134da4e003efa3ee42a2e639}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Collate\-U\-T\-F8\-C\-I@{Collate\-U\-T\-F8\-C\-I}}
+\index{Collate\-U\-T\-F8\-C\-I@{Collate\-U\-T\-F8\-C\-I}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Collate\-U\-T\-F8\-C\-I}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Collate\-U\-T\-F8\-C\-I (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxsort_8cpp_ac7caa868134da4e003efa3ee42a2e639}
+
+
+collate a single codepoint 
+
+\hypertarget{sphinxsort_8cpp_a126dc805d99c969308e0ca789caf04d5}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Create\-Plain\-Sorter@{Create\-Plain\-Sorter}}
+\index{Create\-Plain\-Sorter@{Create\-Plain\-Sorter}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Create\-Plain\-Sorter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P $>$ static {\bf I\-Sph\-Match\-Sorter}$\ast$ Create\-Plain\-Sorter (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Kbuffer, }
+\item[{{\bf int}}]{i\-Max\-Matches, }
+\item[{bool}]{b\-Uses\-Attrs, }
+\item[{bool}]{b\-Factors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a126dc805d99c969308e0ca789caf04d5}
+\hypertarget{sphinxsort_8cpp_ab1532b4e225ef320c2fad2db7a44b8cd}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Create\-Plain\-Sorter@{Create\-Plain\-Sorter}}
+\index{Create\-Plain\-Sorter@{Create\-Plain\-Sorter}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Create\-Plain\-Sorter}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I\-Sph\-Match\-Sorter}$\ast$ Create\-Plain\-Sorter (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Sort\-Func}}]{e\-Match\-Func, }
+\item[{bool}]{b\-Kbuffer, }
+\item[{{\bf int}}]{i\-Max\-Matches, }
+\item[{bool}]{b\-Uses\-Attrs, }
+\item[{bool}]{b\-Factors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_ab1532b4e225ef320c2fad2db7a44b8cd}
+\hypertarget{sphinxsort_8cpp_a0fedfbfde9fcaaef8191f4d40ab9dec6}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Extra\-Add\-Sortkeys@{Extra\-Add\-Sortkeys}}
+\index{Extra\-Add\-Sortkeys@{Extra\-Add\-Sortkeys}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Extra\-Add\-Sortkeys}]{\setlength{\rightskip}{0pt plus 5cm}static void Extra\-Add\-Sortkeys (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Schema} $\ast$}]{p\-Extra, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{const {\bf int} $\ast$}]{d\-Attrs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a0fedfbfde9fcaaef8191f4d40ab9dec6}
+\hypertarget{sphinxsort_8cpp_a03b83adf7ebd7142cab2031b3699984d}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Extract\-Aggregates@{Extract\-Aggregates}}
+\index{Extract\-Aggregates@{Extract\-Aggregates}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Extract\-Aggregates}]{\setlength{\rightskip}{0pt plus 5cm}static void Extract\-Aggregates (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Rset\-Schema} \&}]{t\-Schema, }
+\item[{const {\bf C\-Sph\-Attr\-Locator} \&}]{t\-Loc\-Count, }
+\item[{const {\bf E\-Sph\-Sort\-Key\-Part} $\ast$}]{m\-\_\-p\-Group\-Sorter\-Keyparts, }
+\item[{const {\bf C\-Sph\-Attr\-Locator} $\ast$}]{m\-\_\-p\-Group\-Sorter\-Locator, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf I\-Aggr\-Func} $\ast$ $>$ \&}]{d\-Aggregates, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf I\-Aggr\-Func} $\ast$ $>$ \&}]{d\-Avgs, }
+\item[{{\bf Match\-Cloner\-\_\-t} \&}]{t\-Cloner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a03b83adf7ebd7142cab2031b3699984d}
+\hypertarget{sphinxsort_8cpp_ae12dc04ad960fdd14d7b653b3f9fc28c}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Fixup\-Dependency@{Fixup\-Dependency}}
+\index{Fixup\-Dependency@{Fixup\-Dependency}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Fixup\-Dependency}]{\setlength{\rightskip}{0pt plus 5cm}static bool Fixup\-Dependency (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{const {\bf int} $\ast$}]{p\-Attrs, }
+\item[{{\bf int}}]{i\-Attr\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_ae12dc04ad960fdd14d7b653b3f9fc28c}
+\hypertarget{sphinxsort_8cpp_a3b4b40afccb3f8f5f090a40bc4c306e2}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Format\-Int@{Format\-Int}}
+\index{Format\-Int@{Format\-Int}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Format\-Int}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static char$\ast$ Format\-Int (
+\begin{DoxyParamCaption}
+\item[{char}]{s\-Buf\mbox{[}32\mbox{]}, }
+\item[{T}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxsort_8cpp_a3b4b40afccb3f8f5f090a40bc4c306e2}
+\hypertarget{sphinxsort_8cpp_a604660e282e06003e8715b9e0b691c47}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Get\-Distinct\-Key@{Get\-Distinct\-Key}}
+\index{Get\-Distinct\-Key@{Get\-Distinct\-Key}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Get\-Distinct\-Key}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Sph\-Attr\-\_\-t} Get\-Distinct\-Key (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Entry, }
+\item[{const {\bf C\-Sph\-Attr\-Locator} \&}]{t\-Distinct\-Loc, }
+\item[{{\bf E\-Sph\-Attr}}]{e\-Distinct\-Attr, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-String\-Base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a604660e282e06003e8715b9e0b691c47}
+\hypertarget{sphinxsort_8cpp_ad305dae49961d37207a393c050d25412}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Has\-String@{Has\-String}}
+\index{Has\-String@{Has\-String}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Has\-String}]{\setlength{\rightskip}{0pt plus 5cm}static bool Has\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match\-Comparator\-State} $\ast$}]{p\-State}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_ad305dae49961d37207a393c050d25412}
+\hypertarget{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!if@{if}}
+\index{if@{if}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Prev\-Sunday}$<$=}]{0}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}
+\hypertarget{sphinxsort_8cpp_a955ebf2bdfc804a5e670f03cfac0676d}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Is\-Count@{Is\-Count}}
+\index{Is\-Count@{Is\-Count}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Is\-Count}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Count (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a955ebf2bdfc804a5e670f03cfac0676d}
+\hypertarget{sphinxsort_8cpp_a8b788bb839da83c7f78ff104ffffdc3d}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Is\-Groupby@{Is\-Groupby}}
+\index{Is\-Groupby@{Is\-Groupby}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Is\-Groupby}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Groupby (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a8b788bb839da83c7f78ff104ffffdc3d}
+\hypertarget{sphinxsort_8cpp_a36405f082bbc107122514c61f204f442}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Is\-Groupby\-Magic@{Is\-Groupby\-Magic}}
+\index{Is\-Groupby\-Magic@{Is\-Groupby\-Magic}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Is\-Groupby\-Magic}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Groupby\-Magic (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a36405f082bbc107122514c61f204f442}
+\hypertarget{sphinxsort_8cpp_a3a3a0de38f503963432a78b8a36aa74c}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!return@{return}}
+\index{return@{return}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{return}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-R\-O\-U\-P\-E\-R\-\_\-\-E\-N\-D} return (
+\begin{DoxyParamCaption}
+\item[{t\-Split.\-tm\-\_\-year+}]{1900}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a3a3a0de38f503963432a78b8a36aa74c}
+\hypertarget{sphinxsort_8cpp_a12f7937c9968b494ca10fdcd8814c179}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Setup\-Groupby\-Settings@{Setup\-Groupby\-Settings}}
+\index{Setup\-Groupby\-Settings@{Setup\-Groupby\-Settings}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Setup\-Groupby\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}static bool Setup\-Groupby\-Settings (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{{\bf C\-Sph\-Group\-Sorter\-Settings} \&}]{t\-Settings, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf int} $>$ \&}]{d\-Group\-Columns, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Implicit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a12f7937c9968b494ca10fdcd8814c179}
+\hypertarget{sphinxsort_8cpp_a228d071a5b4fa940d8952aa4a734303d}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!Setup\-Sort\-Remap@{Setup\-Sort\-Remap}}
+\index{Setup\-Sort\-Remap@{Setup\-Sort\-Remap}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{Setup\-Sort\-Remap}]{\setlength{\rightskip}{0pt plus 5cm}static void Setup\-Sort\-Remap (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Rset\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{{\bf C\-Sph\-Match\-Comparator\-State} \&}]{t\-State}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a228d071a5b4fa940d8952aa4a734303d}
+\hypertarget{sphinxsort_8cpp_a66f83973ed60482106aa77b8387b6bc0}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Collate\-Binary@{sph\-Collate\-Binary}}
+\index{sph\-Collate\-Binary@{sph\-Collate\-Binary}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Collate\-Binary}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Collate\-Binary (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str1, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str2, }
+\item[{bool}]{b\-Packed}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a66f83973ed60482106aa77b8387b6bc0}
+\hypertarget{sphinxsort_8cpp_a48fe79b0d5d3c4871dd7e90b4d74b21f}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Collate\-Libc\-C\-I@{sph\-Collate\-Libc\-C\-I}}
+\index{sph\-Collate\-Libc\-C\-I@{sph\-Collate\-Libc\-C\-I}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Collate\-Libc\-C\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Collate\-Libc\-C\-I (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str1, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str2, }
+\item[{bool}]{b\-Packed}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a48fe79b0d5d3c4871dd7e90b4d74b21f}
+
+
+libc\-\_\-ci, wrapper for strcasecmp 
+
+\hypertarget{sphinxsort_8cpp_a6106d5b56ac4ec38984b66f59f68b821}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Collate\-Libc\-C\-S@{sph\-Collate\-Libc\-C\-S}}
+\index{sph\-Collate\-Libc\-C\-S@{sph\-Collate\-Libc\-C\-S}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Collate\-Libc\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Collate\-Libc\-C\-S (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str1, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str2, }
+\item[{bool}]{b\-Packed}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a6106d5b56ac4ec38984b66f59f68b821}
+
+
+libc\-\_\-cs, wrapper for strcoll 
+
+\hypertarget{sphinxsort_8cpp_a057ea2218614fda23dfc1a69ae90b232}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Collate\-Utf8\-General\-C\-I@{sph\-Collate\-Utf8\-General\-C\-I}}
+\index{sph\-Collate\-Utf8\-General\-C\-I@{sph\-Collate\-Utf8\-General\-C\-I}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Collate\-Utf8\-General\-C\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Collate\-Utf8\-General\-C\-I (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Arg1, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Arg2, }
+\item[{bool}]{b\-Packed}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a057ea2218614fda23dfc1a69ae90b232}
+
+
+utf8\-\_\-general\-\_\-ci 
+
+\hypertarget{sphinxsort_8cpp_a16bae79c273dbd679b2a165847041e35}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Collation\-Init@{sph\-Collation\-Init}}
+\index{sph\-Collation\-Init@{sph\-Collation\-Init}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Collation\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Collation\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a16bae79c273dbd679b2a165847041e35}
+
+
+initialize collation L\-U\-Ts 
+
+initialize collation tables \hypertarget{sphinxsort_8cpp_acfcd99b3d582f800f541a8212035498c}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Create\-Grouper\-Multi@{sph\-Create\-Grouper\-Multi}}
+\index{sph\-Create\-Grouper\-Multi@{sph\-Create\-Grouper\-Multi}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Create\-Grouper\-Multi}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Grouper} $\ast$ sph\-Create\-Grouper\-Multi (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Attr\-Locator} $>$ \&}]{d\-Locators, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf E\-Sph\-Attr} $>$ \&}]{d\-Attr\-Types, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf I\-Sph\-Expr} $\ast$ $>$ \&}]{d\-Json\-Keys, }
+\item[{{\bf E\-Sph\-Collation}}]{e\-Collation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_acfcd99b3d582f800f541a8212035498c}
+\hypertarget{sphinxsort_8cpp_a539e9a53bc8fde4d2a3db0c8711a06e1}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Create\-Grouper\-String@{sph\-Create\-Grouper\-String}}
+\index{sph\-Create\-Grouper\-String@{sph\-Create\-Grouper\-String}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Create\-Grouper\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Grouper} $\ast$ sph\-Create\-Grouper\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Locator} \&}]{t\-Loc, }
+\item[{{\bf E\-Sph\-Collation}}]{e\-Collation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a539e9a53bc8fde4d2a3db0c8711a06e1}
+\hypertarget{sphinxsort_8cpp_a52259b0437ac921093fc3a8313af5955}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Create\-Queue@{sph\-Create\-Queue}}
+\index{sph\-Create\-Queue@{sph\-Create\-Queue}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Create\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Match\-Sorter}$\ast$ sph\-Create\-Queue (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Queue\-Settings\-\_\-t} \&}]{t\-Queue}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a52259b0437ac921093fc3a8313af5955}
+creates proper queue for given query may return N\-U\-L\-L on error; in this case, error message is placed in s\-Error if the p\-Update is given, creates the updater's queue and perform the index update instead of searching update aggregate dependencies (e.\-g. S\-E\-L\-E\-C\-T 1+attr f1, min(f1), ...) \hypertarget{sphinxsort_8cpp_a84775fc254fd4d50ce63c04e03f1e791}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Create\-Sorter1st@{sph\-Create\-Sorter1st}}
+\index{sph\-Create\-Sorter1st@{sph\-Create\-Sorter1st}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Create\-Sorter1st}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I\-Sph\-Match\-Sorter}$\ast$ sph\-Create\-Sorter1st (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Sort\-Func}}]{e\-Match\-Func, }
+\item[{{\bf E\-Sph\-Sort\-Func}}]{e\-Group\-Func, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const {\bf C\-Sph\-Group\-Sorter\-Settings} \&}]{t\-Settings, }
+\item[{bool}]{b\-Has\-Packed\-Factors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a84775fc254fd4d50ce63c04e03f1e791}
+\hypertarget{sphinxsort_8cpp_a09d1f642ced8d242d01859e3f218257d}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Create\-Sorter2nd@{sph\-Create\-Sorter2nd}}
+\index{sph\-Create\-Sorter2nd@{sph\-Create\-Sorter2nd}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Create\-Sorter2nd}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I\-Sph\-Match\-Sorter}$\ast$ sph\-Create\-Sorter2nd (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Sort\-Func}}]{e\-Group\-Func, }
+\item[{const {\bf I\-Sph\-Match\-Comparator} $\ast$}]{p\-Comp, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const {\bf C\-Sph\-Group\-Sorter\-Settings} \&}]{t\-Settings, }
+\item[{bool}]{b\-Has\-Packed\-Factors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a09d1f642ced8d242d01859e3f218257d}
+\hypertarget{sphinxsort_8cpp_a94d2183bc3b94a073671d852f008a7c4}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Create\-Sorter3rd@{sph\-Create\-Sorter3rd}}
+\index{sph\-Create\-Sorter3rd@{sph\-Create\-Sorter3rd}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Create\-Sorter3rd}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P $>$ static {\bf I\-Sph\-Match\-Sorter}$\ast$ sph\-Create\-Sorter3rd (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Match\-Comparator} $\ast$}]{p\-Comp, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const {\bf C\-Sph\-Group\-Sorter\-Settings} \&}]{t\-Settings, }
+\item[{bool}]{b\-Has\-Packed\-Factors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a94d2183bc3b94a073671d852f008a7c4}
+\hypertarget{sphinxsort_8cpp_a059f0e40d854f799f072f830a78915d0}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Flatten\-Queue@{sph\-Flatten\-Queue}}
+\index{sph\-Flatten\-Queue@{sph\-Flatten\-Queue}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Flatten\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Flatten\-Queue (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$}]{p\-Queue, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$}]{p\-Result, }
+\item[{{\bf int}}]{i\-Tag}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a059f0e40d854f799f072f830a78915d0}
+
+
+convert queue to sorted array, and add its entries to result's matches array 
+
+\hypertarget{sphinxsort_8cpp_aabb185b2e0e49f41a6a3efb2f6f9f8ce}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Has\-Expressions@{sph\-Has\-Expressions}}
+\index{sph\-Has\-Expressions@{sph\-Has\-Expressions}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Has\-Expressions}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Has\-Expressions (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} \&}]{t\-Query, }
+\item[{const {\bf C\-Sph\-Schema} \&}]{t\-Schema}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_aabb185b2e0e49f41a6a3efb2f6f9f8ce}
+
+
+check query for expressions 
+
+\hypertarget{sphinxsort_8cpp_abec81568b949db53d7d3eaedfa94bca2}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Is\-Sort\-String\-Internal@{sph\-Is\-Sort\-String\-Internal}}
+\index{sph\-Is\-Sort\-String\-Internal@{sph\-Is\-Sort\-String\-Internal}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Is\-Sort\-String\-Internal}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Is\-Sort\-String\-Internal (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Column\-Name}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_abec81568b949db53d7d3eaedfa94bca2}
+\hypertarget{sphinxsort_8cpp_a3d7fc54f61bfea33eb3d8621bdc4a7bc}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Parse\-Sort\-Clause@{sph\-Parse\-Sort\-Clause}}
+\index{sph\-Parse\-Sort\-Clause@{sph\-Parse\-Sort\-Clause}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Parse\-Sort\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sort\-Clause\-Parse\-Result} sph\-Parse\-Sort\-Clause (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const char $\ast$}]{s\-Clause, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{{\bf E\-Sph\-Sort\-Func} \&}]{e\-Func, }
+\item[{{\bf C\-Sph\-Match\-Comparator\-State} \&}]{t\-State, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a3d7fc54f61bfea33eb3d8621bdc4a7bc}
+parses sort clause, using a given schema fills e\-Func and t\-State and optionally s\-Error, returns result code \hypertarget{sphinxsort_8cpp_a7af81ead1c04ec191065b9522d6c2467}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Sort\-Get\-String\-Remap@{sph\-Sort\-Get\-String\-Remap}}
+\index{sph\-Sort\-Get\-String\-Remap@{sph\-Sort\-Get\-String\-Remap}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Sort\-Get\-String\-Remap}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Sort\-Get\-String\-Remap (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Index\-Schema, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Sph\-String\-Sorter\-Remap\-\_\-t} $>$ \&}]{d\-Attrs}
+\end{DoxyParamCaption}
+)}}\label{sphinxsort_8cpp_a7af81ead1c04ec191065b9522d6c2467}
+\hypertarget{sphinxsort_8cpp_a786a2fe203fd87281d67dbaebc2c48b1}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!sph\-Sqr@{sph\-Sqr}}
+\index{sph\-Sqr@{sph\-Sqr}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{sph\-Sqr}]{\setlength{\rightskip}{0pt plus 5cm}static double sph\-Sqr (
+\begin{DoxyParamCaption}
+\item[{double}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxsort_8cpp_a786a2fe203fd87281d67dbaebc2c48b1}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxsort_8cpp_a241c5407ec773343722ac9b1e70494a9}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!g\-\_\-d\-Coll\-Planes\-\_\-\-U\-T\-F8\-C\-I@{g\-\_\-d\-Coll\-Planes\-\_\-\-U\-T\-F8\-C\-I}}
+\index{g\-\_\-d\-Coll\-Planes\-\_\-\-U\-T\-F8\-C\-I@{g\-\_\-d\-Coll\-Planes\-\_\-\-U\-T\-F8\-C\-I}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{g\-\_\-d\-Coll\-Planes\-\_\-\-U\-T\-F8\-C\-I}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short$\ast$ g\-\_\-d\-Coll\-Planes\-\_\-\-U\-T\-F8\-C\-I\mbox{[}0x100\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a241c5407ec773343722ac9b1e70494a9}
+
+
+1st level L\-U\-T 
+
+\hypertarget{sphinxsort_8cpp_a2773dba1e7303c318900469a353f9a74}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!g\-\_\-d\-Coll\-Weights\-\_\-\-U\-T\-F8\-C\-I@{g\-\_\-d\-Coll\-Weights\-\_\-\-U\-T\-F8\-C\-I}}
+\index{g\-\_\-d\-Coll\-Weights\-\_\-\-U\-T\-F8\-C\-I@{g\-\_\-d\-Coll\-Weights\-\_\-\-U\-T\-F8\-C\-I}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{g\-\_\-d\-Coll\-Weights\-\_\-\-U\-T\-F8\-C\-I}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short g\-\_\-d\-Coll\-Weights\-\_\-\-U\-T\-F8\-C\-I\mbox{[}0xb00\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a2773dba1e7303c318900469a353f9a74}
+
+
+2nd level L\-U\-T, non-\/trivial collation data 
+
+\hypertarget{sphinxsort_8cpp_a7f1b44a6628ead9e1794ffe9aa0ed987}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!g\-\_\-s\-Int\-Attr\-Prefix@{g\-\_\-s\-Int\-Attr\-Prefix}}
+\index{g\-\_\-s\-Int\-Attr\-Prefix@{g\-\_\-s\-Int\-Attr\-Prefix}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{g\-\_\-s\-Int\-Attr\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}const char g\-\_\-s\-Int\-Attr\-Prefix\mbox{[}$\,$\mbox{]} = \char`\"{}@int\-\_\-str2ptr\-\_\-\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_a7f1b44a6628ead9e1794ffe9aa0ed987}
+\hypertarget{sphinxsort_8cpp_aac03df48f7148c7235b81582b80651c4}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!i\-Prev\-Sunday@{i\-Prev\-Sunday}}
+\index{i\-Prev\-Sunday@{i\-Prev\-Sunday}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{i\-Prev\-Sunday}]{\setlength{\rightskip}{0pt plus 5cm}{\bf return} {\bf i\-Year} $\ast$ i\-Prev\-Sunday = (1+t\-Split.\-tm\-\_\-yday) -\/ t\-Split.\-tm\-\_\-wday}}\label{sphinxsort_8cpp_aac03df48f7148c7235b81582b80651c4}
+\hypertarget{sphinxsort_8cpp_aff44b11da9adef57c6766912ab82bf7d}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!i\-Year@{i\-Year}}
+\index{i\-Year@{i\-Year}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{i\-Year}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} i\-Year = t\-Split.\-tm\-\_\-year+1900}}\label{sphinxsort_8cpp_aff44b11da9adef57c6766912ab82bf7d}
+\hypertarget{sphinxsort_8cpp_aeed58345f5f77df3fb01e906f195ca86}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!M\-A\-X\-\_\-\-S\-O\-R\-T\-\_\-\-F\-I\-E\-L\-D\-S@{M\-A\-X\-\_\-\-S\-O\-R\-T\-\_\-\-F\-I\-E\-L\-D\-S}}
+\index{M\-A\-X\-\_\-\-S\-O\-R\-T\-\_\-\-F\-I\-E\-L\-D\-S@{M\-A\-X\-\_\-\-S\-O\-R\-T\-\_\-\-F\-I\-E\-L\-D\-S}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-O\-R\-T\-\_\-\-F\-I\-E\-L\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} M\-A\-X\-\_\-\-S\-O\-R\-T\-\_\-\-F\-I\-E\-L\-D\-S = 5\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxsort_8cpp_aeed58345f5f77df3fb01e906f195ca86}
+\hypertarget{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{\index{sphinxsort.\-cpp@{sphinxsort.\-cpp}!u\-Value@{u\-Value}}
+\index{u\-Value@{u\-Value}!sphinxsort.cpp@{sphinxsort.\-cpp}}
+\subsubsection[{u\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf return} u\-Value}}\label{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}

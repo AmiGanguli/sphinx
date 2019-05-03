@@ -1,0 +1,329 @@
+\hypertarget{structExcerptQuery__t}{\section{Excerpt\-Query\-\_\-t Struct Reference}
+\label{structExcerptQuery__t}\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}}
+}
+
+
+{\ttfamily \#include $<$sphinxexcerpt.\-h$>$}
+
+Inheritance diagram for Excerpt\-Query\-\_\-t\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.414634cm]{structExcerptQuery__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structExcerptQuery__t_ab868eb61f0aea84718940aee05ca54de}{Excerpt\-Query\-\_\-t} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a6d492e02492f9d8f09dc3d0adbae4b08}{m\-\_\-s\-Source}
+\begin{DoxyCompactList}\small\item\em source text (or file name, see m\-\_\-b\-Load\-Files) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a11cdc32d46f830e774504ac77717d24f}{m\-\_\-s\-Words}
+\begin{DoxyCompactList}\small\item\em words themselves \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a0269769edc0bf2472707da975c00dffa}{m\-\_\-s\-Before\-Match}
+\begin{DoxyCompactList}\small\item\em string to insert before each match \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a518c251f53cfd982db1514fb6a978b26}{m\-\_\-s\-After\-Match}
+\begin{DoxyCompactList}\small\item\em string to insert after each match \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a7657a8fa010638bc269092caecd00fa5}{m\-\_\-s\-Chunk\-Separator}
+\begin{DoxyCompactList}\small\item\em string to insert between matching chunks (in limited mode only) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a7c99c5ca909e6092a9ccdd9409c38f46}{m\-\_\-s\-Strip\-Mode}
+\begin{DoxyCompactList}\small\item\em strip mode \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExcerptQuery__t_adff7a09f10dc75c1b4ac651aa044c234}{m\-\_\-i\-Limit}
+\begin{DoxyCompactList}\small\item\em max chars in snippet (0 if unlimited) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExcerptQuery__t_a55c04b93bc46a5471cce09bc8b8144ae}{m\-\_\-i\-Limit\-Words}
+\begin{DoxyCompactList}\small\item\em max words in snippet \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExcerptQuery__t_a793c2666d549c8f5826044b3cf2425f1}{m\-\_\-i\-Limit\-Passages}
+\begin{DoxyCompactList}\small\item\em max passages in snippet \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExcerptQuery__t_a13198e1020e950c386b064a12e7f2c04}{m\-\_\-i\-Around}
+\begin{DoxyCompactList}\small\item\em how much words to highlight around each match \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExcerptQuery__t_a540b5cd5733b6116381572859dcc3945}{m\-\_\-i\-Passage\-Id}
+\begin{DoxyCompactList}\small\item\em current P\-A\-S\-S\-A\-G\-E\-\_\-\-I\-D\% counter value (must start at 1) \end{DoxyCompactList}\item 
+bool \hyperlink{structExcerptQuery__t_a29a10c764dff6050c8e326ffdf7809de}{m\-\_\-b\-Remove\-Spaces}
+\begin{DoxyCompactList}\small\item\em whether to collapse whitespace \end{DoxyCompactList}\item 
+bool \hyperlink{structExcerptQuery__t_a4d92e1b0d1a788f90c60d2def2f0e4e0}{m\-\_\-b\-Exact\-Phrase}
+\begin{DoxyCompactList}\small\item\em whether to highlight exact phrase matches only \end{DoxyCompactList}\item 
+bool \hyperlink{structExcerptQuery__t_a02cdd9a2a1cdc599d5404c7eb4285c8c}{m\-\_\-b\-Use\-Boundaries}
+\begin{DoxyCompactList}\small\item\em whether to extract passages by phrase boundaries setup in tokenizer \end{DoxyCompactList}\item 
+bool \hyperlink{structExcerptQuery__t_abdb6014f9dac0330d735aef9c6329002}{m\-\_\-b\-Weight\-Order}
+\begin{DoxyCompactList}\small\item\em whether to order best passages in document (default) or weight order \end{DoxyCompactList}\item 
+bool \hyperlink{structExcerptQuery__t_a91ac44e68478204ba4a532e5263f3084}{m\-\_\-b\-Highlight\-Query}
+\begin{DoxyCompactList}\small\item\em whether try to highlight the whole query, or always word-\/by-\/word \end{DoxyCompactList}\item 
+bool \hyperlink{structExcerptQuery__t_adb96d373f11459d1f49613dd7019f4ab}{m\-\_\-b\-Force\-All\-Words}
+\begin{DoxyCompactList}\small\item\em whether to ignore limit until all needed keywords are highlighted (\#448) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExcerptQuery__t_a4f777950b5faa471f8a6678e42349d8f}{m\-\_\-i\-Load\-Files}
+\begin{DoxyCompactList}\small\item\em whether to interpret source as text (0) or file name (!0) \end{DoxyCompactList}\item 
+bool \hyperlink{structExcerptQuery__t_aad27da5096c6450825a9f2bcc0926037}{m\-\_\-b\-Allow\-Empty}
+\begin{DoxyCompactList}\small\item\em whether to allow empty snippets (by default, return something from the start) \end{DoxyCompactList}\item 
+bool \hyperlink{structExcerptQuery__t_aedf08957851c70829e4df3c4090a4c3f}{m\-\_\-b\-Emit\-Zones}
+\begin{DoxyCompactList}\small\item\em whether to emit zone for passage \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExcerptQuery__t_a1b0e81cfad30a20be575602170481d3b}{m\-\_\-i\-Raw\-Flags}
+\begin{DoxyCompactList}\small\item\em flags as they received from proto (to avoid coding/decoding to agents) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a3ad07609a22cdb1c120716d497de024d}{m\-\_\-s\-Raw\-Passage\-Boundary}
+\begin{DoxyCompactList}\small\item\em boundary as it received from proto (to avoid coding/decoding to agents) \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_ab174f0187bb3b6cc6e0ca0d93802ac28}{m\-\_\-s\-File\-Prefix}
+\begin{DoxyCompactList}\small\item\em the prefix for reading the file \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structExcerptQuery__t_a0a99a80172a4c1191289e0327c2605eb}{m\-\_\-i\-Size}
+\begin{DoxyCompactList}\small\item\em file size, to sort to work-\/queue order \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExcerptQuery__t_abff6d76f96153a0c67a1d3ef21975787}{m\-\_\-i\-Seq}
+\begin{DoxyCompactList}\small\item\em request order, to sort back to request order \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExcerptQuery__t_af9d1c73cdff1f0164ec60aca96b66e33}{m\-\_\-i\-Next}
+\begin{DoxyCompactList}\small\item\em the next one in one-\/link list for batch processing. -\/1 terminate the list. -\/2 sign of other (out-\/of-\/the-\/lists) \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{structExcerptQuery__t_aa06a838e2c4cf401af30bebb81dfde9c}{m\-\_\-d\-Res}
+\begin{DoxyCompactList}\small\item\em snippet result holder \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a074979c7747d09bd010bd1b6e13593ad}{m\-\_\-s\-Error}
+\begin{DoxyCompactList}\small\item\em snippet error message \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a32451a31255fd8c3f5633ff03e866c80}{m\-\_\-s\-Warning}
+\begin{DoxyCompactList}\small\item\em snippet warning message \end{DoxyCompactList}\item 
+bool \hyperlink{structExcerptQuery__t_a6a3efd8553f6be84a9b0e7ecc32872ad}{m\-\_\-b\-Has\-Before\-Passage\-Macro}
+\item 
+bool \hyperlink{structExcerptQuery__t_af620794af34fd344f58dd65a6410bcdd}{m\-\_\-b\-Has\-After\-Passage\-Macro}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a924103fb389bd8c162da903fce3f63f8}{m\-\_\-s\-Before\-Match\-Passage}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structExcerptQuery__t_a93d98937c71d4d4672092dcc1d89532b}{m\-\_\-s\-After\-Match\-Passage}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structExcerptQuery__t_adec0d35d6de552005d1ec2b771be2bb7}{m\-\_\-e\-Passage\-S\-P\-Z}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+a query to generate an excerpt everything string is expected to be U\-T\-F-\/8 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structExcerptQuery__t_ab868eb61f0aea84718940aee05ca54de}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}}
+\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{Excerpt\-Query\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Excerpt\-Query\-\_\-t\-::\-Excerpt\-Query\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structExcerptQuery__t_ab868eb61f0aea84718940aee05ca54de}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structExcerptQuery__t_aad27da5096c6450825a9f2bcc0926037}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-b\-Allow\-Empty@{m\-\_\-b\-Allow\-Empty}}
+\index{m\-\_\-b\-Allow\-Empty@{m\-\_\-b\-Allow\-Empty}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Allow\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Excerpt\-Query\-\_\-t\-::m\-\_\-b\-Allow\-Empty}}\label{structExcerptQuery__t_aad27da5096c6450825a9f2bcc0926037}
+
+
+whether to allow empty snippets (by default, return something from the start) 
+
+\hypertarget{structExcerptQuery__t_aedf08957851c70829e4df3c4090a4c3f}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-b\-Emit\-Zones@{m\-\_\-b\-Emit\-Zones}}
+\index{m\-\_\-b\-Emit\-Zones@{m\-\_\-b\-Emit\-Zones}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Emit\-Zones}]{\setlength{\rightskip}{0pt plus 5cm}bool Excerpt\-Query\-\_\-t\-::m\-\_\-b\-Emit\-Zones}}\label{structExcerptQuery__t_aedf08957851c70829e4df3c4090a4c3f}
+
+
+whether to emit zone for passage 
+
+\hypertarget{structExcerptQuery__t_a4d92e1b0d1a788f90c60d2def2f0e4e0}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-b\-Exact\-Phrase@{m\-\_\-b\-Exact\-Phrase}}
+\index{m\-\_\-b\-Exact\-Phrase@{m\-\_\-b\-Exact\-Phrase}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Exact\-Phrase}]{\setlength{\rightskip}{0pt plus 5cm}bool Excerpt\-Query\-\_\-t\-::m\-\_\-b\-Exact\-Phrase}}\label{structExcerptQuery__t_a4d92e1b0d1a788f90c60d2def2f0e4e0}
+
+
+whether to highlight exact phrase matches only 
+
+\hypertarget{structExcerptQuery__t_adb96d373f11459d1f49613dd7019f4ab}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-b\-Force\-All\-Words@{m\-\_\-b\-Force\-All\-Words}}
+\index{m\-\_\-b\-Force\-All\-Words@{m\-\_\-b\-Force\-All\-Words}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Force\-All\-Words}]{\setlength{\rightskip}{0pt plus 5cm}bool Excerpt\-Query\-\_\-t\-::m\-\_\-b\-Force\-All\-Words}}\label{structExcerptQuery__t_adb96d373f11459d1f49613dd7019f4ab}
+
+
+whether to ignore limit until all needed keywords are highlighted (\#448) 
+
+\hypertarget{structExcerptQuery__t_af620794af34fd344f58dd65a6410bcdd}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-b\-Has\-After\-Passage\-Macro@{m\-\_\-b\-Has\-After\-Passage\-Macro}}
+\index{m\-\_\-b\-Has\-After\-Passage\-Macro@{m\-\_\-b\-Has\-After\-Passage\-Macro}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Has\-After\-Passage\-Macro}]{\setlength{\rightskip}{0pt plus 5cm}bool Excerpt\-Query\-\_\-t\-::m\-\_\-b\-Has\-After\-Passage\-Macro}}\label{structExcerptQuery__t_af620794af34fd344f58dd65a6410bcdd}
+\hypertarget{structExcerptQuery__t_a6a3efd8553f6be84a9b0e7ecc32872ad}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-b\-Has\-Before\-Passage\-Macro@{m\-\_\-b\-Has\-Before\-Passage\-Macro}}
+\index{m\-\_\-b\-Has\-Before\-Passage\-Macro@{m\-\_\-b\-Has\-Before\-Passage\-Macro}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Has\-Before\-Passage\-Macro}]{\setlength{\rightskip}{0pt plus 5cm}bool Excerpt\-Query\-\_\-t\-::m\-\_\-b\-Has\-Before\-Passage\-Macro}}\label{structExcerptQuery__t_a6a3efd8553f6be84a9b0e7ecc32872ad}
+\hypertarget{structExcerptQuery__t_a91ac44e68478204ba4a532e5263f3084}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-b\-Highlight\-Query@{m\-\_\-b\-Highlight\-Query}}
+\index{m\-\_\-b\-Highlight\-Query@{m\-\_\-b\-Highlight\-Query}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Highlight\-Query}]{\setlength{\rightskip}{0pt plus 5cm}bool Excerpt\-Query\-\_\-t\-::m\-\_\-b\-Highlight\-Query}}\label{structExcerptQuery__t_a91ac44e68478204ba4a532e5263f3084}
+
+
+whether try to highlight the whole query, or always word-\/by-\/word 
+
+\hypertarget{structExcerptQuery__t_a29a10c764dff6050c8e326ffdf7809de}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-b\-Remove\-Spaces@{m\-\_\-b\-Remove\-Spaces}}
+\index{m\-\_\-b\-Remove\-Spaces@{m\-\_\-b\-Remove\-Spaces}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Remove\-Spaces}]{\setlength{\rightskip}{0pt plus 5cm}bool Excerpt\-Query\-\_\-t\-::m\-\_\-b\-Remove\-Spaces}}\label{structExcerptQuery__t_a29a10c764dff6050c8e326ffdf7809de}
+
+
+whether to collapse whitespace 
+
+\hypertarget{structExcerptQuery__t_a02cdd9a2a1cdc599d5404c7eb4285c8c}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-b\-Use\-Boundaries@{m\-\_\-b\-Use\-Boundaries}}
+\index{m\-\_\-b\-Use\-Boundaries@{m\-\_\-b\-Use\-Boundaries}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Use\-Boundaries}]{\setlength{\rightskip}{0pt plus 5cm}bool Excerpt\-Query\-\_\-t\-::m\-\_\-b\-Use\-Boundaries}}\label{structExcerptQuery__t_a02cdd9a2a1cdc599d5404c7eb4285c8c}
+
+
+whether to extract passages by phrase boundaries setup in tokenizer 
+
+\hypertarget{structExcerptQuery__t_abdb6014f9dac0330d735aef9c6329002}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-b\-Weight\-Order@{m\-\_\-b\-Weight\-Order}}
+\index{m\-\_\-b\-Weight\-Order@{m\-\_\-b\-Weight\-Order}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Weight\-Order}]{\setlength{\rightskip}{0pt plus 5cm}bool Excerpt\-Query\-\_\-t\-::m\-\_\-b\-Weight\-Order}}\label{structExcerptQuery__t_abdb6014f9dac0330d735aef9c6329002}
+
+
+whether to order best passages in document (default) or weight order 
+
+\hypertarget{structExcerptQuery__t_aa06a838e2c4cf401af30bebb81dfde9c}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-d\-Res@{m\-\_\-d\-Res}}
+\index{m\-\_\-d\-Res@{m\-\_\-d\-Res}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Res}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf B\-Y\-T\-E}$>$ Excerpt\-Query\-\_\-t\-::m\-\_\-d\-Res}}\label{structExcerptQuery__t_aa06a838e2c4cf401af30bebb81dfde9c}
+
+
+snippet result holder 
+
+\hypertarget{structExcerptQuery__t_adec0d35d6de552005d1ec2b771be2bb7}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-e\-Passage\-S\-P\-Z@{m\-\_\-e\-Passage\-S\-P\-Z}}
+\index{m\-\_\-e\-Passage\-S\-P\-Z@{m\-\_\-e\-Passage\-S\-P\-Z}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-e\-Passage\-S\-P\-Z}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} Excerpt\-Query\-\_\-t\-::m\-\_\-e\-Passage\-S\-P\-Z}}\label{structExcerptQuery__t_adec0d35d6de552005d1ec2b771be2bb7}
+\hypertarget{structExcerptQuery__t_a13198e1020e950c386b064a12e7f2c04}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-i\-Around@{m\-\_\-i\-Around}}
+\index{m\-\_\-i\-Around@{m\-\_\-i\-Around}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Around}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Excerpt\-Query\-\_\-t\-::m\-\_\-i\-Around}}\label{structExcerptQuery__t_a13198e1020e950c386b064a12e7f2c04}
+
+
+how much words to highlight around each match 
+
+\hypertarget{structExcerptQuery__t_adff7a09f10dc75c1b4ac651aa044c234}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-i\-Limit@{m\-\_\-i\-Limit}}
+\index{m\-\_\-i\-Limit@{m\-\_\-i\-Limit}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Excerpt\-Query\-\_\-t\-::m\-\_\-i\-Limit}}\label{structExcerptQuery__t_adff7a09f10dc75c1b4ac651aa044c234}
+
+
+max chars in snippet (0 if unlimited) 
+
+\hypertarget{structExcerptQuery__t_a793c2666d549c8f5826044b3cf2425f1}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-i\-Limit\-Passages@{m\-\_\-i\-Limit\-Passages}}
+\index{m\-\_\-i\-Limit\-Passages@{m\-\_\-i\-Limit\-Passages}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Limit\-Passages}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Excerpt\-Query\-\_\-t\-::m\-\_\-i\-Limit\-Passages}}\label{structExcerptQuery__t_a793c2666d549c8f5826044b3cf2425f1}
+
+
+max passages in snippet 
+
+\hypertarget{structExcerptQuery__t_a55c04b93bc46a5471cce09bc8b8144ae}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-i\-Limit\-Words@{m\-\_\-i\-Limit\-Words}}
+\index{m\-\_\-i\-Limit\-Words@{m\-\_\-i\-Limit\-Words}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Limit\-Words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Excerpt\-Query\-\_\-t\-::m\-\_\-i\-Limit\-Words}}\label{structExcerptQuery__t_a55c04b93bc46a5471cce09bc8b8144ae}
+
+
+max words in snippet 
+
+\hypertarget{structExcerptQuery__t_a4f777950b5faa471f8a6678e42349d8f}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-i\-Load\-Files@{m\-\_\-i\-Load\-Files}}
+\index{m\-\_\-i\-Load\-Files@{m\-\_\-i\-Load\-Files}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Load\-Files}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Excerpt\-Query\-\_\-t\-::m\-\_\-i\-Load\-Files}}\label{structExcerptQuery__t_a4f777950b5faa471f8a6678e42349d8f}
+
+
+whether to interpret source as text (0) or file name (!0) 
+
+\hypertarget{structExcerptQuery__t_af9d1c73cdff1f0164ec60aca96b66e33}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-i\-Next@{m\-\_\-i\-Next}}
+\index{m\-\_\-i\-Next@{m\-\_\-i\-Next}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Excerpt\-Query\-\_\-t\-::m\-\_\-i\-Next}}\label{structExcerptQuery__t_af9d1c73cdff1f0164ec60aca96b66e33}
+
+
+the next one in one-\/link list for batch processing. -\/1 terminate the list. -\/2 sign of other (out-\/of-\/the-\/lists) 
+
+\hypertarget{structExcerptQuery__t_a540b5cd5733b6116381572859dcc3945}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-i\-Passage\-Id@{m\-\_\-i\-Passage\-Id}}
+\index{m\-\_\-i\-Passage\-Id@{m\-\_\-i\-Passage\-Id}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Passage\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Excerpt\-Query\-\_\-t\-::m\-\_\-i\-Passage\-Id}}\label{structExcerptQuery__t_a540b5cd5733b6116381572859dcc3945}
+
+
+current P\-A\-S\-S\-A\-G\-E\-\_\-\-I\-D\% counter value (must start at 1) 
+
+\hypertarget{structExcerptQuery__t_a1b0e81cfad30a20be575602170481d3b}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-i\-Raw\-Flags@{m\-\_\-i\-Raw\-Flags}}
+\index{m\-\_\-i\-Raw\-Flags@{m\-\_\-i\-Raw\-Flags}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Raw\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Excerpt\-Query\-\_\-t\-::m\-\_\-i\-Raw\-Flags}}\label{structExcerptQuery__t_a1b0e81cfad30a20be575602170481d3b}
+
+
+flags as they received from proto (to avoid coding/decoding to agents) 
+
+\hypertarget{structExcerptQuery__t_abff6d76f96153a0c67a1d3ef21975787}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-i\-Seq@{m\-\_\-i\-Seq}}
+\index{m\-\_\-i\-Seq@{m\-\_\-i\-Seq}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Seq}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Excerpt\-Query\-\_\-t\-::m\-\_\-i\-Seq}}\label{structExcerptQuery__t_abff6d76f96153a0c67a1d3ef21975787}
+
+
+request order, to sort back to request order 
+
+\hypertarget{structExcerptQuery__t_a0a99a80172a4c1191289e0327c2605eb}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-i\-Size@{m\-\_\-i\-Size}}
+\index{m\-\_\-i\-Size@{m\-\_\-i\-Size}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Excerpt\-Query\-\_\-t\-::m\-\_\-i\-Size}}\label{structExcerptQuery__t_a0a99a80172a4c1191289e0327c2605eb}
+
+
+file size, to sort to work-\/queue order 
+
+\hypertarget{structExcerptQuery__t_a518c251f53cfd982db1514fb6a978b26}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-After\-Match@{m\-\_\-s\-After\-Match}}
+\index{m\-\_\-s\-After\-Match@{m\-\_\-s\-After\-Match}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-After\-Match}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-After\-Match}}\label{structExcerptQuery__t_a518c251f53cfd982db1514fb6a978b26}
+
+
+string to insert after each match 
+
+\hypertarget{structExcerptQuery__t_a93d98937c71d4d4672092dcc1d89532b}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-After\-Match\-Passage@{m\-\_\-s\-After\-Match\-Passage}}
+\index{m\-\_\-s\-After\-Match\-Passage@{m\-\_\-s\-After\-Match\-Passage}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-After\-Match\-Passage}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-After\-Match\-Passage}}\label{structExcerptQuery__t_a93d98937c71d4d4672092dcc1d89532b}
+\hypertarget{structExcerptQuery__t_a0269769edc0bf2472707da975c00dffa}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-Before\-Match@{m\-\_\-s\-Before\-Match}}
+\index{m\-\_\-s\-Before\-Match@{m\-\_\-s\-Before\-Match}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Before\-Match}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-Before\-Match}}\label{structExcerptQuery__t_a0269769edc0bf2472707da975c00dffa}
+
+
+string to insert before each match 
+
+\hypertarget{structExcerptQuery__t_a924103fb389bd8c162da903fce3f63f8}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-Before\-Match\-Passage@{m\-\_\-s\-Before\-Match\-Passage}}
+\index{m\-\_\-s\-Before\-Match\-Passage@{m\-\_\-s\-Before\-Match\-Passage}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Before\-Match\-Passage}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-Before\-Match\-Passage}}\label{structExcerptQuery__t_a924103fb389bd8c162da903fce3f63f8}
+\hypertarget{structExcerptQuery__t_a7657a8fa010638bc269092caecd00fa5}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-Chunk\-Separator@{m\-\_\-s\-Chunk\-Separator}}
+\index{m\-\_\-s\-Chunk\-Separator@{m\-\_\-s\-Chunk\-Separator}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Chunk\-Separator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-Chunk\-Separator}}\label{structExcerptQuery__t_a7657a8fa010638bc269092caecd00fa5}
+
+
+string to insert between matching chunks (in limited mode only) 
+
+\hypertarget{structExcerptQuery__t_a074979c7747d09bd010bd1b6e13593ad}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-Error@{m\-\_\-s\-Error}}
+\index{m\-\_\-s\-Error@{m\-\_\-s\-Error}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-Error}}\label{structExcerptQuery__t_a074979c7747d09bd010bd1b6e13593ad}
+
+
+snippet error message 
+
+\hypertarget{structExcerptQuery__t_ab174f0187bb3b6cc6e0ca0d93802ac28}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-File\-Prefix@{m\-\_\-s\-File\-Prefix}}
+\index{m\-\_\-s\-File\-Prefix@{m\-\_\-s\-File\-Prefix}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-File\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-File\-Prefix}}\label{structExcerptQuery__t_ab174f0187bb3b6cc6e0ca0d93802ac28}
+
+
+the prefix for reading the file 
+
+\hypertarget{structExcerptQuery__t_a3ad07609a22cdb1c120716d497de024d}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-Raw\-Passage\-Boundary@{m\-\_\-s\-Raw\-Passage\-Boundary}}
+\index{m\-\_\-s\-Raw\-Passage\-Boundary@{m\-\_\-s\-Raw\-Passage\-Boundary}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Raw\-Passage\-Boundary}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-Raw\-Passage\-Boundary}}\label{structExcerptQuery__t_a3ad07609a22cdb1c120716d497de024d}
+
+
+boundary as it received from proto (to avoid coding/decoding to agents) 
+
+\hypertarget{structExcerptQuery__t_a6d492e02492f9d8f09dc3d0adbae4b08}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-Source@{m\-\_\-s\-Source}}
+\index{m\-\_\-s\-Source@{m\-\_\-s\-Source}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-Source}}\label{structExcerptQuery__t_a6d492e02492f9d8f09dc3d0adbae4b08}
+
+
+source text (or file name, see m\-\_\-b\-Load\-Files) 
+
+\hypertarget{structExcerptQuery__t_a7c99c5ca909e6092a9ccdd9409c38f46}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-Strip\-Mode@{m\-\_\-s\-Strip\-Mode}}
+\index{m\-\_\-s\-Strip\-Mode@{m\-\_\-s\-Strip\-Mode}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Strip\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-Strip\-Mode}}\label{structExcerptQuery__t_a7c99c5ca909e6092a9ccdd9409c38f46}
+
+
+strip mode 
+
+\hypertarget{structExcerptQuery__t_a32451a31255fd8c3f5633ff03e866c80}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-Warning@{m\-\_\-s\-Warning}}
+\index{m\-\_\-s\-Warning@{m\-\_\-s\-Warning}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Warning}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-Warning}}\label{structExcerptQuery__t_a32451a31255fd8c3f5633ff03e866c80}
+
+
+snippet warning message 
+
+\hypertarget{structExcerptQuery__t_a11cdc32d46f830e774504ac77717d24f}{\index{Excerpt\-Query\-\_\-t@{Excerpt\-Query\-\_\-t}!m\-\_\-s\-Words@{m\-\_\-s\-Words}}
+\index{m\-\_\-s\-Words@{m\-\_\-s\-Words}!ExcerptQuery_t@{Excerpt\-Query\-\_\-t}}
+\subsubsection[{m\-\_\-s\-Words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Excerpt\-Query\-\_\-t\-::m\-\_\-s\-Words}}\label{structExcerptQuery__t_a11cdc32d46f830e774504ac77717d24f}
+
+
+words themselves 
+
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexcerpt_8h}{sphinxexcerpt.\-h}\item 
+src/\hyperlink{sphinxexcerpt_8cpp}{sphinxexcerpt.\-cpp}\end{DoxyCompactItemize}

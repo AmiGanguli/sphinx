@@ -1,0 +1,109 @@
+\hypertarget{structCSphDictTemplate}{\section{C\-Sph\-Dict\-Template Struct Reference}
+\label{structCSphDictTemplate}\index{C\-Sph\-Dict\-Template@{C\-Sph\-Dict\-Template}}
+}
+Inheritance diagram for C\-Sph\-Dict\-Template\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structCSphDictTemplate}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{structCSphDictTemplate_ad5b7b1a178e136fa090e2d5b39ec31d1}{Get\-Word\-I\-D} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{structCSphDictTemplate_a2c7cdf00730fdb30bff84c553a2579ee}{Get\-Word\-I\-D} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, bool b\-Filter\-Stops)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{structCSphDictTemplate_ac4be906ecdf1836e25fb2c60fe793d57}{Get\-Word\-I\-D\-With\-Markers} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{structCSphDictTemplate_a831f0dbee698ca7ec1151ab7f60d0d92}{Get\-Word\-I\-D\-Non\-Stemmed} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+virtual bool \hyperlink{structCSphDictTemplate_aacf98e88e774cb20df7ec3930f7d6f10}{Is\-Stop\-Word} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word) const 
+\begin{DoxyCompactList}\small\item\em check what given word is stopword \end{DoxyCompactList}\item 
+virtual \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$ \hyperlink{structCSphDictTemplate_aea69a1dc73dc3cf588b7c4c371a3825e}{Clone} () const 
+\begin{DoxyCompactList}\small\item\em make a clone \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphDictTemplate_aea69a1dc73dc3cf588b7c4c371a3825e}{\index{C\-Sph\-Dict\-Template@{C\-Sph\-Dict\-Template}!Clone@{Clone}}
+\index{Clone@{Clone}!CSphDictTemplate@{C\-Sph\-Dict\-Template}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf C\-Sph\-Dict}$\ast$ C\-Sph\-Dict\-Template\-::\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structCSphDictTemplate_aea69a1dc73dc3cf588b7c4c371a3825e}
+
+
+make a clone 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_a6a62ee7e43eee213e864cba69d6b266c}{C\-Sph\-Dict}.
+
+\hypertarget{structCSphDictTemplate_ad5b7b1a178e136fa090e2d5b39ec31d1}{\index{C\-Sph\-Dict\-Template@{C\-Sph\-Dict\-Template}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!CSphDictTemplate@{C\-Sph\-Dict\-Template}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Template\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphDictTemplate_ad5b7b1a178e136fa090e2d5b39ec31d1}
+Get word I\-D by word, \char`\"{}text\char`\"{} version may apply stemming and modify word inplace modified word may become bigger than the original one, so make sure you have enough space in buffer which is pointer by p\-Word a general practice is to use char\mbox{[}3$\ast$\-S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N+4\mbox{]} as a buffer returns 0 for stopwords 
+
+Implements \hyperlink{classCSphDict_a3965d691a170a6fec615cb0c048c9186}{C\-Sph\-Dict}.
+
+\hypertarget{structCSphDictTemplate_a2c7cdf00730fdb30bff84c553a2579ee}{\index{C\-Sph\-Dict\-Template@{C\-Sph\-Dict\-Template}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!CSphDictTemplate@{C\-Sph\-Dict\-Template}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Template\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{bool}]{b\-Filter\-Stops}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphDictTemplate_a2c7cdf00730fdb30bff84c553a2579ee}
+get word I\-D by word, \char`\"{}binary\char`\"{} version only used with prefix/infix indexing must not apply stemming and modify anything filters stopwords on request 
+
+Implements \hyperlink{classCSphDict_a0c4412079431495b1000a486d6fa3c6f}{C\-Sph\-Dict}.
+
+\hypertarget{structCSphDictTemplate_a831f0dbee698ca7ec1151ab7f60d0d92}{\index{C\-Sph\-Dict\-Template@{C\-Sph\-Dict\-Template}!Get\-Word\-I\-D\-Non\-Stemmed@{Get\-Word\-I\-D\-Non\-Stemmed}}
+\index{Get\-Word\-I\-D\-Non\-Stemmed@{Get\-Word\-I\-D\-Non\-Stemmed}!CSphDictTemplate@{C\-Sph\-Dict\-Template}}
+\subsubsection[{Get\-Word\-I\-D\-Non\-Stemmed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Template\-::\-Get\-Word\-I\-D\-Non\-Stemmed (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphDictTemplate_a831f0dbee698ca7ec1151ab7f60d0d92}
+get word I\-D by word, \char`\"{}text\char`\"{} version does N\-O\-T apply stemming accepts words with already prepended M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D returns 0 for stopwords 
+
+Reimplemented from \hyperlink{classCSphDict_a51955c35adb9310b1267fd702518302a}{C\-Sph\-Dict}.
+
+\hypertarget{structCSphDictTemplate_ac4be906ecdf1836e25fb2c60fe793d57}{\index{C\-Sph\-Dict\-Template@{C\-Sph\-Dict\-Template}!Get\-Word\-I\-D\-With\-Markers@{Get\-Word\-I\-D\-With\-Markers}}
+\index{Get\-Word\-I\-D\-With\-Markers@{Get\-Word\-I\-D\-With\-Markers}!CSphDictTemplate@{C\-Sph\-Dict\-Template}}
+\subsubsection[{Get\-Word\-I\-D\-With\-Markers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Template\-::\-Get\-Word\-I\-D\-With\-Markers (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphDictTemplate_ac4be906ecdf1836e25fb2c60fe793d57}
+get word I\-D by word, \char`\"{}text\char`\"{} version may apply stemming and modify word inplace accepts words with already prepended M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D appends M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-T\-A\-I\-L returns 0 for stopwords 
+
+Reimplemented from \hyperlink{classCSphDict_a66f4ee1853964dbcb77724c9462c6dbf}{C\-Sph\-Dict}.
+
+\hypertarget{structCSphDictTemplate_aacf98e88e774cb20df7ec3930f7d6f10}{\index{C\-Sph\-Dict\-Template@{C\-Sph\-Dict\-Template}!Is\-Stop\-Word@{Is\-Stop\-Word}}
+\index{Is\-Stop\-Word@{Is\-Stop\-Word}!CSphDictTemplate@{C\-Sph\-Dict\-Template}}
+\subsubsection[{Is\-Stop\-Word}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-Template\-::\-Is\-Stop\-Word (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphDictTemplate_aacf98e88e774cb20df7ec3930f7d6f10}
+
+
+check what given word is stopword 
+
+
+
+Implements \hyperlink{classCSphDict_a5237fd1aa3eceb2fc3422d057af4986d}{C\-Sph\-Dict}.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

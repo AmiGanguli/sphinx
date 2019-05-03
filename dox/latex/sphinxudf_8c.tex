@@ -1,0 +1,211 @@
+\hypertarget{sphinxudf_8c}{\section{src/sphinxudf.c File Reference}
+\label{sphinxudf_8c}\index{src/sphinxudf.\-c@{src/sphinxudf.\-c}}
+}
+{\ttfamily \#include \char`\"{}sphinxudf.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$memory.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxudf_8c_ad61286bee8a13354382f6c80d279d558}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-F\-A\-C\-T\-O\-R\-S}~256
+\item 
+\#define \hyperlink{sphinxudf_8c_ad643cd5b59830ccb398bca009bc710c6}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-T\-E\-R\-M\-\_\-\-F\-A\-C\-T\-O\-R\-S}~2048
+\item 
+\#define \hyperlink{sphinxudf_8c_a923be5049f5963805ffe61568bb82394}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-I\-Z\-E}~8
+\begin{DoxyCompactList}\small\item\em maximal size to store bitmask for 256 fields \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxudf_8c_a8c5e7b9063d72f7ea90b7c65009dc22d}{sphinx\-\_\-factors\-\_\-init} (\hyperlink{sphinxudf_8h_aa8ec66074b65d96bf2e2dd4de90be1ca}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-F\-A\-C\-T\-O\-R\-S} $\ast$out)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxudf_8c_a46fcaeeaaf1aafcb52d003ccada7a1e3}{sphinx\-\_\-factors\-\_\-unpack} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, \hyperlink{sphinxudf_8h_aa8ec66074b65d96bf2e2dd4de90be1ca}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-F\-A\-C\-T\-O\-R\-S} $\ast$out)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxudf_8c_a37fae8642c5a3413a2ec0a2d05d1bc39}{sphinx\-\_\-factors\-\_\-deinit} (\hyperlink{sphinxudf_8h_aa8ec66074b65d96bf2e2dd4de90be1ca}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-F\-A\-C\-T\-O\-R\-S} $\ast$out)
+\item 
+static const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$ \hyperlink{sphinxudf_8c_a1bc00070e03be7d03ad3d41739779efc}{skip\-\_\-fields} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} n)
+\item 
+static const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$ \hyperlink{sphinxudf_8c_aa9855eb420a248431229ff8a8883da28}{skip\-\_\-terms} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} n)
+\item 
+const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$ \hyperlink{sphinxudf_8c_ae3ea53b685d15b856e166b42c4bbaa0e}{sphinx\-\_\-get\-\_\-field\-\_\-factors} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} field)
+\begin{DoxyCompactList}\small\item\em returns a pointer to the field factors, or N\-U\-L\-L for a non-\/matched field index \end{DoxyCompactList}\item 
+const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$ \hyperlink{sphinxudf_8c_aa7b65832dc02abd624168aad2cfc95c6}{sphinx\-\_\-get\-\_\-term\-\_\-factors} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} term)
+\begin{DoxyCompactList}\small\item\em returns a pointer to the term factors, or N\-U\-L\-L for a non-\/matched field index \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxudf_8c_a63d6fee63684c31f0856f9635cff9405}{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-int} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, enum \hyperlink{sphinxudf_8h_ade28ca356730bf4ccb30fe7bda8b1bc2}{sphinx\-\_\-doc\-\_\-factor} f)
+\begin{DoxyCompactList}\small\item\em returns a document factor value, interpreted as integer \end{DoxyCompactList}\item 
+const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$ \hyperlink{sphinxudf_8c_af83e344a0689bc1365f3d151cd00a2af}{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-ptr} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, enum \hyperlink{sphinxudf_8h_ade28ca356730bf4ccb30fe7bda8b1bc2}{sphinx\-\_\-doc\-\_\-factor} f)
+\begin{DoxyCompactList}\small\item\em returns a pointer to document factor value, interpreted as vector of integers \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{sphinxudf_8c_ac5ebea0e0d4968699a9eb0c63d947fe9}{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-float} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, enum \hyperlink{sphinxudf_8h_ade28ca356730bf4ccb30fe7bda8b1bc2}{sphinx\-\_\-doc\-\_\-factor} f)
+\begin{DoxyCompactList}\small\item\em returns a document factor value, interpreted as float \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxudf_8c_a9e4adb36134b822d2dc4705f8ab84fe5}{sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-int} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, enum \hyperlink{sphinxudf_8h_ab4ce2a9712d04076514ef108aebdaaff}{sphinx\-\_\-field\-\_\-factor} f)
+\begin{DoxyCompactList}\small\item\em returns a field factor value, interpreted as integer \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxudf_8c_a097bf416755d3e1f3c756e1011596ad3}{sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-int} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, enum \hyperlink{sphinxudf_8h_a804bbc5e9762a2a989ac32d98ada48e3}{sphinx\-\_\-term\-\_\-factor} f)
+\begin{DoxyCompactList}\small\item\em returns a term factor value, interpreted as integer \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{sphinxudf_8c_afbdc5ae7b7a903e39fbc38f5d2c5239a}{sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-float} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, enum \hyperlink{sphinxudf_8h_ab4ce2a9712d04076514ef108aebdaaff}{sphinx\-\_\-field\-\_\-factor} f)
+\begin{DoxyCompactList}\small\item\em returns a field factor value, interpreted as float \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{sphinxudf_8c_a632bcb9c332e75d43c841e4edb69a47b}{sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-float} (const unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$in, enum \hyperlink{sphinxudf_8h_a804bbc5e9762a2a989ac32d98ada48e3}{sphinx\-\_\-term\-\_\-factor} f)
+\begin{DoxyCompactList}\small\item\em returns a term factor value, interpreted as float \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxudf_8c_ad61286bee8a13354382f6c80d279d558}{\index{sphinxudf.\-c@{sphinxudf.\-c}!S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-F\-A\-C\-T\-O\-R\-S@{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-F\-A\-C\-T\-O\-R\-S}}
+\index{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-F\-A\-C\-T\-O\-R\-S@{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-F\-A\-C\-T\-O\-R\-S}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-F\-A\-C\-T\-O\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-F\-A\-C\-T\-O\-R\-S~256}}\label{sphinxudf_8c_ad61286bee8a13354382f6c80d279d558}
+\hypertarget{sphinxudf_8c_a923be5049f5963805ffe61568bb82394}{\index{sphinxudf.\-c@{sphinxudf.\-c}!S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-I\-Z\-E@{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-I\-Z\-E}}
+\index{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-I\-Z\-E@{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-I\-Z\-E}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-I\-Z\-E~8}}\label{sphinxudf_8c_a923be5049f5963805ffe61568bb82394}
+
+
+maximal size to store bitmask for 256 fields 
+
+\hypertarget{sphinxudf_8c_ad643cd5b59830ccb398bca009bc710c6}{\index{sphinxudf.\-c@{sphinxudf.\-c}!S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-T\-E\-R\-M\-\_\-\-F\-A\-C\-T\-O\-R\-S@{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-T\-E\-R\-M\-\_\-\-F\-A\-C\-T\-O\-R\-S}}
+\index{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-T\-E\-R\-M\-\_\-\-F\-A\-C\-T\-O\-R\-S@{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-T\-E\-R\-M\-\_\-\-F\-A\-C\-T\-O\-R\-S}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-T\-E\-R\-M\-\_\-\-F\-A\-C\-T\-O\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-M\-A\-X\-\_\-\-T\-E\-R\-M\-\_\-\-F\-A\-C\-T\-O\-R\-S~2048}}\label{sphinxudf_8c_ad643cd5b59830ccb398bca009bc710c6}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxudf_8c_a1bc00070e03be7d03ad3d41739779efc}{\index{sphinxudf.\-c@{sphinxudf.\-c}!skip\-\_\-fields@{skip\-\_\-fields}}
+\index{skip\-\_\-fields@{skip\-\_\-fields}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{skip\-\_\-fields}]{\setlength{\rightskip}{0pt plus 5cm}static const unsigned {\bf int}$\ast$ skip\-\_\-fields (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{{\bf int}}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxudf_8c_a1bc00070e03be7d03ad3d41739779efc}
+\hypertarget{sphinxudf_8c_aa9855eb420a248431229ff8a8883da28}{\index{sphinxudf.\-c@{sphinxudf.\-c}!skip\-\_\-terms@{skip\-\_\-terms}}
+\index{skip\-\_\-terms@{skip\-\_\-terms}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{skip\-\_\-terms}]{\setlength{\rightskip}{0pt plus 5cm}static const unsigned {\bf int}$\ast$ skip\-\_\-terms (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{{\bf int}}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxudf_8c_aa9855eb420a248431229ff8a8883da28}
+\hypertarget{sphinxudf_8c_a37fae8642c5a3413a2ec0a2d05d1bc39}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-factors\-\_\-deinit@{sphinx\-\_\-factors\-\_\-deinit}}
+\index{sphinx\-\_\-factors\-\_\-deinit@{sphinx\-\_\-factors\-\_\-deinit}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-factors\-\_\-deinit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sphinx\-\_\-factors\-\_\-deinit (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-F\-A\-C\-T\-O\-R\-S} $\ast$}]{out}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_a37fae8642c5a3413a2ec0a2d05d1bc39}
+helper function that must be called to free the memory allocated by the sphinx\-\_\-factors\-\_\-unpack function call returns 0 on success returns an error code on error \hypertarget{sphinxudf_8c_a8c5e7b9063d72f7ea90b7c65009dc22d}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-factors\-\_\-init@{sphinx\-\_\-factors\-\_\-init}}
+\index{sphinx\-\_\-factors\-\_\-init@{sphinx\-\_\-factors\-\_\-init}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-factors\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sphinx\-\_\-factors\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-F\-A\-C\-T\-O\-R\-S} $\ast$}]{out}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_a8c5e7b9063d72f7ea90b7c65009dc22d}
+helper function that must be called to initialize the S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-F\-A\-C\-T\-O\-R\-S structure before it is passed to sphinx\-\_\-factors\-\_\-unpack returns 0 on success returns an error code on error \hypertarget{sphinxudf_8c_a46fcaeeaaf1aafcb52d003ccada7a1e3}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-factors\-\_\-unpack@{sphinx\-\_\-factors\-\_\-unpack}}
+\index{sphinx\-\_\-factors\-\_\-unpack@{sphinx\-\_\-factors\-\_\-unpack}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-factors\-\_\-unpack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sphinx\-\_\-factors\-\_\-unpack (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{{\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-F\-A\-C\-T\-O\-R\-S} $\ast$}]{out}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_a46fcaeeaaf1aafcb52d003ccada7a1e3}
+helper function that unpacks P\-A\-C\-K\-E\-D\-F\-A\-C\-T\-O\-R\-S() blob into S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-F\-A\-C\-T\-O\-R\-S structure M\-U\-S\-T be in sync with Pack\-Factors() method in \hyperlink{sphinxsearch_8cpp}{sphinxsearch.\-cpp} returns 0 on success returns an error code on error \hypertarget{sphinxudf_8c_ac5ebea0e0d4968699a9eb0c63d947fe9}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-float@{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-float}}
+\index{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-float@{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-float}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-float}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-float (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{enum {\bf sphinx\-\_\-doc\-\_\-factor}}]{f}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_ac5ebea0e0d4968699a9eb0c63d947fe9}
+
+
+returns a document factor value, interpreted as float 
+
+\hypertarget{sphinxudf_8c_a63d6fee63684c31f0856f9635cff9405}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-int@{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-int}}
+\index{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-int@{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-int}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{enum {\bf sphinx\-\_\-doc\-\_\-factor}}]{f}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_a63d6fee63684c31f0856f9635cff9405}
+
+
+returns a document factor value, interpreted as integer 
+
+\hypertarget{sphinxudf_8c_af83e344a0689bc1365f3d151cd00a2af}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-ptr@{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-ptr}}
+\index{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-ptr@{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-ptr}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf int}$\ast$ sphinx\-\_\-get\-\_\-doc\-\_\-factor\-\_\-ptr (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{enum {\bf sphinx\-\_\-doc\-\_\-factor}}]{f}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_af83e344a0689bc1365f3d151cd00a2af}
+
+
+returns a pointer to document factor value, interpreted as vector of integers 
+
+\hypertarget{sphinxudf_8c_afbdc5ae7b7a903e39fbc38f5d2c5239a}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-float@{sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-float}}
+\index{sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-float@{sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-float}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-float}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-float (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{enum {\bf sphinx\-\_\-field\-\_\-factor}}]{f}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_afbdc5ae7b7a903e39fbc38f5d2c5239a}
+
+
+returns a field factor value, interpreted as float 
+
+\hypertarget{sphinxudf_8c_a9e4adb36134b822d2dc4705f8ab84fe5}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-int@{sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-int}}
+\index{sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-int@{sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-int}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sphinx\-\_\-get\-\_\-field\-\_\-factor\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{enum {\bf sphinx\-\_\-field\-\_\-factor}}]{f}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_a9e4adb36134b822d2dc4705f8ab84fe5}
+
+
+returns a field factor value, interpreted as integer 
+
+\hypertarget{sphinxudf_8c_ae3ea53b685d15b856e166b42c4bbaa0e}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-get\-\_\-field\-\_\-factors@{sphinx\-\_\-get\-\_\-field\-\_\-factors}}
+\index{sphinx\-\_\-get\-\_\-field\-\_\-factors@{sphinx\-\_\-get\-\_\-field\-\_\-factors}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-get\-\_\-field\-\_\-factors}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf int}$\ast$ sphinx\-\_\-get\-\_\-field\-\_\-factors (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{{\bf int}}]{field}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_ae3ea53b685d15b856e166b42c4bbaa0e}
+
+
+returns a pointer to the field factors, or N\-U\-L\-L for a non-\/matched field index 
+
+\hypertarget{sphinxudf_8c_a632bcb9c332e75d43c841e4edb69a47b}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-float@{sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-float}}
+\index{sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-float@{sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-float}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-float}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-float (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{enum {\bf sphinx\-\_\-term\-\_\-factor}}]{f}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_a632bcb9c332e75d43c841e4edb69a47b}
+
+
+returns a term factor value, interpreted as float 
+
+\hypertarget{sphinxudf_8c_a097bf416755d3e1f3c756e1011596ad3}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-int@{sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-int}}
+\index{sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-int@{sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-int}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sphinx\-\_\-get\-\_\-term\-\_\-factor\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{enum {\bf sphinx\-\_\-term\-\_\-factor}}]{f}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_a097bf416755d3e1f3c756e1011596ad3}
+
+
+returns a term factor value, interpreted as integer 
+
+\hypertarget{sphinxudf_8c_aa7b65832dc02abd624168aad2cfc95c6}{\index{sphinxudf.\-c@{sphinxudf.\-c}!sphinx\-\_\-get\-\_\-term\-\_\-factors@{sphinx\-\_\-get\-\_\-term\-\_\-factors}}
+\index{sphinx\-\_\-get\-\_\-term\-\_\-factors@{sphinx\-\_\-get\-\_\-term\-\_\-factors}!sphinxudf.c@{sphinxudf.\-c}}
+\subsubsection[{sphinx\-\_\-get\-\_\-term\-\_\-factors}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf int}$\ast$ sphinx\-\_\-get\-\_\-term\-\_\-factors (
+\begin{DoxyParamCaption}
+\item[{const unsigned {\bf int} $\ast$}]{in, }
+\item[{{\bf int}}]{term}
+\end{DoxyParamCaption}
+)}}\label{sphinxudf_8c_aa7b65832dc02abd624168aad2cfc95c6}
+
+
+returns a pointer to the term factors, or N\-U\-L\-L for a non-\/matched field index 
+

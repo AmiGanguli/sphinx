@@ -1,0 +1,90 @@
+\hypertarget{structCSphQueryStats}{\section{C\-Sph\-Query\-Stats Struct Reference}
+\label{structCSphQueryStats}\index{C\-Sph\-Query\-Stats@{C\-Sph\-Query\-Stats}}
+}
+
+
+some low-\/level query stats  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphQueryStats_a9a040b732110853ad6cdd31649cecef1}{C\-Sph\-Query\-Stats} ()
+\item 
+void \hyperlink{structCSphQueryStats_aae9979b38ab3f4d4c2d428f1bedcc1d6}{Add} (const \hyperlink{structCSphQueryStats}{C\-Sph\-Query\-Stats} \&t\-Stats)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $\ast$ \hyperlink{structCSphQueryStats_a834d9a42e0441d58d8a2bb70818c13a8}{m\-\_\-p\-Nano\-Budget}
+\begin{DoxyCompactList}\small\item\em pointer to max\-\_\-predicted\-\_\-time budget (counted in nanosec) \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structCSphQueryStats_a76fc139e1c6b9efbc13d51145db0fa09}{m\-\_\-i\-Fetched\-Docs}
+\begin{DoxyCompactList}\small\item\em processed documents \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structCSphQueryStats_a097db9dbdd7828bd51397c8346fc9c99}{m\-\_\-i\-Fetched\-Hits}
+\begin{DoxyCompactList}\small\item\em processed hits (aka positions) \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structCSphQueryStats_a1ae88398f284f58e6e6fe83319d62f1a}{m\-\_\-i\-Skips}
+\begin{DoxyCompactList}\small\item\em number of Skip() calls \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+some low-\/level query stats 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphQueryStats_a9a040b732110853ad6cdd31649cecef1}{\index{C\-Sph\-Query\-Stats@{C\-Sph\-Query\-Stats}!C\-Sph\-Query\-Stats@{C\-Sph\-Query\-Stats}}
+\index{C\-Sph\-Query\-Stats@{C\-Sph\-Query\-Stats}!CSphQueryStats@{C\-Sph\-Query\-Stats}}
+\subsubsection[{C\-Sph\-Query\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-Stats\-::\-C\-Sph\-Query\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structCSphQueryStats_a9a040b732110853ad6cdd31649cecef1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphQueryStats_aae9979b38ab3f4d4c2d428f1bedcc1d6}{\index{C\-Sph\-Query\-Stats@{C\-Sph\-Query\-Stats}!Add@{Add}}
+\index{Add@{Add}!CSphQueryStats@{C\-Sph\-Query\-Stats}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Stats\-::\-Add (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query\-Stats} \&}]{t\-Stats}
+\end{DoxyParamCaption}
+)}}\label{structCSphQueryStats_aae9979b38ab3f4d4c2d428f1bedcc1d6}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphQueryStats_a76fc139e1c6b9efbc13d51145db0fa09}{\index{C\-Sph\-Query\-Stats@{C\-Sph\-Query\-Stats}!m\-\_\-i\-Fetched\-Docs@{m\-\_\-i\-Fetched\-Docs}}
+\index{m\-\_\-i\-Fetched\-Docs@{m\-\_\-i\-Fetched\-Docs}!CSphQueryStats@{C\-Sph\-Query\-Stats}}
+\subsubsection[{m\-\_\-i\-Fetched\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Query\-Stats\-::m\-\_\-i\-Fetched\-Docs}}\label{structCSphQueryStats_a76fc139e1c6b9efbc13d51145db0fa09}
+
+
+processed documents 
+
+\hypertarget{structCSphQueryStats_a097db9dbdd7828bd51397c8346fc9c99}{\index{C\-Sph\-Query\-Stats@{C\-Sph\-Query\-Stats}!m\-\_\-i\-Fetched\-Hits@{m\-\_\-i\-Fetched\-Hits}}
+\index{m\-\_\-i\-Fetched\-Hits@{m\-\_\-i\-Fetched\-Hits}!CSphQueryStats@{C\-Sph\-Query\-Stats}}
+\subsubsection[{m\-\_\-i\-Fetched\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Query\-Stats\-::m\-\_\-i\-Fetched\-Hits}}\label{structCSphQueryStats_a097db9dbdd7828bd51397c8346fc9c99}
+
+
+processed hits (aka positions) 
+
+\hypertarget{structCSphQueryStats_a1ae88398f284f58e6e6fe83319d62f1a}{\index{C\-Sph\-Query\-Stats@{C\-Sph\-Query\-Stats}!m\-\_\-i\-Skips@{m\-\_\-i\-Skips}}
+\index{m\-\_\-i\-Skips@{m\-\_\-i\-Skips}!CSphQueryStats@{C\-Sph\-Query\-Stats}}
+\subsubsection[{m\-\_\-i\-Skips}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Query\-Stats\-::m\-\_\-i\-Skips}}\label{structCSphQueryStats_a1ae88398f284f58e6e6fe83319d62f1a}
+
+
+number of Skip() calls 
+
+\hypertarget{structCSphQueryStats_a834d9a42e0441d58d8a2bb70818c13a8}{\index{C\-Sph\-Query\-Stats@{C\-Sph\-Query\-Stats}!m\-\_\-p\-Nano\-Budget@{m\-\_\-p\-Nano\-Budget}}
+\index{m\-\_\-p\-Nano\-Budget@{m\-\_\-p\-Nano\-Budget}!CSphQueryStats@{C\-Sph\-Query\-Stats}}
+\subsubsection[{m\-\_\-p\-Nano\-Budget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t}$\ast$ C\-Sph\-Query\-Stats\-::m\-\_\-p\-Nano\-Budget}}\label{structCSphQueryStats_a834d9a42e0441d58d8a2bb70818c13a8}
+
+
+pointer to max\-\_\-predicted\-\_\-time budget (counted in nanosec) 
+
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

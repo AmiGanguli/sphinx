@@ -1,0 +1,149 @@
+\hypertarget{classCSphKBufferMVAGroupSorter}{\section{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$ Class Template Reference}
+\label{classCSphKBufferMVAGroupSorter}\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}}
+}
+
+
+match sorter with k-\/buffering and group-\/by for M\-V\-As  
+
+
+Inheritance diagram for C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.602289cm]{classCSphKBufferMVAGroupSorter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphKBufferMVAGroupSorter_ad53e876fa35d2dbbf74bc74fe34df497}{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter} (const \hyperlink{structISphMatchComparator}{I\-Sph\-Match\-Comparator} $\ast$p\-Comp, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const \hyperlink{structCSphGroupSorterSettings}{C\-Sph\-Group\-Sorter\-Settings} \&t\-Settings)
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphKBufferMVAGroupSorter_aafb1ca01ae8cc143a5b65a1fbd05eb89}{Is\-Groupby} () const 
+\begin{DoxyCompactList}\small\item\em check if this sorter does groupby \end{DoxyCompactList}\item 
+void \hyperlink{classCSphKBufferMVAGroupSorter_aa6d1b61922f53e7b6262be7a203ab552}{Set\-M\-V\-A\-Pool} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mva, bool b\-Arena\-Prohibit)
+\begin{DoxyCompactList}\small\item\em set M\-V\-A pool for subsequent matches \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphKBufferMVAGroupSorter_a550aca8d975faceb2ce4bfa43c10a77d}{Push} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Entry)
+\begin{DoxyCompactList}\small\item\em add entry to the queue \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphKBufferMVAGroupSorter_a405697753dc313ab3ef5ff397d9fa86a}{Push\-Grouped} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Entry, bool b\-New\-Set)
+\begin{DoxyCompactList}\small\item\em add pre-\/grouped entry to the queue \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$ \hyperlink{classCSphKBufferMVAGroupSorter_a6c5f722befa68c234ed5da3d9b3bbf4e}{m\-\_\-p\-Mva}
+\begin{DoxyCompactList}\small\item\em pointer to M\-V\-A pool for incoming matches \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphKBufferMVAGroupSorter_ad2096f8141dce39d432d1b7010c103ea}{m\-\_\-b\-Arena\-Prohibit}
+\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{classCSphKBufferMVAGroupSorter_a50f87adb9205082d6a8539019e5f520a}{m\-\_\-t\-Mva\-Locator}
+\item 
+bool \hyperlink{classCSphKBufferMVAGroupSorter_a09070d8bc1a08f2653d104198108f1a3}{m\-\_\-b\-Mva64}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P, bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$class C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+
+match sorter with k-\/buffering and group-\/by for M\-V\-As 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphKBufferMVAGroupSorter_ad53e876fa35d2dbbf74bc74fe34df497}{\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}!C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}}
+\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}!CSphKBufferMVAGroupSorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}}
+\subsubsection[{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::{\bf C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter} (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Match\-Comparator} $\ast$}]{p\-Comp, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const {\bf C\-Sph\-Group\-Sorter\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphKBufferMVAGroupSorter_ad53e876fa35d2dbbf74bc74fe34df497}
+
+
+ctor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphKBufferMVAGroupSorter_aafb1ca01ae8cc143a5b65a1fbd05eb89}{\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}!Is\-Groupby@{Is\-Groupby}}
+\index{Is\-Groupby@{Is\-Groupby}!CSphKBufferMVAGroupSorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}}
+\subsubsection[{Is\-Groupby}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Is\-Groupby (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphKBufferMVAGroupSorter_aafb1ca01ae8cc143a5b65a1fbd05eb89}
+
+
+check if this sorter does groupby 
+
+
+
+Reimplemented from \hyperlink{classCSphKBufferGroupSorter_acda318e10e235640a396b0baa267e15b}{C\-Sph\-K\-Buffer\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}.
+
+\hypertarget{classCSphKBufferMVAGroupSorter_a550aca8d975faceb2ce4bfa43c10a77d}{\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}!Push@{Push}}
+\index{Push@{Push}!CSphKBufferMVAGroupSorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Push (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphKBufferMVAGroupSorter_a550aca8d975faceb2ce4bfa43c10a77d}
+
+
+add entry to the queue 
+
+
+
+Reimplemented from \hyperlink{classCSphKBufferGroupSorter_a86d29bcec77a75f5894a633fb22082ae}{C\-Sph\-K\-Buffer\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}.
+
+\hypertarget{classCSphKBufferMVAGroupSorter_a405697753dc313ab3ef5ff397d9fa86a}{\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}!Push\-Grouped@{Push\-Grouped}}
+\index{Push\-Grouped@{Push\-Grouped}!CSphKBufferMVAGroupSorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}}
+\subsubsection[{Push\-Grouped}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Push\-Grouped (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Entry, }
+\item[{bool}]{b\-New\-Set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphKBufferMVAGroupSorter_a405697753dc313ab3ef5ff397d9fa86a}
+
+
+add pre-\/grouped entry to the queue 
+
+
+
+Reimplemented from \hyperlink{classCSphKBufferGroupSorter_a3a0ed37c3dd9c06fc2524df71a9d45d1}{C\-Sph\-K\-Buffer\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}.
+
+\hypertarget{classCSphKBufferMVAGroupSorter_aa6d1b61922f53e7b6262be7a203ab552}{\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}!Set\-M\-V\-A\-Pool@{Set\-M\-V\-A\-Pool}}
+\index{Set\-M\-V\-A\-Pool@{Set\-M\-V\-A\-Pool}!CSphKBufferMVAGroupSorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}}
+\subsubsection[{Set\-M\-V\-A\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ void {\bf C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Set\-M\-V\-A\-Pool (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mva, }
+\item[{bool}]{b\-Arena\-Prohibit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphKBufferMVAGroupSorter_aa6d1b61922f53e7b6262be7a203ab552}
+
+
+set M\-V\-A pool for subsequent matches 
+
+
+
+Reimplemented from \hyperlink{classISphMatchSorter_a62d84ec75b8cb3bebe392ee37d40aa3f}{I\-Sph\-Match\-Sorter}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphKBufferMVAGroupSorter_ad2096f8141dce39d432d1b7010c103ea}{\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}!m\-\_\-b\-Arena\-Prohibit@{m\-\_\-b\-Arena\-Prohibit}}
+\index{m\-\_\-b\-Arena\-Prohibit@{m\-\_\-b\-Arena\-Prohibit}!CSphKBufferMVAGroupSorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}}
+\subsubsection[{m\-\_\-b\-Arena\-Prohibit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ bool {\bf C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-b\-Arena\-Prohibit\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphKBufferMVAGroupSorter_ad2096f8141dce39d432d1b7010c103ea}
+\hypertarget{classCSphKBufferMVAGroupSorter_a09070d8bc1a08f2653d104198108f1a3}{\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}!m\-\_\-b\-Mva64@{m\-\_\-b\-Mva64}}
+\index{m\-\_\-b\-Mva64@{m\-\_\-b\-Mva64}!CSphKBufferMVAGroupSorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}}
+\subsubsection[{m\-\_\-b\-Mva64}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ bool {\bf C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-b\-Mva64\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphKBufferMVAGroupSorter_a09070d8bc1a08f2653d104198108f1a3}
+\hypertarget{classCSphKBufferMVAGroupSorter_a6c5f722befa68c234ed5da3d9b3bbf4e}{\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}!m\-\_\-p\-Mva@{m\-\_\-p\-Mva}}
+\index{m\-\_\-p\-Mva@{m\-\_\-p\-Mva}!CSphKBufferMVAGroupSorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}}
+\subsubsection[{m\-\_\-p\-Mva}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ const {\bf D\-W\-O\-R\-D}$\ast$ {\bf C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-p\-Mva\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphKBufferMVAGroupSorter_a6c5f722befa68c234ed5da3d9b3bbf4e}
+
+
+pointer to M\-V\-A pool for incoming matches 
+
+\hypertarget{classCSphKBufferMVAGroupSorter_a50f87adb9205082d6a8539019e5f520a}{\index{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}!m\-\_\-t\-Mva\-Locator@{m\-\_\-t\-Mva\-Locator}}
+\index{m\-\_\-t\-Mva\-Locator@{m\-\_\-t\-Mva\-Locator}!CSphKBufferMVAGroupSorter@{C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}}
+\subsubsection[{m\-\_\-t\-Mva\-Locator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf C\-Sph\-Attr\-Locator} {\bf C\-Sph\-K\-Buffer\-M\-V\-A\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-t\-Mva\-Locator\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphKBufferMVAGroupSorter_a50f87adb9205082d6a8539019e5f520a}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

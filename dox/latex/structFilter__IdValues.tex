@@ -1,0 +1,70 @@
+\hypertarget{structFilter__IdValues}{\section{Filter\-\_\-\-Id\-Values Struct Reference}
+\label{structFilter__IdValues}\index{Filter\-\_\-\-Id\-Values@{Filter\-\_\-\-Id\-Values}}
+}
+Inheritance diagram for Filter\-\_\-\-Id\-Values\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structFilter__IdValues}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{structFilter__IdValues_ad74ed1e1f95f10baa5c3855e3eddb90b}{Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\item 
+bool \hyperlink{structFilter__IdValues_acd2ca8d1a8e835c1508069ddffe4db71}{Eval\-Block\-Values} (\hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} u\-Block\-Min, \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} u\-Block\-Max) const 
+\item 
+virtual bool \hyperlink{structFilter__IdValues_a1a3184cfe388f34d5549baafbc7c7db1}{Eval\-Block} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Min\-Docinfo, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Max\-Docinfo) const 
+\item 
+\hyperlink{structFilter__IdValues_afeae441e0d068b466c3f827fefaeae82}{Filter\-\_\-\-Id\-Values} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structFilter__IdValues_afeae441e0d068b466c3f827fefaeae82}{\index{Filter\-\_\-\-Id\-Values@{Filter\-\_\-\-Id\-Values}!Filter\-\_\-\-Id\-Values@{Filter\-\_\-\-Id\-Values}}
+\index{Filter\-\_\-\-Id\-Values@{Filter\-\_\-\-Id\-Values}!Filter_IdValues@{Filter\-\_\-\-Id\-Values}}
+\subsubsection[{Filter\-\_\-\-Id\-Values}]{\setlength{\rightskip}{0pt plus 5cm}Filter\-\_\-\-Id\-Values\-::\-Filter\-\_\-\-Id\-Values (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFilter__IdValues_afeae441e0d068b466c3f827fefaeae82}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structFilter__IdValues_ad74ed1e1f95f10baa5c3855e3eddb90b}{\index{Filter\-\_\-\-Id\-Values@{Filter\-\_\-\-Id\-Values}!Eval@{Eval}}
+\index{Eval@{Eval}!Filter_IdValues@{Filter\-\_\-\-Id\-Values}}
+\subsubsection[{Eval}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Filter\-\_\-\-Id\-Values\-::\-Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structFilter__IdValues_ad74ed1e1f95f10baa5c3855e3eddb90b}
+evaluate filter for a given match returns true if match satisfies the filter critertia (i.\-e. in range, found in values list etc) 
+
+Implements \hyperlink{structISphFilter_a6f3cedb0fa449a85d6010220a635bc74}{I\-Sph\-Filter}.
+
+\hypertarget{structFilter__IdValues_a1a3184cfe388f34d5549baafbc7c7db1}{\index{Filter\-\_\-\-Id\-Values@{Filter\-\_\-\-Id\-Values}!Eval\-Block@{Eval\-Block}}
+\index{Eval\-Block@{Eval\-Block}!Filter_IdValues@{Filter\-\_\-\-Id\-Values}}
+\subsubsection[{Eval\-Block}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Filter\-\_\-\-Id\-Values\-::\-Eval\-Block (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structFilter__IdValues_a1a3184cfe388f34d5549baafbc7c7db1}
+evaluate filter for a given block args are p\-Min\-Docinfo and p\-Max\-Docinfo returns false if no document in block can possibly pass through the filter 
+
+Reimplemented from \hyperlink{structISphFilter_afcf90a09873d705368712286bff19c10}{I\-Sph\-Filter}.
+
+\hypertarget{structFilter__IdValues_acd2ca8d1a8e835c1508069ddffe4db71}{\index{Filter\-\_\-\-Id\-Values@{Filter\-\_\-\-Id\-Values}!Eval\-Block\-Values@{Eval\-Block\-Values}}
+\index{Eval\-Block\-Values@{Eval\-Block\-Values}!Filter_IdValues@{Filter\-\_\-\-Id\-Values}}
+\subsubsection[{Eval\-Block\-Values}]{\setlength{\rightskip}{0pt plus 5cm}bool Filter\-\_\-\-Id\-Values\-::\-Eval\-Block\-Values (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Attr\-\_\-t}}]{u\-Block\-Min, }
+\item[{{\bf Sph\-Attr\-\_\-t}}]{u\-Block\-Max}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFilter__IdValues_acd2ca8d1a8e835c1508069ddffe4db71}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxfilter_8cpp}{sphinxfilter.\-cpp}\end{DoxyCompactItemize}

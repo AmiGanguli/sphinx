@@ -1,0 +1,147 @@
+\hypertarget{classCSphGrouperMulti}{\section{C\-Sph\-Grouper\-Multi$<$ P\-R\-E\-D $>$ Class Template Reference}
+\label{classCSphGrouperMulti}\index{C\-Sph\-Grouper\-Multi$<$ P\-R\-E\-D $>$@{C\-Sph\-Grouper\-Multi$<$ P\-R\-E\-D $>$}}
+}
+Inheritance diagram for C\-Sph\-Grouper\-Multi$<$ P\-R\-E\-D $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphGrouperMulti}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphGrouperMulti_afb733d78f504cc78c7160a421ac33a2c}{C\-Sph\-Grouper\-Multi} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} $>$ \&d\-Locators, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} $>$ \&d\-Attr\-Types, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ $>$ \&d\-Json\-Keys)
+\item 
+virtual \hyperlink{classCSphGrouperMulti_ab0c0b5e816ed519966dfab7645b54475}{$\sim$\-C\-Sph\-Grouper\-Multi} ()
+\item 
+virtual \hyperlink{sphinxsort_8cpp_ab18dbc744a7e1518a776845191f194c8}{Sph\-Group\-Key\-\_\-t} \hyperlink{classCSphGrouperMulti_a04c6f9c23c7138027c1aa45416470106}{Key\-From\-Match} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\item 
+virtual void \hyperlink{classCSphGrouperMulti_ab0b6299428985ccf830e40d2887982f4}{Set\-String\-Pool} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Strings)
+\item 
+virtual \hyperlink{sphinxsort_8cpp_ab18dbc744a7e1518a776845191f194c8}{Sph\-Group\-Key\-\_\-t} \hyperlink{classCSphGrouperMulti_ac9866b13000e2c377b3970dbc07b9605}{Key\-From\-Value} (\hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t}) const 
+\item 
+virtual void \hyperlink{classCSphGrouperMulti_ae4f7dd63fabdb15fcdca54f24ce9d550}{Get\-Locator} (\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&) const 
+\item 
+virtual \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} \hyperlink{classCSphGrouperMulti_aef7e9d31d25e4d7009fab97c3eed6df5}{Get\-Result\-Type} () const 
+\item 
+virtual bool \hyperlink{classCSphGrouperMulti_a89bce57ca14897d6780634d2f59de2e8}{Can\-Multi} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} $>$ \hyperlink{classCSphGrouperMulti_a5a8eeb52b7af8c2b435b50a099e5ca33}{m\-\_\-d\-Locators}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} $>$ \hyperlink{classCSphGrouperMulti_a3aa81b108ba3b823306b1c13d9794970}{m\-\_\-d\-Attr\-Types}
+\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphGrouperMulti_a4bcb26aa0140e30669879e70d7b3b029}{m\-\_\-p\-String\-Base}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ $>$ \hyperlink{classCSphGrouperMulti_afe1e33632cebf73222002de583dfe638}{m\-\_\-d\-Json\-Keys}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphGrouperMulti_afb733d78f504cc78c7160a421ac33a2c}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}}
+\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{C\-Sph\-Grouper\-Multi}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::{\bf C\-Sph\-Grouper\-Multi} (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Attr\-Locator} $>$ \&}]{d\-Locators, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf E\-Sph\-Attr} $>$ \&}]{d\-Attr\-Types, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf I\-Sph\-Expr} $\ast$ $>$ \&}]{d\-Json\-Keys}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphGrouperMulti_afb733d78f504cc78c7160a421ac33a2c}
+\hypertarget{classCSphGrouperMulti_ab0c0b5e816ed519966dfab7645b54475}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!$\sim$\-C\-Sph\-Grouper\-Multi@{$\sim$\-C\-Sph\-Grouper\-Multi}}
+\index{$\sim$\-C\-Sph\-Grouper\-Multi@{$\sim$\-C\-Sph\-Grouper\-Multi}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{$\sim$\-C\-Sph\-Grouper\-Multi}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ virtual {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::$\sim${\bf C\-Sph\-Grouper\-Multi} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphGrouperMulti_ab0c0b5e816ed519966dfab7645b54475}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphGrouperMulti_a89bce57ca14897d6780634d2f59de2e8}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!Can\-Multi@{Can\-Multi}}
+\index{Can\-Multi@{Can\-Multi}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{Can\-Multi}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ virtual bool {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::Can\-Multi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphGrouperMulti_a89bce57ca14897d6780634d2f59de2e8}
+
+
+Reimplemented from \hyperlink{classCSphGrouper_aec39875f0506599e9df0093af539d76d}{C\-Sph\-Grouper}.
+
+\hypertarget{classCSphGrouperMulti_ae4f7dd63fabdb15fcdca54f24ce9d550}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!Get\-Locator@{Get\-Locator}}
+\index{Get\-Locator@{Get\-Locator}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{Get\-Locator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ virtual void {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::Get\-Locator (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Attr\-Locator} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphGrouperMulti_ae4f7dd63fabdb15fcdca54f24ce9d550}
+
+
+Implements \hyperlink{classCSphGrouper_a1f44c7fcc468e8be0f8ff0f459f7df55}{C\-Sph\-Grouper}.
+
+\hypertarget{classCSphGrouperMulti_aef7e9d31d25e4d7009fab97c3eed6df5}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!Get\-Result\-Type@{Get\-Result\-Type}}
+\index{Get\-Result\-Type@{Get\-Result\-Type}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{Get\-Result\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ virtual {\bf E\-Sph\-Attr} {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::Get\-Result\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphGrouperMulti_aef7e9d31d25e4d7009fab97c3eed6df5}
+
+
+Implements \hyperlink{classCSphGrouper_a65601058a482a9c00612190c3b0ce916}{C\-Sph\-Grouper}.
+
+\hypertarget{classCSphGrouperMulti_a04c6f9c23c7138027c1aa45416470106}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!Key\-From\-Match@{Key\-From\-Match}}
+\index{Key\-From\-Match@{Key\-From\-Match}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{Key\-From\-Match}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ virtual {\bf Sph\-Group\-Key\-\_\-t} {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::Key\-From\-Match (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphGrouperMulti_a04c6f9c23c7138027c1aa45416470106}
+
+
+Implements \hyperlink{classCSphGrouper_a4e4e035c9a8e19eeef0e930ec489fe5f}{C\-Sph\-Grouper}.
+
+\hypertarget{classCSphGrouperMulti_ac9866b13000e2c377b3970dbc07b9605}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!Key\-From\-Value@{Key\-From\-Value}}
+\index{Key\-From\-Value@{Key\-From\-Value}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{Key\-From\-Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ virtual {\bf Sph\-Group\-Key\-\_\-t} {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::Key\-From\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Attr\-\_\-t}}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphGrouperMulti_ac9866b13000e2c377b3970dbc07b9605}
+
+
+Implements \hyperlink{classCSphGrouper_a1368b3aab58f2f0701dac5e0ffb7e4fb}{C\-Sph\-Grouper}.
+
+\hypertarget{classCSphGrouperMulti_ab0b6299428985ccf830e40d2887982f4}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!Set\-String\-Pool@{Set\-String\-Pool}}
+\index{Set\-String\-Pool@{Set\-String\-Pool}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{Set\-String\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ virtual void {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::Set\-String\-Pool (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Strings}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphGrouperMulti_ab0b6299428985ccf830e40d2887982f4}
+
+
+Reimplemented from \hyperlink{classCSphGrouper_ab963d24e91267e114176b78fc32b788e}{C\-Sph\-Grouper}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphGrouperMulti_a3aa81b108ba3b823306b1c13d9794970}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!m\-\_\-d\-Attr\-Types@{m\-\_\-d\-Attr\-Types}}
+\index{m\-\_\-d\-Attr\-Types@{m\-\_\-d\-Attr\-Types}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{m\-\_\-d\-Attr\-Types}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ {\bf C\-Sph\-Vector}$<${\bf E\-Sph\-Attr}$>$ {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::m\-\_\-d\-Attr\-Types\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphGrouperMulti_a3aa81b108ba3b823306b1c13d9794970}
+\hypertarget{classCSphGrouperMulti_afe1e33632cebf73222002de583dfe638}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!m\-\_\-d\-Json\-Keys@{m\-\_\-d\-Json\-Keys}}
+\index{m\-\_\-d\-Json\-Keys@{m\-\_\-d\-Json\-Keys}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{m\-\_\-d\-Json\-Keys}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ {\bf C\-Sph\-Vector}$<${\bf I\-Sph\-Expr} $\ast$$>$ {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::m\-\_\-d\-Json\-Keys\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphGrouperMulti_afe1e33632cebf73222002de583dfe638}
+\hypertarget{classCSphGrouperMulti_a5a8eeb52b7af8c2b435b50a099e5ca33}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!m\-\_\-d\-Locators@{m\-\_\-d\-Locators}}
+\index{m\-\_\-d\-Locators@{m\-\_\-d\-Locators}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{m\-\_\-d\-Locators}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ {\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Attr\-Locator}$>$ {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::m\-\_\-d\-Locators\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphGrouperMulti_a5a8eeb52b7af8c2b435b50a099e5ca33}
+\hypertarget{classCSphGrouperMulti_a4bcb26aa0140e30669879e70d7b3b029}{\index{C\-Sph\-Grouper\-Multi@{C\-Sph\-Grouper\-Multi}!m\-\_\-p\-String\-Base@{m\-\_\-p\-String\-Base}}
+\index{m\-\_\-p\-String\-Base@{m\-\_\-p\-String\-Base}!CSphGrouperMulti@{C\-Sph\-Grouper\-Multi}}
+\subsubsection[{m\-\_\-p\-String\-Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class P\-R\-E\-D $>$ const {\bf B\-Y\-T\-E}$\ast$ {\bf C\-Sph\-Grouper\-Multi}$<$ P\-R\-E\-D $>$\-::m\-\_\-p\-String\-Base\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphGrouperMulti_a4bcb26aa0140e30669879e70d7b3b029}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,188 @@
+\hypertarget{classCSphBitvec}{\section{C\-Sph\-Bitvec Class Reference}
+\label{classCSphBitvec}\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}}
+}
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphBitvec_a7661e6085fb0ad4d858c44925cfa2ccc}{C\-Sph\-Bitvec} ()
+\item 
+\hyperlink{classCSphBitvec_a12dc415a04587c12cb7eff1522eef51f}{C\-Sph\-Bitvec} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Elements)
+\item 
+\hyperlink{classCSphBitvec_adc1b0c2b7b9bd0326812e9433c83b026}{$\sim$\-C\-Sph\-Bitvec} ()
+\item 
+\hyperlink{classCSphBitvec_af39d1f5f9d3e4478a91d0ca203d9e2b6}{C\-Sph\-Bitvec} (const \hyperlink{classCSphBitvec}{C\-Sph\-Bitvec} \&rhs)
+\begin{DoxyCompactList}\small\item\em copy ctor \end{DoxyCompactList}\item 
+const \hyperlink{classCSphBitvec}{C\-Sph\-Bitvec} \& \hyperlink{classCSphBitvec_afb7a870fb8974ff94ccb6686efae4b58}{operator=} (const \hyperlink{classCSphBitvec}{C\-Sph\-Bitvec} \&rhs)
+\begin{DoxyCompactList}\small\item\em copy \end{DoxyCompactList}\item 
+void \hyperlink{classCSphBitvec_a2313b97c1a521344f2b206ebef0acddd}{Init} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Elements)
+\item 
+void \hyperlink{classCSphBitvec_a0bec38a11ce60fccd1dae0f4bb5609af}{Clear} ()
+\item 
+bool \hyperlink{classCSphBitvec_a2447dc63128444c035980c2035be9902}{Bit\-Get} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index) const 
+\item 
+void \hyperlink{classCSphBitvec_af823d0dcf37032126f8536703685900e}{Bit\-Set} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)
+\item 
+void \hyperlink{classCSphBitvec_a3cbc263d886e415b0c6af860fcec5c78}{Bit\-Clear} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)
+\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$ \hyperlink{classCSphBitvec_adab2a14ee04ca45a89c3e89571b28e51}{Begin} () const 
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$ \hyperlink{classCSphBitvec_a9ebe1f7853ddf18b3585985f8e8d623e}{Begin} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphBitvec_a21798193008a9f722c98f8920398fa92}{Get\-Size} () const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphBitvec_ae26b6e0ecb3a60506f1e0d4564d6d199}{Get\-Bits} () const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphBitvec_a140b2e940c78fcfa6073a90881301835}{Bit\-Count} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$ \hyperlink{classCSphBitvec_a0f3d79323dd87e74dcd8b09edf3f30fe}{m\-\_\-p\-Data}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphBitvec_ac70b5fec98f2067a35cbade1b7518457}{m\-\_\-u\-Static} \mbox{[}4\mbox{]}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphBitvec_a7f964663c4896dfa70bc85ff68017515}{m\-\_\-i\-Elements}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+generic dynamic bitvector with a preallocated part for small-\/size cases, and a dynamic route for big-\/size ones 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphBitvec_a7661e6085fb0ad4d858c44925cfa2ccc}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!C\-Sph\-Bitvec@{C\-Sph\-Bitvec}}
+\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{C\-Sph\-Bitvec}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Bitvec\-::\-C\-Sph\-Bitvec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_a7661e6085fb0ad4d858c44925cfa2ccc}
+\hypertarget{classCSphBitvec_a12dc415a04587c12cb7eff1522eef51f}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!C\-Sph\-Bitvec@{C\-Sph\-Bitvec}}
+\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{C\-Sph\-Bitvec}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Bitvec\-::\-C\-Sph\-Bitvec (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Elements}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphBitvec_a12dc415a04587c12cb7eff1522eef51f}
+\hypertarget{classCSphBitvec_adc1b0c2b7b9bd0326812e9433c83b026}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!$\sim$\-C\-Sph\-Bitvec@{$\sim$\-C\-Sph\-Bitvec}}
+\index{$\sim$\-C\-Sph\-Bitvec@{$\sim$\-C\-Sph\-Bitvec}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{$\sim$\-C\-Sph\-Bitvec}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Bitvec\-::$\sim$\-C\-Sph\-Bitvec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_adc1b0c2b7b9bd0326812e9433c83b026}
+\hypertarget{classCSphBitvec_af39d1f5f9d3e4478a91d0ca203d9e2b6}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!C\-Sph\-Bitvec@{C\-Sph\-Bitvec}}
+\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{C\-Sph\-Bitvec}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Bitvec\-::\-C\-Sph\-Bitvec (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Bitvec} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_af39d1f5f9d3e4478a91d0ca203d9e2b6}
+
+
+copy ctor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphBitvec_adab2a14ee04ca45a89c3e89571b28e51}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!Begin@{Begin}}
+\index{Begin@{Begin}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{Begin}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D}$\ast$ C\-Sph\-Bitvec\-::\-Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_adab2a14ee04ca45a89c3e89571b28e51}
+\hypertarget{classCSphBitvec_a9ebe1f7853ddf18b3585985f8e8d623e}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!Begin@{Begin}}
+\index{Begin@{Begin}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{Begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D}$\ast$ C\-Sph\-Bitvec\-::\-Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_a9ebe1f7853ddf18b3585985f8e8d623e}
+\hypertarget{classCSphBitvec_a3cbc263d886e415b0c6af860fcec5c78}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!Bit\-Clear@{Bit\-Clear}}
+\index{Bit\-Clear@{Bit\-Clear}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{Bit\-Clear}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Bitvec\-::\-Bit\-Clear (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_a3cbc263d886e415b0c6af860fcec5c78}
+\hypertarget{classCSphBitvec_a140b2e940c78fcfa6073a90881301835}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!Bit\-Count@{Bit\-Count}}
+\index{Bit\-Count@{Bit\-Count}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{Bit\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bitvec\-::\-Bit\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_a140b2e940c78fcfa6073a90881301835}
+\hypertarget{classCSphBitvec_a2447dc63128444c035980c2035be9902}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!Bit\-Get@{Bit\-Get}}
+\index{Bit\-Get@{Bit\-Get}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{Bit\-Get}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Bitvec\-::\-Bit\-Get (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_a2447dc63128444c035980c2035be9902}
+\hypertarget{classCSphBitvec_af823d0dcf37032126f8536703685900e}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!Bit\-Set@{Bit\-Set}}
+\index{Bit\-Set@{Bit\-Set}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{Bit\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Bitvec\-::\-Bit\-Set (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_af823d0dcf37032126f8536703685900e}
+\hypertarget{classCSphBitvec_a0bec38a11ce60fccd1dae0f4bb5609af}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!Clear@{Clear}}
+\index{Clear@{Clear}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Bitvec\-::\-Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_a0bec38a11ce60fccd1dae0f4bb5609af}
+\hypertarget{classCSphBitvec_ae26b6e0ecb3a60506f1e0d4564d6d199}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!Get\-Bits@{Get\-Bits}}
+\index{Get\-Bits@{Get\-Bits}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{Get\-Bits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bitvec\-::\-Get\-Bits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_ae26b6e0ecb3a60506f1e0d4564d6d199}
+\hypertarget{classCSphBitvec_a21798193008a9f722c98f8920398fa92}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!Get\-Size@{Get\-Size}}
+\index{Get\-Size@{Get\-Size}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{Get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bitvec\-::\-Get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_a21798193008a9f722c98f8920398fa92}
+\hypertarget{classCSphBitvec_a2313b97c1a521344f2b206ebef0acddd}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!Init@{Init}}
+\index{Init@{Init}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Bitvec\-::\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Elements}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_a2313b97c1a521344f2b206ebef0acddd}
+\hypertarget{classCSphBitvec_afb7a870fb8974ff94ccb6686efae4b58}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Bitvec}\& C\-Sph\-Bitvec\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Bitvec} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphBitvec_afb7a870fb8974ff94ccb6686efae4b58}
+
+
+copy 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphBitvec_a7f964663c4896dfa70bc85ff68017515}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!m\-\_\-i\-Elements@{m\-\_\-i\-Elements}}
+\index{m\-\_\-i\-Elements@{m\-\_\-i\-Elements}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{m\-\_\-i\-Elements}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Bitvec\-::m\-\_\-i\-Elements\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBitvec_a7f964663c4896dfa70bc85ff68017515}
+\hypertarget{classCSphBitvec_a0f3d79323dd87e74dcd8b09edf3f30fe}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!m\-\_\-p\-Data@{m\-\_\-p\-Data}}
+\index{m\-\_\-p\-Data@{m\-\_\-p\-Data}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{m\-\_\-p\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D}$\ast$ C\-Sph\-Bitvec\-::m\-\_\-p\-Data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBitvec_a0f3d79323dd87e74dcd8b09edf3f30fe}
+\hypertarget{classCSphBitvec_ac70b5fec98f2067a35cbade1b7518457}{\index{C\-Sph\-Bitvec@{C\-Sph\-Bitvec}!m\-\_\-u\-Static@{m\-\_\-u\-Static}}
+\index{m\-\_\-u\-Static@{m\-\_\-u\-Static}!CSphBitvec@{C\-Sph\-Bitvec}}
+\subsubsection[{m\-\_\-u\-Static}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Bitvec\-::m\-\_\-u\-Static\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphBitvec_ac70b5fec98f2067a35cbade1b7518457}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

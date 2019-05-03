@@ -1,0 +1,335 @@
+\hypertarget{classCSphRsetSchema}{\section{C\-Sph\-Rset\-Schema Class Reference}
+\label{classCSphRsetSchema}\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}}
+}
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Rset\-Schema\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphRsetSchema}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphRsetSchema_a3e6ad23e5c4293e8c345935125515df4}{C\-Sph\-Rset\-Schema} ()
+\item 
+\hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} \& \hyperlink{classCSphRsetSchema_a6db6ca4ae7261495621b440dc4067fd5}{operator=} (const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&rhs)
+\item 
+\hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} \& \hyperlink{classCSphRsetSchema_a8ce74003c05e66ed5ddd6b4358789744}{operator=} (const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&rhs)
+\item 
+virtual void \hyperlink{classCSphRsetSchema_aa2b221041823484dd8f9498bd6ef0f6b}{Assign\-To} (\hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} \&lhs) const 
+\begin{DoxyCompactList}\small\item\em assign current schema to rset schema (kind of a visitor operator) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRsetSchema_aa55a3cd92bb19d13f45a94f0218406a9}{Get\-Row\-Size} () const 
+\begin{DoxyCompactList}\small\item\em get row size (static+dynamic combined) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRsetSchema_a748c821c4ee30cfd81a152bc998e7052}{Get\-Static\-Size} () const 
+\begin{DoxyCompactList}\small\item\em get static row part size \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRsetSchema_a43f0a816f9a01307f859b8d18ac5946b}{Get\-Dynamic\-Size} () const 
+\begin{DoxyCompactList}\small\item\em get dynamic row part size \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRsetSchema_ac542458ca102654ac712961778d4222b}{Get\-Attrs\-Count} () const 
+\begin{DoxyCompactList}\small\item\em get attrs count \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRsetSchema_a84c4f422af61cb61b5429e062d9ba1cb}{Get\-Attr\-Index} (const char $\ast$s\-Name) const 
+\begin{DoxyCompactList}\small\item\em get attribute index by name, returns -\/1 if not found \end{DoxyCompactList}\item 
+const \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} \& \hyperlink{classCSphRsetSchema_a12e6fd550adb01751f41616608177ff2}{Get\-Attr} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index) const 
+\begin{DoxyCompactList}\small\item\em get attr by index \end{DoxyCompactList}\item 
+const \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} $\ast$ \hyperlink{classCSphRsetSchema_a876eef6b2ab7d0d1fd436f40634d9100}{Get\-Attr} (const char $\ast$s\-Name) const 
+\begin{DoxyCompactList}\small\item\em get attr by name \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRsetSchema_ab69084b682dc8ea22f9b20f581e5f272}{Get\-Attr\-Id\-\_\-\-First\-Field\-Len} () const 
+\begin{DoxyCompactList}\small\item\em get the first one of field length attributes. return -\/1 if none exist \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphRsetSchema_a126a54311560c788882325f16cb63558}{Get\-Attr\-Id\-\_\-\-Last\-Field\-Len} () const 
+\begin{DoxyCompactList}\small\item\em get the last one of field length attributes. return -\/1 if none exist \end{DoxyCompactList}\item 
+void \hyperlink{classCSphRsetSchema_a2de791838650501e4771e74cb66eb860}{Add\-Dynamic\-Attr} (const \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} \&t\-Col)
+\item 
+void \hyperlink{classCSphRsetSchema_ae85ee414cc877885d91ad644fc4d98c6}{Remove\-Static\-Attr} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Attr)
+\item 
+void \hyperlink{classCSphRsetSchema_ab91db2b4d750f12f5a9107eab1faa07d}{Reset} ()
+\item 
+void \hyperlink{classCSphRsetSchema_a0d7cff46d8957f3458dc99a29306ebeb}{Clone\-Match} (\hyperlink{classCSphMatch}{C\-Sph\-Match} $\ast$p\-Dst, const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&rhs) const 
+\begin{DoxyCompactList}\small\item\em simple copy; clones either the entire dynamic part, or a part thereof \end{DoxyCompactList}\item 
+void \hyperlink{classCSphRsetSchema_af680ce5d98f488ab61a22ad649057af7}{Swap\-Attrs} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} $>$ \&d\-Attrs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} $>$ \hyperlink{classCSphRsetSchema_a562e907b9c4509062bf950f4ef1cf1a8}{m\-\_\-d\-Fields}
+\begin{DoxyCompactList}\small\item\em standalone case (agent result set), fields container \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCSphSchema}{C\-Sph\-Schema} $\ast$ \hyperlink{classCSphRsetSchema_a4d588d85d429ecc0db51a8982836008f}{m\-\_\-p\-Index\-Schema}
+\begin{DoxyCompactList}\small\item\em original index schema, for the static part \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} $>$ \hyperlink{classCSphRsetSchema_a38ef682d62a173cf4b8c2726d0d5fc68}{m\-\_\-d\-Extra\-Attrs}
+\begin{DoxyCompactList}\small\item\em additional dynamic attributes, for the dynamic one \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCSphRsetSchema_a21b2acacc1af995cbe7c92af0234f38c}{m\-\_\-d\-Dynamic\-Used}
+\begin{DoxyCompactList}\small\item\em dynamic row part map \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCSphRsetSchema_a16e7a96c479fe6c94dcebddfaa00fd7a}{m\-\_\-d\-Removed}
+\begin{DoxyCompactList}\small\item\em original indexes that are suppressed from the index schema by \hyperlink{classCSphRsetSchema_ae85ee414cc877885d91ad644fc4d98c6}{Remove\-Static\-Attr()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+lightweight schema to be used in sorters, result sets, etc avoids copying of static attributes part by keeping a pointer manages the additional dynamic attributes on its own
+
+N\-O\-T\-E that for that reason \hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} needs the originating index to exist (in case it keeps and uses a pointer to original schema in that index) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphRsetSchema_a3e6ad23e5c4293e8c345935125515df4}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}}
+\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{C\-Sph\-Rset\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Rset\-Schema\-::\-C\-Sph\-Rset\-Schema (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphRsetSchema_a3e6ad23e5c4293e8c345935125515df4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphRsetSchema_a2de791838650501e4771e74cb66eb860}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Add\-Dynamic\-Attr@{Add\-Dynamic\-Attr}}
+\index{Add\-Dynamic\-Attr@{Add\-Dynamic\-Attr}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Add\-Dynamic\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Rset\-Schema\-::\-Add\-Dynamic\-Attr (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Column\-Info} \&}]{t\-Col}
+\end{DoxyParamCaption}
+)}}\label{classCSphRsetSchema_a2de791838650501e4771e74cb66eb860}
+\hypertarget{classCSphRsetSchema_aa2b221041823484dd8f9498bd6ef0f6b}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Assign\-To@{Assign\-To}}
+\index{Assign\-To@{Assign\-To}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Assign\-To}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Rset\-Schema\-::\-Assign\-To (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Rset\-Schema} \&}]{lhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphRsetSchema_aa2b221041823484dd8f9498bd6ef0f6b}
+
+
+assign current schema to rset schema (kind of a visitor operator) 
+
+
+
+Implements \hyperlink{classISphSchema_a0a181d8ba43454809403978d349be4a3}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphRsetSchema_a0d7cff46d8957f3458dc99a29306ebeb}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Clone\-Match@{Clone\-Match}}
+\index{Clone\-Match@{Clone\-Match}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Clone\-Match}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Rset\-Schema\-::\-Clone\-Match (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Match} $\ast$}]{p\-Dst, }
+\item[{const {\bf C\-Sph\-Match} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{classCSphRsetSchema_a0d7cff46d8957f3458dc99a29306ebeb}
+
+
+simple copy; clones either the entire dynamic part, or a part thereof 
+
+\hypertarget{classCSphRsetSchema_a12e6fd550adb01751f41616608177ff2}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Get\-Attr@{Get\-Attr}}
+\index{Get\-Attr@{Get\-Attr}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Get\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Column\-Info} \& C\-Sph\-Rset\-Schema\-::\-Get\-Attr (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphRsetSchema_a12e6fd550adb01751f41616608177ff2}
+
+
+get attr by index 
+
+
+
+Implements \hyperlink{classISphSchema_a4ed2ed2ca4403a877f6f3234931ebadc}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphRsetSchema_a876eef6b2ab7d0d1fd436f40634d9100}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Get\-Attr@{Get\-Attr}}
+\index{Get\-Attr@{Get\-Attr}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Get\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Column\-Info} $\ast$ C\-Sph\-Rset\-Schema\-::\-Get\-Attr (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphRsetSchema_a876eef6b2ab7d0d1fd436f40634d9100}
+
+
+get attr by name 
+
+
+
+Implements \hyperlink{classISphSchema_a87b047c720faa0be791ae53341b91b2b}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphRsetSchema_ab69084b682dc8ea22f9b20f581e5f272}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Get\-Attr\-Id\-\_\-\-First\-Field\-Len@{Get\-Attr\-Id\-\_\-\-First\-Field\-Len}}
+\index{Get\-Attr\-Id\-\_\-\-First\-Field\-Len@{Get\-Attr\-Id\-\_\-\-First\-Field\-Len}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Get\-Attr\-Id\-\_\-\-First\-Field\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Rset\-Schema\-::\-Get\-Attr\-Id\-\_\-\-First\-Field\-Len (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphRsetSchema_ab69084b682dc8ea22f9b20f581e5f272}
+
+
+get the first one of field length attributes. return -\/1 if none exist 
+
+
+
+Implements \hyperlink{classISphSchema_af844f2a01f79894efed990c90b3c7d9d}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphRsetSchema_a126a54311560c788882325f16cb63558}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Get\-Attr\-Id\-\_\-\-Last\-Field\-Len@{Get\-Attr\-Id\-\_\-\-Last\-Field\-Len}}
+\index{Get\-Attr\-Id\-\_\-\-Last\-Field\-Len@{Get\-Attr\-Id\-\_\-\-Last\-Field\-Len}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Get\-Attr\-Id\-\_\-\-Last\-Field\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Rset\-Schema\-::\-Get\-Attr\-Id\-\_\-\-Last\-Field\-Len (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphRsetSchema_a126a54311560c788882325f16cb63558}
+
+
+get the last one of field length attributes. return -\/1 if none exist 
+
+
+
+Implements \hyperlink{classISphSchema_ad9a04e2b4ef55f836e5646c116bfd4be}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphRsetSchema_a84c4f422af61cb61b5429e062d9ba1cb}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Get\-Attr\-Index@{Get\-Attr\-Index}}
+\index{Get\-Attr\-Index@{Get\-Attr\-Index}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Get\-Attr\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Rset\-Schema\-::\-Get\-Attr\-Index (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphRsetSchema_a84c4f422af61cb61b5429e062d9ba1cb}
+
+
+get attribute index by name, returns -\/1 if not found 
+
+
+
+Implements \hyperlink{classISphSchema_a3761d8421bd874f20e719a03ec2b4182}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphRsetSchema_ac542458ca102654ac712961778d4222b}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Get\-Attrs\-Count@{Get\-Attrs\-Count}}
+\index{Get\-Attrs\-Count@{Get\-Attrs\-Count}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Get\-Attrs\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Rset\-Schema\-::\-Get\-Attrs\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphRsetSchema_ac542458ca102654ac712961778d4222b}
+
+
+get attrs count 
+
+
+
+Implements \hyperlink{classISphSchema_a8fc1cc764fe38efc2f09122da41a8513}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphRsetSchema_a43f0a816f9a01307f859b8d18ac5946b}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Get\-Dynamic\-Size@{Get\-Dynamic\-Size}}
+\index{Get\-Dynamic\-Size@{Get\-Dynamic\-Size}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Get\-Dynamic\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Rset\-Schema\-::\-Get\-Dynamic\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphRsetSchema_a43f0a816f9a01307f859b8d18ac5946b}
+
+
+get dynamic row part size 
+
+
+
+Implements \hyperlink{classISphSchema_a463fd24309d0d5b2ece986d763326d00}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphRsetSchema_aa55a3cd92bb19d13f45a94f0218406a9}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Get\-Row\-Size@{Get\-Row\-Size}}
+\index{Get\-Row\-Size@{Get\-Row\-Size}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Get\-Row\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Rset\-Schema\-::\-Get\-Row\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphRsetSchema_aa55a3cd92bb19d13f45a94f0218406a9}
+
+
+get row size (static+dynamic combined) 
+
+
+
+Implements \hyperlink{classISphSchema_a754ad9f4419091d46294d93a4626e892}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphRsetSchema_a748c821c4ee30cfd81a152bc998e7052}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Get\-Static\-Size@{Get\-Static\-Size}}
+\index{Get\-Static\-Size@{Get\-Static\-Size}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Get\-Static\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Rset\-Schema\-::\-Get\-Static\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphRsetSchema_a748c821c4ee30cfd81a152bc998e7052}
+
+
+get static row part size 
+
+
+
+Implements \hyperlink{classISphSchema_a2fa17738407d39a12dd5a780dc709e76}{I\-Sph\-Schema}.
+
+\hypertarget{classCSphRsetSchema_a6db6ca4ae7261495621b440dc4067fd5}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Rset\-Schema} \& C\-Sph\-Rset\-Schema\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Schema} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classCSphRsetSchema_a6db6ca4ae7261495621b440dc4067fd5}
+\hypertarget{classCSphRsetSchema_a8ce74003c05e66ed5ddd6b4358789744}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Rset\-Schema} \& C\-Sph\-Rset\-Schema\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Schema} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classCSphRsetSchema_a8ce74003c05e66ed5ddd6b4358789744}
+\hypertarget{classCSphRsetSchema_ae85ee414cc877885d91ad644fc4d98c6}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Remove\-Static\-Attr@{Remove\-Static\-Attr}}
+\index{Remove\-Static\-Attr@{Remove\-Static\-Attr}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Remove\-Static\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Rset\-Schema\-::\-Remove\-Static\-Attr (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Attr}
+\end{DoxyParamCaption}
+)}}\label{classCSphRsetSchema_ae85ee414cc877885d91ad644fc4d98c6}
+\hypertarget{classCSphRsetSchema_ab91db2b4d750f12f5a9107eab1faa07d}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Rset\-Schema\-::\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphRsetSchema_ab91db2b4d750f12f5a9107eab1faa07d}
+\hypertarget{classCSphRsetSchema_af680ce5d98f488ab61a22ad649057af7}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!Swap\-Attrs@{Swap\-Attrs}}
+\index{Swap\-Attrs@{Swap\-Attrs}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{Swap\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Rset\-Schema\-::\-Swap\-Attrs (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Column\-Info} $>$ \&}]{d\-Attrs}
+\end{DoxyParamCaption}
+)}}\label{classCSphRsetSchema_af680ce5d98f488ab61a22ad649057af7}
+swap in a subset of current attributes, with not necessarily (!) unique names used to create a network result set (ie. rset to be sent and then discarded) W\-A\-R\-N\-I\-N\-G, D\-O N\-O\-T U\-S\-E T\-H\-I\-S U\-N\-L\-E\-S\-S A\-B\-S\-O\-L\-U\-T\-E\-L\-Y S\-U\-R\-E! 
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphRsetSchema_a21b2acacc1af995cbe7c92af0234f38c}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!m\-\_\-d\-Dynamic\-Used@{m\-\_\-d\-Dynamic\-Used}}
+\index{m\-\_\-d\-Dynamic\-Used@{m\-\_\-d\-Dynamic\-Used}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{m\-\_\-d\-Dynamic\-Used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf int}$>$ C\-Sph\-Rset\-Schema\-::m\-\_\-d\-Dynamic\-Used\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphRsetSchema_a21b2acacc1af995cbe7c92af0234f38c}
+
+
+dynamic row part map 
+
+\hypertarget{classCSphRsetSchema_a38ef682d62a173cf4b8c2726d0d5fc68}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!m\-\_\-d\-Extra\-Attrs@{m\-\_\-d\-Extra\-Attrs}}
+\index{m\-\_\-d\-Extra\-Attrs@{m\-\_\-d\-Extra\-Attrs}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{m\-\_\-d\-Extra\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Column\-Info}$>$ C\-Sph\-Rset\-Schema\-::m\-\_\-d\-Extra\-Attrs\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphRsetSchema_a38ef682d62a173cf4b8c2726d0d5fc68}
+
+
+additional dynamic attributes, for the dynamic one 
+
+\hypertarget{classCSphRsetSchema_a562e907b9c4509062bf950f4ef1cf1a8}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!m\-\_\-d\-Fields@{m\-\_\-d\-Fields}}
+\index{m\-\_\-d\-Fields@{m\-\_\-d\-Fields}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{m\-\_\-d\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Column\-Info}$>$ C\-Sph\-Rset\-Schema\-::m\-\_\-d\-Fields}}\label{classCSphRsetSchema_a562e907b9c4509062bf950f4ef1cf1a8}
+
+
+standalone case (agent result set), fields container 
+
+\hypertarget{classCSphRsetSchema_a16e7a96c479fe6c94dcebddfaa00fd7a}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!m\-\_\-d\-Removed@{m\-\_\-d\-Removed}}
+\index{m\-\_\-d\-Removed@{m\-\_\-d\-Removed}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{m\-\_\-d\-Removed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf int}$>$ C\-Sph\-Rset\-Schema\-::m\-\_\-d\-Removed\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphRsetSchema_a16e7a96c479fe6c94dcebddfaa00fd7a}
+
+
+original indexes that are suppressed from the index schema by \hyperlink{classCSphRsetSchema_ae85ee414cc877885d91ad644fc4d98c6}{Remove\-Static\-Attr()} 
+
+\hypertarget{classCSphRsetSchema_a4d588d85d429ecc0db51a8982836008f}{\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!m\-\_\-p\-Index\-Schema@{m\-\_\-p\-Index\-Schema}}
+\index{m\-\_\-p\-Index\-Schema@{m\-\_\-p\-Index\-Schema}!CSphRsetSchema@{C\-Sph\-Rset\-Schema}}
+\subsubsection[{m\-\_\-p\-Index\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Schema}$\ast$ C\-Sph\-Rset\-Schema\-::m\-\_\-p\-Index\-Schema\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphRsetSchema_a4d588d85d429ecc0db51a8982836008f}
+
+
+original index schema, for the static part 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

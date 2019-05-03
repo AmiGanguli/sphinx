@@ -1,0 +1,88 @@
+\hypertarget{classCSphDocidList}{\section{C\-Sph\-Docid\-List Class Reference}
+\label{classCSphDocidList}\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphDocidList_af3bdc2a43922f1ab9791cf6f70951d1b}{C\-Sph\-Docid\-List} ()
+\item 
+\hyperlink{classCSphDocidList_a89d89e2ffc29242bebfc570909a0f573}{$\sim$\-C\-Sph\-Docid\-List} ()
+\item 
+bool \hyperlink{classCSphDocidList_a23948fdfc742931213cbc8bc785058f4}{Init} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Row\-Size, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Rows, \hyperlink{classCSphReader}{C\-Sph\-Reader} \&rd\-Attr, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+bool \hyperlink{classCSphDocidList_a0aed9d8ad02eec1b0991c4842ff43002}{Has\-Docid} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Docid)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphLargeBuffer}{C\-Sph\-Large\-Buffer}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t}, \\*
+false $>$ \hyperlink{classCSphDocidList_a6f750ead8cc41f1ecc5fdd378f008d6e}{m\-\_\-d\-Docid}
+\item 
+\hyperlink{classCSphLargeBuffer}{C\-Sph\-Large\-Buffer}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D}, false $>$ \hyperlink{classCSphDocidList_aa79ef09236634aca8aaa26099162e3c8}{m\-\_\-d\-Bits}
+\item 
+bool \hyperlink{classCSphDocidList_aa5c5984489008f76b4706b3aed7281e6}{m\-\_\-b\-Raw\-I\-D}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classCSphDocidList_a1e1d6fd324395f9037e7c73545773f2e}{m\-\_\-i\-Docid\-Min}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classCSphDocidList_aab4f4fb93cac565d321cf5127488d87d}{m\-\_\-i\-Docid\-Max}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphDocidList_af3bdc2a43922f1ab9791cf6f70951d1b}{\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}!C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}}
+\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}!CSphDocidList@{C\-Sph\-Docid\-List}}
+\subsubsection[{C\-Sph\-Docid\-List}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Docid\-List\-::\-C\-Sph\-Docid\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDocidList_af3bdc2a43922f1ab9791cf6f70951d1b}
+\hypertarget{classCSphDocidList_a89d89e2ffc29242bebfc570909a0f573}{\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}!$\sim$\-C\-Sph\-Docid\-List@{$\sim$\-C\-Sph\-Docid\-List}}
+\index{$\sim$\-C\-Sph\-Docid\-List@{$\sim$\-C\-Sph\-Docid\-List}!CSphDocidList@{C\-Sph\-Docid\-List}}
+\subsubsection[{$\sim$\-C\-Sph\-Docid\-List}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Docid\-List\-::$\sim$\-C\-Sph\-Docid\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDocidList_a89d89e2ffc29242bebfc570909a0f573}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphDocidList_a0aed9d8ad02eec1b0991c4842ff43002}{\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}!Has\-Docid@{Has\-Docid}}
+\index{Has\-Docid@{Has\-Docid}!CSphDocidList@{C\-Sph\-Docid\-List}}
+\subsubsection[{Has\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Docid\-List\-::\-Has\-Docid (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Docid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDocidList_a0aed9d8ad02eec1b0991c4842ff43002}
+\hypertarget{classCSphDocidList_a23948fdfc742931213cbc8bc785058f4}{\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}!Init@{Init}}
+\index{Init@{Init}!CSphDocidList@{C\-Sph\-Docid\-List}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Docid\-List\-::\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Row\-Size, }
+\item[{{\bf int64\-\_\-t}}]{i\-Rows, }
+\item[{{\bf C\-Sph\-Reader} \&}]{rd\-Attr, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDocidList_a23948fdfc742931213cbc8bc785058f4}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphDocidList_aa5c5984489008f76b4706b3aed7281e6}{\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}!m\-\_\-b\-Raw\-I\-D@{m\-\_\-b\-Raw\-I\-D}}
+\index{m\-\_\-b\-Raw\-I\-D@{m\-\_\-b\-Raw\-I\-D}!CSphDocidList@{C\-Sph\-Docid\-List}}
+\subsubsection[{m\-\_\-b\-Raw\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Docid\-List\-::m\-\_\-b\-Raw\-I\-D\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDocidList_aa5c5984489008f76b4706b3aed7281e6}
+\hypertarget{classCSphDocidList_aa79ef09236634aca8aaa26099162e3c8}{\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}!m\-\_\-d\-Bits@{m\-\_\-d\-Bits}}
+\index{m\-\_\-d\-Bits@{m\-\_\-d\-Bits}!CSphDocidList@{C\-Sph\-Docid\-List}}
+\subsubsection[{m\-\_\-d\-Bits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Large\-Buffer}$<${\bf D\-W\-O\-R\-D}, false$>$ C\-Sph\-Docid\-List\-::m\-\_\-d\-Bits\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDocidList_aa79ef09236634aca8aaa26099162e3c8}
+\hypertarget{classCSphDocidList_a6f750ead8cc41f1ecc5fdd378f008d6e}{\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}!m\-\_\-d\-Docid@{m\-\_\-d\-Docid}}
+\index{m\-\_\-d\-Docid@{m\-\_\-d\-Docid}!CSphDocidList@{C\-Sph\-Docid\-List}}
+\subsubsection[{m\-\_\-d\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Large\-Buffer}$<${\bf Sph\-Doc\-I\-D\-\_\-t}, false$>$ C\-Sph\-Docid\-List\-::m\-\_\-d\-Docid\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDocidList_a6f750ead8cc41f1ecc5fdd378f008d6e}
+\hypertarget{classCSphDocidList_aab4f4fb93cac565d321cf5127488d87d}{\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}!m\-\_\-i\-Docid\-Max@{m\-\_\-i\-Docid\-Max}}
+\index{m\-\_\-i\-Docid\-Max@{m\-\_\-i\-Docid\-Max}!CSphDocidList@{C\-Sph\-Docid\-List}}
+\subsubsection[{m\-\_\-i\-Docid\-Max}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Docid\-List\-::m\-\_\-i\-Docid\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDocidList_aab4f4fb93cac565d321cf5127488d87d}
+\hypertarget{classCSphDocidList_a1e1d6fd324395f9037e7c73545773f2e}{\index{C\-Sph\-Docid\-List@{C\-Sph\-Docid\-List}!m\-\_\-i\-Docid\-Min@{m\-\_\-i\-Docid\-Min}}
+\index{m\-\_\-i\-Docid\-Min@{m\-\_\-i\-Docid\-Min}!CSphDocidList@{C\-Sph\-Docid\-List}}
+\subsubsection[{m\-\_\-i\-Docid\-Min}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Docid\-List\-::m\-\_\-i\-Docid\-Min\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDocidList_a1e1d6fd324395f9037e7c73545773f2e}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

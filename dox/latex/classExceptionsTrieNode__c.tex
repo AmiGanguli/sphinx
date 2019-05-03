@@ -1,0 +1,83 @@
+\hypertarget{classExceptionsTrieNode__c}{\section{Exceptions\-Trie\-Node\-\_\-c Class Reference}
+\label{classExceptionsTrieNode__c}\index{Exceptions\-Trie\-Node\-\_\-c@{Exceptions\-Trie\-Node\-\_\-c}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structExceptionsTrieNode__c_1_1Entry__t}{Entry\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExceptionsTrieNode__c_a2d0299ae94c93ad102f19c980acbad5a}{$\sim$\-Exceptions\-Trie\-Node\-\_\-c} ()
+\item 
+bool \hyperlink{classExceptionsTrieNode__c_a089250591c5e07fded453bcfee2e5956}{Add\-Mapping} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-From, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-To)
+\begin{DoxyCompactList}\small\item\em returns false on a duplicate \char`\"{}from\char`\"{} part, or true on success \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classExceptionsTrieNode__c_a72078664cf6cdc0fbe7bf23f6acb35ea}{m\-\_\-s\-To}
+\begin{DoxyCompactList}\small\item\em output mapping for current prefix, if any \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structExceptionsTrieNode__c_1_1Entry__t}{Entry\-\_\-t} $>$ \hyperlink{classExceptionsTrieNode__c_ac01a27b16e7aa85337570631fecd30c4}{m\-\_\-d\-Kids}
+\begin{DoxyCompactList}\small\item\em known and accepted incoming byte values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classExceptionsTrieNode__c_a824c99a12cb6475c31a4a450c7337e64}{Exceptions\-Trie\-Gen\-\_\-c}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+intermediate exceptions trie node only used by \hyperlink{classExceptionsTrieGen__c}{Exceptions\-Trie\-Gen\-\_\-c}, while building a blob 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExceptionsTrieNode__c_a2d0299ae94c93ad102f19c980acbad5a}{\index{Exceptions\-Trie\-Node\-\_\-c@{Exceptions\-Trie\-Node\-\_\-c}!$\sim$\-Exceptions\-Trie\-Node\-\_\-c@{$\sim$\-Exceptions\-Trie\-Node\-\_\-c}}
+\index{$\sim$\-Exceptions\-Trie\-Node\-\_\-c@{$\sim$\-Exceptions\-Trie\-Node\-\_\-c}!ExceptionsTrieNode_c@{Exceptions\-Trie\-Node\-\_\-c}}
+\subsubsection[{$\sim$\-Exceptions\-Trie\-Node\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Exceptions\-Trie\-Node\-\_\-c\-::$\sim$\-Exceptions\-Trie\-Node\-\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrieNode__c_a2d0299ae94c93ad102f19c980acbad5a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExceptionsTrieNode__c_a089250591c5e07fded453bcfee2e5956}{\index{Exceptions\-Trie\-Node\-\_\-c@{Exceptions\-Trie\-Node\-\_\-c}!Add\-Mapping@{Add\-Mapping}}
+\index{Add\-Mapping@{Add\-Mapping}!ExceptionsTrieNode_c@{Exceptions\-Trie\-Node\-\_\-c}}
+\subsubsection[{Add\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}bool Exceptions\-Trie\-Node\-\_\-c\-::\-Add\-Mapping (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-From, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-To}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExceptionsTrieNode__c_a089250591c5e07fded453bcfee2e5956}
+
+
+returns false on a duplicate \char`\"{}from\char`\"{} part, or true on success 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classExceptionsTrieNode__c_a824c99a12cb6475c31a4a450c7337e64}{\index{Exceptions\-Trie\-Node\-\_\-c@{Exceptions\-Trie\-Node\-\_\-c}!Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}}
+\index{Exceptions\-Trie\-Gen\-\_\-c@{Exceptions\-Trie\-Gen\-\_\-c}!ExceptionsTrieNode_c@{Exceptions\-Trie\-Node\-\_\-c}}
+\subsubsection[{Exceptions\-Trie\-Gen\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Exceptions\-Trie\-Gen\-\_\-c}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classExceptionsTrieNode__c_a824c99a12cb6475c31a4a450c7337e64}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExceptionsTrieNode__c_ac01a27b16e7aa85337570631fecd30c4}{\index{Exceptions\-Trie\-Node\-\_\-c@{Exceptions\-Trie\-Node\-\_\-c}!m\-\_\-d\-Kids@{m\-\_\-d\-Kids}}
+\index{m\-\_\-d\-Kids@{m\-\_\-d\-Kids}!ExceptionsTrieNode_c@{Exceptions\-Trie\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Kids}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Entry\-\_\-t}$>$ Exceptions\-Trie\-Node\-\_\-c\-::m\-\_\-d\-Kids\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExceptionsTrieNode__c_ac01a27b16e7aa85337570631fecd30c4}
+
+
+known and accepted incoming byte values 
+
+\hypertarget{classExceptionsTrieNode__c_a72078664cf6cdc0fbe7bf23f6acb35ea}{\index{Exceptions\-Trie\-Node\-\_\-c@{Exceptions\-Trie\-Node\-\_\-c}!m\-\_\-s\-To@{m\-\_\-s\-To}}
+\index{m\-\_\-s\-To@{m\-\_\-s\-To}!ExceptionsTrieNode_c@{Exceptions\-Trie\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-s\-To}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} Exceptions\-Trie\-Node\-\_\-c\-::m\-\_\-s\-To\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExceptionsTrieNode__c_a72078664cf6cdc0fbe7bf23f6acb35ea}
+
+
+output mapping for current prefix, if any 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

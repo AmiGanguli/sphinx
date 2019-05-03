@@ -1,0 +1,115 @@
+\hypertarget{structCSphWordforms}{\section{C\-Sph\-Wordforms Struct Reference}
+\label{structCSphWordforms}\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}}
+}
+
+
+wordforms container  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphWordforms_a921fb15e9922f3e9c97a9ac4b4eee4a7}{C\-Sph\-Wordforms} ()
+\item 
+\hyperlink{structCSphWordforms_aba8aac8d8721dd1d8222e73058cbb064}{$\sim$\-C\-Sph\-Wordforms} ()
+\item 
+bool \hyperlink{structCSphWordforms_ac36e6e387090cd8f15aba0459c90f4cc}{Is\-Equal} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphSavedFile}{C\-Sph\-Saved\-File} $>$ \&d\-Files)
+\item 
+bool \hyperlink{structCSphWordforms_aeb2d13528b65d8f81975895d197536a0}{To\-Normal\-Form} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word, bool b\-Before, bool b\-Only\-Check) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphWordforms_adf2448280ec7d206e8842f73297ea3fa}{m\-\_\-i\-Ref\-Count}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphSavedFile}{C\-Sph\-Saved\-File} $>$ \hyperlink{structCSphWordforms_a03a149f24d41183edc2168849bf7e403}{m\-\_\-d\-Files}
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{structCSphWordforms_a02ddb5542979b4c66f3c1708506ef607}{m\-\_\-u\-Tokenizer\-F\-N\-V}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphWordforms_a69571fccf4ebb86c4c1d61e6b1af4837}{m\-\_\-s\-Index\-Name}
+\item 
+bool \hyperlink{structCSphWordforms_a3b1d584e1d49232758eb155fc7543fa0}{m\-\_\-b\-Have\-Post\-Morph\-N\-F}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphStoredNF}{C\-Sph\-Stored\-N\-F} $>$ \hyperlink{structCSphWordforms_a1284ff1cd78f8be9b7a059ea33c60fc9}{m\-\_\-d\-Normal\-Forms}
+\item 
+\hyperlink{structCSphMultiformContainer}{C\-Sph\-Multiform\-Container} $\ast$ \hyperlink{structCSphWordforms_a5f8c7e4b43c2ae7a56be30b2fa4bee83}{m\-\_\-p\-Multi\-Wordforms}
+\item 
+\hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \\*
+\hyperlink{structCSphString}{C\-Sph\-String}, \hyperlink{structCSphStrHashFunc}{C\-Sph\-Str\-Hash\-Func}, 1048576 $>$ \hyperlink{structCSphWordforms_a0c10458062525eb7bffa2034531b3a5e}{m\-\_\-d\-Hash}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+wordforms container 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphWordforms_a921fb15e9922f3e9c97a9ac4b4eee4a7}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!C\-Sph\-Wordforms@{C\-Sph\-Wordforms}}
+\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{C\-Sph\-Wordforms}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Wordforms\-::\-C\-Sph\-Wordforms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structCSphWordforms_a921fb15e9922f3e9c97a9ac4b4eee4a7}
+\hypertarget{structCSphWordforms_aba8aac8d8721dd1d8222e73058cbb064}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!$\sim$\-C\-Sph\-Wordforms@{$\sim$\-C\-Sph\-Wordforms}}
+\index{$\sim$\-C\-Sph\-Wordforms@{$\sim$\-C\-Sph\-Wordforms}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{$\sim$\-C\-Sph\-Wordforms}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Wordforms\-::$\sim$\-C\-Sph\-Wordforms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structCSphWordforms_aba8aac8d8721dd1d8222e73058cbb064}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphWordforms_ac36e6e387090cd8f15aba0459c90f4cc}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!Is\-Equal@{Is\-Equal}}
+\index{Is\-Equal@{Is\-Equal}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{Is\-Equal}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Wordforms\-::\-Is\-Equal (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Saved\-File} $>$ \&}]{d\-Files}
+\end{DoxyParamCaption}
+)}}\label{structCSphWordforms_ac36e6e387090cd8f15aba0459c90f4cc}
+\hypertarget{structCSphWordforms_aeb2d13528b65d8f81975895d197536a0}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!To\-Normal\-Form@{To\-Normal\-Form}}
+\index{To\-Normal\-Form@{To\-Normal\-Form}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{To\-Normal\-Form}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Wordforms\-::\-To\-Normal\-Form (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word, }
+\item[{bool}]{b\-Before, }
+\item[{bool}]{b\-Only\-Check}
+\end{DoxyParamCaption}
+) const}}\label{structCSphWordforms_aeb2d13528b65d8f81975895d197536a0}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphWordforms_a3b1d584e1d49232758eb155fc7543fa0}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!m\-\_\-b\-Have\-Post\-Morph\-N\-F@{m\-\_\-b\-Have\-Post\-Morph\-N\-F}}
+\index{m\-\_\-b\-Have\-Post\-Morph\-N\-F@{m\-\_\-b\-Have\-Post\-Morph\-N\-F}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{m\-\_\-b\-Have\-Post\-Morph\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Wordforms\-::m\-\_\-b\-Have\-Post\-Morph\-N\-F}}\label{structCSphWordforms_a3b1d584e1d49232758eb155fc7543fa0}
+\hypertarget{structCSphWordforms_a03a149f24d41183edc2168849bf7e403}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!m\-\_\-d\-Files@{m\-\_\-d\-Files}}
+\index{m\-\_\-d\-Files@{m\-\_\-d\-Files}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{m\-\_\-d\-Files}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Saved\-File}$>$ C\-Sph\-Wordforms\-::m\-\_\-d\-Files}}\label{structCSphWordforms_a03a149f24d41183edc2168849bf7e403}
+\hypertarget{structCSphWordforms_a0c10458062525eb7bffa2034531b3a5e}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!m\-\_\-d\-Hash@{m\-\_\-d\-Hash}}
+\index{m\-\_\-d\-Hash@{m\-\_\-d\-Hash}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{m\-\_\-d\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Ordered\-Hash}$<$ {\bf int}, {\bf C\-Sph\-String}, {\bf C\-Sph\-Str\-Hash\-Func}, 1048576 $>$ C\-Sph\-Wordforms\-::m\-\_\-d\-Hash}}\label{structCSphWordforms_a0c10458062525eb7bffa2034531b3a5e}
+\hypertarget{structCSphWordforms_a1284ff1cd78f8be9b7a059ea33c60fc9}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!m\-\_\-d\-Normal\-Forms@{m\-\_\-d\-Normal\-Forms}}
+\index{m\-\_\-d\-Normal\-Forms@{m\-\_\-d\-Normal\-Forms}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{m\-\_\-d\-Normal\-Forms}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Stored\-N\-F}$>$ C\-Sph\-Wordforms\-::m\-\_\-d\-Normal\-Forms}}\label{structCSphWordforms_a1284ff1cd78f8be9b7a059ea33c60fc9}
+\hypertarget{structCSphWordforms_adf2448280ec7d206e8842f73297ea3fa}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!m\-\_\-i\-Ref\-Count@{m\-\_\-i\-Ref\-Count}}
+\index{m\-\_\-i\-Ref\-Count@{m\-\_\-i\-Ref\-Count}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{m\-\_\-i\-Ref\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Wordforms\-::m\-\_\-i\-Ref\-Count}}\label{structCSphWordforms_adf2448280ec7d206e8842f73297ea3fa}
+\hypertarget{structCSphWordforms_a5f8c7e4b43c2ae7a56be30b2fa4bee83}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!m\-\_\-p\-Multi\-Wordforms@{m\-\_\-p\-Multi\-Wordforms}}
+\index{m\-\_\-p\-Multi\-Wordforms@{m\-\_\-p\-Multi\-Wordforms}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{m\-\_\-p\-Multi\-Wordforms}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Multiform\-Container}$\ast$ C\-Sph\-Wordforms\-::m\-\_\-p\-Multi\-Wordforms}}\label{structCSphWordforms_a5f8c7e4b43c2ae7a56be30b2fa4bee83}
+\hypertarget{structCSphWordforms_a69571fccf4ebb86c4c1d61e6b1af4837}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!m\-\_\-s\-Index\-Name@{m\-\_\-s\-Index\-Name}}
+\index{m\-\_\-s\-Index\-Name@{m\-\_\-s\-Index\-Name}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{m\-\_\-s\-Index\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Wordforms\-::m\-\_\-s\-Index\-Name}}\label{structCSphWordforms_a69571fccf4ebb86c4c1d61e6b1af4837}
+\hypertarget{structCSphWordforms_a02ddb5542979b4c66f3c1708506ef607}{\index{C\-Sph\-Wordforms@{C\-Sph\-Wordforms}!m\-\_\-u\-Tokenizer\-F\-N\-V@{m\-\_\-u\-Tokenizer\-F\-N\-V}}
+\index{m\-\_\-u\-Tokenizer\-F\-N\-V@{m\-\_\-u\-Tokenizer\-F\-N\-V}!CSphWordforms@{C\-Sph\-Wordforms}}
+\subsubsection[{m\-\_\-u\-Tokenizer\-F\-N\-V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} C\-Sph\-Wordforms\-::m\-\_\-u\-Tokenizer\-F\-N\-V}}\label{structCSphWordforms_a02ddb5542979b4c66f3c1708506ef607}
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

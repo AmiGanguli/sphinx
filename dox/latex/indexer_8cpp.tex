@@ -1,0 +1,575 @@
+\hypertarget{indexer_8cpp}{\section{src/indexer.cpp File Reference}
+\label{indexer_8cpp}\index{src/indexer.\-cpp@{src/indexer.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxstem.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxplugin.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxrlp.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCSphMTFHashEntry}{C\-Sph\-M\-T\-F\-Hash\-Entry$<$ T $>$}
+\item 
+class \hyperlink{classCSphMTFHash}{C\-Sph\-M\-T\-F\-Hash$<$ T, S\-I\-Z\-E, H\-A\-S\-H\-F\-U\-N\-C $>$}
+\item 
+struct \hyperlink{structWord__t}{Word\-\_\-t}
+\item 
+class \hyperlink{classCSphStopwordBuilderDict}{C\-Sph\-Stopword\-Builder\-Dict}
+\item 
+struct \hyperlink{structCSphStopwordBuilderDict_1_1HashFunc__t}{C\-Sph\-Stopword\-Builder\-Dict\-::\-Hash\-Func\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{indexer_8cpp_a779d0d1c39fa4f9ef5104a43f909b820}{R\-M\-O\-D\-E}~\char`\"{}r\char`\"{}
+\item 
+\#define \hyperlink{indexer_8cpp_a911ec1d40f8fd62866f4abeab541dea6}{R\-O\-T\-A\-T\-E\-\_\-\-M\-I\-N\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}~100000
+\item 
+\#define \hyperlink{indexer_8cpp_a658444d3660089b1580238c44cccd47e}{H\-A\-S\-H\-\_\-\-F\-O\-R\-E\-A\-C\-H}(\-\_\-it, \-\_\-hash)~for ( \-\_\-it=\-\_\-hash.\-Find\-First(); \-\_\-it; \-\_\-it=\-\_\-hash.\-Find\-Next(\-\_\-it) )
+\item 
+\#define \hyperlink{indexer_8cpp_a06153f2e521a5a28fd09a91f6a4529a5}{L\-O\-C\-\_\-\-E\-R\-R}(\-\_\-arg, \-\_\-pos)
+\item 
+\#define \hyperlink{indexer_8cpp_a57c012f2a540614e723a31bcc49e3ffa}{L\-O\-C\-\_\-\-S\-P\-A\-C\-E0}()~\{ \hyperlink{llsphinxql_8c_a8fdafe3be7e00ce3d4f0cb50a9a5eb39}{while} ( isspace($\ast$s\-Buf) ) s\-Buf++; \}
+\item 
+\#define \hyperlink{indexer_8cpp_a46b3bf67051858dedd27476e2acb2f40}{L\-O\-C\-\_\-\-S\-P\-A\-C\-E1}()~\{ \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} ( !isspace($\ast$s\-Buf) ) \hyperlink{sphinx_8cpp_a8dc45fdcc232f69d964c4912d2ddf71d}{L\-O\-C\-\_\-\-E\-R\-R} ( \char`\"{}token\char`\"{}, s\-Buf ) ; \hyperlink{indexer_8cpp_a57c012f2a540614e723a31bcc49e3ffa}{L\-O\-C\-\_\-\-S\-P\-A\-C\-E0}(); \}
+\item 
+\#define \hyperlink{indexer_8cpp_a67c7c3d25e06adfd39a37f730ef516b0}{L\-O\-C\-\_\-\-T\-O\-K}()~\{ s\-Tok = s\-Buf; \hyperlink{llsphinxql_8c_a8fdafe3be7e00ce3d4f0cb50a9a5eb39}{while} ( \hyperlink{sphinxutils_8h_a4efae6142cf0c94e4797bd43dad290ba}{sph\-Is\-Alpha}($\ast$s\-Buf) ) s\-Buf++; i\-Tok\-Len = s\-Buf-\/s\-Tok; \}
+\item 
+\#define \hyperlink{indexer_8cpp_a752dd92160bb7a194f39dc25feaf1c51}{L\-O\-C\-\_\-\-T\-O\-K\-E\-Q}(\-\_\-arg)~( i\-Tok\-Len==(\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})strlen(\-\_\-arg) \&\& strncasecmp ( s\-Tok, \-\_\-arg, i\-Tok\-Len )==0 )
+\item 
+\#define \hyperlink{indexer_8cpp_a3842df60c3626c2255981b3f98c851d5}{L\-O\-C\-\_\-\-T\-E\-X\-T}()~\{ \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} ( $\ast$s\-Buf!=';') \hyperlink{sphinx_8cpp_a8dc45fdcc232f69d964c4912d2ddf71d}{L\-O\-C\-\_\-\-E\-R\-R} ( \char`\"{}';'\char`\"{}, s\-Buf ); s\-Tok = ++s\-Buf; \hyperlink{llsphinxql_8c_a8fdafe3be7e00ce3d4f0cb50a9a5eb39}{while} ( $\ast$s\-Buf \&\& $\ast$s\-Buf!=';' ) s\-Buf++; i\-Tok\-Len = s\-Buf-\/s\-Tok; \}
+\item 
+\#define \hyperlink{indexer_8cpp_a14f4b2405c1fc1d900b8b1c4cc3e48d6}{L\-O\-C\-\_\-\-C\-H\-E\-C\-K}(\-\_\-hash, \-\_\-key, \-\_\-msg, \-\_\-add)
+\item 
+\#define \hyperlink{indexer_8cpp_a1e6000b42aac61074a5d8b56a7045eb8}{L\-O\-C\-\_\-\-G\-E\-T\-S}(\-\_\-arg, \-\_\-key)
+\item 
+\#define \hyperlink{indexer_8cpp_a60647aa49af191eb79bdb729ecc3f012}{L\-O\-C\-\_\-\-G\-E\-T\-I}(\-\_\-arg, \-\_\-key)
+\item 
+\#define \hyperlink{indexer_8cpp_a4db4d6e88eafa65956773dd05e2b34da}{L\-O\-C\-\_\-\-G\-E\-T\-L}(\-\_\-arg, \-\_\-key)
+\item 
+\#define \hyperlink{indexer_8cpp_ab3b2046119e88e002afaab0020e87c3f}{L\-O\-C\-\_\-\-G\-E\-T\-B}(\-\_\-arg, \-\_\-key)
+\item 
+\#define \hyperlink{indexer_8cpp_a843c8f41e44211b8a480f755bbccb2dd}{L\-O\-C\-\_\-\-G\-E\-T\-A}(\-\_\-arg, \-\_\-key)
+\item 
+\#define \hyperlink{indexer_8cpp_aeb99030a2d909d36c7ccf99f82748524}{L\-O\-C\-\_\-\-E\-R\-R}(\-\_\-exp)
+\item 
+\#define \hyperlink{indexer_8cpp_a3842df60c3626c2255981b3f98c851d5}{L\-O\-C\-\_\-\-T\-E\-X\-T}()~\{ \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} ( $\ast$s\-Buf!=';') \hyperlink{sphinx_8cpp_a8dc45fdcc232f69d964c4912d2ddf71d}{L\-O\-C\-\_\-\-E\-R\-R} ( \char`\"{}';'\char`\"{} ); s\-Tmp = ++s\-Buf; \hyperlink{llsphinxql_8c_a8fdafe3be7e00ce3d4f0cb50a9a5eb39}{while} ( $\ast$s\-Buf \&\& $\ast$s\-Buf!=';' ) s\-Buf++; i\-Tok\-Len = s\-Buf-\/s\-Tmp; \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{indexer_8cpp_a98e9eabe864f889dd4bc0c0007d4304f}{operator$<$} (const \hyperlink{structWord__t}{Word\-\_\-t} \&a, const \hyperlink{structWord__t}{Word\-\_\-t} \&b)
+\item 
+void \hyperlink{indexer_8cpp_a875cf1eff84f69facc121fd4a544f9b6}{Show\-Progress} (const \hyperlink{structCSphIndexProgress}{C\-Sph\-Index\-Progress} $\ast$p\-Progress, bool b\-Phase\-End)
+\item 
+bool \hyperlink{indexer_8cpp_ac99bbc6f75c124b3788baaa6e4a1d7a9}{Parse\-Multi\-Attr} (const char $\ast$s\-Buf, \hyperlink{structCSphColumnInfo}{C\-Sph\-Column\-Info} \&t\-Attr, const char $\ast$s\-Source\-Name)
+\begin{DoxyCompactList}\small\item\em parse multi-\/valued attr definition \end{DoxyCompactList}\item 
+void \hyperlink{indexer_8cpp_ab19c5ffae22855e4b18d16043637bc73}{Sql\-Attrs\-Configure} (\hyperlink{structCSphSourceParams__SQL}{C\-Sph\-Source\-Params\-\_\-\-S\-Q\-L} \&t\-Params, const \hyperlink{structCSphVariant}{C\-Sph\-Variant} $\ast$p\-Head, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-Attr\-Type, const char $\ast$s\-Source\-Name, bool b\-Indexed\-Attr=false)
+\item 
+bool \hyperlink{indexer_8cpp_a1c6184f48cd663624f6d3a2a76cdedc5}{Configure\-Unpack} (\hyperlink{structCSphVariant}{C\-Sph\-Variant} $\ast$p\-Head, \hyperlink{sphinx_8h_a4d4996a14f2199e251e4f55ac3d302f0}{E\-Sph\-Unpack\-Format}, \hyperlink{structCSphSourceParams__SQL}{C\-Sph\-Source\-Params\-\_\-\-S\-Q\-L} \&, const char $\ast$s\-Source\-Name)
+\item 
+bool \hyperlink{indexer_8cpp_a7abb872411bd692f1a803bb6c249b443}{Parse\-Joined\-Field} (const char $\ast$s\-Buf, \hyperlink{structCSphJoinedField}{C\-Sph\-Joined\-Field} $\ast$p\-Field, const char $\ast$s\-Source\-Name)
+\item 
+bool \hyperlink{indexer_8cpp_a270e38d610cdc266d50eb83dde6da1c2}{Sql\-Params\-Configure} (\hyperlink{structCSphSourceParams__SQL}{C\-Sph\-Source\-Params\-\_\-\-S\-Q\-L} \&t\-Params, const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Source, const char $\ast$s\-Source\-Name)
+\item 
+\hyperlink{classCSphSource}{C\-Sph\-Source} $\ast$ \hyperlink{indexer_8cpp_a85674a2ce1037963d9093ffa094b353d}{Spawn\-Source\-X\-M\-L\-Pipe} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Source, const char $\ast$s\-Source\-Name, bool b\-Proxy)
+\item 
+\hyperlink{classCSphSource}{C\-Sph\-Source} $\ast$ \hyperlink{indexer_8cpp_a785472a7f75724e56e69cd0123d44970}{Spawn\-Source\-T\-S\-V\-Pipe} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Source, const char $\ast$s\-Source\-Name, bool b\-Proxy)
+\item 
+\hyperlink{classCSphSource}{C\-Sph\-Source} $\ast$ \hyperlink{indexer_8cpp_abe5667ff8a01808d0ed0f6b9117040b5}{Spawn\-Source\-C\-S\-V\-Pipe} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Source, const char $\ast$s\-Source\-Name, bool b\-Proxy)
+\item 
+\hyperlink{classCSphSource}{C\-Sph\-Source} $\ast$ \hyperlink{indexer_8cpp_ac810cb4feb3ac8785e65f19be57201a4}{Spawn\-Source} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Source, const char $\ast$s\-Source\-Name, bool b\-Batched\-R\-L\-P)
+\item 
+bool \hyperlink{indexer_8cpp_ae5d9b6c28a87eb55d38d63f64e7629bc}{Do\-Index} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Index, const char $\ast$s\-Index\-Name, const \hyperlink{sphinxutils_8h_a0d408ba62d46ff96257c9513a7ff97c6}{C\-Sph\-Config\-Type} \&h\-Sources, bool b\-Verbose, F\-I\-L\-E $\ast$fp\-Dump\-Rows)
+\item 
+bool \hyperlink{indexer_8cpp_aa8bc3e0a1536f91ef2b96a2c78b45051}{Do\-Merge} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Dst, const char $\ast$s\-Dst, const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Src, const char $\ast$s\-Src, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} $>$ \&t\-Purge, bool b\-Rotate, bool b\-Merge\-Kill\-Lists)
+\item 
+void \hyperlink{indexer_8cpp_aea32ba10492868dc1a0d07b35d4915c1}{Report\-I\-O\-Stats} (const char $\ast$s\-Type, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Reads, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Read\-Time, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Read\-Bytes)
+\item 
+void \hyperlink{indexer_8cpp_ad824f40584f0817d21da8d3aa4465aae}{sigsegv} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} sig)
+\item 
+void \hyperlink{indexer_8cpp_a29e00563c49f53488fdc716e4c3d192f}{Set\-Signal\-Handlers} ()
+\item 
+bool \hyperlink{indexer_8cpp_a36def068e040c9d4ad33c273d39d2ffe}{Send\-Rotate} (const \hyperlink{sphinxutils_8h_a48ca2d6437aae9aaa279d7993e6ade56}{C\-Sph\-Config} \&h\-Conf, bool b\-Force)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{indexer_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{indexer_8cpp_a322934692240c706832af246bcc84e95}{g\-\_\-b\-Quiet} = false
+\item 
+static bool \hyperlink{indexer_8cpp_a6c651a9037082b0fc92d487c538e9b8e}{g\-\_\-b\-Progress} = true
+\item 
+static bool \hyperlink{indexer_8cpp_a7173249fa125507be80c255e12f76e42}{g\-\_\-b\-Print\-Queries} = false
+\item 
+static bool \hyperlink{indexer_8cpp_a1253bd60bc491c3891c341cc07c47cff}{g\-\_\-b\-Keep\-Attrs} = false
+\item 
+static \hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{indexer_8cpp_a3944f08cbea388f05a942eb5e6ea0af6}{g\-\_\-s\-Keep\-Attrs\-Path}
+\item 
+static \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \hyperlink{indexer_8cpp_a0187cfac84f8656f11220fe905070fd7}{g\-\_\-d\-Keep\-Attrs}
+\item 
+static const char $\ast$ \hyperlink{indexer_8cpp_a9913424387892b0e9e7f1ec276dce1ab}{g\-\_\-s\-Build\-Stops} = N\-U\-L\-L
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{indexer_8cpp_ac85eae0e336e9747d802db89537075b2}{g\-\_\-i\-Top\-Stops} = 100
+\item 
+static bool \hyperlink{indexer_8cpp_afc3032caf8968c88db39388000351315}{g\-\_\-b\-Rotate} = false
+\item 
+static bool \hyperlink{indexer_8cpp_a77bf6ff5c23b37a6f58435a7182e638f}{g\-\_\-b\-Rotate\-Each} = false
+\item 
+static bool \hyperlink{indexer_8cpp_af09316f4dbb7d984d172a0f7a98e2ca0}{g\-\_\-b\-Build\-Freqs} = false
+\item 
+static bool \hyperlink{indexer_8cpp_a129a7660e97eb59b783ba6e95847621c}{g\-\_\-b\-Send\-H\-U\-P} = true
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{indexer_8cpp_a4d9f1bb63c0800c6c65d943fe3300709}{g\-\_\-i\-Mem\-Limit} = 128$\ast$1024$\ast$1024
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{indexer_8cpp_a0722af6cd892db321fc190819b5b50b0}{g\-\_\-i\-Max\-Xmlpipe2\-Field} = 0
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{indexer_8cpp_ad2ab9bd6d6495964fda9a66acb935d70}{g\-\_\-i\-Write\-Buffer} = 0
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{indexer_8cpp_a410cff1219040a824aad6ed7719eeb77}{g\-\_\-i\-Max\-File\-Field\-Buffer} = 1024$\ast$1024
+\item 
+static \hyperlink{sphinx_8h_ac6ec6f15ff9fc4c04126351b336cfe3d}{E\-Sph\-On\-File\-Field\-Error} \hyperlink{indexer_8cpp_ad59778f4fe979f9ee288bbee10d18b4d}{g\-\_\-e\-On\-File\-Field\-Error} = \hyperlink{sphinx_8h_ac6ec6f15ff9fc4c04126351b336cfe3daa32e2cd632d3c7e5549e5e76ccbc0eb0}{F\-F\-E\-\_\-\-I\-G\-N\-O\-R\-E\-\_\-\-F\-I\-E\-L\-D}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{indexer_8cpp_a96157d2780f3a9846a3f9c0f33b0f5fa}{g\-\_\-i\-Indexer\-Current\-Doc\-I\-D}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{indexer_8cpp_a2196e395a3f99b679140a1e0a05e2b73}{g\-\_\-i\-Indexer\-Current\-Hits}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{indexer_8cpp_a561521313f1525fcdb115ff2c0e6b806}{g\-\_\-i\-Indexer\-Current\-Range\-Min}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{indexer_8cpp_acc817d621a66bed70b89cddcc2a7c652}{g\-\_\-i\-Indexer\-Current\-Range\-Max}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{indexer_8cpp_a577df8a65f390c74c45b64a016660067}{g\-\_\-i\-Indexer\-Pool\-Start\-Doc\-I\-D}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{indexer_8cpp_a63ebde64d55adb52b0dbb7a7d01d4b7f}{g\-\_\-i\-Indexer\-Pool\-Start\-Hit}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{indexer_8cpp_a658444d3660089b1580238c44cccd47e}{\index{indexer.\-cpp@{indexer.\-cpp}!H\-A\-S\-H\-\_\-\-F\-O\-R\-E\-A\-C\-H@{H\-A\-S\-H\-\_\-\-F\-O\-R\-E\-A\-C\-H}}
+\index{H\-A\-S\-H\-\_\-\-F\-O\-R\-E\-A\-C\-H@{H\-A\-S\-H\-\_\-\-F\-O\-R\-E\-A\-C\-H}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{H\-A\-S\-H\-\_\-\-F\-O\-R\-E\-A\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-A\-S\-H\-\_\-\-F\-O\-R\-E\-A\-C\-H(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-it, }
+\item[{}]{\-\_\-hash}
+\end{DoxyParamCaption}
+)~for ( \-\_\-it=\-\_\-hash.\-Find\-First(); \-\_\-it; \-\_\-it=\-\_\-hash.\-Find\-Next(\-\_\-it) )}}\label{indexer_8cpp_a658444d3660089b1580238c44cccd47e}
+\hypertarget{indexer_8cpp_a14f4b2405c1fc1d900b8b1c4cc3e48d6}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-C\-H\-E\-C\-K@{L\-O\-C\-\_\-\-C\-H\-E\-C\-K}}
+\index{L\-O\-C\-\_\-\-C\-H\-E\-C\-K@{L\-O\-C\-\_\-\-C\-H\-E\-C\-K}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-C\-H\-E\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-C\-H\-E\-C\-K(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-hash, }
+\item[{}]{\-\_\-key, }
+\item[{}]{\-\_\-msg, }
+\item[{}]{\-\_\-add}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a14f4b2405c1fc1d900b8b1c4cc3e48d6}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (!( \_hash.Exists ( \_key ) )) \(\backslash\)
+    \{ \(\backslash\)
+        fprintf ( stdout, \textcolor{stringliteral}{"ERROR: key '%s' not found "} \_msg \textcolor{stringliteral}{"\(\backslash\)n"}, \_key, \_add );
+       \(\backslash\)
+        return \textcolor{keyword}{false}; \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{indexer_8cpp_a06153f2e521a5a28fd09a91f6a4529a5}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-E\-R\-R@{L\-O\-C\-\_\-\-E\-R\-R}}
+\index{L\-O\-C\-\_\-\-E\-R\-R@{L\-O\-C\-\_\-\-E\-R\-R}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-E\-R\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-E\-R\-R(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg, }
+\item[{}]{\-\_\-pos}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a06153f2e521a5a28fd09a91f6a4529a5}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+        if ( !*(\_pos) ) \(\backslash\)
+            fprintf ( stdout, \textcolor{stringliteral}{"ERROR: source '%s': unexpected end of line in
+       sql\_attr\_multi.\(\backslash\)n"}, sSourceName ); \(\backslash\)
+        else \(\backslash\)
+            fprintf ( stdout, \textcolor{stringliteral}{"ERROR: source '%s': expected "} \_arg \textcolor{stringliteral}{" in
+       sql\_attr\_multi, got '%s'.\(\backslash\)n"}, sSourceName, \_pos ); \(\backslash\)
+        return \textcolor{keyword}{false}; \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{indexer_8cpp_aeb99030a2d909d36c7ccf99f82748524}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-E\-R\-R@{L\-O\-C\-\_\-\-E\-R\-R}}
+\index{L\-O\-C\-\_\-\-E\-R\-R@{L\-O\-C\-\_\-\-E\-R\-R}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-E\-R\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-E\-R\-R(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-exp}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_aeb99030a2d909d36c7ccf99f82748524}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+        fprintf ( stdout, \textcolor{stringliteral}{"ERROR: source '%s': expected "} \_exp \textcolor{stringliteral}{" in
+       sql\_joined\_field, got '%s'.\(\backslash\)n"}, sSourceName, sBuf ); \(\backslash\)
+        return \textcolor{keyword}{false}; \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{indexer_8cpp_a843c8f41e44211b8a480f755bbccb2dd}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-G\-E\-T\-A@{L\-O\-C\-\_\-\-G\-E\-T\-A}}
+\index{L\-O\-C\-\_\-\-G\-E\-T\-A@{L\-O\-C\-\_\-\-G\-E\-T\-A}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-G\-E\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-G\-E\-T\-A(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg, }
+\item[{}]{\-\_\-key}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a843c8f41e44211b8a480f755bbccb2dd}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{for} ( \hyperlink{structCSphVariant}{CSphVariant} * pVal = hSource(\_key); pVal; pVal = pVal->\hyperlink{structCSphVariant_a01737970e93eded1ef575b6b94264df2}{m\_pNext}
+       ) \(\backslash\)
+        \_arg.Add ( pVal->cstr() );
+\end{DoxyCode}
+\hypertarget{indexer_8cpp_ab3b2046119e88e002afaab0020e87c3f}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-G\-E\-T\-B@{L\-O\-C\-\_\-\-G\-E\-T\-B}}
+\index{L\-O\-C\-\_\-\-G\-E\-T\-B@{L\-O\-C\-\_\-\-G\-E\-T\-B}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-G\-E\-T\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-G\-E\-T\-B(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg, }
+\item[{}]{\-\_\-key}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_ab3b2046119e88e002afaab0020e87c3f}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( hSource.Exists(\_key) ) \(\backslash\)
+        \_arg = ( hSource[\_key].intval()!=0 );
+\end{DoxyCode}
+\hypertarget{indexer_8cpp_a60647aa49af191eb79bdb729ecc3f012}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-G\-E\-T\-I@{L\-O\-C\-\_\-\-G\-E\-T\-I}}
+\index{L\-O\-C\-\_\-\-G\-E\-T\-I@{L\-O\-C\-\_\-\-G\-E\-T\-I}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-G\-E\-T\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-G\-E\-T\-I(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg, }
+\item[{}]{\-\_\-key}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a60647aa49af191eb79bdb729ecc3f012}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( hSource.Exists(\_key) && hSource[\_key].intval() ) \(\backslash\)
+        \_arg = hSource[\_key].intval();
+\end{DoxyCode}
+\hypertarget{indexer_8cpp_a4db4d6e88eafa65956773dd05e2b34da}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-G\-E\-T\-L@{L\-O\-C\-\_\-\-G\-E\-T\-L}}
+\index{L\-O\-C\-\_\-\-G\-E\-T\-L@{L\-O\-C\-\_\-\-G\-E\-T\-L}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-G\-E\-T\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-G\-E\-T\-L(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg, }
+\item[{}]{\-\_\-key}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a4db4d6e88eafa65956773dd05e2b34da}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( hSource.Exists(\_key) ) \(\backslash\)
+        \_arg = hSource[\_key].int64val();
+\end{DoxyCode}
+\hypertarget{indexer_8cpp_a1e6000b42aac61074a5d8b56a7045eb8}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-G\-E\-T\-S@{L\-O\-C\-\_\-\-G\-E\-T\-S}}
+\index{L\-O\-C\-\_\-\-G\-E\-T\-S@{L\-O\-C\-\_\-\-G\-E\-T\-S}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-G\-E\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-G\-E\-T\-S(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg, }
+\item[{}]{\-\_\-key}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a1e6000b42aac61074a5d8b56a7045eb8}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( hSource.Exists(\_key) ) \(\backslash\)
+        \_arg = hSource[\_key].strval();
+\end{DoxyCode}
+\hypertarget{indexer_8cpp_a57c012f2a540614e723a31bcc49e3ffa}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-S\-P\-A\-C\-E0@{L\-O\-C\-\_\-\-S\-P\-A\-C\-E0}}
+\index{L\-O\-C\-\_\-\-S\-P\-A\-C\-E0@{L\-O\-C\-\_\-\-S\-P\-A\-C\-E0}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-S\-P\-A\-C\-E0}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-S\-P\-A\-C\-E0(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\{ {\bf while} ( isspace($\ast$s\-Buf) ) s\-Buf++; \}}}\label{indexer_8cpp_a57c012f2a540614e723a31bcc49e3ffa}
+\hypertarget{indexer_8cpp_a46b3bf67051858dedd27476e2acb2f40}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-S\-P\-A\-C\-E1@{L\-O\-C\-\_\-\-S\-P\-A\-C\-E1}}
+\index{L\-O\-C\-\_\-\-S\-P\-A\-C\-E1@{L\-O\-C\-\_\-\-S\-P\-A\-C\-E1}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-S\-P\-A\-C\-E1}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-S\-P\-A\-C\-E1(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\{ {\bf if} ( !isspace($\ast$s\-Buf) ) {\bf L\-O\-C\-\_\-\-E\-R\-R} ( \char`\"{}token\char`\"{}, s\-Buf ) ; {\bf L\-O\-C\-\_\-\-S\-P\-A\-C\-E0}(); \}}}\label{indexer_8cpp_a46b3bf67051858dedd27476e2acb2f40}
+\hypertarget{indexer_8cpp_a3842df60c3626c2255981b3f98c851d5}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-T\-E\-X\-T@{L\-O\-C\-\_\-\-T\-E\-X\-T}}
+\index{L\-O\-C\-\_\-\-T\-E\-X\-T@{L\-O\-C\-\_\-\-T\-E\-X\-T}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-T\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-T\-E\-X\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\{ {\bf if} ( $\ast$s\-Buf!=';') {\bf L\-O\-C\-\_\-\-E\-R\-R} ( \char`\"{}';'\char`\"{}, s\-Buf ); s\-Tok = ++s\-Buf; {\bf while} ( $\ast$s\-Buf \&\& $\ast$s\-Buf!=';' ) s\-Buf++; i\-Tok\-Len = s\-Buf-\/s\-Tok; \}}}\label{indexer_8cpp_a3842df60c3626c2255981b3f98c851d5}
+\hypertarget{indexer_8cpp_a3842df60c3626c2255981b3f98c851d5}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-T\-E\-X\-T@{L\-O\-C\-\_\-\-T\-E\-X\-T}}
+\index{L\-O\-C\-\_\-\-T\-E\-X\-T@{L\-O\-C\-\_\-\-T\-E\-X\-T}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-T\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-T\-E\-X\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\{ {\bf if} ( $\ast$s\-Buf!=';') {\bf L\-O\-C\-\_\-\-E\-R\-R} ( \char`\"{}';'\char`\"{} ); s\-Tmp = ++s\-Buf; {\bf while} ( $\ast$s\-Buf \&\& $\ast$s\-Buf!=';' ) s\-Buf++; i\-Tok\-Len = s\-Buf-\/s\-Tmp; \}}}\label{indexer_8cpp_a3842df60c3626c2255981b3f98c851d5}
+\hypertarget{indexer_8cpp_a67c7c3d25e06adfd39a37f730ef516b0}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-T\-O\-K@{L\-O\-C\-\_\-\-T\-O\-K}}
+\index{L\-O\-C\-\_\-\-T\-O\-K@{L\-O\-C\-\_\-\-T\-O\-K}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-T\-O\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-T\-O\-K(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\{ s\-Tok = s\-Buf; {\bf while} ( {\bf sph\-Is\-Alpha}($\ast$s\-Buf) ) s\-Buf++; i\-Tok\-Len = s\-Buf-\/s\-Tok; \}}}\label{indexer_8cpp_a67c7c3d25e06adfd39a37f730ef516b0}
+\hypertarget{indexer_8cpp_a752dd92160bb7a194f39dc25feaf1c51}{\index{indexer.\-cpp@{indexer.\-cpp}!L\-O\-C\-\_\-\-T\-O\-K\-E\-Q@{L\-O\-C\-\_\-\-T\-O\-K\-E\-Q}}
+\index{L\-O\-C\-\_\-\-T\-O\-K\-E\-Q@{L\-O\-C\-\_\-\-T\-O\-K\-E\-Q}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{L\-O\-C\-\_\-\-T\-O\-K\-E\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-C\-\_\-\-T\-O\-K\-E\-Q(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg}
+\end{DoxyParamCaption}
+)~( i\-Tok\-Len==({\bf int})strlen(\-\_\-arg) \&\& strncasecmp ( s\-Tok, \-\_\-arg, i\-Tok\-Len )==0 )}}\label{indexer_8cpp_a752dd92160bb7a194f39dc25feaf1c51}
+\hypertarget{indexer_8cpp_a779d0d1c39fa4f9ef5104a43f909b820}{\index{indexer.\-cpp@{indexer.\-cpp}!R\-M\-O\-D\-E@{R\-M\-O\-D\-E}}
+\index{R\-M\-O\-D\-E@{R\-M\-O\-D\-E}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{R\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-M\-O\-D\-E~\char`\"{}r\char`\"{}}}\label{indexer_8cpp_a779d0d1c39fa4f9ef5104a43f909b820}
+\hypertarget{indexer_8cpp_a911ec1d40f8fd62866f4abeab541dea6}{\index{indexer.\-cpp@{indexer.\-cpp}!R\-O\-T\-A\-T\-E\-\_\-\-M\-I\-N\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L@{R\-O\-T\-A\-T\-E\-\_\-\-M\-I\-N\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}}
+\index{R\-O\-T\-A\-T\-E\-\_\-\-M\-I\-N\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L@{R\-O\-T\-A\-T\-E\-\_\-\-M\-I\-N\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{R\-O\-T\-A\-T\-E\-\_\-\-M\-I\-N\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-O\-T\-A\-T\-E\-\_\-\-M\-I\-N\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L~100000}}\label{indexer_8cpp_a911ec1d40f8fd62866f4abeab541dea6}
+
+
+\subsection{Function Documentation}
+\hypertarget{indexer_8cpp_a1c6184f48cd663624f6d3a2a76cdedc5}{\index{indexer.\-cpp@{indexer.\-cpp}!Configure\-Unpack@{Configure\-Unpack}}
+\index{Configure\-Unpack@{Configure\-Unpack}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Configure\-Unpack}]{\setlength{\rightskip}{0pt plus 5cm}bool Configure\-Unpack (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Variant} $\ast$}]{p\-Head, }
+\item[{{\bf E\-Sph\-Unpack\-Format}}]{, }
+\item[{{\bf C\-Sph\-Source\-Params\-\_\-\-S\-Q\-L} \&}]{, }
+\item[{const char $\ast$}]{s\-Source\-Name}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a1c6184f48cd663624f6d3a2a76cdedc5}
+\hypertarget{indexer_8cpp_ae5d9b6c28a87eb55d38d63f64e7629bc}{\index{indexer.\-cpp@{indexer.\-cpp}!Do\-Index@{Do\-Index}}
+\index{Do\-Index@{Do\-Index}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Do\-Index}]{\setlength{\rightskip}{0pt plus 5cm}bool Do\-Index (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Index, }
+\item[{const char $\ast$}]{s\-Index\-Name, }
+\item[{const {\bf C\-Sph\-Config\-Type} \&}]{h\-Sources, }
+\item[{bool}]{b\-Verbose, }
+\item[{F\-I\-L\-E $\ast$}]{fp\-Dump\-Rows}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_ae5d9b6c28a87eb55d38d63f64e7629bc}
+\hypertarget{indexer_8cpp_aa8bc3e0a1536f91ef2b96a2c78b45051}{\index{indexer.\-cpp@{indexer.\-cpp}!Do\-Merge@{Do\-Merge}}
+\index{Do\-Merge@{Do\-Merge}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Do\-Merge}]{\setlength{\rightskip}{0pt plus 5cm}bool Do\-Merge (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Dst, }
+\item[{const char $\ast$}]{s\-Dst, }
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Src, }
+\item[{const char $\ast$}]{s\-Src, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Filter\-Settings} $>$ \&}]{t\-Purge, }
+\item[{bool}]{b\-Rotate, }
+\item[{bool}]{b\-Merge\-Kill\-Lists}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_aa8bc3e0a1536f91ef2b96a2c78b45051}
+\hypertarget{indexer_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{indexer.\-cpp@{indexer.\-cpp}!main@{main}}
+\index{main@{main}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} main (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+\hypertarget{indexer_8cpp_a98e9eabe864f889dd4bc0c0007d4304f}{\index{indexer.\-cpp@{indexer.\-cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Word\-\_\-t} \&}]{a, }
+\item[{const {\bf Word\-\_\-t} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{indexer_8cpp_a98e9eabe864f889dd4bc0c0007d4304f}
+\hypertarget{indexer_8cpp_a7abb872411bd692f1a803bb6c249b443}{\index{indexer.\-cpp@{indexer.\-cpp}!Parse\-Joined\-Field@{Parse\-Joined\-Field}}
+\index{Parse\-Joined\-Field@{Parse\-Joined\-Field}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Parse\-Joined\-Field}]{\setlength{\rightskip}{0pt plus 5cm}bool Parse\-Joined\-Field (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Buf, }
+\item[{{\bf C\-Sph\-Joined\-Field} $\ast$}]{p\-Field, }
+\item[{const char $\ast$}]{s\-Source\-Name}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a7abb872411bd692f1a803bb6c249b443}
+\hypertarget{indexer_8cpp_ac99bbc6f75c124b3788baaa6e4a1d7a9}{\index{indexer.\-cpp@{indexer.\-cpp}!Parse\-Multi\-Attr@{Parse\-Multi\-Attr}}
+\index{Parse\-Multi\-Attr@{Parse\-Multi\-Attr}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Parse\-Multi\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}bool Parse\-Multi\-Attr (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Buf, }
+\item[{{\bf C\-Sph\-Column\-Info} \&}]{t\-Attr, }
+\item[{const char $\ast$}]{s\-Source\-Name}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_ac99bbc6f75c124b3788baaa6e4a1d7a9}
+
+
+parse multi-\/valued attr definition 
+
+\hypertarget{indexer_8cpp_aea32ba10492868dc1a0d07b35d4915c1}{\index{indexer.\-cpp@{indexer.\-cpp}!Report\-I\-O\-Stats@{Report\-I\-O\-Stats}}
+\index{Report\-I\-O\-Stats@{Report\-I\-O\-Stats}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Report\-I\-O\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}void Report\-I\-O\-Stats (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Type, }
+\item[{{\bf int}}]{i\-Reads, }
+\item[{{\bf int64\-\_\-t}}]{i\-Read\-Time, }
+\item[{{\bf int64\-\_\-t}}]{i\-Read\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_aea32ba10492868dc1a0d07b35d4915c1}
+\hypertarget{indexer_8cpp_a36def068e040c9d4ad33c273d39d2ffe}{\index{indexer.\-cpp@{indexer.\-cpp}!Send\-Rotate@{Send\-Rotate}}
+\index{Send\-Rotate@{Send\-Rotate}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Send\-Rotate}]{\setlength{\rightskip}{0pt plus 5cm}bool Send\-Rotate (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config} \&}]{h\-Conf, }
+\item[{bool}]{b\-Force}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a36def068e040c9d4ad33c273d39d2ffe}
+\hypertarget{indexer_8cpp_a29e00563c49f53488fdc716e4c3d192f}{\index{indexer.\-cpp@{indexer.\-cpp}!Set\-Signal\-Handlers@{Set\-Signal\-Handlers}}
+\index{Set\-Signal\-Handlers@{Set\-Signal\-Handlers}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Set\-Signal\-Handlers}]{\setlength{\rightskip}{0pt plus 5cm}void Set\-Signal\-Handlers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a29e00563c49f53488fdc716e4c3d192f}
+\hypertarget{indexer_8cpp_a875cf1eff84f69facc121fd4a544f9b6}{\index{indexer.\-cpp@{indexer.\-cpp}!Show\-Progress@{Show\-Progress}}
+\index{Show\-Progress@{Show\-Progress}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Show\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}void Show\-Progress (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Index\-Progress} $\ast$}]{p\-Progress, }
+\item[{bool}]{b\-Phase\-End}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a875cf1eff84f69facc121fd4a544f9b6}
+\hypertarget{indexer_8cpp_ad824f40584f0817d21da8d3aa4465aae}{\index{indexer.\-cpp@{indexer.\-cpp}!sigsegv@{sigsegv}}
+\index{sigsegv@{sigsegv}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{sigsegv}]{\setlength{\rightskip}{0pt plus 5cm}void sigsegv (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{sig}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_ad824f40584f0817d21da8d3aa4465aae}
+\hypertarget{indexer_8cpp_ac810cb4feb3ac8785e65f19be57201a4}{\index{indexer.\-cpp@{indexer.\-cpp}!Spawn\-Source@{Spawn\-Source}}
+\index{Spawn\-Source@{Spawn\-Source}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Spawn\-Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Source}$\ast$ Spawn\-Source (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Source, }
+\item[{const char $\ast$}]{s\-Source\-Name, }
+\item[{bool}]{b\-Batched\-R\-L\-P}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_ac810cb4feb3ac8785e65f19be57201a4}
+\hypertarget{indexer_8cpp_abe5667ff8a01808d0ed0f6b9117040b5}{\index{indexer.\-cpp@{indexer.\-cpp}!Spawn\-Source\-C\-S\-V\-Pipe@{Spawn\-Source\-C\-S\-V\-Pipe}}
+\index{Spawn\-Source\-C\-S\-V\-Pipe@{Spawn\-Source\-C\-S\-V\-Pipe}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Spawn\-Source\-C\-S\-V\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Source}$\ast$ Spawn\-Source\-C\-S\-V\-Pipe (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Source, }
+\item[{const char $\ast$}]{s\-Source\-Name, }
+\item[{bool}]{b\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_abe5667ff8a01808d0ed0f6b9117040b5}
+\hypertarget{indexer_8cpp_a785472a7f75724e56e69cd0123d44970}{\index{indexer.\-cpp@{indexer.\-cpp}!Spawn\-Source\-T\-S\-V\-Pipe@{Spawn\-Source\-T\-S\-V\-Pipe}}
+\index{Spawn\-Source\-T\-S\-V\-Pipe@{Spawn\-Source\-T\-S\-V\-Pipe}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Spawn\-Source\-T\-S\-V\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Source}$\ast$ Spawn\-Source\-T\-S\-V\-Pipe (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Source, }
+\item[{const char $\ast$}]{s\-Source\-Name, }
+\item[{bool}]{b\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a785472a7f75724e56e69cd0123d44970}
+\hypertarget{indexer_8cpp_a85674a2ce1037963d9093ffa094b353d}{\index{indexer.\-cpp@{indexer.\-cpp}!Spawn\-Source\-X\-M\-L\-Pipe@{Spawn\-Source\-X\-M\-L\-Pipe}}
+\index{Spawn\-Source\-X\-M\-L\-Pipe@{Spawn\-Source\-X\-M\-L\-Pipe}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Spawn\-Source\-X\-M\-L\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Source}$\ast$ Spawn\-Source\-X\-M\-L\-Pipe (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Source, }
+\item[{const char $\ast$}]{s\-Source\-Name, }
+\item[{bool}]{b\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a85674a2ce1037963d9093ffa094b353d}
+\hypertarget{indexer_8cpp_ab19c5ffae22855e4b18d16043637bc73}{\index{indexer.\-cpp@{indexer.\-cpp}!Sql\-Attrs\-Configure@{Sql\-Attrs\-Configure}}
+\index{Sql\-Attrs\-Configure@{Sql\-Attrs\-Configure}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Sql\-Attrs\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}void Sql\-Attrs\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Source\-Params\-\_\-\-S\-Q\-L} \&}]{t\-Params, }
+\item[{const {\bf C\-Sph\-Variant} $\ast$}]{p\-Head, }
+\item[{{\bf E\-Sph\-Attr}}]{e\-Attr\-Type, }
+\item[{const char $\ast$}]{s\-Source\-Name, }
+\item[{bool}]{b\-Indexed\-Attr = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_ab19c5ffae22855e4b18d16043637bc73}
+\hypertarget{indexer_8cpp_a270e38d610cdc266d50eb83dde6da1c2}{\index{indexer.\-cpp@{indexer.\-cpp}!Sql\-Params\-Configure@{Sql\-Params\-Configure}}
+\index{Sql\-Params\-Configure@{Sql\-Params\-Configure}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{Sql\-Params\-Configure}]{\setlength{\rightskip}{0pt plus 5cm}bool Sql\-Params\-Configure (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Source\-Params\-\_\-\-S\-Q\-L} \&}]{t\-Params, }
+\item[{const {\bf C\-Sph\-Config\-Section} \&}]{h\-Source, }
+\item[{const char $\ast$}]{s\-Source\-Name}
+\end{DoxyParamCaption}
+)}}\label{indexer_8cpp_a270e38d610cdc266d50eb83dde6da1c2}
+
+
+\subsection{Variable Documentation}
+\hypertarget{indexer_8cpp_af09316f4dbb7d984d172a0f7a98e2ca0}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-b\-Build\-Freqs@{g\-\_\-b\-Build\-Freqs}}
+\index{g\-\_\-b\-Build\-Freqs@{g\-\_\-b\-Build\-Freqs}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-b\-Build\-Freqs}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Build\-Freqs = false\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_af09316f4dbb7d984d172a0f7a98e2ca0}
+\hypertarget{indexer_8cpp_a1253bd60bc491c3891c341cc07c47cff}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-b\-Keep\-Attrs@{g\-\_\-b\-Keep\-Attrs}}
+\index{g\-\_\-b\-Keep\-Attrs@{g\-\_\-b\-Keep\-Attrs}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-b\-Keep\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Keep\-Attrs = false\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a1253bd60bc491c3891c341cc07c47cff}
+\hypertarget{indexer_8cpp_a7173249fa125507be80c255e12f76e42}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-b\-Print\-Queries@{g\-\_\-b\-Print\-Queries}}
+\index{g\-\_\-b\-Print\-Queries@{g\-\_\-b\-Print\-Queries}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-b\-Print\-Queries}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Print\-Queries = false\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a7173249fa125507be80c255e12f76e42}
+\hypertarget{indexer_8cpp_a6c651a9037082b0fc92d487c538e9b8e}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-b\-Progress@{g\-\_\-b\-Progress}}
+\index{g\-\_\-b\-Progress@{g\-\_\-b\-Progress}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-b\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Progress = true\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a6c651a9037082b0fc92d487c538e9b8e}
+\hypertarget{indexer_8cpp_a322934692240c706832af246bcc84e95}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-b\-Quiet@{g\-\_\-b\-Quiet}}
+\index{g\-\_\-b\-Quiet@{g\-\_\-b\-Quiet}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-b\-Quiet}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Quiet = false\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a322934692240c706832af246bcc84e95}
+\hypertarget{indexer_8cpp_afc3032caf8968c88db39388000351315}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-b\-Rotate@{g\-\_\-b\-Rotate}}
+\index{g\-\_\-b\-Rotate@{g\-\_\-b\-Rotate}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-b\-Rotate}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Rotate = false\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_afc3032caf8968c88db39388000351315}
+\hypertarget{indexer_8cpp_a77bf6ff5c23b37a6f58435a7182e638f}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-b\-Rotate\-Each@{g\-\_\-b\-Rotate\-Each}}
+\index{g\-\_\-b\-Rotate\-Each@{g\-\_\-b\-Rotate\-Each}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-b\-Rotate\-Each}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Rotate\-Each = false\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a77bf6ff5c23b37a6f58435a7182e638f}
+\hypertarget{indexer_8cpp_a129a7660e97eb59b783ba6e95847621c}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-b\-Send\-H\-U\-P@{g\-\_\-b\-Send\-H\-U\-P}}
+\index{g\-\_\-b\-Send\-H\-U\-P@{g\-\_\-b\-Send\-H\-U\-P}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-b\-Send\-H\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Send\-H\-U\-P = true\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a129a7660e97eb59b783ba6e95847621c}
+\hypertarget{indexer_8cpp_a0187cfac84f8656f11220fe905070fd7}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-d\-Keep\-Attrs@{g\-\_\-d\-Keep\-Attrs}}
+\index{g\-\_\-d\-Keep\-Attrs@{g\-\_\-d\-Keep\-Attrs}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-d\-Keep\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-String}$>$ g\-\_\-d\-Keep\-Attrs\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a0187cfac84f8656f11220fe905070fd7}
+\hypertarget{indexer_8cpp_ad59778f4fe979f9ee288bbee10d18b4d}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-e\-On\-File\-Field\-Error@{g\-\_\-e\-On\-File\-Field\-Error}}
+\index{g\-\_\-e\-On\-File\-Field\-Error@{g\-\_\-e\-On\-File\-Field\-Error}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-e\-On\-File\-Field\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-On\-File\-Field\-Error} g\-\_\-e\-On\-File\-Field\-Error = {\bf F\-F\-E\-\_\-\-I\-G\-N\-O\-R\-E\-\_\-\-F\-I\-E\-L\-D}\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_ad59778f4fe979f9ee288bbee10d18b4d}
+\hypertarget{indexer_8cpp_a96157d2780f3a9846a3f9c0f33b0f5fa}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Indexer\-Current\-Doc\-I\-D@{g\-\_\-i\-Indexer\-Current\-Doc\-I\-D}}
+\index{g\-\_\-i\-Indexer\-Current\-Doc\-I\-D@{g\-\_\-i\-Indexer\-Current\-Doc\-I\-D}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Indexer\-Current\-Doc\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} g\-\_\-i\-Indexer\-Current\-Doc\-I\-D}}\label{indexer_8cpp_a96157d2780f3a9846a3f9c0f33b0f5fa}
+\hypertarget{indexer_8cpp_a2196e395a3f99b679140a1e0a05e2b73}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Indexer\-Current\-Hits@{g\-\_\-i\-Indexer\-Current\-Hits}}
+\index{g\-\_\-i\-Indexer\-Current\-Hits@{g\-\_\-i\-Indexer\-Current\-Hits}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Indexer\-Current\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} g\-\_\-i\-Indexer\-Current\-Hits}}\label{indexer_8cpp_a2196e395a3f99b679140a1e0a05e2b73}
+\hypertarget{indexer_8cpp_acc817d621a66bed70b89cddcc2a7c652}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Indexer\-Current\-Range\-Max@{g\-\_\-i\-Indexer\-Current\-Range\-Max}}
+\index{g\-\_\-i\-Indexer\-Current\-Range\-Max@{g\-\_\-i\-Indexer\-Current\-Range\-Max}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Indexer\-Current\-Range\-Max}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} g\-\_\-i\-Indexer\-Current\-Range\-Max}}\label{indexer_8cpp_acc817d621a66bed70b89cddcc2a7c652}
+\hypertarget{indexer_8cpp_a561521313f1525fcdb115ff2c0e6b806}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Indexer\-Current\-Range\-Min@{g\-\_\-i\-Indexer\-Current\-Range\-Min}}
+\index{g\-\_\-i\-Indexer\-Current\-Range\-Min@{g\-\_\-i\-Indexer\-Current\-Range\-Min}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Indexer\-Current\-Range\-Min}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} g\-\_\-i\-Indexer\-Current\-Range\-Min}}\label{indexer_8cpp_a561521313f1525fcdb115ff2c0e6b806}
+\hypertarget{indexer_8cpp_a577df8a65f390c74c45b64a016660067}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Indexer\-Pool\-Start\-Doc\-I\-D@{g\-\_\-i\-Indexer\-Pool\-Start\-Doc\-I\-D}}
+\index{g\-\_\-i\-Indexer\-Pool\-Start\-Doc\-I\-D@{g\-\_\-i\-Indexer\-Pool\-Start\-Doc\-I\-D}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Indexer\-Pool\-Start\-Doc\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} g\-\_\-i\-Indexer\-Pool\-Start\-Doc\-I\-D}}\label{indexer_8cpp_a577df8a65f390c74c45b64a016660067}
+\hypertarget{indexer_8cpp_a63ebde64d55adb52b0dbb7a7d01d4b7f}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Indexer\-Pool\-Start\-Hit@{g\-\_\-i\-Indexer\-Pool\-Start\-Hit}}
+\index{g\-\_\-i\-Indexer\-Pool\-Start\-Hit@{g\-\_\-i\-Indexer\-Pool\-Start\-Hit}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Indexer\-Pool\-Start\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} g\-\_\-i\-Indexer\-Pool\-Start\-Hit}}\label{indexer_8cpp_a63ebde64d55adb52b0dbb7a7d01d4b7f}
+\hypertarget{indexer_8cpp_a410cff1219040a824aad6ed7719eeb77}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Max\-File\-Field\-Buffer@{g\-\_\-i\-Max\-File\-Field\-Buffer}}
+\index{g\-\_\-i\-Max\-File\-Field\-Buffer@{g\-\_\-i\-Max\-File\-Field\-Buffer}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Max\-File\-Field\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Max\-File\-Field\-Buffer = 1024$\ast$1024\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a410cff1219040a824aad6ed7719eeb77}
+\hypertarget{indexer_8cpp_a0722af6cd892db321fc190819b5b50b0}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Max\-Xmlpipe2\-Field@{g\-\_\-i\-Max\-Xmlpipe2\-Field}}
+\index{g\-\_\-i\-Max\-Xmlpipe2\-Field@{g\-\_\-i\-Max\-Xmlpipe2\-Field}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Max\-Xmlpipe2\-Field}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Max\-Xmlpipe2\-Field = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a0722af6cd892db321fc190819b5b50b0}
+\hypertarget{indexer_8cpp_a4d9f1bb63c0800c6c65d943fe3300709}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Mem\-Limit@{g\-\_\-i\-Mem\-Limit}}
+\index{g\-\_\-i\-Mem\-Limit@{g\-\_\-i\-Mem\-Limit}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Mem\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Mem\-Limit = 128$\ast$1024$\ast$1024\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a4d9f1bb63c0800c6c65d943fe3300709}
+\hypertarget{indexer_8cpp_ac85eae0e336e9747d802db89537075b2}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Top\-Stops@{g\-\_\-i\-Top\-Stops}}
+\index{g\-\_\-i\-Top\-Stops@{g\-\_\-i\-Top\-Stops}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Top\-Stops}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Top\-Stops = 100\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_ac85eae0e336e9747d802db89537075b2}
+\hypertarget{indexer_8cpp_ad2ab9bd6d6495964fda9a66acb935d70}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-i\-Write\-Buffer@{g\-\_\-i\-Write\-Buffer}}
+\index{g\-\_\-i\-Write\-Buffer@{g\-\_\-i\-Write\-Buffer}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-i\-Write\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Write\-Buffer = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_ad2ab9bd6d6495964fda9a66acb935d70}
+\hypertarget{indexer_8cpp_a9913424387892b0e9e7f1ec276dce1ab}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-s\-Build\-Stops@{g\-\_\-s\-Build\-Stops}}
+\index{g\-\_\-s\-Build\-Stops@{g\-\_\-s\-Build\-Stops}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-s\-Build\-Stops}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ g\-\_\-s\-Build\-Stops = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a9913424387892b0e9e7f1ec276dce1ab}
+\hypertarget{indexer_8cpp_a3944f08cbea388f05a942eb5e6ea0af6}{\index{indexer.\-cpp@{indexer.\-cpp}!g\-\_\-s\-Keep\-Attrs\-Path@{g\-\_\-s\-Keep\-Attrs\-Path}}
+\index{g\-\_\-s\-Keep\-Attrs\-Path@{g\-\_\-s\-Keep\-Attrs\-Path}!indexer.cpp@{indexer.\-cpp}}
+\subsubsection[{g\-\_\-s\-Keep\-Attrs\-Path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} g\-\_\-s\-Keep\-Attrs\-Path\hspace{0.3cm}{\ttfamily [static]}}}\label{indexer_8cpp_a3944f08cbea388f05a942eb5e6ea0af6}

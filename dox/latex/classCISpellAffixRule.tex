@@ -1,0 +1,171 @@
+\hypertarget{classCISpellAffixRule}{\section{C\-I\-Spell\-Affix\-Rule Class Reference}
+\label{classCISpellAffixRule}\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCISpellAffixRule_a816a249f3f74eb6c7fd8826ae5d6ab50}{C\-I\-Spell\-Affix\-Rule} ()
+\item 
+\hyperlink{classCISpellAffixRule_aa7d3f11bf37a667bbab579d82886b648}{C\-I\-Spell\-Affix\-Rule} (\hyperlink{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1c}{Rule\-Type\-\_\-e} e\-Rule, char c\-Flag, bool b\-Cross\-Product, char $\ast$sz\-Condition, char $\ast$sz\-Strip, char $\ast$sz\-Append)
+\item 
+bool \hyperlink{classCISpellAffixRule_a8d0f4f3c03adf1cf6ce1e47fcfcf0cdf}{Apply} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Word)
+\item 
+char \hyperlink{classCISpellAffixRule_a26166a1ae70b13844a71aa7474c9b880}{Flag} () const 
+\item 
+bool \hyperlink{classCISpellAffixRule_a9bd79ef6440a7ed12f781489908feebb}{Is\-Cross\-Product} () const 
+\item 
+bool \hyperlink{classCISpellAffixRule_af26a7bd9fbf8d198d23ab8ccd25df7ab}{Is\-Prefix} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCISpellAffixRule_a5e203257b49c6ee7adff6a600b1ef200}{Check\-Suffix} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Word) const 
+\item 
+bool \hyperlink{classCISpellAffixRule_a618a6981a8a869fdd63525e862803330}{Check\-Prefix} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Word) const 
+\item 
+bool \hyperlink{classCISpellAffixRule_a5bd501dcbc5d5f94661c9f7b77d0888f}{Strip\-Append\-Suffix} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Word) const 
+\item 
+bool \hyperlink{classCISpellAffixRule_a3cabbaa9a8df8211b6c649ab19fde5c5}{Strip\-Append\-Prefix} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Word) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1c}{Rule\-Type\-\_\-e} \hyperlink{classCISpellAffixRule_a8dccbe47782c84f9ebe73fbd02e8ca32}{m\-\_\-e\-Rule}
+\item 
+char \hyperlink{classCISpellAffixRule_a6295e3422c29e64d7e7b9c7d046bfd27}{m\-\_\-c\-Flag}
+\item 
+bool \hyperlink{classCISpellAffixRule_a13defbb631de5b0209ec803fdf1c7d74}{m\-\_\-b\-Cross\-Product}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCISpellAffixRule_a8a940c1a5a8c35a8982c8ad998424772}{m\-\_\-s\-Condition}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCISpellAffixRule_af16db690d0785a6906f4be50f14e1eea}{m\-\_\-s\-Strip}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCISpellAffixRule_aad91d84548c2fe0b699d4fd715c1675b}{m\-\_\-s\-Append}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCISpellAffixRule_ad44297473682f3d0222ca7135b15694c}{m\-\_\-i\-Word\-Len}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCISpellAffixRule_a5c91ca614f6d1ed3231324f39831eb4c}{m\-\_\-i\-Cond\-Len}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCISpellAffixRule_aac9fae1dc9801e813c84a0ae3946d3cf}{m\-\_\-i\-Strip\-Len}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCISpellAffixRule_a3de35e2f00e76058dd0f188428aef9ef}{m\-\_\-i\-Append\-Len}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCISpellAffixRule_a816a249f3f74eb6c7fd8826ae5d6ab50}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}}
+\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{C\-I\-Spell\-Affix\-Rule}]{\setlength{\rightskip}{0pt plus 5cm}C\-I\-Spell\-Affix\-Rule\-::\-C\-I\-Spell\-Affix\-Rule (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCISpellAffixRule_a816a249f3f74eb6c7fd8826ae5d6ab50}
+\hypertarget{classCISpellAffixRule_aa7d3f11bf37a667bbab579d82886b648}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}}
+\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{C\-I\-Spell\-Affix\-Rule}]{\setlength{\rightskip}{0pt plus 5cm}C\-I\-Spell\-Affix\-Rule\-::\-C\-I\-Spell\-Affix\-Rule (
+\begin{DoxyParamCaption}
+\item[{{\bf Rule\-Type\-\_\-e}}]{e\-Rule, }
+\item[{char}]{c\-Flag, }
+\item[{bool}]{b\-Cross\-Product, }
+\item[{char $\ast$}]{sz\-Condition, }
+\item[{char $\ast$}]{sz\-Strip, }
+\item[{char $\ast$}]{sz\-Append}
+\end{DoxyParamCaption}
+)}}\label{classCISpellAffixRule_aa7d3f11bf37a667bbab579d82886b648}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCISpellAffixRule_a8d0f4f3c03adf1cf6ce1e47fcfcf0cdf}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!Apply@{Apply}}
+\index{Apply@{Apply}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{Apply}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-I\-Spell\-Affix\-Rule\-::\-Apply (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Word}
+\end{DoxyParamCaption}
+)}}\label{classCISpellAffixRule_a8d0f4f3c03adf1cf6ce1e47fcfcf0cdf}
+\hypertarget{classCISpellAffixRule_a618a6981a8a869fdd63525e862803330}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!Check\-Prefix@{Check\-Prefix}}
+\index{Check\-Prefix@{Check\-Prefix}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{Check\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-I\-Spell\-Affix\-Rule\-::\-Check\-Prefix (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Word}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_a618a6981a8a869fdd63525e862803330}
+\hypertarget{classCISpellAffixRule_a5e203257b49c6ee7adff6a600b1ef200}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!Check\-Suffix@{Check\-Suffix}}
+\index{Check\-Suffix@{Check\-Suffix}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{Check\-Suffix}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-I\-Spell\-Affix\-Rule\-::\-Check\-Suffix (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Word}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_a5e203257b49c6ee7adff6a600b1ef200}
+\hypertarget{classCISpellAffixRule_a26166a1ae70b13844a71aa7474c9b880}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!Flag@{Flag}}
+\index{Flag@{Flag}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{Flag}]{\setlength{\rightskip}{0pt plus 5cm}char C\-I\-Spell\-Affix\-Rule\-::\-Flag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCISpellAffixRule_a26166a1ae70b13844a71aa7474c9b880}
+\hypertarget{classCISpellAffixRule_a9bd79ef6440a7ed12f781489908feebb}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!Is\-Cross\-Product@{Is\-Cross\-Product}}
+\index{Is\-Cross\-Product@{Is\-Cross\-Product}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{Is\-Cross\-Product}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-I\-Spell\-Affix\-Rule\-::\-Is\-Cross\-Product (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCISpellAffixRule_a9bd79ef6440a7ed12f781489908feebb}
+\hypertarget{classCISpellAffixRule_af26a7bd9fbf8d198d23ab8ccd25df7ab}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!Is\-Prefix@{Is\-Prefix}}
+\index{Is\-Prefix@{Is\-Prefix}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{Is\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-I\-Spell\-Affix\-Rule\-::\-Is\-Prefix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCISpellAffixRule_af26a7bd9fbf8d198d23ab8ccd25df7ab}
+\hypertarget{classCISpellAffixRule_a3cabbaa9a8df8211b6c649ab19fde5c5}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!Strip\-Append\-Prefix@{Strip\-Append\-Prefix}}
+\index{Strip\-Append\-Prefix@{Strip\-Append\-Prefix}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{Strip\-Append\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-I\-Spell\-Affix\-Rule\-::\-Strip\-Append\-Prefix (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Word}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_a3cabbaa9a8df8211b6c649ab19fde5c5}
+\hypertarget{classCISpellAffixRule_a5bd501dcbc5d5f94661c9f7b77d0888f}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!Strip\-Append\-Suffix@{Strip\-Append\-Suffix}}
+\index{Strip\-Append\-Suffix@{Strip\-Append\-Suffix}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{Strip\-Append\-Suffix}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-I\-Spell\-Affix\-Rule\-::\-Strip\-Append\-Suffix (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Word}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_a5bd501dcbc5d5f94661c9f7b77d0888f}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCISpellAffixRule_a13defbb631de5b0209ec803fdf1c7d74}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!m\-\_\-b\-Cross\-Product@{m\-\_\-b\-Cross\-Product}}
+\index{m\-\_\-b\-Cross\-Product@{m\-\_\-b\-Cross\-Product}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{m\-\_\-b\-Cross\-Product}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-I\-Spell\-Affix\-Rule\-::m\-\_\-b\-Cross\-Product\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_a13defbb631de5b0209ec803fdf1c7d74}
+\hypertarget{classCISpellAffixRule_a6295e3422c29e64d7e7b9c7d046bfd27}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!m\-\_\-c\-Flag@{m\-\_\-c\-Flag}}
+\index{m\-\_\-c\-Flag@{m\-\_\-c\-Flag}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{m\-\_\-c\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}char C\-I\-Spell\-Affix\-Rule\-::m\-\_\-c\-Flag\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_a6295e3422c29e64d7e7b9c7d046bfd27}
+\hypertarget{classCISpellAffixRule_a8dccbe47782c84f9ebe73fbd02e8ca32}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!m\-\_\-e\-Rule@{m\-\_\-e\-Rule}}
+\index{m\-\_\-e\-Rule@{m\-\_\-e\-Rule}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{m\-\_\-e\-Rule}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rule\-Type\-\_\-e} C\-I\-Spell\-Affix\-Rule\-::m\-\_\-e\-Rule\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_a8dccbe47782c84f9ebe73fbd02e8ca32}
+\hypertarget{classCISpellAffixRule_a3de35e2f00e76058dd0f188428aef9ef}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!m\-\_\-i\-Append\-Len@{m\-\_\-i\-Append\-Len}}
+\index{m\-\_\-i\-Append\-Len@{m\-\_\-i\-Append\-Len}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{m\-\_\-i\-Append\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-I\-Spell\-Affix\-Rule\-::m\-\_\-i\-Append\-Len\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_a3de35e2f00e76058dd0f188428aef9ef}
+\hypertarget{classCISpellAffixRule_a5c91ca614f6d1ed3231324f39831eb4c}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!m\-\_\-i\-Cond\-Len@{m\-\_\-i\-Cond\-Len}}
+\index{m\-\_\-i\-Cond\-Len@{m\-\_\-i\-Cond\-Len}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{m\-\_\-i\-Cond\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-I\-Spell\-Affix\-Rule\-::m\-\_\-i\-Cond\-Len\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_a5c91ca614f6d1ed3231324f39831eb4c}
+\hypertarget{classCISpellAffixRule_aac9fae1dc9801e813c84a0ae3946d3cf}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!m\-\_\-i\-Strip\-Len@{m\-\_\-i\-Strip\-Len}}
+\index{m\-\_\-i\-Strip\-Len@{m\-\_\-i\-Strip\-Len}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{m\-\_\-i\-Strip\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-I\-Spell\-Affix\-Rule\-::m\-\_\-i\-Strip\-Len\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_aac9fae1dc9801e813c84a0ae3946d3cf}
+\hypertarget{classCISpellAffixRule_ad44297473682f3d0222ca7135b15694c}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!m\-\_\-i\-Word\-Len@{m\-\_\-i\-Word\-Len}}
+\index{m\-\_\-i\-Word\-Len@{m\-\_\-i\-Word\-Len}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{m\-\_\-i\-Word\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-I\-Spell\-Affix\-Rule\-::m\-\_\-i\-Word\-Len\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_ad44297473682f3d0222ca7135b15694c}
+\hypertarget{classCISpellAffixRule_aad91d84548c2fe0b699d4fd715c1675b}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!m\-\_\-s\-Append@{m\-\_\-s\-Append}}
+\index{m\-\_\-s\-Append@{m\-\_\-s\-Append}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{m\-\_\-s\-Append}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-I\-Spell\-Affix\-Rule\-::m\-\_\-s\-Append\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_aad91d84548c2fe0b699d4fd715c1675b}
+\hypertarget{classCISpellAffixRule_a8a940c1a5a8c35a8982c8ad998424772}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!m\-\_\-s\-Condition@{m\-\_\-s\-Condition}}
+\index{m\-\_\-s\-Condition@{m\-\_\-s\-Condition}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{m\-\_\-s\-Condition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-I\-Spell\-Affix\-Rule\-::m\-\_\-s\-Condition\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_a8a940c1a5a8c35a8982c8ad998424772}
+\hypertarget{classCISpellAffixRule_af16db690d0785a6906f4be50f14e1eea}{\index{C\-I\-Spell\-Affix\-Rule@{C\-I\-Spell\-Affix\-Rule}!m\-\_\-s\-Strip@{m\-\_\-s\-Strip}}
+\index{m\-\_\-s\-Strip@{m\-\_\-s\-Strip}!CISpellAffixRule@{C\-I\-Spell\-Affix\-Rule}}
+\subsubsection[{m\-\_\-s\-Strip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-I\-Spell\-Affix\-Rule\-::m\-\_\-s\-Strip\hspace{0.3cm}{\ttfamily [private]}}}\label{classCISpellAffixRule_af16db690d0785a6906f4be50f14e1eea}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{spelldump_8cpp}{spelldump.\-cpp}\end{DoxyCompactItemize}

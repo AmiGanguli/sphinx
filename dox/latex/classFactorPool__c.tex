@@ -1,0 +1,183 @@
+\hypertarget{classFactorPool__c}{\section{Factor\-Pool\-\_\-c Class Reference}
+\label{classFactorPool__c}\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFactorPool__c_ae1d42049bbad032c75345e124ab4333c}{Factor\-Pool\-\_\-c} ()
+\item 
+void \hyperlink{classFactorPool__c_a87bc60a396d053f18efc8445402ec36e}{Prealloc} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Element\-Size, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} n\-Elements)
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classFactorPool__c_a4bb0e82b7af4f7e5e9885a67a7b0a44c}{Alloc} ()
+\item 
+void \hyperlink{classFactorPool__c_a54c5b83f000ba9aa5b14ce33eff8baf2}{Free} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Ptr)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classFactorPool__c_ad934a7ea9eccfc156973558cb7873d00}{Get\-Element\-Size} () const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classFactorPool__c_aae281bd608966cdc825e4e997ceb71ea}{Get\-Int\-Element\-Size} () const 
+\item 
+void \hyperlink{classFactorPool__c_a444612ddb6cd3db7c6bae21b7d071362}{Add\-To\-Hash} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Id, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Packed)
+\item 
+void \hyperlink{classFactorPool__c_a9890a2b146eeb700d378b7958916ce55}{Add\-Ref} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Id)
+\item 
+void \hyperlink{classFactorPool__c_aca0e9bfd2578fc4309c810af17c1adcd}{Release} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Id)
+\item 
+void \hyperlink{classFactorPool__c_a71715faa95d755ff7e2d3cd704672a9c}{Flush} ()
+\item 
+bool \hyperlink{classFactorPool__c_a78f748f0589a385553a43241e1effc5f}{Is\-Initialized} () const 
+\item 
+\hyperlink{sphinxint_8h_ad10cf8fddc53077dfb9d731819db9ec0}{Sph\-Factor\-Hash\-\_\-t} $\ast$ \hyperlink{classFactorPool__c_a1780c44f5f3042fb00019f04987ba65d}{Get\-Hash\-Ptr} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structSphFactorHashEntry__t}{Sph\-Factor\-Hash\-Entry\-\_\-t} $\ast$ \hyperlink{classFactorPool__c_a07d351b7529022a507badeedcdd9e1ea}{Find} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Id) const 
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classFactorPool__c_a9825714e2a2e247d5b5c374498cde834}{Hash\-Func} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Id) const 
+\item 
+bool \hyperlink{classFactorPool__c_aa8c6178b83eb36d6eceb61fced1571de}{Flush\-Entry} (\hyperlink{structSphFactorHashEntry__t}{Sph\-Factor\-Hash\-Entry\-\_\-t} $\ast$p\-Entry)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classFactorPool__c_a51c57e60009fab7fcb3d7b839ad0ab1d}{m\-\_\-i\-Element\-Size}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classFactorPool__c_a74c68e829a00e961470d73356f3c1a82}{m\-\_\-d\-Pool}
+\item 
+\hyperlink{sphinxint_8h_ad10cf8fddc53077dfb9d731819db9ec0}{Sph\-Factor\-Hash\-\_\-t} \hyperlink{classFactorPool__c_a133127dd7c4a066892912f37d940b2fb}{m\-\_\-d\-Hash}
+\item 
+\hyperlink{classCSphFreeList}{C\-Sph\-Free\-List} \hyperlink{classFactorPool__c_a346e589e7a98dbce51049d6eec4e53f1}{m\-\_\-d\-Free}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFactorPool__c_ae1d42049bbad032c75345e124ab4333c}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}}
+\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Factor\-Pool\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Factor\-Pool\-\_\-c\-::\-Factor\-Pool\-\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFactorPool__c_ae1d42049bbad032c75345e124ab4333c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFactorPool__c_a9890a2b146eeb700d378b7958916ce55}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Add\-Ref@{Add\-Ref}}
+\index{Add\-Ref@{Add\-Ref}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Add\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void Factor\-Pool\-\_\-c\-::\-Add\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Id}
+\end{DoxyParamCaption}
+)}}\label{classFactorPool__c_a9890a2b146eeb700d378b7958916ce55}
+\hypertarget{classFactorPool__c_a444612ddb6cd3db7c6bae21b7d071362}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Add\-To\-Hash@{Add\-To\-Hash}}
+\index{Add\-To\-Hash@{Add\-To\-Hash}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Add\-To\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}void Factor\-Pool\-\_\-c\-::\-Add\-To\-Hash (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Id, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Packed}
+\end{DoxyParamCaption}
+)}}\label{classFactorPool__c_a444612ddb6cd3db7c6bae21b7d071362}
+\hypertarget{classFactorPool__c_a4bb0e82b7af4f7e5e9885a67a7b0a44c}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Alloc@{Alloc}}
+\index{Alloc@{Alloc}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Alloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} $\ast$ Factor\-Pool\-\_\-c\-::\-Alloc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFactorPool__c_a4bb0e82b7af4f7e5e9885a67a7b0a44c}
+\hypertarget{classFactorPool__c_a07d351b7529022a507badeedcdd9e1ea}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Find@{Find}}
+\index{Find@{Find}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Factor\-Hash\-Entry\-\_\-t} $\ast$ Factor\-Pool\-\_\-c\-::\-Find (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classFactorPool__c_a07d351b7529022a507badeedcdd9e1ea}
+\hypertarget{classFactorPool__c_a71715faa95d755ff7e2d3cd704672a9c}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Flush@{Flush}}
+\index{Flush@{Flush}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Flush}]{\setlength{\rightskip}{0pt plus 5cm}void Factor\-Pool\-\_\-c\-::\-Flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFactorPool__c_a71715faa95d755ff7e2d3cd704672a9c}
+\hypertarget{classFactorPool__c_aa8c6178b83eb36d6eceb61fced1571de}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Flush\-Entry@{Flush\-Entry}}
+\index{Flush\-Entry@{Flush\-Entry}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Flush\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}bool Factor\-Pool\-\_\-c\-::\-Flush\-Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Factor\-Hash\-Entry\-\_\-t} $\ast$}]{p\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classFactorPool__c_aa8c6178b83eb36d6eceb61fced1571de}
+\hypertarget{classFactorPool__c_a54c5b83f000ba9aa5b14ce33eff8baf2}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Free@{Free}}
+\index{Free@{Free}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Free}]{\setlength{\rightskip}{0pt plus 5cm}void Factor\-Pool\-\_\-c\-::\-Free (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{classFactorPool__c_a54c5b83f000ba9aa5b14ce33eff8baf2}
+\hypertarget{classFactorPool__c_ad934a7ea9eccfc156973558cb7873d00}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Get\-Element\-Size@{Get\-Element\-Size}}
+\index{Get\-Element\-Size@{Get\-Element\-Size}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Get\-Element\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Factor\-Pool\-\_\-c\-::\-Get\-Element\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classFactorPool__c_ad934a7ea9eccfc156973558cb7873d00}
+\hypertarget{classFactorPool__c_a1780c44f5f3042fb00019f04987ba65d}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Get\-Hash\-Ptr@{Get\-Hash\-Ptr}}
+\index{Get\-Hash\-Ptr@{Get\-Hash\-Ptr}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Get\-Hash\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Factor\-Hash\-\_\-t} $\ast$ Factor\-Pool\-\_\-c\-::\-Get\-Hash\-Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFactorPool__c_a1780c44f5f3042fb00019f04987ba65d}
+\hypertarget{classFactorPool__c_aae281bd608966cdc825e4e997ceb71ea}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Get\-Int\-Element\-Size@{Get\-Int\-Element\-Size}}
+\index{Get\-Int\-Element\-Size@{Get\-Int\-Element\-Size}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Get\-Int\-Element\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Factor\-Pool\-\_\-c\-::\-Get\-Int\-Element\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classFactorPool__c_aae281bd608966cdc825e4e997ceb71ea}
+\hypertarget{classFactorPool__c_a9825714e2a2e247d5b5c374498cde834}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Hash\-Func@{Hash\-Func}}
+\index{Hash\-Func@{Hash\-Func}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Hash\-Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} Factor\-Pool\-\_\-c\-::\-Hash\-Func (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classFactorPool__c_a9825714e2a2e247d5b5c374498cde834}
+\hypertarget{classFactorPool__c_a78f748f0589a385553a43241e1effc5f}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Is\-Initialized@{Is\-Initialized}}
+\index{Is\-Initialized@{Is\-Initialized}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Is\-Initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool Factor\-Pool\-\_\-c\-::\-Is\-Initialized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classFactorPool__c_a78f748f0589a385553a43241e1effc5f}
+\hypertarget{classFactorPool__c_a87bc60a396d053f18efc8445402ec36e}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Prealloc@{Prealloc}}
+\index{Prealloc@{Prealloc}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Prealloc}]{\setlength{\rightskip}{0pt plus 5cm}void Factor\-Pool\-\_\-c\-::\-Prealloc (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Element\-Size, }
+\item[{{\bf int}}]{n\-Elements}
+\end{DoxyParamCaption}
+)}}\label{classFactorPool__c_a87bc60a396d053f18efc8445402ec36e}
+\hypertarget{classFactorPool__c_aca0e9bfd2578fc4309c810af17c1adcd}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!Release@{Release}}
+\index{Release@{Release}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{Release}]{\setlength{\rightskip}{0pt plus 5cm}void Factor\-Pool\-\_\-c\-::\-Release (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Id}
+\end{DoxyParamCaption}
+)}}\label{classFactorPool__c_aca0e9bfd2578fc4309c810af17c1adcd}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classFactorPool__c_a346e589e7a98dbce51049d6eec4e53f1}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!m\-\_\-d\-Free@{m\-\_\-d\-Free}}
+\index{m\-\_\-d\-Free@{m\-\_\-d\-Free}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Free}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Free\-List} Factor\-Pool\-\_\-c\-::m\-\_\-d\-Free\hspace{0.3cm}{\ttfamily [private]}}}\label{classFactorPool__c_a346e589e7a98dbce51049d6eec4e53f1}
+\hypertarget{classFactorPool__c_a133127dd7c4a066892912f37d940b2fb}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!m\-\_\-d\-Hash@{m\-\_\-d\-Hash}}
+\index{m\-\_\-d\-Hash@{m\-\_\-d\-Hash}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Factor\-Hash\-\_\-t} Factor\-Pool\-\_\-c\-::m\-\_\-d\-Hash\hspace{0.3cm}{\ttfamily [private]}}}\label{classFactorPool__c_a133127dd7c4a066892912f37d940b2fb}
+\hypertarget{classFactorPool__c_a74c68e829a00e961470d73356f3c1a82}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!m\-\_\-d\-Pool@{m\-\_\-d\-Pool}}
+\index{m\-\_\-d\-Pool@{m\-\_\-d\-Pool}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf B\-Y\-T\-E}$>$ Factor\-Pool\-\_\-c\-::m\-\_\-d\-Pool\hspace{0.3cm}{\ttfamily [private]}}}\label{classFactorPool__c_a74c68e829a00e961470d73356f3c1a82}
+\hypertarget{classFactorPool__c_a51c57e60009fab7fcb3d7b839ad0ab1d}{\index{Factor\-Pool\-\_\-c@{Factor\-Pool\-\_\-c}!m\-\_\-i\-Element\-Size@{m\-\_\-i\-Element\-Size}}
+\index{m\-\_\-i\-Element\-Size@{m\-\_\-i\-Element\-Size}!FactorPool_c@{Factor\-Pool\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Element\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Factor\-Pool\-\_\-c\-::m\-\_\-i\-Element\-Size\hspace{0.3cm}{\ttfamily [private]}}}\label{classFactorPool__c_a51c57e60009fab7fcb3d7b839ad0ab1d}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsearch_8cpp}{sphinxsearch.\-cpp}\end{DoxyCompactItemize}

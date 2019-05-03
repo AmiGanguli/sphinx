@@ -1,0 +1,93 @@
+\hypertarget{classCSphQueryNodeCache}{\section{C\-Sph\-Query\-Node\-Cache Class Reference}
+\label{classCSphQueryNodeCache}\index{C\-Sph\-Query\-Node\-Cache@{C\-Sph\-Query\-Node\-Cache}}
+}
+
+
+intra-\/batch node cache  
+
+
+
+
+{\ttfamily \#include $<$sphinxsearch.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphQueryNodeCache_ab2c1335849b042b162207b929307f7dc}{C\-Sph\-Query\-Node\-Cache} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Cells, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} Max\-Cached\-Docs, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} Max\-Cached\-Hits)
+\item 
+\hyperlink{classCSphQueryNodeCache_a2a34ffa46dc20e01cb7e53666f2d6a3a}{$\sim$\-C\-Sph\-Query\-Node\-Cache} ()
+\item 
+\hyperlink{classExtNode__i}{Ext\-Node\-\_\-i} $\ast$ \hyperlink{classCSphQueryNodeCache_a2b9eed496e0981dfe6a58279de094947}{Create\-Proxy} (\hyperlink{classExtNode__i}{Ext\-Node\-\_\-i} $\ast$p\-Child, const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Raw\-Child, const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classNodeCacheContainer__t}{Node\-Cache\-Container\-\_\-t} $\ast$ \hyperlink{classCSphQueryNodeCache_aec59621ee1b07bb83caea0a2b24dd0ca}{m\-\_\-p\-Pool}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryNodeCache_a14cf24fd5d3b6171033d44337cecc365}{m\-\_\-i\-Max\-Cached\-Docs}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryNodeCache_aed09ffd75262e5a617fb5fbac132869f}{m\-\_\-i\-Max\-Cached\-Hits}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCSphQueryNodeCache_ad23beeca56c9f2e242551a4306c1f8ab}{Node\-Cache\-Container\-\_\-t}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+intra-\/batch node cache 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphQueryNodeCache_ab2c1335849b042b162207b929307f7dc}{\index{C\-Sph\-Query\-Node\-Cache@{C\-Sph\-Query\-Node\-Cache}!C\-Sph\-Query\-Node\-Cache@{C\-Sph\-Query\-Node\-Cache}}
+\index{C\-Sph\-Query\-Node\-Cache@{C\-Sph\-Query\-Node\-Cache}!CSphQueryNodeCache@{C\-Sph\-Query\-Node\-Cache}}
+\subsubsection[{C\-Sph\-Query\-Node\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-Node\-Cache\-::\-C\-Sph\-Query\-Node\-Cache (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Cells, }
+\item[{{\bf int}}]{Max\-Cached\-Docs, }
+\item[{{\bf int}}]{Max\-Cached\-Hits}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryNodeCache_ab2c1335849b042b162207b929307f7dc}
+\hypertarget{classCSphQueryNodeCache_a2a34ffa46dc20e01cb7e53666f2d6a3a}{\index{C\-Sph\-Query\-Node\-Cache@{C\-Sph\-Query\-Node\-Cache}!$\sim$\-C\-Sph\-Query\-Node\-Cache@{$\sim$\-C\-Sph\-Query\-Node\-Cache}}
+\index{$\sim$\-C\-Sph\-Query\-Node\-Cache@{$\sim$\-C\-Sph\-Query\-Node\-Cache}!CSphQueryNodeCache@{C\-Sph\-Query\-Node\-Cache}}
+\subsubsection[{$\sim$\-C\-Sph\-Query\-Node\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-Node\-Cache\-::$\sim$\-C\-Sph\-Query\-Node\-Cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryNodeCache_a2a34ffa46dc20e01cb7e53666f2d6a3a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphQueryNodeCache_a2b9eed496e0981dfe6a58279de094947}{\index{C\-Sph\-Query\-Node\-Cache@{C\-Sph\-Query\-Node\-Cache}!Create\-Proxy@{Create\-Proxy}}
+\index{Create\-Proxy@{Create\-Proxy}!CSphQueryNodeCache@{C\-Sph\-Query\-Node\-Cache}}
+\subsubsection[{Create\-Proxy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ext\-Node\-\_\-i} $\ast$ C\-Sph\-Query\-Node\-Cache\-::\-Create\-Proxy (
+\begin{DoxyParamCaption}
+\item[{{\bf Ext\-Node\-\_\-i} $\ast$}]{p\-Child, }
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Raw\-Child, }
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryNodeCache_a2b9eed496e0981dfe6a58279de094947}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCSphQueryNodeCache_ad23beeca56c9f2e242551a4306c1f8ab}{\index{C\-Sph\-Query\-Node\-Cache@{C\-Sph\-Query\-Node\-Cache}!Node\-Cache\-Container\-\_\-t@{Node\-Cache\-Container\-\_\-t}}
+\index{Node\-Cache\-Container\-\_\-t@{Node\-Cache\-Container\-\_\-t}!CSphQueryNodeCache@{C\-Sph\-Query\-Node\-Cache}}
+\subsubsection[{Node\-Cache\-Container\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Node\-Cache\-Container\-\_\-t}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphQueryNodeCache_ad23beeca56c9f2e242551a4306c1f8ab}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphQueryNodeCache_a14cf24fd5d3b6171033d44337cecc365}{\index{C\-Sph\-Query\-Node\-Cache@{C\-Sph\-Query\-Node\-Cache}!m\-\_\-i\-Max\-Cached\-Docs@{m\-\_\-i\-Max\-Cached\-Docs}}
+\index{m\-\_\-i\-Max\-Cached\-Docs@{m\-\_\-i\-Max\-Cached\-Docs}!CSphQueryNodeCache@{C\-Sph\-Query\-Node\-Cache}}
+\subsubsection[{m\-\_\-i\-Max\-Cached\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Node\-Cache\-::m\-\_\-i\-Max\-Cached\-Docs\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphQueryNodeCache_a14cf24fd5d3b6171033d44337cecc365}
+\hypertarget{classCSphQueryNodeCache_aed09ffd75262e5a617fb5fbac132869f}{\index{C\-Sph\-Query\-Node\-Cache@{C\-Sph\-Query\-Node\-Cache}!m\-\_\-i\-Max\-Cached\-Hits@{m\-\_\-i\-Max\-Cached\-Hits}}
+\index{m\-\_\-i\-Max\-Cached\-Hits@{m\-\_\-i\-Max\-Cached\-Hits}!CSphQueryNodeCache@{C\-Sph\-Query\-Node\-Cache}}
+\subsubsection[{m\-\_\-i\-Max\-Cached\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Node\-Cache\-::m\-\_\-i\-Max\-Cached\-Hits\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphQueryNodeCache_aed09ffd75262e5a617fb5fbac132869f}
+\hypertarget{classCSphQueryNodeCache_aec59621ee1b07bb83caea0a2b24dd0ca}{\index{C\-Sph\-Query\-Node\-Cache@{C\-Sph\-Query\-Node\-Cache}!m\-\_\-p\-Pool@{m\-\_\-p\-Pool}}
+\index{m\-\_\-p\-Pool@{m\-\_\-p\-Pool}!CSphQueryNodeCache@{C\-Sph\-Query\-Node\-Cache}}
+\subsubsection[{m\-\_\-p\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Node\-Cache\-Container\-\_\-t}$\ast$ C\-Sph\-Query\-Node\-Cache\-::m\-\_\-p\-Pool\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphQueryNodeCache_aec59621ee1b07bb83caea0a2b24dd0ca}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsearch_8h}{sphinxsearch.\-h}\item 
+src/\hyperlink{sphinxsearch_8cpp}{sphinxsearch.\-cpp}\end{DoxyCompactItemize}

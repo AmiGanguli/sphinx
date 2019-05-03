@@ -1,0 +1,88 @@
+\hypertarget{sphinxsearch_8h}{\section{src/sphinxsearch.h File Reference}
+\label{sphinxsearch_8h}\index{src/sphinxsearch.\-h@{src/sphinxsearch.\-h}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxquery.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structSkiplistEntry__t}{Skiplist\-Entry\-\_\-t}
+\begin{DoxyCompactList}\small\item\em decoder state saved at a certain offset \end{DoxyCompactList}\item 
+class \hyperlink{classISphQword}{I\-Sph\-Qword}
+\begin{DoxyCompactList}\small\item\em term, searcher view \end{DoxyCompactList}\item 
+class \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup}
+\item 
+class \hyperlink{classISphRanker}{I\-Sph\-Ranker}
+\begin{DoxyCompactList}\small\item\em generic ranker interface \end{DoxyCompactList}\item 
+struct \hyperlink{structSphHitMark__t}{Sph\-Hit\-Mark\-\_\-t}
+\begin{DoxyCompactList}\small\item\em hit mark, used for snippets generation \end{DoxyCompactList}\item 
+class \hyperlink{classCSphHitMarker}{C\-Sph\-Hit\-Marker}
+\begin{DoxyCompactList}\small\item\em hit marker, used for snippets generation \end{DoxyCompactList}\item 
+class \hyperlink{classCSphQueryNodeCache}{C\-Sph\-Query\-Node\-Cache}
+\begin{DoxyCompactList}\small\item\em intra-\/batch node cache \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4}{Term\-Pos\-Filter\-\_\-e} \{ \\*
+\hyperlink{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4ac23eae3a408afc7cf93781c4bb881183}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-N\-O\-N\-E} = 0, 
+\hyperlink{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4a4c287870755b59fbeb0f9d3e0923afb6}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-L\-I\-M\-I\-T} = 1, 
+\hyperlink{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4aaf407d1f0dcfb8035c07c8dcfb4b2942}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T} = 2, 
+\hyperlink{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4aa6e9b41c1156faee5b236ba5765232fc}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-E\-N\-D} = 3, 
+\\*
+\hyperlink{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4abc424c9918c81a04636c82e900b1d45d}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T\-E\-N\-D} = 4, 
+\hyperlink{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4a3b8f3b989ee6bd4ac13153d4ce1c67e5}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-Z\-O\-N\-E\-S} = 5
+ \}
+\begin{DoxyCompactList}\small\item\em term modifiers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classISphRanker}{I\-Sph\-Ranker} $\ast$ \hyperlink{sphinxsearch_8h_a04e18a75b05aff8a1d2c411e39dd1fc5}{sph\-Create\-Ranker} (const \hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} \&t\-X\-Q, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$p\-Result, const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Term\-Setup, const \hyperlink{classCSphQueryContext}{C\-Sph\-Query\-Context} \&t\-Ctx, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema)
+\begin{DoxyCompactList}\small\item\em factory \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4}{\index{sphinxsearch.\-h@{sphinxsearch.\-h}!Term\-Pos\-Filter\-\_\-e@{Term\-Pos\-Filter\-\_\-e}}
+\index{Term\-Pos\-Filter\-\_\-e@{Term\-Pos\-Filter\-\_\-e}!sphinxsearch.h@{sphinxsearch.\-h}}
+\subsubsection[{Term\-Pos\-Filter\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Term\-Pos\-Filter\-\_\-e}}}\label{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4}
+
+
+term modifiers 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-N\-O\-N\-E@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-N\-O\-N\-E}!sphinxsearch.\-h@{sphinxsearch.\-h}}\index{sphinxsearch.\-h@{sphinxsearch.\-h}!T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-N\-O\-N\-E@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-N\-O\-N\-E}}\item[{\em 
+\hypertarget{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4ac23eae3a408afc7cf93781c4bb881183}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-N\-O\-N\-E}\label{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4ac23eae3a408afc7cf93781c4bb881183}
+}]\index{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-L\-I\-M\-I\-T@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-L\-I\-M\-I\-T}!sphinxsearch.\-h@{sphinxsearch.\-h}}\index{sphinxsearch.\-h@{sphinxsearch.\-h}!T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-L\-I\-M\-I\-T@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-L\-I\-M\-I\-T}}\item[{\em 
+\hypertarget{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4a4c287870755b59fbeb0f9d3e0923afb6}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-L\-I\-M\-I\-T}\label{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4a4c287870755b59fbeb0f9d3e0923afb6}
+}]\index{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T}!sphinxsearch.\-h@{sphinxsearch.\-h}}\index{sphinxsearch.\-h@{sphinxsearch.\-h}!T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T}}\item[{\em 
+\hypertarget{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4aaf407d1f0dcfb8035c07c8dcfb4b2942}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T}\label{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4aaf407d1f0dcfb8035c07c8dcfb4b2942}
+}]\index{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-E\-N\-D@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-E\-N\-D}!sphinxsearch.\-h@{sphinxsearch.\-h}}\index{sphinxsearch.\-h@{sphinxsearch.\-h}!T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-E\-N\-D@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-E\-N\-D}}\item[{\em 
+\hypertarget{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4aa6e9b41c1156faee5b236ba5765232fc}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-E\-N\-D}\label{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4aa6e9b41c1156faee5b236ba5765232fc}
+}]\index{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T\-E\-N\-D@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T\-E\-N\-D}!sphinxsearch.\-h@{sphinxsearch.\-h}}\index{sphinxsearch.\-h@{sphinxsearch.\-h}!T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T\-E\-N\-D@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T\-E\-N\-D}}\item[{\em 
+\hypertarget{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4abc424c9918c81a04636c82e900b1d45d}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-F\-I\-E\-L\-D\-\_\-\-S\-T\-A\-R\-T\-E\-N\-D}\label{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4abc424c9918c81a04636c82e900b1d45d}
+}]\index{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-Z\-O\-N\-E\-S@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-Z\-O\-N\-E\-S}!sphinxsearch.\-h@{sphinxsearch.\-h}}\index{sphinxsearch.\-h@{sphinxsearch.\-h}!T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-Z\-O\-N\-E\-S@{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-Z\-O\-N\-E\-S}}\item[{\em 
+\hypertarget{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4a3b8f3b989ee6bd4ac13153d4ce1c67e5}{T\-E\-R\-M\-\_\-\-P\-O\-S\-\_\-\-Z\-O\-N\-E\-S}\label{sphinxsearch_8h_a23d5d2534bc2d01c24c3e583c21f7eb4a3b8f3b989ee6bd4ac13153d4ce1c67e5}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxsearch_8h_a04e18a75b05aff8a1d2c411e39dd1fc5}{\index{sphinxsearch.\-h@{sphinxsearch.\-h}!sph\-Create\-Ranker@{sph\-Create\-Ranker}}
+\index{sph\-Create\-Ranker@{sph\-Create\-Ranker}!sphinxsearch.h@{sphinxsearch.\-h}}
+\subsubsection[{sph\-Create\-Ranker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Ranker}$\ast$ sph\-Create\-Ranker (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Query\-\_\-t} \&}]{t\-X\-Q, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$}]{p\-Result, }
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Term\-Setup, }
+\item[{const {\bf C\-Sph\-Query\-Context} \&}]{t\-Ctx, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema}
+\end{DoxyParamCaption}
+)}}\label{sphinxsearch_8h_a04e18a75b05aff8a1d2c411e39dd1fc5}
+
+
+factory 
+

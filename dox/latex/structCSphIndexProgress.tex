@@ -1,0 +1,202 @@
+\hypertarget{structCSphIndexProgress}{\section{C\-Sph\-Index\-Progress Struct Reference}
+\label{structCSphIndexProgress}\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}}
+}
+
+
+progress info  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2}{Phase\-\_\-e} \{ \\*
+\hyperlink{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2abfbb29d45de5be5bf16e6dba3f8e2086}{P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T}, 
+\hyperlink{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a4cf63466327dd90c8087831c93904fe4}{P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T}, 
+\hyperlink{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a5f6657ec99d4061321998978ba3ce0af}{P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-M\-V\-A}, 
+\hyperlink{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a0b7896add7bb64d2c5aac77a960fb5a6}{P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-\_\-\-M\-V\-A}, 
+\\*
+\hyperlink{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2ab14a881cba5271e22dbee14818a635ce}{P\-H\-A\-S\-E\-\_\-\-M\-E\-R\-G\-E}, 
+\hyperlink{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a54206da45002727e2c2ad280ed0f02d8}{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-R\-E\-A\-D}, 
+\hyperlink{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2ac25cdeccd065940e33ca90a038a270d9}{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-C\-O\-M\-P\-U\-T\-E}
+ \}
+\item 
+typedef void($\ast$ \hyperlink{structCSphIndexProgress_ae4d818fe1ea74a250088fcc7b77fdf63}{Indexing\-Progress\-\_\-fn} )(const \hyperlink{structCSphIndexProgress}{C\-Sph\-Index\-Progress} $\ast$p\-Stat, bool b\-Phase\-End)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphIndexProgress_a2faf5a88d7f2dd081f94e102f412b235}{C\-Sph\-Index\-Progress} ()
+\item 
+const char $\ast$ \hyperlink{structCSphIndexProgress_a6a7ee7fdbe1b326861148178f2cf6a38}{Build\-Message} () const 
+\item 
+void \hyperlink{structCSphIndexProgress_a2930906b8ea2203e87b1b9fe933fec4d}{Show} (bool b\-Phase\-End) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2}{Phase\-\_\-e} \hyperlink{structCSphIndexProgress_acf27cb1ca0bc036494f1e798bdb97483}{m\-\_\-e\-Phase}
+\begin{DoxyCompactList}\small\item\em current indexing phase \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structCSphIndexProgress_aa3fdf708687fd27e13bae4f384f605f0}{m\-\_\-i\-Documents}
+\begin{DoxyCompactList}\small\item\em P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-: documents collected so far. \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structCSphIndexProgress_a778f740e2ce2fa762b042bdb3ae06cbc}{m\-\_\-i\-Bytes}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structCSphIndexProgress_a3f89e51e9c2238eec970ba7de63ba33d}{m\-\_\-i\-Bytes\-Total}
+\begin{DoxyCompactList}\small\item\em P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-R\-E\-A\-D\-: total bytes to read;. \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structCSphIndexProgress_a0ece283c0e0643c6dbc9c16d27cd2b5d}{m\-\_\-i\-Attrs}
+\begin{DoxyCompactList}\small\item\em P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-M\-V\-A, P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-\_\-\-M\-V\-A\-: attrs processed so far. \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{structCSphIndexProgress_a4669529ab4d9ae7ccae6554614eda98b}{m\-\_\-i\-Attrs\-Total}
+\begin{DoxyCompactList}\small\item\em P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-\_\-\-M\-V\-A\-: attrs total. \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{structCSphIndexProgress_af102bc45918ece2ba64682c3e3f7db25}{m\-\_\-i\-Hits}
+\begin{DoxyCompactList}\small\item\em P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-: hits sorted so far. \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{structCSphIndexProgress_ad731d8b12fc557bd27ad3036560f8cd4}{m\-\_\-i\-Hits\-Total}
+\begin{DoxyCompactList}\small\item\em P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-: hits total. \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphIndexProgress_a3a6cc2a33860b5956c7147ce145434f4}{m\-\_\-i\-Words}
+\begin{DoxyCompactList}\small\item\em P\-H\-A\-S\-E\-\_\-\-M\-E\-R\-G\-E\-: words merged so far. \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphIndexProgress_a0b0973438825896226077882ce070e56}{m\-\_\-i\-Done}
+\begin{DoxyCompactList}\small\item\em generic percent, 0..1000 range \end{DoxyCompactList}\item 
+\hyperlink{structCSphIndexProgress_ae4d818fe1ea74a250088fcc7b77fdf63}{Indexing\-Progress\-\_\-fn} \hyperlink{structCSphIndexProgress_a4639ab9f99975ea875afd66c3a3514c3}{m\-\_\-fn\-Progress}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+progress info 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structCSphIndexProgress_ae4d818fe1ea74a250088fcc7b77fdf63}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!Indexing\-Progress\-\_\-fn@{Indexing\-Progress\-\_\-fn}}
+\index{Indexing\-Progress\-\_\-fn@{Indexing\-Progress\-\_\-fn}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{Indexing\-Progress\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( $\ast$ C\-Sph\-Index\-Progress\-::\-Indexing\-Progress\-\_\-fn)(const {\bf C\-Sph\-Index\-Progress} $\ast$p\-Stat, bool b\-Phase\-End)}}\label{structCSphIndexProgress_ae4d818fe1ea74a250088fcc7b77fdf63}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!Phase\-\_\-e@{Phase\-\_\-e}}
+\index{Phase\-\_\-e@{Phase\-\_\-e}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{Phase\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\-Sph\-Index\-Progress\-::\-Phase\-\_\-e}}}\label{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T@{P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T}!C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}}\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T@{P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T}}\item[{\em 
+\hypertarget{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2abfbb29d45de5be5bf16e6dba3f8e2086}{P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T}\label{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2abfbb29d45de5be5bf16e6dba3f8e2086}
+}]document collection phase \index{P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T@{P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T}!C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}}\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T@{P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T}}\item[{\em 
+\hypertarget{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a4cf63466327dd90c8087831c93904fe4}{P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T}\label{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a4cf63466327dd90c8087831c93904fe4}
+}]final sorting phase \index{P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-M\-V\-A@{P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-M\-V\-A}!C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}}\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-M\-V\-A@{P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-M\-V\-A}}\item[{\em 
+\hypertarget{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a5f6657ec99d4061321998978ba3ce0af}{P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-M\-V\-A}\label{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a5f6657ec99d4061321998978ba3ce0af}
+}]multi-\/valued attributes collection phase \index{P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-\_\-\-M\-V\-A@{P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-\_\-\-M\-V\-A}!C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}}\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-\_\-\-M\-V\-A@{P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-\_\-\-M\-V\-A}}\item[{\em 
+\hypertarget{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a0b7896add7bb64d2c5aac77a960fb5a6}{P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-\_\-\-M\-V\-A}\label{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a0b7896add7bb64d2c5aac77a960fb5a6}
+}]multi-\/valued attributes collection phase \index{P\-H\-A\-S\-E\-\_\-\-M\-E\-R\-G\-E@{P\-H\-A\-S\-E\-\_\-\-M\-E\-R\-G\-E}!C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}}\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!P\-H\-A\-S\-E\-\_\-\-M\-E\-R\-G\-E@{P\-H\-A\-S\-E\-\_\-\-M\-E\-R\-G\-E}}\item[{\em 
+\hypertarget{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2ab14a881cba5271e22dbee14818a635ce}{P\-H\-A\-S\-E\-\_\-\-M\-E\-R\-G\-E}\label{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2ab14a881cba5271e22dbee14818a635ce}
+}]index merging \index{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-R\-E\-A\-D@{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-R\-E\-A\-D}!C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}}\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-R\-E\-A\-D@{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-R\-E\-A\-D}}\item[{\em 
+\hypertarget{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a54206da45002727e2c2ad280ed0f02d8}{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-R\-E\-A\-D}\label{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2a54206da45002727e2c2ad280ed0f02d8}
+}]searchd startup, prereading data \index{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-C\-O\-M\-P\-U\-T\-E@{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-C\-O\-M\-P\-U\-T\-E}!C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}}\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-C\-O\-M\-P\-U\-T\-E@{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-C\-O\-M\-P\-U\-T\-E}}\item[{\em 
+\hypertarget{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2ac25cdeccd065940e33ca90a038a270d9}{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-C\-O\-M\-P\-U\-T\-E}\label{structCSphIndexProgress_a9cb9d88169df8a08b63f58ac952f97e2ac25cdeccd065940e33ca90a038a270d9}
+}]searchd startup, indexing attributes \end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphIndexProgress_a2faf5a88d7f2dd081f94e102f412b235}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}}
+\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{C\-Sph\-Index\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Index\-Progress\-::\-C\-Sph\-Index\-Progress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphIndexProgress_a2faf5a88d7f2dd081f94e102f412b235}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphIndexProgress_a6a7ee7fdbe1b326861148178f2cf6a38}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!Build\-Message@{Build\-Message}}
+\index{Build\-Message@{Build\-Message}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{Build\-Message}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ C\-Sph\-Index\-Progress\-::\-Build\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structCSphIndexProgress_a6a7ee7fdbe1b326861148178f2cf6a38}
+builds a message to print W\-A\-R\-N\-I\-N\-G, S\-T\-A\-T\-I\-C B\-U\-F\-F\-E\-R, N\-O\-N-\/\-R\-E\-E\-N\-T\-R\-A\-N\-T \hypertarget{structCSphIndexProgress_a2930906b8ea2203e87b1b9fe933fec4d}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!Show@{Show}}
+\index{Show@{Show}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{Show}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Index\-Progress\-::\-Show (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Phase\-End}
+\end{DoxyParamCaption}
+) const}}\label{structCSphIndexProgress_a2930906b8ea2203e87b1b9fe933fec4d}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphIndexProgress_acf27cb1ca0bc036494f1e798bdb97483}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-e\-Phase@{m\-\_\-e\-Phase}}
+\index{m\-\_\-e\-Phase@{m\-\_\-e\-Phase}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-e\-Phase}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Phase\-\_\-e} C\-Sph\-Index\-Progress\-::m\-\_\-e\-Phase}}\label{structCSphIndexProgress_acf27cb1ca0bc036494f1e798bdb97483}
+
+
+current indexing phase 
+
+\hypertarget{structCSphIndexProgress_a4639ab9f99975ea875afd66c3a3514c3}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-fn\-Progress@{m\-\_\-fn\-Progress}}
+\index{m\-\_\-fn\-Progress@{m\-\_\-fn\-Progress}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-fn\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Indexing\-Progress\-\_\-fn} C\-Sph\-Index\-Progress\-::m\-\_\-fn\-Progress}}\label{structCSphIndexProgress_a4639ab9f99975ea875afd66c3a3514c3}
+\hypertarget{structCSphIndexProgress_a0ece283c0e0643c6dbc9c16d27cd2b5d}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-i\-Attrs@{m\-\_\-i\-Attrs}}
+\index{m\-\_\-i\-Attrs@{m\-\_\-i\-Attrs}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-i\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Index\-Progress\-::m\-\_\-i\-Attrs}}\label{structCSphIndexProgress_a0ece283c0e0643c6dbc9c16d27cd2b5d}
+
+
+P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-\_\-\-M\-V\-A, P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-\_\-\-M\-V\-A\-: attrs processed so far. 
+
+\hypertarget{structCSphIndexProgress_a4669529ab4d9ae7ccae6554614eda98b}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-i\-Attrs\-Total@{m\-\_\-i\-Attrs\-Total}}
+\index{m\-\_\-i\-Attrs\-Total@{m\-\_\-i\-Attrs\-Total}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-i\-Attrs\-Total}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Index\-Progress\-::m\-\_\-i\-Attrs\-Total}}\label{structCSphIndexProgress_a4669529ab4d9ae7ccae6554614eda98b}
+
+
+P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-\_\-\-M\-V\-A\-: attrs total. 
+
+\hypertarget{structCSphIndexProgress_a778f740e2ce2fa762b042bdb3ae06cbc}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-i\-Bytes@{m\-\_\-i\-Bytes}}
+\index{m\-\_\-i\-Bytes@{m\-\_\-i\-Bytes}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-i\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Index\-Progress\-::m\-\_\-i\-Bytes}}\label{structCSphIndexProgress_a778f740e2ce2fa762b042bdb3ae06cbc}
+P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-: bytes collected so far; P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-R\-E\-A\-D\-: bytes read so far; \hypertarget{structCSphIndexProgress_a3f89e51e9c2238eec970ba7de63ba33d}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-i\-Bytes\-Total@{m\-\_\-i\-Bytes\-Total}}
+\index{m\-\_\-i\-Bytes\-Total@{m\-\_\-i\-Bytes\-Total}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-i\-Bytes\-Total}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Index\-Progress\-::m\-\_\-i\-Bytes\-Total}}\label{structCSphIndexProgress_a3f89e51e9c2238eec970ba7de63ba33d}
+
+
+P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-R\-E\-A\-D\-: total bytes to read;. 
+
+\hypertarget{structCSphIndexProgress_aa3fdf708687fd27e13bae4f384f605f0}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-i\-Documents@{m\-\_\-i\-Documents}}
+\index{m\-\_\-i\-Documents@{m\-\_\-i\-Documents}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-i\-Documents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Index\-Progress\-::m\-\_\-i\-Documents}}\label{structCSphIndexProgress_aa3fdf708687fd27e13bae4f384f605f0}
+
+
+P\-H\-A\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-: documents collected so far. 
+
+\hypertarget{structCSphIndexProgress_a0b0973438825896226077882ce070e56}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-i\-Done@{m\-\_\-i\-Done}}
+\index{m\-\_\-i\-Done@{m\-\_\-i\-Done}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-i\-Done}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Index\-Progress\-::m\-\_\-i\-Done}}\label{structCSphIndexProgress_a0b0973438825896226077882ce070e56}
+
+
+generic percent, 0..1000 range 
+
+\hypertarget{structCSphIndexProgress_af102bc45918ece2ba64682c3e3f7db25}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-i\-Hits@{m\-\_\-i\-Hits}}
+\index{m\-\_\-i\-Hits@{m\-\_\-i\-Hits}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-i\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Index\-Progress\-::m\-\_\-i\-Hits}}\label{structCSphIndexProgress_af102bc45918ece2ba64682c3e3f7db25}
+
+
+P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-: hits sorted so far. 
+
+\hypertarget{structCSphIndexProgress_ad731d8b12fc557bd27ad3036560f8cd4}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-i\-Hits\-Total@{m\-\_\-i\-Hits\-Total}}
+\index{m\-\_\-i\-Hits\-Total@{m\-\_\-i\-Hits\-Total}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-i\-Hits\-Total}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Index\-Progress\-::m\-\_\-i\-Hits\-Total}}\label{structCSphIndexProgress_ad731d8b12fc557bd27ad3036560f8cd4}
+
+
+P\-H\-A\-S\-E\-\_\-\-S\-O\-R\-T\-: hits total. 
+
+\hypertarget{structCSphIndexProgress_a3a6cc2a33860b5956c7147ce145434f4}{\index{C\-Sph\-Index\-Progress@{C\-Sph\-Index\-Progress}!m\-\_\-i\-Words@{m\-\_\-i\-Words}}
+\index{m\-\_\-i\-Words@{m\-\_\-i\-Words}!CSphIndexProgress@{C\-Sph\-Index\-Progress}}
+\subsubsection[{m\-\_\-i\-Words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Index\-Progress\-::m\-\_\-i\-Words}}\label{structCSphIndexProgress_a3a6cc2a33860b5956c7147ce145434f4}
+
+
+P\-H\-A\-S\-E\-\_\-\-M\-E\-R\-G\-E\-: words merged so far. 
+
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

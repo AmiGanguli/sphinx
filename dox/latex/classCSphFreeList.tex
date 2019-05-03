@@ -1,0 +1,78 @@
+\hypertarget{classCSphFreeList}{\section{C\-Sph\-Free\-List Class Reference}
+\label{classCSphFreeList}\index{C\-Sph\-Free\-List@{C\-Sph\-Free\-List}}
+}
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphFreeList_aeb8b2e75198cab8f136c6c02f653fb59}{C\-Sph\-Free\-List} ()
+\item 
+void \hyperlink{classCSphFreeList_a2f3320e57b19f7a889aa98e1c9646117}{Reset} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFreeList_afddca2e1ef95ac2d2b5b699808e6e785}{Get} ()
+\item 
+void \hyperlink{classCSphFreeList_a1f270039e76d165eb1a90bbe90f3dc38}{Free} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphTightVector}{C\-Sph\-Tight\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCSphFreeList_a91ad8304b4799ac956a2265db527a643}{m\-\_\-d\-Free}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFreeList_a5643145c0784c147e431092808855402}{m\-\_\-i\-Next\-Free}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphFreeList_a8d56e2f416d19cdd266dd867062c58f2}{m\-\_\-i\-Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphFreeList_aeb8b2e75198cab8f136c6c02f653fb59}{\index{C\-Sph\-Free\-List@{C\-Sph\-Free\-List}!C\-Sph\-Free\-List@{C\-Sph\-Free\-List}}
+\index{C\-Sph\-Free\-List@{C\-Sph\-Free\-List}!CSphFreeList@{C\-Sph\-Free\-List}}
+\subsubsection[{C\-Sph\-Free\-List}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Free\-List\-::\-C\-Sph\-Free\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFreeList_aeb8b2e75198cab8f136c6c02f653fb59}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphFreeList_a1f270039e76d165eb1a90bbe90f3dc38}{\index{C\-Sph\-Free\-List@{C\-Sph\-Free\-List}!Free@{Free}}
+\index{Free@{Free}!CSphFreeList@{C\-Sph\-Free\-List}}
+\subsubsection[{Free}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Free\-List\-::\-Free (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFreeList_a1f270039e76d165eb1a90bbe90f3dc38}
+\hypertarget{classCSphFreeList_afddca2e1ef95ac2d2b5b699808e6e785}{\index{C\-Sph\-Free\-List@{C\-Sph\-Free\-List}!Get@{Get}}
+\index{Get@{Get}!CSphFreeList@{C\-Sph\-Free\-List}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Free\-List\-::\-Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFreeList_afddca2e1ef95ac2d2b5b699808e6e785}
+\hypertarget{classCSphFreeList_a2f3320e57b19f7a889aa98e1c9646117}{\index{C\-Sph\-Free\-List@{C\-Sph\-Free\-List}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphFreeList@{C\-Sph\-Free\-List}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Free\-List\-::\-Reset (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphFreeList_a2f3320e57b19f7a889aa98e1c9646117}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphFreeList_a91ad8304b4799ac956a2265db527a643}{\index{C\-Sph\-Free\-List@{C\-Sph\-Free\-List}!m\-\_\-d\-Free@{m\-\_\-d\-Free}}
+\index{m\-\_\-d\-Free@{m\-\_\-d\-Free}!CSphFreeList@{C\-Sph\-Free\-List}}
+\subsubsection[{m\-\_\-d\-Free}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Tight\-Vector}$<${\bf int}$>$ C\-Sph\-Free\-List\-::m\-\_\-d\-Free\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphFreeList_a91ad8304b4799ac956a2265db527a643}
+\hypertarget{classCSphFreeList_a5643145c0784c147e431092808855402}{\index{C\-Sph\-Free\-List@{C\-Sph\-Free\-List}!m\-\_\-i\-Next\-Free@{m\-\_\-i\-Next\-Free}}
+\index{m\-\_\-i\-Next\-Free@{m\-\_\-i\-Next\-Free}!CSphFreeList@{C\-Sph\-Free\-List}}
+\subsubsection[{m\-\_\-i\-Next\-Free}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Free\-List\-::m\-\_\-i\-Next\-Free\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphFreeList_a5643145c0784c147e431092808855402}
+\hypertarget{classCSphFreeList_a8d56e2f416d19cdd266dd867062c58f2}{\index{C\-Sph\-Free\-List@{C\-Sph\-Free\-List}!m\-\_\-i\-Size@{m\-\_\-i\-Size}}
+\index{m\-\_\-i\-Size@{m\-\_\-i\-Size}!CSphFreeList@{C\-Sph\-Free\-List}}
+\subsubsection[{m\-\_\-i\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Free\-List\-::m\-\_\-i\-Size\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphFreeList_a8d56e2f416d19cdd266dd867062c58f2}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\end{DoxyCompactItemize}

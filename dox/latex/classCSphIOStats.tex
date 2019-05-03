@@ -1,0 +1,125 @@
+\hypertarget{classCSphIOStats}{\section{C\-Sph\-I\-O\-Stats Class Reference}
+\label{classCSphIOStats}\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}}
+}
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphIOStats_abdff9cc9563f4cc3aea256a74e2ff6d2}{C\-Sph\-I\-O\-Stats} ()
+\item 
+\hyperlink{classCSphIOStats_a0901f2b60f739828070fd414189fcaa6}{$\sim$\-C\-Sph\-I\-O\-Stats} ()
+\item 
+void \hyperlink{classCSphIOStats_a2ecfa522d6762df1800a5f864f61fcda}{Start} ()
+\item 
+void \hyperlink{classCSphIOStats_a82eb8047b1bf5c7e67faa91c8201f323}{Stop} ()
+\item 
+void \hyperlink{classCSphIOStats_a9f7c347e757c9f668c0fb4369f2009b0}{Add} (const \hyperlink{classCSphIOStats}{C\-Sph\-I\-O\-Stats} \&b)
+\item 
+bool \hyperlink{classCSphIOStats_aa182a5944a0e35047e6b470e1196d9e4}{Is\-Enabled} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphIOStats_a42836d95e39a1a5d04ebed5be144ac1a}{m\-\_\-i\-Read\-Time}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphIOStats_a2ad9c72a148c73705e2ece50b63ffa09}{m\-\_\-i\-Read\-Ops}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphIOStats_aee077caf4d4d953791b5ed528c46053e}{m\-\_\-i\-Read\-Bytes}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphIOStats_a3617d74b4ad57e3310aab3b488b8482d}{m\-\_\-i\-Write\-Time}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphIOStats_a96e6898d2120e25d31a5fe8bb86864f7}{m\-\_\-i\-Write\-Ops}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphIOStats_a392b3667765a3b3329bb8e3673a192e1}{m\-\_\-i\-Write\-Bytes}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCSphIOStats_a109e7eb1019f08ba258988963fe6485f}{m\-\_\-b\-Enabled}
+\item 
+\hyperlink{classCSphIOStats}{C\-Sph\-I\-O\-Stats} $\ast$ \hyperlink{classCSphIOStats_a32d39551051c96bf8db5d6cebd482d87}{m\-\_\-p\-Prev}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphIOStats_abdff9cc9563f4cc3aea256a74e2ff6d2}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}}
+\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{C\-Sph\-I\-O\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-I\-O\-Stats\-::\-C\-Sph\-I\-O\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphIOStats_abdff9cc9563f4cc3aea256a74e2ff6d2}
+\hypertarget{classCSphIOStats_a0901f2b60f739828070fd414189fcaa6}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!$\sim$\-C\-Sph\-I\-O\-Stats@{$\sim$\-C\-Sph\-I\-O\-Stats}}
+\index{$\sim$\-C\-Sph\-I\-O\-Stats@{$\sim$\-C\-Sph\-I\-O\-Stats}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{$\sim$\-C\-Sph\-I\-O\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-I\-O\-Stats\-::$\sim$\-C\-Sph\-I\-O\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphIOStats_a0901f2b60f739828070fd414189fcaa6}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphIOStats_a9f7c347e757c9f668c0fb4369f2009b0}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!Add@{Add}}
+\index{Add@{Add}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-I\-O\-Stats\-::\-Add (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-I\-O\-Stats} \&}]{b}
+\end{DoxyParamCaption}
+)}}\label{classCSphIOStats_a9f7c347e757c9f668c0fb4369f2009b0}
+\hypertarget{classCSphIOStats_aa182a5944a0e35047e6b470e1196d9e4}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!Is\-Enabled@{Is\-Enabled}}
+\index{Is\-Enabled@{Is\-Enabled}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{Is\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-I\-O\-Stats\-::\-Is\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphIOStats_aa182a5944a0e35047e6b470e1196d9e4}
+\hypertarget{classCSphIOStats_a2ecfa522d6762df1800a5f864f61fcda}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!Start@{Start}}
+\index{Start@{Start}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{Start}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-I\-O\-Stats\-::\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphIOStats_a2ecfa522d6762df1800a5f864f61fcda}
+\hypertarget{classCSphIOStats_a82eb8047b1bf5c7e67faa91c8201f323}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!Stop@{Stop}}
+\index{Stop@{Stop}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{Stop}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-I\-O\-Stats\-::\-Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphIOStats_a82eb8047b1bf5c7e67faa91c8201f323}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphIOStats_a109e7eb1019f08ba258988963fe6485f}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!m\-\_\-b\-Enabled@{m\-\_\-b\-Enabled}}
+\index{m\-\_\-b\-Enabled@{m\-\_\-b\-Enabled}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{m\-\_\-b\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-I\-O\-Stats\-::m\-\_\-b\-Enabled\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIOStats_a109e7eb1019f08ba258988963fe6485f}
+\hypertarget{classCSphIOStats_aee077caf4d4d953791b5ed528c46053e}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!m\-\_\-i\-Read\-Bytes@{m\-\_\-i\-Read\-Bytes}}
+\index{m\-\_\-i\-Read\-Bytes@{m\-\_\-i\-Read\-Bytes}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{m\-\_\-i\-Read\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-I\-O\-Stats\-::m\-\_\-i\-Read\-Bytes}}\label{classCSphIOStats_aee077caf4d4d953791b5ed528c46053e}
+\hypertarget{classCSphIOStats_a2ad9c72a148c73705e2ece50b63ffa09}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!m\-\_\-i\-Read\-Ops@{m\-\_\-i\-Read\-Ops}}
+\index{m\-\_\-i\-Read\-Ops@{m\-\_\-i\-Read\-Ops}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{m\-\_\-i\-Read\-Ops}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-I\-O\-Stats\-::m\-\_\-i\-Read\-Ops}}\label{classCSphIOStats_a2ad9c72a148c73705e2ece50b63ffa09}
+\hypertarget{classCSphIOStats_a42836d95e39a1a5d04ebed5be144ac1a}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!m\-\_\-i\-Read\-Time@{m\-\_\-i\-Read\-Time}}
+\index{m\-\_\-i\-Read\-Time@{m\-\_\-i\-Read\-Time}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{m\-\_\-i\-Read\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-I\-O\-Stats\-::m\-\_\-i\-Read\-Time}}\label{classCSphIOStats_a42836d95e39a1a5d04ebed5be144ac1a}
+\hypertarget{classCSphIOStats_a392b3667765a3b3329bb8e3673a192e1}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!m\-\_\-i\-Write\-Bytes@{m\-\_\-i\-Write\-Bytes}}
+\index{m\-\_\-i\-Write\-Bytes@{m\-\_\-i\-Write\-Bytes}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{m\-\_\-i\-Write\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-I\-O\-Stats\-::m\-\_\-i\-Write\-Bytes}}\label{classCSphIOStats_a392b3667765a3b3329bb8e3673a192e1}
+\hypertarget{classCSphIOStats_a96e6898d2120e25d31a5fe8bb86864f7}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!m\-\_\-i\-Write\-Ops@{m\-\_\-i\-Write\-Ops}}
+\index{m\-\_\-i\-Write\-Ops@{m\-\_\-i\-Write\-Ops}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{m\-\_\-i\-Write\-Ops}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-I\-O\-Stats\-::m\-\_\-i\-Write\-Ops}}\label{classCSphIOStats_a96e6898d2120e25d31a5fe8bb86864f7}
+\hypertarget{classCSphIOStats_a3617d74b4ad57e3310aab3b488b8482d}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!m\-\_\-i\-Write\-Time@{m\-\_\-i\-Write\-Time}}
+\index{m\-\_\-i\-Write\-Time@{m\-\_\-i\-Write\-Time}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{m\-\_\-i\-Write\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-I\-O\-Stats\-::m\-\_\-i\-Write\-Time}}\label{classCSphIOStats_a3617d74b4ad57e3310aab3b488b8482d}
+\hypertarget{classCSphIOStats_a32d39551051c96bf8db5d6cebd482d87}{\index{C\-Sph\-I\-O\-Stats@{C\-Sph\-I\-O\-Stats}!m\-\_\-p\-Prev@{m\-\_\-p\-Prev}}
+\index{m\-\_\-p\-Prev@{m\-\_\-p\-Prev}!CSphIOStats@{C\-Sph\-I\-O\-Stats}}
+\subsubsection[{m\-\_\-p\-Prev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-I\-O\-Stats}$\ast$ C\-Sph\-I\-O\-Stats\-::m\-\_\-p\-Prev\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphIOStats_a32d39551051c96bf8db5d6cebd482d87}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

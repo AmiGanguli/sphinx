@@ -1,0 +1,139 @@
+\hypertarget{sphinxquery_8h}{\section{src/sphinxquery.h File Reference}
+\label{sphinxquery_8h}\index{src/sphinxquery.\-h@{src/sphinxquery.\-h}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structXQKeyword__t}{X\-Q\-Keyword\-\_\-t}
+\begin{DoxyCompactList}\small\item\em extended query word with attached position within atom \end{DoxyCompactList}\item 
+struct \hyperlink{structXQLimitSpec__t}{X\-Q\-Limit\-Spec\-\_\-t}
+\item 
+struct \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t}
+\item 
+struct \hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t}
+\begin{DoxyCompactList}\small\item\em extended query \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23}{X\-Q\-Operator\-\_\-e} \{ \\*
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a6d93c56d20df71e2f7ed266059c23e31}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D}, 
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a9e815001220a8af7bb1b1a4ec5a04423}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-O\-R}, 
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a3c035e87c6eb48407699cfe051b8c919}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-M\-A\-Y\-B\-E}, 
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23ac62e60f3b39c4f8f6634d49cafbf7bbc}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-O\-T}, 
+\\*
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a1f6ce27539206e095fcf652b11df951b}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D\-N\-O\-T}, 
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a56c426eafd4eb3e34a4807438d715453}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-F\-O\-R\-E}, 
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a70637cb38790d76b9d83a65d455dc974}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-H\-R\-A\-S\-E}, 
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a95825382578211c96aabde8a67881932}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-R\-O\-X\-I\-M\-I\-T\-Y}, 
+\\*
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23aca3eb76207b51996b442ade0df8f8332}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-Q\-U\-O\-R\-U\-M}, 
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a97ca2c69fc273b4d1703ff7cde983152}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-E\-A\-R}, 
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a5ccaee06b5028d9fd1e8ac26fdedfa9b}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}, 
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23aba7f1ddf75f2d19de28e40b4bb9f3195}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}, 
+\\*
+\hyperlink{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23ab1f4b98219895c96497fc5ad8117720c}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-U\-L\-L}
+ \}
+\begin{DoxyCompactList}\small\item\em extended query operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sphinxquery_8h_a244272d5eefb4f4dde77d87f1ce4aa02}{sph\-Setup\-Query\-Tokenizer} (\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, bool b\-Wildcards, bool b\-Exact)
+\begin{DoxyCompactList}\small\item\em setup tokenizer for query parsing (ie. add all specials and whatnot) \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxquery_8h_a441798fdb6617fc8ca14ce9d450542c0}{sph\-Parse\-Extended\-Query} (\hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} \&t\-Query, const char $\ast$s\-Query, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, const \hyperlink{classCSphSchema}{C\-Sph\-Schema} $\ast$p\-Schema, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings)
+\item 
+void \hyperlink{sphinxquery_8h_a2ad1db8c08251d0e068b9b52774325e5}{sph\-Optimize\-Boolean} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$$\ast$p\-X\-Q, const \hyperlink{structISphKeywordsStat}{I\-Sph\-Keywords\-Stat} $\ast$p\-Keywords)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxquery_8h_a89700d3de9b8b626a3688fdff79f7708}{sph\-Mark\-Common\-Subtrees} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-X\-Q, const \hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} $\ast$p\-X\-Q)
+\begin{DoxyCompactList}\small\item\em analyze vector of trees and tag common parts of them (to cache them later) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23}{\index{sphinxquery.\-h@{sphinxquery.\-h}!X\-Q\-Operator\-\_\-e@{X\-Q\-Operator\-\_\-e}}
+\index{X\-Q\-Operator\-\_\-e@{X\-Q\-Operator\-\_\-e}!sphinxquery.h@{sphinxquery.\-h}}
+\subsubsection[{X\-Q\-Operator\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf X\-Q\-Operator\-\_\-e}}}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23}
+
+
+extended query operator 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a6d93c56d20df71e2f7ed266059c23e31}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a6d93c56d20df71e2f7ed266059c23e31}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-O\-R@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-O\-R}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-O\-R@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-O\-R}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a9e815001220a8af7bb1b1a4ec5a04423}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-O\-R}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a9e815001220a8af7bb1b1a4ec5a04423}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-M\-A\-Y\-B\-E@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-M\-A\-Y\-B\-E}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-M\-A\-Y\-B\-E@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-M\-A\-Y\-B\-E}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a3c035e87c6eb48407699cfe051b8c919}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-M\-A\-Y\-B\-E}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a3c035e87c6eb48407699cfe051b8c919}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-O\-T@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-O\-T}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-O\-T@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-O\-T}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23ac62e60f3b39c4f8f6634d49cafbf7bbc}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-O\-T}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23ac62e60f3b39c4f8f6634d49cafbf7bbc}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D\-N\-O\-T@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D\-N\-O\-T}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D\-N\-O\-T@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D\-N\-O\-T}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a1f6ce27539206e095fcf652b11df951b}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-A\-N\-D\-N\-O\-T}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a1f6ce27539206e095fcf652b11df951b}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-F\-O\-R\-E@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-F\-O\-R\-E}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-F\-O\-R\-E@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-F\-O\-R\-E}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a56c426eafd4eb3e34a4807438d715453}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-F\-O\-R\-E}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a56c426eafd4eb3e34a4807438d715453}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-H\-R\-A\-S\-E@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-H\-R\-A\-S\-E}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-H\-R\-A\-S\-E@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-H\-R\-A\-S\-E}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a70637cb38790d76b9d83a65d455dc974}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-H\-R\-A\-S\-E}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a70637cb38790d76b9d83a65d455dc974}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-R\-O\-X\-I\-M\-I\-T\-Y@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-R\-O\-X\-I\-M\-I\-T\-Y}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-R\-O\-X\-I\-M\-I\-T\-Y@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-R\-O\-X\-I\-M\-I\-T\-Y}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a95825382578211c96aabde8a67881932}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-R\-O\-X\-I\-M\-I\-T\-Y}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a95825382578211c96aabde8a67881932}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-Q\-U\-O\-R\-U\-M@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-Q\-U\-O\-R\-U\-M}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-Q\-U\-O\-R\-U\-M@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-Q\-U\-O\-R\-U\-M}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23aca3eb76207b51996b442ade0df8f8332}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-Q\-U\-O\-R\-U\-M}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23aca3eb76207b51996b442ade0df8f8332}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-E\-A\-R@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-E\-A\-R}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-E\-A\-R@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-E\-A\-R}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a97ca2c69fc273b4d1703ff7cde983152}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-E\-A\-R}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a97ca2c69fc273b4d1703ff7cde983152}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a5ccaee06b5028d9fd1e8ac26fdedfa9b}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23a5ccaee06b5028d9fd1e8ac26fdedfa9b}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23aba7f1ddf75f2d19de28e40b4bb9f3195}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23aba7f1ddf75f2d19de28e40b4bb9f3195}
+}]\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-U\-L\-L@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-U\-L\-L}!sphinxquery.\-h@{sphinxquery.\-h}}\index{sphinxquery.\-h@{sphinxquery.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-U\-L\-L@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-U\-L\-L}}\item[{\em 
+\hypertarget{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23ab1f4b98219895c96497fc5ad8117720c}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-N\-U\-L\-L}\label{sphinxquery_8h_af718e08acd0a4351ab9a4cb253a75c23ab1f4b98219895c96497fc5ad8117720c}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxquery_8h_a89700d3de9b8b626a3688fdff79f7708}{\index{sphinxquery.\-h@{sphinxquery.\-h}!sph\-Mark\-Common\-Subtrees@{sph\-Mark\-Common\-Subtrees}}
+\index{sph\-Mark\-Common\-Subtrees@{sph\-Mark\-Common\-Subtrees}!sphinxquery.h@{sphinxquery.\-h}}
+\subsubsection[{sph\-Mark\-Common\-Subtrees}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Mark\-Common\-Subtrees (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-X\-Q, }
+\item[{const {\bf X\-Q\-Query\-\_\-t} $\ast$}]{p\-X\-Q}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8h_a89700d3de9b8b626a3688fdff79f7708}
+
+
+analyze vector of trees and tag common parts of them (to cache them later) 
+
+\hypertarget{sphinxquery_8h_a2ad1db8c08251d0e068b9b52774325e5}{\index{sphinxquery.\-h@{sphinxquery.\-h}!sph\-Optimize\-Boolean@{sph\-Optimize\-Boolean}}
+\index{sph\-Optimize\-Boolean@{sph\-Optimize\-Boolean}!sphinxquery.h@{sphinxquery.\-h}}
+\subsubsection[{sph\-Optimize\-Boolean}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Optimize\-Boolean (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$$\ast$}]{p\-X\-Q, }
+\item[{const {\bf I\-Sph\-Keywords\-Stat} $\ast$}]{p\-Keywords}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8h_a2ad1db8c08251d0e068b9b52774325e5}
+\hypertarget{sphinxquery_8h_a441798fdb6617fc8ca14ce9d450542c0}{\index{sphinxquery.\-h@{sphinxquery.\-h}!sph\-Parse\-Extended\-Query@{sph\-Parse\-Extended\-Query}}
+\index{sph\-Parse\-Extended\-Query@{sph\-Parse\-Extended\-Query}!sphinxquery.h@{sphinxquery.\-h}}
+\subsubsection[{sph\-Parse\-Extended\-Query}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Parse\-Extended\-Query (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Query\-\_\-t} \&}]{t\-Query, }
+\item[{const char $\ast$}]{s\-Query, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const {\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{const {\bf C\-Sph\-Schema} $\ast$}]{p\-Schema, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8h_a441798fdb6617fc8ca14ce9d450542c0}
+parses the query and returns the resulting tree return false and fills t\-Query.\-m\-\_\-s\-Parse\-Error on error W\-A\-R\-N\-I\-N\-G, parsed tree might be N\-U\-L\-L (eg. if query was empty) lots of arguments here instead of simply the index pointer, because a) we do not always have an actual real index class, and b) might need to tweak stuff even we do F\-I\-X\-M\-E! remove either p\-Query or s\-Query \hypertarget{sphinxquery_8h_a244272d5eefb4f4dde77d87f1ce4aa02}{\index{sphinxquery.\-h@{sphinxquery.\-h}!sph\-Setup\-Query\-Tokenizer@{sph\-Setup\-Query\-Tokenizer}}
+\index{sph\-Setup\-Query\-Tokenizer@{sph\-Setup\-Query\-Tokenizer}!sphinxquery.h@{sphinxquery.\-h}}
+\subsubsection[{sph\-Setup\-Query\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Setup\-Query\-Tokenizer (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{bool}]{b\-Wildcards, }
+\item[{bool}]{b\-Exact}
+\end{DoxyParamCaption}
+)}}\label{sphinxquery_8h_a244272d5eefb4f4dde77d87f1ce4aa02}
+
+
+setup tokenizer for query parsing (ie. add all specials and whatnot) 
+

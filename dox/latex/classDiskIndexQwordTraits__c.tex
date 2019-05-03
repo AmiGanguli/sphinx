@@ -1,0 +1,171 @@
+\hypertarget{classDiskIndexQwordTraits__c}{\section{Disk\-Index\-Qword\-Traits\-\_\-c Class Reference}
+\label{classDiskIndexQwordTraits__c}\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+}
+
+
+query word from the searcher's point of view  
+
+
+Inheritance diagram for Disk\-Index\-Qword\-Traits\-\_\-c\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.299795cm]{classDiskIndexQwordTraits__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDiskIndexQwordTraits__c_acfe137b781cb0f39ac72d8031362fa35}{Disk\-Index\-Qword\-Traits\-\_\-c} (bool b\-Use\-Mini, bool b\-Excluded)
+\item 
+void \hyperlink{classDiskIndexQwordTraits__c_addb59eaae65bddf58231211ba674cf08}{Reset\-Decoder\-State} ()
+\item 
+virtual bool \hyperlink{classDiskIndexQwordTraits__c_a667e9f2f2c6830de427f1d7054c62091}{Setup} (const \hyperlink{classDiskIndexQwordSetup__c}{Disk\-Index\-Qword\-Setup\-\_\-c} $\ast$p\-Setup)=0
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classDiskIndexQwordTraits__c_a13ed7b9b1bea7c85a8f20e71a017f63a}{m\-\_\-u\-Hit\-Position}
+\item 
+\hyperlink{sphinx_8h_af1385e83d53e0648b15eae6d8f101847}{Hitpos\-\_\-t} \hyperlink{classDiskIndexQwordTraits__c_a1105d189e2bbe1465943ef11a81ab154}{m\-\_\-u\-Inlined\-Hit}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classDiskIndexQwordTraits__c_ad9d809a5bca5eeca6503d9d58e6ef61e}{m\-\_\-u\-Hit\-State}
+\item 
+\hyperlink{classCSphMatch}{C\-Sph\-Match} \hyperlink{classDiskIndexQwordTraits__c_ae1176e7eb07c224d8b58608fbf3af360}{m\-\_\-t\-Doc}
+\begin{DoxyCompactList}\small\item\em current match (partial) \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_af1385e83d53e0648b15eae6d8f101847}{Hitpos\-\_\-t} \hyperlink{classDiskIndexQwordTraits__c_af818c8369c578384f3093bcbca44cf9c}{m\-\_\-i\-Hit\-Pos}
+\begin{DoxyCompactList}\small\item\em current hit postition, from hitlist \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{classDiskIndexQwordTraits__c_a5b9ae75a635ba75969810253f56d3ee7}{m\-\_\-d\-Doclist\-Buf} \mbox{[}\hyperlink{classDiskIndexQwordTraits__c_aa83fb688cb8688383baf8ccaa2de2e06}{M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N}\mbox{]}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{classDiskIndexQwordTraits__c_a27fe1fff67474b636fed940299e8bee2}{m\-\_\-d\-Hitlist\-Buf} \mbox{[}\hyperlink{classDiskIndexQwordTraits__c_aa83fb688cb8688383baf8ccaa2de2e06}{M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N}\mbox{]}
+\item 
+\hyperlink{classCSphReader}{C\-Sph\-Reader} \hyperlink{classDiskIndexQwordTraits__c_a1bd875b56456639db467b87e37449c0b}{m\-\_\-rd\-Doclist}
+\begin{DoxyCompactList}\small\item\em my doclist reader \end{DoxyCompactList}\item 
+\hyperlink{classCSphReader}{C\-Sph\-Reader} \hyperlink{classDiskIndexQwordTraits__c_ac8b3bbb101f1ed476d37251f0c460bba}{m\-\_\-rd\-Hitlist}
+\begin{DoxyCompactList}\small\item\em my hitlist reader \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classDiskIndexQwordTraits__c_a1d9de45b5d6c9c66cf8847b8b8f3ec58}{m\-\_\-i\-Min\-I\-D}
+\begin{DoxyCompactList}\small\item\em min I\-D to fixup \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classDiskIndexQwordTraits__c_ab6b9f1f3bc5131ce85e45035084cb667}{m\-\_\-i\-Inline\-Attrs}
+\begin{DoxyCompactList}\small\item\em inline attributes count \end{DoxyCompactList}\item 
+const \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$ \hyperlink{classDiskIndexQwordTraits__c_a3bd884a35f624e03487f5efdcbff1700}{m\-\_\-p\-Inline\-Fixup}
+\begin{DoxyCompactList}\small\item\em inline attributes fixup (P\-O\-I\-N\-T\-E\-R T\-O E\-X\-T\-E\-R\-N\-A\-L D\-A\-T\-A, N\-O\-T M\-A\-N\-A\-G\-E\-D B\-Y T\-H\-I\-S C\-L\-A\-S\-S!) \end{DoxyCompactList}\item 
+bool \hyperlink{classDiskIndexQwordTraits__c_a5048c96a21e7a3fccc99dfdd7b71c30e}{m\-\_\-b\-Hitlist\-Over}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classDiskIndexQwordTraits__c_aa83fb688cb8688383baf8ccaa2de2e06}{M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N} = 1024
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+query word from the searcher's point of view 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDiskIndexQwordTraits__c_acfe137b781cb0f39ac72d8031362fa35}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{Disk\-Index\-Qword\-Traits\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Disk\-Index\-Qword\-Traits\-\_\-c\-::\-Disk\-Index\-Qword\-Traits\-\_\-c (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Use\-Mini, }
+\item[{bool}]{b\-Excluded}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classDiskIndexQwordTraits__c_acfe137b781cb0f39ac72d8031362fa35}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDiskIndexQwordTraits__c_addb59eaae65bddf58231211ba674cf08}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!Reset\-Decoder\-State@{Reset\-Decoder\-State}}
+\index{Reset\-Decoder\-State@{Reset\-Decoder\-State}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{Reset\-Decoder\-State}]{\setlength{\rightskip}{0pt plus 5cm}void Disk\-Index\-Qword\-Traits\-\_\-c\-::\-Reset\-Decoder\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDiskIndexQwordTraits__c_addb59eaae65bddf58231211ba674cf08}
+\hypertarget{classDiskIndexQwordTraits__c_a667e9f2f2c6830de427f1d7054c62091}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!Setup@{Setup}}
+\index{Setup@{Setup}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Disk\-Index\-Qword\-Traits\-\_\-c\-::\-Setup (
+\begin{DoxyParamCaption}
+\item[{const {\bf Disk\-Index\-Qword\-Setup\-\_\-c} $\ast$}]{p\-Setup}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classDiskIndexQwordTraits__c_a667e9f2f2c6830de427f1d7054c62091}
+
+
+Implemented in \hyperlink{classDiskPayloadQword__c_a61ee01db0e4d029de949378f26f9b3f5}{Disk\-Payload\-Qword\-\_\-c$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S $>$}, \hyperlink{classDiskIndexQword__c_ab449a897608050b19bab605107bc42f5}{Disk\-Index\-Qword\-\_\-c$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, I\-N\-L\-I\-N\-E\-\_\-\-D\-O\-C\-I\-N\-F\-O, D\-I\-S\-A\-B\-L\-E\-\_\-\-H\-I\-T\-L\-I\-S\-T\-\_\-\-S\-E\-E\-K $>$}, and \hyperlink{classDiskIndexQword__c_ab449a897608050b19bab605107bc42f5}{Disk\-Index\-Qword\-\_\-c$<$ I\-N\-L\-I\-N\-E\-\_\-\-H\-I\-T\-S, false, false $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDiskIndexQwordTraits__c_a5048c96a21e7a3fccc99dfdd7b71c30e}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-b\-Hitlist\-Over@{m\-\_\-b\-Hitlist\-Over}}
+\index{m\-\_\-b\-Hitlist\-Over@{m\-\_\-b\-Hitlist\-Over}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-b\-Hitlist\-Over}]{\setlength{\rightskip}{0pt plus 5cm}bool Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-b\-Hitlist\-Over}}\label{classDiskIndexQwordTraits__c_a5048c96a21e7a3fccc99dfdd7b71c30e}
+\hypertarget{classDiskIndexQwordTraits__c_a5b9ae75a635ba75969810253f56d3ee7}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-d\-Doclist\-Buf@{m\-\_\-d\-Doclist\-Buf}}
+\index{m\-\_\-d\-Doclist\-Buf@{m\-\_\-d\-Doclist\-Buf}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Doclist\-Buf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-d\-Doclist\-Buf\mbox{[}{\bf M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N}\mbox{]}}}\label{classDiskIndexQwordTraits__c_a5b9ae75a635ba75969810253f56d3ee7}
+\hypertarget{classDiskIndexQwordTraits__c_a27fe1fff67474b636fed940299e8bee2}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-d\-Hitlist\-Buf@{m\-\_\-d\-Hitlist\-Buf}}
+\index{m\-\_\-d\-Hitlist\-Buf@{m\-\_\-d\-Hitlist\-Buf}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Hitlist\-Buf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-d\-Hitlist\-Buf\mbox{[}{\bf M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N}\mbox{]}}}\label{classDiskIndexQwordTraits__c_a27fe1fff67474b636fed940299e8bee2}
+\hypertarget{classDiskIndexQwordTraits__c_af818c8369c578384f3093bcbca44cf9c}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-i\-Hit\-Pos@{m\-\_\-i\-Hit\-Pos}}
+\index{m\-\_\-i\-Hit\-Pos@{m\-\_\-i\-Hit\-Pos}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Hit\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hitpos\-\_\-t} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-i\-Hit\-Pos}}\label{classDiskIndexQwordTraits__c_af818c8369c578384f3093bcbca44cf9c}
+
+
+current hit postition, from hitlist 
+
+\hypertarget{classDiskIndexQwordTraits__c_ab6b9f1f3bc5131ce85e45035084cb667}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-i\-Inline\-Attrs@{m\-\_\-i\-Inline\-Attrs}}
+\index{m\-\_\-i\-Inline\-Attrs@{m\-\_\-i\-Inline\-Attrs}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Inline\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-i\-Inline\-Attrs}}\label{classDiskIndexQwordTraits__c_ab6b9f1f3bc5131ce85e45035084cb667}
+
+
+inline attributes count 
+
+\hypertarget{classDiskIndexQwordTraits__c_a1d9de45b5d6c9c66cf8847b8b8f3ec58}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-i\-Min\-I\-D@{m\-\_\-i\-Min\-I\-D}}
+\index{m\-\_\-i\-Min\-I\-D@{m\-\_\-i\-Min\-I\-D}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Min\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-i\-Min\-I\-D}}\label{classDiskIndexQwordTraits__c_a1d9de45b5d6c9c66cf8847b8b8f3ec58}
+
+
+min I\-D to fixup 
+
+\hypertarget{classDiskIndexQwordTraits__c_a3bd884a35f624e03487f5efdcbff1700}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-p\-Inline\-Fixup@{m\-\_\-p\-Inline\-Fixup}}
+\index{m\-\_\-p\-Inline\-Fixup@{m\-\_\-p\-Inline\-Fixup}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-p\-Inline\-Fixup}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Rowitem}$\ast$ Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-p\-Inline\-Fixup}}\label{classDiskIndexQwordTraits__c_a3bd884a35f624e03487f5efdcbff1700}
+
+
+inline attributes fixup (P\-O\-I\-N\-T\-E\-R T\-O E\-X\-T\-E\-R\-N\-A\-L D\-A\-T\-A, N\-O\-T M\-A\-N\-A\-G\-E\-D B\-Y T\-H\-I\-S C\-L\-A\-S\-S!) 
+
+\hypertarget{classDiskIndexQwordTraits__c_a1bd875b56456639db467b87e37449c0b}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-rd\-Doclist@{m\-\_\-rd\-Doclist}}
+\index{m\-\_\-rd\-Doclist@{m\-\_\-rd\-Doclist}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-rd\-Doclist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Reader} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-rd\-Doclist}}\label{classDiskIndexQwordTraits__c_a1bd875b56456639db467b87e37449c0b}
+
+
+my doclist reader 
+
+\hypertarget{classDiskIndexQwordTraits__c_ac8b3bbb101f1ed476d37251f0c460bba}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-rd\-Hitlist@{m\-\_\-rd\-Hitlist}}
+\index{m\-\_\-rd\-Hitlist@{m\-\_\-rd\-Hitlist}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-rd\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Reader} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-rd\-Hitlist}}\label{classDiskIndexQwordTraits__c_ac8b3bbb101f1ed476d37251f0c460bba}
+
+
+my hitlist reader 
+
+\hypertarget{classDiskIndexQwordTraits__c_ae1176e7eb07c224d8b58608fbf3af360}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-t\-Doc@{m\-\_\-t\-Doc}}
+\index{m\-\_\-t\-Doc@{m\-\_\-t\-Doc}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-t\-Doc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Match} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-t\-Doc}}\label{classDiskIndexQwordTraits__c_ae1176e7eb07c224d8b58608fbf3af360}
+
+
+current match (partial) 
+
+\hypertarget{classDiskIndexQwordTraits__c_a13ed7b9b1bea7c85a8f20e71a017f63a}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-u\-Hit\-Position@{m\-\_\-u\-Hit\-Position}}
+\index{m\-\_\-u\-Hit\-Position@{m\-\_\-u\-Hit\-Position}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-u\-Hit\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-u\-Hit\-Position}}\label{classDiskIndexQwordTraits__c_a13ed7b9b1bea7c85a8f20e71a017f63a}
+tricky bit m\-\_\-u\-Hit\-Position is always a current position in the .spp file base \hyperlink{classISphQword_a3ae1cb3dd2ce423e64f5e731a0362e83}{I\-Sph\-Qword\-::m\-\_\-i\-Hitlist\-Pos} carries the inlined hit data when m\-\_\-i\-Docs==1 but this one is always a real position, used for delta coding \hypertarget{classDiskIndexQwordTraits__c_ad9d809a5bca5eeca6503d9d58e6ef61e}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-u\-Hit\-State@{m\-\_\-u\-Hit\-State}}
+\index{m\-\_\-u\-Hit\-State@{m\-\_\-u\-Hit\-State}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-u\-Hit\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-u\-Hit\-State}}\label{classDiskIndexQwordTraits__c_ad9d809a5bca5eeca6503d9d58e6ef61e}
+\hypertarget{classDiskIndexQwordTraits__c_a1105d189e2bbe1465943ef11a81ab154}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!m\-\_\-u\-Inlined\-Hit@{m\-\_\-u\-Inlined\-Hit}}
+\index{m\-\_\-u\-Inlined\-Hit@{m\-\_\-u\-Inlined\-Hit}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{m\-\_\-u\-Inlined\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hitpos\-\_\-t} Disk\-Index\-Qword\-Traits\-\_\-c\-::m\-\_\-u\-Inlined\-Hit}}\label{classDiskIndexQwordTraits__c_a1105d189e2bbe1465943ef11a81ab154}
+\hypertarget{classDiskIndexQwordTraits__c_aa83fb688cb8688383baf8ccaa2de2e06}{\index{Disk\-Index\-Qword\-Traits\-\_\-c@{Disk\-Index\-Qword\-Traits\-\_\-c}!M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N@{M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N}}
+\index{M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N@{M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N}!DiskIndexQwordTraits_c@{Disk\-Index\-Qword\-Traits\-\_\-c}}
+\subsubsection[{M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} Disk\-Index\-Qword\-Traits\-\_\-c\-::\-M\-I\-N\-I\-B\-U\-F\-F\-E\-R\-\_\-\-L\-E\-N = 1024\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classDiskIndexQwordTraits__c_aa83fb688cb8688383baf8ccaa2de2e06}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,248 @@
+\hypertarget{classCacheStreamer__c}{\section{Cache\-Streamer\-\_\-c Class Reference}
+\label{classCacheStreamer__c}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}
+}
+
+
+functor that maps collected tokens into a stream  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCacheStreamer__c_a223da4bbc80011da81470d0b0edef419}{Cache\-Streamer\-\_\-c} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Doc\-Len)
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCacheStreamer__c_a0c66af28a459bd3ae44d84bdbf7569a0}{Store\-Entry} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Bytes)
+\item 
+void \hyperlink{classCacheStreamer__c_a17831caee8f8087d3a0918cef7b27017}{Store\-Overlap} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Boundary)
+\item 
+void \hyperlink{classCacheStreamer__c_aa7dd4f6c1a6ca08276a698d9a347bd2f}{Store\-Skip\-Html} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+void \hyperlink{classCacheStreamer__c_a7e9da4f68dac900a825175cc21325bad}{Store\-Token} (const \hyperlink{structTokenInfo__t}{Token\-Info\-\_\-t} \&t\-Tok, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Term\-Index)
+\item 
+void \hyperlink{classCacheStreamer__c_aa3383c298f78b8a73230314d2972d11b}{Store\-S\-P\-Z} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} i\-S\-P\-Z, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Position, const char $\ast$, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Zone)
+\item 
+void \hyperlink{classCacheStreamer__c_af9aec6648ca09c210e88a805aabe49da}{Store\-Tail} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Boundary)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classCacheStreamer__c_a22a9ed8049a3eca751c7972ec85e6486}{Tokenize} (T \&t\-Functor)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structFunctorZoneInfo__t}{Functor\-Zone\-Info\-\_\-t} $\ast$ \hyperlink{classCacheStreamer__c_a56b939f9af3ad9c06109a3706a3647c9}{m\-\_\-p\-Zone\-Info}
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa5e3fff92c533433912ac3bc3782b8220}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N1} = 0, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa7878cebbdac9524ca0eede05d8c27645}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N2}, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa8720cbb0a269db104bb5700adb122b24}{T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P1}, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfae561c9192f4e5bd0dbbc8d05da4f88ea}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R1}, 
+\\*
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa03213d8b5b7ff22da4040ee7bfabe45a}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R2}, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfaec8a56fae3e9b7de82f6f48119f46170}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R3}, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa8d7bedb022431d2ae34a63f525be9967}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R4}, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa951700de877e2bc4f212294750f0004c}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R5}, 
+\\*
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa7d8dd12970f5babc38a361074617b9c7}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N}, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa4735f73ca8710ce795f673d6904e2bfb}{T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P}, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa86fccc168fe64c94549bec8b23a29f77}{T\-Y\-P\-E\-\_\-\-S\-K\-I\-P\-H\-T\-M\-L}, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfacf0e4f0584e17cb0399942d7c316a19a}{T\-Y\-P\-E\-\_\-\-S\-P\-Z}, 
+\\*
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa3fb82633aec6323854c87fe1834256c4}{T\-Y\-P\-E\-\_\-\-T\-A\-I\-L}, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa30bd9d1c0c049b733ce9cb449438e928}{T\-Y\-P\-E\-\_\-\-M\-U\-L\-T\-I\-F\-O\-R\-M}, 
+\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa9f1968a919d3d1f1f7714e28edb72143}{T\-Y\-P\-E\-\_\-\-T\-O\-T\-A\-L}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCacheStreamer__c_acfd2903d8fa0c45679fa6777378e6752}{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T} (\hyperlink{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa9f1968a919d3d1f1f7714e28edb72143}{T\-Y\-P\-E\-\_\-\-T\-O\-T\-A\-L}$<$=15, O\-U\-T\-\_\-\-O\-F\-\_\-\-T\-Y\-P\-E\-C\-O\-D\-E\-S)
+\item 
+void \hyperlink{classCacheStreamer__c_ac267f79b26c5f8b9d6acc56f0562f540}{Zip\-Int} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCacheStreamer__c_abf3c2c59f8f47100fbc8e2b0da4ce3a8}{Unzip\-Int} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphTightVector}{C\-Sph\-Tight\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classCacheStreamer__c_ab9f643e1c3f85cf78990ee8699761f78}{m\-\_\-d\-Token\-Stream}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCacheStreamer__c_a0020dc2f13ec4b2019377d00375265a4}{m\-\_\-i\-Read\-Ptr}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCacheStreamer__c_aace345f536da58417518a267f099e728}{m\-\_\-i\-Last\-Start}
+\begin{DoxyCompactList}\small\item\em last delta coded token offset, in bytes \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCacheStreamer__c_a7c69a871908199caa95169a2e9245452}{m\-\_\-i\-Last\-Pos}
+\begin{DoxyCompactList}\small\item\em last delta coded token number, in tokens \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCacheStreamer__c_ab1ffe423121a1fe59a3d49347120cf7a}{m\-\_\-e\-Last\-Stored}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+functor that maps collected tokens into a stream 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcf}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum\hspace{0.3cm}{\ttfamily [private]}}}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcf}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N1@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N1}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N1@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N1}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa5e3fff92c533433912ac3bc3782b8220}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N1}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa5e3fff92c533433912ac3bc3782b8220}
+}]1-\/byte token (4-\/bit code, and 4-\/bit len payload) \index{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N2@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N2}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N2@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N2}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa7878cebbdac9524ca0eede05d8c27645}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N2}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa7878cebbdac9524ca0eede05d8c27645}
+}]2-\/byte token (4-\/bit code, and 8-\/bit len payload) \index{T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P1@{T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P1}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P1@{T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P1}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa8720cbb0a269db104bb5700adb122b24}{T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P1}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa8720cbb0a269db104bb5700adb122b24}
+}]1-\/byte overlap (4-\/bit code, and 4-\/bit len payload) \index{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R1@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R1}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R1@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R1}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfae561c9192f4e5bd0dbbc8d05da4f88ea}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R1}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfae561c9192f4e5bd0dbbc8d05da4f88ea}
+}]1-\/byte token/overlap combo (4-\/bit code, 4-\/bit token len (overlap len is always 1)) \index{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R2@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R2}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R2@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R2}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa03213d8b5b7ff22da4040ee7bfabe45a}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R2}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa03213d8b5b7ff22da4040ee7bfabe45a}
+}]1-\/byte token/overlap combo (4-\/bit code, 4-\/bit token len (overlap len is always 2)) \index{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R3@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R3}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R3@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R3}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfaec8a56fae3e9b7de82f6f48119f46170}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R3}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfaec8a56fae3e9b7de82f6f48119f46170}
+}]1-\/byte token/overlap combo (4-\/bit code, 4-\/bit token len (overlap len is always 3)) \index{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R4@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R4}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R4@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R4}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa8d7bedb022431d2ae34a63f525be9967}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R4}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa8d7bedb022431d2ae34a63f525be9967}
+}]1-\/byte token/overlap combo (4-\/bit code, 4-\/bit token len (overlap len is always 4)) \index{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R5@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R5}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R5@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R5}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa951700de877e2bc4f212294750f0004c}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-O\-V\-E\-R5}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa951700de877e2bc4f212294750f0004c}
+}]1-\/byte token/overlap combo (4-\/bit code, 3-\/bit token len, 1-\/bit overlap len) \index{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N@{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa7d8dd12970f5babc38a361074617b9c7}{T\-Y\-P\-E\-\_\-\-T\-O\-K\-E\-N}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa7d8dd12970f5babc38a361074617b9c7}
+}]generic fat token \index{T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P@{T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P@{T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa4735f73ca8710ce795f673d6904e2bfb}{T\-Y\-P\-E\-\_\-\-O\-V\-E\-R\-L\-A\-P}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa4735f73ca8710ce795f673d6904e2bfb}
+}]generic fat overlap \index{T\-Y\-P\-E\-\_\-\-S\-K\-I\-P\-H\-T\-M\-L@{T\-Y\-P\-E\-\_\-\-S\-K\-I\-P\-H\-T\-M\-L}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-S\-K\-I\-P\-H\-T\-M\-L@{T\-Y\-P\-E\-\_\-\-S\-K\-I\-P\-H\-T\-M\-L}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa86fccc168fe64c94549bec8b23a29f77}{T\-Y\-P\-E\-\_\-\-S\-K\-I\-P\-H\-T\-M\-L}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa86fccc168fe64c94549bec8b23a29f77}
+}]\index{T\-Y\-P\-E\-\_\-\-S\-P\-Z@{T\-Y\-P\-E\-\_\-\-S\-P\-Z}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-S\-P\-Z@{T\-Y\-P\-E\-\_\-\-S\-P\-Z}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfacf0e4f0584e17cb0399942d7c316a19a}{T\-Y\-P\-E\-\_\-\-S\-P\-Z}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfacf0e4f0584e17cb0399942d7c316a19a}
+}]\index{T\-Y\-P\-E\-\_\-\-T\-A\-I\-L@{T\-Y\-P\-E\-\_\-\-T\-A\-I\-L}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-T\-A\-I\-L@{T\-Y\-P\-E\-\_\-\-T\-A\-I\-L}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa3fb82633aec6323854c87fe1834256c4}{T\-Y\-P\-E\-\_\-\-T\-A\-I\-L}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa3fb82633aec6323854c87fe1834256c4}
+}]\index{T\-Y\-P\-E\-\_\-\-M\-U\-L\-T\-I\-F\-O\-R\-M@{T\-Y\-P\-E\-\_\-\-M\-U\-L\-T\-I\-F\-O\-R\-M}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-M\-U\-L\-T\-I\-F\-O\-R\-M@{T\-Y\-P\-E\-\_\-\-M\-U\-L\-T\-I\-F\-O\-R\-M}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa30bd9d1c0c049b733ce9cb449438e928}{T\-Y\-P\-E\-\_\-\-M\-U\-L\-T\-I\-F\-O\-R\-M}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa30bd9d1c0c049b733ce9cb449438e928}
+}]\index{T\-Y\-P\-E\-\_\-\-T\-O\-T\-A\-L@{T\-Y\-P\-E\-\_\-\-T\-O\-T\-A\-L}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!T\-Y\-P\-E\-\_\-\-T\-O\-T\-A\-L@{T\-Y\-P\-E\-\_\-\-T\-O\-T\-A\-L}}\item[{\em 
+\hypertarget{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa9f1968a919d3d1f1f7714e28edb72143}{T\-Y\-P\-E\-\_\-\-T\-O\-T\-A\-L}\label{classCacheStreamer__c_a9448525bd59b03890ae82c26a8f46fcfa9f1968a919d3d1f1f7714e28edb72143}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCacheStreamer__c_a223da4bbc80011da81470d0b0edef419}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}}
+\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{Cache\-Streamer\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Cache\-Streamer\-\_\-c\-::\-Cache\-Streamer\-\_\-c (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Doc\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCacheStreamer__c_a223da4bbc80011da81470d0b0edef419}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCacheStreamer__c_acfd2903d8fa0c45679fa6777378e6752}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}Cache\-Streamer\-\_\-c\-::\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf T\-Y\-P\-E\-\_\-\-T\-O\-T\-A\-L}$<$=}]{15, }
+\item[{O\-U\-T\-\_\-\-O\-F\-\_\-\-T\-Y\-P\-E\-C\-O\-D\-E\-S}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCacheStreamer__c_acfd2903d8fa0c45679fa6777378e6752}
+\hypertarget{classCacheStreamer__c_a0c66af28a459bd3ae44d84bdbf7569a0}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!Store\-Entry@{Store\-Entry}}
+\index{Store\-Entry@{Store\-Entry}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{Store\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ Cache\-Streamer\-\_\-c\-::\-Store\-Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCacheStreamer__c_a0c66af28a459bd3ae44d84bdbf7569a0}
+\hypertarget{classCacheStreamer__c_a17831caee8f8087d3a0918cef7b27017}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!Store\-Overlap@{Store\-Overlap}}
+\index{Store\-Overlap@{Store\-Overlap}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{Store\-Overlap}]{\setlength{\rightskip}{0pt plus 5cm}void Cache\-Streamer\-\_\-c\-::\-Store\-Overlap (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf int}}]{i\-Boundary}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCacheStreamer__c_a17831caee8f8087d3a0918cef7b27017}
+\hypertarget{classCacheStreamer__c_aa7dd4f6c1a6ca08276a698d9a347bd2f}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!Store\-Skip\-Html@{Store\-Skip\-Html}}
+\index{Store\-Skip\-Html@{Store\-Skip\-Html}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{Store\-Skip\-Html}]{\setlength{\rightskip}{0pt plus 5cm}void Cache\-Streamer\-\_\-c\-::\-Store\-Skip\-Html (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCacheStreamer__c_aa7dd4f6c1a6ca08276a698d9a347bd2f}
+\hypertarget{classCacheStreamer__c_aa3383c298f78b8a73230314d2972d11b}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!Store\-S\-P\-Z@{Store\-S\-P\-Z}}
+\index{Store\-S\-P\-Z@{Store\-S\-P\-Z}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{Store\-S\-P\-Z}]{\setlength{\rightskip}{0pt plus 5cm}void Cache\-Streamer\-\_\-c\-::\-Store\-S\-P\-Z (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{i\-S\-P\-Z, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Position, }
+\item[{const char $\ast$}]{, }
+\item[{{\bf int}}]{i\-Zone}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCacheStreamer__c_aa3383c298f78b8a73230314d2972d11b}
+\hypertarget{classCacheStreamer__c_af9aec6648ca09c210e88a805aabe49da}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!Store\-Tail@{Store\-Tail}}
+\index{Store\-Tail@{Store\-Tail}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{Store\-Tail}]{\setlength{\rightskip}{0pt plus 5cm}void Cache\-Streamer\-\_\-c\-::\-Store\-Tail (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf int}}]{i\-Boundary}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCacheStreamer__c_af9aec6648ca09c210e88a805aabe49da}
+\hypertarget{classCacheStreamer__c_a7e9da4f68dac900a825175cc21325bad}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!Store\-Token@{Store\-Token}}
+\index{Store\-Token@{Store\-Token}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{Store\-Token}]{\setlength{\rightskip}{0pt plus 5cm}void Cache\-Streamer\-\_\-c\-::\-Store\-Token (
+\begin{DoxyParamCaption}
+\item[{const {\bf Token\-Info\-\_\-t} \&}]{t\-Tok, }
+\item[{{\bf int}}]{i\-Term\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCacheStreamer__c_a7e9da4f68dac900a825175cc21325bad}
+\hypertarget{classCacheStreamer__c_a22a9ed8049a3eca751c7972ec85e6486}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!Tokenize@{Tokenize}}
+\index{Tokenize@{Tokenize}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{Tokenize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Cache\-Streamer\-\_\-c\-::\-Tokenize (
+\begin{DoxyParamCaption}
+\item[{T \&}]{t\-Functor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCacheStreamer__c_a22a9ed8049a3eca751c7972ec85e6486}
+\hypertarget{classCacheStreamer__c_abf3c2c59f8f47100fbc8e2b0da4ce3a8}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!Unzip\-Int@{Unzip\-Int}}
+\index{Unzip\-Int@{Unzip\-Int}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{Unzip\-Int}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} Cache\-Streamer\-\_\-c\-::\-Unzip\-Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCacheStreamer__c_abf3c2c59f8f47100fbc8e2b0da4ce3a8}
+\hypertarget{classCacheStreamer__c_ac267f79b26c5f8b9d6acc56f0562f540}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!Zip\-Int@{Zip\-Int}}
+\index{Zip\-Int@{Zip\-Int}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{Zip\-Int}]{\setlength{\rightskip}{0pt plus 5cm}void Cache\-Streamer\-\_\-c\-::\-Zip\-Int (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCacheStreamer__c_ac267f79b26c5f8b9d6acc56f0562f540}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCacheStreamer__c_ab9f643e1c3f85cf78990ee8699761f78}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!m\-\_\-d\-Token\-Stream@{m\-\_\-d\-Token\-Stream}}
+\index{m\-\_\-d\-Token\-Stream@{m\-\_\-d\-Token\-Stream}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Token\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Tight\-Vector}$<${\bf B\-Y\-T\-E}$>$ Cache\-Streamer\-\_\-c\-::m\-\_\-d\-Token\-Stream\hspace{0.3cm}{\ttfamily [private]}}}\label{classCacheStreamer__c_ab9f643e1c3f85cf78990ee8699761f78}
+\hypertarget{classCacheStreamer__c_ab1ffe423121a1fe59a3d49347120cf7a}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!m\-\_\-e\-Last\-Stored@{m\-\_\-e\-Last\-Stored}}
+\index{m\-\_\-e\-Last\-Stored@{m\-\_\-e\-Last\-Stored}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{m\-\_\-e\-Last\-Stored}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Cache\-Streamer\-\_\-c\-::m\-\_\-e\-Last\-Stored\hspace{0.3cm}{\ttfamily [private]}}}\label{classCacheStreamer__c_ab1ffe423121a1fe59a3d49347120cf7a}
+\hypertarget{classCacheStreamer__c_a7c69a871908199caa95169a2e9245452}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!m\-\_\-i\-Last\-Pos@{m\-\_\-i\-Last\-Pos}}
+\index{m\-\_\-i\-Last\-Pos@{m\-\_\-i\-Last\-Pos}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Last\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Cache\-Streamer\-\_\-c\-::m\-\_\-i\-Last\-Pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classCacheStreamer__c_a7c69a871908199caa95169a2e9245452}
+
+
+last delta coded token number, in tokens 
+
+\hypertarget{classCacheStreamer__c_aace345f536da58417518a267f099e728}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!m\-\_\-i\-Last\-Start@{m\-\_\-i\-Last\-Start}}
+\index{m\-\_\-i\-Last\-Start@{m\-\_\-i\-Last\-Start}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Last\-Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Cache\-Streamer\-\_\-c\-::m\-\_\-i\-Last\-Start\hspace{0.3cm}{\ttfamily [private]}}}\label{classCacheStreamer__c_aace345f536da58417518a267f099e728}
+
+
+last delta coded token offset, in bytes 
+
+\hypertarget{classCacheStreamer__c_a0020dc2f13ec4b2019377d00375265a4}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!m\-\_\-i\-Read\-Ptr@{m\-\_\-i\-Read\-Ptr}}
+\index{m\-\_\-i\-Read\-Ptr@{m\-\_\-i\-Read\-Ptr}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Read\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Cache\-Streamer\-\_\-c\-::m\-\_\-i\-Read\-Ptr\hspace{0.3cm}{\ttfamily [private]}}}\label{classCacheStreamer__c_a0020dc2f13ec4b2019377d00375265a4}
+\hypertarget{classCacheStreamer__c_a56b939f9af3ad9c06109a3706a3647c9}{\index{Cache\-Streamer\-\_\-c@{Cache\-Streamer\-\_\-c}!m\-\_\-p\-Zone\-Info@{m\-\_\-p\-Zone\-Info}}
+\index{m\-\_\-p\-Zone\-Info@{m\-\_\-p\-Zone\-Info}!CacheStreamer_c@{Cache\-Streamer\-\_\-c}}
+\subsubsection[{m\-\_\-p\-Zone\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Functor\-Zone\-Info\-\_\-t}$\ast$ Cache\-Streamer\-\_\-c\-::m\-\_\-p\-Zone\-Info}}\label{classCacheStreamer__c_a56b939f9af3ad9c06109a3706a3647c9}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexcerpt_8cpp}{sphinxexcerpt.\-cpp}\end{DoxyCompactItemize}

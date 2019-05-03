@@ -1,0 +1,545 @@
+\hypertarget{classCSphTokenizerIndex}{\section{C\-Sph\-Tokenizer\-Index Class Reference}
+\label{classCSphTokenizerIndex}\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}}
+}
+Inheritance diagram for C\-Sph\-Tokenizer\-Index\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphTokenizerIndex}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphTokenizerIndex_a9dff6c826818121f8f82395c3f72c42c}{C\-Sph\-Tokenizer\-Index} ()
+\item 
+virtual \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $\ast$ \hyperlink{classCSphTokenizerIndex_a7e1cffc234066269d59769456f7899b3}{Get\-Kill\-List} () const 
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphTokenizerIndex_a6e475a5e40e804d5438d1bc6b4ddb969}{Get\-Kill\-List\-Size} () const 
+\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_a4c8264b52e1fb6a95723f65bb59dc269}{Has\-Docid} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t}) const 
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphTokenizerIndex_a97d8a7397223b5bc4e37dcb1f8889adb}{Build} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphSource}{C\-Sph\-Source} $\ast$ $>$ \&, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\begin{DoxyCompactList}\small\item\em build index by indexing given sources \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_ae8438d3db942841c2175986de602c60a}{Merge} (\hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} $>$ \&, bool)
+\begin{DoxyCompactList}\small\item\em build index by mering current index with given index \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_a216d3d82dbc623c16a091e609188bf8a}{Prealloc} (bool)
+\begin{DoxyCompactList}\small\item\em check all data files, preload schema, and preallocate enough R\-A\-M to load memory-\/cached data \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenizerIndex_ae54fde262e7c89070e855f22c7ee6f15}{Dealloc} ()
+\begin{DoxyCompactList}\small\item\em deallocate all previously preallocated shared data \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenizerIndex_af75e44b119d0658c52568629eca49d9a}{Preread} ()
+\begin{DoxyCompactList}\small\item\em precache everything which needs to be precached \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenizerIndex_a5ff140f79a766fe4c8600b71ac145013}{Set\-Memory\-Settings} (bool, bool, bool)
+\item 
+virtual void \hyperlink{classCSphTokenizerIndex_ab346428334d1eff03576544d70c55a0b}{Set\-Base} (const char $\ast$)
+\begin{DoxyCompactList}\small\item\em set new index base path \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_a06ac573ed03c271d1bfc53396cce3b3c}{Rename} (const char $\ast$)
+\begin{DoxyCompactList}\small\item\em set new index base path, and physically rename index files too \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_a1e1e084223bcf040ce5adb03ac1dd7c1}{Lock} ()
+\begin{DoxyCompactList}\small\item\em obtain exclusive lock on this index \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenizerIndex_adaa5d3e9f2380516f107fed8468f7112}{Unlock} ()
+\begin{DoxyCompactList}\small\item\em dismiss exclusive lock and unlink lock file \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenizerIndex_a81be68c9a598f5f0ca3cf5c2a84f97ac}{Post\-Setup} ()
+\begin{DoxyCompactList}\small\item\em called when index is loaded and prepared to work \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_ad6b9616f4afe748c0e35ccc6629b1b74}{Early\-Reject} (\hyperlink{classCSphQueryContext}{C\-Sph\-Query\-Context} $\ast$, \hyperlink{classCSphMatch}{C\-Sph\-Match} \&) const 
+\item 
+virtual const \hyperlink{structCSphSourceStats}{C\-Sph\-Source\-Stats} \& \hyperlink{classCSphTokenizerIndex_a955dde3307b752ecf39119da3efa170f}{Get\-Stats} () const 
+\begin{DoxyCompactList}\small\item\em return index document, bytes totals (F\-I\-X\-M\-E? remove this in favor of \hyperlink{classCSphTokenizerIndex_ad1014ce393721dbd1f7e3600228f8830}{Get\-Status()} maybe?) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenizerIndex_ad1014ce393721dbd1f7e3600228f8830}{Get\-Status} (\hyperlink{structCSphIndexStatus}{C\-Sph\-Index\-Status} $\ast$p\-Res) const 
+\begin{DoxyCompactList}\small\item\em return additional index info \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_a1287c2e4dcf89d2643e8353db9531855}{Multi\-Query} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$$\ast$, const \hyperlink{structCSphMultiQueryArgs}{C\-Sph\-Multi\-Query\-Args} \&) const 
+\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_aa00ad3a241c981ba7af81ecb69d45a25}{Multi\-Query\-Ex} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$$\ast$, \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$$\ast$, const \hyperlink{structCSphMultiQueryArgs}{C\-Sph\-Multi\-Query\-Args} \&) const 
+\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_a3834d22b582826f06e7029ffea9fa98b}{Get\-Keywords} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphKeywordInfo}{C\-Sph\-Keyword\-Info} $>$ \&, const char $\ast$, const \hyperlink{structGetKeywordsSettings__t}{Get\-Keywords\-Settings\-\_\-t} \&t\-Settings, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$) const 
+\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_a97fa7cd5a357f35d2e4c3a9a7bb82012}{Fill\-Keywords} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphKeywordInfo}{C\-Sph\-Keyword\-Info} $>$ \&) const 
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphTokenizerIndex_a5ce83cf5c90e86d5cfcb55824a4290ff}{Update\-Attributes} (const \hyperlink{structCSphAttrUpdate}{C\-Sph\-Attr\-Update} \&, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \hyperlink{structCSphString}{C\-Sph\-String} \&, \hyperlink{structCSphString}{C\-Sph\-String} \&)
+\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_af91bf8b76494f5ba79ad60957c4d7986}{Save\-Attributes} (\hyperlink{structCSphString}{C\-Sph\-String} \&) const 
+\item 
+virtual \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphTokenizerIndex_a07de33b47e06c63e9b3e4dd0df117c4c}{Get\-Attribute\-Status} () const 
+\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_a1dc3645fdae46694d7ee6c8641d5ac42}{Create\-Modified\-Files} (bool, const \hyperlink{structCSphString}{C\-Sph\-String} \&, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr}, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \hyperlink{structCSphString}{C\-Sph\-String} \&)
+\item 
+virtual bool \hyperlink{classCSphTokenizerIndex_adccffd4ea74fb0ebf2adaa18824a6ebd}{Add\-Remove\-Attribute} (bool, const \hyperlink{structCSphString}{C\-Sph\-String} \&, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr}, \hyperlink{structCSphString}{C\-Sph\-String} \&)
+\item 
+virtual void \hyperlink{classCSphTokenizerIndex_a4099f201fb08db6a5ea21d10182da106}{Debug\-Dump\-Header} (F\-I\-L\-E $\ast$, const char $\ast$, bool)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenizerIndex_a2398ef0a3240e706cc87df28f3d00d5a}{Debug\-Dump\-Docids} (F\-I\-L\-E $\ast$)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenizerIndex_a6c398f1287e71d1fe782f3e3dcf606ed}{Debug\-Dump\-Hitlist} (F\-I\-L\-E $\ast$, const char $\ast$, bool)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphTokenizerIndex_ab72a4bc731ba211666ca0bea988f42a9}{Debug\-Check} (F\-I\-L\-E $\ast$)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenizerIndex_a0436043f7ce291df7b12b16545660cff}{Debug\-Dump\-Dict} (F\-I\-L\-E $\ast$)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenizerIndex_a7595cdb097ac7238fab672aeecda19d5}{Set\-Progress\-Callback} (\hyperlink{structCSphIndexProgress_ae4d818fe1ea74a250088fcc7b77fdf63}{C\-Sph\-Index\-Progress\-::\-Indexing\-Progress\-\_\-fn})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphTokenizerIndex_a9dff6c826818121f8f82395c3f72c42c}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}}
+\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{C\-Sph\-Tokenizer\-Index}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Tokenizer\-Index\-::\-C\-Sph\-Tokenizer\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphTokenizerIndex_a9dff6c826818121f8f82395c3f72c42c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphTokenizerIndex_adccffd4ea74fb0ebf2adaa18824a6ebd}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Add\-Remove\-Attribute@{Add\-Remove\-Attribute}}
+\index{Add\-Remove\-Attribute@{Add\-Remove\-Attribute}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Add\-Remove\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Add\-Remove\-Attribute (
+\begin{DoxyParamCaption}
+\item[{bool}]{, }
+\item[{const {\bf C\-Sph\-String} \&}]{, }
+\item[{{\bf E\-Sph\-Attr}}]{, }
+\item[{{\bf C\-Sph\-String} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_adccffd4ea74fb0ebf2adaa18824a6ebd}
+
+
+Implements \hyperlink{classCSphIndex_ae03b4ecb65255ca5ff209f9d79df52ad}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a97d8a7397223b5bc4e37dcb1f8889adb}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Build@{Build}}
+\index{Build@{Build}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Build}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Tokenizer\-Index\-::\-Build (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Source} $\ast$ $>$ \&}]{d\-Sources, }
+\item[{{\bf int}}]{i\-Memory\-Limit, }
+\item[{{\bf int}}]{i\-Write\-Buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a97d8a7397223b5bc4e37dcb1f8889adb}
+
+
+build index by indexing given sources 
+
+
+
+Implements \hyperlink{classCSphIndex_a511623b7f266c3bdded675613aba2939}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a1dc3645fdae46694d7ee6c8641d5ac42}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Create\-Modified\-Files@{Create\-Modified\-Files}}
+\index{Create\-Modified\-Files@{Create\-Modified\-Files}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Create\-Modified\-Files}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Create\-Modified\-Files (
+\begin{DoxyParamCaption}
+\item[{bool}]{, }
+\item[{const {\bf C\-Sph\-String} \&}]{, }
+\item[{{\bf E\-Sph\-Attr}}]{, }
+\item[{{\bf int}}]{, }
+\item[{{\bf C\-Sph\-String} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a1dc3645fdae46694d7ee6c8641d5ac42}
+\hypertarget{classCSphTokenizerIndex_ae54fde262e7c89070e855f22c7ee6f15}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Dealloc@{Dealloc}}
+\index{Dealloc@{Dealloc}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Dealloc}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Dealloc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_ae54fde262e7c89070e855f22c7ee6f15}
+
+
+deallocate all previously preallocated shared data 
+
+
+
+Implements \hyperlink{classCSphIndex_a19cd46e34780cebed5ab7d4b0faed501}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_ab72a4bc731ba211666ca0bea988f42a9}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Debug\-Check@{Debug\-Check}}
+\index{Debug\-Check@{Debug\-Check}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Debug\-Check}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Tokenizer\-Index\-::\-Debug\-Check (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_ab72a4bc731ba211666ca0bea988f42a9}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_a0f44239433b6bef01f3590583fdf2f60}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a0436043f7ce291df7b12b16545660cff}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Debug\-Dump\-Dict@{Debug\-Dump\-Dict}}
+\index{Debug\-Dump\-Dict@{Debug\-Dump\-Dict}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Debug\-Dump\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Debug\-Dump\-Dict (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a0436043f7ce291df7b12b16545660cff}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_a684af9d03342c79a4ab6885f8250bc64}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a2398ef0a3240e706cc87df28f3d00d5a}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Debug\-Dump\-Docids@{Debug\-Dump\-Docids}}
+\index{Debug\-Dump\-Docids@{Debug\-Dump\-Docids}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Debug\-Dump\-Docids}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Debug\-Dump\-Docids (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a2398ef0a3240e706cc87df28f3d00d5a}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_a2385d5af2cc0403456f17dd3c5289a91}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a4099f201fb08db6a5ea21d10182da106}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Debug\-Dump\-Header@{Debug\-Dump\-Header}}
+\index{Debug\-Dump\-Header@{Debug\-Dump\-Header}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Debug\-Dump\-Header}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Debug\-Dump\-Header (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{const char $\ast$}]{s\-Header\-Name, }
+\item[{bool}]{b\-Config}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a4099f201fb08db6a5ea21d10182da106}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_ab1123cb39dff035759be9adaa800e2e6}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a6c398f1287e71d1fe782f3e3dcf606ed}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Debug\-Dump\-Hitlist@{Debug\-Dump\-Hitlist}}
+\index{Debug\-Dump\-Hitlist@{Debug\-Dump\-Hitlist}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Debug\-Dump\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Debug\-Dump\-Hitlist (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{const char $\ast$}]{s\-Keyword, }
+\item[{bool}]{b\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a6c398f1287e71d1fe782f3e3dcf606ed}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_ac1f1f3287a7cc88920c76e62bd8750cf}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_ad6b9616f4afe748c0e35ccc6629b1b74}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Early\-Reject@{Early\-Reject}}
+\index{Early\-Reject@{Early\-Reject}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Early\-Reject}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Early\-Reject (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Query\-Context} $\ast$}]{, }
+\item[{{\bf C\-Sph\-Match} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_ad6b9616f4afe748c0e35ccc6629b1b74}
+
+
+Implements \hyperlink{classCSphIndex_a9b37c81e5a2ffe7be4d2a0265e8e7081}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a97fa7cd5a357f35d2e4c3a9a7bb82012}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Fill\-Keywords@{Fill\-Keywords}}
+\index{Fill\-Keywords@{Fill\-Keywords}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Fill\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Fill\-Keywords (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Keyword\-Info} $>$ \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a97fa7cd5a357f35d2e4c3a9a7bb82012}
+
+
+Implements \hyperlink{classCSphIndex_a9b8cfa825762de9f49db54eeb39f6004}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a07de33b47e06c63e9b3e4dd0df117c4c}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Get\-Attribute\-Status@{Get\-Attribute\-Status}}
+\index{Get\-Attribute\-Status@{Get\-Attribute\-Status}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Get\-Attribute\-Status}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf D\-W\-O\-R\-D} C\-Sph\-Tokenizer\-Index\-::\-Get\-Attribute\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a07de33b47e06c63e9b3e4dd0df117c4c}
+
+
+Implements \hyperlink{classCSphIndex_a5ec250c0b3e1eb392f2b76796425e503}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a3834d22b582826f06e7029ffea9fa98b}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Get\-Keywords@{Get\-Keywords}}
+\index{Get\-Keywords@{Get\-Keywords}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Get\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Tokenizer\-Index\-::\-Get\-Keywords (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Keyword\-Info} $>$ \&}]{d\-Keywords, }
+\item[{const char $\ast$}]{sz\-Query, }
+\item[{const {\bf Get\-Keywords\-Settings\-\_\-t} \&}]{t\-Settings, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a3834d22b582826f06e7029ffea9fa98b}
+
+
+Implements \hyperlink{classCSphIndex_a3096853f1151b77ed5e3e666c4120a4b}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a7e1cffc234066269d59769456f7899b3}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Get\-Kill\-List@{Get\-Kill\-List}}
+\index{Get\-Kill\-List@{Get\-Kill\-List}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Get\-Kill\-List}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Sph\-Doc\-I\-D\-\_\-t}$\ast$ C\-Sph\-Tokenizer\-Index\-::\-Get\-Kill\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a7e1cffc234066269d59769456f7899b3}
+
+
+Implements \hyperlink{classCSphIndex_a742881b516501e4a60830a7051be32ef}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a6e475a5e40e804d5438d1bc6b4ddb969}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Get\-Kill\-List\-Size@{Get\-Kill\-List\-Size}}
+\index{Get\-Kill\-List\-Size@{Get\-Kill\-List\-Size}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Get\-Kill\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Tokenizer\-Index\-::\-Get\-Kill\-List\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a6e475a5e40e804d5438d1bc6b4ddb969}
+
+
+Implements \hyperlink{classCSphIndex_afc96ce6459f93e6a214a0433691bd6da}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a955dde3307b752ecf39119da3efa170f}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Get\-Stats@{Get\-Stats}}
+\index{Get\-Stats@{Get\-Stats}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Get\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-Source\-Stats}\& C\-Sph\-Tokenizer\-Index\-::\-Get\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a955dde3307b752ecf39119da3efa170f}
+
+
+return index document, bytes totals (F\-I\-X\-M\-E? remove this in favor of \hyperlink{classCSphTokenizerIndex_ad1014ce393721dbd1f7e3600228f8830}{Get\-Status()} maybe?) 
+
+
+
+Implements \hyperlink{classCSphIndex_a993b7194dfa869f1fc53e88dbaea312e}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_ad1014ce393721dbd1f7e3600228f8830}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Get\-Status@{Get\-Status}}
+\index{Get\-Status@{Get\-Status}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Get\-Status (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index\-Status} $\ast$}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_ad1014ce393721dbd1f7e3600228f8830}
+
+
+return additional index info 
+
+
+
+Implements \hyperlink{classCSphIndex_aa62060b8df807b6beeb93efda865cd60}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a4c8264b52e1fb6a95723f65bb59dc269}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Has\-Docid@{Has\-Docid}}
+\index{Has\-Docid@{Has\-Docid}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Has\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Has\-Docid (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a4c8264b52e1fb6a95723f65bb59dc269}
+
+
+Implements \hyperlink{classCSphIndex_adb5aa35c6a81bb37cb9895a3938edb6e}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a1e1e084223bcf040ce5adb03ac1dd7c1}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Lock@{Lock}}
+\index{Lock@{Lock}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Lock}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a1e1e084223bcf040ce5adb03ac1dd7c1}
+
+
+obtain exclusive lock on this index 
+
+
+
+Implements \hyperlink{classCSphIndex_a0d9cb1bec9432296de727de7982fd28f}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_ae8438d3db942841c2175986de602c60a}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Merge@{Merge}}
+\index{Merge@{Merge}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Merge}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Merge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index} $\ast$}]{p\-Source, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Filter\-Settings} $>$ \&}]{d\-Filters, }
+\item[{bool}]{b\-Merge\-Kill\-Lists}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_ae8438d3db942841c2175986de602c60a}
+
+
+build index by mering current index with given index 
+
+
+
+Implements \hyperlink{classCSphIndex_ab27064d2a9275e8683fccaa9472894d5}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a1287c2e4dcf89d2643e8353db9531855}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Multi\-Query@{Multi\-Query}}
+\index{Multi\-Query@{Multi\-Query}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Multi\-Query}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Multi\-Query (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$}]{, }
+\item[{{\bf int}}]{, }
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$$\ast$}]{, }
+\item[{const {\bf C\-Sph\-Multi\-Query\-Args} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a1287c2e4dcf89d2643e8353db9531855}
+
+
+Implements \hyperlink{classCSphIndex_af9509496c555985ec9ccec4c2260391d}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_aa00ad3a241c981ba7af81ecb69d45a25}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Multi\-Query\-Ex@{Multi\-Query\-Ex}}
+\index{Multi\-Query\-Ex@{Multi\-Query\-Ex}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Multi\-Query\-Ex}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Multi\-Query\-Ex (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$$\ast$}]{, }
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$$\ast$}]{, }
+\item[{const {\bf C\-Sph\-Multi\-Query\-Args} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_aa00ad3a241c981ba7af81ecb69d45a25}
+
+
+Implements \hyperlink{classCSphIndex_a19f5a3df99344e37a1d8a1e9ac7f8c22}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a81be68c9a598f5f0ca3cf5c2a84f97ac}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Post\-Setup@{Post\-Setup}}
+\index{Post\-Setup@{Post\-Setup}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Post\-Setup}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Post\-Setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a81be68c9a598f5f0ca3cf5c2a84f97ac}
+
+
+called when index is loaded and prepared to work 
+
+
+
+Implements \hyperlink{classCSphIndex_a903008e29c37e817e72e7e92d2ccb964}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a216d3d82dbc623c16a091e609188bf8a}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Prealloc@{Prealloc}}
+\index{Prealloc@{Prealloc}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Prealloc}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Prealloc (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Strip\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a216d3d82dbc623c16a091e609188bf8a}
+
+
+check all data files, preload schema, and preallocate enough R\-A\-M to load memory-\/cached data 
+
+
+
+Implements \hyperlink{classCSphIndex_a5ecebcd36640119821b2a3c44edf120c}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_af75e44b119d0658c52568629eca49d9a}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Preread@{Preread}}
+\index{Preread@{Preread}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Preread}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Preread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_af75e44b119d0658c52568629eca49d9a}
+
+
+precache everything which needs to be precached 
+
+
+
+Implements \hyperlink{classCSphIndex_acaa353c3d9d7753600527336efa6a0f8}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a06ac573ed03c271d1bfc53396cce3b3c}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Rename@{Rename}}
+\index{Rename@{Rename}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Rename}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Rename (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-New\-Base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a06ac573ed03c271d1bfc53396cce3b3c}
+
+
+set new index base path, and physically rename index files too 
+
+
+
+Implements \hyperlink{classCSphIndex_a8dc7ada3f2ed3d5e946b0b3b744c6ba7}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_af91bf8b76494f5ba79ad60957c4d7986}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Save\-Attributes@{Save\-Attributes}}
+\index{Save\-Attributes@{Save\-Attributes}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Save\-Attributes}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Tokenizer\-Index\-::\-Save\-Attributes (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_af91bf8b76494f5ba79ad60957c4d7986}
+saves memory-\/cached attributes, if there were any updates to them on failure, false is returned and \hyperlink{classCSphIndex_aa6c4f86ceb64733762450a5a37ba15d8}{Get\-Last\-Error()} contains error message 
+
+Implements \hyperlink{classCSphIndex_a125ab8314647e93a406f827ee6406a14}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_ab346428334d1eff03576544d70c55a0b}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Set\-Base@{Set\-Base}}
+\index{Set\-Base@{Set\-Base}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Set\-Base}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Set\-Base (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-New\-Base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_ab346428334d1eff03576544d70c55a0b}
+
+
+set new index base path 
+
+
+
+Implements \hyperlink{classCSphIndex_a390720d5982aedac1973de92f08fe821}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a5ff140f79a766fe4c8600b71ac145013}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Set\-Memory\-Settings@{Set\-Memory\-Settings}}
+\index{Set\-Memory\-Settings@{Set\-Memory\-Settings}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Set\-Memory\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Set\-Memory\-Settings (
+\begin{DoxyParamCaption}
+\item[{bool}]{, }
+\item[{bool}]{, }
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a5ff140f79a766fe4c8600b71ac145013}
+
+
+Implements \hyperlink{classCSphIndex_ae0bb2bd341cb41c0339ca5132284799e}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a7595cdb097ac7238fab672aeecda19d5}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Set\-Progress\-Callback@{Set\-Progress\-Callback}}
+\index{Set\-Progress\-Callback@{Set\-Progress\-Callback}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Set\-Progress\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Set\-Progress\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index\-Progress\-::\-Indexing\-Progress\-\_\-fn}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a7595cdb097ac7238fab672aeecda19d5}
+
+
+Implements \hyperlink{classCSphIndex_a787668511b48ea883bb2e9a9721a8652}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_adaa5d3e9f2380516f107fed8468f7112}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Unlock@{Unlock}}
+\index{Unlock@{Unlock}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Unlock}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Tokenizer\-Index\-::\-Unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_adaa5d3e9f2380516f107fed8468f7112}
+
+
+dismiss exclusive lock and unlink lock file 
+
+
+
+Implements \hyperlink{classCSphIndex_aaabb7c87f3776dc91be0ebb9978ea8d7}{C\-Sph\-Index}.
+
+\hypertarget{classCSphTokenizerIndex_a5ce83cf5c90e86d5cfcb55824a4290ff}{\index{C\-Sph\-Tokenizer\-Index@{C\-Sph\-Tokenizer\-Index}!Update\-Attributes@{Update\-Attributes}}
+\index{Update\-Attributes@{Update\-Attributes}!CSphTokenizerIndex@{C\-Sph\-Tokenizer\-Index}}
+\subsubsection[{Update\-Attributes}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Tokenizer\-Index\-::\-Update\-Attributes (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Update} \&}]{t\-Upd, }
+\item[{{\bf int}}]{i\-Index, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenizerIndex_a5ce83cf5c90e86d5cfcb55824a4290ff}
+updates memory-\/cached attributes in real time returns non-\/negative amount of actually found and updated records on success on failure, -\/1 is returned and \hyperlink{classCSphIndex_aa6c4f86ceb64733762450a5a37ba15d8}{Get\-Last\-Error()} contains error message 
+
+Implements \hyperlink{classCSphIndex_a04bc00c3a4767aecd7f6ca953ef92f17}{C\-Sph\-Index}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

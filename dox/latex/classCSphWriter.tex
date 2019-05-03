@@ -1,0 +1,342 @@
+\hypertarget{classCSphWriter}{\section{C\-Sph\-Writer Class Reference}
+\label{classCSphWriter}\index{C\-Sph\-Writer@{C\-Sph\-Writer}}
+}
+
+
+file writer with write buffering and int encoder  
+
+
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Writer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphWriter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphWriter_a3a120292f302669da185e9abe6027efe}{C\-Sph\-Writer} ()
+\item 
+virtual \hyperlink{classCSphWriter_ae9cecc5bc962fb12ae00d5f95c9dfb28}{$\sim$\-C\-Sph\-Writer} ()
+\item 
+void \hyperlink{classCSphWriter_af3acea52de0e265626e0f69c7de933ea}{Set\-Buffer\-Size} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Buffer\-Size)
+\begin{DoxyCompactList}\small\item\em tune write cache size; must be called before \hyperlink{classCSphWriter_a458675d2b90b9d61d86b76d382eb5628}{Open\-File()} or \hyperlink{classCSphWriter_a68de8f089ebaa1e21b0f041615caf8e7}{Set\-File()} \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphWriter_a458675d2b90b9d61d86b76d382eb5628}{Open\-File} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Name, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+void \hyperlink{classCSphWriter_a68de8f089ebaa1e21b0f041615caf8e7}{Set\-File} (\hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \&t\-Auto, \hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} $\ast$p\-Shared\-Offset, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+void \hyperlink{classCSphWriter_a1e6512085b59c707834f4e86781ae3c3}{Close\-File} (bool b\-Truncate=false)
+\begin{DoxyCompactList}\small\item\em note\-: calls \hyperlink{classCSphWriter_a1a2e6bfe521039f4eb5453725b5a4162}{Flush()}, ie. \hyperlink{classCSphWriter_a82873454dce55dd4bb1a502f20bd2f69}{Is\-Error()} might get true after this call \end{DoxyCompactList}\item 
+void \hyperlink{classCSphWriter_a00359c4f41787abd3c30f97cbe72fb94}{Unlink\-File} ()
+\item 
+void \hyperlink{classCSphWriter_a8ae85dbc8baefd74a0ea4749db42d33f}{Put\-Byte} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\begin{DoxyCompactList}\small\item\em some shit happened (outside) and the file is no more actual. \end{DoxyCompactList}\item 
+void \hyperlink{classCSphWriter_ab7f1b920a37484cad2b95af53e488397}{Put\-Bytes} (const void $\ast$p\-Data, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Size)
+\item 
+void \hyperlink{classCSphWriter_a81007e41a63aabc11ce98aefa9061f15}{Put\-Dword} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\item 
+void \hyperlink{classCSphWriter_ab59907f291aaf1b85d175a0b918ccd34}{Put\-Offset} (\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\item 
+void \hyperlink{classCSphWriter_a1206f841c63fda947bb19ac992b23a1e}{Put\-String} (const char $\ast$sz\-String)
+\item 
+void \hyperlink{classCSphWriter_a57d2e6046262b9659efe34837dd3b40c}{Put\-String} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-String)
+\item 
+void \hyperlink{classCSphWriter_aec40f95e1538a56361112fdd9c4b137e}{Tag} (const char $\ast$s\-Tag)
+\item 
+void \hyperlink{classCSphWriter_a3f8c7f7118177127a0f06ece4f7bc4c3}{Seek\-To} (\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} pos)
+\begin{DoxyCompactList}\small\item\em seeking inside the buffer will truncate it \end{DoxyCompactList}\item 
+void \hyperlink{classCSphWriter_a9cd649cf598cfd4caa2475d582989533}{Put\-Docid} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\item 
+void \hyperlink{classCSphWriter_ad6f9af9612d37ea9fcbdf0db36370968}{Zip\-Int} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\item 
+void \hyperlink{classCSphWriter_a87fde3002e70de564a60f97609d8fa6b}{Zip\-Offset} (\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\item 
+void \hyperlink{classCSphWriter_a3e451619423ec7136b469f734e41f82c}{Zip\-Offsets} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} $>$ $\ast$p\-Data)
+\item 
+bool \hyperlink{classCSphWriter_a82873454dce55dd4bb1a502f20bd2f69}{Is\-Error} () const 
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphWriter_a8bc8612c59fabd34ddbbf6855af4da89}{Get\-Pos} () const 
+\item 
+void \hyperlink{classCSphWriter_afced492f49e926bd4ef377793d16e9ca}{Set\-Throttle} (\hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-State)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classCSphWriter_a1a2e6bfe521039f4eb5453725b5a4162}{Flush} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphWriter_a462ad0ec99a0a463dc2f0b8bda154c37}{m\-\_\-s\-Name}
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphWriter_ac4192cd2815a3ecfe211ffa016b156d7}{m\-\_\-i\-Pos}
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphWriter_af31ade40cfe477a83fd94131488a4601}{m\-\_\-i\-Written}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphWriter_a49ea3c2c72312bc5133cb8f93043ee61}{m\-\_\-i\-F\-D}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphWriter_ab073ccb1cd18e73f0f60e136ec5ca05d}{m\-\_\-i\-Pool\-Used}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphWriter_a340ea2975deee4e74d794556a5a14b98}{m\-\_\-p\-Buffer}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphWriter_abbb485d6e77f4c5bc57672de79606b9c}{m\-\_\-p\-Pool}
+\item 
+bool \hyperlink{classCSphWriter_a32b6f0e63ecc8fd965302591620337b2}{m\-\_\-b\-Own\-File}
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} $\ast$ \hyperlink{classCSphWriter_a294466e5763d07e3bdcab322bb326495}{m\-\_\-p\-Shared\-Offset}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphWriter_a2819349d330569d22f9db5189cec062b}{m\-\_\-i\-Buffer\-Size}
+\item 
+bool \hyperlink{classCSphWriter_ae2c5a7a72b7fee79f8ec253e0907aaf9}{m\-\_\-b\-Error}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} $\ast$ \hyperlink{classCSphWriter_a92d14a1ae7105b101026fa8cb475a964}{m\-\_\-p\-Error}
+\item 
+\hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$ \hyperlink{classCSphWriter_a7a3c2e9afb46c10678157fd4946e538c}{m\-\_\-p\-Throttle}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+file writer with write buffering and int encoder 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphWriter_a3a120292f302669da185e9abe6027efe}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!C\-Sph\-Writer@{C\-Sph\-Writer}}
+\index{C\-Sph\-Writer@{C\-Sph\-Writer}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{C\-Sph\-Writer}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Writer\-::\-C\-Sph\-Writer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a3a120292f302669da185e9abe6027efe}
+\hypertarget{classCSphWriter_ae9cecc5bc962fb12ae00d5f95c9dfb28}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!$\sim$\-C\-Sph\-Writer@{$\sim$\-C\-Sph\-Writer}}
+\index{$\sim$\-C\-Sph\-Writer@{$\sim$\-C\-Sph\-Writer}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{$\sim$\-C\-Sph\-Writer}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Writer\-::$\sim$\-C\-Sph\-Writer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphWriter_ae9cecc5bc962fb12ae00d5f95c9dfb28}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphWriter_a1e6512085b59c707834f4e86781ae3c3}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Close\-File@{Close\-File}}
+\index{Close\-File@{Close\-File}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Close\-File}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Close\-File (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Truncate = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a1e6512085b59c707834f4e86781ae3c3}
+
+
+note\-: calls \hyperlink{classCSphWriter_a1a2e6bfe521039f4eb5453725b5a4162}{Flush()}, ie. \hyperlink{classCSphWriter_a82873454dce55dd4bb1a502f20bd2f69}{Is\-Error()} might get true after this call 
+
+\hypertarget{classCSphWriter_a1a2e6bfe521039f4eb5453725b5a4162}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Flush@{Flush}}
+\index{Flush@{Flush}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Flush}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classCSphWriter_a1a2e6bfe521039f4eb5453725b5a4162}
+
+
+Reimplemented in \hyperlink{classBinlogWriter__c_ac1a668069eb0155b3b9f77bbe0e69d7c}{Binlog\-Writer\-\_\-c}.
+
+\hypertarget{classCSphWriter_a8bc8612c59fabd34ddbbf6855af4da89}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Get\-Pos@{Get\-Pos}}
+\index{Get\-Pos@{Get\-Pos}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Get\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Writer\-::\-Get\-Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphWriter_a8bc8612c59fabd34ddbbf6855af4da89}
+\hypertarget{classCSphWriter_a82873454dce55dd4bb1a502f20bd2f69}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Is\-Error@{Is\-Error}}
+\index{Is\-Error@{Is\-Error}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Is\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Writer\-::\-Is\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphWriter_a82873454dce55dd4bb1a502f20bd2f69}
+\hypertarget{classCSphWriter_a458675d2b90b9d61d86b76d382eb5628}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Open\-File@{Open\-File}}
+\index{Open\-File@{Open\-File}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Open\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Writer\-::\-Open\-File (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Name, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a458675d2b90b9d61d86b76d382eb5628}
+\hypertarget{classCSphWriter_a8ae85dbc8baefd74a0ea4749db42d33f}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Put\-Byte@{Put\-Byte}}
+\index{Put\-Byte@{Put\-Byte}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Put\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Put\-Byte (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{u\-Value}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a8ae85dbc8baefd74a0ea4749db42d33f}
+
+
+some shit happened (outside) and the file is no more actual. 
+
+\hypertarget{classCSphWriter_ab7f1b920a37484cad2b95af53e488397}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Put\-Bytes@{Put\-Bytes}}
+\index{Put\-Bytes@{Put\-Bytes}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Put\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Put\-Bytes (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{p\-Data, }
+\item[{{\bf int64\-\_\-t}}]{i\-Size}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_ab7f1b920a37484cad2b95af53e488397}
+\hypertarget{classCSphWriter_a9cd649cf598cfd4caa2475d582989533}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Put\-Docid@{Put\-Docid}}
+\index{Put\-Docid@{Put\-Docid}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Put\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Put\-Docid (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphWriter_a9cd649cf598cfd4caa2475d582989533}
+\hypertarget{classCSphWriter_a81007e41a63aabc11ce98aefa9061f15}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Put\-Dword@{Put\-Dword}}
+\index{Put\-Dword@{Put\-Dword}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Put\-Dword}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Put\-Dword (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphWriter_a81007e41a63aabc11ce98aefa9061f15}
+\hypertarget{classCSphWriter_ab59907f291aaf1b85d175a0b918ccd34}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Put\-Offset@{Put\-Offset}}
+\index{Put\-Offset@{Put\-Offset}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Put\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Put\-Offset (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Offset\-\_\-t}}]{u\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphWriter_ab59907f291aaf1b85d175a0b918ccd34}
+\hypertarget{classCSphWriter_a1206f841c63fda947bb19ac992b23a1e}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Put\-String@{Put\-String}}
+\index{Put\-String@{Put\-String}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Put\-String}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Put\-String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{sz\-String}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a1206f841c63fda947bb19ac992b23a1e}
+\hypertarget{classCSphWriter_a57d2e6046262b9659efe34837dd3b40c}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Put\-String@{Put\-String}}
+\index{Put\-String@{Put\-String}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Put\-String}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Put\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-String}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a57d2e6046262b9659efe34837dd3b40c}
+\hypertarget{classCSphWriter_a3f8c7f7118177127a0f06ece4f7bc4c3}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Seek\-To@{Seek\-To}}
+\index{Seek\-To@{Seek\-To}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Seek\-To}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Seek\-To (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Offset\-\_\-t}}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a3f8c7f7118177127a0f06ece4f7bc4c3}
+
+
+seeking inside the buffer will truncate it 
+
+\hypertarget{classCSphWriter_af3acea52de0e265626e0f69c7de933ea}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Set\-Buffer\-Size@{Set\-Buffer\-Size}}
+\index{Set\-Buffer\-Size@{Set\-Buffer\-Size}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Set\-Buffer\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Set\-Buffer\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Buffer\-Size}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_af3acea52de0e265626e0f69c7de933ea}
+
+
+tune write cache size; must be called before \hyperlink{classCSphWriter_a458675d2b90b9d61d86b76d382eb5628}{Open\-File()} or \hyperlink{classCSphWriter_a68de8f089ebaa1e21b0f041615caf8e7}{Set\-File()} 
+
+\hypertarget{classCSphWriter_a68de8f089ebaa1e21b0f041615caf8e7}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Set\-File@{Set\-File}}
+\index{Set\-File@{Set\-File}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Set\-File}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Set\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Autofile} \&}]{t\-Auto, }
+\item[{{\bf Sph\-Offset\-\_\-t} $\ast$}]{p\-Shared\-Offset, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a68de8f089ebaa1e21b0f041615caf8e7}
+\hypertarget{classCSphWriter_afced492f49e926bd4ef377793d16e9ca}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Set\-Throttle@{Set\-Throttle}}
+\index{Set\-Throttle@{Set\-Throttle}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Set\-Throttle}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Set\-Throttle (
+\begin{DoxyParamCaption}
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-State}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphWriter_afced492f49e926bd4ef377793d16e9ca}
+\hypertarget{classCSphWriter_aec40f95e1538a56361112fdd9c4b137e}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Tag@{Tag}}
+\index{Tag@{Tag}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Tag}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Tag (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Tag}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_aec40f95e1538a56361112fdd9c4b137e}
+\hypertarget{classCSphWriter_a00359c4f41787abd3c30f97cbe72fb94}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Unlink\-File@{Unlink\-File}}
+\index{Unlink\-File@{Unlink\-File}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Unlink\-File}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Unlink\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a00359c4f41787abd3c30f97cbe72fb94}
+\hypertarget{classCSphWriter_ad6f9af9612d37ea9fcbdf0db36370968}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Zip\-Int@{Zip\-Int}}
+\index{Zip\-Int@{Zip\-Int}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Zip\-Int}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Zip\-Int (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Value}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_ad6f9af9612d37ea9fcbdf0db36370968}
+\hypertarget{classCSphWriter_a87fde3002e70de564a60f97609d8fa6b}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Zip\-Offset@{Zip\-Offset}}
+\index{Zip\-Offset@{Zip\-Offset}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Zip\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Zip\-Offset (
+\begin{DoxyParamCaption}
+\item[{{\bf uint64\-\_\-t}}]{u\-Value}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a87fde3002e70de564a60f97609d8fa6b}
+\hypertarget{classCSphWriter_a3e451619423ec7136b469f734e41f82c}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!Zip\-Offsets@{Zip\-Offsets}}
+\index{Zip\-Offsets@{Zip\-Offsets}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{Zip\-Offsets}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Writer\-::\-Zip\-Offsets (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Sph\-Offset\-\_\-t} $>$ $\ast$}]{p\-Data}
+\end{DoxyParamCaption}
+)}}\label{classCSphWriter_a3e451619423ec7136b469f734e41f82c}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphWriter_ae2c5a7a72b7fee79f8ec253e0907aaf9}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-b\-Error@{m\-\_\-b\-Error}}
+\index{m\-\_\-b\-Error@{m\-\_\-b\-Error}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-b\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Writer\-::m\-\_\-b\-Error\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_ae2c5a7a72b7fee79f8ec253e0907aaf9}
+\hypertarget{classCSphWriter_a32b6f0e63ecc8fd965302591620337b2}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-b\-Own\-File@{m\-\_\-b\-Own\-File}}
+\index{m\-\_\-b\-Own\-File@{m\-\_\-b\-Own\-File}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-b\-Own\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Writer\-::m\-\_\-b\-Own\-File\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_a32b6f0e63ecc8fd965302591620337b2}
+\hypertarget{classCSphWriter_a2819349d330569d22f9db5189cec062b}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-i\-Buffer\-Size@{m\-\_\-i\-Buffer\-Size}}
+\index{m\-\_\-i\-Buffer\-Size@{m\-\_\-i\-Buffer\-Size}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-i\-Buffer\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Writer\-::m\-\_\-i\-Buffer\-Size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_a2819349d330569d22f9db5189cec062b}
+\hypertarget{classCSphWriter_a49ea3c2c72312bc5133cb8f93043ee61}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-i\-F\-D@{m\-\_\-i\-F\-D}}
+\index{m\-\_\-i\-F\-D@{m\-\_\-i\-F\-D}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-i\-F\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Writer\-::m\-\_\-i\-F\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_a49ea3c2c72312bc5133cb8f93043ee61}
+\hypertarget{classCSphWriter_ab073ccb1cd18e73f0f60e136ec5ca05d}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-i\-Pool\-Used@{m\-\_\-i\-Pool\-Used}}
+\index{m\-\_\-i\-Pool\-Used@{m\-\_\-i\-Pool\-Used}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-i\-Pool\-Used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Writer\-::m\-\_\-i\-Pool\-Used\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_ab073ccb1cd18e73f0f60e136ec5ca05d}
+\hypertarget{classCSphWriter_ac4192cd2815a3ecfe211ffa016b156d7}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-i\-Pos@{m\-\_\-i\-Pos}}
+\index{m\-\_\-i\-Pos@{m\-\_\-i\-Pos}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-i\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Writer\-::m\-\_\-i\-Pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_ac4192cd2815a3ecfe211ffa016b156d7}
+\hypertarget{classCSphWriter_af31ade40cfe477a83fd94131488a4601}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-i\-Written@{m\-\_\-i\-Written}}
+\index{m\-\_\-i\-Written@{m\-\_\-i\-Written}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-i\-Written}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Writer\-::m\-\_\-i\-Written\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_af31ade40cfe477a83fd94131488a4601}
+\hypertarget{classCSphWriter_a340ea2975deee4e74d794556a5a14b98}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-p\-Buffer@{m\-\_\-p\-Buffer}}
+\index{m\-\_\-p\-Buffer@{m\-\_\-p\-Buffer}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-p\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Writer\-::m\-\_\-p\-Buffer\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_a340ea2975deee4e74d794556a5a14b98}
+\hypertarget{classCSphWriter_a92d14a1ae7105b101026fa8cb475a964}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-p\-Error@{m\-\_\-p\-Error}}
+\index{m\-\_\-p\-Error@{m\-\_\-p\-Error}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-p\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String}$\ast$ C\-Sph\-Writer\-::m\-\_\-p\-Error\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_a92d14a1ae7105b101026fa8cb475a964}
+\hypertarget{classCSphWriter_abbb485d6e77f4c5bc57672de79606b9c}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-p\-Pool@{m\-\_\-p\-Pool}}
+\index{m\-\_\-p\-Pool@{m\-\_\-p\-Pool}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-p\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Writer\-::m\-\_\-p\-Pool\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_abbb485d6e77f4c5bc57672de79606b9c}
+\hypertarget{classCSphWriter_a294466e5763d07e3bdcab322bb326495}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-p\-Shared\-Offset@{m\-\_\-p\-Shared\-Offset}}
+\index{m\-\_\-p\-Shared\-Offset@{m\-\_\-p\-Shared\-Offset}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-p\-Shared\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t}$\ast$ C\-Sph\-Writer\-::m\-\_\-p\-Shared\-Offset\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_a294466e5763d07e3bdcab322bb326495}
+\hypertarget{classCSphWriter_a7a3c2e9afb46c10678157fd4946e538c}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-p\-Throttle@{m\-\_\-p\-Throttle}}
+\index{m\-\_\-p\-Throttle@{m\-\_\-p\-Throttle}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-p\-Throttle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Throttle\-State\-\_\-t}$\ast$ C\-Sph\-Writer\-::m\-\_\-p\-Throttle\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_a7a3c2e9afb46c10678157fd4946e538c}
+\hypertarget{classCSphWriter_a462ad0ec99a0a463dc2f0b8bda154c37}{\index{C\-Sph\-Writer@{C\-Sph\-Writer}!m\-\_\-s\-Name@{m\-\_\-s\-Name}}
+\index{m\-\_\-s\-Name@{m\-\_\-s\-Name}!CSphWriter@{C\-Sph\-Writer}}
+\subsubsection[{m\-\_\-s\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Writer\-::m\-\_\-s\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphWriter_a462ad0ec99a0a463dc2f0b8bda154c37}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

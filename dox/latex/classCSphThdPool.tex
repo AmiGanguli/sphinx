@@ -1,0 +1,190 @@
+\hypertarget{classCSphThdPool}{\section{C\-Sph\-Thd\-Pool Class Reference}
+\label{classCSphThdPool}\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}}
+}
+Inheritance diagram for C\-Sph\-Thd\-Pool\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphThdPool}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphThdPool_a0e15d82b53a3d69a90633ce7cbc3a008}{C\-Sph\-Thd\-Pool} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Threads, const char $\ast$s\-Name)
+\item 
+virtual \hyperlink{classCSphThdPool_a057dd660e531c539879cd6ffa1650336}{$\sim$\-C\-Sph\-Thd\-Pool} ()
+\item 
+virtual void \hyperlink{classCSphThdPool_ac2809ea06b5936abd8fac12563b5b1af}{Shutdown} ()
+\item 
+virtual void \hyperlink{classCSphThdPool_ae72a692ed3935ad5ee5c57474376e984}{Add\-Job} (\hyperlink{structISphJob}{I\-Sph\-Job} $\ast$p\-Item)
+\item 
+virtual void \hyperlink{classCSphThdPool_acd8432ab0685b5ce5ef515e0c55a2626}{Start\-Job} (\hyperlink{structISphJob}{I\-Sph\-Job} $\ast$p\-Item)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphThdPool_ac9babbb3b4c59d2c3191b401622ca0ee}{Get\-Active\-Worker\-Count} () const 
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphThdPool_a9a9ebaf12e8fe5d260a87320e6a490e3}{Get\-Total\-Worker\-Count} () const 
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphThdPool_a41117ca8f76ced40e468d4678a029fd8}{Get\-Queue\-Length} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classCSphThdPool_aee23057b7b6f01e0ae55a7375dfdfd47}{Tick} (void $\ast$p\-Arg)
+\item 
+static void \hyperlink{classCSphThdPool_afeaace5759fe6bc4398c80d0ba47ddcf}{Start} (void $\ast$p\-Arg)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphSemaphore}{C\-Sph\-Semaphore} \hyperlink{classCSphThdPool_a7c537b90f8b1fe6dfd684656fa030468}{m\-\_\-t\-Work\-Sem}
+\item 
+C\-Sph\-Mutex \hyperlink{classCSphThdPool_ab4817c7b59ea9af409e2930314958af6}{m\-\_\-t\-Job\-Lock}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinxstd_8h_ad728334ec85e8a6b4db5bc1efd06447a}{Sph\-Thread\-\_\-t} $>$ \hyperlink{classCSphThdPool_a9fbfebb75daea5b07050c6ae76f40f06}{m\-\_\-d\-Workers}
+\item 
+\hyperlink{structThdJob__t}{Thd\-Job\-\_\-t} $\ast$ \hyperlink{classCSphThdPool_a38b3c31b616e2c0392868f9ec92eb10f}{m\-\_\-p\-Head}
+\item 
+\hyperlink{structThdJob__t}{Thd\-Job\-\_\-t} $\ast$ \hyperlink{classCSphThdPool_aa02c54dedad8e47d3762d27e5855c2e7}{m\-\_\-p\-Tail}
+\item 
+volatile bool \hyperlink{classCSphThdPool_a2daa42b46c298c5b0f6875ad62f6ade6}{m\-\_\-b\-Shutdown}
+\item 
+\hyperlink{sphinxstd_8h_a9699401fcfba9f39dfa1838a3af04fe2}{C\-Sph\-Atomic} \hyperlink{classCSphThdPool_a8c6655adc2a0a9d98bcffaf290c55bbc}{m\-\_\-t\-Stat\-Active\-Workers}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphThdPool_ade216a20f82adfd0b52986c7f24fc822}{m\-\_\-i\-Stat\-Queued\-Jobs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphThdPool_a0e15d82b53a3d69a90633ce7cbc3a008}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}}
+\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{C\-Sph\-Thd\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Thd\-Pool\-::\-C\-Sph\-Thd\-Pool (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Threads, }
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphThdPool_a0e15d82b53a3d69a90633ce7cbc3a008}
+\hypertarget{classCSphThdPool_a057dd660e531c539879cd6ffa1650336}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!$\sim$\-C\-Sph\-Thd\-Pool@{$\sim$\-C\-Sph\-Thd\-Pool}}
+\index{$\sim$\-C\-Sph\-Thd\-Pool@{$\sim$\-C\-Sph\-Thd\-Pool}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{$\sim$\-C\-Sph\-Thd\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\-Sph\-Thd\-Pool\-::$\sim$\-C\-Sph\-Thd\-Pool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphThdPool_a057dd660e531c539879cd6ffa1650336}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphThdPool_ae72a692ed3935ad5ee5c57474376e984}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!Add\-Job@{Add\-Job}}
+\index{Add\-Job@{Add\-Job}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{Add\-Job}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Thd\-Pool\-::\-Add\-Job (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Job} $\ast$}]{p\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphThdPool_ae72a692ed3935ad5ee5c57474376e984}
+
+
+Implements \hyperlink{structISphThdPool_a73a4967e7c1e936fb0aa9b21b8500726}{I\-Sph\-Thd\-Pool}.
+
+\hypertarget{classCSphThdPool_ac9babbb3b4c59d2c3191b401622ca0ee}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!Get\-Active\-Worker\-Count@{Get\-Active\-Worker\-Count}}
+\index{Get\-Active\-Worker\-Count@{Get\-Active\-Worker\-Count}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{Get\-Active\-Worker\-Count}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Thd\-Pool\-::\-Get\-Active\-Worker\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classCSphThdPool_ac9babbb3b4c59d2c3191b401622ca0ee}
+
+
+Implements \hyperlink{structISphThdPool_a7d4877f9670fcae7cfa0611d6012fdbf}{I\-Sph\-Thd\-Pool}.
+
+\hypertarget{classCSphThdPool_a41117ca8f76ced40e468d4678a029fd8}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!Get\-Queue\-Length@{Get\-Queue\-Length}}
+\index{Get\-Queue\-Length@{Get\-Queue\-Length}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{Get\-Queue\-Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Thd\-Pool\-::\-Get\-Queue\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classCSphThdPool_a41117ca8f76ced40e468d4678a029fd8}
+
+
+Implements \hyperlink{structISphThdPool_a869f856698e12bffbb3568f734909428}{I\-Sph\-Thd\-Pool}.
+
+\hypertarget{classCSphThdPool_a9a9ebaf12e8fe5d260a87320e6a490e3}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!Get\-Total\-Worker\-Count@{Get\-Total\-Worker\-Count}}
+\index{Get\-Total\-Worker\-Count@{Get\-Total\-Worker\-Count}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{Get\-Total\-Worker\-Count}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Thd\-Pool\-::\-Get\-Total\-Worker\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classCSphThdPool_a9a9ebaf12e8fe5d260a87320e6a490e3}
+
+
+Implements \hyperlink{structISphThdPool_ab9991d426fe47349a5350ba293d70908}{I\-Sph\-Thd\-Pool}.
+
+\hypertarget{classCSphThdPool_ac2809ea06b5936abd8fac12563b5b1af}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Thd\-Pool\-::\-Shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphThdPool_ac2809ea06b5936abd8fac12563b5b1af}
+
+
+Implements \hyperlink{structISphThdPool_a8fd005e0518582c8268e3087ade557ea}{I\-Sph\-Thd\-Pool}.
+
+\hypertarget{classCSphThdPool_afeaace5759fe6bc4398c80d0ba47ddcf}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!Start@{Start}}
+\index{Start@{Start}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{Start}]{\setlength{\rightskip}{0pt plus 5cm}static void C\-Sph\-Thd\-Pool\-::\-Start (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphThdPool_afeaace5759fe6bc4398c80d0ba47ddcf}
+\hypertarget{classCSphThdPool_acd8432ab0685b5ce5ef515e0c55a2626}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!Start\-Job@{Start\-Job}}
+\index{Start\-Job@{Start\-Job}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{Start\-Job}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Thd\-Pool\-::\-Start\-Job (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Job} $\ast$}]{p\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphThdPool_acd8432ab0685b5ce5ef515e0c55a2626}
+
+
+Implements \hyperlink{structISphThdPool_a3ce0a5c93b5ec6f2c0cc0b955a883b90}{I\-Sph\-Thd\-Pool}.
+
+\hypertarget{classCSphThdPool_aee23057b7b6f01e0ae55a7375dfdfd47}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!Tick@{Tick}}
+\index{Tick@{Tick}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{Tick}]{\setlength{\rightskip}{0pt plus 5cm}static void C\-Sph\-Thd\-Pool\-::\-Tick (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphThdPool_aee23057b7b6f01e0ae55a7375dfdfd47}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphThdPool_a2daa42b46c298c5b0f6875ad62f6ade6}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!m\-\_\-b\-Shutdown@{m\-\_\-b\-Shutdown}}
+\index{m\-\_\-b\-Shutdown@{m\-\_\-b\-Shutdown}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{m\-\_\-b\-Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool C\-Sph\-Thd\-Pool\-::m\-\_\-b\-Shutdown\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphThdPool_a2daa42b46c298c5b0f6875ad62f6ade6}
+\hypertarget{classCSphThdPool_a9fbfebb75daea5b07050c6ae76f40f06}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!m\-\_\-d\-Workers@{m\-\_\-d\-Workers}}
+\index{m\-\_\-d\-Workers@{m\-\_\-d\-Workers}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{m\-\_\-d\-Workers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf Sph\-Thread\-\_\-t}$>$ C\-Sph\-Thd\-Pool\-::m\-\_\-d\-Workers\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphThdPool_a9fbfebb75daea5b07050c6ae76f40f06}
+\hypertarget{classCSphThdPool_ade216a20f82adfd0b52986c7f24fc822}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!m\-\_\-i\-Stat\-Queued\-Jobs@{m\-\_\-i\-Stat\-Queued\-Jobs}}
+\index{m\-\_\-i\-Stat\-Queued\-Jobs@{m\-\_\-i\-Stat\-Queued\-Jobs}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{m\-\_\-i\-Stat\-Queued\-Jobs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Thd\-Pool\-::m\-\_\-i\-Stat\-Queued\-Jobs\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphThdPool_ade216a20f82adfd0b52986c7f24fc822}
+\hypertarget{classCSphThdPool_a38b3c31b616e2c0392868f9ec92eb10f}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!m\-\_\-p\-Head@{m\-\_\-p\-Head}}
+\index{m\-\_\-p\-Head@{m\-\_\-p\-Head}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{m\-\_\-p\-Head}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thd\-Job\-\_\-t}$\ast$ C\-Sph\-Thd\-Pool\-::m\-\_\-p\-Head\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphThdPool_a38b3c31b616e2c0392868f9ec92eb10f}
+\hypertarget{classCSphThdPool_aa02c54dedad8e47d3762d27e5855c2e7}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!m\-\_\-p\-Tail@{m\-\_\-p\-Tail}}
+\index{m\-\_\-p\-Tail@{m\-\_\-p\-Tail}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{m\-\_\-p\-Tail}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thd\-Job\-\_\-t}$\ast$ C\-Sph\-Thd\-Pool\-::m\-\_\-p\-Tail\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphThdPool_aa02c54dedad8e47d3762d27e5855c2e7}
+\hypertarget{classCSphThdPool_ab4817c7b59ea9af409e2930314958af6}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!m\-\_\-t\-Job\-Lock@{m\-\_\-t\-Job\-Lock}}
+\index{m\-\_\-t\-Job\-Lock@{m\-\_\-t\-Job\-Lock}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{m\-\_\-t\-Job\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Mutex C\-Sph\-Thd\-Pool\-::m\-\_\-t\-Job\-Lock\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphThdPool_ab4817c7b59ea9af409e2930314958af6}
+\hypertarget{classCSphThdPool_a8c6655adc2a0a9d98bcffaf290c55bbc}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!m\-\_\-t\-Stat\-Active\-Workers@{m\-\_\-t\-Stat\-Active\-Workers}}
+\index{m\-\_\-t\-Stat\-Active\-Workers@{m\-\_\-t\-Stat\-Active\-Workers}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{m\-\_\-t\-Stat\-Active\-Workers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Atomic} C\-Sph\-Thd\-Pool\-::m\-\_\-t\-Stat\-Active\-Workers\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphThdPool_a8c6655adc2a0a9d98bcffaf290c55bbc}
+\hypertarget{classCSphThdPool_a7c537b90f8b1fe6dfd684656fa030468}{\index{C\-Sph\-Thd\-Pool@{C\-Sph\-Thd\-Pool}!m\-\_\-t\-Work\-Sem@{m\-\_\-t\-Work\-Sem}}
+\index{m\-\_\-t\-Work\-Sem@{m\-\_\-t\-Work\-Sem}!CSphThdPool@{C\-Sph\-Thd\-Pool}}
+\subsubsection[{m\-\_\-t\-Work\-Sem}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Semaphore} C\-Sph\-Thd\-Pool\-::m\-\_\-t\-Work\-Sem\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphThdPool_a7c537b90f8b1fe6dfd684656fa030468}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8cpp}{sphinxstd.\-cpp}\end{DoxyCompactItemize}

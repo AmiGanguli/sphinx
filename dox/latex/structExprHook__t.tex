@@ -1,0 +1,164 @@
+\hypertarget{structExprHook__t}{\section{Expr\-Hook\-\_\-t Struct Reference}
+\label{structExprHook__t}\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}}
+}
+Inheritance diagram for Expr\-Hook\-\_\-t\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structExprHook__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structExprHook__t_a7c58377ff19a1bbebbeb4f73ce1b2b9d}{Expr\-Hook\-\_\-t} ()
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprHook__t_a830a1512b0eebdbc1c720e126944b0ed}{Is\-Known\-Ident} (const char $\ast$)
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprHook__t_aada2e31944c7b48f524b356f9db4fdc0}{Is\-Known\-Func} (const char $\ast$s\-Func)
+\item 
+virtual \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{structExprHook__t_a8c22efdc23d08d959d53bbb41a07127b}{Create\-Node} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8h_aea24330ad33ca20415a6729b2e46ef2d}{D\-E\-B\-U\-G\-A\-R\-G}(i\-I\-D), \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Left, \hyperlink{sphinxexpr_8h_ae5eb5e13e926842882703cd0bd53ee46}{E\-Sph\-Eval\-Stage} $\ast$p\-Eval\-Stage, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+virtual \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} \hyperlink{structExprHook__t_a0dcb50ca421a9b070ad55040a42fbb41}{Get\-Ident\-Type} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\begin{DoxyCompactList}\small\item\em get identifier return type by O\-I\-D \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} \hyperlink{structExprHook__t_a42ef64d8ed6021093b67301a51363ae8}{Get\-Return\-Type} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8h_aea24330ad33ca20415a6729b2e46ef2d}{D\-E\-B\-U\-G\-A\-R\-G}(i\-I\-D), const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} $>$ \&d\-Args, bool, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+virtual void \hyperlink{structExprHook__t_ad08801db467712f7f89b21ca8e3d8b10}{Check\-Enter} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\begin{DoxyCompactList}\small\item\em recursive scope check \end{DoxyCompactList}\item 
+virtual void \hyperlink{structExprHook__t_acd7dbedd52e4be519cb3921c30d9b07a}{Check\-Exit} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\begin{DoxyCompactList}\small\item\em recursive scope check \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$ \hyperlink{structExprHook__t_abe356a529a6593053f1bbf9c0dfba8b4}{m\-\_\-p\-Index}
+\item 
+\hyperlink{classCSphQueryProfile}{C\-Sph\-Query\-Profile} $\ast$ \hyperlink{structExprHook__t_a93dc9895e65e635e7831c6dcd5478311}{m\-\_\-p\-Profiler}
+\begin{DoxyCompactList}\small\item\em B\-L\-O\-O\-D\-Y H\-A\-C\-K. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprHook__t_aa2d11f3653b6b2c6cabf7068f9bb0047}{H\-O\-O\-K\-\_\-\-S\-N\-I\-P\-P\-E\-T} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+searchd expression hook needed to implement functions that are builtin for searchd, but can not be builtin in the generic expression engine itself, like S\-N\-I\-P\-P\-E\-T() function that must know about indexes, tokenizers, etc 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structExprHook__t_a7c58377ff19a1bbebbeb4f73ce1b2b9d}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}}
+\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{Expr\-Hook\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Expr\-Hook\-\_\-t\-::\-Expr\-Hook\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structExprHook__t_a7c58377ff19a1bbebbeb4f73ce1b2b9d}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structExprHook__t_ad08801db467712f7f89b21ca8e3d8b10}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!Check\-Enter@{Check\-Enter}}
+\index{Check\-Enter@{Check\-Enter}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{Check\-Enter}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Expr\-Hook\-\_\-t\-::\-Check\-Enter (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structExprHook__t_ad08801db467712f7f89b21ca8e3d8b10}
+
+
+recursive scope check 
+
+
+
+Implements \hyperlink{structISphExprHook_a55230a0d31eea32798e9a4d9ef54b54c}{I\-Sph\-Expr\-Hook}.
+
+\hypertarget{structExprHook__t_acd7dbedd52e4be519cb3921c30d9b07a}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!Check\-Exit@{Check\-Exit}}
+\index{Check\-Exit@{Check\-Exit}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{Check\-Exit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Expr\-Hook\-\_\-t\-::\-Check\-Exit (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structExprHook__t_acd7dbedd52e4be519cb3921c30d9b07a}
+
+
+recursive scope check 
+
+
+
+Implements \hyperlink{structISphExprHook_ac9ff371f363a25cd0897b5a3c4b4f5f3}{I\-Sph\-Expr\-Hook}.
+
+\hypertarget{structExprHook__t_a8c22efdc23d08d959d53bbb41a07127b}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!Create\-Node@{Create\-Node}}
+\index{Create\-Node@{Create\-Node}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{Create\-Node}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf I\-Sph\-Expr}$\ast$ Expr\-Hook\-\_\-t\-::\-Create\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf int} }]{D\-E\-B\-U\-G\-A\-R\-Gi\-I\-D, }
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Left, }
+\item[{{\bf E\-Sph\-Eval\-Stage} $\ast$}]{p\-Eval\-Stage, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structExprHook__t_a8c22efdc23d08d959d53bbb41a07127b}
+\hypertarget{structExprHook__t_a0dcb50ca421a9b070ad55040a42fbb41}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!Get\-Ident\-Type@{Get\-Ident\-Type}}
+\index{Get\-Ident\-Type@{Get\-Ident\-Type}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{Get\-Ident\-Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf E\-Sph\-Attr} Expr\-Hook\-\_\-t\-::\-Get\-Ident\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structExprHook__t_a0dcb50ca421a9b070ad55040a42fbb41}
+
+
+get identifier return type by O\-I\-D 
+
+
+
+Implements \hyperlink{structISphExprHook_a14be58257f20bb1d66af531dfc9716fe}{I\-Sph\-Expr\-Hook}.
+
+\hypertarget{structExprHook__t_a42ef64d8ed6021093b67301a51363ae8}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!Get\-Return\-Type@{Get\-Return\-Type}}
+\index{Get\-Return\-Type@{Get\-Return\-Type}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{Get\-Return\-Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf E\-Sph\-Attr} Expr\-Hook\-\_\-t\-::\-Get\-Return\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf int} }]{D\-E\-B\-U\-G\-A\-R\-Gi\-I\-D, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf E\-Sph\-Attr} $>$ \&}]{d\-Args, }
+\item[{bool}]{, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structExprHook__t_a42ef64d8ed6021093b67301a51363ae8}
+\hypertarget{structExprHook__t_aada2e31944c7b48f524b356f9db4fdc0}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!Is\-Known\-Func@{Is\-Known\-Func}}
+\index{Is\-Known\-Func@{Is\-Known\-Func}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{Is\-Known\-Func}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} Expr\-Hook\-\_\-t\-::\-Is\-Known\-Func (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Func}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structExprHook__t_aada2e31944c7b48f524b356f9db4fdc0}
+checks for a valid function call returns -\/1 on failure, a non-\/negative O\-I\-D on success (possibly adjusted) 
+
+Implements \hyperlink{structISphExprHook_a41a82cf4f1ad7ae1d68cf8bc6f3563d3}{I\-Sph\-Expr\-Hook}.
+
+\hypertarget{structExprHook__t_a830a1512b0eebdbc1c720e126944b0ed}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!Is\-Known\-Ident@{Is\-Known\-Ident}}
+\index{Is\-Known\-Ident@{Is\-Known\-Ident}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{Is\-Known\-Ident}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} Expr\-Hook\-\_\-t\-::\-Is\-Known\-Ident (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Ident}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structExprHook__t_a830a1512b0eebdbc1c720e126944b0ed}
+checks for an identifier known to the hook returns -\/1 on failure, a non-\/negative O\-I\-D on success 
+
+Implements \hyperlink{structISphExprHook_aef2dae7cfa01dcae36195b6327bb37d9}{I\-Sph\-Expr\-Hook}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structExprHook__t_aa2d11f3653b6b2c6cabf7068f9bb0047}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!H\-O\-O\-K\-\_\-\-S\-N\-I\-P\-P\-E\-T@{H\-O\-O\-K\-\_\-\-S\-N\-I\-P\-P\-E\-T}}
+\index{H\-O\-O\-K\-\_\-\-S\-N\-I\-P\-P\-E\-T@{H\-O\-O\-K\-\_\-\-S\-N\-I\-P\-P\-E\-T}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{H\-O\-O\-K\-\_\-\-S\-N\-I\-P\-P\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} Expr\-Hook\-\_\-t\-::\-H\-O\-O\-K\-\_\-\-S\-N\-I\-P\-P\-E\-T = 1\hspace{0.3cm}{\ttfamily [static]}}}\label{structExprHook__t_aa2d11f3653b6b2c6cabf7068f9bb0047}
+\hypertarget{structExprHook__t_abe356a529a6593053f1bbf9c0dfba8b4}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!m\-\_\-p\-Index@{m\-\_\-p\-Index}}
+\index{m\-\_\-p\-Index@{m\-\_\-p\-Index}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Index}$\ast$ Expr\-Hook\-\_\-t\-::m\-\_\-p\-Index}}\label{structExprHook__t_abe356a529a6593053f1bbf9c0dfba8b4}
+\hypertarget{structExprHook__t_a93dc9895e65e635e7831c6dcd5478311}{\index{Expr\-Hook\-\_\-t@{Expr\-Hook\-\_\-t}!m\-\_\-p\-Profiler@{m\-\_\-p\-Profiler}}
+\index{m\-\_\-p\-Profiler@{m\-\_\-p\-Profiler}!ExprHook_t@{Expr\-Hook\-\_\-t}}
+\subsubsection[{m\-\_\-p\-Profiler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Query\-Profile}$\ast$ Expr\-Hook\-\_\-t\-::m\-\_\-p\-Profiler}}\label{structExprHook__t_a93dc9895e65e635e7831c6dcd5478311}
+
+
+B\-L\-O\-O\-D\-Y H\-A\-C\-K. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{searchd_8cpp}{searchd.\-cpp}\end{DoxyCompactItemize}

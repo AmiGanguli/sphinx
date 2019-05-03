@@ -1,0 +1,155 @@
+\hypertarget{structCSphSourceSettings}{\section{C\-Sph\-Source\-Settings Struct Reference}
+\label{structCSphSourceSettings}\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}}
+}
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Source\-Settings\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.745098cm]{structCSphSourceSettings}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphSourceSettings_acf0bb80a56d979e79019c3334ff8d69a}{C\-Sph\-Source\-Settings} ()
+\item 
+\hyperlink{sphinx_8h_a7a49c09fe68a444e69a19f051bf9b04f}{E\-Sph\-Wordpart} \hyperlink{structCSphSourceSettings_af0f3bdbd8ede501dcf056845558d2069}{Get\-Wordpart} (const char $\ast$s\-Field, bool b\-Word\-Dict)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSourceSettings_a7256ccbc374d3a218e62e5eca67d196e}{m\-\_\-i\-Min\-Prefix\-Len}
+\begin{DoxyCompactList}\small\item\em min indexable prefix (0 means don't index prefixes) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSourceSettings_ac0d1b57d5e2287bd0e17ca1dc3e4f369}{m\-\_\-i\-Min\-Infix\-Len}
+\begin{DoxyCompactList}\small\item\em min indexable infix length (0 means don't index infixes) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSourceSettings_ad7fa82ac9f78dc9760660f99e23f8533}{m\-\_\-i\-Max\-Substring\-Len}
+\begin{DoxyCompactList}\small\item\em max indexable infix and prefix (0 means don't limit infixes and prefixes) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSourceSettings_ab91af5eb3f973f662ad5665e17cb3e1f}{m\-\_\-i\-Boundary\-Step}
+\begin{DoxyCompactList}\small\item\em additional boundary word position increment \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphSourceSettings_ab86dee87a2c0a859e7ea976d9dca9850}{m\-\_\-b\-Index\-Exact\-Words}
+\begin{DoxyCompactList}\small\item\em exact (non-\/stemmed) word indexing flag \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSourceSettings_a6a95197835b39a65f765c9aa78c3a4e9}{m\-\_\-i\-Overshort\-Step}
+\begin{DoxyCompactList}\small\item\em position step on overshort token (default is 1) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSourceSettings_a5b1d0d84201dde3c42108451572b9814}{m\-\_\-i\-Stopword\-Step}
+\begin{DoxyCompactList}\small\item\em position step on stopword token (default is 1) \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphSourceSettings_ad3dbcf24a7c8128b9d7ffab31d37abfe}{m\-\_\-b\-Index\-S\-P}
+\begin{DoxyCompactList}\small\item\em whether to index sentence and paragraph delimiters \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphSourceSettings_af4604306126cea026fbbb7501db04705}{m\-\_\-b\-Index\-Field\-Lens}
+\begin{DoxyCompactList}\small\item\em whether to index field lengths \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \hyperlink{structCSphSourceSettings_a4abbec39b930428f81fdc07cb3ae10af}{m\-\_\-d\-Prefix\-Fields}
+\begin{DoxyCompactList}\small\item\em list of prefix fields \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \hyperlink{structCSphSourceSettings_ad96322074dfdf9a6ddd5b7651ab8a43d}{m\-\_\-d\-Infix\-Fields}
+\begin{DoxyCompactList}\small\item\em list of infix fields \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+indexing-\/related source settings N\-O\-T\-E, newly added fields should be synced with \hyperlink{classCSphSource_ab1c4e1f6cb14d7301a37b9ccf9efa0a2}{C\-Sph\-Source\-::\-Setup()} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphSourceSettings_acf0bb80a56d979e79019c3334ff8d69a}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}}
+\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{C\-Sph\-Source\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Source\-Settings\-::\-C\-Sph\-Source\-Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{structCSphSourceSettings_acf0bb80a56d979e79019c3334ff8d69a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphSourceSettings_af0f3bdbd8ede501dcf056845558d2069}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!Get\-Wordpart@{Get\-Wordpart}}
+\index{Get\-Wordpart@{Get\-Wordpart}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{Get\-Wordpart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Wordpart} C\-Sph\-Source\-Settings\-::\-Get\-Wordpart (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Field, }
+\item[{bool}]{b\-Word\-Dict}
+\end{DoxyParamCaption}
+)}}\label{structCSphSourceSettings_af0f3bdbd8ede501dcf056845558d2069}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphSourceSettings_ab86dee87a2c0a859e7ea976d9dca9850}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-b\-Index\-Exact\-Words@{m\-\_\-b\-Index\-Exact\-Words}}
+\index{m\-\_\-b\-Index\-Exact\-Words@{m\-\_\-b\-Index\-Exact\-Words}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-b\-Index\-Exact\-Words}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-Settings\-::m\-\_\-b\-Index\-Exact\-Words}}\label{structCSphSourceSettings_ab86dee87a2c0a859e7ea976d9dca9850}
+
+
+exact (non-\/stemmed) word indexing flag 
+
+\hypertarget{structCSphSourceSettings_af4604306126cea026fbbb7501db04705}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-b\-Index\-Field\-Lens@{m\-\_\-b\-Index\-Field\-Lens}}
+\index{m\-\_\-b\-Index\-Field\-Lens@{m\-\_\-b\-Index\-Field\-Lens}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-b\-Index\-Field\-Lens}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-Settings\-::m\-\_\-b\-Index\-Field\-Lens}}\label{structCSphSourceSettings_af4604306126cea026fbbb7501db04705}
+
+
+whether to index field lengths 
+
+\hypertarget{structCSphSourceSettings_ad3dbcf24a7c8128b9d7ffab31d37abfe}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-b\-Index\-S\-P@{m\-\_\-b\-Index\-S\-P}}
+\index{m\-\_\-b\-Index\-S\-P@{m\-\_\-b\-Index\-S\-P}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-b\-Index\-S\-P}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-Settings\-::m\-\_\-b\-Index\-S\-P}}\label{structCSphSourceSettings_ad3dbcf24a7c8128b9d7ffab31d37abfe}
+
+
+whether to index sentence and paragraph delimiters 
+
+\hypertarget{structCSphSourceSettings_ad96322074dfdf9a6ddd5b7651ab8a43d}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-d\-Infix\-Fields@{m\-\_\-d\-Infix\-Fields}}
+\index{m\-\_\-d\-Infix\-Fields@{m\-\_\-d\-Infix\-Fields}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-d\-Infix\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-String}$>$ C\-Sph\-Source\-Settings\-::m\-\_\-d\-Infix\-Fields}}\label{structCSphSourceSettings_ad96322074dfdf9a6ddd5b7651ab8a43d}
+
+
+list of infix fields 
+
+\hypertarget{structCSphSourceSettings_a4abbec39b930428f81fdc07cb3ae10af}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-d\-Prefix\-Fields@{m\-\_\-d\-Prefix\-Fields}}
+\index{m\-\_\-d\-Prefix\-Fields@{m\-\_\-d\-Prefix\-Fields}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-d\-Prefix\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-String}$>$ C\-Sph\-Source\-Settings\-::m\-\_\-d\-Prefix\-Fields}}\label{structCSphSourceSettings_a4abbec39b930428f81fdc07cb3ae10af}
+
+
+list of prefix fields 
+
+\hypertarget{structCSphSourceSettings_ab91af5eb3f973f662ad5665e17cb3e1f}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-i\-Boundary\-Step@{m\-\_\-i\-Boundary\-Step}}
+\index{m\-\_\-i\-Boundary\-Step@{m\-\_\-i\-Boundary\-Step}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-i\-Boundary\-Step}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-Settings\-::m\-\_\-i\-Boundary\-Step}}\label{structCSphSourceSettings_ab91af5eb3f973f662ad5665e17cb3e1f}
+
+
+additional boundary word position increment 
+
+\hypertarget{structCSphSourceSettings_ad7fa82ac9f78dc9760660f99e23f8533}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-i\-Max\-Substring\-Len@{m\-\_\-i\-Max\-Substring\-Len}}
+\index{m\-\_\-i\-Max\-Substring\-Len@{m\-\_\-i\-Max\-Substring\-Len}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-i\-Max\-Substring\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-Settings\-::m\-\_\-i\-Max\-Substring\-Len}}\label{structCSphSourceSettings_ad7fa82ac9f78dc9760660f99e23f8533}
+
+
+max indexable infix and prefix (0 means don't limit infixes and prefixes) 
+
+\hypertarget{structCSphSourceSettings_ac0d1b57d5e2287bd0e17ca1dc3e4f369}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-i\-Min\-Infix\-Len@{m\-\_\-i\-Min\-Infix\-Len}}
+\index{m\-\_\-i\-Min\-Infix\-Len@{m\-\_\-i\-Min\-Infix\-Len}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-i\-Min\-Infix\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-Settings\-::m\-\_\-i\-Min\-Infix\-Len}}\label{structCSphSourceSettings_ac0d1b57d5e2287bd0e17ca1dc3e4f369}
+
+
+min indexable infix length (0 means don't index infixes) 
+
+\hypertarget{structCSphSourceSettings_a7256ccbc374d3a218e62e5eca67d196e}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-i\-Min\-Prefix\-Len@{m\-\_\-i\-Min\-Prefix\-Len}}
+\index{m\-\_\-i\-Min\-Prefix\-Len@{m\-\_\-i\-Min\-Prefix\-Len}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-i\-Min\-Prefix\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-Settings\-::m\-\_\-i\-Min\-Prefix\-Len}}\label{structCSphSourceSettings_a7256ccbc374d3a218e62e5eca67d196e}
+
+
+min indexable prefix (0 means don't index prefixes) 
+
+\hypertarget{structCSphSourceSettings_a6a95197835b39a65f765c9aa78c3a4e9}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-i\-Overshort\-Step@{m\-\_\-i\-Overshort\-Step}}
+\index{m\-\_\-i\-Overshort\-Step@{m\-\_\-i\-Overshort\-Step}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-i\-Overshort\-Step}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-Settings\-::m\-\_\-i\-Overshort\-Step}}\label{structCSphSourceSettings_a6a95197835b39a65f765c9aa78c3a4e9}
+
+
+position step on overshort token (default is 1) 
+
+\hypertarget{structCSphSourceSettings_a5b1d0d84201dde3c42108451572b9814}{\index{C\-Sph\-Source\-Settings@{C\-Sph\-Source\-Settings}!m\-\_\-i\-Stopword\-Step@{m\-\_\-i\-Stopword\-Step}}
+\index{m\-\_\-i\-Stopword\-Step@{m\-\_\-i\-Stopword\-Step}!CSphSourceSettings@{C\-Sph\-Source\-Settings}}
+\subsubsection[{m\-\_\-i\-Stopword\-Step}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-Settings\-::m\-\_\-i\-Stopword\-Step}}\label{structCSphSourceSettings_a5b1d0d84201dde3c42108451572b9814}
+
+
+position step on stopword token (default is 1) 
+
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,588 @@
+\hypertarget{classCSphTokenFilter}{\section{C\-Sph\-Token\-Filter Class Reference}
+\label{classCSphTokenFilter}\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}}
+}
+
+
+token filter base (boring proxy stuff)  
+
+
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Token\-Filter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.835443cm]{classCSphTokenFilter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphTokenFilter_a1a1889ac7db649c4ff5fc7c59dd905df}{C\-Sph\-Token\-Filter} (\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer)
+\item 
+\hyperlink{classCSphTokenFilter_a353fc0d4ab09dd940b62ae3a7e8c4e2e}{$\sim$\-C\-Sph\-Token\-Filter} ()
+\item 
+virtual bool \hyperlink{classCSphTokenFilter_a54970214ad18160d2bb6ae1e9a8c2353}{Set\-Case\-Folding} (const char $\ast$s\-Config, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+virtual void \hyperlink{classCSphTokenFilter_abc3185829bdf6cfe455d1d418792dd57}{Add\-Plain\-Char} (char c)
+\begin{DoxyCompactList}\small\item\em add additional character as valid (with folding to itself) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenFilter_a0946b8aa4128ad202dca45a3fe8c2a4c}{Add\-Specials} (const char $\ast$s\-Specials)
+\item 
+virtual bool \hyperlink{classCSphTokenFilter_afbccf1d71c91739356dede1bbb6a86c7}{Set\-Ignore\-Chars} (const char $\ast$s\-Ignored, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em set ignored characters \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenFilter_a85dcf8ee4a7ddb5f9b71f18b27823224}{Set\-Ngram\-Chars} (const char $\ast$s\-Config, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em set n-\/gram characters (for C\-J\-K n-\/gram indexing) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenFilter_a53adf3906caccfcc59d7d606d00c6f38}{Set\-Ngram\-Len} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\begin{DoxyCompactList}\small\item\em set n-\/gram length (for C\-J\-K n-\/gram indexing) \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenFilter_a16f6501d415cf6b2dfd12cb2ca8806fe}{Load\-Synonyms} (const char $\ast$s\-Filename, const \hyperlink{structCSphEmbeddedFiles}{C\-Sph\-Embedded\-Files} $\ast$p\-Files, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em load synonyms list \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenFilter_a749f36fb97c0f06874f416c1c17bcad2}{Write\-Synonyms} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&t\-Writer)
+\begin{DoxyCompactList}\small\item\em write synonyms to file \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenFilter_aa378aaaa255c3292d06c4608abbd1c76}{Set\-Boundary} (const char $\ast$s\-Config, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em set phrase boundary chars \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenFilter_aef717196a6eae7a912764201140aa9e5}{Setup} (const \hyperlink{structCSphTokenizerSettings}{C\-Sph\-Tokenizer\-Settings} \&t\-Settings)
+\begin{DoxyCompactList}\small\item\em setup tokenizer using given settings \end{DoxyCompactList}\item 
+virtual const \\*
+\hyperlink{structCSphTokenizerSettings}{C\-Sph\-Tokenizer\-Settings} \& \hyperlink{classCSphTokenFilter_ad43fac69b8c8623e5f7d3507fb97e341}{Get\-Settings} () const 
+\begin{DoxyCompactList}\small\item\em save tokenizer settings to a stream \end{DoxyCompactList}\item 
+virtual const \hyperlink{structCSphSavedFile}{C\-Sph\-Saved\-File} \& \hyperlink{classCSphTokenFilter_a729f67b98f080ab45e2574877c775115}{Get\-Syn\-File\-Info} () const 
+\begin{DoxyCompactList}\small\item\em get synonym file info \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenFilter_ae262f2361ccaac20e781ba77fb35035e}{Enable\-Sentence\-Indexing} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em enable indexing-\/time sentence boundary detection, and paragraph indexing \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenFilter_a9db79116d0276391c121846b60451177}{Enable\-Zone\-Indexing} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em enable zone indexing \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphTokenFilter_adaa7f4d01631e3c83b46d11cb3b762cf}{Skip\-Blended} ()
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphTokenFilter_ab48c70e1bc31a8d54db8609b3680d1ce}{Get\-Codepoint\-Length} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Code) const 
+\begin{DoxyCompactList}\small\item\em calc codepoint length \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphTokenFilter_a2025f7fda6958fe2cd3deccf711c6339}{Get\-Max\-Codepoint\-Length} () const 
+\begin{DoxyCompactList}\small\item\em get max codepoint length \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classCSphTokenFilter_a4015a97035aac64274083d0ef63703d8}{Get\-Token\-Start} () const 
+\begin{DoxyCompactList}\small\item\em start buffer point of last token \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classCSphTokenFilter_a15835b02e959bfe38bfed92d4649de97}{Get\-Token\-End} () const 
+\begin{DoxyCompactList}\small\item\em end buffer point of last token (exclusive, ie. $\ast$\-Get\-Token\-End() is already N\-O\-T part of a token!) \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classCSphTokenFilter_aafff5045f71b3c81e18985a59659bd18}{Get\-Buffer\-Ptr} () const 
+\begin{DoxyCompactList}\small\item\em current buffer ptr \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classCSphTokenFilter_a01cda57b77357102db0d645db112fe66}{Get\-Buffer\-End} () const 
+\begin{DoxyCompactList}\small\item\em buffer end \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenFilter_a5dabfda2d463e74f3d6b2d8e05a11079}{Set\-Buffer\-Ptr} (const char $\ast$s\-New\-Ptr)
+\begin{DoxyCompactList}\small\item\em set new buffer ptr (must be within current bounds) \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classCSphTokenFilter_aa8515a36b5d84b6d56856b80007cb11b}{Get\-Settings\-F\-N\-V} () const 
+\begin{DoxyCompactList}\small\item\em get settings hash \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphTokenFilter_af2e40a7ad8e6abc189f1053db3b3b3cf}{Set\-Buffer} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Buffer, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Length)
+\begin{DoxyCompactList}\small\item\em pass next buffer \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphTokenFilter_a3da18c0660751c7aca16d6e218eba5ab}{Get\-Token} ()
+\begin{DoxyCompactList}\small\item\em get next token \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphTokenFilter_ad14bbb208590a4dd93ab16c0d57409fd}{Was\-Token\-Multiform\-Destination} (bool \&b\-Head, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \&i\-Dest\-Count) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$ \hyperlink{classCSphTokenFilter_ac0019c6fdcd1611df4119865f596038b}{m\-\_\-p\-Tokenizer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+token filter base (boring proxy stuff) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphTokenFilter_a1a1889ac7db649c4ff5fc7c59dd905df}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}}
+\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{C\-Sph\-Token\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Token\-Filter\-::\-C\-Sph\-Token\-Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphTokenFilter_a1a1889ac7db649c4ff5fc7c59dd905df}
+\hypertarget{classCSphTokenFilter_a353fc0d4ab09dd940b62ae3a7e8c4e2e}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!$\sim$\-C\-Sph\-Token\-Filter@{$\sim$\-C\-Sph\-Token\-Filter}}
+\index{$\sim$\-C\-Sph\-Token\-Filter@{$\sim$\-C\-Sph\-Token\-Filter}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{$\sim$\-C\-Sph\-Token\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Token\-Filter\-::$\sim$\-C\-Sph\-Token\-Filter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphTokenFilter_a353fc0d4ab09dd940b62ae3a7e8c4e2e}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphTokenFilter_abc3185829bdf6cfe455d1d418792dd57}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Add\-Plain\-Char@{Add\-Plain\-Char}}
+\index{Add\-Plain\-Char@{Add\-Plain\-Char}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Add\-Plain\-Char}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Token\-Filter\-::\-Add\-Plain\-Char (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_abc3185829bdf6cfe455d1d418792dd57}
+
+
+add additional character as valid (with folding to itself) 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_a5f5d7b9b65da4d5daf1192220ef5e5fa}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a11eadf54c33b0e8bdba38f1f495f1c06}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a0946b8aa4128ad202dca45a3fe8c2a4c}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Add\-Specials@{Add\-Specials}}
+\index{Add\-Specials@{Add\-Specials}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Add\-Specials}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Token\-Filter\-::\-Add\-Specials (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Specials}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a0946b8aa4128ad202dca45a3fe8c2a4c}
+add special chars to translation table updates lowercaser so that these remap to -\/1 
+
+Reimplemented from \hyperlink{classISphTokenizer_a200c7087e645cf3b7482aeb129b534c2}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a4cdf87215cdf5437a66ff176b86d63f8}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_ae262f2361ccaac20e781ba77fb35035e}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Enable\-Sentence\-Indexing@{Enable\-Sentence\-Indexing}}
+\index{Enable\-Sentence\-Indexing@{Enable\-Sentence\-Indexing}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Enable\-Sentence\-Indexing}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Token\-Filter\-::\-Enable\-Sentence\-Indexing (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_ae262f2361ccaac20e781ba77fb35035e}
+
+
+enable indexing-\/time sentence boundary detection, and paragraph indexing 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_a730eb60d41dc4ad8a794b3dfdac35880}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a46811c39f9bc375d53c4eaa8907a34e8}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a9db79116d0276391c121846b60451177}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Enable\-Zone\-Indexing@{Enable\-Zone\-Indexing}}
+\index{Enable\-Zone\-Indexing@{Enable\-Zone\-Indexing}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Enable\-Zone\-Indexing}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Token\-Filter\-::\-Enable\-Zone\-Indexing (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a9db79116d0276391c121846b60451177}
+
+
+enable zone indexing 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_a821d2692e8ca19305e62b6b6f4e0b827}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a4058117d0ad1bafb6143b90d0dda902a}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a01cda57b77357102db0d645db112fe66}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Get\-Buffer\-End@{Get\-Buffer\-End}}
+\index{Get\-Buffer\-End@{Get\-Buffer\-End}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Get\-Buffer\-End}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ C\-Sph\-Token\-Filter\-::\-Get\-Buffer\-End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a01cda57b77357102db0d645db112fe66}
+
+
+buffer end 
+
+
+
+Implements \hyperlink{classISphTokenizer_a6b94f7c3274e388208261c4deaff3231}{I\-Sph\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_aafff5045f71b3c81e18985a59659bd18}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Get\-Buffer\-Ptr@{Get\-Buffer\-Ptr}}
+\index{Get\-Buffer\-Ptr@{Get\-Buffer\-Ptr}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Get\-Buffer\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ C\-Sph\-Token\-Filter\-::\-Get\-Buffer\-Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_aafff5045f71b3c81e18985a59659bd18}
+
+
+current buffer ptr 
+
+
+
+Implements \hyperlink{classISphTokenizer_aec93897f8c7eb85682cf66eb2cee9164}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a04e313439fbe030fc974d0939d1be421}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_ab48c70e1bc31a8d54db8609b3680d1ce}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Get\-Codepoint\-Length@{Get\-Codepoint\-Length}}
+\index{Get\-Codepoint\-Length@{Get\-Codepoint\-Length}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Get\-Codepoint\-Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Token\-Filter\-::\-Get\-Codepoint\-Length (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Code}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_ab48c70e1bc31a8d54db8609b3680d1ce}
+
+
+calc codepoint length 
+
+
+
+Implements \hyperlink{classISphTokenizer_a7844b47ac66aa032bc26e16b776e4bab}{I\-Sph\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a2025f7fda6958fe2cd3deccf711c6339}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Get\-Max\-Codepoint\-Length@{Get\-Max\-Codepoint\-Length}}
+\index{Get\-Max\-Codepoint\-Length@{Get\-Max\-Codepoint\-Length}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Get\-Max\-Codepoint\-Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Token\-Filter\-::\-Get\-Max\-Codepoint\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a2025f7fda6958fe2cd3deccf711c6339}
+
+
+get max codepoint length 
+
+
+
+Implements \hyperlink{classISphTokenizer_ab6bed1a50a3d471fedb8d587a247369d}{I\-Sph\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_ad43fac69b8c8623e5f7d3507fb97e341}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Get\-Settings@{Get\-Settings}}
+\index{Get\-Settings@{Get\-Settings}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Get\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-Tokenizer\-Settings}\& C\-Sph\-Token\-Filter\-::\-Get\-Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_ad43fac69b8c8623e5f7d3507fb97e341}
+
+
+save tokenizer settings to a stream 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_a67c0561bb5f0ec881d1fcaa274dd4e6b}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a7ef3fa07328ce8dffff873e68657983d}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_aa8515a36b5d84b6d56856b80007cb11b}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Get\-Settings\-F\-N\-V@{Get\-Settings\-F\-N\-V}}
+\index{Get\-Settings\-F\-N\-V@{Get\-Settings\-F\-N\-V}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Get\-Settings\-F\-N\-V}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf uint64\-\_\-t} C\-Sph\-Token\-Filter\-::\-Get\-Settings\-F\-N\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_aa8515a36b5d84b6d56856b80007cb11b}
+
+
+get settings hash 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_a0fd93f65b8712cffc1b051ed60d379dd}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphBigramTokenizer_aac43c456e1aff3b46036241c530711f2}{C\-Sph\-Bigram\-Tokenizer}, \hyperlink{classCSphMultiformTokenizer_a3430ee0f98e5f9d13f9b5ad8f46c57f5}{C\-Sph\-Multiform\-Tokenizer}, and \hyperlink{classCSphAotTokenizerTmpl_ae1decc1ff015ab05493e561fe2d70c4f}{C\-Sph\-Aot\-Tokenizer\-Tmpl}.
+
+\hypertarget{classCSphTokenFilter_a729f67b98f080ab45e2574877c775115}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Get\-Syn\-File\-Info@{Get\-Syn\-File\-Info}}
+\index{Get\-Syn\-File\-Info@{Get\-Syn\-File\-Info}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Get\-Syn\-File\-Info}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-Saved\-File}\& C\-Sph\-Token\-Filter\-::\-Get\-Syn\-File\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a729f67b98f080ab45e2574877c775115}
+
+
+get synonym file info 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_a8dea60eb04a5e777401ba255d1c3549b}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_ac730b11ea3ae60f51dd95b06d60575f6}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a3da18c0660751c7aca16d6e218eba5ab}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Get\-Token@{Get\-Token}}
+\index{Get\-Token@{Get\-Token}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Get\-Token}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Token\-Filter\-::\-Get\-Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a3da18c0660751c7aca16d6e218eba5ab}
+
+
+get next token 
+
+
+
+Implements \hyperlink{classISphTokenizer_a3f2f929783d8c92436179fc5e8e309e6}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classPluginFilterTokenizer__c_a8415a8141d4734c36dfab2627983a206}{Plugin\-Filter\-Tokenizer\-\_\-c}, \hyperlink{classCSphBigramTokenizer_ab0fa4224967186e7d2595bd50c994029}{C\-Sph\-Bigram\-Tokenizer}, \hyperlink{classCSphMultiformTokenizer_a5803d4cc574003986d0fc9cffdb7bf8e}{C\-Sph\-Multiform\-Tokenizer}, \hyperlink{classCSphAotTokenizer_a7996e06ca045645ce0ccbcdfec1dfbc0}{C\-Sph\-Aot\-Tokenizer}, and \hyperlink{classCSphAotTokenizerRu_afa2f2ed6f5cf27cc0bc7df12547adf9d}{C\-Sph\-Aot\-Tokenizer\-Ru}.
+
+\hypertarget{classCSphTokenFilter_a15835b02e959bfe38bfed92d4649de97}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Get\-Token\-End@{Get\-Token\-End}}
+\index{Get\-Token\-End@{Get\-Token\-End}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Get\-Token\-End}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ C\-Sph\-Token\-Filter\-::\-Get\-Token\-End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a15835b02e959bfe38bfed92d4649de97}
+
+
+end buffer point of last token (exclusive, ie. $\ast$\-Get\-Token\-End() is already N\-O\-T part of a token!) 
+
+
+
+Implements \hyperlink{classISphTokenizer_abd5eab3350b4055642d98814e4bc7eb2}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_ab5dcded14ce70e108a35654bfdff4e80}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a4015a97035aac64274083d0ef63703d8}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Get\-Token\-Start@{Get\-Token\-Start}}
+\index{Get\-Token\-Start@{Get\-Token\-Start}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Get\-Token\-Start}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ C\-Sph\-Token\-Filter\-::\-Get\-Token\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a4015a97035aac64274083d0ef63703d8}
+
+
+start buffer point of last token 
+
+
+
+Implements \hyperlink{classISphTokenizer_ad61cb220fb6566a06a79db7a53839882}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_abbd9f84c42f66c8941b965a3247b127a}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a16f6501d415cf6b2dfd12cb2ca8806fe}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Load\-Synonyms@{Load\-Synonyms}}
+\index{Load\-Synonyms@{Load\-Synonyms}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Load\-Synonyms}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Token\-Filter\-::\-Load\-Synonyms (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Filename, }
+\item[{const {\bf C\-Sph\-Embedded\-Files} $\ast$}]{p\-Files, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a16f6501d415cf6b2dfd12cb2ca8806fe}
+
+
+load synonyms list 
+
+
+
+Implements \hyperlink{classISphTokenizer_ab1df8e09bfb2eafbc487b98ed62128c8}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_ae938689d752a977e81782500b26e8859}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_aa378aaaa255c3292d06c4608abbd1c76}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Set\-Boundary@{Set\-Boundary}}
+\index{Set\-Boundary@{Set\-Boundary}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Set\-Boundary}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Token\-Filter\-::\-Set\-Boundary (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Config, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_aa378aaaa255c3292d06c4608abbd1c76}
+
+
+set phrase boundary chars 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_aca638496d2945c33a1319adf150d83e6}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a95b5707fd7ef4bd4d2b7768c3370ebf6}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_af2e40a7ad8e6abc189f1053db3b3b3cf}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Set\-Buffer@{Set\-Buffer}}
+\index{Set\-Buffer@{Set\-Buffer}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Set\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Token\-Filter\-::\-Set\-Buffer (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-Buffer, }
+\item[{{\bf int}}]{i\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_af2e40a7ad8e6abc189f1053db3b3b3cf}
+
+
+pass next buffer 
+
+
+
+Implements \hyperlink{classISphTokenizer_af494fa9d9cdbbd54b98c0eae754e82f1}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphBigramTokenizer_a670f40c1fdc2fb057ddcd0636f4a3c9d}{C\-Sph\-Bigram\-Tokenizer}, \hyperlink{classCSphMultiformTokenizer_acbaf2cff235e9ef2ae2a7f233d0dad8c}{C\-Sph\-Multiform\-Tokenizer}, and \hyperlink{classCSphAotTokenizerTmpl_acf6f6e296f3e034c3c09081f8f566648}{C\-Sph\-Aot\-Tokenizer\-Tmpl}.
+
+\hypertarget{classCSphTokenFilter_a5dabfda2d463e74f3d6b2d8e05a11079}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Set\-Buffer\-Ptr@{Set\-Buffer\-Ptr}}
+\index{Set\-Buffer\-Ptr@{Set\-Buffer\-Ptr}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Set\-Buffer\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Token\-Filter\-::\-Set\-Buffer\-Ptr (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-New\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a5dabfda2d463e74f3d6b2d8e05a11079}
+
+
+set new buffer ptr (must be within current bounds) 
+
+
+
+Implements \hyperlink{classISphTokenizer_af87645abb59ac6f57fdc005a6ca6f84a}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a990185ca2f615cea970a625817cf16bb}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a54970214ad18160d2bb6ae1e9a8c2353}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Set\-Case\-Folding@{Set\-Case\-Folding}}
+\index{Set\-Case\-Folding@{Set\-Case\-Folding}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Set\-Case\-Folding}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Token\-Filter\-::\-Set\-Case\-Folding (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Config, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a54970214ad18160d2bb6ae1e9a8c2353}
+set new translation table returns true on success, false on failure 
+
+Reimplemented from \hyperlink{classISphTokenizer_ae23c233a45ce33c7126c17ad86f51d63}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a94d5a9911d1bfd113ec15d18e84e70e8}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_afbccf1d71c91739356dede1bbb6a86c7}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Set\-Ignore\-Chars@{Set\-Ignore\-Chars}}
+\index{Set\-Ignore\-Chars@{Set\-Ignore\-Chars}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Set\-Ignore\-Chars}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Token\-Filter\-::\-Set\-Ignore\-Chars (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Ignored, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_afbccf1d71c91739356dede1bbb6a86c7}
+
+
+set ignored characters 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_a32e85da2e81c9da04c02bcb9cea9e723}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a82711511686c792c3ca9b71ff0a0454e}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a85dcf8ee4a7ddb5f9b71f18b27823224}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Set\-Ngram\-Chars@{Set\-Ngram\-Chars}}
+\index{Set\-Ngram\-Chars@{Set\-Ngram\-Chars}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Set\-Ngram\-Chars}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Token\-Filter\-::\-Set\-Ngram\-Chars (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{, }
+\item[{{\bf C\-Sph\-String} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a85dcf8ee4a7ddb5f9b71f18b27823224}
+
+
+set n-\/gram characters (for C\-J\-K n-\/gram indexing) 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_a17b3ddfe4fcf73fa0dd8a08de5a102ef}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a1d83cd1629715b74735a966be1a64534}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a53adf3906caccfcc59d7d606d00c6f38}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Set\-Ngram\-Len@{Set\-Ngram\-Len}}
+\index{Set\-Ngram\-Len@{Set\-Ngram\-Len}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Set\-Ngram\-Len}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Token\-Filter\-::\-Set\-Ngram\-Len (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a53adf3906caccfcc59d7d606d00c6f38}
+
+
+set n-\/gram length (for C\-J\-K n-\/gram indexing) 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_a997c5561fa7835c5bfb071492078763d}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a37e0613ccd63898053f7350c84e18d0b}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_aef717196a6eae7a912764201140aa9e5}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Setup@{Setup}}
+\index{Setup@{Setup}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Token\-Filter\-::\-Setup (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Tokenizer\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_aef717196a6eae7a912764201140aa9e5}
+
+
+setup tokenizer using given settings 
+
+
+
+Reimplemented from \hyperlink{classISphTokenizer_a98354e284f36a7e0fe37d7b81a221d96}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a8c9072d5aa92ef118b6ef740692f0d50}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_adaa7f4d01631e3c83b46d11cb3b762cf}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Skip\-Blended@{Skip\-Blended}}
+\index{Skip\-Blended@{Skip\-Blended}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Skip\-Blended}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Token\-Filter\-::\-Skip\-Blended (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_adaa7f4d01631e3c83b46d11cb3b762cf}
+
+
+Reimplemented from \hyperlink{classISphTokenizer_ada473c9be43cd98ab67077a18f8c5eeb}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a3e7c1dfde983502e4daefe871fa49a69}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_ad14bbb208590a4dd93ab16c0d57409fd}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Was\-Token\-Multiform\-Destination@{Was\-Token\-Multiform\-Destination}}
+\index{Was\-Token\-Multiform\-Destination@{Was\-Token\-Multiform\-Destination}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Was\-Token\-Multiform\-Destination}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Token\-Filter\-::\-Was\-Token\-Multiform\-Destination (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{b\-Head, }
+\item[{{\bf int} \&}]{i\-Dest\-Count}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_ad14bbb208590a4dd93ab16c0d57409fd}
+was last token a part of multi-\/wordforms destination head parameter might be useful to distinguish between sequence of different multi-\/wordforms 
+
+Implements \hyperlink{classISphTokenizer_a9ddc9e1bf176a2c61308d301bb68fa7f}{I\-Sph\-Tokenizer}.
+
+
+
+Reimplemented in \hyperlink{classCSphMultiformTokenizer_a25e08fa1dc7663ec49d1fa4622d1541b}{C\-Sph\-Multiform\-Tokenizer}.
+
+\hypertarget{classCSphTokenFilter_a749f36fb97c0f06874f416c1c17bcad2}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!Write\-Synonyms@{Write\-Synonyms}}
+\index{Write\-Synonyms@{Write\-Synonyms}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{Write\-Synonyms}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Token\-Filter\-::\-Write\-Synonyms (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{t\-Writer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphTokenFilter_a749f36fb97c0f06874f416c1c17bcad2}
+
+
+write synonyms to file 
+
+
+
+Implements \hyperlink{classISphTokenizer_af5b14e86d535494f3d9fd0d3110788d4}{I\-Sph\-Tokenizer}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphTokenFilter_ac0019c6fdcd1611df4119865f596038b}{\index{C\-Sph\-Token\-Filter@{C\-Sph\-Token\-Filter}!m\-\_\-p\-Tokenizer@{m\-\_\-p\-Tokenizer}}
+\index{m\-\_\-p\-Tokenizer@{m\-\_\-p\-Tokenizer}!CSphTokenFilter@{C\-Sph\-Token\-Filter}}
+\subsubsection[{m\-\_\-p\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Tokenizer}$\ast$ C\-Sph\-Token\-Filter\-::m\-\_\-p\-Tokenizer\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphTokenFilter_ac0019c6fdcd1611df4119865f596038b}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\end{DoxyCompactItemize}

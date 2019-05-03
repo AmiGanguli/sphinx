@@ -1,0 +1,81 @@
+\hypertarget{sphinxqcache_8h}{\section{src/sphinxqcache.h File Reference}
+\label{sphinxqcache_8h}\index{src/sphinxqcache.\-h@{src/sphinxqcache.\-h}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxsearch.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structQcacheMatch__t}{Qcache\-Match\-\_\-t}
+\begin{DoxyCompactList}\small\item\em cached match is a simple \{docid,weight\} pair \end{DoxyCompactList}\item 
+class \hyperlink{classQcacheEntry__c}{Qcache\-Entry\-\_\-c}
+\item 
+struct \hyperlink{structQcacheStatus__t}{Qcache\-Status\-\_\-t}
+\begin{DoxyCompactList}\small\item\em query cache status \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sphinxqcache_8h_ada44ee96ff34ce77d9fd0cad37394f30}{Qcache\-Add} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} \&q, \hyperlink{classQcacheEntry__c}{Qcache\-Entry\-\_\-c} $\ast$p\-Result, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema)
+\item 
+\hyperlink{classQcacheEntry__c}{Qcache\-Entry\-\_\-c} $\ast$ \hyperlink{sphinxqcache_8h_a64491d022d397ab5d7fc58d63219786f}{Qcache\-Find} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Index\-Id, const \hyperlink{classCSphQuery}{C\-Sph\-Query} \&q, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema)
+\item 
+\hyperlink{classISphRanker}{I\-Sph\-Ranker} $\ast$ \hyperlink{sphinxqcache_8h_ac3785c4ebce00183d0a4a70976091a5e}{Qcache\-Ranker} (\hyperlink{classQcacheEntry__c}{Qcache\-Entry\-\_\-c} $\ast$p\-Entry, const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\item 
+const \hyperlink{structQcacheStatus__t}{Qcache\-Status\-\_\-t} \& \hyperlink{sphinxqcache_8h_af9301a88d7863ecb027b48c94d89d3b2}{Qcache\-Get\-Status} ()
+\item 
+void \hyperlink{sphinxqcache_8h_a22bdcfcd51e58037dd298b5982f69d29}{Qcache\-Setup} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Max\-Bytes, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Thresh\-Msec, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Ttl\-Sec)
+\item 
+void \hyperlink{sphinxqcache_8h_a9647fb63d9c09419b02dc2702a48ccd1}{Qcache\-Delete\-Index} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Index\-Id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxqcache_8h_ada44ee96ff34ce77d9fd0cad37394f30}{\index{sphinxqcache.\-h@{sphinxqcache.\-h}!Qcache\-Add@{Qcache\-Add}}
+\index{Qcache\-Add@{Qcache\-Add}!sphinxqcache.h@{sphinxqcache.\-h}}
+\subsubsection[{Qcache\-Add}]{\setlength{\rightskip}{0pt plus 5cm}void Qcache\-Add (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} \&}]{q, }
+\item[{{\bf Qcache\-Entry\-\_\-c} $\ast$}]{p\-Result, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema}
+\end{DoxyParamCaption}
+)}}\label{sphinxqcache_8h_ada44ee96ff34ce77d9fd0cad37394f30}
+\hypertarget{sphinxqcache_8h_a9647fb63d9c09419b02dc2702a48ccd1}{\index{sphinxqcache.\-h@{sphinxqcache.\-h}!Qcache\-Delete\-Index@{Qcache\-Delete\-Index}}
+\index{Qcache\-Delete\-Index@{Qcache\-Delete\-Index}!sphinxqcache.h@{sphinxqcache.\-h}}
+\subsubsection[{Qcache\-Delete\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void Qcache\-Delete\-Index (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{i\-Index\-Id}
+\end{DoxyParamCaption}
+)}}\label{sphinxqcache_8h_a9647fb63d9c09419b02dc2702a48ccd1}
+\hypertarget{sphinxqcache_8h_a64491d022d397ab5d7fc58d63219786f}{\index{sphinxqcache.\-h@{sphinxqcache.\-h}!Qcache\-Find@{Qcache\-Find}}
+\index{Qcache\-Find@{Qcache\-Find}!sphinxqcache.h@{sphinxqcache.\-h}}
+\subsubsection[{Qcache\-Find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Qcache\-Entry\-\_\-c}$\ast$ Qcache\-Find (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{i\-Index\-Id, }
+\item[{const {\bf C\-Sph\-Query} \&}]{q, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema}
+\end{DoxyParamCaption}
+)}}\label{sphinxqcache_8h_a64491d022d397ab5d7fc58d63219786f}
+\hypertarget{sphinxqcache_8h_af9301a88d7863ecb027b48c94d89d3b2}{\index{sphinxqcache.\-h@{sphinxqcache.\-h}!Qcache\-Get\-Status@{Qcache\-Get\-Status}}
+\index{Qcache\-Get\-Status@{Qcache\-Get\-Status}!sphinxqcache.h@{sphinxqcache.\-h}}
+\subsubsection[{Qcache\-Get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Qcache\-Status\-\_\-t}\& Qcache\-Get\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxqcache_8h_af9301a88d7863ecb027b48c94d89d3b2}
+\hypertarget{sphinxqcache_8h_ac3785c4ebce00183d0a4a70976091a5e}{\index{sphinxqcache.\-h@{sphinxqcache.\-h}!Qcache\-Ranker@{Qcache\-Ranker}}
+\index{Qcache\-Ranker@{Qcache\-Ranker}!sphinxqcache.h@{sphinxqcache.\-h}}
+\subsubsection[{Qcache\-Ranker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Ranker}$\ast$ Qcache\-Ranker (
+\begin{DoxyParamCaption}
+\item[{{\bf Qcache\-Entry\-\_\-c} $\ast$}]{p\-Entry, }
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)}}\label{sphinxqcache_8h_ac3785c4ebce00183d0a4a70976091a5e}
+\hypertarget{sphinxqcache_8h_a22bdcfcd51e58037dd298b5982f69d29}{\index{sphinxqcache.\-h@{sphinxqcache.\-h}!Qcache\-Setup@{Qcache\-Setup}}
+\index{Qcache\-Setup@{Qcache\-Setup}!sphinxqcache.h@{sphinxqcache.\-h}}
+\subsubsection[{Qcache\-Setup}]{\setlength{\rightskip}{0pt plus 5cm}void Qcache\-Setup (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{i\-Max\-Bytes, }
+\item[{{\bf int}}]{i\-Thresh\-Msec, }
+\item[{{\bf int}}]{i\-Ttl\-Sec}
+\end{DoxyParamCaption}
+)}}\label{sphinxqcache_8h_a22bdcfcd51e58037dd298b5982f69d29}

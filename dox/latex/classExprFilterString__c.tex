@@ -1,0 +1,82 @@
+\hypertarget{classExprFilterString__c}{\section{Expr\-Filter\-String\-\_\-c Class Reference}
+\label{classExprFilterString__c}\index{Expr\-Filter\-String\-\_\-c@{Expr\-Filter\-String\-\_\-c}}
+}
+Inheritance diagram for Expr\-Filter\-String\-\_\-c\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classExprFilterString__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExprFilterString__c_ae1cdf5709322a8713c07727d023f7db8}{Expr\-Filter\-String\-\_\-c} (\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Expr, \hyperlink{sphinxexpr_8h_a78197b7b74319074237ecaf5d99cfbe5}{E\-Sph\-Collation} e\-Collation, bool b\-Eq)
+\item 
+virtual void \hyperlink{classExprFilterString__c_adec744107d883351cfdb8f07c0fe7fa4}{Set\-Ref\-String} (const \hyperlink{structCSphString}{C\-Sph\-String} $\ast$p\-Ref, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+virtual bool \hyperlink{classExprFilterString__c_a6bbcdfee523f1b33f0f04ca37ee41f80}{Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classExprFilterString__c_a99e8f854a5fb150360e457d5a6a72c81}{m\-\_\-d\-Val}
+\item 
+\hyperlink{sphinx_8h_a564bff07e446e0e31a63004937e8347b}{Sph\-String\-Cmp\-\_\-fn} \hyperlink{classExprFilterString__c_abcf6a320df6a1c9a687797f17259f40d}{m\-\_\-fn\-Str\-Cmp}
+\item 
+bool \hyperlink{classExprFilterString__c_ac8b233acb6be735f8c9e0ca25e519ee3}{m\-\_\-b\-Eq}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExprFilterString__c_ae1cdf5709322a8713c07727d023f7db8}{\index{Expr\-Filter\-String\-\_\-c@{Expr\-Filter\-String\-\_\-c}!Expr\-Filter\-String\-\_\-c@{Expr\-Filter\-String\-\_\-c}}
+\index{Expr\-Filter\-String\-\_\-c@{Expr\-Filter\-String\-\_\-c}!ExprFilterString_c@{Expr\-Filter\-String\-\_\-c}}
+\subsubsection[{Expr\-Filter\-String\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Expr\-Filter\-String\-\_\-c\-::\-Expr\-Filter\-String\-\_\-c (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Expr, }
+\item[{{\bf E\-Sph\-Collation}}]{e\-Collation, }
+\item[{bool}]{b\-Eq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classExprFilterString__c_ae1cdf5709322a8713c07727d023f7db8}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExprFilterString__c_a6bbcdfee523f1b33f0f04ca37ee41f80}{\index{Expr\-Filter\-String\-\_\-c@{Expr\-Filter\-String\-\_\-c}!Eval@{Eval}}
+\index{Eval@{Eval}!ExprFilterString_c@{Expr\-Filter\-String\-\_\-c}}
+\subsubsection[{Eval}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Expr\-Filter\-String\-\_\-c\-::\-Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExprFilterString__c_a6bbcdfee523f1b33f0f04ca37ee41f80}
+evaluate filter for a given match returns true if match satisfies the filter critertia (i.\-e. in range, found in values list etc) 
+
+Implements \hyperlink{structISphFilter_a6f3cedb0fa449a85d6010220a635bc74}{I\-Sph\-Filter}.
+
+\hypertarget{classExprFilterString__c_adec744107d883351cfdb8f07c0fe7fa4}{\index{Expr\-Filter\-String\-\_\-c@{Expr\-Filter\-String\-\_\-c}!Set\-Ref\-String@{Set\-Ref\-String}}
+\index{Set\-Ref\-String@{Set\-Ref\-String}!ExprFilterString_c@{Expr\-Filter\-String\-\_\-c}}
+\subsubsection[{Set\-Ref\-String}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Expr\-Filter\-String\-\_\-c\-::\-Set\-Ref\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} $\ast$}]{p\-Ref, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExprFilterString__c_adec744107d883351cfdb8f07c0fe7fa4}
+
+
+Reimplemented from \hyperlink{structISphFilter_a19f18fe74f7857008cd2311d5a78df91}{I\-Sph\-Filter}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExprFilterString__c_ac8b233acb6be735f8c9e0ca25e519ee3}{\index{Expr\-Filter\-String\-\_\-c@{Expr\-Filter\-String\-\_\-c}!m\-\_\-b\-Eq@{m\-\_\-b\-Eq}}
+\index{m\-\_\-b\-Eq@{m\-\_\-b\-Eq}!ExprFilterString_c@{Expr\-Filter\-String\-\_\-c}}
+\subsubsection[{m\-\_\-b\-Eq}]{\setlength{\rightskip}{0pt plus 5cm}bool Expr\-Filter\-String\-\_\-c\-::m\-\_\-b\-Eq\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprFilterString__c_ac8b233acb6be735f8c9e0ca25e519ee3}
+\hypertarget{classExprFilterString__c_a99e8f854a5fb150360e457d5a6a72c81}{\index{Expr\-Filter\-String\-\_\-c@{Expr\-Filter\-String\-\_\-c}!m\-\_\-d\-Val@{m\-\_\-d\-Val}}
+\index{m\-\_\-d\-Val@{m\-\_\-d\-Val}!ExprFilterString_c@{Expr\-Filter\-String\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Val}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf B\-Y\-T\-E}$>$ Expr\-Filter\-String\-\_\-c\-::m\-\_\-d\-Val\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprFilterString__c_a99e8f854a5fb150360e457d5a6a72c81}
+\hypertarget{classExprFilterString__c_abcf6a320df6a1c9a687797f17259f40d}{\index{Expr\-Filter\-String\-\_\-c@{Expr\-Filter\-String\-\_\-c}!m\-\_\-fn\-Str\-Cmp@{m\-\_\-fn\-Str\-Cmp}}
+\index{m\-\_\-fn\-Str\-Cmp@{m\-\_\-fn\-Str\-Cmp}!ExprFilterString_c@{Expr\-Filter\-String\-\_\-c}}
+\subsubsection[{m\-\_\-fn\-Str\-Cmp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-String\-Cmp\-\_\-fn} Expr\-Filter\-String\-\_\-c\-::m\-\_\-fn\-Str\-Cmp\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExprFilterString__c_abcf6a320df6a1c9a687797f17259f40d}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxfilter_8cpp}{sphinxfilter.\-cpp}\end{DoxyCompactItemize}

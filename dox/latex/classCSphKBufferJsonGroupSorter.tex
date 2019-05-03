@@ -1,0 +1,101 @@
+\hypertarget{classCSphKBufferJsonGroupSorter}{\section{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$ Class Template Reference}
+\label{classCSphKBufferJsonGroupSorter}\index{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}}
+}
+
+
+match sorter with k-\/buffering and group-\/by for J\-S\-O\-N arrays  
+
+
+Inheritance diagram for C\-Sph\-K\-Buffer\-Json\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.609195cm]{classCSphKBufferJsonGroupSorter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphKBufferJsonGroupSorter_a0eb438bc4050e57260575d83f193eb87}{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter} (const \hyperlink{structISphMatchComparator}{I\-Sph\-Match\-Comparator} $\ast$p\-Comp, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const \hyperlink{structCSphGroupSorterSettings}{C\-Sph\-Group\-Sorter\-Settings} \&t\-Settings)
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphKBufferJsonGroupSorter_ab27bc17ca4a38da9248419445d052bd8}{Is\-Groupby} () const 
+\begin{DoxyCompactList}\small\item\em check if this sorter does groupby \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphKBufferJsonGroupSorter_a2b5a20314786b1217ef1d6ff56382f88}{Push} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match)
+\begin{DoxyCompactList}\small\item\em add entry to the queue \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphKBufferJsonGroupSorter_ad1d6be5f18585ecf87ccd505ea866e05}{Push\-Grouped} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Entry, bool b\-New\-Set)
+\begin{DoxyCompactList}\small\item\em add pre-\/grouped entry to the queue \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P, bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$class C\-Sph\-K\-Buffer\-Json\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+
+match sorter with k-\/buffering and group-\/by for J\-S\-O\-N arrays 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphKBufferJsonGroupSorter_a0eb438bc4050e57260575d83f193eb87}{\index{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}!C\-Sph\-K\-Buffer\-Json\-Group\-Sorter@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}}
+\index{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}!CSphKBufferJsonGroupSorter@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}}
+\subsubsection[{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::{\bf C\-Sph\-K\-Buffer\-Json\-Group\-Sorter} (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Match\-Comparator} $\ast$}]{p\-Comp, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const {\bf C\-Sph\-Group\-Sorter\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphKBufferJsonGroupSorter_a0eb438bc4050e57260575d83f193eb87}
+
+
+ctor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphKBufferJsonGroupSorter_ab27bc17ca4a38da9248419445d052bd8}{\index{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}!Is\-Groupby@{Is\-Groupby}}
+\index{Is\-Groupby@{Is\-Groupby}!CSphKBufferJsonGroupSorter@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}}
+\subsubsection[{Is\-Groupby}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Is\-Groupby (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphKBufferJsonGroupSorter_ab27bc17ca4a38da9248419445d052bd8}
+
+
+check if this sorter does groupby 
+
+
+
+Reimplemented from \hyperlink{classCSphKBufferGroupSorter_acda318e10e235640a396b0baa267e15b}{C\-Sph\-K\-Buffer\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}.
+
+\hypertarget{classCSphKBufferJsonGroupSorter_a2b5a20314786b1217ef1d6ff56382f88}{\index{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}!Push@{Push}}
+\index{Push@{Push}!CSphKBufferJsonGroupSorter@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Push (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphKBufferJsonGroupSorter_a2b5a20314786b1217ef1d6ff56382f88}
+
+
+add entry to the queue 
+
+
+
+Reimplemented from \hyperlink{classCSphKBufferGroupSorter_a86d29bcec77a75f5894a633fb22082ae}{C\-Sph\-K\-Buffer\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}.
+
+\hypertarget{classCSphKBufferJsonGroupSorter_ad1d6be5f18585ecf87ccd505ea866e05}{\index{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}!Push\-Grouped@{Push\-Grouped}}
+\index{Push\-Grouped@{Push\-Grouped}!CSphKBufferJsonGroupSorter@{C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}}
+\subsubsection[{Push\-Grouped}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-K\-Buffer\-Json\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Push\-Grouped (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Entry, }
+\item[{bool}]{b\-New\-Set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphKBufferJsonGroupSorter_ad1d6be5f18585ecf87ccd505ea866e05}
+
+
+add pre-\/grouped entry to the queue 
+
+
+
+Reimplemented from \hyperlink{classCSphKBufferGroupSorter_a3a0ed37c3dd9c06fc2524df71a9d45d1}{C\-Sph\-K\-Buffer\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

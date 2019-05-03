@@ -1,0 +1,61 @@
+\hypertarget{sphinxrlp_8h}{\section{src/sphinxrlp.h File Reference}
+\label{sphinxrlp_8h}\index{src/sphinxrlp.\-h@{src/sphinxrlp.\-h}}
+}
+{\ttfamily \#include \char`\"{}sphinxstd.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{sphinxrlp_8h_a2885586aa94a7b14fc99486052fe3d9a}{Create\-Source\-With\-Proxy} (const char $\ast$s\-Source\-Name, bool)
+\item 
+bool \hyperlink{sphinxrlp_8h_a8c71a9ec881aef9c50a6179538745b36}{sph\-R\-L\-P\-Check\-Config} (\hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+bool \hyperlink{sphinxrlp_8h_aef3c2cfed19c454d82d0b586e4199f63}{sph\-Spawn\-R\-L\-P\-Filter} (\hyperlink{classISphFieldFilter}{I\-Sph\-Field\-Filter} $\ast$\&p\-Field\-Filter, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&m\-\_\-t\-Settings, const \hyperlink{structCSphTokenizerSettings}{C\-Sph\-Tokenizer\-Settings} \&t\-Tok\-Settings, const char $\ast$sz\-Index, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+void \hyperlink{sphinxrlp_8h_a61a11cdf3b539ae7f77d5aaf58a218f3}{sph\-Configure\-R\-L\-P} (\hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} \&h\-Common)
+\item 
+void \hyperlink{sphinxrlp_8h_a50b2658a8f92bffa254d4b89fef91e13}{sph\-R\-L\-P\-Done} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxrlp_8h_a2885586aa94a7b14fc99486052fe3d9a}{\index{sphinxrlp.\-h@{sphinxrlp.\-h}!Create\-Source\-With\-Proxy@{Create\-Source\-With\-Proxy}}
+\index{Create\-Source\-With\-Proxy@{Create\-Source\-With\-Proxy}!sphinxrlp.h@{sphinxrlp.\-h}}
+\subsubsection[{Create\-Source\-With\-Proxy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$ Create\-Source\-With\-Proxy (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Source\-Name, }
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)}}\label{sphinxrlp_8h_a2885586aa94a7b14fc99486052fe3d9a}
+\hypertarget{sphinxrlp_8h_a61a11cdf3b539ae7f77d5aaf58a218f3}{\index{sphinxrlp.\-h@{sphinxrlp.\-h}!sph\-Configure\-R\-L\-P@{sph\-Configure\-R\-L\-P}}
+\index{sph\-Configure\-R\-L\-P@{sph\-Configure\-R\-L\-P}!sphinxrlp.h@{sphinxrlp.\-h}}
+\subsubsection[{sph\-Configure\-R\-L\-P}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Configure\-R\-L\-P (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Config\-Section} \&}]{h\-Common}
+\end{DoxyParamCaption}
+)}}\label{sphinxrlp_8h_a61a11cdf3b539ae7f77d5aaf58a218f3}
+\hypertarget{sphinxrlp_8h_a8c71a9ec881aef9c50a6179538745b36}{\index{sphinxrlp.\-h@{sphinxrlp.\-h}!sph\-R\-L\-P\-Check\-Config@{sph\-R\-L\-P\-Check\-Config}}
+\index{sph\-R\-L\-P\-Check\-Config@{sph\-R\-L\-P\-Check\-Config}!sphinxrlp.h@{sphinxrlp.\-h}}
+\subsubsection[{sph\-R\-L\-P\-Check\-Config}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-R\-L\-P\-Check\-Config (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxrlp_8h_a8c71a9ec881aef9c50a6179538745b36}
+\hypertarget{sphinxrlp_8h_a50b2658a8f92bffa254d4b89fef91e13}{\index{sphinxrlp.\-h@{sphinxrlp.\-h}!sph\-R\-L\-P\-Done@{sph\-R\-L\-P\-Done}}
+\index{sph\-R\-L\-P\-Done@{sph\-R\-L\-P\-Done}!sphinxrlp.h@{sphinxrlp.\-h}}
+\subsubsection[{sph\-R\-L\-P\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-R\-L\-P\-Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxrlp_8h_a50b2658a8f92bffa254d4b89fef91e13}
+\hypertarget{sphinxrlp_8h_aef3c2cfed19c454d82d0b586e4199f63}{\index{sphinxrlp.\-h@{sphinxrlp.\-h}!sph\-Spawn\-R\-L\-P\-Filter@{sph\-Spawn\-R\-L\-P\-Filter}}
+\index{sph\-Spawn\-R\-L\-P\-Filter@{sph\-Spawn\-R\-L\-P\-Filter}!sphinxrlp.h@{sphinxrlp.\-h}}
+\subsubsection[{sph\-Spawn\-R\-L\-P\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Spawn\-R\-L\-P\-Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Field\-Filter} $\ast$\&}]{p\-Field\-Filter, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{m\-\_\-t\-Settings, }
+\item[{const {\bf C\-Sph\-Tokenizer\-Settings} \&}]{t\-Tok\-Settings, }
+\item[{const char $\ast$}]{sz\-Index, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxrlp_8h_aef3c2cfed19c454d82d0b586e4199f63}

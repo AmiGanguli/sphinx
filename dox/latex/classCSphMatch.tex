@@ -1,0 +1,254 @@
+\hypertarget{classCSphMatch}{\section{C\-Sph\-Match Class Reference}
+\label{classCSphMatch}\index{C\-Sph\-Match@{C\-Sph\-Match}}
+}
+
+
+search query match (document info plus weight/tag)  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Match\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphMatch}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphMatch_a7428e80c3f505a6ca4f4f78a824bb9d1}{C\-Sph\-Match} ()
+\begin{DoxyCompactList}\small\item\em ctor. clears everything \end{DoxyCompactList}\item 
+\hyperlink{classCSphMatch_a59410bb44b69726fa2aef802cafe85ba}{$\sim$\-C\-Sph\-Match} ()
+\begin{DoxyCompactList}\small\item\em dtor. frees everything \end{DoxyCompactList}\item 
+void \hyperlink{classCSphMatch_a9c089492cb2f85e11f95f4e2472d2490}{Reset} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Dynamic)
+\begin{DoxyCompactList}\small\item\em reset \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} \hyperlink{classCSphMatch_a7815028ab8bfbe58ef6748c9eab6e1db}{Get\-Attr} (const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&t\-Loc) const 
+\begin{DoxyCompactList}\small\item\em integer getter \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classCSphMatch_aaa22bcf87b728f819ef350d4192e006c}{Get\-Attr\-Float} (const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&t\-Loc) const 
+\begin{DoxyCompactList}\small\item\em float getter \end{DoxyCompactList}\item 
+void \hyperlink{classCSphMatch_a681c1e17cb42f5063873395b7a065673}{Set\-Attr} (const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&t\-Loc, \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\begin{DoxyCompactList}\small\item\em integer setter \end{DoxyCompactList}\item 
+void \hyperlink{classCSphMatch_ae7daf2a466cef6c5c101dd87c3ff5001}{Set\-Attr\-Float} (const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&t\-Loc, \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} f\-Value)
+\begin{DoxyCompactList}\small\item\em float setter \end{DoxyCompactList}\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$ \hyperlink{classCSphMatch_ac7e247cae8b05ab1f559d4f528e9ec4d}{Get\-Attr\-M\-V\-A} (const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&t\-Loc, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Pool, bool b\-Arena\-Prohibit) const 
+\begin{DoxyCompactList}\small\item\em M\-V\-A getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classCSphMatch_a7998712d1849c157ffd02a395de4ad65}{m\-\_\-u\-Doc\-I\-D}
+\begin{DoxyCompactList}\small\item\em document I\-D \end{DoxyCompactList}\item 
+const \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$ \hyperlink{classCSphMatch_af83f609543b1dd0546fcb6ddf417495d}{m\-\_\-p\-Static}
+\begin{DoxyCompactList}\small\item\em static part (stored in and owned by the index) \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$ \hyperlink{classCSphMatch_a0ed856b2f6cff288cda3e0a682a87ca5}{m\-\_\-p\-Dynamic}
+\begin{DoxyCompactList}\small\item\em dynamic part (computed per query; owned by the match) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphMatch_a5da02dba11f9375ea4e83d9b0e02b662}{m\-\_\-i\-Weight}
+\begin{DoxyCompactList}\small\item\em my computed weight \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphMatch_adedc90b09bad49652b89d01766852ae9}{m\-\_\-i\-Tag}
+\begin{DoxyCompactList}\small\item\em my index tag \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphMatch_a581daa21d6116fa55af1ea9522924505}{C\-Sph\-Match} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&rhs)
+\begin{DoxyCompactList}\small\item\em copy ctor. just in case \end{DoxyCompactList}\item 
+void \hyperlink{classCSphMatch_a27c0472a16a1e9ea6cc0b916ec3e1c1e}{Combine} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&rhs, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Dynamic)
+\begin{DoxyCompactList}\small\item\em assignment \end{DoxyCompactList}\item 
+const \hyperlink{classCSphMatch}{C\-Sph\-Match} \& \hyperlink{classCSphMatch_a0089e30d750d3fe63dc768e4ac002ca2}{operator=} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&)
+\begin{DoxyCompactList}\small\item\em \char`\"{}manually\char`\"{} prevent copying \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCSphMatch_a71032285b4b7b738d8cecf822e75835d}{I\-Sph\-Schema}
+\item 
+class \hyperlink{classCSphMatch_ae9fc32f1e11e9afd5d44b12b60e68c65}{C\-Sph\-Rset\-Schema}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+search query match (document info plus weight/tag) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphMatch_a7428e80c3f505a6ca4f4f78a824bb9d1}{\index{C\-Sph\-Match@{C\-Sph\-Match}!C\-Sph\-Match@{C\-Sph\-Match}}
+\index{C\-Sph\-Match@{C\-Sph\-Match}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{C\-Sph\-Match}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Match\-::\-C\-Sph\-Match (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMatch_a7428e80c3f505a6ca4f4f78a824bb9d1}
+
+
+ctor. clears everything 
+
+\hypertarget{classCSphMatch_a581daa21d6116fa55af1ea9522924505}{\index{C\-Sph\-Match@{C\-Sph\-Match}!C\-Sph\-Match@{C\-Sph\-Match}}
+\index{C\-Sph\-Match@{C\-Sph\-Match}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{C\-Sph\-Match}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Match\-::\-C\-Sph\-Match (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphMatch_a581daa21d6116fa55af1ea9522924505}
+
+
+copy ctor. just in case 
+
+\hypertarget{classCSphMatch_a59410bb44b69726fa2aef802cafe85ba}{\index{C\-Sph\-Match@{C\-Sph\-Match}!$\sim$\-C\-Sph\-Match@{$\sim$\-C\-Sph\-Match}}
+\index{$\sim$\-C\-Sph\-Match@{$\sim$\-C\-Sph\-Match}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{$\sim$\-C\-Sph\-Match}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Match\-::$\sim$\-C\-Sph\-Match (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMatch_a59410bb44b69726fa2aef802cafe85ba}
+
+
+dtor. frees everything 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphMatch_a27c0472a16a1e9ea6cc0b916ec3e1c1e}{\index{C\-Sph\-Match@{C\-Sph\-Match}!Combine@{Combine}}
+\index{Combine@{Combine}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{Combine}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Match\-::\-Combine (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{rhs, }
+\item[{{\bf int}}]{i\-Dynamic}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphMatch_a27c0472a16a1e9ea6cc0b916ec3e1c1e}
+
+
+assignment 
+
+\hypertarget{classCSphMatch_a7815028ab8bfbe58ef6748c9eab6e1db}{\index{C\-Sph\-Match@{C\-Sph\-Match}!Get\-Attr@{Get\-Attr}}
+\index{Get\-Attr@{Get\-Attr}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{Get\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Attr\-\_\-t} C\-Sph\-Match\-::\-Get\-Attr (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Locator} \&}]{t\-Loc}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMatch_a7815028ab8bfbe58ef6748c9eab6e1db}
+
+
+integer getter 
+
+\hypertarget{classCSphMatch_aaa22bcf87b728f819ef350d4192e006c}{\index{C\-Sph\-Match@{C\-Sph\-Match}!Get\-Attr\-Float@{Get\-Attr\-Float}}
+\index{Get\-Attr\-Float@{Get\-Attr\-Float}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{Get\-Attr\-Float}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} C\-Sph\-Match\-::\-Get\-Attr\-Float (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Locator} \&}]{t\-Loc}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMatch_aaa22bcf87b728f819ef350d4192e006c}
+
+
+float getter 
+
+\hypertarget{classCSphMatch_ac7e247cae8b05ab1f559d4f528e9ec4d}{\index{C\-Sph\-Match@{C\-Sph\-Match}!Get\-Attr\-M\-V\-A@{Get\-Attr\-M\-V\-A}}
+\index{Get\-Attr\-M\-V\-A@{Get\-Attr\-M\-V\-A}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{Get\-Attr\-M\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D} $\ast$ C\-Sph\-Match\-::\-Get\-Attr\-M\-V\-A (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Locator} \&}]{t\-Loc, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Pool, }
+\item[{bool}]{b\-Arena\-Prohibit}
+\end{DoxyParamCaption}
+) const}}\label{classCSphMatch_ac7e247cae8b05ab1f559d4f528e9ec4d}
+
+
+M\-V\-A getter. 
+
+\hypertarget{classCSphMatch_a0089e30d750d3fe63dc768e4ac002ca2}{\index{C\-Sph\-Match@{C\-Sph\-Match}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Match}\& C\-Sph\-Match\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphMatch_a0089e30d750d3fe63dc768e4ac002ca2}
+
+
+\char`\"{}manually\char`\"{} prevent copying 
+
+\hypertarget{classCSphMatch_a9c089492cb2f85e11f95f4e2472d2490}{\index{C\-Sph\-Match@{C\-Sph\-Match}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Match\-::\-Reset (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Dynamic}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMatch_a9c089492cb2f85e11f95f4e2472d2490}
+
+
+reset 
+
+\hypertarget{classCSphMatch_a681c1e17cb42f5063873395b7a065673}{\index{C\-Sph\-Match@{C\-Sph\-Match}!Set\-Attr@{Set\-Attr}}
+\index{Set\-Attr@{Set\-Attr}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{Set\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Match\-::\-Set\-Attr (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Locator} \&}]{t\-Loc, }
+\item[{{\bf Sph\-Attr\-\_\-t}}]{u\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMatch_a681c1e17cb42f5063873395b7a065673}
+
+
+integer setter 
+
+\hypertarget{classCSphMatch_ae7daf2a466cef6c5c101dd87c3ff5001}{\index{C\-Sph\-Match@{C\-Sph\-Match}!Set\-Attr\-Float@{Set\-Attr\-Float}}
+\index{Set\-Attr\-Float@{Set\-Attr\-Float}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{Set\-Attr\-Float}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Match\-::\-Set\-Attr\-Float (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Locator} \&}]{t\-Loc, }
+\item[{{\bf float}}]{f\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphMatch_ae7daf2a466cef6c5c101dd87c3ff5001}
+
+
+float setter 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCSphMatch_ae9fc32f1e11e9afd5d44b12b60e68c65}{\index{C\-Sph\-Match@{C\-Sph\-Match}!C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}}
+\index{C\-Sph\-Rset\-Schema@{C\-Sph\-Rset\-Schema}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{C\-Sph\-Rset\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf C\-Sph\-Rset\-Schema}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphMatch_ae9fc32f1e11e9afd5d44b12b60e68c65}
+\hypertarget{classCSphMatch_a71032285b4b7b738d8cecf822e75835d}{\index{C\-Sph\-Match@{C\-Sph\-Match}!I\-Sph\-Schema@{I\-Sph\-Schema}}
+\index{I\-Sph\-Schema@{I\-Sph\-Schema}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{I\-Sph\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf I\-Sph\-Schema}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphMatch_a71032285b4b7b738d8cecf822e75835d}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphMatch_adedc90b09bad49652b89d01766852ae9}{\index{C\-Sph\-Match@{C\-Sph\-Match}!m\-\_\-i\-Tag@{m\-\_\-i\-Tag}}
+\index{m\-\_\-i\-Tag@{m\-\_\-i\-Tag}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{m\-\_\-i\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Match\-::m\-\_\-i\-Tag}}\label{classCSphMatch_adedc90b09bad49652b89d01766852ae9}
+
+
+my index tag 
+
+\hypertarget{classCSphMatch_a5da02dba11f9375ea4e83d9b0e02b662}{\index{C\-Sph\-Match@{C\-Sph\-Match}!m\-\_\-i\-Weight@{m\-\_\-i\-Weight}}
+\index{m\-\_\-i\-Weight@{m\-\_\-i\-Weight}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{m\-\_\-i\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Match\-::m\-\_\-i\-Weight}}\label{classCSphMatch_a5da02dba11f9375ea4e83d9b0e02b662}
+
+
+my computed weight 
+
+\hypertarget{classCSphMatch_a0ed856b2f6cff288cda3e0a682a87ca5}{\index{C\-Sph\-Match@{C\-Sph\-Match}!m\-\_\-p\-Dynamic@{m\-\_\-p\-Dynamic}}
+\index{m\-\_\-p\-Dynamic@{m\-\_\-p\-Dynamic}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{m\-\_\-p\-Dynamic}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Rowitem}$\ast$ C\-Sph\-Match\-::m\-\_\-p\-Dynamic}}\label{classCSphMatch_a0ed856b2f6cff288cda3e0a682a87ca5}
+
+
+dynamic part (computed per query; owned by the match) 
+
+\hypertarget{classCSphMatch_af83f609543b1dd0546fcb6ddf417495d}{\index{C\-Sph\-Match@{C\-Sph\-Match}!m\-\_\-p\-Static@{m\-\_\-p\-Static}}
+\index{m\-\_\-p\-Static@{m\-\_\-p\-Static}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{m\-\_\-p\-Static}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Rowitem}$\ast$ C\-Sph\-Match\-::m\-\_\-p\-Static}}\label{classCSphMatch_af83f609543b1dd0546fcb6ddf417495d}
+
+
+static part (stored in and owned by the index) 
+
+\hypertarget{classCSphMatch_a7998712d1849c157ffd02a395de4ad65}{\index{C\-Sph\-Match@{C\-Sph\-Match}!m\-\_\-u\-Doc\-I\-D@{m\-\_\-u\-Doc\-I\-D}}
+\index{m\-\_\-u\-Doc\-I\-D@{m\-\_\-u\-Doc\-I\-D}!CSphMatch@{C\-Sph\-Match}}
+\subsubsection[{m\-\_\-u\-Doc\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Match\-::m\-\_\-u\-Doc\-I\-D}}\label{classCSphMatch_a7998712d1849c157ffd02a395de4ad65}
+
+
+document I\-D 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

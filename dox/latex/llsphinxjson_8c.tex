@@ -1,0 +1,1428 @@
+\hypertarget{llsphinxjson_8c}{\section{src/llsphinxjson.c File Reference}
+\label{llsphinxjson_8c}\index{src/llsphinxjson.\-c@{src/llsphinxjson.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}yysphinxjson.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structyy__buffer__state}{yy\-\_\-buffer\-\_\-state}
+\item 
+struct \hyperlink{structyy__trans__info}{yy\-\_\-trans\-\_\-info}
+\item 
+struct \hyperlink{structyyguts__t}{yyguts\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{llsphinxjson_8c_a1ae16e642a197fa4948998525813c6f5}{Y\-Y\-\_\-\-I\-N\-T\-\_\-\-A\-L\-I\-G\-N\-E\-D}~short \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}
+\item 
+\#define \hyperlink{llsphinxjson_8c_a3c3d1ef92e93b0bc81d7760a73d5c3b6}{F\-L\-E\-X\-\_\-\-S\-C\-A\-N\-N\-E\-R}
+\item 
+\#define \hyperlink{llsphinxjson_8c_a243ca1d30872935faf05ea5118ed6fdc}{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}~2
+\item 
+\#define \hyperlink{llsphinxjson_8c_a90f9d458829400869e47efb68a865677}{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}~5
+\item 
+\#define \hyperlink{llsphinxjson_8c_ac676bd06869180ea493e9b6d7c078dbb}{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-S\-U\-B\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}~35
+\item 
+\#define \hyperlink{llsphinxjson_8c_a9465c9986fdda27730c9dff8d16a0887}{F\-L\-E\-X\-\_\-\-B\-E\-T\-A}
+\item 
+\#define \hyperlink{llsphinxjson_8c_aec980b5a71bbe6d67931df20f0ebaec4}{F\-L\-E\-X\-I\-N\-T\-\_\-\-H}
+\item 
+\#define \hyperlink{llsphinxjson_8c_aadcf2a81af243df333b31efa6461ab8e}{I\-N\-T8\-\_\-\-M\-I\-N}~(-\/128)
+\item 
+\#define \hyperlink{llsphinxjson_8c_ad4e9955955b27624963643eac448118a}{I\-N\-T16\-\_\-\-M\-I\-N}~(-\/32767-\/1)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a688eb21a22db27c2b2bd5836943cdcbe}{I\-N\-T32\-\_\-\-M\-I\-N}~(-\/2147483647-\/1)
+\item 
+\#define \hyperlink{llsphinxjson_8c_aaf7f29f45f1a513b4748a4e5014ddf6a}{I\-N\-T8\-\_\-\-M\-A\-X}~(127)
+\item 
+\#define \hyperlink{llsphinxjson_8c_ac58f2c111cc9989c86db2a7dc4fd84ca}{I\-N\-T16\-\_\-\-M\-A\-X}~(32767)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a181807730d4a375f848ba139813ce04f}{I\-N\-T32\-\_\-\-M\-A\-X}~(2147483647)
+\item 
+\#define \hyperlink{llsphinxjson_8c_aeb4e270a084ee26fe73e799861bd0252}{U\-I\-N\-T8\-\_\-\-M\-A\-X}~(255\-U)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a3ea490c9b3617d4479bd80ef93cd5602}{U\-I\-N\-T16\-\_\-\-M\-A\-X}~(65535\-U)
+\item 
+\#define \hyperlink{llsphinxjson_8c_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\-I\-N\-T32\-\_\-\-M\-A\-X}~(4294967295\-U)
+\item 
+\#define \hyperlink{llsphinxjson_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst}
+\item 
+\#define \hyperlink{llsphinxjson_8c_a8e0bcf8f8a5b613ea583347f8bc31cbf}{Y\-Y\-\_\-\-N\-U\-L\-L}~0
+\item 
+\#define \hyperlink{llsphinxjson_8c_af1185350b7a92cf8aa5324c68850c8a6}{Y\-Y\-\_\-\-S\-C\-\_\-\-T\-O\-\_\-\-U\-I}(c)~((unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}) (unsigned char) c)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a5d5508008cac8fb66fca3baa4e9b6584}{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-C\-A\-N\-N\-E\-R\-\_\-\-T}
+\item 
+\#define \hyperlink{llsphinxjson_8c_aa789f4617e33fb99594cb04a3688a0c1}{yyin}~\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yyin\-\_\-r
+\item 
+\#define \hyperlink{llsphinxjson_8c_a4fd44867d448dcb6fc32ea004a15de54}{yyout}~\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yyout\-\_\-r
+\item 
+\#define \hyperlink{llsphinxjson_8c_a6d98927535a334881d37873915fbc45f}{yyextra}~\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yyextra\-\_\-r
+\item 
+\#define \hyperlink{llsphinxjson_8c_afa07a629486cb790560bb95713ec7794}{yyleng}~\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yyleng\-\_\-r
+\item 
+\#define \hyperlink{llsphinxjson_8c_a0d71f919dbec1ffd74b2460fa7e5ac28}{yytext}~\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yytext\-\_\-r
+\item 
+\#define \hyperlink{llsphinxjson_8c_ad71cf0fddcfe4f61de0929105b33226c}{yylineno}~(\hyperlink{llsphinxql_8c_a817a6a24af62508b5a35f4bed5f56a2e}{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E}-\/$>$yy\-\_\-bs\-\_\-lineno)
+\item 
+\#define \hyperlink{llsphinxjson_8c_adb60e80d603c103e73f2561c7499095c}{yycolumn}~(\hyperlink{llsphinxql_8c_a817a6a24af62508b5a35f4bed5f56a2e}{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E}-\/$>$yy\-\_\-bs\-\_\-column)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a301f4439c9b191c80db45f5b1a8c7269}{yy\-\_\-flex\-\_\-debug}~\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yy\-\_\-flex\-\_\-debug\-\_\-r
+\item 
+\#define \hyperlink{llsphinxjson_8c_ab766bbbee08d04b67e3fe599d6900873}{B\-E\-G\-I\-N}~\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yy\-\_\-start = 1 + 2 $\ast$
+\item 
+\#define \hyperlink{llsphinxjson_8c_a8e14785f9eab7a997d659b25af9584c5}{Y\-Y\-\_\-\-S\-T\-A\-R\-T}~((\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yy\-\_\-start -\/ 1) / 2)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a32b5b960944f946b192d54f672569cd9}{Y\-Y\-S\-T\-A\-T\-E}~\hyperlink{llsphinxql_8c_a8e14785f9eab7a997d659b25af9584c5}{Y\-Y\-\_\-\-S\-T\-A\-R\-T}
+\item 
+\#define \hyperlink{llsphinxjson_8c_ab3077e60914fc54dcc55ecae1ce9700b}{Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-E\-O\-F}(state)~(\hyperlink{llsphinxql_8c_ab2708fd42cff29ce6a0a52b91bea40d1}{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R} + state + 1)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a0406739e64fb5750cf995d2ae68ce69d}{Y\-Y\-\_\-\-N\-E\-W\-\_\-\-F\-I\-L\-E}~\hyperlink{llsphinxjson_8c_aed9a7397d6409a6cb13b46763df30735}{yy2restart}(\hyperlink{llsphinxql_8c_aa789f4617e33fb99594cb04a3688a0c1}{yyin} ,yyscanner )
+\item 
+\#define \hyperlink{llsphinxjson_8c_ab866a64da164ed2d4d444df1ef1fc9b3}{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-C\-H\-A\-R}~0
+\item 
+\#define \hyperlink{llsphinxjson_8c_ae7e51116e747d3390e7a6cfc6532834c}{Y\-Y\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}~16384
+\item 
+\#define \hyperlink{llsphinxjson_8c_ac2f8b6fccdc516d96b02ac09a4dc01bd}{Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}~((\hyperlink{llsphinxql_8c_ae7e51116e747d3390e7a6cfc6532834c}{Y\-Y\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E} + 2) $\ast$ sizeof(\hyperlink{llsphinxjson_8c_a9ba7c416f135b0f0c1f4addded4616b5}{yy\-\_\-state\-\_\-type}))
+\item 
+\#define \hyperlink{llsphinxjson_8c_aa79d63ed3ff8d2249baf1732a73089f5}{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}
+\item 
+\#define \hyperlink{llsphinxjson_8c_adf4b0db227e07782e28ade353a7ba7a1}{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-E\-\_\-\-S\-C\-A\-N}~0
+\item 
+\#define \hyperlink{llsphinxjson_8c_a7f71d7fa2c403eb4b2f38cb9536f3c63}{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-F\-I\-L\-E}~1
+\item 
+\#define \hyperlink{llsphinxjson_8c_ad1a0b5ebcabffe388e9e9ebb2619c1fb}{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-L\-A\-S\-T\-\_\-\-M\-A\-T\-C\-H}~2
+\item 
+\#define \hyperlink{llsphinxjson_8c_a12e5f3a76911433480bca7f4edba6119}{Y\-Y\-\_\-\-L\-E\-S\-S\-\_\-\-L\-I\-N\-E\-N\-O}(n)
+\item 
+\#define \hyperlink{llsphinxjson_8c_ae65cb72d09db0abdc4b8e8c4d533ab14}{yyless}(n)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a448a4e9041a09588332733c6846c770c}{unput}(c)~yyunput( c, \hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$\hyperlink{llsphinxql_8c_a790a191a93ef4d3b8c0bb43fd7480052}{yytext\-\_\-ptr} , yyscanner )
+\item 
+\#define \hyperlink{llsphinxjson_8c_ae0f2b0b5f04b2338367826b5670774f9}{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-I\-Z\-E\-\_\-\-T}
+\item 
+\#define \hyperlink{llsphinxjson_8c_a8aaa9e1fa7f13d6954d045ef973a9c84}{Y\-Y\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}
+\item 
+\#define \hyperlink{llsphinxjson_8c_a53579db42834b88199458993912c646d}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-E\-W}~0
+\item 
+\#define \hyperlink{llsphinxjson_8c_a609d19f40900ecc2a5f812d9388c21fb}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-O\-R\-M\-A\-L}~1
+\item 
+\#define \hyperlink{llsphinxjson_8c_ad689d97c15e807a6116ace7a420cea57}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-E\-O\-F\-\_\-\-P\-E\-N\-D\-I\-N\-G}~2
+\item 
+\#define \hyperlink{llsphinxjson_8c_aa093d500a6330d06d8e4760c494fac33}{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R}
+\item 
+\#define \hyperlink{llsphinxjson_8c_a817a6a24af62508b5a35f4bed5f56a2e}{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E}~\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yy\-\_\-buffer\-\_\-stack\mbox{[}\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yy\-\_\-buffer\-\_\-stack\-\_\-top\mbox{]}
+\item 
+\#define \hyperlink{llsphinxjson_8c_ac5d478d90ea9a2ecd43d579067a2e89d}{Y\-Y\-\_\-\-F\-L\-U\-S\-H\-\_\-\-B\-U\-F\-F\-E\-R}~\hyperlink{llsphinxjson_8c_ab226ffd6e7d0701536553849831d3bca}{yy2\-\_\-flush\-\_\-buffer}(\hyperlink{llsphinxql_8c_aa093d500a6330d06d8e4760c494fac33}{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R} ,yyscanner)
+\item 
+\#define \hyperlink{llsphinxjson_8c_ab7eb911e18655f2f78e63afe5a8a4a12}{yy\-\_\-new\-\_\-buffer}~\hyperlink{llsphinxjson_8c_ac7a71b54719a463398e46da5af9eec05}{yy2\-\_\-create\-\_\-buffer}
+\item 
+\#define \hyperlink{llsphinxjson_8c_ac56eb96366c08862bf0efe5d83d1fc4c}{yy\-\_\-set\-\_\-interactive}(is\-\_\-interactive)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a12e30d13a76a94e78010db9996d39c50}{yy\-\_\-set\-\_\-bol}(at\-\_\-bol)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a71ca89b3656acd0552f14949a571560b}{Y\-Y\-\_\-\-A\-T\-\_\-\-B\-O\-L}()~(\hyperlink{llsphinxql_8c_a817a6a24af62508b5a35f4bed5f56a2e}{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E}-\/$>$yy\-\_\-at\-\_\-bol)
+\item 
+\#define \hyperlink{llsphinxjson_8c_af89faf4279706cc5cdaa1b03ecd0500c}{yy2wrap}(n)~1
+\item 
+\#define \hyperlink{llsphinxjson_8c_ae1ef5933028cbc587d31328e53d11a99}{Y\-Y\-\_\-\-S\-K\-I\-P\-\_\-\-Y\-Y\-W\-R\-A\-P}
+\item 
+\#define \hyperlink{llsphinxjson_8c_a790a191a93ef4d3b8c0bb43fd7480052}{yytext\-\_\-ptr}~yytext\-\_\-r
+\item 
+\#define \hyperlink{llsphinxjson_8c_acc3486d769af4e4b2820346a0093cc79}{Y\-Y\-\_\-\-D\-O\-\_\-\-B\-E\-F\-O\-R\-E\-\_\-\-A\-C\-T\-I\-O\-N}
+\item 
+\#define \hyperlink{llsphinxjson_8c_ae558785bb896e090901c2b905f6790c6}{Y\-Y\-\_\-\-N\-U\-M\-\_\-\-R\-U\-L\-E\-S}~18
+\item 
+\#define \hyperlink{llsphinxjson_8c_ab2708fd42cff29ce6a0a52b91bea40d1}{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R}~19
+\item 
+\#define \hyperlink{llsphinxjson_8c_a835f10dd1ab4bf9a80c4cd80ee6e3058}{R\-E\-J\-E\-C\-T}~reject\-\_\-used\-\_\-but\-\_\-not\-\_\-detected
+\item 
+\#define \hyperlink{llsphinxjson_8c_a745d37b5e002b2e5f93ad42ea7b554be}{yymore}()~yymore\-\_\-used\-\_\-but\-\_\-not\-\_\-detected
+\item 
+\#define \hyperlink{llsphinxjson_8c_a68792d73820bc46a71d3d4e613f0b977}{Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-A\-D\-J}~0
+\item 
+\#define \hyperlink{llsphinxjson_8c_a56858d18c7eda4f53664496ef566f651}{Y\-Y\-\_\-\-R\-E\-S\-T\-O\-R\-E\-\_\-\-Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-O\-F\-F\-S\-E\-T}
+\item 
+\#define \hyperlink{llsphinxjson_8c_ab0b6e7a3f6046c575cc5718ae924d255}{S\-T\-O\-R\-E\-\_\-\-B\-O\-U\-N\-D\-S}
+\item 
+\#define \hyperlink{llsphinxjson_8c_aa3d063564f6ab16f6d408b8369d0e9ff}{I\-N\-I\-T\-I\-A\-L}~0
+\item 
+\#define \hyperlink{llsphinxjson_8c_a182aab066d670da558eda8a75b1d823f}{ccomment}~1
+\item 
+\#define \hyperlink{llsphinxjson_8c_a26938d921de835f6183c02e54cf08828}{Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E}~void $\ast$
+\item 
+\#define \hyperlink{llsphinxjson_8c_aab1491ceccb1c95c14320b2903773a1c}{Y\-Y\-\_\-\-R\-E\-A\-D\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}~8192
+\item 
+\#define \hyperlink{llsphinxjson_8c_aad1dc60a04a1d8cfc8b3ded13601e361}{E\-C\-H\-O}~do \{ \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} (fwrite( \hyperlink{llsphinxql_8c_a0d71f919dbec1ffd74b2460fa7e5ac28}{yytext}, \hyperlink{llsphinxql_8c_afa07a629486cb790560bb95713ec7794}{yyleng}, 1, \hyperlink{llsphinxql_8c_a4fd44867d448dcb6fc32ea004a15de54}{yyout} )) \{\} \} \hyperlink{llsphinxql_8c_a8fdafe3be7e00ce3d4f0cb50a9a5eb39}{while} (0)
+\item 
+\#define \hyperlink{llsphinxjson_8c_aacfdca45fa4beb8b06172525a53c424a}{Y\-Y\-\_\-\-I\-N\-P\-U\-T}(buf, result, max\-\_\-size)
+\item 
+\#define \hyperlink{llsphinxjson_8c_ac3286b18a2e91b4571b97df96a118e84}{yyterminate}()~\hyperlink{sphinxsort_8cpp_a3a3a0de38f503963432a78b8a36aa74c}{return} \hyperlink{llsphinxql_8c_a8e0bcf8f8a5b613ea583347f8bc31cbf}{Y\-Y\-\_\-\-N\-U\-L\-L}
+\item 
+\#define \hyperlink{llsphinxjson_8c_a227e75c43b9e0cd41529974230be7e75}{Y\-Y\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-T\-A\-C\-K\-\_\-\-I\-N\-C\-R}~25
+\item 
+\#define \hyperlink{llsphinxjson_8c_ac0586b8b0b092d02f4ba7d45abe328f2}{Y\-Y\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-R\-R\-O\-R}(msg)~\hyperlink{llsphinxql_8c_ac76d509c88a606f9e891083a8b84bcfa}{yy\-\_\-fatal\-\_\-error}( msg , yyscanner)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a7682c8d9cec0859408d2421fbe4a5570}{Y\-Y\-\_\-\-D\-E\-C\-L\-\_\-\-I\-S\-\_\-\-O\-U\-R\-S}~1
+\item 
+\#define \hyperlink{llsphinxjson_8c_ae5b01ac2fa5a6ad5fb97559638abe686}{Y\-Y\-\_\-\-D\-E\-C\-L}~\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a494e67af32fa9e780497af1a3cda2999}{yy2lex} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a6198b2fcf96178b24ad4efff2a3debb0}{Y\-Y\-\_\-\-U\-S\-E\-R\-\_\-\-A\-C\-T\-I\-O\-N}
+\item 
+\#define \hyperlink{llsphinxjson_8c_a3cc40a460ad7df816678bcc05241e84c}{Y\-Y\-\_\-\-B\-R\-E\-A\-K}~break;
+\item 
+\#define \hyperlink{llsphinxjson_8c_a690504b662e4281515bf12722df178ba}{Y\-Y\-\_\-\-R\-U\-L\-E\-\_\-\-S\-E\-T\-U\-P}~\hyperlink{llsphinxql_8c_a6198b2fcf96178b24ad4efff2a3debb0}{Y\-Y\-\_\-\-U\-S\-E\-R\-\_\-\-A\-C\-T\-I\-O\-N}
+\item 
+\#define \hyperlink{llsphinxjson_8c_ae93e67b85c44f6bd31ead14a552a35c8}{Y\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-F\-A\-I\-L\-U\-R\-E}~2
+\item 
+\#define \hyperlink{llsphinxjson_8c_ae65cb72d09db0abdc4b8e8c4d533ab14}{yyless}(n)
+\item 
+\#define \hyperlink{llsphinxjson_8c_a828cc83270f8f5bb1688e14dd4e28128}{Y\-Y\-T\-A\-B\-L\-E\-S\-\_\-\-N\-A\-M\-E}~\char`\"{}yytables\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef signed char \hyperlink{llsphinxjson_8c_a7b0840dff4a2ef1702118aa12264b2a7}{flex\-\_\-int8\-\_\-t}
+\item 
+typedef short \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a2e73b2c75126814585525fb2e9d51159}{flex\-\_\-int16\-\_\-t}
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a838ce943cf44ef7769480714fc6c3ba9}{flex\-\_\-int32\-\_\-t}
+\item 
+typedef unsigned char \hyperlink{llsphinxjson_8c_a0fac5ea484f64e75dbe6eba4aa61750c}{flex\-\_\-uint8\-\_\-t}
+\item 
+typedef unsigned short \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_ac50cdb9eefbef83a1cec89e3a7f6e1d2}{flex\-\_\-uint16\-\_\-t}
+\item 
+typedef unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a36869712de12820c73aae736762e8e88}{flex\-\_\-uint32\-\_\-t}
+\item 
+typedef void $\ast$ \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t}
+\item 
+typedef struct \hyperlink{structyy__buffer__state}{yy\-\_\-buffer\-\_\-state} $\ast$ \hyperlink{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}
+\item 
+typedef size\-\_\-t \hyperlink{llsphinxjson_8c_ad557845057f187eec4be07e2717d2afa}{yy\-\_\-size\-\_\-t}
+\item 
+typedef unsigned char \hyperlink{llsphinxjson_8c_a1f324b3cb0839eeb90145f0274e6946e}{Y\-Y\-\_\-\-C\-H\-A\-R}
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a9ba7c416f135b0f0c1f4addded4616b5}{yy\-\_\-state\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{llsphinxjson_8c_aed9a7397d6409a6cb13b46763df30735}{yy2restart} (F\-I\-L\-E $\ast$input\-\_\-file, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_a422f6e6d343af267c629f590eb725178}{yy2\-\_\-switch\-\_\-to\-\_\-buffer} (\hyperlink{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} new\-\_\-buffer, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} \hyperlink{llsphinxjson_8c_ac7a71b54719a463398e46da5af9eec05}{yy2\-\_\-create\-\_\-buffer} (F\-I\-L\-E $\ast$file, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} size, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_a9f5f4324c3cec85a291e0819a43c8040}{yy2\-\_\-delete\-\_\-buffer} (\hyperlink{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} b, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_ab226ffd6e7d0701536553849831d3bca}{yy2\-\_\-flush\-\_\-buffer} (\hyperlink{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} b, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_a68e1efba20dab5c5b67e6cc3bc62ace6}{yy2push\-\_\-buffer\-\_\-state} (\hyperlink{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} new\-\_\-buffer, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_a1827c79beb72144621939536612ff747}{yy2pop\-\_\-buffer\-\_\-state} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+static void \hyperlink{llsphinxjson_8c_ab97ec53d04c5817f919f303d822dbacc}{yy2ensure\-\_\-buffer\-\_\-stack} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+static void \hyperlink{llsphinxjson_8c_a61f8ef0d547692861e731b3cf3dee7fb}{yy2\-\_\-load\-\_\-buffer\-\_\-state} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+static void \hyperlink{llsphinxjson_8c_a6b9a704d64f45280f3d481de28d4b91a}{yy2\-\_\-init\-\_\-buffer} (\hyperlink{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} b, F\-I\-L\-E $\ast$file, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} \hyperlink{llsphinxjson_8c_a79bf69843d811e206ee9b53d4366f358}{yy2\-\_\-scan\-\_\-buffer} (char $\ast$base, \hyperlink{llsphinxjson_8c_ad557845057f187eec4be07e2717d2afa}{yy\-\_\-size\-\_\-t} size, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} \hyperlink{llsphinxjson_8c_aebd9cf2a66b80d53d79533496d053457}{yy2\-\_\-scan\-\_\-string} (\hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} char $\ast$yy\-\_\-str, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} \hyperlink{llsphinxjson_8c_a04e818a1f02b8f0dbc4bf563896da137}{yy2\-\_\-scan\-\_\-bytes} (\hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} char $\ast$bytes, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} len, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void $\ast$ \hyperlink{llsphinxjson_8c_ad866f80badd9579e4714d7bde7227f40}{yy2alloc} (\hyperlink{llsphinxjson_8c_ad557845057f187eec4be07e2717d2afa}{yy\-\_\-size\-\_\-t}, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void $\ast$ \hyperlink{llsphinxjson_8c_a270ba98ab01c71249cf550ae123afa74}{yy2realloc} (void $\ast$, \hyperlink{llsphinxjson_8c_ad557845057f187eec4be07e2717d2afa}{yy\-\_\-size\-\_\-t}, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_a7630fb66d924f87c591aae08c14014bf}{yy2free} (void $\ast$, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+static \hyperlink{llsphinxjson_8c_a9ba7c416f135b0f0c1f4addded4616b5}{yy\-\_\-state\-\_\-type} \hyperlink{llsphinxjson_8c_aed478f529df78ebbe143819488cfca4b}{yy\-\_\-get\-\_\-previous\-\_\-state} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+static \hyperlink{llsphinxjson_8c_a9ba7c416f135b0f0c1f4addded4616b5}{yy\-\_\-state\-\_\-type} \hyperlink{llsphinxjson_8c_a39d24de4d72464ca8a06b0b604a1680f}{yy\-\_\-try\-\_\-\-N\-U\-L\-\_\-trans} (\hyperlink{llsphinxjson_8c_a9ba7c416f135b0f0c1f4addded4616b5}{yy\-\_\-state\-\_\-type} current\-\_\-state, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a29d30a2c7f7ce166f1198f5a1c1d7757}{yy\-\_\-get\-\_\-next\-\_\-buffer} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+static void \hyperlink{llsphinxjson_8c_aaa544da84e27bf0f989995abc478af82}{yy\-\_\-fatal\-\_\-error} (\hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} char msg\mbox{[}$\,$\mbox{]}, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a1fcfb5beef0e26d8b11ac911802e6ca1}{yy\-\_\-init\-\_\-globals} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a77a5d5cc800d57c42a88fb96eec47fd7}{yy2lex\-\_\-init} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} $\ast$scanner)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_ad918b3827914dee03f687a2f3d3cac04}{yy2lex\-\_\-init\-\_\-extra} (\hyperlink{llsphinxql_8c_a26938d921de835f6183c02e54cf08828}{Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E} user\-\_\-defined, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} $\ast$scanner)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a9c1754e75ef27fe1c52757ea9989ef4f}{yy2lex\-\_\-destroy} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a8facdaf3e8ba9bbfc939ab447bb2cc5b}{yy2get\-\_\-debug} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_a2d37e6ba2c87ae575aa113dd4b487add}{yy2set\-\_\-debug} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} debug\-\_\-flag, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{llsphinxql_8c_a26938d921de835f6183c02e54cf08828}{Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E} \hyperlink{llsphinxjson_8c_a3f6036c56c82095d4a393fb2639b6a4d}{yy2get\-\_\-extra} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_a14510fb7ef430d14b9a9edba202fda29}{yy2set\-\_\-extra} (\hyperlink{llsphinxql_8c_a26938d921de835f6183c02e54cf08828}{Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E} user\-\_\-defined, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{llsphinxjson_8c_a1487753e647a599f664e600475636938}{yy2get\-\_\-in} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_a006fc8afad7b6369fa7d161dbd2a6433}{yy2set\-\_\-in} (F\-I\-L\-E $\ast$in\-\_\-str, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{llsphinxjson_8c_a2cefaf536da27610ace9e7d22a6999dc}{yy2get\-\_\-out} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_ab30e65694e7eb98253472fc0fd9d4dc8}{yy2set\-\_\-out} (F\-I\-L\-E $\ast$out\-\_\-str, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_aa7dfbb5bac974a8ae2c6dec756870c73}{yy2get\-\_\-leng} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+char $\ast$ \hyperlink{llsphinxjson_8c_af6e1cd9f422c716925605698a9adb637}{yy2get\-\_\-text} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_abb2d1db36d3fe86acbb7c2c065109a12}{yy2get\-\_\-lineno} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_a773b5d686fa3447744b5b89f51c87d53}{yy2set\-\_\-lineno} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} line\-\_\-number, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a5a634cf4429798b1c921a81de8250051}{input} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a494e67af32fa9e780497af1a3cda2999}{yy2lex} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{llsphinxjson_8c_a33e91cd0cef6786e9e3a27ac67707207}{if} (!\hyperlink{llsphinxql_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}-\/$>$yy\-\_\-init)
+\item 
+\hyperlink{llsphinxjson_8c_a8fdafe3be7e00ce3d4f0cb50a9a5eb39}{while} (1)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_ab4155ffea05dab2dafae68fd88a0517f}{isatty} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\item 
+static void \hyperlink{llsphinxjson_8c_ac76d509c88a606f9e891083a8b84bcfa}{yy\-\_\-fatal\-\_\-error} (\hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} char $\ast$msg, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_af85892582f6a8e825b163399ac818cd4}{yy2get\-\_\-column} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_ad99819f98d4b4f8c856935333fd91d79}{yy2set\-\_\-column} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} column\-\_\-no, \hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\item 
+void \hyperlink{llsphinxjson_8c_a66616dc69e09e28d1c818248b75c794b}{yy2lex\-\_\-unhold} (\hyperlink{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{yyscan\-\_\-t} yyscanner)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} \hyperlink{llsphinxjson_8c_a2e73b2c75126814585525fb2e9d51159}{flex\-\_\-int16\-\_\-t} \hyperlink{llsphinxjson_8c_aa1bdde9b69c2c91a3e9730647efc2dfa}{yy\-\_\-accept} \mbox{[}59\mbox{]}
+\item 
+static \hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} \hyperlink{llsphinxjson_8c_a838ce943cf44ef7769480714fc6c3ba9}{flex\-\_\-int32\-\_\-t} \hyperlink{llsphinxjson_8c_ac6dfb8e0e130a1bb6e9cdd547a1f4344}{yy\-\_\-ec} \mbox{[}256\mbox{]}
+\item 
+static \hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} \hyperlink{llsphinxjson_8c_a838ce943cf44ef7769480714fc6c3ba9}{flex\-\_\-int32\-\_\-t} \hyperlink{llsphinxjson_8c_a2f961d0d74a237e4d97f107fc2b637f1}{yy\-\_\-meta} \mbox{[}32\mbox{]}
+\item 
+static \hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} \hyperlink{llsphinxjson_8c_a2e73b2c75126814585525fb2e9d51159}{flex\-\_\-int16\-\_\-t} \hyperlink{llsphinxjson_8c_adb212fe86b65e71711cac2df32fbf73a}{yy\-\_\-base} \mbox{[}63\mbox{]}
+\item 
+static \hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} \hyperlink{llsphinxjson_8c_a2e73b2c75126814585525fb2e9d51159}{flex\-\_\-int16\-\_\-t} \hyperlink{llsphinxjson_8c_a0ac194106c822fdb69c51ef37009c084}{yy\-\_\-def} \mbox{[}63\mbox{]}
+\item 
+static \hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} \hyperlink{llsphinxjson_8c_a2e73b2c75126814585525fb2e9d51159}{flex\-\_\-int16\-\_\-t} \hyperlink{llsphinxjson_8c_ae25aca7f41c94dc6917c65c8d5590d30}{yy\-\_\-nxt} \mbox{[}157\mbox{]}
+\item 
+static \hyperlink{llsphinxql_8c_aa2f1a918be586b44bf08126bde2d7cc9}{yyconst} \hyperlink{llsphinxjson_8c_a2e73b2c75126814585525fb2e9d51159}{flex\-\_\-int16\-\_\-t} \hyperlink{llsphinxjson_8c_aedafdaee1beb3dacadd381caa5d9d0d5}{yy\-\_\-chk} \mbox{[}157\mbox{]}
+\item 
+\hyperlink{llsphinxjson_8c_abcefb20c54ce0f92452cfbb9cf657670}{Y\-Y\-\_\-\-D\-E\-C\-L}
+\item 
+register char $\ast$ \hyperlink{llsphinxjson_8c_ab98daea4ec951dfa966b5ca0f8133d38}{yy\-\_\-cp}
+\item 
+register char $\ast$ \hyperlink{llsphinxjson_8c_a71cf769ce518e8687bf8999b278c65f4}{yy\-\_\-bp}
+\item 
+register \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{llsphinxjson_8c_a7ffc8c947830757dd87ad202a6823edd}{yy\-\_\-act}
+\item 
+struct \hyperlink{structyyguts__t}{yyguts\-\_\-t} $\ast$ \hyperlink{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}{yyg} = (struct \hyperlink{structyyguts__t}{yyguts\-\_\-t}$\ast$)yyscanner
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{llsphinxjson_8c_ab766bbbee08d04b67e3fe599d6900873}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!B\-E\-G\-I\-N@{B\-E\-G\-I\-N}}
+\index{B\-E\-G\-I\-N@{B\-E\-G\-I\-N}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{B\-E\-G\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-E\-G\-I\-N~{\bf yyg}-\/$>$yy\-\_\-start = 1 + 2 $\ast$}}\label{llsphinxjson_8c_ab766bbbee08d04b67e3fe599d6900873}
+\hypertarget{llsphinxjson_8c_a182aab066d670da558eda8a75b1d823f}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!ccomment@{ccomment}}
+\index{ccomment@{ccomment}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{ccomment}]{\setlength{\rightskip}{0pt plus 5cm}\#define ccomment~1}}\label{llsphinxjson_8c_a182aab066d670da558eda8a75b1d823f}
+\hypertarget{llsphinxjson_8c_aad1dc60a04a1d8cfc8b3ded13601e361}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!E\-C\-H\-O@{E\-C\-H\-O}}
+\index{E\-C\-H\-O@{E\-C\-H\-O}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{E\-C\-H\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-H\-O~do \{ {\bf if} (fwrite( {\bf yytext}, {\bf yyleng}, 1, {\bf yyout} )) \{\} \} {\bf while} (0)}}\label{llsphinxjson_8c_aad1dc60a04a1d8cfc8b3ded13601e361}
+\hypertarget{llsphinxjson_8c_adf4b0db227e07782e28ade353a7ba7a1}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-E\-\_\-\-S\-C\-A\-N@{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-E\-\_\-\-S\-C\-A\-N}}
+\index{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-E\-\_\-\-S\-C\-A\-N@{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-E\-\_\-\-S\-C\-A\-N}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-E\-\_\-\-S\-C\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-C\-O\-N\-T\-I\-N\-U\-E\-\_\-\-S\-C\-A\-N~0}}\label{llsphinxjson_8c_adf4b0db227e07782e28ade353a7ba7a1}
+\hypertarget{llsphinxjson_8c_a7f71d7fa2c403eb4b2f38cb9536f3c63}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-F\-I\-L\-E@{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-F\-I\-L\-E}}
+\index{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-F\-I\-L\-E@{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-F\-I\-L\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-F\-I\-L\-E~1}}\label{llsphinxjson_8c_a7f71d7fa2c403eb4b2f38cb9536f3c63}
+\hypertarget{llsphinxjson_8c_ad1a0b5ebcabffe388e9e9ebb2619c1fb}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-L\-A\-S\-T\-\_\-\-M\-A\-T\-C\-H@{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-L\-A\-S\-T\-\_\-\-M\-A\-T\-C\-H}}
+\index{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-L\-A\-S\-T\-\_\-\-M\-A\-T\-C\-H@{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-L\-A\-S\-T\-\_\-\-M\-A\-T\-C\-H}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-L\-A\-S\-T\-\_\-\-M\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-O\-B\-\_\-\-A\-C\-T\-\_\-\-L\-A\-S\-T\-\_\-\-M\-A\-T\-C\-H~2}}\label{llsphinxjson_8c_ad1a0b5ebcabffe388e9e9ebb2619c1fb}
+\hypertarget{llsphinxjson_8c_a9465c9986fdda27730c9dff8d16a0887}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!F\-L\-E\-X\-\_\-\-B\-E\-T\-A@{F\-L\-E\-X\-\_\-\-B\-E\-T\-A}}
+\index{F\-L\-E\-X\-\_\-\-B\-E\-T\-A@{F\-L\-E\-X\-\_\-\-B\-E\-T\-A}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{F\-L\-E\-X\-\_\-\-B\-E\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-L\-E\-X\-\_\-\-B\-E\-T\-A}}\label{llsphinxjson_8c_a9465c9986fdda27730c9dff8d16a0887}
+\hypertarget{llsphinxjson_8c_a3c3d1ef92e93b0bc81d7760a73d5c3b6}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!F\-L\-E\-X\-\_\-\-S\-C\-A\-N\-N\-E\-R@{F\-L\-E\-X\-\_\-\-S\-C\-A\-N\-N\-E\-R}}
+\index{F\-L\-E\-X\-\_\-\-S\-C\-A\-N\-N\-E\-R@{F\-L\-E\-X\-\_\-\-S\-C\-A\-N\-N\-E\-R}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{F\-L\-E\-X\-\_\-\-S\-C\-A\-N\-N\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-L\-E\-X\-\_\-\-S\-C\-A\-N\-N\-E\-R}}\label{llsphinxjson_8c_a3c3d1ef92e93b0bc81d7760a73d5c3b6}
+\hypertarget{llsphinxjson_8c_aec980b5a71bbe6d67931df20f0ebaec4}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!F\-L\-E\-X\-I\-N\-T\-\_\-\-H@{F\-L\-E\-X\-I\-N\-T\-\_\-\-H}}
+\index{F\-L\-E\-X\-I\-N\-T\-\_\-\-H@{F\-L\-E\-X\-I\-N\-T\-\_\-\-H}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{F\-L\-E\-X\-I\-N\-T\-\_\-\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-L\-E\-X\-I\-N\-T\-\_\-\-H}}\label{llsphinxjson_8c_aec980b5a71bbe6d67931df20f0ebaec4}
+\hypertarget{llsphinxjson_8c_aa3d063564f6ab16f6d408b8369d0e9ff}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!I\-N\-I\-T\-I\-A\-L@{I\-N\-I\-T\-I\-A\-L}}
+\index{I\-N\-I\-T\-I\-A\-L@{I\-N\-I\-T\-I\-A\-L}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{I\-N\-I\-T\-I\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-I\-T\-I\-A\-L~0}}\label{llsphinxjson_8c_aa3d063564f6ab16f6d408b8369d0e9ff}
+\hypertarget{llsphinxjson_8c_ac58f2c111cc9989c86db2a7dc4fd84ca}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!I\-N\-T16\-\_\-\-M\-A\-X@{I\-N\-T16\-\_\-\-M\-A\-X}}
+\index{I\-N\-T16\-\_\-\-M\-A\-X@{I\-N\-T16\-\_\-\-M\-A\-X}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{I\-N\-T16\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T16\-\_\-\-M\-A\-X~(32767)}}\label{llsphinxjson_8c_ac58f2c111cc9989c86db2a7dc4fd84ca}
+\hypertarget{llsphinxjson_8c_ad4e9955955b27624963643eac448118a}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!I\-N\-T16\-\_\-\-M\-I\-N@{I\-N\-T16\-\_\-\-M\-I\-N}}
+\index{I\-N\-T16\-\_\-\-M\-I\-N@{I\-N\-T16\-\_\-\-M\-I\-N}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{I\-N\-T16\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T16\-\_\-\-M\-I\-N~(-\/32767-\/1)}}\label{llsphinxjson_8c_ad4e9955955b27624963643eac448118a}
+\hypertarget{llsphinxjson_8c_a181807730d4a375f848ba139813ce04f}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!I\-N\-T32\-\_\-\-M\-A\-X@{I\-N\-T32\-\_\-\-M\-A\-X}}
+\index{I\-N\-T32\-\_\-\-M\-A\-X@{I\-N\-T32\-\_\-\-M\-A\-X}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{I\-N\-T32\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T32\-\_\-\-M\-A\-X~(2147483647)}}\label{llsphinxjson_8c_a181807730d4a375f848ba139813ce04f}
+\hypertarget{llsphinxjson_8c_a688eb21a22db27c2b2bd5836943cdcbe}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!I\-N\-T32\-\_\-\-M\-I\-N@{I\-N\-T32\-\_\-\-M\-I\-N}}
+\index{I\-N\-T32\-\_\-\-M\-I\-N@{I\-N\-T32\-\_\-\-M\-I\-N}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{I\-N\-T32\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T32\-\_\-\-M\-I\-N~(-\/2147483647-\/1)}}\label{llsphinxjson_8c_a688eb21a22db27c2b2bd5836943cdcbe}
+\hypertarget{llsphinxjson_8c_aaf7f29f45f1a513b4748a4e5014ddf6a}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!I\-N\-T8\-\_\-\-M\-A\-X@{I\-N\-T8\-\_\-\-M\-A\-X}}
+\index{I\-N\-T8\-\_\-\-M\-A\-X@{I\-N\-T8\-\_\-\-M\-A\-X}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{I\-N\-T8\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T8\-\_\-\-M\-A\-X~(127)}}\label{llsphinxjson_8c_aaf7f29f45f1a513b4748a4e5014ddf6a}
+\hypertarget{llsphinxjson_8c_aadcf2a81af243df333b31efa6461ab8e}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!I\-N\-T8\-\_\-\-M\-I\-N@{I\-N\-T8\-\_\-\-M\-I\-N}}
+\index{I\-N\-T8\-\_\-\-M\-I\-N@{I\-N\-T8\-\_\-\-M\-I\-N}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{I\-N\-T8\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T8\-\_\-\-M\-I\-N~(-\/128)}}\label{llsphinxjson_8c_aadcf2a81af243df333b31efa6461ab8e}
+\hypertarget{llsphinxjson_8c_a835f10dd1ab4bf9a80c4cd80ee6e3058}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!R\-E\-J\-E\-C\-T@{R\-E\-J\-E\-C\-T}}
+\index{R\-E\-J\-E\-C\-T@{R\-E\-J\-E\-C\-T}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{R\-E\-J\-E\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-J\-E\-C\-T~reject\-\_\-used\-\_\-but\-\_\-not\-\_\-detected}}\label{llsphinxjson_8c_a835f10dd1ab4bf9a80c4cd80ee6e3058}
+\hypertarget{llsphinxjson_8c_ab0b6e7a3f6046c575cc5718ae924d255}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!S\-T\-O\-R\-E\-\_\-\-B\-O\-U\-N\-D\-S@{S\-T\-O\-R\-E\-\_\-\-B\-O\-U\-N\-D\-S}}
+\index{S\-T\-O\-R\-E\-\_\-\-B\-O\-U\-N\-D\-S@{S\-T\-O\-R\-E\-\_\-\-B\-O\-U\-N\-D\-S}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{S\-T\-O\-R\-E\-\_\-\-B\-O\-U\-N\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-O\-R\-E\-\_\-\-B\-O\-U\-N\-D\-S}}\label{llsphinxjson_8c_ab0b6e7a3f6046c575cc5718ae924d255}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+        lvalp->m\_iStart = \hyperlink{llsphinxjson_8c_a0d71f919dbec1ffd74b2460fa7e5ac28}{yytext} - pParser->m\_pBuf; \(\backslash\)
+        lvalp->m\_iEnd = lvalp->m\_iStart + \hyperlink{llsphinxjson_8c_afa07a629486cb790560bb95713ec7794}{yyleng}; \(\backslash\)
+        pParser->m\_pLastToken = \hyperlink{llsphinxjson_8c_a0d71f919dbec1ffd74b2460fa7e5ac28}{yytext}; \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_a3ea490c9b3617d4479bd80ef93cd5602}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!U\-I\-N\-T16\-\_\-\-M\-A\-X@{U\-I\-N\-T16\-\_\-\-M\-A\-X}}
+\index{U\-I\-N\-T16\-\_\-\-M\-A\-X@{U\-I\-N\-T16\-\_\-\-M\-A\-X}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{U\-I\-N\-T16\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T16\-\_\-\-M\-A\-X~(65535\-U)}}\label{llsphinxjson_8c_a3ea490c9b3617d4479bd80ef93cd5602}
+\hypertarget{llsphinxjson_8c_ab5eb23180f7cc12b7d6c04a8ec067fdd}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!U\-I\-N\-T32\-\_\-\-M\-A\-X@{U\-I\-N\-T32\-\_\-\-M\-A\-X}}
+\index{U\-I\-N\-T32\-\_\-\-M\-A\-X@{U\-I\-N\-T32\-\_\-\-M\-A\-X}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{U\-I\-N\-T32\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T32\-\_\-\-M\-A\-X~(4294967295\-U)}}\label{llsphinxjson_8c_ab5eb23180f7cc12b7d6c04a8ec067fdd}
+\hypertarget{llsphinxjson_8c_aeb4e270a084ee26fe73e799861bd0252}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!U\-I\-N\-T8\-\_\-\-M\-A\-X@{U\-I\-N\-T8\-\_\-\-M\-A\-X}}
+\index{U\-I\-N\-T8\-\_\-\-M\-A\-X@{U\-I\-N\-T8\-\_\-\-M\-A\-X}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{U\-I\-N\-T8\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T8\-\_\-\-M\-A\-X~(255\-U)}}\label{llsphinxjson_8c_aeb4e270a084ee26fe73e799861bd0252}
+\hypertarget{llsphinxjson_8c_a448a4e9041a09588332733c6846c770c}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!unput@{unput}}
+\index{unput@{unput}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{unput}]{\setlength{\rightskip}{0pt plus 5cm}\#define unput(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~yyunput( c, {\bf yyg}-\/$>${\bf yytext\-\_\-ptr} , yyscanner )}}\label{llsphinxjson_8c_a448a4e9041a09588332733c6846c770c}
+\hypertarget{llsphinxjson_8c_af89faf4279706cc5cdaa1b03ecd0500c}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2wrap@{yy2wrap}}
+\index{yy2wrap@{yy2wrap}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2wrap}]{\setlength{\rightskip}{0pt plus 5cm}\#define yy2wrap(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~1}}\label{llsphinxjson_8c_af89faf4279706cc5cdaa1b03ecd0500c}
+\hypertarget{llsphinxjson_8c_a71ca89b3656acd0552f14949a571560b}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-A\-T\-\_\-\-B\-O\-L@{Y\-Y\-\_\-\-A\-T\-\_\-\-B\-O\-L}}
+\index{Y\-Y\-\_\-\-A\-T\-\_\-\-B\-O\-L@{Y\-Y\-\_\-\-A\-T\-\_\-\-B\-O\-L}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-A\-T\-\_\-\-B\-O\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-A\-T\-\_\-\-B\-O\-L(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~({\bf Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E}-\/$>$yy\-\_\-at\-\_\-bol)}}\label{llsphinxjson_8c_a71ca89b3656acd0552f14949a571560b}
+\hypertarget{llsphinxjson_8c_a3cc40a460ad7df816678bcc05241e84c}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-B\-R\-E\-A\-K@{Y\-Y\-\_\-\-B\-R\-E\-A\-K}}
+\index{Y\-Y\-\_\-\-B\-R\-E\-A\-K@{Y\-Y\-\_\-\-B\-R\-E\-A\-K}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-B\-R\-E\-A\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-B\-R\-E\-A\-K~break;}}\label{llsphinxjson_8c_a3cc40a460ad7df816678bcc05241e84c}
+\hypertarget{llsphinxjson_8c_ae7e51116e747d3390e7a6cfc6532834c}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E@{Y\-Y\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}}
+\index{Y\-Y\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E@{Y\-Y\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E~16384}}\label{llsphinxjson_8c_ae7e51116e747d3390e7a6cfc6532834c}
+\hypertarget{llsphinxjson_8c_ad689d97c15e807a6116ace7a420cea57}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-E\-O\-F\-\_\-\-P\-E\-N\-D\-I\-N\-G@{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-E\-O\-F\-\_\-\-P\-E\-N\-D\-I\-N\-G}}
+\index{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-E\-O\-F\-\_\-\-P\-E\-N\-D\-I\-N\-G@{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-E\-O\-F\-\_\-\-P\-E\-N\-D\-I\-N\-G}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-E\-O\-F\-\_\-\-P\-E\-N\-D\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-E\-O\-F\-\_\-\-P\-E\-N\-D\-I\-N\-G~2}}\label{llsphinxjson_8c_ad689d97c15e807a6116ace7a420cea57}
+\hypertarget{llsphinxjson_8c_a53579db42834b88199458993912c646d}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-E\-W@{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-E\-W}}
+\index{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-E\-W@{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-E\-W}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-E\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-E\-W~0}}\label{llsphinxjson_8c_a53579db42834b88199458993912c646d}
+\hypertarget{llsphinxjson_8c_a609d19f40900ecc2a5f812d9388c21fb}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-O\-R\-M\-A\-L@{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-O\-R\-M\-A\-L}}
+\index{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-O\-R\-M\-A\-L@{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-O\-R\-M\-A\-L}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-O\-R\-M\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-N\-O\-R\-M\-A\-L~1}}\label{llsphinxjson_8c_a609d19f40900ecc2a5f812d9388c21fb}
+\hypertarget{llsphinxjson_8c_aa093d500a6330d06d8e4760c494fac33}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R@{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R}}
+\index{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R@{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R}}\label{llsphinxjson_8c_aa093d500a6330d06d8e4760c494fac33}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+( \hyperlink{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}->\hyperlink{structyyguts__t_a8a457ac5c7eb9d994d28436115837375}{yy\_buffer\_stack} \(\backslash\)
+                          ? \hyperlink{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}->\hyperlink{structyyguts__t_a8a457ac5c7eb9d994d28436115837375}{yy\_buffer\_stack}[\hyperlink{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}->
+      \hyperlink{structyyguts__t_af92507d904af2fcd4509acde654a9850}{yy\_buffer\_stack\_top}] \(\backslash\)
+                          : NULL)
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_a817a6a24af62508b5a35f4bed5f56a2e}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E@{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E}}
+\index{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E@{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E~{\bf yyg}-\/$>$yy\-\_\-buffer\-\_\-stack\mbox{[}{\bf yyg}-\/$>$yy\-\_\-buffer\-\_\-stack\-\_\-top\mbox{]}}}\label{llsphinxjson_8c_a817a6a24af62508b5a35f4bed5f56a2e}
+\hypertarget{llsphinxjson_8c_ae5b01ac2fa5a6ad5fb97559638abe686}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-D\-E\-C\-L@{Y\-Y\-\_\-\-D\-E\-C\-L}}
+\index{Y\-Y\-\_\-\-D\-E\-C\-L@{Y\-Y\-\_\-\-D\-E\-C\-L}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-D\-E\-C\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-D\-E\-C\-L~{\bf int} {\bf yy2lex} ({\bf yyscan\-\_\-t} yyscanner)}}\label{llsphinxjson_8c_ae5b01ac2fa5a6ad5fb97559638abe686}
+\hypertarget{llsphinxjson_8c_a7682c8d9cec0859408d2421fbe4a5570}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-D\-E\-C\-L\-\_\-\-I\-S\-\_\-\-O\-U\-R\-S@{Y\-Y\-\_\-\-D\-E\-C\-L\-\_\-\-I\-S\-\_\-\-O\-U\-R\-S}}
+\index{Y\-Y\-\_\-\-D\-E\-C\-L\-\_\-\-I\-S\-\_\-\-O\-U\-R\-S@{Y\-Y\-\_\-\-D\-E\-C\-L\-\_\-\-I\-S\-\_\-\-O\-U\-R\-S}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-D\-E\-C\-L\-\_\-\-I\-S\-\_\-\-O\-U\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-D\-E\-C\-L\-\_\-\-I\-S\-\_\-\-O\-U\-R\-S~1}}\label{llsphinxjson_8c_a7682c8d9cec0859408d2421fbe4a5570}
+\hypertarget{llsphinxjson_8c_acc3486d769af4e4b2820346a0093cc79}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-D\-O\-\_\-\-B\-E\-F\-O\-R\-E\-\_\-\-A\-C\-T\-I\-O\-N@{Y\-Y\-\_\-\-D\-O\-\_\-\-B\-E\-F\-O\-R\-E\-\_\-\-A\-C\-T\-I\-O\-N}}
+\index{Y\-Y\-\_\-\-D\-O\-\_\-\-B\-E\-F\-O\-R\-E\-\_\-\-A\-C\-T\-I\-O\-N@{Y\-Y\-\_\-\-D\-O\-\_\-\-B\-E\-F\-O\-R\-E\-\_\-\-A\-C\-T\-I\-O\-N}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-D\-O\-\_\-\-B\-E\-F\-O\-R\-E\-\_\-\-A\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-D\-O\-\_\-\-B\-E\-F\-O\-R\-E\-\_\-\-A\-C\-T\-I\-O\-N}}\label{llsphinxjson_8c_acc3486d769af4e4b2820346a0093cc79}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\hyperlink{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}->yytext\_ptr = \hyperlink{llsphinxjson_8c_a71cf769ce518e8687bf8999b278c65f4}{yy\_bp}; \(\backslash\)
+    yyleng = (size\_t) (\hyperlink{llsphinxjson_8c_ab98daea4ec951dfa966b5ca0f8133d38}{yy\_cp} - \hyperlink{llsphinxjson_8c_a71cf769ce518e8687bf8999b278c65f4}{yy\_bp}); \(\backslash\)
+    yyg->yy\_hold\_char = *\hyperlink{llsphinxjson_8c_ab98daea4ec951dfa966b5ca0f8133d38}{yy\_cp}; \(\backslash\)
+    *\hyperlink{llsphinxjson_8c_ab98daea4ec951dfa966b5ca0f8133d38}{yy\_cp} = \textcolor{charliteral}{'\(\backslash\)0'}; \(\backslash\)
+    yyg->yy\_c\_buf\_p = \hyperlink{llsphinxjson_8c_ab98daea4ec951dfa966b5ca0f8133d38}{yy\_cp};
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_ab2708fd42cff29ce6a0a52b91bea40d1}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R@{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R}}
+\index{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R@{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R~19}}\label{llsphinxjson_8c_ab2708fd42cff29ce6a0a52b91bea40d1}
+\hypertarget{llsphinxjson_8c_ab866a64da164ed2d4d444df1ef1fc9b3}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-C\-H\-A\-R@{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-C\-H\-A\-R}}
+\index{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-C\-H\-A\-R@{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-C\-H\-A\-R}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-C\-H\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-C\-H\-A\-R~0}}\label{llsphinxjson_8c_ab866a64da164ed2d4d444df1ef1fc9b3}
+\hypertarget{llsphinxjson_8c_ae93e67b85c44f6bd31ead14a552a35c8}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-F\-A\-I\-L\-U\-R\-E@{Y\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-F\-A\-I\-L\-U\-R\-E}}
+\index{Y\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-F\-A\-I\-L\-U\-R\-E@{Y\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-F\-A\-I\-L\-U\-R\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-F\-A\-I\-L\-U\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-F\-A\-I\-L\-U\-R\-E~2}}\label{llsphinxjson_8c_ae93e67b85c44f6bd31ead14a552a35c8}
+\hypertarget{llsphinxjson_8c_a26938d921de835f6183c02e54cf08828}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E@{Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E}}
+\index{Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E@{Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E~void $\ast$}}\label{llsphinxjson_8c_a26938d921de835f6183c02e54cf08828}
+\hypertarget{llsphinxjson_8c_ac0586b8b0b092d02f4ba7d45abe328f2}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-R\-R\-O\-R@{Y\-Y\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-R\-R\-O\-R}}
+\index{Y\-Y\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-R\-R\-O\-R@{Y\-Y\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-R\-R\-O\-R}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-F\-A\-T\-A\-L\-\_\-\-E\-R\-R\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~{\bf yy\-\_\-fatal\-\_\-error}( msg , yyscanner)}}\label{llsphinxjson_8c_ac0586b8b0b092d02f4ba7d45abe328f2}
+\hypertarget{llsphinxjson_8c_a301f4439c9b191c80db45f5b1a8c7269}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-flex\-\_\-debug@{yy\-\_\-flex\-\_\-debug}}
+\index{yy\-\_\-flex\-\_\-debug@{yy\-\_\-flex\-\_\-debug}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-flex\-\_\-debug}]{\setlength{\rightskip}{0pt plus 5cm}\#define yy\-\_\-flex\-\_\-debug~{\bf yyg}-\/$>$yy\-\_\-flex\-\_\-debug\-\_\-r}}\label{llsphinxjson_8c_a301f4439c9b191c80db45f5b1a8c7269}
+\hypertarget{llsphinxjson_8c_a243ca1d30872935faf05ea5118ed6fdc}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N~2}}\label{llsphinxjson_8c_a243ca1d30872935faf05ea5118ed6fdc}
+\hypertarget{llsphinxjson_8c_a90f9d458829400869e47efb68a865677}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N~5}}\label{llsphinxjson_8c_a90f9d458829400869e47efb68a865677}
+\hypertarget{llsphinxjson_8c_ac676bd06869180ea493e9b6d7c078dbb}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-S\-U\-B\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-S\-U\-B\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-S\-U\-B\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-S\-U\-B\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-S\-U\-B\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-F\-L\-E\-X\-\_\-\-S\-U\-B\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N~35}}\label{llsphinxjson_8c_ac676bd06869180ea493e9b6d7c078dbb}
+\hypertarget{llsphinxjson_8c_ac5d478d90ea9a2ecd43d579067a2e89d}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-F\-L\-U\-S\-H\-\_\-\-B\-U\-F\-F\-E\-R@{Y\-Y\-\_\-\-F\-L\-U\-S\-H\-\_\-\-B\-U\-F\-F\-E\-R}}
+\index{Y\-Y\-\_\-\-F\-L\-U\-S\-H\-\_\-\-B\-U\-F\-F\-E\-R@{Y\-Y\-\_\-\-F\-L\-U\-S\-H\-\_\-\-B\-U\-F\-F\-E\-R}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-F\-L\-U\-S\-H\-\_\-\-B\-U\-F\-F\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-F\-L\-U\-S\-H\-\_\-\-B\-U\-F\-F\-E\-R~{\bf yy2\-\_\-flush\-\_\-buffer}({\bf Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R} ,yyscanner)}}\label{llsphinxjson_8c_ac5d478d90ea9a2ecd43d579067a2e89d}
+\hypertarget{llsphinxjson_8c_aacfdca45fa4beb8b06172525a53c424a}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-I\-N\-P\-U\-T@{Y\-Y\-\_\-\-I\-N\-P\-U\-T}}
+\index{Y\-Y\-\_\-\-I\-N\-P\-U\-T@{Y\-Y\-\_\-\-I\-N\-P\-U\-T}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-I\-N\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-I\-N\-P\-U\-T(
+\begin{DoxyParamCaption}
+\item[{}]{buf, }
+\item[{}]{result, }
+\item[{}]{max\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_aacfdca45fa4beb8b06172525a53c424a}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( \hyperlink{llsphinxjson_8c_a817a6a24af62508b5a35f4bed5f56a2e}{YY\_CURRENT\_BUFFER\_LVALUE}->yy\_is\_interactive ) \(\backslash\)
+        \{ \(\backslash\)
+        int c = \textcolor{charliteral}{'*'}; \(\backslash\)
+        int n; \(\backslash\)
+        for ( n = 0; n < max\_size && \(\backslash\)
+                 (c = getc( \hyperlink{llsphinxjson_8c_aa789f4617e33fb99594cb04a3688a0c1}{yyin} )) != EOF && c != \textcolor{charliteral}{'\(\backslash\)n'}; ++n ) \(\backslash\)
+            buf[n] = (\textcolor{keywordtype}{char}) c; \(\backslash\)
+        \hyperlink{llsphinxjson_8c_a33e91cd0cef6786e9e3a27ac67707207}{if} ( c == '\(\backslash\)n' ) \(\backslash\)
+            buf[n++] = (\textcolor{keywordtype}{char}) c; \(\backslash\)
+        \hyperlink{llsphinxjson_8c_a33e91cd0cef6786e9e3a27ac67707207}{if} ( c == EOF && ferror( \hyperlink{llsphinxjson_8c_aa789f4617e33fb99594cb04a3688a0c1}{yyin} ) ) \(\backslash\)
+            \hyperlink{llsphinxjson_8c_ac0586b8b0b092d02f4ba7d45abe328f2}{YY\_FATAL\_ERROR}( "\hyperlink{llsphinxjson_8c_a5a634cf4429798b1c921a81de8250051}{input} in flex scanner failed" )
+      ; \(\backslash\)
+        result = n; \(\backslash\)
+        \} \(\backslash\)
+    else \(\backslash\)
+        \{ \(\backslash\)
+        errno=0; \(\backslash\)
+        while ( (result = fread(buf, 1, max\_size, \hyperlink{llsphinxjson_8c_aa789f4617e33fb99594cb04a3688a0c1}{yyin}))==0 && ferror(\hyperlink{llsphinxjson_8c_aa789f4617e33fb99594cb04a3688a0c1}{yyin}
+      )) \(\backslash\)
+            \{ \(\backslash\)
+            if( errno != EINTR) \(\backslash\)
+                \{ \(\backslash\)
+                YY\_FATAL\_ERROR( \textcolor{stringliteral}{"input in flex scanner failed"} ); \(\backslash\)
+                break; \(\backslash\)
+                \} \(\backslash\)
+            errno=0; \(\backslash\)
+            clearerr(\hyperlink{llsphinxjson_8c_aa789f4617e33fb99594cb04a3688a0c1}{yyin}); \(\backslash\)
+            \} \(\backslash\)
+        \}\(\backslash\)
+\(\backslash\)
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_a1ae16e642a197fa4948998525813c6f5}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-I\-N\-T\-\_\-\-A\-L\-I\-G\-N\-E\-D@{Y\-Y\-\_\-\-I\-N\-T\-\_\-\-A\-L\-I\-G\-N\-E\-D}}
+\index{Y\-Y\-\_\-\-I\-N\-T\-\_\-\-A\-L\-I\-G\-N\-E\-D@{Y\-Y\-\_\-\-I\-N\-T\-\_\-\-A\-L\-I\-G\-N\-E\-D}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-I\-N\-T\-\_\-\-A\-L\-I\-G\-N\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-I\-N\-T\-\_\-\-A\-L\-I\-G\-N\-E\-D~short {\bf int}}}\label{llsphinxjson_8c_a1ae16e642a197fa4948998525813c6f5}
+\hypertarget{llsphinxjson_8c_a12e5f3a76911433480bca7f4edba6119}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-L\-E\-S\-S\-\_\-\-L\-I\-N\-E\-N\-O@{Y\-Y\-\_\-\-L\-E\-S\-S\-\_\-\-L\-I\-N\-E\-N\-O}}
+\index{Y\-Y\-\_\-\-L\-E\-S\-S\-\_\-\-L\-I\-N\-E\-N\-O@{Y\-Y\-\_\-\-L\-E\-S\-S\-\_\-\-L\-I\-N\-E\-N\-O}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-L\-E\-S\-S\-\_\-\-L\-I\-N\-E\-N\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-L\-E\-S\-S\-\_\-\-L\-I\-N\-E\-N\-O(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a12e5f3a76911433480bca7f4edba6119}
+\hypertarget{llsphinxjson_8c_a68792d73820bc46a71d3d4e613f0b977}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-A\-D\-J@{Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-A\-D\-J}}
+\index{Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-A\-D\-J@{Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-A\-D\-J}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-A\-D\-J}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-A\-D\-J~0}}\label{llsphinxjson_8c_a68792d73820bc46a71d3d4e613f0b977}
+\hypertarget{llsphinxjson_8c_ab7eb911e18655f2f78e63afe5a8a4a12}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-new\-\_\-buffer@{yy\-\_\-new\-\_\-buffer}}
+\index{yy\-\_\-new\-\_\-buffer@{yy\-\_\-new\-\_\-buffer}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-new\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}\#define yy\-\_\-new\-\_\-buffer~{\bf yy2\-\_\-create\-\_\-buffer}}}\label{llsphinxjson_8c_ab7eb911e18655f2f78e63afe5a8a4a12}
+\hypertarget{llsphinxjson_8c_a0406739e64fb5750cf995d2ae68ce69d}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-N\-E\-W\-\_\-\-F\-I\-L\-E@{Y\-Y\-\_\-\-N\-E\-W\-\_\-\-F\-I\-L\-E}}
+\index{Y\-Y\-\_\-\-N\-E\-W\-\_\-\-F\-I\-L\-E@{Y\-Y\-\_\-\-N\-E\-W\-\_\-\-F\-I\-L\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-N\-E\-W\-\_\-\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-N\-E\-W\-\_\-\-F\-I\-L\-E~{\bf yy2restart}({\bf yyin} ,yyscanner )}}\label{llsphinxjson_8c_a0406739e64fb5750cf995d2ae68ce69d}
+\hypertarget{llsphinxjson_8c_a8e0bcf8f8a5b613ea583347f8bc31cbf}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-N\-U\-L\-L@{Y\-Y\-\_\-\-N\-U\-L\-L}}
+\index{Y\-Y\-\_\-\-N\-U\-L\-L@{Y\-Y\-\_\-\-N\-U\-L\-L}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-N\-U\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-N\-U\-L\-L~0}}\label{llsphinxjson_8c_a8e0bcf8f8a5b613ea583347f8bc31cbf}
+\hypertarget{llsphinxjson_8c_ae558785bb896e090901c2b905f6790c6}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-N\-U\-M\-\_\-\-R\-U\-L\-E\-S@{Y\-Y\-\_\-\-N\-U\-M\-\_\-\-R\-U\-L\-E\-S}}
+\index{Y\-Y\-\_\-\-N\-U\-M\-\_\-\-R\-U\-L\-E\-S@{Y\-Y\-\_\-\-N\-U\-M\-\_\-\-R\-U\-L\-E\-S}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-N\-U\-M\-\_\-\-R\-U\-L\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-N\-U\-M\-\_\-\-R\-U\-L\-E\-S~18}}\label{llsphinxjson_8c_ae558785bb896e090901c2b905f6790c6}
+\hypertarget{llsphinxjson_8c_aab1491ceccb1c95c14320b2903773a1c}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-R\-E\-A\-D\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E@{Y\-Y\-\_\-\-R\-E\-A\-D\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}}
+\index{Y\-Y\-\_\-\-R\-E\-A\-D\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E@{Y\-Y\-\_\-\-R\-E\-A\-D\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-R\-E\-A\-D\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-R\-E\-A\-D\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E~8192}}\label{llsphinxjson_8c_aab1491ceccb1c95c14320b2903773a1c}
+\hypertarget{llsphinxjson_8c_a56858d18c7eda4f53664496ef566f651}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-R\-E\-S\-T\-O\-R\-E\-\_\-\-Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-O\-F\-F\-S\-E\-T@{Y\-Y\-\_\-\-R\-E\-S\-T\-O\-R\-E\-\_\-\-Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{Y\-Y\-\_\-\-R\-E\-S\-T\-O\-R\-E\-\_\-\-Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-O\-F\-F\-S\-E\-T@{Y\-Y\-\_\-\-R\-E\-S\-T\-O\-R\-E\-\_\-\-Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-O\-F\-F\-S\-E\-T}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-R\-E\-S\-T\-O\-R\-E\-\_\-\-Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-R\-E\-S\-T\-O\-R\-E\-\_\-\-Y\-Y\-\_\-\-M\-O\-R\-E\-\_\-\-O\-F\-F\-S\-E\-T}}\label{llsphinxjson_8c_a56858d18c7eda4f53664496ef566f651}
+\hypertarget{llsphinxjson_8c_a690504b662e4281515bf12722df178ba}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-R\-U\-L\-E\-\_\-\-S\-E\-T\-U\-P@{Y\-Y\-\_\-\-R\-U\-L\-E\-\_\-\-S\-E\-T\-U\-P}}
+\index{Y\-Y\-\_\-\-R\-U\-L\-E\-\_\-\-S\-E\-T\-U\-P@{Y\-Y\-\_\-\-R\-U\-L\-E\-\_\-\-S\-E\-T\-U\-P}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-R\-U\-L\-E\-\_\-\-S\-E\-T\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-R\-U\-L\-E\-\_\-\-S\-E\-T\-U\-P~{\bf Y\-Y\-\_\-\-U\-S\-E\-R\-\_\-\-A\-C\-T\-I\-O\-N}}}\label{llsphinxjson_8c_a690504b662e4281515bf12722df178ba}
+\hypertarget{llsphinxjson_8c_af1185350b7a92cf8aa5324c68850c8a6}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-S\-C\-\_\-\-T\-O\-\_\-\-U\-I@{Y\-Y\-\_\-\-S\-C\-\_\-\-T\-O\-\_\-\-U\-I}}
+\index{Y\-Y\-\_\-\-S\-C\-\_\-\-T\-O\-\_\-\-U\-I@{Y\-Y\-\_\-\-S\-C\-\_\-\-T\-O\-\_\-\-U\-I}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-S\-C\-\_\-\-T\-O\-\_\-\-U\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-S\-C\-\_\-\-T\-O\-\_\-\-U\-I(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~((unsigned {\bf int}) (unsigned char) c)}}\label{llsphinxjson_8c_af1185350b7a92cf8aa5324c68850c8a6}
+\hypertarget{llsphinxjson_8c_a12e30d13a76a94e78010db9996d39c50}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-set\-\_\-bol@{yy\-\_\-set\-\_\-bol}}
+\index{yy\-\_\-set\-\_\-bol@{yy\-\_\-set\-\_\-bol}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-set\-\_\-bol}]{\setlength{\rightskip}{0pt plus 5cm}\#define yy\-\_\-set\-\_\-bol(
+\begin{DoxyParamCaption}
+\item[{}]{at\-\_\-bol}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a12e30d13a76a94e78010db9996d39c50}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+    if ( ! \hyperlink{llsphinxjson_8c_aa093d500a6330d06d8e4760c494fac33}{YY\_CURRENT\_BUFFER} )\{\(\backslash\)
+        yy2ensure\_buffer\_stack (yyscanner); \(\backslash\)
+        YY\_CURRENT\_BUFFER\_LVALUE =    \(\backslash\)
+            yy2\_create\_buffer(\hyperlink{llsphinxjson_8c_aa789f4617e33fb99594cb04a3688a0c1}{yyin},\hyperlink{llsphinxjson_8c_ae7e51116e747d3390e7a6cfc6532834c}{YY\_BUF\_SIZE} ,yyscanner); \(\backslash\)
+    \} \(\backslash\)
+    YY\_CURRENT\_BUFFER\_LVALUE->yy\_at\_bol = at\_bol; \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_ac56eb96366c08862bf0efe5d83d1fc4c}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-set\-\_\-interactive@{yy\-\_\-set\-\_\-interactive}}
+\index{yy\-\_\-set\-\_\-interactive@{yy\-\_\-set\-\_\-interactive}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-set\-\_\-interactive}]{\setlength{\rightskip}{0pt plus 5cm}\#define yy\-\_\-set\-\_\-interactive(
+\begin{DoxyParamCaption}
+\item[{}]{is\-\_\-interactive}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_ac56eb96366c08862bf0efe5d83d1fc4c}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+    if ( ! \hyperlink{llsphinxjson_8c_aa093d500a6330d06d8e4760c494fac33}{YY\_CURRENT\_BUFFER} )\{ \(\backslash\)
+        yy2ensure\_buffer\_stack (yyscanner); \(\backslash\)
+        YY\_CURRENT\_BUFFER\_LVALUE =    \(\backslash\)
+            yy2\_create\_buffer(\hyperlink{llsphinxjson_8c_aa789f4617e33fb99594cb04a3688a0c1}{yyin},\hyperlink{llsphinxjson_8c_ae7e51116e747d3390e7a6cfc6532834c}{YY\_BUF\_SIZE} ,yyscanner); \(\backslash\)
+    \} \(\backslash\)
+    YY\_CURRENT\_BUFFER\_LVALUE->yy\_is\_interactive = is\_interactive; \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_ae1ef5933028cbc587d31328e53d11a99}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-S\-K\-I\-P\-\_\-\-Y\-Y\-W\-R\-A\-P@{Y\-Y\-\_\-\-S\-K\-I\-P\-\_\-\-Y\-Y\-W\-R\-A\-P}}
+\index{Y\-Y\-\_\-\-S\-K\-I\-P\-\_\-\-Y\-Y\-W\-R\-A\-P@{Y\-Y\-\_\-\-S\-K\-I\-P\-\_\-\-Y\-Y\-W\-R\-A\-P}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-S\-K\-I\-P\-\_\-\-Y\-Y\-W\-R\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-S\-K\-I\-P\-\_\-\-Y\-Y\-W\-R\-A\-P}}\label{llsphinxjson_8c_ae1ef5933028cbc587d31328e53d11a99}
+\hypertarget{llsphinxjson_8c_a8e14785f9eab7a997d659b25af9584c5}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-S\-T\-A\-R\-T@{Y\-Y\-\_\-\-S\-T\-A\-R\-T}}
+\index{Y\-Y\-\_\-\-S\-T\-A\-R\-T@{Y\-Y\-\_\-\-S\-T\-A\-R\-T}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-S\-T\-A\-R\-T~(({\bf yyg}-\/$>$yy\-\_\-start -\/ 1) / 2)}}\label{llsphinxjson_8c_a8e14785f9eab7a997d659b25af9584c5}
+\hypertarget{llsphinxjson_8c_a227e75c43b9e0cd41529974230be7e75}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-T\-A\-C\-K\-\_\-\-I\-N\-C\-R@{Y\-Y\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-T\-A\-C\-K\-\_\-\-I\-N\-C\-R}}
+\index{Y\-Y\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-T\-A\-C\-K\-\_\-\-I\-N\-C\-R@{Y\-Y\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-T\-A\-C\-K\-\_\-\-I\-N\-C\-R}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-T\-A\-C\-K\-\_\-\-I\-N\-C\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-T\-A\-C\-K\-\_\-\-I\-N\-C\-R~25}}\label{llsphinxjson_8c_a227e75c43b9e0cd41529974230be7e75}
+\hypertarget{llsphinxjson_8c_ac2f8b6fccdc516d96b02ac09a4dc01bd}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E@{Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}}
+\index{Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E@{Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E~(({\bf Y\-Y\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E} + 2) $\ast$ sizeof({\bf yy\-\_\-state\-\_\-type}))}}\label{llsphinxjson_8c_ac2f8b6fccdc516d96b02ac09a4dc01bd}
+\hypertarget{llsphinxjson_8c_ab3077e60914fc54dcc55ecae1ce9700b}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-E\-O\-F@{Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-E\-O\-F}}
+\index{Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-E\-O\-F@{Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-E\-O\-F}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-E\-O\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-E\-O\-F(
+\begin{DoxyParamCaption}
+\item[{}]{state}
+\end{DoxyParamCaption}
+)~({\bf Y\-Y\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-B\-U\-F\-F\-E\-R} + state + 1)}}\label{llsphinxjson_8c_ab3077e60914fc54dcc55ecae1ce9700b}
+\hypertarget{llsphinxjson_8c_a8aaa9e1fa7f13d6954d045ef973a9c84}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E@{Y\-Y\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}
+\index{Y\-Y\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E@{Y\-Y\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}\label{llsphinxjson_8c_a8aaa9e1fa7f13d6954d045ef973a9c84}
+\hypertarget{llsphinxjson_8c_aa79d63ed3ff8d2249baf1732a73089f5}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E@{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}
+\index{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E@{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}\label{llsphinxjson_8c_aa79d63ed3ff8d2249baf1732a73089f5}
+\hypertarget{llsphinxjson_8c_a5d5508008cac8fb66fca3baa4e9b6584}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-C\-A\-N\-N\-E\-R\-\_\-\-T@{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-C\-A\-N\-N\-E\-R\-\_\-\-T}}
+\index{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-C\-A\-N\-N\-E\-R\-\_\-\-T@{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-C\-A\-N\-N\-E\-R\-\_\-\-T}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-C\-A\-N\-N\-E\-R\-\_\-\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-C\-A\-N\-N\-E\-R\-\_\-\-T}}\label{llsphinxjson_8c_a5d5508008cac8fb66fca3baa4e9b6584}
+\hypertarget{llsphinxjson_8c_ae0f2b0b5f04b2338367826b5670774f9}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-I\-Z\-E\-\_\-\-T@{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-I\-Z\-E\-\_\-\-T}}
+\index{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-I\-Z\-E\-\_\-\-T@{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-I\-Z\-E\-\_\-\-T}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-I\-Z\-E\-\_\-\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-T\-Y\-P\-E\-D\-E\-F\-\_\-\-Y\-Y\-\_\-\-S\-I\-Z\-E\-\_\-\-T}}\label{llsphinxjson_8c_ae0f2b0b5f04b2338367826b5670774f9}
+\hypertarget{llsphinxjson_8c_a6198b2fcf96178b24ad4efff2a3debb0}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-U\-S\-E\-R\-\_\-\-A\-C\-T\-I\-O\-N@{Y\-Y\-\_\-\-U\-S\-E\-R\-\_\-\-A\-C\-T\-I\-O\-N}}
+\index{Y\-Y\-\_\-\-U\-S\-E\-R\-\_\-\-A\-C\-T\-I\-O\-N@{Y\-Y\-\_\-\-U\-S\-E\-R\-\_\-\-A\-C\-T\-I\-O\-N}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-U\-S\-E\-R\-\_\-\-A\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-\_\-\-U\-S\-E\-R\-\_\-\-A\-C\-T\-I\-O\-N}}\label{llsphinxjson_8c_a6198b2fcf96178b24ad4efff2a3debb0}
+\hypertarget{llsphinxjson_8c_adb60e80d603c103e73f2561c7499095c}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yycolumn@{yycolumn}}
+\index{yycolumn@{yycolumn}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yycolumn}]{\setlength{\rightskip}{0pt plus 5cm}\#define yycolumn~({\bf Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E}-\/$>$yy\-\_\-bs\-\_\-column)}}\label{llsphinxjson_8c_adb60e80d603c103e73f2561c7499095c}
+\hypertarget{llsphinxjson_8c_aa2f1a918be586b44bf08126bde2d7cc9}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yyconst@{yyconst}}
+\index{yyconst@{yyconst}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yyconst}]{\setlength{\rightskip}{0pt plus 5cm}\#define yyconst}}\label{llsphinxjson_8c_aa2f1a918be586b44bf08126bde2d7cc9}
+\hypertarget{llsphinxjson_8c_a6d98927535a334881d37873915fbc45f}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yyextra@{yyextra}}
+\index{yyextra@{yyextra}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yyextra}]{\setlength{\rightskip}{0pt plus 5cm}\#define yyextra~{\bf yyg}-\/$>$yyextra\-\_\-r}}\label{llsphinxjson_8c_a6d98927535a334881d37873915fbc45f}
+\hypertarget{llsphinxjson_8c_aa789f4617e33fb99594cb04a3688a0c1}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yyin@{yyin}}
+\index{yyin@{yyin}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yyin}]{\setlength{\rightskip}{0pt plus 5cm}\#define yyin~{\bf yyg}-\/$>$yyin\-\_\-r}}\label{llsphinxjson_8c_aa789f4617e33fb99594cb04a3688a0c1}
+\hypertarget{llsphinxjson_8c_afa07a629486cb790560bb95713ec7794}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yyleng@{yyleng}}
+\index{yyleng@{yyleng}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yyleng}]{\setlength{\rightskip}{0pt plus 5cm}\#define yyleng~{\bf yyg}-\/$>$yyleng\-\_\-r}}\label{llsphinxjson_8c_afa07a629486cb790560bb95713ec7794}
+\hypertarget{llsphinxjson_8c_ae65cb72d09db0abdc4b8e8c4d533ab14}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yyless@{yyless}}
+\index{yyless@{yyless}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yyless}]{\setlength{\rightskip}{0pt plus 5cm}\#define yyless(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_ae65cb72d09db0abdc4b8e8c4d533ab14}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \(\backslash\)
+        \{ \(\backslash\)
+        \textcolor{comment}{/* Undo effects of setting up yytext. */} \(\backslash\)
+        int yyless\_macro\_arg = (n); \(\backslash\)
+        YY\_LESS\_LINENO(yyless\_macro\_arg);\(\backslash\)
+        *\hyperlink{llsphinxjson_8c_ab98daea4ec951dfa966b5ca0f8133d38}{yy\_cp} = \hyperlink{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}->\hyperlink{structyyguts__t_adde3f71374c223bbac47284824996e86}{yy\_hold\_char}; \(\backslash\)
+        YY\_RESTORE\_YY\_MORE\_OFFSET \(\backslash\)
+        yyg->yy\_c\_buf\_p = \hyperlink{llsphinxjson_8c_ab98daea4ec951dfa966b5ca0f8133d38}{yy\_cp} = \hyperlink{llsphinxjson_8c_a71cf769ce518e8687bf8999b278c65f4}{yy\_bp} + yyless\_macro\_arg - 
+      \hyperlink{llsphinxjson_8c_a68792d73820bc46a71d3d4e613f0b977}{YY\_MORE\_ADJ}; \(\backslash\)
+        YY\_DO\_BEFORE\_ACTION; \textcolor{comment}{/* set up yytext again */} \(\backslash\)
+        \} \(\backslash\)
+    while ( 0 )
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_ae65cb72d09db0abdc4b8e8c4d533ab14}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yyless@{yyless}}
+\index{yyless@{yyless}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yyless}]{\setlength{\rightskip}{0pt plus 5cm}\#define yyless(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_ae65cb72d09db0abdc4b8e8c4d533ab14}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \(\backslash\)
+        \{ \(\backslash\)
+        \textcolor{comment}{/* Undo effects of setting up yytext. */} \(\backslash\)
+        int yyless\_macro\_arg = (n); \(\backslash\)
+        YY\_LESS\_LINENO(yyless\_macro\_arg);\(\backslash\)
+        yytext[\hyperlink{llsphinxjson_8c_afa07a629486cb790560bb95713ec7794}{yyleng}] = \hyperlink{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}->\hyperlink{structyyguts__t_adde3f71374c223bbac47284824996e86}{yy\_hold\_char}; \(\backslash\)
+        yyg->yy\_c\_buf\_p = \hyperlink{llsphinxjson_8c_a0d71f919dbec1ffd74b2460fa7e5ac28}{yytext} + yyless\_macro\_arg; \(\backslash\)
+        yyg->yy\_hold\_char = *\hyperlink{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}->\hyperlink{structyyguts__t_a0808041d4c8a36956ec267e7405a6baf}{yy\_c\_buf\_p}; \(\backslash\)
+        *\hyperlink{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}{yyg}->\hyperlink{structyyguts__t_a0808041d4c8a36956ec267e7405a6baf}{yy\_c\_buf\_p} = \textcolor{charliteral}{'\(\backslash\)0'}; \(\backslash\)
+        yyleng = yyless\_macro\_arg; \(\backslash\)
+        \} \(\backslash\)
+    while ( 0 )
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_ad71cf0fddcfe4f61de0929105b33226c}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yylineno@{yylineno}}
+\index{yylineno@{yylineno}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yylineno}]{\setlength{\rightskip}{0pt plus 5cm}\#define yylineno~({\bf Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-L\-V\-A\-L\-U\-E}-\/$>$yy\-\_\-bs\-\_\-lineno)}}\label{llsphinxjson_8c_ad71cf0fddcfe4f61de0929105b33226c}
+\hypertarget{llsphinxjson_8c_a745d37b5e002b2e5f93ad42ea7b554be}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yymore@{yymore}}
+\index{yymore@{yymore}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yymore}]{\setlength{\rightskip}{0pt plus 5cm}\#define yymore(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~yymore\-\_\-used\-\_\-but\-\_\-not\-\_\-detected}}\label{llsphinxjson_8c_a745d37b5e002b2e5f93ad42ea7b554be}
+\hypertarget{llsphinxjson_8c_a4fd44867d448dcb6fc32ea004a15de54}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yyout@{yyout}}
+\index{yyout@{yyout}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yyout}]{\setlength{\rightskip}{0pt plus 5cm}\#define yyout~{\bf yyg}-\/$>$yyout\-\_\-r}}\label{llsphinxjson_8c_a4fd44867d448dcb6fc32ea004a15de54}
+\hypertarget{llsphinxjson_8c_a32b5b960944f946b192d54f672569cd9}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-S\-T\-A\-T\-E@{Y\-Y\-S\-T\-A\-T\-E}}
+\index{Y\-Y\-S\-T\-A\-T\-E@{Y\-Y\-S\-T\-A\-T\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-S\-T\-A\-T\-E~{\bf Y\-Y\-\_\-\-S\-T\-A\-R\-T}}}\label{llsphinxjson_8c_a32b5b960944f946b192d54f672569cd9}
+\hypertarget{llsphinxjson_8c_a828cc83270f8f5bb1688e14dd4e28128}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-T\-A\-B\-L\-E\-S\-\_\-\-N\-A\-M\-E@{Y\-Y\-T\-A\-B\-L\-E\-S\-\_\-\-N\-A\-M\-E}}
+\index{Y\-Y\-T\-A\-B\-L\-E\-S\-\_\-\-N\-A\-M\-E@{Y\-Y\-T\-A\-B\-L\-E\-S\-\_\-\-N\-A\-M\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-T\-A\-B\-L\-E\-S\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\-Y\-T\-A\-B\-L\-E\-S\-\_\-\-N\-A\-M\-E~\char`\"{}yytables\char`\"{}}}\label{llsphinxjson_8c_a828cc83270f8f5bb1688e14dd4e28128}
+\hypertarget{llsphinxjson_8c_ac3286b18a2e91b4571b97df96a118e84}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yyterminate@{yyterminate}}
+\index{yyterminate@{yyterminate}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yyterminate}]{\setlength{\rightskip}{0pt plus 5cm}\#define yyterminate(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf return} {\bf Y\-Y\-\_\-\-N\-U\-L\-L}}}\label{llsphinxjson_8c_ac3286b18a2e91b4571b97df96a118e84}
+\hypertarget{llsphinxjson_8c_a0d71f919dbec1ffd74b2460fa7e5ac28}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yytext@{yytext}}
+\index{yytext@{yytext}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yytext}]{\setlength{\rightskip}{0pt plus 5cm}\#define yytext~{\bf yyg}-\/$>$yytext\-\_\-r}}\label{llsphinxjson_8c_a0d71f919dbec1ffd74b2460fa7e5ac28}
+\hypertarget{llsphinxjson_8c_a790a191a93ef4d3b8c0bb43fd7480052}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yytext\-\_\-ptr@{yytext\-\_\-ptr}}
+\index{yytext\-\_\-ptr@{yytext\-\_\-ptr}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yytext\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}\#define yytext\-\_\-ptr~yytext\-\_\-r}}\label{llsphinxjson_8c_a790a191a93ef4d3b8c0bb43fd7480052}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{llsphinxjson_8c_a2e73b2c75126814585525fb2e9d51159}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!flex\-\_\-int16\-\_\-t@{flex\-\_\-int16\-\_\-t}}
+\index{flex\-\_\-int16\-\_\-t@{flex\-\_\-int16\-\_\-t}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{flex\-\_\-int16\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef short {\bf int} {\bf flex\-\_\-int16\-\_\-t}}}\label{llsphinxjson_8c_a2e73b2c75126814585525fb2e9d51159}
+\hypertarget{llsphinxjson_8c_a838ce943cf44ef7769480714fc6c3ba9}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!flex\-\_\-int32\-\_\-t@{flex\-\_\-int32\-\_\-t}}
+\index{flex\-\_\-int32\-\_\-t@{flex\-\_\-int32\-\_\-t}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{flex\-\_\-int32\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int} {\bf flex\-\_\-int32\-\_\-t}}}\label{llsphinxjson_8c_a838ce943cf44ef7769480714fc6c3ba9}
+\hypertarget{llsphinxjson_8c_a7b0840dff4a2ef1702118aa12264b2a7}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!flex\-\_\-int8\-\_\-t@{flex\-\_\-int8\-\_\-t}}
+\index{flex\-\_\-int8\-\_\-t@{flex\-\_\-int8\-\_\-t}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{flex\-\_\-int8\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef signed char {\bf flex\-\_\-int8\-\_\-t}}}\label{llsphinxjson_8c_a7b0840dff4a2ef1702118aa12264b2a7}
+\hypertarget{llsphinxjson_8c_ac50cdb9eefbef83a1cec89e3a7f6e1d2}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!flex\-\_\-uint16\-\_\-t@{flex\-\_\-uint16\-\_\-t}}
+\index{flex\-\_\-uint16\-\_\-t@{flex\-\_\-uint16\-\_\-t}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{flex\-\_\-uint16\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned short {\bf int} {\bf flex\-\_\-uint16\-\_\-t}}}\label{llsphinxjson_8c_ac50cdb9eefbef83a1cec89e3a7f6e1d2}
+\hypertarget{llsphinxjson_8c_a36869712de12820c73aae736762e8e88}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!flex\-\_\-uint32\-\_\-t@{flex\-\_\-uint32\-\_\-t}}
+\index{flex\-\_\-uint32\-\_\-t@{flex\-\_\-uint32\-\_\-t}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{flex\-\_\-uint32\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned {\bf int} {\bf flex\-\_\-uint32\-\_\-t}}}\label{llsphinxjson_8c_a36869712de12820c73aae736762e8e88}
+\hypertarget{llsphinxjson_8c_a0fac5ea484f64e75dbe6eba4aa61750c}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!flex\-\_\-uint8\-\_\-t@{flex\-\_\-uint8\-\_\-t}}
+\index{flex\-\_\-uint8\-\_\-t@{flex\-\_\-uint8\-\_\-t}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{flex\-\_\-uint8\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf flex\-\_\-uint8\-\_\-t}}}\label{llsphinxjson_8c_a0fac5ea484f64e75dbe6eba4aa61750c}
+\hypertarget{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E@{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}
+\index{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E@{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf yy\-\_\-buffer\-\_\-state}$\ast$ {\bf Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}}\label{llsphinxjson_8c_a4e5bd2d129903df83f3d13effaf8f3e4}
+\hypertarget{llsphinxjson_8c_a1f324b3cb0839eeb90145f0274e6946e}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-C\-H\-A\-R@{Y\-Y\-\_\-\-C\-H\-A\-R}}
+\index{Y\-Y\-\_\-\-C\-H\-A\-R@{Y\-Y\-\_\-\-C\-H\-A\-R}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-C\-H\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf Y\-Y\-\_\-\-C\-H\-A\-R}}}\label{llsphinxjson_8c_a1f324b3cb0839eeb90145f0274e6946e}
+\hypertarget{llsphinxjson_8c_ad557845057f187eec4be07e2717d2afa}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-size\-\_\-t@{yy\-\_\-size\-\_\-t}}
+\index{yy\-\_\-size\-\_\-t@{yy\-\_\-size\-\_\-t}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-size\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef size\-\_\-t {\bf yy\-\_\-size\-\_\-t}}}\label{llsphinxjson_8c_ad557845057f187eec4be07e2717d2afa}
+\hypertarget{llsphinxjson_8c_a9ba7c416f135b0f0c1f4addded4616b5}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-state\-\_\-type@{yy\-\_\-state\-\_\-type}}
+\index{yy\-\_\-state\-\_\-type@{yy\-\_\-state\-\_\-type}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-state\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int} {\bf yy\-\_\-state\-\_\-type}}}\label{llsphinxjson_8c_a9ba7c416f135b0f0c1f4addded4616b5}
+\hypertarget{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yyscan\-\_\-t@{yyscan\-\_\-t}}
+\index{yyscan\-\_\-t@{yyscan\-\_\-t}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yyscan\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf yyscan\-\_\-t}}}\label{llsphinxjson_8c_a157535ed0322a026cc197c8985c08d35}
+
+
+\subsection{Function Documentation}
+\hypertarget{llsphinxjson_8c_a33e91cd0cef6786e9e3a27ac67707207}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!if@{if}}
+\index{if@{if}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{!{\bf yyg}-\/$>$}]{yy\-\_\-init}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a33e91cd0cef6786e9e3a27ac67707207}
+\hypertarget{llsphinxjson_8c_a5a634cf4429798b1c921a81de8250051}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!input@{input}}
+\index{input@{input}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} input (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_a5a634cf4429798b1c921a81de8250051}
+\hypertarget{llsphinxjson_8c_ab4155ffea05dab2dafae68fd88a0517f}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!isatty@{isatty}}
+\index{isatty@{isatty}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{isatty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} isatty (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_ab4155ffea05dab2dafae68fd88a0517f}
+\hypertarget{llsphinxjson_8c_a8fdafe3be7e00ce3d4f0cb50a9a5eb39}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!while@{while}}
+\index{while@{while}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{while}]{\setlength{\rightskip}{0pt plus 5cm}while (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a8fdafe3be7e00ce3d4f0cb50a9a5eb39}
+\hypertarget{llsphinxjson_8c_ac7a71b54719a463398e46da5af9eec05}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2\-\_\-create\-\_\-buffer@{yy2\-\_\-create\-\_\-buffer}}
+\index{yy2\-\_\-create\-\_\-buffer@{yy2\-\_\-create\-\_\-buffer}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2\-\_\-create\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} yy2\-\_\-create\-\_\-buffer (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{file, }
+\item[{{\bf int}}]{size, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_ac7a71b54719a463398e46da5af9eec05}
+Allocate and initialize an input buffer state. 
+\begin{DoxyParams}{Parameters}
+{\em file} & A readable stream. \\
+\hline
+{\em size} & The character buffer size in bytes. When in doubt, use {\ttfamily Y\-Y\-\_\-\-B\-U\-F\-\_\-\-S\-I\-Z\-E}. \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the allocated buffer state. 
+\end{DoxyReturn}
+\hypertarget{llsphinxjson_8c_a9f5f4324c3cec85a291e0819a43c8040}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2\-\_\-delete\-\_\-buffer@{yy2\-\_\-delete\-\_\-buffer}}
+\index{yy2\-\_\-delete\-\_\-buffer@{yy2\-\_\-delete\-\_\-buffer}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2\-\_\-delete\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void yy2\-\_\-delete\-\_\-buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}]{b, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a9f5f4324c3cec85a291e0819a43c8040}
+Destroy the buffer. 
+\begin{DoxyParams}{Parameters}
+{\em b} & a buffer created with \hyperlink{llsphinxjson_8c_ac7a71b54719a463398e46da5af9eec05}{yy2\-\_\-create\-\_\-buffer()} \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_ab226ffd6e7d0701536553849831d3bca}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2\-\_\-flush\-\_\-buffer@{yy2\-\_\-flush\-\_\-buffer}}
+\index{yy2\-\_\-flush\-\_\-buffer@{yy2\-\_\-flush\-\_\-buffer}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2\-\_\-flush\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void yy2\-\_\-flush\-\_\-buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}]{b, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_ab226ffd6e7d0701536553849831d3bca}
+Discard all buffered characters. On the next scan, Y\-Y\-\_\-\-I\-N\-P\-U\-T will be called. 
+\begin{DoxyParams}{Parameters}
+{\em b} & the buffer state to be flushed, usually {\ttfamily Y\-Y\-\_\-\-C\-U\-R\-R\-E\-N\-T\-\_\-\-B\-U\-F\-F\-E\-R}. \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_a6b9a704d64f45280f3d481de28d4b91a}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2\-\_\-init\-\_\-buffer@{yy2\-\_\-init\-\_\-buffer}}
+\index{yy2\-\_\-init\-\_\-buffer@{yy2\-\_\-init\-\_\-buffer}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2\-\_\-init\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}static void yy2\-\_\-init\-\_\-buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}]{b, }
+\item[{F\-I\-L\-E $\ast$}]{file, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_a6b9a704d64f45280f3d481de28d4b91a}
+\hypertarget{llsphinxjson_8c_a61f8ef0d547692861e731b3cf3dee7fb}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2\-\_\-load\-\_\-buffer\-\_\-state@{yy2\-\_\-load\-\_\-buffer\-\_\-state}}
+\index{yy2\-\_\-load\-\_\-buffer\-\_\-state@{yy2\-\_\-load\-\_\-buffer\-\_\-state}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2\-\_\-load\-\_\-buffer\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}static void yy2\-\_\-load\-\_\-buffer\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_a61f8ef0d547692861e731b3cf3dee7fb}
+\hypertarget{llsphinxjson_8c_a79bf69843d811e206ee9b53d4366f358}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2\-\_\-scan\-\_\-buffer@{yy2\-\_\-scan\-\_\-buffer}}
+\index{yy2\-\_\-scan\-\_\-buffer@{yy2\-\_\-scan\-\_\-buffer}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2\-\_\-scan\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} yy2\-\_\-scan\-\_\-buffer (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{base, }
+\item[{{\bf yy\-\_\-size\-\_\-t}}]{size, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a79bf69843d811e206ee9b53d4366f358}
+Setup the input buffer state to scan directly from a user-\/specified character buffer. 
+\begin{DoxyParams}{Parameters}
+{\em base} & the character buffer \\
+\hline
+{\em size} & the size in bytes of the character buffer \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly allocated buffer state object. 
+\end{DoxyReturn}
+\hypertarget{llsphinxjson_8c_a04e818a1f02b8f0dbc4bf563896da137}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2\-\_\-scan\-\_\-bytes@{yy2\-\_\-scan\-\_\-bytes}}
+\index{yy2\-\_\-scan\-\_\-bytes@{yy2\-\_\-scan\-\_\-bytes}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2\-\_\-scan\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} yy2\-\_\-scan\-\_\-bytes (
+\begin{DoxyParamCaption}
+\item[{{\bf yyconst} char $\ast$}]{yybytes, }
+\item[{{\bf int}}]{\-\_\-yybytes\-\_\-len, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a04e818a1f02b8f0dbc4bf563896da137}
+Setup the input buffer state to scan the given bytes. The next call to \hyperlink{llsphinxjson_8c_a494e67af32fa9e780497af1a3cda2999}{yy2lex()} will scan from a {\itshape copy} of {\itshape bytes}. 
+\begin{DoxyParams}{Parameters}
+{\em yybytes} & the byte buffer to scan \\
+\hline
+{\em \-\_\-yybytes\-\_\-len} & the number of bytes in the buffer pointed to by {\itshape bytes}. \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly allocated buffer state object. 
+\end{DoxyReturn}
+\hypertarget{llsphinxjson_8c_aebd9cf2a66b80d53d79533496d053457}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2\-\_\-scan\-\_\-string@{yy2\-\_\-scan\-\_\-string}}
+\index{yy2\-\_\-scan\-\_\-string@{yy2\-\_\-scan\-\_\-string}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2\-\_\-scan\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E} yy2\-\_\-scan\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{{\bf yyconst} char $\ast$}]{yystr, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_aebd9cf2a66b80d53d79533496d053457}
+Setup the input buffer state to scan a string. The next call to \hyperlink{llsphinxjson_8c_a494e67af32fa9e780497af1a3cda2999}{yy2lex()} will scan from a {\itshape copy} of {\itshape str}. 
+\begin{DoxyParams}{Parameters}
+{\em yystr} & a N\-U\-L-\/terminated string to scan \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly allocated buffer state object. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If you want to scan bytes that may contain N\-U\-L values, then use \hyperlink{llsphinxjson_8c_a04e818a1f02b8f0dbc4bf563896da137}{yy2\-\_\-scan\-\_\-bytes()} instead. 
+\end{DoxyNote}
+\hypertarget{llsphinxjson_8c_a422f6e6d343af267c629f590eb725178}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2\-\_\-switch\-\_\-to\-\_\-buffer@{yy2\-\_\-switch\-\_\-to\-\_\-buffer}}
+\index{yy2\-\_\-switch\-\_\-to\-\_\-buffer@{yy2\-\_\-switch\-\_\-to\-\_\-buffer}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2\-\_\-switch\-\_\-to\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void yy2\-\_\-switch\-\_\-to\-\_\-buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}]{new\-\_\-buffer, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a422f6e6d343af267c629f590eb725178}
+Switch to a different input buffer. 
+\begin{DoxyParams}{Parameters}
+{\em new\-\_\-buffer} & The new input buffer. \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_ad866f80badd9579e4714d7bde7227f40}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2alloc@{yy2alloc}}
+\index{yy2alloc@{yy2alloc}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2alloc}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ yy2alloc (
+\begin{DoxyParamCaption}
+\item[{{\bf yy\-\_\-size\-\_\-t}}]{size, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_ad866f80badd9579e4714d7bde7227f40}
+\hypertarget{llsphinxjson_8c_ab97ec53d04c5817f919f303d822dbacc}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2ensure\-\_\-buffer\-\_\-stack@{yy2ensure\-\_\-buffer\-\_\-stack}}
+\index{yy2ensure\-\_\-buffer\-\_\-stack@{yy2ensure\-\_\-buffer\-\_\-stack}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2ensure\-\_\-buffer\-\_\-stack}]{\setlength{\rightskip}{0pt plus 5cm}static void yy2ensure\-\_\-buffer\-\_\-stack (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_ab97ec53d04c5817f919f303d822dbacc}
+\hypertarget{llsphinxjson_8c_a7630fb66d924f87c591aae08c14014bf}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2free@{yy2free}}
+\index{yy2free@{yy2free}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2free}]{\setlength{\rightskip}{0pt plus 5cm}void yy2free (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a7630fb66d924f87c591aae08c14014bf}
+\hypertarget{llsphinxjson_8c_af85892582f6a8e825b163399ac818cd4}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2get\-\_\-column@{yy2get\-\_\-column}}
+\index{yy2get\-\_\-column@{yy2get\-\_\-column}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2get\-\_\-column}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yy2get\-\_\-column (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_af85892582f6a8e825b163399ac818cd4}
+Get the current column number. 
+\begin{DoxyParams}{Parameters}
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_a8facdaf3e8ba9bbfc939ab447bb2cc5b}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2get\-\_\-debug@{yy2get\-\_\-debug}}
+\index{yy2get\-\_\-debug@{yy2get\-\_\-debug}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2get\-\_\-debug}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yy2get\-\_\-debug (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a8facdaf3e8ba9bbfc939ab447bb2cc5b}
+\hypertarget{llsphinxjson_8c_a3f6036c56c82095d4a393fb2639b6a4d}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2get\-\_\-extra@{yy2get\-\_\-extra}}
+\index{yy2get\-\_\-extra@{yy2get\-\_\-extra}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2get\-\_\-extra}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E} yy2get\-\_\-extra (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a3f6036c56c82095d4a393fb2639b6a4d}
+Get the user-\/defined data for this scanner. 
+\begin{DoxyParams}{Parameters}
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_a1487753e647a599f664e600475636938}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2get\-\_\-in@{yy2get\-\_\-in}}
+\index{yy2get\-\_\-in@{yy2get\-\_\-in}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2get\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E $\ast$ yy2get\-\_\-in (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a1487753e647a599f664e600475636938}
+Get the input stream. 
+\begin{DoxyParams}{Parameters}
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_aa7dfbb5bac974a8ae2c6dec756870c73}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2get\-\_\-leng@{yy2get\-\_\-leng}}
+\index{yy2get\-\_\-leng@{yy2get\-\_\-leng}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2get\-\_\-leng}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yy2get\-\_\-leng (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_aa7dfbb5bac974a8ae2c6dec756870c73}
+Get the length of the current token. 
+\begin{DoxyParams}{Parameters}
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_abb2d1db36d3fe86acbb7c2c065109a12}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2get\-\_\-lineno@{yy2get\-\_\-lineno}}
+\index{yy2get\-\_\-lineno@{yy2get\-\_\-lineno}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2get\-\_\-lineno}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yy2get\-\_\-lineno (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_abb2d1db36d3fe86acbb7c2c065109a12}
+Get the current line number. 
+\begin{DoxyParams}{Parameters}
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_a2cefaf536da27610ace9e7d22a6999dc}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2get\-\_\-out@{yy2get\-\_\-out}}
+\index{yy2get\-\_\-out@{yy2get\-\_\-out}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2get\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E $\ast$ yy2get\-\_\-out (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a2cefaf536da27610ace9e7d22a6999dc}
+Get the output stream. 
+\begin{DoxyParams}{Parameters}
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_af6e1cd9f422c716925605698a9adb637}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2get\-\_\-text@{yy2get\-\_\-text}}
+\index{yy2get\-\_\-text@{yy2get\-\_\-text}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2get\-\_\-text}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ yy2get\-\_\-text (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_af6e1cd9f422c716925605698a9adb637}
+Get the current token. 
+\begin{DoxyParams}{Parameters}
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_a494e67af32fa9e780497af1a3cda2999}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2lex@{yy2lex}}
+\index{yy2lex@{yy2lex}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2lex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yy2lex (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a494e67af32fa9e780497af1a3cda2999}
+\hypertarget{llsphinxjson_8c_a9c1754e75ef27fe1c52757ea9989ef4f}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2lex\-\_\-destroy@{yy2lex\-\_\-destroy}}
+\index{yy2lex\-\_\-destroy@{yy2lex\-\_\-destroy}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2lex\-\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yy2lex\-\_\-destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a9c1754e75ef27fe1c52757ea9989ef4f}
+\hypertarget{llsphinxjson_8c_a77a5d5cc800d57c42a88fb96eec47fd7}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2lex\-\_\-init@{yy2lex\-\_\-init}}
+\index{yy2lex\-\_\-init@{yy2lex\-\_\-init}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2lex\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yy2lex\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t} $\ast$}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a77a5d5cc800d57c42a88fb96eec47fd7}
+\hypertarget{llsphinxjson_8c_ad918b3827914dee03f687a2f3d3cac04}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2lex\-\_\-init\-\_\-extra@{yy2lex\-\_\-init\-\_\-extra}}
+\index{yy2lex\-\_\-init\-\_\-extra@{yy2lex\-\_\-init\-\_\-extra}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2lex\-\_\-init\-\_\-extra}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} yy2lex\-\_\-init\-\_\-extra (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E}}]{user\-\_\-defined, }
+\item[{{\bf yyscan\-\_\-t} $\ast$}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_ad918b3827914dee03f687a2f3d3cac04}
+\hypertarget{llsphinxjson_8c_a66616dc69e09e28d1c818248b75c794b}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2lex\-\_\-unhold@{yy2lex\-\_\-unhold}}
+\index{yy2lex\-\_\-unhold@{yy2lex\-\_\-unhold}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2lex\-\_\-unhold}]{\setlength{\rightskip}{0pt plus 5cm}void yy2lex\-\_\-unhold (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a66616dc69e09e28d1c818248b75c794b}
+\hypertarget{llsphinxjson_8c_a1827c79beb72144621939536612ff747}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2pop\-\_\-buffer\-\_\-state@{yy2pop\-\_\-buffer\-\_\-state}}
+\index{yy2pop\-\_\-buffer\-\_\-state@{yy2pop\-\_\-buffer\-\_\-state}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2pop\-\_\-buffer\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}void yy2pop\-\_\-buffer\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a1827c79beb72144621939536612ff747}
+Removes and deletes the top of the stack, if present. The next element becomes the new top. 
+\begin{DoxyParams}{Parameters}
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_a68e1efba20dab5c5b67e6cc3bc62ace6}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2push\-\_\-buffer\-\_\-state@{yy2push\-\_\-buffer\-\_\-state}}
+\index{yy2push\-\_\-buffer\-\_\-state@{yy2push\-\_\-buffer\-\_\-state}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2push\-\_\-buffer\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}void yy2push\-\_\-buffer\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-T\-A\-T\-E}}]{new\-\_\-buffer, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a68e1efba20dab5c5b67e6cc3bc62ace6}
+Pushes the new state onto the stack. The new state becomes the current state. This function will allocate the stack if necessary. 
+\begin{DoxyParams}{Parameters}
+{\em new\-\_\-buffer} & The new state. \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_a270ba98ab01c71249cf550ae123afa74}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2realloc@{yy2realloc}}
+\index{yy2realloc@{yy2realloc}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2realloc}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ yy2realloc (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr, }
+\item[{{\bf yy\-\_\-size\-\_\-t}}]{size, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a270ba98ab01c71249cf550ae123afa74}
+\hypertarget{llsphinxjson_8c_aed9a7397d6409a6cb13b46763df30735}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2restart@{yy2restart}}
+\index{yy2restart@{yy2restart}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2restart}]{\setlength{\rightskip}{0pt plus 5cm}void yy2restart (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{input\-\_\-file, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_aed9a7397d6409a6cb13b46763df30735}
+Immediately switch to a different input stream. 
+\begin{DoxyParams}{Parameters}
+{\em input\-\_\-file} & A readable stream. \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function does not reset the start condition to {\ttfamily I\-N\-I\-T\-I\-A\-L} . 
+\end{DoxyNote}
+\hypertarget{llsphinxjson_8c_ad99819f98d4b4f8c856935333fd91d79}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2set\-\_\-column@{yy2set\-\_\-column}}
+\index{yy2set\-\_\-column@{yy2set\-\_\-column}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2set\-\_\-column}]{\setlength{\rightskip}{0pt plus 5cm}void yy2set\-\_\-column (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{column\-\_\-no, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_ad99819f98d4b4f8c856935333fd91d79}
+Set the current column. 
+\begin{DoxyParams}{Parameters}
+{\em line\-\_\-number} & \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_a2d37e6ba2c87ae575aa113dd4b487add}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2set\-\_\-debug@{yy2set\-\_\-debug}}
+\index{yy2set\-\_\-debug@{yy2set\-\_\-debug}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2set\-\_\-debug}]{\setlength{\rightskip}{0pt plus 5cm}void yy2set\-\_\-debug (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{debug\-\_\-flag, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a2d37e6ba2c87ae575aa113dd4b487add}
+\hypertarget{llsphinxjson_8c_a14510fb7ef430d14b9a9edba202fda29}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2set\-\_\-extra@{yy2set\-\_\-extra}}
+\index{yy2set\-\_\-extra@{yy2set\-\_\-extra}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2set\-\_\-extra}]{\setlength{\rightskip}{0pt plus 5cm}void yy2set\-\_\-extra (
+\begin{DoxyParamCaption}
+\item[{{\bf Y\-Y\-\_\-\-E\-X\-T\-R\-A\-\_\-\-T\-Y\-P\-E}}]{user\-\_\-defined, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a14510fb7ef430d14b9a9edba202fda29}
+Set the user-\/defined data. This data is never touched by the scanner. 
+\begin{DoxyParams}{Parameters}
+{\em user\-\_\-defined} & The data to be associated with this scanner. \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_a006fc8afad7b6369fa7d161dbd2a6433}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2set\-\_\-in@{yy2set\-\_\-in}}
+\index{yy2set\-\_\-in@{yy2set\-\_\-in}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2set\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}void yy2set\-\_\-in (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{in\-\_\-str, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a006fc8afad7b6369fa7d161dbd2a6433}
+Set the input stream. This does not discard the current input buffer. 
+\begin{DoxyParams}{Parameters}
+{\em in\-\_\-str} & A readable stream. \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{llsphinxjson_8c_a422f6e6d343af267c629f590eb725178}{yy2\-\_\-switch\-\_\-to\-\_\-buffer} 
+\end{DoxySeeAlso}
+\hypertarget{llsphinxjson_8c_a773b5d686fa3447744b5b89f51c87d53}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2set\-\_\-lineno@{yy2set\-\_\-lineno}}
+\index{yy2set\-\_\-lineno@{yy2set\-\_\-lineno}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2set\-\_\-lineno}]{\setlength{\rightskip}{0pt plus 5cm}void yy2set\-\_\-lineno (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{line\-\_\-number, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_a773b5d686fa3447744b5b89f51c87d53}
+Set the current line number. 
+\begin{DoxyParams}{Parameters}
+{\em line\-\_\-number} & \\
+\hline
+{\em yyscanner} & The scanner object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{llsphinxjson_8c_ab30e65694e7eb98253472fc0fd9d4dc8}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy2set\-\_\-out@{yy2set\-\_\-out}}
+\index{yy2set\-\_\-out@{yy2set\-\_\-out}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy2set\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}void yy2set\-\_\-out (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{out\-\_\-str, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)}}\label{llsphinxjson_8c_ab30e65694e7eb98253472fc0fd9d4dc8}
+\hypertarget{llsphinxjson_8c_aaa544da84e27bf0f989995abc478af82}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-fatal\-\_\-error@{yy\-\_\-fatal\-\_\-error}}
+\index{yy\-\_\-fatal\-\_\-error@{yy\-\_\-fatal\-\_\-error}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-fatal\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}static void yy\-\_\-fatal\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf yyconst} char}]{msg\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_aaa544da84e27bf0f989995abc478af82}
+\hypertarget{llsphinxjson_8c_ac76d509c88a606f9e891083a8b84bcfa}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-fatal\-\_\-error@{yy\-\_\-fatal\-\_\-error}}
+\index{yy\-\_\-fatal\-\_\-error@{yy\-\_\-fatal\-\_\-error}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-fatal\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}static void yy\-\_\-fatal\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf yyconst} char $\ast$}]{msg, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_ac76d509c88a606f9e891083a8b84bcfa}
+\hypertarget{llsphinxjson_8c_a29d30a2c7f7ce166f1198f5a1c1d7757}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-get\-\_\-next\-\_\-buffer@{yy\-\_\-get\-\_\-next\-\_\-buffer}}
+\index{yy\-\_\-get\-\_\-next\-\_\-buffer@{yy\-\_\-get\-\_\-next\-\_\-buffer}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-get\-\_\-next\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} yy\-\_\-get\-\_\-next\-\_\-buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_a29d30a2c7f7ce166f1198f5a1c1d7757}
+\hypertarget{llsphinxjson_8c_aed478f529df78ebbe143819488cfca4b}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-get\-\_\-previous\-\_\-state@{yy\-\_\-get\-\_\-previous\-\_\-state}}
+\index{yy\-\_\-get\-\_\-previous\-\_\-state@{yy\-\_\-get\-\_\-previous\-\_\-state}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-get\-\_\-previous\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf yy\-\_\-state\-\_\-type} yy\-\_\-get\-\_\-previous\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_aed478f529df78ebbe143819488cfca4b}
+\hypertarget{llsphinxjson_8c_a1fcfb5beef0e26d8b11ac911802e6ca1}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-init\-\_\-globals@{yy\-\_\-init\-\_\-globals}}
+\index{yy\-\_\-init\-\_\-globals@{yy\-\_\-init\-\_\-globals}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-init\-\_\-globals}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} yy\-\_\-init\-\_\-globals (
+\begin{DoxyParamCaption}
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_a1fcfb5beef0e26d8b11ac911802e6ca1}
+\hypertarget{llsphinxjson_8c_a39d24de4d72464ca8a06b0b604a1680f}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-try\-\_\-\-N\-U\-L\-\_\-trans@{yy\-\_\-try\-\_\-\-N\-U\-L\-\_\-trans}}
+\index{yy\-\_\-try\-\_\-\-N\-U\-L\-\_\-trans@{yy\-\_\-try\-\_\-\-N\-U\-L\-\_\-trans}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-try\-\_\-\-N\-U\-L\-\_\-trans}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf yy\-\_\-state\-\_\-type} yy\-\_\-try\-\_\-\-N\-U\-L\-\_\-trans (
+\begin{DoxyParamCaption}
+\item[{{\bf yy\-\_\-state\-\_\-type}}]{current\-\_\-state, }
+\item[{{\bf yyscan\-\_\-t}}]{yyscanner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_a39d24de4d72464ca8a06b0b604a1680f}
+
+
+\subsection{Variable Documentation}
+\hypertarget{llsphinxjson_8c_aa1bdde9b69c2c91a3e9730647efc2dfa}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-accept@{yy\-\_\-accept}}
+\index{yy\-\_\-accept@{yy\-\_\-accept}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-accept}]{\setlength{\rightskip}{0pt plus 5cm}{\bf yyconst} {\bf flex\-\_\-int16\-\_\-t} yy\-\_\-accept\mbox{[}59\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_aa1bdde9b69c2c91a3e9730647efc2dfa}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \{   0,
+        0,    0,    0,    0,   19,   17,   16,   16,   17,    2,
+       17,   17,   12,   17,   14,   15,   15,   15,   15,    3,
+        4,   16,    0,    9,    0,    0,    8,    0,    0,   12,
+       14,   11,    1,   10,    0,   15,   15,   15,   15,    0,
+        0,    0,   10,    0,    0,   13,   15,   15,   15,    0,
+       11,    0,   10,   15,    7,    5,    6,    0
+    \}
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_a7ffc8c947830757dd87ad202a6823edd}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-act@{yy\-\_\-act}}
+\index{yy\-\_\-act@{yy\-\_\-act}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-act}]{\setlength{\rightskip}{0pt plus 5cm}register {\bf int} yy\-\_\-act}}\label{llsphinxjson_8c_a7ffc8c947830757dd87ad202a6823edd}
+\hypertarget{llsphinxjson_8c_adb212fe86b65e71711cac2df32fbf73a}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-base@{yy\-\_\-base}}
+\index{yy\-\_\-base@{yy\-\_\-base}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf yyconst} {\bf flex\-\_\-int16\-\_\-t} yy\-\_\-base\mbox{[}63\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_adb212fe86b65e71711cac2df32fbf73a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \{   0,
+        0,    0,  121,  120,  122,  125,   30,   32,   32,  125,
+       31,   30,  110,  110,   31,    0,   34,   27,   31,  125,
+      125,   41,   43,  125,   47,   45,  125,   49,   52,  108,
+       59,   61,  125,   63,   71,    0,   40,   60,   59,   77,
+       78,   81,   80,   90,  100,   99,   74,   79,   82,   98,
+       97,   96,   53,   88,    0,    0,    0,  125,  112,  114,
+      116,   60
+    \}
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_a71cf769ce518e8687bf8999b278c65f4}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-bp@{yy\-\_\-bp}}
+\index{yy\-\_\-bp@{yy\-\_\-bp}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-bp}]{\setlength{\rightskip}{0pt plus 5cm}register char $\ast$ yy\-\_\-bp}}\label{llsphinxjson_8c_a71cf769ce518e8687bf8999b278c65f4}
+\hypertarget{llsphinxjson_8c_aedafdaee1beb3dacadd381caa5d9d0d5}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-chk@{yy\-\_\-chk}}
+\index{yy\-\_\-chk@{yy\-\_\-chk}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-chk}]{\setlength{\rightskip}{0pt plus 5cm}{\bf yyconst} {\bf flex\-\_\-int16\-\_\-t} yy\-\_\-chk\mbox{[}157\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_aedafdaee1beb3dacadd381caa5d9d0d5}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \{   0,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    7,    7,    8,    8,    9,   11,   12,   12,   15,
+       12,   15,   22,   22,   15,   17,   23,   18,   19,   25,
+       26,   28,   11,    9,   15,   37,   17,   18,   19,   29,
+       29,   62,   29,   53,   23,   37,   26,   31,   25,   31,
+       28,   32,   31,   34,   32,   38,   34,   35,   35,   39,
+       40,   35,   31,   41,   32,   38,   34,   42,   42,   39,
+       43,   42,   47,   43,   48,   49,   44,   44,   40,   41,
+
+       44,   54,   47,   43,   48,   49,   52,   51,   50,   46,
+       45,   54,   59,   59,   60,   60,   61,   61,   30,   14,
+       13,    5,    4,    3,   58,   58,   58,   58,   58,   58,
+       58,   58,   58,   58,   58,   58,   58,   58,   58,   58,
+       58,   58,   58,   58,   58,   58,   58,   58,   58,   58,
+       58,   58,   58,   58,   58,   58
+    \}
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_ab98daea4ec951dfa966b5ca0f8133d38}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-cp@{yy\-\_\-cp}}
+\index{yy\-\_\-cp@{yy\-\_\-cp}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-cp}]{\setlength{\rightskip}{0pt plus 5cm}register char$\ast$ yy\-\_\-cp}}\label{llsphinxjson_8c_ab98daea4ec951dfa966b5ca0f8133d38}
+\hypertarget{llsphinxjson_8c_abcefb20c54ce0f92452cfbb9cf657670}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!Y\-Y\-\_\-\-D\-E\-C\-L@{Y\-Y\-\_\-\-D\-E\-C\-L}}
+\index{Y\-Y\-\_\-\-D\-E\-C\-L@{Y\-Y\-\_\-\-D\-E\-C\-L}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{Y\-Y\-\_\-\-D\-E\-C\-L}]{\setlength{\rightskip}{0pt plus 5cm}Y\-Y\-\_\-\-D\-E\-C\-L}}\label{llsphinxjson_8c_abcefb20c54ce0f92452cfbb9cf657670}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+\{
+    \textcolor{keyword}{register} \hyperlink{llsphinxjson_8c_a9ba7c416f135b0f0c1f4addded4616b5}{yy\_state\_type} yy\_current\_state
+\end{DoxyCode}
+The main scanner function which does all the work. \hypertarget{llsphinxjson_8c_a0ac194106c822fdb69c51ef37009c084}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-def@{yy\-\_\-def}}
+\index{yy\-\_\-def@{yy\-\_\-def}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-def}]{\setlength{\rightskip}{0pt plus 5cm}{\bf yyconst} {\bf flex\-\_\-int16\-\_\-t} yy\-\_\-def\mbox{[}63\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_a0ac194106c822fdb69c51ef37009c084}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \{   0,
+       58,    1,   59,   59,   58,   58,   58,   58,   60,   58,
+       61,   58,   58,   58,   58,   62,   62,   62,   62,   58,
+       58,   58,   60,   58,   60,   61,   58,   61,   58,   58,
+       58,   58,   58,   58,   58,   62,   62,   62,   62,   60,
+       61,   58,   58,   58,   58,   58,   62,   62,   62,   58,
+       58,   58,   58,   62,   62,   62,   62,    0,   58,   58,
+       58,   58
+    \}
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_ac6dfb8e0e130a1bb6e9cdd547a1f4344}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-ec@{yy\-\_\-ec}}
+\index{yy\-\_\-ec@{yy\-\_\-ec}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-ec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf yyconst} {\bf flex\-\_\-int32\-\_\-t} yy\-\_\-ec\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_ac6dfb8e0e130a1bb6e9cdd547a1f4344}
+\hypertarget{llsphinxjson_8c_a2f961d0d74a237e4d97f107fc2b637f1}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-meta@{yy\-\_\-meta}}
+\index{yy\-\_\-meta@{yy\-\_\-meta}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-meta}]{\setlength{\rightskip}{0pt plus 5cm}{\bf yyconst} {\bf flex\-\_\-int32\-\_\-t} yy\-\_\-meta\mbox{[}32\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_a2f961d0d74a237e4d97f107fc2b637f1}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \{   0,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    1,    2,    2,    2,    2,    2,    2,    2,    2,
+        2
+    \}
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_ae25aca7f41c94dc6917c65c8d5590d30}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yy\-\_\-nxt@{yy\-\_\-nxt}}
+\index{yy\-\_\-nxt@{yy\-\_\-nxt}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yy\-\_\-nxt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf yyconst} {\bf flex\-\_\-int16\-\_\-t} yy\-\_\-nxt\mbox{[}157\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{llsphinxjson_8c_ae25aca7f41c94dc6917c65c8d5590d30}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \{   0,
+        6,    7,    8,    9,   10,   11,    6,   12,   13,   14,
+       15,   16,   16,   16,   17,   16,   18,   16,   16,   19,
+       16,    6,   16,   16,   17,   16,   18,   16,   16,   19,
+       16,   22,   22,   22,   22,   24,   27,   29,   30,   34,
+       31,   31,   22,   22,   35,   37,   24,   38,   39,   58,
+       27,   58,   28,   25,   35,   47,   37,   38,   39,   29,
+       30,   36,   31,   53,   25,   47,   28,   34,   40,   31,
+       41,   32,   35,   43,   42,   48,   44,   45,   45,   49,
+       24,   46,   35,   27,   42,   48,   44,   50,   50,   49,
+       43,   51,   54,   44,   55,   56,   52,   52,   25,   28,
+
+       53,   57,   54,   44,   55,   56,   53,   51,   51,   46,
+       46,   57,   20,   20,   23,   23,   26,   26,   32,   33,
+       32,   58,   21,   21,    5,   58,   58,   58,   58,   58,
+       58,   58,   58,   58,   58,   58,   58,   58,   58,   58,
+       58,   58,   58,   58,   58,   58,   58,   58,   58,   58,
+       58,   58,   58,   58,   58,   58
+    \}
+\end{DoxyCode}
+\hypertarget{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}{\index{llsphinxjson.\-c@{llsphinxjson.\-c}!yyg@{yyg}}
+\index{yyg@{yyg}!llsphinxjson.c@{llsphinxjson.\-c}}
+\subsubsection[{yyg}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf yyguts\-\_\-t}$\ast$ yyg = (struct {\bf yyguts\-\_\-t}$\ast$)yyscanner}}\label{llsphinxjson_8c_a7507d83bcbf665441b28b684525ae59c}

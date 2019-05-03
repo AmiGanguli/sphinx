@@ -1,0 +1,150 @@
+\hypertarget{classCSphKilllist}{\section{C\-Sph\-Killlist Class Reference}
+\label{classCSphKilllist}\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}}
+}
+Inheritance diagram for C\-Sph\-Killlist\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphKilllist}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphKilllist_a9844863ca94a8c8a6ffc31a3fb55b9d3}{C\-Sph\-Killlist} ()
+\item 
+virtual \hyperlink{classCSphKilllist_afb48b2a68cb6f4255933b31e62c6eb2b}{$\sim$\-C\-Sph\-Killlist} ()
+\item 
+void \hyperlink{classCSphKilllist_ae983b1951e8380fa9fcc4d0cb83b3234}{Flush} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ \&d\-Klist)
+\item 
+void \hyperlink{classCSphKilllist_a7ed08570f30cc7c4ea7930175863d15e}{Add} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $\ast$p\-Docs, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+bool \hyperlink{classCSphKilllist_a17f76beeacd4a776427e57461f08f1c3}{Exists} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Doc)
+\item 
+void \hyperlink{classCSphKilllist_af8fb1e66cbf7d943dfe964f652033b2d}{Reset} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $\ast$p\-Docs, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{classCSphKilllist_ac5158514bd693f77f22533010776f663}{Load\-From\-File} (const char $\ast$s\-Filename)
+\item 
+void \hyperlink{classCSphKilllist_ab2e821e2cd02c12372be7b0812f0279a}{Save\-To\-File} (const char $\ast$s\-Filename)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCSphKilllist_aeb0ec2a7b4629bd3a8622954526ba6a4}{Naked\-Copy} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ \&d\-Klist)
+\item 
+void \hyperlink{classCSphKilllist_aac1fa835b8501d7895a0061735127d4a}{Naked\-Flush} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $\ast$p\-Docs, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ \hyperlink{classCSphKilllist_aa8e0fcba4bd5f62efe486f8106f80ec9}{m\-\_\-d\-Large\-Klist}
+\item 
+\hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}$<$ bool, \\*
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t}, \hyperlink{structIdentityHash__fn}{Identity\-Hash\-\_\-fn}, \\*
+\hyperlink{classCSphKilllist_a8ff68f7e3cf4fd9b7d78647315babf45}{M\-A\-X\-\_\-\-S\-M\-A\-L\-L\-\_\-\-S\-I\-Z\-E} $>$ \hyperlink{classCSphKilllist_ae3de84a11c91101fd41bb66ca913d34a}{m\-\_\-h\-Small\-Klist}
+\item 
+C\-Sph\-Rwlock \hyperlink{classCSphKilllist_a44684cc99c018e1365eec9b070d42731}{m\-\_\-t\-Lock}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphKilllist_a8ff68f7e3cf4fd9b7d78647315babf45}{M\-A\-X\-\_\-\-S\-M\-A\-L\-L\-\_\-\-S\-I\-Z\-E} = 512
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphKilllist_a9844863ca94a8c8a6ffc31a3fb55b9d3}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!C\-Sph\-Killlist@{C\-Sph\-Killlist}}
+\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{C\-Sph\-Killlist}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Killlist\-::\-C\-Sph\-Killlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphKilllist_a9844863ca94a8c8a6ffc31a3fb55b9d3}
+\hypertarget{classCSphKilllist_afb48b2a68cb6f4255933b31e62c6eb2b}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!$\sim$\-C\-Sph\-Killlist@{$\sim$\-C\-Sph\-Killlist}}
+\index{$\sim$\-C\-Sph\-Killlist@{$\sim$\-C\-Sph\-Killlist}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{$\sim$\-C\-Sph\-Killlist}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\-Sph\-Killlist\-::$\sim$\-C\-Sph\-Killlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphKilllist_afb48b2a68cb6f4255933b31e62c6eb2b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphKilllist_a7ed08570f30cc7c4ea7930175863d15e}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!Add@{Add}}
+\index{Add@{Add}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Killlist\-::\-Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t} $\ast$}]{p\-Docs, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphKilllist_a7ed08570f30cc7c4ea7930175863d15e}
+\hypertarget{classCSphKilllist_a17f76beeacd4a776427e57461f08f1c3}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!Exists@{Exists}}
+\index{Exists@{Exists}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Killlist\-::\-Exists (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Doc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphKilllist_a17f76beeacd4a776427e57461f08f1c3}
+\hypertarget{classCSphKilllist_ae983b1951e8380fa9fcc4d0cb83b3234}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!Flush@{Flush}}
+\index{Flush@{Flush}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{Flush}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Killlist\-::\-Flush (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Sph\-Doc\-I\-D\-\_\-t} $>$ \&}]{d\-Klist}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphKilllist_ae983b1951e8380fa9fcc4d0cb83b3234}
+\hypertarget{classCSphKilllist_ac5158514bd693f77f22533010776f663}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!Load\-From\-File@{Load\-From\-File}}
+\index{Load\-From\-File@{Load\-From\-File}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{Load\-From\-File}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Killlist\-::\-Load\-From\-File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Filename}
+\end{DoxyParamCaption}
+)}}\label{classCSphKilllist_ac5158514bd693f77f22533010776f663}
+\hypertarget{classCSphKilllist_aeb0ec2a7b4629bd3a8622954526ba6a4}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!Naked\-Copy@{Naked\-Copy}}
+\index{Naked\-Copy@{Naked\-Copy}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{Naked\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Killlist\-::\-Naked\-Copy (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Sph\-Doc\-I\-D\-\_\-t} $>$ \&}]{d\-Klist}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphKilllist_aeb0ec2a7b4629bd3a8622954526ba6a4}
+\hypertarget{classCSphKilllist_aac1fa835b8501d7895a0061735127d4a}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!Naked\-Flush@{Naked\-Flush}}
+\index{Naked\-Flush@{Naked\-Flush}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{Naked\-Flush}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Killlist\-::\-Naked\-Flush (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t} $\ast$}]{p\-Docs, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphKilllist_aac1fa835b8501d7895a0061735127d4a}
+\hypertarget{classCSphKilllist_af8fb1e66cbf7d943dfe964f652033b2d}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Killlist\-::\-Reset (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t} $\ast$}]{p\-Docs, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphKilllist_af8fb1e66cbf7d943dfe964f652033b2d}
+\hypertarget{classCSphKilllist_ab2e821e2cd02c12372be7b0812f0279a}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!Save\-To\-File@{Save\-To\-File}}
+\index{Save\-To\-File@{Save\-To\-File}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{Save\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Killlist\-::\-Save\-To\-File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Filename}
+\end{DoxyParamCaption}
+)}}\label{classCSphKilllist_ab2e821e2cd02c12372be7b0812f0279a}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphKilllist_aa8e0fcba4bd5f62efe486f8106f80ec9}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!m\-\_\-d\-Large\-Klist@{m\-\_\-d\-Large\-Klist}}
+\index{m\-\_\-d\-Large\-Klist@{m\-\_\-d\-Large\-Klist}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{m\-\_\-d\-Large\-Klist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Sph\-Doc\-I\-D\-\_\-t}$>$ C\-Sph\-Killlist\-::m\-\_\-d\-Large\-Klist\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphKilllist_aa8e0fcba4bd5f62efe486f8106f80ec9}
+\hypertarget{classCSphKilllist_ae3de84a11c91101fd41bb66ca913d34a}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!m\-\_\-h\-Small\-Klist@{m\-\_\-h\-Small\-Klist}}
+\index{m\-\_\-h\-Small\-Klist@{m\-\_\-h\-Small\-Klist}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{m\-\_\-h\-Small\-Klist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Ordered\-Hash}$<$ bool, {\bf Sph\-Doc\-I\-D\-\_\-t}, {\bf Identity\-Hash\-\_\-fn}, {\bf M\-A\-X\-\_\-\-S\-M\-A\-L\-L\-\_\-\-S\-I\-Z\-E} $>$ C\-Sph\-Killlist\-::m\-\_\-h\-Small\-Klist\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphKilllist_ae3de84a11c91101fd41bb66ca913d34a}
+\hypertarget{classCSphKilllist_a44684cc99c018e1365eec9b070d42731}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!m\-\_\-t\-Lock@{m\-\_\-t\-Lock}}
+\index{m\-\_\-t\-Lock@{m\-\_\-t\-Lock}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{m\-\_\-t\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Rwlock C\-Sph\-Killlist\-::m\-\_\-t\-Lock\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphKilllist_a44684cc99c018e1365eec9b070d42731}
+\hypertarget{classCSphKilllist_a8ff68f7e3cf4fd9b7d78647315babf45}{\index{C\-Sph\-Killlist@{C\-Sph\-Killlist}!M\-A\-X\-\_\-\-S\-M\-A\-L\-L\-\_\-\-S\-I\-Z\-E@{M\-A\-X\-\_\-\-S\-M\-A\-L\-L\-\_\-\-S\-I\-Z\-E}}
+\index{M\-A\-X\-\_\-\-S\-M\-A\-L\-L\-\_\-\-S\-I\-Z\-E@{M\-A\-X\-\_\-\-S\-M\-A\-L\-L\-\_\-\-S\-I\-Z\-E}!CSphKilllist@{C\-Sph\-Killlist}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-M\-A\-L\-L\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Killlist\-::\-M\-A\-X\-\_\-\-S\-M\-A\-L\-L\-\_\-\-S\-I\-Z\-E = 512\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphKilllist_a8ff68f7e3cf4fd9b7d78647315babf45}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxrt_8cpp}{sphinxrt.\-cpp}\end{DoxyCompactItemize}

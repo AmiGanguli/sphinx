@@ -1,0 +1,229 @@
+\hypertarget{classExtractExcerpts__c}{\section{Extract\-Excerpts\-\_\-c Class Reference}
+\label{classExtractExcerpts__c}\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}}
+}
+
+
+functor that extracts passages for further highlighting  
+
+
+Inheritance diagram for Extract\-Excerpts\-\_\-c\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classExtractExcerpts__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExtractExcerpts__c_a52457952280f31ca553f5a97fb16feb9}{Extract\-Excerpts\-\_\-c} (\hyperlink{classSnippetsDocIndex__c}{Snippets\-Doc\-Index\-\_\-c} \&t\-Container, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, const \hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t} \&t\-Query, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings\-Index, const char $\ast$s\-Doc, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Doc\-Len, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structSphHitMark__t}{Sph\-Hit\-Mark\-\_\-t} $>$ $\ast$d\-Hits, \hyperlink{classCacheStreamer__c}{Cache\-Streamer\-\_\-c} $\ast$p\-Token\-Container)
+\item 
+bool \hyperlink{classExtractExcerpts__c_afdc36b5d8a7e7117d2e9519f121c9e70}{On\-Token} (const \hyperlink{structTokenInfo__t}{Token\-Info\-\_\-t} \&t\-Tok, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} $>$ \&d\-Tokens, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ $\ast$)
+\item 
+void \hyperlink{classExtractExcerpts__c_a71ecb0fad5dc0977e084d684830cdfe6}{On\-Finish} ()
+\item 
+bool \hyperlink{classExtractExcerpts__c_a613089ffd79cd73f0c1721e39a802b6c}{On\-Overlap} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Boundary)
+\item 
+void \hyperlink{classExtractExcerpts__c_adcd9fedd2b42fe052b6c00bce687ae72}{On\-Skip\-Html} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+void \hyperlink{classExtractExcerpts__c_af34d7e004ad9e1b1ef8b3c8a8364ab1c}{On\-S\-P\-Z} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} i\-S\-P\-Z, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Position, const char $\ast$sz\-Zone, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Zone)
+\item 
+void \hyperlink{classExtractExcerpts__c_a368ee590a2cb8eb884fc1982ab88dc98}{On\-Tail} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Boundary)
+\item 
+const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ $\ast$ \hyperlink{classExtractExcerpts__c_a0957a9045509b64507cda111bc5c252d}{Get\-Hitlist} (const \hyperlink{structXQKeyword__t}{X\-Q\-Keyword\-\_\-t} \&) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classExtractExcerpts__c_a393a79623916648bf0ca6d34fcd784e0}{State\-\_\-e} \{ \hyperlink{classExtractExcerpts__c_a393a79623916648bf0ca6d34fcd784e0a0b659f2440727a7c40dab440038b5750}{S\-T\-A\-T\-E\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-E\-T\-U\-P}, 
+\hyperlink{classExtractExcerpts__c_a393a79623916648bf0ca6d34fcd784e0a92b7a3f8508374c10ef41f60c8e0a072}{S\-T\-A\-T\-E\-\_\-\-A\-D\-D\-\_\-\-W\-O\-R\-D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classExtractExcerpts__c_a792b9f685a670bc9d69c60dc568e6835}{Add\-Spaces} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Boundary)
+\item 
+void \hyperlink{classExtractExcerpts__c_ad76d3a5d1a61c4cc752fa6e3803a6af4}{Weight\-And\-Submit} ()
+\item 
+void \hyperlink{classExtractExcerpts__c_a77ed7b06c08d4ac35839d27d36879061}{Update\-Gaps} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Max\-Words)
+\item 
+void \hyperlink{classExtractExcerpts__c_a7fb2fb557292f41e8d49122ee43c4825}{Flush\-Passage} ()
+\item 
+void \hyperlink{classExtractExcerpts__c_a14fd60bb7c9079e35ff38afaf731dd51}{Update\-Top\-Passages} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Qword, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Weight)
+\item 
+void \hyperlink{classExtractExcerpts__c_afdd24bee82448e6599bdb810b6ebd2e2}{Shrink\-Span\-Head} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExtractExcerpts__c_a393a79623916648bf0ca6d34fcd784e0}{State\-\_\-e} \hyperlink{classExtractExcerpts__c_a6dfa8c0bc046ebf1774573188a862a6f}{m\-\_\-e\-State}
+\item 
+bool \hyperlink{classExtractExcerpts__c_adf9f1c150c58be2501dcd00e71c5166c}{m\-\_\-b\-Qwords\-Changed}
+\item 
+bool \hyperlink{classExtractExcerpts__c_ac710a1fe715fd94dd7fe56211c0e0a0a}{m\-\_\-b\-Append\-Sentence\-End}
+\item 
+\hyperlink{classCacheStreamer__c}{Cache\-Streamer\-\_\-c} $\ast$ \hyperlink{classExtractExcerpts__c_a827c5a10b3ba16498b2d239487d5cc95}{m\-\_\-p\-Token\-Container}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+functor that extracts passages for further highlighting 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classExtractExcerpts__c_a393a79623916648bf0ca6d34fcd784e0}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!State\-\_\-e@{State\-\_\-e}}
+\index{State\-\_\-e@{State\-\_\-e}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{State\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Extract\-Excerpts\-\_\-c\-::\-State\-\_\-e}\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtractExcerpts__c_a393a79623916648bf0ca6d34fcd784e0}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-T\-A\-T\-E\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-E\-T\-U\-P@{S\-T\-A\-T\-E\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-E\-T\-U\-P}!Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}}\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!S\-T\-A\-T\-E\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-E\-T\-U\-P@{S\-T\-A\-T\-E\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-E\-T\-U\-P}}\item[{\em 
+\hypertarget{classExtractExcerpts__c_a393a79623916648bf0ca6d34fcd784e0a0b659f2440727a7c40dab440038b5750}{S\-T\-A\-T\-E\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-E\-T\-U\-P}\label{classExtractExcerpts__c_a393a79623916648bf0ca6d34fcd784e0a0b659f2440727a7c40dab440038b5750}
+}]\index{S\-T\-A\-T\-E\-\_\-\-A\-D\-D\-\_\-\-W\-O\-R\-D@{S\-T\-A\-T\-E\-\_\-\-A\-D\-D\-\_\-\-W\-O\-R\-D}!Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}}\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!S\-T\-A\-T\-E\-\_\-\-A\-D\-D\-\_\-\-W\-O\-R\-D@{S\-T\-A\-T\-E\-\_\-\-A\-D\-D\-\_\-\-W\-O\-R\-D}}\item[{\em 
+\hypertarget{classExtractExcerpts__c_a393a79623916648bf0ca6d34fcd784e0a92b7a3f8508374c10ef41f60c8e0a072}{S\-T\-A\-T\-E\-\_\-\-A\-D\-D\-\_\-\-W\-O\-R\-D}\label{classExtractExcerpts__c_a393a79623916648bf0ca6d34fcd784e0a92b7a3f8508374c10ef41f60c8e0a072}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExtractExcerpts__c_a52457952280f31ca553f5a97fb16feb9}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}}
+\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{Extract\-Excerpts\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Extract\-Excerpts\-\_\-c\-::\-Extract\-Excerpts\-\_\-c (
+\begin{DoxyParamCaption}
+\item[{{\bf Snippets\-Doc\-Index\-\_\-c} \&}]{t\-Container, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{const {\bf Excerpt\-Query\-\_\-t} \&}]{t\-Query, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings\-Index, }
+\item[{const char $\ast$}]{s\-Doc, }
+\item[{{\bf int}}]{i\-Doc\-Len, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Hit\-Mark\-\_\-t} $>$ $\ast$}]{d\-Hits, }
+\item[{{\bf Cache\-Streamer\-\_\-c} $\ast$}]{p\-Token\-Container}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExtractExcerpts__c_a52457952280f31ca553f5a97fb16feb9}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExtractExcerpts__c_a792b9f685a670bc9d69c60dc568e6835}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!Add\-Spaces@{Add\-Spaces}}
+\index{Add\-Spaces@{Add\-Spaces}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{Add\-Spaces}]{\setlength{\rightskip}{0pt plus 5cm}void Extract\-Excerpts\-\_\-c\-::\-Add\-Spaces (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Boundary}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classExtractExcerpts__c_a792b9f685a670bc9d69c60dc568e6835}
+\hypertarget{classExtractExcerpts__c_a7fb2fb557292f41e8d49122ee43c4825}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!Flush\-Passage@{Flush\-Passage}}
+\index{Flush\-Passage@{Flush\-Passage}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{Flush\-Passage}]{\setlength{\rightskip}{0pt plus 5cm}void Extract\-Excerpts\-\_\-c\-::\-Flush\-Passage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classExtractExcerpts__c_a7fb2fb557292f41e8d49122ee43c4825}
+\hypertarget{classExtractExcerpts__c_a0957a9045509b64507cda111bc5c252d}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!Get\-Hitlist@{Get\-Hitlist}}
+\index{Get\-Hitlist@{Get\-Hitlist}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{Get\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Vector}$<${\bf int}$>$$\ast$ Extract\-Excerpts\-\_\-c\-::\-Get\-Hitlist (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Keyword\-\_\-t} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExtractExcerpts__c_a0957a9045509b64507cda111bc5c252d}
+\hypertarget{classExtractExcerpts__c_a71ecb0fad5dc0977e084d684830cdfe6}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!On\-Finish@{On\-Finish}}
+\index{On\-Finish@{On\-Finish}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{On\-Finish}]{\setlength{\rightskip}{0pt plus 5cm}void Extract\-Excerpts\-\_\-c\-::\-On\-Finish (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExtractExcerpts__c_a71ecb0fad5dc0977e084d684830cdfe6}
+\hypertarget{classExtractExcerpts__c_a613089ffd79cd73f0c1721e39a802b6c}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!On\-Overlap@{On\-Overlap}}
+\index{On\-Overlap@{On\-Overlap}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{On\-Overlap}]{\setlength{\rightskip}{0pt plus 5cm}bool Extract\-Excerpts\-\_\-c\-::\-On\-Overlap (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf int}}]{i\-Boundary}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExtractExcerpts__c_a613089ffd79cd73f0c1721e39a802b6c}
+\hypertarget{classExtractExcerpts__c_adcd9fedd2b42fe052b6c00bce687ae72}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!On\-Skip\-Html@{On\-Skip\-Html}}
+\index{On\-Skip\-Html@{On\-Skip\-Html}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{On\-Skip\-Html}]{\setlength{\rightskip}{0pt plus 5cm}void Extract\-Excerpts\-\_\-c\-::\-On\-Skip\-Html (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExtractExcerpts__c_adcd9fedd2b42fe052b6c00bce687ae72}
+\hypertarget{classExtractExcerpts__c_af34d7e004ad9e1b1ef8b3c8a8364ab1c}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!On\-S\-P\-Z@{On\-S\-P\-Z}}
+\index{On\-S\-P\-Z@{On\-S\-P\-Z}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{On\-S\-P\-Z}]{\setlength{\rightskip}{0pt plus 5cm}void Extract\-Excerpts\-\_\-c\-::\-On\-S\-P\-Z (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{i\-S\-P\-Z, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Position, }
+\item[{const char $\ast$}]{sz\-Zone, }
+\item[{{\bf int}}]{i\-Zone}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExtractExcerpts__c_af34d7e004ad9e1b1ef8b3c8a8364ab1c}
+\hypertarget{classExtractExcerpts__c_a368ee590a2cb8eb884fc1982ab88dc98}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!On\-Tail@{On\-Tail}}
+\index{On\-Tail@{On\-Tail}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{On\-Tail}]{\setlength{\rightskip}{0pt plus 5cm}void Extract\-Excerpts\-\_\-c\-::\-On\-Tail (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf int}}]{i\-Boundary}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExtractExcerpts__c_a368ee590a2cb8eb884fc1982ab88dc98}
+\hypertarget{classExtractExcerpts__c_afdc36b5d8a7e7117d2e9519f121c9e70}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!On\-Token@{On\-Token}}
+\index{On\-Token@{On\-Token}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{On\-Token}]{\setlength{\rightskip}{0pt plus 5cm}bool Extract\-Excerpts\-\_\-c\-::\-On\-Token (
+\begin{DoxyParamCaption}
+\item[{const {\bf Token\-Info\-\_\-t} \&}]{t\-Tok, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Word\-I\-D\-\_\-t} $>$ \&}]{d\-Tokens, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf int} $>$ $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classExtractExcerpts__c_afdc36b5d8a7e7117d2e9519f121c9e70}
+\hypertarget{classExtractExcerpts__c_afdd24bee82448e6599bdb810b6ebd2e2}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!Shrink\-Span\-Head@{Shrink\-Span\-Head}}
+\index{Shrink\-Span\-Head@{Shrink\-Span\-Head}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{Shrink\-Span\-Head}]{\setlength{\rightskip}{0pt plus 5cm}void Extract\-Excerpts\-\_\-c\-::\-Shrink\-Span\-Head (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classExtractExcerpts__c_afdd24bee82448e6599bdb810b6ebd2e2}
+\hypertarget{classExtractExcerpts__c_a77ed7b06c08d4ac35839d27d36879061}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!Update\-Gaps@{Update\-Gaps}}
+\index{Update\-Gaps@{Update\-Gaps}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{Update\-Gaps}]{\setlength{\rightskip}{0pt plus 5cm}void Extract\-Excerpts\-\_\-c\-::\-Update\-Gaps (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Max\-Words}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classExtractExcerpts__c_a77ed7b06c08d4ac35839d27d36879061}
+\hypertarget{classExtractExcerpts__c_a14fd60bb7c9079e35ff38afaf731dd51}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!Update\-Top\-Passages@{Update\-Top\-Passages}}
+\index{Update\-Top\-Passages@{Update\-Top\-Passages}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{Update\-Top\-Passages}]{\setlength{\rightskip}{0pt plus 5cm}void Extract\-Excerpts\-\_\-c\-::\-Update\-Top\-Passages (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Qword, }
+\item[{{\bf int}}]{i\-Weight}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classExtractExcerpts__c_a14fd60bb7c9079e35ff38afaf731dd51}
+\hypertarget{classExtractExcerpts__c_ad76d3a5d1a61c4cc752fa6e3803a6af4}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!Weight\-And\-Submit@{Weight\-And\-Submit}}
+\index{Weight\-And\-Submit@{Weight\-And\-Submit}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{Weight\-And\-Submit}]{\setlength{\rightskip}{0pt plus 5cm}void Extract\-Excerpts\-\_\-c\-::\-Weight\-And\-Submit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classExtractExcerpts__c_ad76d3a5d1a61c4cc752fa6e3803a6af4}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExtractExcerpts__c_ac710a1fe715fd94dd7fe56211c0e0a0a}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!m\-\_\-b\-Append\-Sentence\-End@{m\-\_\-b\-Append\-Sentence\-End}}
+\index{m\-\_\-b\-Append\-Sentence\-End@{m\-\_\-b\-Append\-Sentence\-End}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{m\-\_\-b\-Append\-Sentence\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool Extract\-Excerpts\-\_\-c\-::m\-\_\-b\-Append\-Sentence\-End\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtractExcerpts__c_ac710a1fe715fd94dd7fe56211c0e0a0a}
+\hypertarget{classExtractExcerpts__c_adf9f1c150c58be2501dcd00e71c5166c}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!m\-\_\-b\-Qwords\-Changed@{m\-\_\-b\-Qwords\-Changed}}
+\index{m\-\_\-b\-Qwords\-Changed@{m\-\_\-b\-Qwords\-Changed}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{m\-\_\-b\-Qwords\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}bool Extract\-Excerpts\-\_\-c\-::m\-\_\-b\-Qwords\-Changed\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtractExcerpts__c_adf9f1c150c58be2501dcd00e71c5166c}
+\hypertarget{classExtractExcerpts__c_a6dfa8c0bc046ebf1774573188a862a6f}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!m\-\_\-e\-State@{m\-\_\-e\-State}}
+\index{m\-\_\-e\-State@{m\-\_\-e\-State}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{m\-\_\-e\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State\-\_\-e} Extract\-Excerpts\-\_\-c\-::m\-\_\-e\-State\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtractExcerpts__c_a6dfa8c0bc046ebf1774573188a862a6f}
+\hypertarget{classExtractExcerpts__c_a827c5a10b3ba16498b2d239487d5cc95}{\index{Extract\-Excerpts\-\_\-c@{Extract\-Excerpts\-\_\-c}!m\-\_\-p\-Token\-Container@{m\-\_\-p\-Token\-Container}}
+\index{m\-\_\-p\-Token\-Container@{m\-\_\-p\-Token\-Container}!ExtractExcerpts_c@{Extract\-Excerpts\-\_\-c}}
+\subsubsection[{m\-\_\-p\-Token\-Container}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cache\-Streamer\-\_\-c}$\ast$ Extract\-Excerpts\-\_\-c\-::m\-\_\-p\-Token\-Container\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtractExcerpts__c_a827c5a10b3ba16498b2d239487d5cc95}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexcerpt_8cpp}{sphinxexcerpt.\-cpp}\end{DoxyCompactItemize}

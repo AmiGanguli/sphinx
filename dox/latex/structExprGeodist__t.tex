@@ -1,0 +1,130 @@
+\hypertarget{structExprGeodist__t}{\section{Expr\-Geodist\-\_\-t Struct Reference}
+\label{structExprGeodist__t}\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}}
+}
+Inheritance diagram for Expr\-Geodist\-\_\-t\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{structExprGeodist__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structExprGeodist__t_a1e441e2a450ef0187d23872353441211}{Expr\-Geodist\-\_\-t} ()
+\item 
+bool \hyperlink{structExprGeodist__t_ae6939c067032af5de223c4b54d1728d3}{Setup} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$p\-Query, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Schema, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{structExprGeodist__t_ade1804d01a3bfe8e75416dcaaf5ef0c8}{Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\begin{DoxyCompactList}\small\item\em evaluate this expression for that match \end{DoxyCompactList}\item 
+virtual void \hyperlink{structExprGeodist__t_afaa7e006cb73f698ef8ec7efa2f449c8}{Command} (\hyperlink{sphinxexpr_8h_a30be184fb07bd80c271360fc6094c818}{E\-Sph\-Expr\-Command} e\-Cmd, void $\ast$p\-Arg)
+\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{structExprGeodist__t_a9577b169fb6583cafb28a246bbe81e58}{Get\-Hash} (const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Prev\-Hash, bool \&b\-Disable)
+\begin{DoxyCompactList}\small\item\em get expression hash (for query cache) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{structExprGeodist__t_a8c95879b79675607d6f47725d3835d91}{m\-\_\-t\-Geo\-Lat\-Loc}
+\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{structExprGeodist__t_ae5a5bfc0a235ce4bb66ba57d229ec36e}{m\-\_\-t\-Geo\-Long\-Loc}
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{structExprGeodist__t_a5929f6daa0280159ed08c4d1796ddcbf}{m\-\_\-f\-Geo\-Anchor\-Lat}
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{structExprGeodist__t_a09a9bd27c36ab043c1b210e63d5ba455}{m\-\_\-f\-Geo\-Anchor\-Long}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprGeodist__t_a3d1427c8f36806f41307e84c94f4404e}{m\-\_\-i\-Lat}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structExprGeodist__t_a452e6fb49656f306c355dd5daf94b3d5}{m\-\_\-i\-Lon}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structExprGeodist__t_a1e441e2a450ef0187d23872353441211}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}}
+\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{Expr\-Geodist\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Expr\-Geodist\-\_\-t\-::\-Expr\-Geodist\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structExprGeodist__t_a1e441e2a450ef0187d23872353441211}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structExprGeodist__t_afaa7e006cb73f698ef8ec7efa2f449c8}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!Command@{Command}}
+\index{Command@{Command}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}void Expr\-Geodist\-\_\-t\-::\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Expr\-Command}}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structExprGeodist__t_afaa7e006cb73f698ef8ec7efa2f449c8}
+run a tree wide action (1st arg is an action, 2nd is its parameter) usually sets something into \hyperlink{structISphExpr}{I\-Sph\-Expr} like string pool or gets something from it like dependent columns 
+
+Reimplemented from \hyperlink{structISphExpr_ac716d362dc2f834bb645c8c7cdde5c81}{I\-Sph\-Expr}.
+
+\hypertarget{structExprGeodist__t_ade1804d01a3bfe8e75416dcaaf5ef0c8}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!Eval@{Eval}}
+\index{Eval@{Eval}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{Eval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} Expr\-Geodist\-\_\-t\-::\-Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structExprGeodist__t_ade1804d01a3bfe8e75416dcaaf5ef0c8}
+
+
+evaluate this expression for that match 
+
+
+
+Implements \hyperlink{structISphExpr_a63f27958b0f1664ca8fe7d201e4d9f8c}{I\-Sph\-Expr}.
+
+\hypertarget{structExprGeodist__t_a9577b169fb6583cafb28a246bbe81e58}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!Get\-Hash@{Get\-Hash}}
+\index{Get\-Hash@{Get\-Hash}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} Expr\-Geodist\-\_\-t\-::\-Get\-Hash (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Prev\-Hash, }
+\item[{bool \&}]{b\-Disable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structExprGeodist__t_a9577b169fb6583cafb28a246bbe81e58}
+
+
+get expression hash (for query cache) 
+
+
+
+Implements \hyperlink{structISphExpr_aabc4c95ac6f190f6ebb15fabd7e54b08}{I\-Sph\-Expr}.
+
+\hypertarget{structExprGeodist__t_ae6939c067032af5de223c4b54d1728d3}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!Setup@{Setup}}
+\index{Setup@{Setup}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}bool Expr\-Geodist\-\_\-t\-::\-Setup (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{p\-Query, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{structExprGeodist__t_ae6939c067032af5de223c4b54d1728d3}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structExprGeodist__t_a5929f6daa0280159ed08c4d1796ddcbf}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!m\-\_\-f\-Geo\-Anchor\-Lat@{m\-\_\-f\-Geo\-Anchor\-Lat}}
+\index{m\-\_\-f\-Geo\-Anchor\-Lat@{m\-\_\-f\-Geo\-Anchor\-Lat}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{m\-\_\-f\-Geo\-Anchor\-Lat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} Expr\-Geodist\-\_\-t\-::m\-\_\-f\-Geo\-Anchor\-Lat\hspace{0.3cm}{\ttfamily [protected]}}}\label{structExprGeodist__t_a5929f6daa0280159ed08c4d1796ddcbf}
+\hypertarget{structExprGeodist__t_a09a9bd27c36ab043c1b210e63d5ba455}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!m\-\_\-f\-Geo\-Anchor\-Long@{m\-\_\-f\-Geo\-Anchor\-Long}}
+\index{m\-\_\-f\-Geo\-Anchor\-Long@{m\-\_\-f\-Geo\-Anchor\-Long}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{m\-\_\-f\-Geo\-Anchor\-Long}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} Expr\-Geodist\-\_\-t\-::m\-\_\-f\-Geo\-Anchor\-Long\hspace{0.3cm}{\ttfamily [protected]}}}\label{structExprGeodist__t_a09a9bd27c36ab043c1b210e63d5ba455}
+\hypertarget{structExprGeodist__t_a3d1427c8f36806f41307e84c94f4404e}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!m\-\_\-i\-Lat@{m\-\_\-i\-Lat}}
+\index{m\-\_\-i\-Lat@{m\-\_\-i\-Lat}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Lat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Geodist\-\_\-t\-::m\-\_\-i\-Lat\hspace{0.3cm}{\ttfamily [protected]}}}\label{structExprGeodist__t_a3d1427c8f36806f41307e84c94f4404e}
+\hypertarget{structExprGeodist__t_a452e6fb49656f306c355dd5daf94b3d5}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!m\-\_\-i\-Lon@{m\-\_\-i\-Lon}}
+\index{m\-\_\-i\-Lon@{m\-\_\-i\-Lon}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Lon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Expr\-Geodist\-\_\-t\-::m\-\_\-i\-Lon\hspace{0.3cm}{\ttfamily [protected]}}}\label{structExprGeodist__t_a452e6fb49656f306c355dd5daf94b3d5}
+\hypertarget{structExprGeodist__t_a8c95879b79675607d6f47725d3835d91}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!m\-\_\-t\-Geo\-Lat\-Loc@{m\-\_\-t\-Geo\-Lat\-Loc}}
+\index{m\-\_\-t\-Geo\-Lat\-Loc@{m\-\_\-t\-Geo\-Lat\-Loc}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{m\-\_\-t\-Geo\-Lat\-Loc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Attr\-Locator} Expr\-Geodist\-\_\-t\-::m\-\_\-t\-Geo\-Lat\-Loc\hspace{0.3cm}{\ttfamily [protected]}}}\label{structExprGeodist__t_a8c95879b79675607d6f47725d3835d91}
+\hypertarget{structExprGeodist__t_ae5a5bfc0a235ce4bb66ba57d229ec36e}{\index{Expr\-Geodist\-\_\-t@{Expr\-Geodist\-\_\-t}!m\-\_\-t\-Geo\-Long\-Loc@{m\-\_\-t\-Geo\-Long\-Loc}}
+\index{m\-\_\-t\-Geo\-Long\-Loc@{m\-\_\-t\-Geo\-Long\-Loc}!ExprGeodist_t@{Expr\-Geodist\-\_\-t}}
+\subsubsection[{m\-\_\-t\-Geo\-Long\-Loc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Attr\-Locator} Expr\-Geodist\-\_\-t\-::m\-\_\-t\-Geo\-Long\-Loc\hspace{0.3cm}{\ttfamily [protected]}}}\label{structExprGeodist__t_ae5a5bfc0a235ce4bb66ba57d229ec36e}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

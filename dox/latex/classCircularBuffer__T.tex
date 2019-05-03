@@ -1,0 +1,164 @@
+\hypertarget{classCircularBuffer__T}{\section{Circular\-Buffer\-\_\-\-T$<$ T $>$ Class Template Reference}
+\label{classCircularBuffer__T}\index{Circular\-Buffer\-\_\-\-T$<$ T $>$@{Circular\-Buffer\-\_\-\-T$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCircularBuffer__T_a618a605388c29adeead2d4975d0db306}{Circular\-Buffer\-\_\-\-T} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Initial\-Size=256, \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} f\-Grow\-Factor=1.\-5f)
+\item 
+\hyperlink{classCircularBuffer__T_a97b9093813a582b008a8f98067b5280a}{Circular\-Buffer\-\_\-\-T} (\hyperlink{classCircularBuffer__T}{Circular\-Buffer\-\_\-\-T} \&\&rhs)
+\item 
+\hyperlink{classCircularBuffer__T}{Circular\-Buffer\-\_\-\-T} \& \hyperlink{classCircularBuffer__T_a0a4665383249defdb4400ed2bf52d0cb}{operator=} (\hyperlink{classCircularBuffer__T}{Circular\-Buffer\-\_\-\-T} \&\&rhs)
+\item 
+void \hyperlink{classCircularBuffer__T_a3b8781c93e6b0785a4751a5c0937a793}{Push} (const T \&t\-Value)
+\item 
+T \& \hyperlink{classCircularBuffer__T_add6f2e83e09e533703f4bb4acf380031}{Push} ()
+\item 
+T \& \hyperlink{classCircularBuffer__T_a8acaed573ae8fe8c7d17f43c9a8a7af6}{Pop} ()
+\item 
+const T \& \hyperlink{classCircularBuffer__T_a5b76fb221739631239df2e43fb0fb50d}{Last} () const 
+\item 
+T \& \hyperlink{classCircularBuffer__T_a9669cbc608ef3b19e72eb18911fb6d27}{Last} ()
+\item 
+const T \& \hyperlink{classCircularBuffer__T_a42e0fe9209ac1471eeed66286007fc06}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index) const 
+\item 
+bool \hyperlink{classCircularBuffer__T_a4cf2e38d7d28b27c6a83bec1c3f12150}{Is\-Empty} () const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCircularBuffer__T_a6fde8d3a8bc07b0f7fb0e8e2370796a4}{Get\-Length} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCircularBuffer__T_a71c2726ac0164d9e99828e40bcf4cb34}{Resize} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-New\-Length)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ T $>$ \hyperlink{classCircularBuffer__T_aba31032d942b7729b5858059ec1944f9}{m\-\_\-d\-Values}
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classCircularBuffer__T_a776a128440e5794ef368e6ad89dd2473}{m\-\_\-f\-Grow\-Factor}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCircularBuffer__T_a65e4e634ec7e8a6cbfb02d7b1bee077b}{m\-\_\-i\-Head}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCircularBuffer__T_a01b0f2612f9439feb11eac53b5089a03}{m\-\_\-i\-Tail}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCircularBuffer__T_a23ff90b0382161cdd8e9e9e530a38e1b}{m\-\_\-i\-Used}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCircularBuffer__T_a618a605388c29adeead2d4975d0db306}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}}
+\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{Circular\-Buffer\-\_\-\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::{\bf Circular\-Buffer\-\_\-\-T} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Initial\-Size = {\ttfamily 256}, }
+\item[{{\bf float}}]{f\-Grow\-Factor = {\ttfamily 1.5f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCircularBuffer__T_a618a605388c29adeead2d4975d0db306}
+\hypertarget{classCircularBuffer__T_a97b9093813a582b008a8f98067b5280a}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}}
+\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{Circular\-Buffer\-\_\-\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::{\bf Circular\-Buffer\-\_\-\-T} (
+\begin{DoxyParamCaption}
+\item[{{\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$ \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircularBuffer__T_a97b9093813a582b008a8f98067b5280a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCircularBuffer__T_a6fde8d3a8bc07b0f7fb0e8e2370796a4}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!Get\-Length@{Get\-Length}}
+\index{Get\-Length@{Get\-Length}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{Get\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf int} {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::Get\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircularBuffer__T_a6fde8d3a8bc07b0f7fb0e8e2370796a4}
+\hypertarget{classCircularBuffer__T_a4cf2e38d7d28b27c6a83bec1c3f12150}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::Is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircularBuffer__T_a4cf2e38d7d28b27c6a83bec1c3f12150}
+\hypertarget{classCircularBuffer__T_a5b76fb221739631239df2e43fb0fb50d}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!Last@{Last}}
+\index{Last@{Last}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{Last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::Last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircularBuffer__T_a5b76fb221739631239df2e43fb0fb50d}
+\hypertarget{classCircularBuffer__T_a9669cbc608ef3b19e72eb18911fb6d27}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!Last@{Last}}
+\index{Last@{Last}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{Last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T\& {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::Last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircularBuffer__T_a9669cbc608ef3b19e72eb18911fb6d27}
+\hypertarget{classCircularBuffer__T_a0a4665383249defdb4400ed2bf52d0cb}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!operator=@{operator=}}
+\index{operator=@{operator=}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Circular\-Buffer\-\_\-\-T}\& {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$ \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircularBuffer__T_a0a4665383249defdb4400ed2bf52d0cb}
+\hypertarget{classCircularBuffer__T_a42e0fe9209ac1471eeed66286007fc06}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircularBuffer__T_a42e0fe9209ac1471eeed66286007fc06}
+\hypertarget{classCircularBuffer__T_a8acaed573ae8fe8c7d17f43c9a8a7af6}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!Pop@{Pop}}
+\index{Pop@{Pop}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{Pop}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T\& {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircularBuffer__T_a8acaed573ae8fe8c7d17f43c9a8a7af6}
+\hypertarget{classCircularBuffer__T_a3b8781c93e6b0785a4751a5c0937a793}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!Push@{Push}}
+\index{Push@{Push}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::Push (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{t\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircularBuffer__T_a3b8781c93e6b0785a4751a5c0937a793}
+\hypertarget{classCircularBuffer__T_add6f2e83e09e533703f4bb4acf380031}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!Push@{Push}}
+\index{Push@{Push}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T\& {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::Push (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircularBuffer__T_add6f2e83e09e533703f4bb4acf380031}
+\hypertarget{classCircularBuffer__T_a71c2726ac0164d9e99828e40bcf4cb34}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!Resize@{Resize}}
+\index{Resize@{Resize}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{Resize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::Resize (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-New\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCircularBuffer__T_a71c2726ac0164d9e99828e40bcf4cb34}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCircularBuffer__T_aba31032d942b7729b5858059ec1944f9}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!m\-\_\-d\-Values@{m\-\_\-d\-Values}}
+\index{m\-\_\-d\-Values@{m\-\_\-d\-Values}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{m\-\_\-d\-Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Fixed\-Vector}$<$T$>$ {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::m\-\_\-d\-Values\hspace{0.3cm}{\ttfamily [private]}}}\label{classCircularBuffer__T_aba31032d942b7729b5858059ec1944f9}
+\hypertarget{classCircularBuffer__T_a776a128440e5794ef368e6ad89dd2473}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!m\-\_\-f\-Grow\-Factor@{m\-\_\-f\-Grow\-Factor}}
+\index{m\-\_\-f\-Grow\-Factor@{m\-\_\-f\-Grow\-Factor}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{m\-\_\-f\-Grow\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf float} {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::m\-\_\-f\-Grow\-Factor\hspace{0.3cm}{\ttfamily [private]}}}\label{classCircularBuffer__T_a776a128440e5794ef368e6ad89dd2473}
+\hypertarget{classCircularBuffer__T_a65e4e634ec7e8a6cbfb02d7b1bee077b}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!m\-\_\-i\-Head@{m\-\_\-i\-Head}}
+\index{m\-\_\-i\-Head@{m\-\_\-i\-Head}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{m\-\_\-i\-Head}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf int} {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::m\-\_\-i\-Head\hspace{0.3cm}{\ttfamily [private]}}}\label{classCircularBuffer__T_a65e4e634ec7e8a6cbfb02d7b1bee077b}
+\hypertarget{classCircularBuffer__T_a01b0f2612f9439feb11eac53b5089a03}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!m\-\_\-i\-Tail@{m\-\_\-i\-Tail}}
+\index{m\-\_\-i\-Tail@{m\-\_\-i\-Tail}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{m\-\_\-i\-Tail}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf int} {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::m\-\_\-i\-Tail\hspace{0.3cm}{\ttfamily [private]}}}\label{classCircularBuffer__T_a01b0f2612f9439feb11eac53b5089a03}
+\hypertarget{classCircularBuffer__T_a23ff90b0382161cdd8e9e9e530a38e1b}{\index{Circular\-Buffer\-\_\-\-T@{Circular\-Buffer\-\_\-\-T}!m\-\_\-i\-Used@{m\-\_\-i\-Used}}
+\index{m\-\_\-i\-Used@{m\-\_\-i\-Used}!CircularBuffer_T@{Circular\-Buffer\-\_\-\-T}}
+\subsubsection[{m\-\_\-i\-Used}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf int} {\bf Circular\-Buffer\-\_\-\-T}$<$ T $>$\-::m\-\_\-i\-Used\hspace{0.3cm}{\ttfamily [private]}}}\label{classCircularBuffer__T_a23ff90b0382161cdd8e9e9e530a38e1b}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

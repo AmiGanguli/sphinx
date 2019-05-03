@@ -1,0 +1,641 @@
+\hypertarget{classCSphDict}{\section{C\-Sph\-Dict Class Reference}
+\label{classCSphDict}\index{C\-Sph\-Dict@{C\-Sph\-Dict}}
+}
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Dict\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.931937cm]{classCSphDict}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classCSphDict_a4715cb36be1d9d21ca3f89f80385e099}{$\sim$\-C\-Sph\-Dict} ()
+\begin{DoxyCompactList}\small\item\em virtualizing dtor \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDict_a3965d691a170a6fec615cb0c048c9186}{Get\-Word\-I\-D} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)=0
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDict_a66f4ee1853964dbcb77724c9462c6dbf}{Get\-Word\-I\-D\-With\-Markers} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDict_a51955c35adb9310b1267fd702518302a}{Get\-Word\-I\-D\-Non\-Stemmed} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDict_a0c4412079431495b1000a486d6fa3c6f}{Get\-Word\-I\-D} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, bool b\-Filter\-Stops)=0
+\item 
+virtual void \hyperlink{classCSphDict_ac5a6e1607403c264e139b58cce21fb64}{Apply\-Stemmers} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$) const 
+\begin{DoxyCompactList}\small\item\em apply stemmers to the given word \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_a99464288e57c4c5519b481d9086a5a63}{Load\-Stopwords} (const char $\ast$s\-Files, const \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer)=0
+\begin{DoxyCompactList}\small\item\em load stopwords from given files \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_a0aecfbeb767d0e8eec971603aa5e0136}{Load\-Stopwords} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} $>$ \&d\-Stopwords)=0
+\begin{DoxyCompactList}\small\item\em load stopwords from an array \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_a91dc4477648a1e6f3b1f8cb791822732}{Write\-Stopwords} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&t\-Writer)=0
+\begin{DoxyCompactList}\small\item\em write stopwords to a file \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDict_a3e744fe20a3e62efe16d594658b8006a}{Load\-Wordforms} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&, const \hyperlink{structCSphEmbeddedFiles}{C\-Sph\-Embedded\-Files} $\ast$p\-Embedded, const \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, const char $\ast$s\-Index)=0
+\begin{DoxyCompactList}\small\item\em load wordforms from a given list of files \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_af490ff06f000637b7cb3ce5660ac1cba}{Write\-Wordforms} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&t\-Writer)=0
+\begin{DoxyCompactList}\small\item\em write wordforms to a file \end{DoxyCompactList}\item 
+virtual const \hyperlink{structCSphWordforms}{C\-Sph\-Wordforms} $\ast$ \hyperlink{classCSphDict_a5a403d37f97adec3fab06dc988b8be0d}{Get\-Wordforms} ()
+\begin{DoxyCompactList}\small\item\em get wordforms \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_a149569307cc87ce3c801e6b4477a14be}{Disable\-Wordforms} ()
+\begin{DoxyCompactList}\small\item\em disable wordforms processing \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDict_af8a17c66efd05af6ab7f6c0c29412c5f}{Set\-Morphology} (const char $\ast$sz\-Morph, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Message)=0
+\item 
+virtual bool \hyperlink{classCSphDict_aec46465ef1e809c1bb33abee9bf12f51}{Has\-Morphology} () const 
+\begin{DoxyCompactList}\small\item\em are there any morphological processors? \end{DoxyCompactList}\item 
+virtual const \hyperlink{structCSphString}{C\-Sph\-String} \& \hyperlink{classCSphDict_a3858b945e5724a9cb6b36f37d494b9f8}{Get\-Morph\-Data\-Fingerprint} () const 
+\begin{DoxyCompactList}\small\item\em morphological data fingerprint (lemmatizer filenames and crc32s) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_acbac5e4241f151135ab8fc6264b21259}{Setup} (const \hyperlink{structCSphDictSettings}{C\-Sph\-Dict\-Settings} \&t\-Settings)=0
+\begin{DoxyCompactList}\small\item\em setup dictionary using settings \end{DoxyCompactList}\item 
+virtual const \hyperlink{structCSphDictSettings}{C\-Sph\-Dict\-Settings} \& \hyperlink{classCSphDict_a1dd5e14a1021dea4cdc6c3c9edad6fad}{Get\-Settings} () const =0
+\begin{DoxyCompactList}\small\item\em get dictionary settings \end{DoxyCompactList}\item 
+virtual const \hyperlink{classCSphVector}{C\-Sph\-Vector}\\*
+$<$ \hyperlink{structCSphSavedFile}{C\-Sph\-Saved\-File} $>$ \& \hyperlink{classCSphDict_a258f01ba4c99167f37450575438c6c18}{Get\-Stopwords\-File\-Infos} ()=0
+\begin{DoxyCompactList}\small\item\em stopwords file infos \end{DoxyCompactList}\item 
+virtual const \hyperlink{classCSphVector}{C\-Sph\-Vector}\\*
+$<$ \hyperlink{structCSphSavedFile}{C\-Sph\-Saved\-File} $>$ \& \hyperlink{classCSphDict_accd7f795018b4f9f6b2b4c2e1115da13}{Get\-Wordforms\-File\-Infos} ()=0
+\begin{DoxyCompactList}\small\item\em wordforms file infos \end{DoxyCompactList}\item 
+virtual const \\*
+\hyperlink{structCSphMultiformContainer}{C\-Sph\-Multiform\-Container} $\ast$ \hyperlink{classCSphDict_aa279b03d0a4b1a2ddc79c56887f48bcb}{Get\-Multi\-Wordforms} () const =0
+\begin{DoxyCompactList}\small\item\em get multiwordforms \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDict_a5237fd1aa3eceb2fc3422d057af4986d}{Is\-Stop\-Word} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word) const =0
+\begin{DoxyCompactList}\small\item\em check what given word is stopword \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_a51bb25ba9d3d4e38bb0136b894fce2c3}{Hitblock\-Begin} ()
+\begin{DoxyCompactList}\small\item\em enable actually collecting keywords (needed for stopwords/wordforms loading) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_acc7efa292e426ed72b13eef361634c5f}{Hitblock\-Patch} (\hyperlink{structCSphWordHit}{C\-Sph\-Word\-Hit} $\ast$, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}) const 
+\begin{DoxyCompactList}\small\item\em callback to let dictionary do hit block post-\/processing \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classCSphDict_ae89d2ea5d0d6882c25aa654f2ff3bc62}{Hitblock\-Get\-Keyword} (\hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t})
+\begin{DoxyCompactList}\small\item\em resolve temporary hit block wide wordid (!) back to keyword \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDict_a0c4ed1170b00eb24cf0fe54c3cf75f0c}{Hitblock\-Get\-Mem\-Use} ()
+\begin{DoxyCompactList}\small\item\em check current memory usage \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_ac85eac348bb27851c0c00c8fc659e5b7}{Hitblock\-Reset} ()
+\begin{DoxyCompactList}\small\item\em hit block dismissed \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_acbc0935ebde0242f8dd6daffaf72beb3}{Dict\-Begin} (\hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \&t\-Temp\-Dict, \hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \&t\-Dict, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Dict\-Limit, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle)
+\begin{DoxyCompactList}\small\item\em begin creating dictionary file, setup any needed internal structures \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_a82a05e4d4e075166fc1f1942af9b2a61}{Dict\-Entry} (const \hyperlink{structCSphDictEntry}{C\-Sph\-Dict\-Entry} \&t\-Entry)
+\begin{DoxyCompactList}\small\item\em add next keyword entry to final dict \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDict_ac5e6881b6942c3ba27d5d8d9d8505a2f}{Dict\-End\-Entries} (\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} i\-Doclist\-Offset)
+\begin{DoxyCompactList}\small\item\em flush last entry \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDict_a33ed99b9fd18682b5d6dfd72a05608f6}{Dict\-End} (\hyperlink{structDictHeader__t}{Dict\-Header\-\_\-t} $\ast$p\-Header, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Mem\-Limit, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle)
+\begin{DoxyCompactList}\small\item\em end indexing, store dictionary and checkpoints \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDict_a1ee34dbab570265eff0c018f0e120e7b}{Dict\-Is\-Error} () const 
+\begin{DoxyCompactList}\small\item\em check whether there were any errors during indexing \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDict_a9fbcd5d7fe55a3a00183e21422344a35}{Has\-State} () const 
+\begin{DoxyCompactList}\small\item\em check whether this dict is stateful (when it comes to lookups) \end{DoxyCompactList}\item 
+virtual \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$ \hyperlink{classCSphDict_a6a62ee7e43eee213e864cba69d6b266c}{Clone} () const 
+\begin{DoxyCompactList}\small\item\em make a clone \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classCSphDict_ac91671a22afcbbb028f37bd100e006b0}{Get\-Settings\-F\-N\-V} () const =0
+\begin{DoxyCompactList}\small\item\em get settings hash \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDict_ab5cf35eecf21bb5b01c449c8d6a6e334}{S\-T\-\_\-\-O\-K} = 0
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDict_abdab06fefa18a50d30e06d19f995c7c5}{S\-T\-\_\-\-E\-R\-R\-O\-R} = 1
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDict_ae9298ace35a55c894fb5b0ff8bbc9d07}{S\-T\-\_\-\-W\-A\-R\-N\-I\-N\-G} = 2
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphDict_a35380dc83e22ed66a29f47f351f8da82}{m\-\_\-s\-Morph\-Fingerprint}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphDict_a4715cb36be1d9d21ca3f89f80385e099}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!$\sim$\-C\-Sph\-Dict@{$\sim$\-C\-Sph\-Dict}}
+\index{$\sim$\-C\-Sph\-Dict@{$\sim$\-C\-Sph\-Dict}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{$\sim$\-C\-Sph\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\-Sph\-Dict\-::$\sim$\-C\-Sph\-Dict (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_a4715cb36be1d9d21ca3f89f80385e099}
+
+
+virtualizing dtor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphDict_ac5a6e1607403c264e139b58cce21fb64}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Apply\-Stemmers@{Apply\-Stemmers}}
+\index{Apply\-Stemmers@{Apply\-Stemmers}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Apply\-Stemmers}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-::\-Apply\-Stemmers (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_ac5a6e1607403c264e139b58cce21fb64}
+
+
+apply stemmers to the given word 
+
+
+
+Reimplemented in \hyperlink{structCSphTemplateDictTraits_ac2f6cfc920f4155c2dda23001abdf5a6}{C\-Sph\-Template\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_a6a62ee7e43eee213e864cba69d6b266c}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Clone@{Clone}}
+\index{Clone@{Clone}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf C\-Sph\-Dict}$\ast$ C\-Sph\-Dict\-::\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_a6a62ee7e43eee213e864cba69d6b266c}
+
+
+make a clone 
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_ad1381761be17ac2293827e85e6cf1c79}{C\-Sph\-Dict\-Keywords}, \hyperlink{structCSphDictTemplate_aea69a1dc73dc3cf588b7c4c371a3825e}{C\-Sph\-Dict\-Template}, \hyperlink{structCSphDictCRC_add334a7b16667fe906a821e651344f38}{C\-Sph\-Dict\-C\-R\-C$<$ C\-R\-C32\-D\-I\-C\-T $>$}, and \hyperlink{structCSphDictCRC_add334a7b16667fe906a821e651344f38}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}.
+
+\hypertarget{classCSphDict_acbc0935ebde0242f8dd6daffaf72beb3}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Dict\-Begin@{Dict\-Begin}}
+\index{Dict\-Begin@{Dict\-Begin}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Dict\-Begin}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Dict\-::\-Dict\-Begin (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Autofile} \&}]{t\-Temp\-Dict, }
+\item[{{\bf C\-Sph\-Autofile} \&}]{t\-Dict, }
+\item[{{\bf int}}]{i\-Dict\-Limit, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDict_acbc0935ebde0242f8dd6daffaf72beb3}
+
+
+begin creating dictionary file, setup any needed internal structures 
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_a2863f18e86bfd28265a1d5c66a5486c6}{C\-Sph\-Dict\-Keywords}, and \hyperlink{structCSphDiskDictTraits_a5d01013f2caeddf6e0f76574bfd78ffb}{C\-Sph\-Disk\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_a33ed99b9fd18682b5d6dfd72a05608f6}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Dict\-End@{Dict\-End}}
+\index{Dict\-End@{Dict\-End}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Dict\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-::\-Dict\-End (
+\begin{DoxyParamCaption}
+\item[{{\bf Dict\-Header\-\_\-t} $\ast$}]{p\-Header, }
+\item[{{\bf int}}]{i\-Mem\-Limit, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDict_a33ed99b9fd18682b5d6dfd72a05608f6}
+
+
+end indexing, store dictionary and checkpoints 
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_a272cd1168c539a4b5ce44dd23ba0870b}{C\-Sph\-Dict\-Keywords}, and \hyperlink{structCSphDiskDictTraits_af64e1b88d97caf649a6503310a513755}{C\-Sph\-Disk\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_ac5e6881b6942c3ba27d5d8d9d8505a2f}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Dict\-End\-Entries@{Dict\-End\-Entries}}
+\index{Dict\-End\-Entries@{Dict\-End\-Entries}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Dict\-End\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Dict\-::\-Dict\-End\-Entries (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Offset\-\_\-t}}]{i\-Doclist\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDict_ac5e6881b6942c3ba27d5d8d9d8505a2f}
+
+
+flush last entry 
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_af5d107a4490a398e614bd927530db10b}{C\-Sph\-Dict\-Keywords}, and \hyperlink{structCSphDiskDictTraits_a9bca14c2361261d754784c2164965b9f}{C\-Sph\-Disk\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_a82a05e4d4e075166fc1f1942af9b2a61}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Dict\-Entry@{Dict\-Entry}}
+\index{Dict\-Entry@{Dict\-Entry}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Dict\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Dict\-::\-Dict\-Entry (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Dict\-Entry} \&}]{t\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDict_a82a05e4d4e075166fc1f1942af9b2a61}
+
+
+add next keyword entry to final dict 
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_a0d41d8455da3ab719d31e4273bec3d06}{C\-Sph\-Dict\-Keywords}, and \hyperlink{structCSphDiskDictTraits_ad5b4cf8ac8c387aa2e56e3122efce9b0}{C\-Sph\-Disk\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_a1ee34dbab570265eff0c018f0e120e7b}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Dict\-Is\-Error@{Dict\-Is\-Error}}
+\index{Dict\-Is\-Error@{Dict\-Is\-Error}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Dict\-Is\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-::\-Dict\-Is\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDict_a1ee34dbab570265eff0c018f0e120e7b}
+
+
+check whether there were any errors during indexing 
+
+
+
+Reimplemented in \hyperlink{structCSphDiskDictTraits_ae23188eb87d7bc16a37f33688a1083bc}{C\-Sph\-Disk\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_a149569307cc87ce3c801e6b4477a14be}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Disable\-Wordforms@{Disable\-Wordforms}}
+\index{Disable\-Wordforms@{Disable\-Wordforms}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Disable\-Wordforms}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-::\-Disable\-Wordforms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_a149569307cc87ce3c801e6b4477a14be}
+
+
+disable wordforms processing 
+
+
+
+Reimplemented in \hyperlink{structCSphTemplateDictTraits_afd00bf3597f5a1b962d5ef8de5d864c1}{C\-Sph\-Template\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_a3858b945e5724a9cb6b36f37d494b9f8}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Morph\-Data\-Fingerprint@{Get\-Morph\-Data\-Fingerprint}}
+\index{Get\-Morph\-Data\-Fingerprint@{Get\-Morph\-Data\-Fingerprint}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Morph\-Data\-Fingerprint}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-String}\& C\-Sph\-Dict\-::\-Get\-Morph\-Data\-Fingerprint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_a3858b945e5724a9cb6b36f37d494b9f8}
+
+
+morphological data fingerprint (lemmatizer filenames and crc32s) 
+
+\hypertarget{classCSphDict_aa279b03d0a4b1a2ddc79c56887f48bcb}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Multi\-Wordforms@{Get\-Multi\-Wordforms}}
+\index{Get\-Multi\-Wordforms@{Get\-Multi\-Wordforms}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Multi\-Wordforms}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-Multiform\-Container}$\ast$ C\-Sph\-Dict\-::\-Get\-Multi\-Wordforms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_aa279b03d0a4b1a2ddc79c56887f48bcb}
+
+
+get multiwordforms 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_aabf7d5fb0de296bb8d63746bc2721818}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_a3860234aa9a0bf582a287eb736dad6d7}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_af4df5aa56d3c33357197aab1172d91dd}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_aeb61ceb2e9e5f67a4af70caa0c6f58b3}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_a1dd5e14a1021dea4cdc6c3c9edad6fad}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Settings@{Get\-Settings}}
+\index{Get\-Settings@{Get\-Settings}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-Dict\-Settings}\& C\-Sph\-Dict\-::\-Get\-Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_a1dd5e14a1021dea4cdc6c3c9edad6fad}
+
+
+get dictionary settings 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_ab17872be1411e0b55ab57ea9cc0217e9}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_ac40ff17a540d130a38299a1e4666162e}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_a41c4aae28b3f61066f05e26aa467c35f}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_ae6167a0ff8855e713c37a2d3aa07c744}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_ac91671a22afcbbb028f37bd100e006b0}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Settings\-F\-N\-V@{Get\-Settings\-F\-N\-V}}
+\index{Get\-Settings\-F\-N\-V@{Get\-Settings\-F\-N\-V}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Settings\-F\-N\-V}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf uint64\-\_\-t} C\-Sph\-Dict\-::\-Get\-Settings\-F\-N\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_ac91671a22afcbbb028f37bd100e006b0}
+
+
+get settings hash 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_a8c35d3eaec9558bfd8926e23100d6afe}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_ab60f925802d6bc198b4d80e6addf7415}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_aa090d1ed30b3f9f830b7e66fc1883c0f}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_a13b49efcb468d7977399bf36d25a9517}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_a258f01ba4c99167f37450575438c6c18}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Stopwords\-File\-Infos@{Get\-Stopwords\-File\-Infos}}
+\index{Get\-Stopwords\-File\-Infos@{Get\-Stopwords\-File\-Infos}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Stopwords\-File\-Infos}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Saved\-File}$>$\& C\-Sph\-Dict\-::\-Get\-Stopwords\-File\-Infos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_a258f01ba4c99167f37450575438c6c18}
+
+
+stopwords file infos 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_a9264e747ae01ed222824d84051ea6a3b}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_aaf753af354d7f4c9ad940bb8b279e78f}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_a4e8e974d8f1a1392daa753e6831c20c5}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_acd10d2cdfcb80deee00aa320941bcc85}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_a5a403d37f97adec3fab06dc988b8be0d}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Wordforms@{Get\-Wordforms}}
+\index{Get\-Wordforms@{Get\-Wordforms}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Wordforms}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-Wordforms}$\ast$ C\-Sph\-Dict\-::\-Get\-Wordforms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_a5a403d37f97adec3fab06dc988b8be0d}
+
+
+get wordforms 
+
+
+
+Reimplemented in \hyperlink{structCSphTemplateDictTraits_a602209418bfb225c101108206bff87f2}{C\-Sph\-Template\-Dict\-Traits}, and \hyperlink{classCSphDictTraits_ad8ca05d264526c65134b603c7591b8d0}{C\-Sph\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_accd7f795018b4f9f6b2b4c2e1115da13}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Wordforms\-File\-Infos@{Get\-Wordforms\-File\-Infos}}
+\index{Get\-Wordforms\-File\-Infos@{Get\-Wordforms\-File\-Infos}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Wordforms\-File\-Infos}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-Vector}$<${\bf C\-Sph\-Saved\-File}$>$\& C\-Sph\-Dict\-::\-Get\-Wordforms\-File\-Infos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_accd7f795018b4f9f6b2b4c2e1115da13}
+
+
+wordforms file infos 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_a6f790224a4e7b98528e6405d9d8c4f51}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_a0ec8d48b25e69e974c74052ba9693c29}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_ad80fb5c315d6c2224310188e13cdeb95}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_a9c99272dde1980d1ebfa46b40036be1e}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_a3965d691a170a6fec615cb0c048c9186}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_a3965d691a170a6fec615cb0c048c9186}
+Get word I\-D by word, \char`\"{}text\char`\"{} version may apply stemming and modify word inplace modified word may become bigger than the original one, so make sure you have enough space in buffer which is pointer by p\-Word a general practice is to use char\mbox{[}3$\ast$\-S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N+4\mbox{]} as a buffer returns 0 for stopwords 
+
+Implemented in \hyperlink{classCRtDictKeywords_a85bdaaab5baf95ae8a3fabc4c106416f}{C\-Rt\-Dict\-Keywords}, \hyperlink{classCSphDictKeywords_a3173925482330c0c3d62ccffe7877d2f}{C\-Sph\-Dict\-Keywords}, \hyperlink{structCSphDictTemplate_ad5b7b1a178e136fa090e2d5b39ec31d1}{C\-Sph\-Dict\-Template}, \hyperlink{structCSphDictCRC_a97c1d147deae64ab7727339dcc048bc9}{C\-Sph\-Dict\-C\-R\-C$<$ C\-R\-C32\-D\-I\-C\-T $>$}, \hyperlink{structCSphDictCRC_a97c1d147deae64ab7727339dcc048bc9}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}, \hyperlink{classCSphDictExact_a3b9adf28ae5fa1dae004b3261df2e240}{C\-Sph\-Dict\-Exact}, \hyperlink{classCSphDictStarV8_a643a9893a9c825a807ba0892ccf52fd8}{C\-Sph\-Dict\-Star\-V8}, \hyperlink{classCSphDictStar_a4e569ff418bf922b57c9c22c30d40bc9}{C\-Sph\-Dict\-Star}, \hyperlink{classCSphDictTraits_a234301b970b1fb86fa60f0fe2d1020dc}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_a998d9bcac7c3d0da70cd3fbbb01ce121}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_a0c4412079431495b1000a486d6fa3c6f}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{bool}]{b\-Filter\-Stops}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_a0c4412079431495b1000a486d6fa3c6f}
+get word I\-D by word, \char`\"{}binary\char`\"{} version only used with prefix/infix indexing must not apply stemming and modify anything filters stopwords on request 
+
+Implemented in \hyperlink{classCRtDictKeywords_ab351b606c55539e02830ed07273489aa}{C\-Rt\-Dict\-Keywords}, \hyperlink{classCSphDictKeywords_a91a7939068a6c22af7ac86decb124e6b}{C\-Sph\-Dict\-Keywords}, \hyperlink{structCSphDictTemplate_a2c7cdf00730fdb30bff84c553a2579ee}{C\-Sph\-Dict\-Template}, \hyperlink{structCSphDictCRC_a093268cac147fea2ca0b175271b816fb}{C\-Sph\-Dict\-C\-R\-C$<$ C\-R\-C32\-D\-I\-C\-T $>$}, \hyperlink{structCSphDictCRC_a093268cac147fea2ca0b175271b816fb}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}, \hyperlink{classCSphDictTraits_a7aebeea18d68675a1cf0709b050f9e3c}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_aeed0ca13f7e81f69296ab7619306a673}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_a51955c35adb9310b1267fd702518302a}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Word\-I\-D\-Non\-Stemmed@{Get\-Word\-I\-D\-Non\-Stemmed}}
+\index{Get\-Word\-I\-D\-Non\-Stemmed@{Get\-Word\-I\-D\-Non\-Stemmed}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Word\-I\-D\-Non\-Stemmed}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-::\-Get\-Word\-I\-D\-Non\-Stemmed (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_a51955c35adb9310b1267fd702518302a}
+get word I\-D by word, \char`\"{}text\char`\"{} version does N\-O\-T apply stemming accepts words with already prepended M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D returns 0 for stopwords 
+
+Reimplemented in \hyperlink{classCRtDictKeywords_afae093563fee10fd4fde11c8035390ee}{C\-Rt\-Dict\-Keywords}, \hyperlink{classCSphDictKeywords_a80398f482f7dc9a68dbd50f2d0bd9e9c}{C\-Sph\-Dict\-Keywords}, \hyperlink{structCSphDictTemplate_a831f0dbee698ca7ec1151ab7f60d0d92}{C\-Sph\-Dict\-Template}, \hyperlink{structCSphDictCRC_ac7ab018b0eb335c023853044a56a3caa}{C\-Sph\-Dict\-C\-R\-C$<$ C\-R\-C32\-D\-I\-C\-T $>$}, \hyperlink{structCSphDictCRC_ac7ab018b0eb335c023853044a56a3caa}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}, \hyperlink{classCSphDictExact_a1da157b477a11bbc258660e892b934c4}{C\-Sph\-Dict\-Exact}, \hyperlink{classCSphDictStar_af3f3be1b8c5c4cb4fccc39bc595c3778}{C\-Sph\-Dict\-Star}, and \hyperlink{classCSphDictTraits_a68965b76a9bd85fe3a161ee4d904ec4e}{C\-Sph\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_a66f4ee1853964dbcb77724c9462c6dbf}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Get\-Word\-I\-D\-With\-Markers@{Get\-Word\-I\-D\-With\-Markers}}
+\index{Get\-Word\-I\-D\-With\-Markers@{Get\-Word\-I\-D\-With\-Markers}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Get\-Word\-I\-D\-With\-Markers}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-::\-Get\-Word\-I\-D\-With\-Markers (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_a66f4ee1853964dbcb77724c9462c6dbf}
+get word I\-D by word, \char`\"{}text\char`\"{} version may apply stemming and modify word inplace accepts words with already prepended M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D appends M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-T\-A\-I\-L returns 0 for stopwords 
+
+Reimplemented in \hyperlink{classCRtDictKeywords_a8f7960354935b8c721f592d9b6f93078}{C\-Rt\-Dict\-Keywords}, \hyperlink{classCSphDictKeywords_ab532ec08ebb597cc237145f21eaa6b57}{C\-Sph\-Dict\-Keywords}, \hyperlink{structCSphDictTemplate_ac4be906ecdf1836e25fb2c60fe793d57}{C\-Sph\-Dict\-Template}, \hyperlink{structCSphDictCRC_abbbf7feb7b6df84de9eba18135f421e2}{C\-Sph\-Dict\-C\-R\-C$<$ C\-R\-C32\-D\-I\-C\-T $>$}, and \hyperlink{structCSphDictCRC_abbbf7feb7b6df84de9eba18135f421e2}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}.
+
+\hypertarget{classCSphDict_aec46465ef1e809c1bb33abee9bf12f51}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Has\-Morphology@{Has\-Morphology}}
+\index{Has\-Morphology@{Has\-Morphology}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Has\-Morphology}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dict\-::\-Has\-Morphology (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_aec46465ef1e809c1bb33abee9bf12f51}
+
+
+are there any morphological processors? 
+
+
+
+Reimplemented in \hyperlink{structCSphTemplateDictTraits_a25b86d911c1a3f989563ec531e586a68}{C\-Sph\-Template\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_a9fbcd5d7fe55a3a00183e21422344a35}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Has\-State@{Has\-State}}
+\index{Has\-State@{Has\-State}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Has\-State}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dict\-::\-Has\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_a9fbcd5d7fe55a3a00183e21422344a35}
+
+
+check whether this dict is stateful (when it comes to lookups) 
+
+
+
+Reimplemented in \hyperlink{structCSphTemplateDictTraits_a34465bf3f23a0e95a3fd32746f146b07}{C\-Sph\-Template\-Dict\-Traits}.
+
+\hypertarget{classCSphDict_a51bb25ba9d3d4e38bb0136b894fce2c3}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Hitblock\-Begin@{Hitblock\-Begin}}
+\index{Hitblock\-Begin@{Hitblock\-Begin}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Hitblock\-Begin}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-::\-Hitblock\-Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_a51bb25ba9d3d4e38bb0136b894fce2c3}
+
+
+enable actually collecting keywords (needed for stopwords/wordforms loading) 
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_a3d271d74b410172e3ea7f4d2ae0e90c2}{C\-Sph\-Dict\-Keywords}.
+
+\hypertarget{classCSphDict_ae89d2ea5d0d6882c25aa654f2ff3bc62}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Hitblock\-Get\-Keyword@{Hitblock\-Get\-Keyword}}
+\index{Hitblock\-Get\-Keyword@{Hitblock\-Get\-Keyword}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Hitblock\-Get\-Keyword}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ C\-Sph\-Dict\-::\-Hitblock\-Get\-Keyword (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_ae89d2ea5d0d6882c25aa654f2ff3bc62}
+
+
+resolve temporary hit block wide wordid (!) back to keyword 
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_a3afdfa74cf7783cb60c2746f8e5bf6d0}{C\-Sph\-Dict\-Keywords}.
+
+\hypertarget{classCSphDict_a0c4ed1170b00eb24cf0fe54c3cf75f0c}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Hitblock\-Get\-Mem\-Use@{Hitblock\-Get\-Mem\-Use}}
+\index{Hitblock\-Get\-Mem\-Use@{Hitblock\-Get\-Mem\-Use}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Hitblock\-Get\-Mem\-Use}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Dict\-::\-Hitblock\-Get\-Mem\-Use (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_a0c4ed1170b00eb24cf0fe54c3cf75f0c}
+
+
+check current memory usage 
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_a3f0b464042b7d40e19f6f792bdf3692b}{C\-Sph\-Dict\-Keywords}.
+
+\hypertarget{classCSphDict_acc7efa292e426ed72b13eef361634c5f}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Hitblock\-Patch@{Hitblock\-Patch}}
+\index{Hitblock\-Patch@{Hitblock\-Patch}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Hitblock\-Patch}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-::\-Hitblock\-Patch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Word\-Hit} $\ast$}]{, }
+\item[{{\bf int}}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_acc7efa292e426ed72b13eef361634c5f}
+
+
+callback to let dictionary do hit block post-\/processing 
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_a86a00591cb60035a2ed12c1f7f055b8a}{C\-Sph\-Dict\-Keywords}.
+
+\hypertarget{classCSphDict_ac85eac348bb27851c0c00c8fc659e5b7}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Hitblock\-Reset@{Hitblock\-Reset}}
+\index{Hitblock\-Reset@{Hitblock\-Reset}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Hitblock\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-::\-Hitblock\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDict_ac85eac348bb27851c0c00c8fc659e5b7}
+
+
+hit block dismissed 
+
+
+
+Reimplemented in \hyperlink{classCSphDictKeywords_af48256d2e25162807d705700e069dc97}{C\-Sph\-Dict\-Keywords}.
+
+\hypertarget{classCSphDict_a5237fd1aa3eceb2fc3422d057af4986d}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Is\-Stop\-Word@{Is\-Stop\-Word}}
+\index{Is\-Stop\-Word@{Is\-Stop\-Word}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Is\-Stop\-Word}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dict\-::\-Is\-Stop\-Word (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_a5237fd1aa3eceb2fc3422d057af4986d}
+
+
+check what given word is stopword 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_a85f358d4e97bbf2b134a22cdb9fbaf1e}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphDictTemplate_aacf98e88e774cb20df7ec3930f7d6f10}{C\-Sph\-Dict\-Template}, \hyperlink{structCSphDictCRC_a47d9398bc437b551b0e79e557866fe59}{C\-Sph\-Dict\-C\-R\-C$<$ C\-R\-C32\-D\-I\-C\-T $>$}, \hyperlink{structCSphDictCRC_a47d9398bc437b551b0e79e557866fe59}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}, \hyperlink{classCSphDictTraits_a6a88448fd540f8705720f6283d55d40f}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_aa5be3d6e84630cac5461f8b40a640f49}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_a99464288e57c4c5519b481d9086a5a63}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Load\-Stopwords@{Load\-Stopwords}}
+\index{Load\-Stopwords@{Load\-Stopwords}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Load\-Stopwords}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-::\-Load\-Stopwords (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Files, }
+\item[{const {\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_a99464288e57c4c5519b481d9086a5a63}
+
+
+load stopwords from given files 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_aacfcbc008883a5da51f66625a1032e9d}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_a014ada0cbd6392ee74e946879679a013}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_a13bd9a6321c97a4c2d644cf99a7a2181}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_a808d73e57b0532e6a860dc4fbf18db61}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_a0aecfbeb767d0e8eec971603aa5e0136}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Load\-Stopwords@{Load\-Stopwords}}
+\index{Load\-Stopwords@{Load\-Stopwords}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Load\-Stopwords}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-::\-Load\-Stopwords (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Word\-I\-D\-\_\-t} $>$ \&}]{d\-Stopwords}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_a0aecfbeb767d0e8eec971603aa5e0136}
+
+
+load stopwords from an array 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_af0e6ceb78599615ef70417207020b965}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_afb71dbc2f1f0312c84d82e89169fdd8b}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_a335f1657e24b6d44e45cceb514dfcb07}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_a8f9a35477cf204e1c6d49f63bb5fcdbd}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_a3e744fe20a3e62efe16d594658b8006a}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Load\-Wordforms@{Load\-Wordforms}}
+\index{Load\-Wordforms@{Load\-Wordforms}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Load\-Wordforms}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dict\-::\-Load\-Wordforms (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{, }
+\item[{const {\bf C\-Sph\-Embedded\-Files} $\ast$}]{p\-Embedded, }
+\item[{const {\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{const char $\ast$}]{s\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_a3e744fe20a3e62efe16d594658b8006a}
+
+
+load wordforms from a given list of files 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_a033d6c12dc1517eaa6854a634c85d774}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_aa6b7233d177df1c0ad3b1583a95a9110}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_adc8d162550f47fb5b09606294dd480c6}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_a71eb5fdb2bae263735fe959721a761f2}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_af8a17c66efd05af6ab7f6c0c29412c5f}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Set\-Morphology@{Set\-Morphology}}
+\index{Set\-Morphology@{Set\-Morphology}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Set\-Morphology}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Dict\-::\-Set\-Morphology (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{sz\-Morph, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_af8a17c66efd05af6ab7f6c0c29412c5f}
+set morphology returns 0 on success, 1 on hard error, 2 on a warning (see S\-T\-\_\-xxx constants) 
+
+Implemented in \hyperlink{classCRtDictKeywords_a6cb6e979de55b2bfa1bdf3f1748aa7b5}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_a0dcce56fd69e3eb81e144bf5d6ea0918}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_ac919c5e9a47c406b0e155c88632c9472}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_a2f779795842896ed17ac536dbee12830}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_acbac5e4241f151135ab8fc6264b21259}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Setup@{Setup}}
+\index{Setup@{Setup}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-::\-Setup (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Dict\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_acbac5e4241f151135ab8fc6264b21259}
+
+
+setup dictionary using settings 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_aa793d001c7a891b40fe09bf7eb8a6a0d}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_a46e6e5ee66d434ae1dca6401bea80fed}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_a470fca5cd3912e42a5b7afd3f3eeb1fd}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_a4aa9573dfd94c3dfab082aa9ad0d8347}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_a91dc4477648a1e6f3b1f8cb791822732}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Write\-Stopwords@{Write\-Stopwords}}
+\index{Write\-Stopwords@{Write\-Stopwords}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Write\-Stopwords}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-::\-Write\-Stopwords (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{t\-Writer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_a91dc4477648a1e6f3b1f8cb791822732}
+
+
+write stopwords to a file 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_adea77ce5ebeceffc282435144521207d}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_a57c3b5c8e7a5a65326ae232f6e091f0a}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_a1f3c58b5e90f1e82619529e21d0a8ce2}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_ab68b8f8dfcbe17698a6b5bf9e9a4f9f9}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+\hypertarget{classCSphDict_af490ff06f000637b7cb3ce5660ac1cba}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!Write\-Wordforms@{Write\-Wordforms}}
+\index{Write\-Wordforms@{Write\-Wordforms}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{Write\-Wordforms}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-::\-Write\-Wordforms (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{t\-Writer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphDict_af490ff06f000637b7cb3ce5660ac1cba}
+
+
+write wordforms to a file 
+
+
+
+Implemented in \hyperlink{classCRtDictKeywords_ace440f33f756909d9161c4eb1a005b0e}{C\-Rt\-Dict\-Keywords}, \hyperlink{structCSphTemplateDictTraits_a311a4fd5033e1226e8b6258351d5f933}{C\-Sph\-Template\-Dict\-Traits}, \hyperlink{classCSphDictTraits_a0659ebe6ea5a3c0a56e21018f0e7f775}{C\-Sph\-Dict\-Traits}, and \hyperlink{classCSphStopwordBuilderDict_aaa02664e1d2e0a048cc58184514e5791}{C\-Sph\-Stopword\-Builder\-Dict}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphDict_a35380dc83e22ed66a29f47f351f8da82}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!m\-\_\-s\-Morph\-Fingerprint@{m\-\_\-s\-Morph\-Fingerprint}}
+\index{m\-\_\-s\-Morph\-Fingerprint@{m\-\_\-s\-Morph\-Fingerprint}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{m\-\_\-s\-Morph\-Fingerprint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Dict\-::m\-\_\-s\-Morph\-Fingerprint\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphDict_a35380dc83e22ed66a29f47f351f8da82}
+\hypertarget{classCSphDict_abdab06fefa18a50d30e06d19f995c7c5}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!S\-T\-\_\-\-E\-R\-R\-O\-R@{S\-T\-\_\-\-E\-R\-R\-O\-R}}
+\index{S\-T\-\_\-\-E\-R\-R\-O\-R@{S\-T\-\_\-\-E\-R\-R\-O\-R}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{S\-T\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Dict\-::\-S\-T\-\_\-\-E\-R\-R\-O\-R = 1\hspace{0.3cm}{\ttfamily [static]}}}\label{classCSphDict_abdab06fefa18a50d30e06d19f995c7c5}
+\hypertarget{classCSphDict_ab5cf35eecf21bb5b01c449c8d6a6e334}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!S\-T\-\_\-\-O\-K@{S\-T\-\_\-\-O\-K}}
+\index{S\-T\-\_\-\-O\-K@{S\-T\-\_\-\-O\-K}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{S\-T\-\_\-\-O\-K}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Dict\-::\-S\-T\-\_\-\-O\-K = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classCSphDict_ab5cf35eecf21bb5b01c449c8d6a6e334}
+\hypertarget{classCSphDict_ae9298ace35a55c894fb5b0ff8bbc9d07}{\index{C\-Sph\-Dict@{C\-Sph\-Dict}!S\-T\-\_\-\-W\-A\-R\-N\-I\-N\-G@{S\-T\-\_\-\-W\-A\-R\-N\-I\-N\-G}}
+\index{S\-T\-\_\-\-W\-A\-R\-N\-I\-N\-G@{S\-T\-\_\-\-W\-A\-R\-N\-I\-N\-G}!CSphDict@{C\-Sph\-Dict}}
+\subsubsection[{S\-T\-\_\-\-W\-A\-R\-N\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Dict\-::\-S\-T\-\_\-\-W\-A\-R\-N\-I\-N\-G = 2\hspace{0.3cm}{\ttfamily [static]}}}\label{classCSphDict_ae9298ace35a55c894fb5b0ff8bbc9d07}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,143 @@
+\hypertarget{sphinxstemcz_8cpp}{\section{src/sphinxstemcz.cpp File Reference}
+\label{sphinxstemcz_8cpp}\index{src/sphinxstemcz.\-cpp@{src/sphinxstemcz.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structClampRule__t}{Clamp\-Rule\-\_\-t}
+\item 
+struct \hyperlink{structReplaceRule__t}{Replace\-Rule\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{sphinxstemcz_8cpp_abed9592609c6261e9c5ad503e749c494}{Palatalize} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$word)
+\item 
+static void \hyperlink{sphinxstemcz_8cpp_a0bf712ae59dc873ce9dc93266b2ea2ce}{Apply\-Rules} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$word, const \hyperlink{structClampRule__t}{Clamp\-Rule\-\_\-t} $\ast$p\-Rules, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} n\-Rules)
+\item 
+static void \hyperlink{sphinxstemcz_8cpp_ad351146001afc4115a60ce6fdb0aa4e8}{Remove\-Chars} (char $\ast$sz\-String, char c\-Char)
+\item 
+static void \hyperlink{sphinxstemcz_8cpp_a43bd6e0546bd3076ab6121bb62d99c63}{Preprocess\-Rules} (\hyperlink{structClampRule__t}{Clamp\-Rule\-\_\-t} $\ast$p\-Rules, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} n\-Rules)
+\item 
+static void \hyperlink{sphinxstemcz_8cpp_a85c5a19db8b6f3adcd3f63a15a4b8832}{Preprocess\-Replace} ()
+\item 
+void \hyperlink{sphinxstemcz_8cpp_ae4a1e380ad79c30e3ac8bf57465a68f4}{stem\-\_\-cz\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em initialize Czech stemmer \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstemcz_8cpp_ae5828188cc4b59b97e54ac2e62a689ac}{stem\-\_\-cz} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$word)
+\begin{DoxyCompactList}\small\item\em stem lowercase Czech word \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structClampRule__t}{Clamp\-Rule\-\_\-t} \hyperlink{sphinxstemcz_8cpp_a4f10fac174d2f3f68b5e717cbfa92c3e}{g\-\_\-d\-Case\-Rules} \mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structClampRule__t}{Clamp\-Rule\-\_\-t} \hyperlink{sphinxstemcz_8cpp_a8b9314aefc03accb4721a4028ed610af}{g\-\_\-d\-Posessive\-Rules} \mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structReplaceRule__t}{Replace\-Rule\-\_\-t} \hyperlink{sphinxstemcz_8cpp_ab9350be44b04196e584a7bde3eaa8bd9}{g\-\_\-d\-Palatalize\-Rules} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxstemcz_8cpp_a0bf712ae59dc873ce9dc93266b2ea2ce}{\index{sphinxstemcz.\-cpp@{sphinxstemcz.\-cpp}!Apply\-Rules@{Apply\-Rules}}
+\index{Apply\-Rules@{Apply\-Rules}!sphinxstemcz.cpp@{sphinxstemcz.\-cpp}}
+\subsubsection[{Apply\-Rules}]{\setlength{\rightskip}{0pt plus 5cm}static void Apply\-Rules (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{word, }
+\item[{const {\bf Clamp\-Rule\-\_\-t} $\ast$}]{p\-Rules, }
+\item[{{\bf int}}]{n\-Rules}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemcz_8cpp_a0bf712ae59dc873ce9dc93266b2ea2ce}
+\hypertarget{sphinxstemcz_8cpp_abed9592609c6261e9c5ad503e749c494}{\index{sphinxstemcz.\-cpp@{sphinxstemcz.\-cpp}!Palatalize@{Palatalize}}
+\index{Palatalize@{Palatalize}!sphinxstemcz.cpp@{sphinxstemcz.\-cpp}}
+\subsubsection[{Palatalize}]{\setlength{\rightskip}{0pt plus 5cm}static void Palatalize (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemcz_8cpp_abed9592609c6261e9c5ad503e749c494}
+\hypertarget{sphinxstemcz_8cpp_a85c5a19db8b6f3adcd3f63a15a4b8832}{\index{sphinxstemcz.\-cpp@{sphinxstemcz.\-cpp}!Preprocess\-Replace@{Preprocess\-Replace}}
+\index{Preprocess\-Replace@{Preprocess\-Replace}!sphinxstemcz.cpp@{sphinxstemcz.\-cpp}}
+\subsubsection[{Preprocess\-Replace}]{\setlength{\rightskip}{0pt plus 5cm}static void Preprocess\-Replace (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemcz_8cpp_a85c5a19db8b6f3adcd3f63a15a4b8832}
+\hypertarget{sphinxstemcz_8cpp_a43bd6e0546bd3076ab6121bb62d99c63}{\index{sphinxstemcz.\-cpp@{sphinxstemcz.\-cpp}!Preprocess\-Rules@{Preprocess\-Rules}}
+\index{Preprocess\-Rules@{Preprocess\-Rules}!sphinxstemcz.cpp@{sphinxstemcz.\-cpp}}
+\subsubsection[{Preprocess\-Rules}]{\setlength{\rightskip}{0pt plus 5cm}static void Preprocess\-Rules (
+\begin{DoxyParamCaption}
+\item[{{\bf Clamp\-Rule\-\_\-t} $\ast$}]{p\-Rules, }
+\item[{{\bf int}}]{n\-Rules}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemcz_8cpp_a43bd6e0546bd3076ab6121bb62d99c63}
+\hypertarget{sphinxstemcz_8cpp_ad351146001afc4115a60ce6fdb0aa4e8}{\index{sphinxstemcz.\-cpp@{sphinxstemcz.\-cpp}!Remove\-Chars@{Remove\-Chars}}
+\index{Remove\-Chars@{Remove\-Chars}!sphinxstemcz.cpp@{sphinxstemcz.\-cpp}}
+\subsubsection[{Remove\-Chars}]{\setlength{\rightskip}{0pt plus 5cm}static void Remove\-Chars (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{sz\-String, }
+\item[{char}]{c\-Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemcz_8cpp_ad351146001afc4115a60ce6fdb0aa4e8}
+\hypertarget{sphinxstemcz_8cpp_ae5828188cc4b59b97e54ac2e62a689ac}{\index{sphinxstemcz.\-cpp@{sphinxstemcz.\-cpp}!stem\-\_\-cz@{stem\-\_\-cz}}
+\index{stem\-\_\-cz@{stem\-\_\-cz}!sphinxstemcz.cpp@{sphinxstemcz.\-cpp}}
+\subsubsection[{stem\-\_\-cz}]{\setlength{\rightskip}{0pt plus 5cm}void stem\-\_\-cz (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{word}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemcz_8cpp_ae5828188cc4b59b97e54ac2e62a689ac}
+
+
+stem lowercase Czech word 
+
+\hypertarget{sphinxstemcz_8cpp_ae4a1e380ad79c30e3ac8bf57465a68f4}{\index{sphinxstemcz.\-cpp@{sphinxstemcz.\-cpp}!stem\-\_\-cz\-\_\-init@{stem\-\_\-cz\-\_\-init}}
+\index{stem\-\_\-cz\-\_\-init@{stem\-\_\-cz\-\_\-init}!sphinxstemcz.cpp@{sphinxstemcz.\-cpp}}
+\subsubsection[{stem\-\_\-cz\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void stem\-\_\-cz\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstemcz_8cpp_ae4a1e380ad79c30e3ac8bf57465a68f4}
+
+
+initialize Czech stemmer 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxstemcz_8cpp_a4f10fac174d2f3f68b5e717cbfa92c3e}{\index{sphinxstemcz.\-cpp@{sphinxstemcz.\-cpp}!g\-\_\-d\-Case\-Rules@{g\-\_\-d\-Case\-Rules}}
+\index{g\-\_\-d\-Case\-Rules@{g\-\_\-d\-Case\-Rules}!sphinxstemcz.cpp@{sphinxstemcz.\-cpp}}
+\subsubsection[{g\-\_\-d\-Case\-Rules}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Clamp\-Rule\-\_\-t} g\-\_\-d\-Case\-Rules\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemcz_8cpp_a4f10fac174d2f3f68b5e717cbfa92c3e}
+\hypertarget{sphinxstemcz_8cpp_ab9350be44b04196e584a7bde3eaa8bd9}{\index{sphinxstemcz.\-cpp@{sphinxstemcz.\-cpp}!g\-\_\-d\-Palatalize\-Rules@{g\-\_\-d\-Palatalize\-Rules}}
+\index{g\-\_\-d\-Palatalize\-Rules@{g\-\_\-d\-Palatalize\-Rules}!sphinxstemcz.cpp@{sphinxstemcz.\-cpp}}
+\subsubsection[{g\-\_\-d\-Palatalize\-Rules}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Replace\-Rule\-\_\-t} g\-\_\-d\-Palatalize\-Rules\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemcz_8cpp_ab9350be44b04196e584a7bde3eaa8bd9}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{ \textcolor{stringliteral}{"ci"},         2,  \textcolor{stringliteral}{"k"}     \},
+    \{ \textcolor{stringliteral}{"ce"},         2,  \textcolor{stringliteral}{"k"}     \},
+    \{ \textcolor{stringliteral}{"\(\backslash\)xE8i"},      2,  \textcolor{stringliteral}{"k"}     \},  
+    \{ \textcolor{stringliteral}{"\(\backslash\)xE8!e"},     2,  \textcolor{stringliteral}{"k"}     \},  
+    \{ \textcolor{stringliteral}{"zi"},         2,  \textcolor{stringliteral}{"h"}     \},
+    \{ \textcolor{stringliteral}{"ze"},         2,  \textcolor{stringliteral}{"h"}     \},
+    \{ \textcolor{stringliteral}{"\(\backslash\)x9Ei"},      2,  \textcolor{stringliteral}{"h"}     \},  
+    \{ \textcolor{stringliteral}{"\(\backslash\)x9E!e"},     2,  \textcolor{stringliteral}{"h"}     \},  
+    \{ \textcolor{stringliteral}{"\(\backslash\)xE8t\(\backslash\)xEC"},  3,  \textcolor{stringliteral}{"ck"}    \},  
+    \{ \textcolor{stringliteral}{"\(\backslash\)xE8ti"},     3,  \textcolor{stringliteral}{"ck"}    \},
+    \{ \textcolor{stringliteral}{"\(\backslash\)xE8t\(\backslash\)xED"},  3,  \textcolor{stringliteral}{"ck"}    \},  
+    \{ \textcolor{stringliteral}{"\(\backslash\)x9At\(\backslash\)xEC"},  3,  \textcolor{stringliteral}{"sk"}    \},  
+    \{ \textcolor{stringliteral}{"\(\backslash\)x9Ati"},     3,  \textcolor{stringliteral}{"sk"}    \},  
+    \{ \textcolor{stringliteral}{"\(\backslash\)x9At\(\backslash\)xED"},  3,  \textcolor{stringliteral}{"sk"}    \},  
+\}
+\end{DoxyCode}
+\hypertarget{sphinxstemcz_8cpp_a8b9314aefc03accb4721a4028ed610af}{\index{sphinxstemcz.\-cpp@{sphinxstemcz.\-cpp}!g\-\_\-d\-Posessive\-Rules@{g\-\_\-d\-Posessive\-Rules}}
+\index{g\-\_\-d\-Posessive\-Rules@{g\-\_\-d\-Posessive\-Rules}!sphinxstemcz.cpp@{sphinxstemcz.\-cpp}}
+\subsubsection[{g\-\_\-d\-Posessive\-Rules}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Clamp\-Rule\-\_\-t} g\-\_\-d\-Posessive\-Rules\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxstemcz_8cpp_a8b9314aefc03accb4721a4028ed610af}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{ 5,    \textcolor{stringliteral}{"ov"},       2,  2,  \textcolor{keyword}{false}   \},
+    \{ 5,    \textcolor{stringliteral}{"\(\backslash\)xF9v"},    2,  2,  \textcolor{keyword}{false}   \},
+    \{ 5,    \textcolor{stringliteral}{"in"},       2,  1,  \textcolor{keyword}{true}    \},
+\}
+\end{DoxyCode}

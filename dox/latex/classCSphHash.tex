@@ -1,0 +1,288 @@
+\hypertarget{classCSphHash}{\section{C\-Sph\-Hash$<$ V\-A\-L\-U\-E $>$ Class Template Reference}
+\label{classCSphHash}\index{C\-Sph\-Hash$<$ V\-A\-L\-U\-E $>$@{C\-Sph\-Hash$<$ V\-A\-L\-U\-E $>$}}
+}
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCSphHash_1_1Entry}{Entry}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphHash_ab68baa3209fc4237e4ede722ce2f85e8}{C\-Sph\-Hash} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size=256)
+\begin{DoxyCompactList}\small\item\em initialize hash of a given initial size \end{DoxyCompactList}\item 
+void \hyperlink{classCSphHash_a22d5a11e1bff9bbc8b6d70e95dcb4884}{Reset} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size)
+\begin{DoxyCompactList}\small\item\em reset to a given size \end{DoxyCompactList}\item 
+\hyperlink{classCSphHash_adb4385acd181040614673d1b0d3e7547}{$\sim$\-C\-Sph\-Hash} ()
+\item 
+V\-A\-L\-U\-E \& \hyperlink{classCSphHash_ac1d44d7cd768fa3695870fd3a41ad608}{Acquire} (\hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y} k)
+\begin{DoxyCompactList}\small\item\em acquire value by key (ie. get existing hashed value, or add a new default value) \end{DoxyCompactList}\item 
+V\-A\-L\-U\-E $\ast$ \hyperlink{classCSphHash_a13ee702095a92e9d7cdd83ef3b234b4a}{Find} (\hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y} k) const 
+\begin{DoxyCompactList}\small\item\em find an existing value by key \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphHash_a07fcd8c037f34b813cddaf287bb74bad}{Add} (\hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y} k, const V\-A\-L\-U\-E \&v)
+\begin{DoxyCompactList}\small\item\em add or fail (if key already exists) \end{DoxyCompactList}\item 
+V\-A\-L\-U\-E \& \hyperlink{classCSphHash_ae0e5d34a65eb9193cda30bfafd425a2f}{Find\-Or\-Add} (\hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y} k, const V\-A\-L\-U\-E \&v)
+\begin{DoxyCompactList}\small\item\em find existing value, or add a new value \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphHash_ae387782364ed27a36b3bb0c6aa459ace}{Delete} (\hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y} k)
+\begin{DoxyCompactList}\small\item\em delete by key \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphHash_ab105a3bc8ee8d372025f3f8d2b7fcc6b}{Get\-Length} () const 
+\begin{DoxyCompactList}\small\item\em get number of inserted key-\/value pairs \end{DoxyCompactList}\item 
+V\-A\-L\-U\-E $\ast$ \hyperlink{classCSphHash_a3147dd93e50a9773d1a9f812192c1af6}{Iterate} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$p\-Index, \hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y} $\ast$p\-Key) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphHash_ae3302eb8d33838f5f55f24f3a9595c0c}{Get\-Hash} (\hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y} k)
+\begin{DoxyCompactList}\small\item\em hash me the key, quick! \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphHash_af3af7b7209955d0514ad44007282287e}{Get\-Max\-Load} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size) const 
+\begin{DoxyCompactList}\small\item\em get max load, ie. max number of actually used entries at given size \end{DoxyCompactList}\item 
+void \hyperlink{classCSphHash_a036a8a1b5a996b003dcfe7688e7d247d}{Grow} ()
+\begin{DoxyCompactList}\small\item\em we are overloaded, lets grow 2x and rehash \end{DoxyCompactList}\item 
+\hyperlink{structCSphHash_1_1Entry}{Entry} $\ast$ \hyperlink{classCSphHash_a268b6e72c4d10209c36926ec4936d74e}{Find\-Entry} (\hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y} k) const 
+\begin{DoxyCompactList}\small\item\em find (and do not touch!) entry by key \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphHash_1_1Entry}{Entry} $\ast$ \hyperlink{classCSphHash_a554d27a66fb80b17c58073bcf231fa44}{m\-\_\-p\-Hash}
+\begin{DoxyCompactList}\small\item\em hash entries \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphHash_aa663254fba48d19d48fdbcf26efe3c0b}{m\-\_\-i\-Size}
+\begin{DoxyCompactList}\small\item\em total hash size \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphHash_a9be7c076d19b413992a1ce0ebb724476}{m\-\_\-i\-Used}
+\begin{DoxyCompactList}\small\item\em how many entries are actually used \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphHash_aa9d82d8b942bfd6108f13846572f5fd1}{m\-\_\-i\-Max\-Used}
+\begin{DoxyCompactList}\small\item\em resize threshold \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y} \hyperlink{classCSphHash_ac7c493907a5d923843f40bc427182589}{N\-O\-\_\-\-E\-N\-T\-R\-Y} = \hyperlink{sphinxint_8h_a23ec2cf7fc07ea8f817bbac758402baf}{L\-L\-O\-N\-G\-\_\-\-M\-A\-X}
+\begin{DoxyCompactList}\small\item\em final entry in a chain, we can now safely stop searching \end{DoxyCompactList}\item 
+static const \hyperlink{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{K\-E\-Y} \hyperlink{classCSphHash_ae7e4a4425e2b293824eb2e243c829a6d}{D\-E\-A\-D\-\_\-\-E\-N\-T\-R\-Y} = \hyperlink{sphinxint_8h_a23ec2cf7fc07ea8f817bbac758402baf}{L\-L\-O\-N\-G\-\_\-\-M\-A\-X}-\/1
+\begin{DoxyCompactList}\small\item\em dead entry in a chain, more alive entries may follow \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename V\-A\-L\-U\-E$>$class C\-Sph\-Hash$<$ V\-A\-L\-U\-E $>$}
+
+simple open-\/addressing hash for now, with int64\-\_\-t keys (for docids), maybe i will templatize this later 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!K\-E\-Y@{K\-E\-Y}}
+\index{K\-E\-Y@{K\-E\-Y}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{K\-E\-Y}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ typedef {\bf int64\-\_\-t} {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::{\bf K\-E\-Y}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphHash_a59a1412d2e0498b2a7417c7adf5d7041}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphHash_ab68baa3209fc4237e4ede722ce2f85e8}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!C\-Sph\-Hash@{C\-Sph\-Hash}}
+\index{C\-Sph\-Hash@{C\-Sph\-Hash}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{C\-Sph\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::{\bf C\-Sph\-Hash} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size = {\ttfamily 256}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphHash_ab68baa3209fc4237e4ede722ce2f85e8}
+
+
+initialize hash of a given initial size 
+
+\hypertarget{classCSphHash_adb4385acd181040614673d1b0d3e7547}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!$\sim$\-C\-Sph\-Hash@{$\sim$\-C\-Sph\-Hash}}
+\index{$\sim$\-C\-Sph\-Hash@{$\sim$\-C\-Sph\-Hash}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{$\sim$\-C\-Sph\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::$\sim${\bf C\-Sph\-Hash} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHash_adb4385acd181040614673d1b0d3e7547}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphHash_ac1d44d7cd768fa3695870fd3a41ad608}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Acquire@{Acquire}}
+\index{Acquire@{Acquire}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Acquire}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ V\-A\-L\-U\-E\& {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Acquire (
+\begin{DoxyParamCaption}
+\item[{{\bf K\-E\-Y}}]{k}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHash_ac1d44d7cd768fa3695870fd3a41ad608}
+
+
+acquire value by key (ie. get existing hashed value, or add a new default value) 
+
+\hypertarget{classCSphHash_a07fcd8c037f34b813cddaf287bb74bad}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Add@{Add}}
+\index{Add@{Add}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ bool {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Add (
+\begin{DoxyParamCaption}
+\item[{{\bf K\-E\-Y}}]{k, }
+\item[{const V\-A\-L\-U\-E \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHash_a07fcd8c037f34b813cddaf287bb74bad}
+
+
+add or fail (if key already exists) 
+
+\hypertarget{classCSphHash_ae387782364ed27a36b3bb0c6aa459ace}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Delete@{Delete}}
+\index{Delete@{Delete}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Delete}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ bool {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf K\-E\-Y}}]{k}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHash_ae387782364ed27a36b3bb0c6aa459ace}
+
+
+delete by key 
+
+\hypertarget{classCSphHash_a13ee702095a92e9d7cdd83ef3b234b4a}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Find@{Find}}
+\index{Find@{Find}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ V\-A\-L\-U\-E$\ast$ {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Find (
+\begin{DoxyParamCaption}
+\item[{{\bf K\-E\-Y}}]{k}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHash_a13ee702095a92e9d7cdd83ef3b234b4a}
+
+
+find an existing value by key 
+
+\hypertarget{classCSphHash_a268b6e72c4d10209c36926ec4936d74e}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Find\-Entry@{Find\-Entry}}
+\index{Find\-Entry@{Find\-Entry}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Find\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ {\bf Entry}$\ast$ {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Find\-Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf K\-E\-Y}}]{k}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCSphHash_a268b6e72c4d10209c36926ec4936d74e}
+
+
+find (and do not touch!) entry by key 
+
+\hypertarget{classCSphHash_ae0e5d34a65eb9193cda30bfafd425a2f}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Find\-Or\-Add@{Find\-Or\-Add}}
+\index{Find\-Or\-Add@{Find\-Or\-Add}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Find\-Or\-Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ V\-A\-L\-U\-E\& {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Find\-Or\-Add (
+\begin{DoxyParamCaption}
+\item[{{\bf K\-E\-Y}}]{k, }
+\item[{const V\-A\-L\-U\-E \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHash_ae0e5d34a65eb9193cda30bfafd425a2f}
+
+
+find existing value, or add a new value 
+
+\hypertarget{classCSphHash_ae3302eb8d33838f5f55f24f3a9595c0c}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Get\-Hash@{Get\-Hash}}
+\index{Get\-Hash@{Get\-Hash}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ static {\bf D\-W\-O\-R\-D} {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Get\-Hash (
+\begin{DoxyParamCaption}
+\item[{{\bf K\-E\-Y}}]{k}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCSphHash_ae3302eb8d33838f5f55f24f3a9595c0c}
+
+
+hash me the key, quick! 
+
+\hypertarget{classCSphHash_ab105a3bc8ee8d372025f3f8d2b7fcc6b}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Get\-Length@{Get\-Length}}
+\index{Get\-Length@{Get\-Length}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Get\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ {\bf int} {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Get\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHash_ab105a3bc8ee8d372025f3f8d2b7fcc6b}
+
+
+get number of inserted key-\/value pairs 
+
+\hypertarget{classCSphHash_af3af7b7209955d0514ad44007282287e}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Get\-Max\-Load@{Get\-Max\-Load}}
+\index{Get\-Max\-Load@{Get\-Max\-Load}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Get\-Max\-Load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ {\bf int} {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Get\-Max\-Load (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCSphHash_af3af7b7209955d0514ad44007282287e}
+
+
+get max load, ie. max number of actually used entries at given size 
+
+\hypertarget{classCSphHash_a036a8a1b5a996b003dcfe7688e7d247d}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Grow@{Grow}}
+\index{Grow@{Grow}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Grow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ void {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Grow (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCSphHash_a036a8a1b5a996b003dcfe7688e7d247d}
+
+
+we are overloaded, lets grow 2x and rehash 
+
+\hypertarget{classCSphHash_a3147dd93e50a9773d1a9f812192c1af6}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Iterate@{Iterate}}
+\index{Iterate@{Iterate}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Iterate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ V\-A\-L\-U\-E$\ast$ {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Iterate (
+\begin{DoxyParamCaption}
+\item[{{\bf int} $\ast$}]{p\-Index, }
+\item[{{\bf K\-E\-Y} $\ast$}]{p\-Key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHash_a3147dd93e50a9773d1a9f812192c1af6}
+iterate the hash by entry index, starting from 0 finds the next alive key-\/value pair starting from the given index returns that pair and updates the index on success returns N\-U\-L\-L when the hash is over \hypertarget{classCSphHash_a22d5a11e1bff9bbc8b6d70e95dcb4884}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ void {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::Reset (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHash_a22d5a11e1bff9bbc8b6d70e95dcb4884}
+
+
+reset to a given size 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphHash_ae7e4a4425e2b293824eb2e243c829a6d}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!D\-E\-A\-D\-\_\-\-E\-N\-T\-R\-Y@{D\-E\-A\-D\-\_\-\-E\-N\-T\-R\-Y}}
+\index{D\-E\-A\-D\-\_\-\-E\-N\-T\-R\-Y@{D\-E\-A\-D\-\_\-\-E\-N\-T\-R\-Y}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{D\-E\-A\-D\-\_\-\-E\-N\-T\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ const {\bf K\-E\-Y} {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::D\-E\-A\-D\-\_\-\-E\-N\-T\-R\-Y = {\bf L\-L\-O\-N\-G\-\_\-\-M\-A\-X}-\/1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphHash_ae7e4a4425e2b293824eb2e243c829a6d}
+
+
+dead entry in a chain, more alive entries may follow 
+
+\hypertarget{classCSphHash_aa9d82d8b942bfd6108f13846572f5fd1}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!m\-\_\-i\-Max\-Used@{m\-\_\-i\-Max\-Used}}
+\index{m\-\_\-i\-Max\-Used@{m\-\_\-i\-Max\-Used}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{m\-\_\-i\-Max\-Used}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ {\bf int} {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::m\-\_\-i\-Max\-Used\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphHash_aa9d82d8b942bfd6108f13846572f5fd1}
+
+
+resize threshold 
+
+\hypertarget{classCSphHash_aa663254fba48d19d48fdbcf26efe3c0b}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!m\-\_\-i\-Size@{m\-\_\-i\-Size}}
+\index{m\-\_\-i\-Size@{m\-\_\-i\-Size}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{m\-\_\-i\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ {\bf int} {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::m\-\_\-i\-Size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphHash_aa663254fba48d19d48fdbcf26efe3c0b}
+
+
+total hash size 
+
+\hypertarget{classCSphHash_a9be7c076d19b413992a1ce0ebb724476}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!m\-\_\-i\-Used@{m\-\_\-i\-Used}}
+\index{m\-\_\-i\-Used@{m\-\_\-i\-Used}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{m\-\_\-i\-Used}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ {\bf int} {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::m\-\_\-i\-Used\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphHash_a9be7c076d19b413992a1ce0ebb724476}
+
+
+how many entries are actually used 
+
+\hypertarget{classCSphHash_a554d27a66fb80b17c58073bcf231fa44}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!m\-\_\-p\-Hash@{m\-\_\-p\-Hash}}
+\index{m\-\_\-p\-Hash@{m\-\_\-p\-Hash}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{m\-\_\-p\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ {\bf Entry}$\ast$ {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::m\-\_\-p\-Hash\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphHash_a554d27a66fb80b17c58073bcf231fa44}
+
+
+hash entries 
+
+\hypertarget{classCSphHash_ac7c493907a5d923843f40bc427182589}{\index{C\-Sph\-Hash@{C\-Sph\-Hash}!N\-O\-\_\-\-E\-N\-T\-R\-Y@{N\-O\-\_\-\-E\-N\-T\-R\-Y}}
+\index{N\-O\-\_\-\-E\-N\-T\-R\-Y@{N\-O\-\_\-\-E\-N\-T\-R\-Y}!CSphHash@{C\-Sph\-Hash}}
+\subsubsection[{N\-O\-\_\-\-E\-N\-T\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V\-A\-L\-U\-E$>$ const {\bf K\-E\-Y} {\bf C\-Sph\-Hash}$<$ V\-A\-L\-U\-E $>$\-::N\-O\-\_\-\-E\-N\-T\-R\-Y = {\bf L\-L\-O\-N\-G\-\_\-\-M\-A\-X}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphHash_ac7c493907a5d923843f40bc427182589}
+
+
+final entry in a chain, we can now safely stop searching 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

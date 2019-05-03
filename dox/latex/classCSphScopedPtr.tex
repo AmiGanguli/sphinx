@@ -1,0 +1,120 @@
+\hypertarget{classCSphScopedPtr}{\section{C\-Sph\-Scoped\-Ptr$<$ T $>$ Class Template Reference}
+\label{classCSphScopedPtr}\index{C\-Sph\-Scoped\-Ptr$<$ T $>$@{C\-Sph\-Scoped\-Ptr$<$ T $>$}}
+}
+
+
+pointer with automatic safe deletion when going out of scope  
+
+
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Scoped\-Ptr$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphScopedPtr}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphScopedPtr_aa1d4c4a7ab9230e99866fd75a7225d60}{C\-Sph\-Scoped\-Ptr} (T $\ast$p\-Ptr)
+\item 
+\hyperlink{classCSphScopedPtr_a25e7bc3fbf3af2460e5c529f84e7ad96}{$\sim$\-C\-Sph\-Scoped\-Ptr} ()
+\item 
+T $\ast$ \hyperlink{classCSphScopedPtr_a622900bcf99de8151c51ba1441e1c097}{operator-\/$>$} () const 
+\item 
+T $\ast$ \hyperlink{classCSphScopedPtr_a3dee7a5de9c2b126a94a55fc78cec0e5}{Ptr} () const 
+\item 
+\hyperlink{classCSphScopedPtr}{C\-Sph\-Scoped\-Ptr} \& \hyperlink{classCSphScopedPtr_a4f178f06e5e0d465f156ead545c58fbd}{operator=} (T $\ast$p\-Ptr)
+\item 
+T $\ast$ \hyperlink{classCSphScopedPtr_a6db95d65d3489a0d6e7532220160730a}{Leak\-Ptr} ()
+\item 
+void \hyperlink{classCSphScopedPtr_a9d7945ef97eae6bb9b763f3d5fbf278f}{Replace\-Ptr} (T $\ast$p\-Ptr)
+\item 
+void \hyperlink{classCSphScopedPtr_a85c5cc64b928ddd411b07dea57fb2e8f}{Reset} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{classCSphScopedPtr_aa8dbb2364f06b48549ab6bea8ce3377b}{m\-\_\-p\-Ptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class C\-Sph\-Scoped\-Ptr$<$ T $>$}
+
+pointer with automatic safe deletion when going out of scope 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphScopedPtr_aa1d4c4a7ab9230e99866fd75a7225d60}{\index{C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}!C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}}
+\index{C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}!CSphScopedPtr@{C\-Sph\-Scoped\-Ptr}}
+\subsubsection[{C\-Sph\-Scoped\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Scoped\-Ptr}$<$ T $>$\-::{\bf C\-Sph\-Scoped\-Ptr} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphScopedPtr_aa1d4c4a7ab9230e99866fd75a7225d60}
+\hypertarget{classCSphScopedPtr_a25e7bc3fbf3af2460e5c529f84e7ad96}{\index{C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}!$\sim$\-C\-Sph\-Scoped\-Ptr@{$\sim$\-C\-Sph\-Scoped\-Ptr}}
+\index{$\sim$\-C\-Sph\-Scoped\-Ptr@{$\sim$\-C\-Sph\-Scoped\-Ptr}!CSphScopedPtr@{C\-Sph\-Scoped\-Ptr}}
+\subsubsection[{$\sim$\-C\-Sph\-Scoped\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Scoped\-Ptr}$<$ T $>$\-::$\sim${\bf C\-Sph\-Scoped\-Ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphScopedPtr_a25e7bc3fbf3af2460e5c529f84e7ad96}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphScopedPtr_a6db95d65d3489a0d6e7532220160730a}{\index{C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}!Leak\-Ptr@{Leak\-Ptr}}
+\index{Leak\-Ptr@{Leak\-Ptr}!CSphScopedPtr@{C\-Sph\-Scoped\-Ptr}}
+\subsubsection[{Leak\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Scoped\-Ptr}$<$ T $>$\-::Leak\-Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphScopedPtr_a6db95d65d3489a0d6e7532220160730a}
+\hypertarget{classCSphScopedPtr_a622900bcf99de8151c51ba1441e1c097}{\index{C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!CSphScopedPtr@{C\-Sph\-Scoped\-Ptr}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Scoped\-Ptr}$<$ T $>$\-::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphScopedPtr_a622900bcf99de8151c51ba1441e1c097}
+\hypertarget{classCSphScopedPtr_a4f178f06e5e0d465f156ead545c58fbd}{\index{C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphScopedPtr@{C\-Sph\-Scoped\-Ptr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Scoped\-Ptr}\& {\bf C\-Sph\-Scoped\-Ptr}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphScopedPtr_a4f178f06e5e0d465f156ead545c58fbd}
+\hypertarget{classCSphScopedPtr_a3dee7a5de9c2b126a94a55fc78cec0e5}{\index{C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!CSphScopedPtr@{C\-Sph\-Scoped\-Ptr}}
+\subsubsection[{Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Scoped\-Ptr}$<$ T $>$\-::Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphScopedPtr_a3dee7a5de9c2b126a94a55fc78cec0e5}
+\hypertarget{classCSphScopedPtr_a9d7945ef97eae6bb9b763f3d5fbf278f}{\index{C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}!Replace\-Ptr@{Replace\-Ptr}}
+\index{Replace\-Ptr@{Replace\-Ptr}!CSphScopedPtr@{C\-Sph\-Scoped\-Ptr}}
+\subsubsection[{Replace\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf C\-Sph\-Scoped\-Ptr}$<$ T $>$\-::Replace\-Ptr (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphScopedPtr_a9d7945ef97eae6bb9b763f3d5fbf278f}
+\hypertarget{classCSphScopedPtr_a85c5cc64b928ddd411b07dea57fb2e8f}{\index{C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphScopedPtr@{C\-Sph\-Scoped\-Ptr}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf C\-Sph\-Scoped\-Ptr}$<$ T $>$\-::Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphScopedPtr_a85c5cc64b928ddd411b07dea57fb2e8f}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphScopedPtr_aa8dbb2364f06b48549ab6bea8ce3377b}{\index{C\-Sph\-Scoped\-Ptr@{C\-Sph\-Scoped\-Ptr}!m\-\_\-p\-Ptr@{m\-\_\-p\-Ptr}}
+\index{m\-\_\-p\-Ptr@{m\-\_\-p\-Ptr}!CSphScopedPtr@{C\-Sph\-Scoped\-Ptr}}
+\subsubsection[{m\-\_\-p\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Scoped\-Ptr}$<$ T $>$\-::m\-\_\-p\-Ptr\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphScopedPtr_aa8dbb2364f06b48549ab6bea8ce3377b}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

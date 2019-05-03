@@ -1,0 +1,482 @@
+\hypertarget{classCSphDictKeywords}{\section{C\-Sph\-Dict\-Keywords Class Reference}
+\label{classCSphDictKeywords}\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}}
+}
+Inheritance diagram for C\-Sph\-Dict\-Keywords\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classCSphDictKeywords}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCSphDictKeywords_1_1DictBlock__t}{Dict\-Block\-\_\-t}
+\item 
+struct \hyperlink{structCSphDictKeywords_1_1DictKeyword__t}{Dict\-Keyword\-\_\-t}
+\item 
+struct \hyperlink{structCSphDictKeywords_1_1HitblockException__t}{Hitblock\-Exception\-\_\-t}
+\item 
+struct \hyperlink{structCSphDictKeywords_1_1HitblockKeyword__t}{Hitblock\-Keyword\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphDictKeywords_aaadbba342bb2f211c7d065909e308395}{C\-Sph\-Dict\-Keywords} ()
+\item 
+virtual \hyperlink{classCSphDictKeywords_a18f6cee86e4c9b40af2e5ae689b55c65}{$\sim$\-C\-Sph\-Dict\-Keywords} ()
+\item 
+virtual void \hyperlink{classCSphDictKeywords_a3d271d74b410172e3ea7f4d2ae0e90c2}{Hitblock\-Begin} ()
+\begin{DoxyCompactList}\small\item\em enable actually collecting keywords (needed for stopwords/wordforms loading) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDictKeywords_a86a00591cb60035a2ed12c1f7f055b8a}{Hitblock\-Patch} (\hyperlink{structCSphWordHit}{C\-Sph\-Word\-Hit} $\ast$p\-Hits, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Hits) const 
+\begin{DoxyCompactList}\small\item\em do hit block patching magic \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classCSphDictKeywords_a3afdfa74cf7783cb60c2746f8e5bf6d0}{Hitblock\-Get\-Keyword} (\hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} u\-Word\-I\-D)
+\begin{DoxyCompactList}\small\item\em resolve temporary hit block wide wordid (!) back to keyword \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_a3f0b464042b7d40e19f6f792bdf3692b}{Hitblock\-Get\-Mem\-Use} ()
+\begin{DoxyCompactList}\small\item\em check current memory usage \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDictKeywords_af48256d2e25162807d705700e069dc97}{Hitblock\-Reset} ()
+\begin{DoxyCompactList}\small\item\em hit block dismissed \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDictKeywords_a2863f18e86bfd28265a1d5c66a5486c6}{Dict\-Begin} (\hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \&t\-Temp\-Dict, \hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \&t\-Dict, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Dict\-Limit, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle)
+\begin{DoxyCompactList}\small\item\em begin creating dictionary file, setup any needed internal structures \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDictKeywords_a0d41d8455da3ab719d31e4273bec3d06}{Dict\-Entry} (const \hyperlink{structCSphDictEntry}{C\-Sph\-Dict\-Entry} \&t\-Entry)
+\begin{DoxyCompactList}\small\item\em add next keyword entry to final dict \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDictKeywords_af5d107a4490a398e614bd927530db10b}{Dict\-End\-Entries} (\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t})
+\begin{DoxyCompactList}\small\item\em flush last entry \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDictKeywords_a272cd1168c539a4b5ce44dd23ba0870b}{Dict\-End} (\hyperlink{structDictHeader__t}{Dict\-Header\-\_\-t} $\ast$p\-Header, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Mem\-Limit, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle)
+\begin{DoxyCompactList}\small\item\em end indexing, store dictionary and checkpoints \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDictKeywords_a3173925482330c0c3d62ccffe7877d2f}{Get\-Word\-I\-D} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDictKeywords_ab532ec08ebb597cc237145f21eaa6b57}{Get\-Word\-I\-D\-With\-Markers} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDictKeywords_a80398f482f7dc9a68dbd50f2d0bd9e9c}{Get\-Word\-I\-D\-Non\-Stemmed} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\item 
+virtual \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDictKeywords_a91a7939068a6c22af7ac86decb124e6b}{Get\-Word\-I\-D} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, bool b\-Filter\-Stops)
+\item 
+virtual \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$ \hyperlink{classCSphDictKeywords_ad1381761be17ac2293827e85e6cf1c79}{Clone} () const 
+\begin{DoxyCompactList}\small\item\em make a clone \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{classCSphDictKeywords_a322696167f5a0bdae1c00659db53034d}{Hitblock\-Get\-I\-D} (const char $\ast$p\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} u\-C\-R\-C)
+\item 
+\hyperlink{structCSphDictKeywords_1_1HitblockKeyword__t}{Hitblock\-Keyword\-\_\-t} $\ast$ \hyperlink{classCSphDictKeywords_a0fd0e1a7ee944a3140356052e45e1e4a}{Hitblock\-Add\-Keyword} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Hash, const char $\ast$p\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} u\-I\-D)
+\item 
+void \hyperlink{classCSphDictKeywords_ad1b13d9a3ea222b7ea93af36b59b5e68}{Dict\-Flush} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphDictKeywords_1_1HitblockKeyword__t}{Hitblock\-Keyword\-\_\-t} $\ast$ \hyperlink{classCSphDictKeywords_a011ad3a98db6ae7a6f123a1bd46e6edc}{m\-\_\-d\-Hash} \mbox{[}\hyperlink{classCSphDictKeywords_a3ac7bc30b9bf83c02625ef675c5a4c82}{S\-L\-O\-T\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em hash by wordid (!) \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphDictKeywords_1_1HitblockException__t}{Hitblock\-Exception\-\_\-t} $>$ \hyperlink{classCSphDictKeywords_a9972e58752289ba840cee41455c7131e}{m\-\_\-d\-Exceptions}
+\item 
+bool \hyperlink{classCSphDictKeywords_ad5633845850728ca963b77e62ccd5a44}{m\-\_\-b\-Hitblock}
+\begin{DoxyCompactList}\small\item\em should we store words on Get\-Word\-I\-D or not \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_ab869747f899fc47a56ab0a8205f69ab7}{m\-\_\-i\-Mem\-Use}
+\begin{DoxyCompactList}\small\item\em current memory use by all the chunks \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_a25baa11745a7d9bdc41b1f17455b20b4}{m\-\_\-i\-Dict\-Limit}
+\begin{DoxyCompactList}\small\item\em allowed memory limit for dict block collection \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphDictKeywords_1_1HitblockKeyword__t}{Hitblock\-Keyword\-\_\-t} $\ast$ $>$ \hyperlink{classCSphDictKeywords_a10672cecefb227fec7ee87fc876b3343}{m\-\_\-d\-Entry\-Chunks}
+\begin{DoxyCompactList}\small\item\em hash chunks, only used when indexing hitblocks \end{DoxyCompactList}\item 
+\hyperlink{structCSphDictKeywords_1_1HitblockKeyword__t}{Hitblock\-Keyword\-\_\-t} $\ast$ \hyperlink{classCSphDictKeywords_a12f05f6c94bf83311bddbbc6691f9565}{m\-\_\-p\-Entry\-Chunk}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_acfa363c4f4c8e4c8feebbc09332ef2e4}{m\-\_\-i\-Entry\-Chunk\-Free}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ $>$ \hyperlink{classCSphDictKeywords_a2f573557f042bc7bfc069b21b2c9fa1c}{m\-\_\-d\-Keyword\-Chunks}
+\begin{DoxyCompactList}\small\item\em keyword storage \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphDictKeywords_ac470e170cd907d141f37d5210efbc119}{m\-\_\-p\-Keyword\-Chunk}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_a954a442142b5635312c9914f874390f3}{m\-\_\-i\-Keyword\-Chunk\-Free}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphDictKeywords_1_1DictKeyword__t}{Dict\-Keyword\-\_\-t} $\ast$ $>$ \hyperlink{classCSphDictKeywords_a057492051773da1dc28351efaf14fb28}{m\-\_\-d\-Dict\-Chunks}
+\begin{DoxyCompactList}\small\item\em dict entry chunks, only used when sorting final dict \end{DoxyCompactList}\item 
+\hyperlink{structCSphDictKeywords_1_1DictKeyword__t}{Dict\-Keyword\-\_\-t} $\ast$ \hyperlink{classCSphDictKeywords_ac4a783763cff892ddb1374d0b660fe8e}{m\-\_\-p\-Dict\-Chunk}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_a6b1fa8fc0bacf8fbcd1f5bfef141ba01}{m\-\_\-i\-Dict\-Chunk\-Free}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_a68707efef4729652343aee550d57a3b6}{m\-\_\-i\-Tmp\-F\-D}
+\begin{DoxyCompactList}\small\item\em temp dict file descriptor \end{DoxyCompactList}\item 
+\hyperlink{classCSphWriter}{C\-Sph\-Writer} \hyperlink{classCSphDictKeywords_a0c0584204b14648d1c1ba190cc7cb49a}{m\-\_\-wr\-Tmp\-Dict}
+\begin{DoxyCompactList}\small\item\em temp dict writer \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphDictKeywords_1_1DictBlock__t}{Dict\-Block\-\_\-t} $>$ \hyperlink{classCSphDictKeywords_a5b0459374d93201a8d2fc4a169c44119}{m\-\_\-d\-Dict\-Blocks}
+\begin{DoxyCompactList}\small\item\em on-\/disk locations of dict entry blocks \end{DoxyCompactList}\item 
+char \hyperlink{classCSphDictKeywords_ae2910d8b3b22ec08422d4b5c7f984e9a}{m\-\_\-s\-Clipped\-Word} \mbox{[}\hyperlink{sphinx_8cpp_aeb328d19a9780d5c5defcd7e9b08239b}{M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em keyword storage for cliiped word \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_a3ac7bc30b9bf83c02625ef675c5a4c82}{S\-L\-O\-T\-S} = 65536
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_abbfdf8e6eeab873e5e66b5a8ceb6d244}{E\-N\-T\-R\-Y\-\_\-\-C\-H\-U\-N\-K} = 65536
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_afaa811c6a9c346496846a6128558cb47}{K\-E\-Y\-W\-O\-R\-D\-\_\-\-C\-H\-U\-N\-K} = 1048576
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDictKeywords_a255dfc91a949e77fc562e9379f125add}{D\-I\-C\-T\-\_\-\-C\-H\-U\-N\-K} = 65536
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphDictKeywords_aaadbba342bb2f211c7d065909e308395}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}}
+\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{C\-Sph\-Dict\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Dict\-Keywords\-::\-C\-Sph\-Dict\-Keywords (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCSphDictKeywords_aaadbba342bb2f211c7d065909e308395}
+\hypertarget{classCSphDictKeywords_a18f6cee86e4c9b40af2e5ae689b55c65}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!$\sim$\-C\-Sph\-Dict\-Keywords@{$\sim$\-C\-Sph\-Dict\-Keywords}}
+\index{$\sim$\-C\-Sph\-Dict\-Keywords@{$\sim$\-C\-Sph\-Dict\-Keywords}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{$\sim$\-C\-Sph\-Dict\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Dict\-Keywords\-::$\sim$\-C\-Sph\-Dict\-Keywords (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_a18f6cee86e4c9b40af2e5ae689b55c65}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphDictKeywords_ad1381761be17ac2293827e85e6cf1c79}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Clone@{Clone}}
+\index{Clone@{Clone}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf C\-Sph\-Dict}$\ast$ C\-Sph\-Dict\-Keywords\-::\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDictKeywords_ad1381761be17ac2293827e85e6cf1c79}
+
+
+make a clone 
+
+
+
+Reimplemented from \hyperlink{structCSphDictCRC_add334a7b16667fe906a821e651344f38}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}.
+
+\hypertarget{classCSphDictKeywords_a2863f18e86bfd28265a1d5c66a5486c6}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Dict\-Begin@{Dict\-Begin}}
+\index{Dict\-Begin@{Dict\-Begin}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Dict\-Begin}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Dict\-Keywords\-::\-Dict\-Begin (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Autofile} \&}]{t\-Temp\-Dict, }
+\item[{{\bf C\-Sph\-Autofile} \&}]{t\-Dict, }
+\item[{{\bf int}}]{i\-Dict\-Limit, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_a2863f18e86bfd28265a1d5c66a5486c6}
+
+
+begin creating dictionary file, setup any needed internal structures 
+
+
+
+Reimplemented from \hyperlink{structCSphDiskDictTraits_a5d01013f2caeddf6e0f76574bfd78ffb}{C\-Sph\-Disk\-Dict\-Traits}.
+
+\hypertarget{classCSphDictKeywords_a272cd1168c539a4b5ce44dd23ba0870b}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Dict\-End@{Dict\-End}}
+\index{Dict\-End@{Dict\-End}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Dict\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-Keywords\-::\-Dict\-End (
+\begin{DoxyParamCaption}
+\item[{{\bf Dict\-Header\-\_\-t} $\ast$}]{p\-Header, }
+\item[{{\bf int}}]{i\-Mem\-Limit, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_a272cd1168c539a4b5ce44dd23ba0870b}
+
+
+end indexing, store dictionary and checkpoints 
+
+
+
+Reimplemented from \hyperlink{structCSphDiskDictTraits_af64e1b88d97caf649a6503310a513755}{C\-Sph\-Disk\-Dict\-Traits}.
+
+\hypertarget{classCSphDictKeywords_af5d107a4490a398e614bd927530db10b}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Dict\-End\-Entries@{Dict\-End\-Entries}}
+\index{Dict\-End\-Entries@{Dict\-End\-Entries}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Dict\-End\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-Keywords\-::\-Dict\-End\-Entries (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Offset\-\_\-t}}]{i\-Doclist\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDictKeywords_af5d107a4490a398e614bd927530db10b}
+
+
+flush last entry 
+
+
+
+Reimplemented from \hyperlink{structCSphDiskDictTraits_a9bca14c2361261d754784c2164965b9f}{C\-Sph\-Disk\-Dict\-Traits}.
+
+\hypertarget{classCSphDictKeywords_a0d41d8455da3ab719d31e4273bec3d06}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Dict\-Entry@{Dict\-Entry}}
+\index{Dict\-Entry@{Dict\-Entry}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Dict\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Dict\-Keywords\-::\-Dict\-Entry (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Dict\-Entry} \&}]{t\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_a0d41d8455da3ab719d31e4273bec3d06}
+
+
+add next keyword entry to final dict 
+
+
+
+Reimplemented from \hyperlink{structCSphDiskDictTraits_ad5b4cf8ac8c387aa2e56e3122efce9b0}{C\-Sph\-Disk\-Dict\-Traits}.
+
+\hypertarget{classCSphDictKeywords_ad1b13d9a3ea222b7ea93af36b59b5e68}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Dict\-Flush@{Dict\-Flush}}
+\index{Dict\-Flush@{Dict\-Flush}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Dict\-Flush}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Dict\-Keywords\-::\-Dict\-Flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_ad1b13d9a3ea222b7ea93af36b59b5e68}
+\hypertarget{classCSphDictKeywords_a3173925482330c0c3d62ccffe7877d2f}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Keywords\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_a3173925482330c0c3d62ccffe7877d2f}
+Get word I\-D by word, \char`\"{}text\char`\"{} version may apply stemming and modify word inplace modified word may become bigger than the original one, so make sure you have enough space in buffer which is pointer by p\-Word a general practice is to use char\mbox{[}3$\ast$\-S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-W\-O\-R\-D\-\_\-\-L\-E\-N+4\mbox{]} as a buffer returns 0 for stopwords 
+
+Reimplemented from \hyperlink{structCSphDictCRC_a97c1d147deae64ab7727339dcc048bc9}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}.
+
+\hypertarget{classCSphDictKeywords_a91a7939068a6c22af7ac86decb124e6b}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Keywords\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{bool}]{b\-Filter\-Stops}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_a91a7939068a6c22af7ac86decb124e6b}
+get word I\-D by word, \char`\"{}binary\char`\"{} version only used with prefix/infix indexing must not apply stemming and modify anything filters stopwords on request 
+
+Reimplemented from \hyperlink{structCSphDictCRC_a093268cac147fea2ca0b175271b816fb}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}.
+
+\hypertarget{classCSphDictKeywords_a80398f482f7dc9a68dbd50f2d0bd9e9c}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Get\-Word\-I\-D\-Non\-Stemmed@{Get\-Word\-I\-D\-Non\-Stemmed}}
+\index{Get\-Word\-I\-D\-Non\-Stemmed@{Get\-Word\-I\-D\-Non\-Stemmed}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Get\-Word\-I\-D\-Non\-Stemmed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Keywords\-::\-Get\-Word\-I\-D\-Non\-Stemmed (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_a80398f482f7dc9a68dbd50f2d0bd9e9c}
+get word I\-D by word, \char`\"{}text\char`\"{} version does N\-O\-T apply stemming accepts words with already prepended M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D returns 0 for stopwords 
+
+Reimplemented from \hyperlink{structCSphDictCRC_ac7ab018b0eb335c023853044a56a3caa}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}.
+
+\hypertarget{classCSphDictKeywords_ab532ec08ebb597cc237145f21eaa6b57}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Get\-Word\-I\-D\-With\-Markers@{Get\-Word\-I\-D\-With\-Markers}}
+\index{Get\-Word\-I\-D\-With\-Markers@{Get\-Word\-I\-D\-With\-Markers}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Get\-Word\-I\-D\-With\-Markers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Keywords\-::\-Get\-Word\-I\-D\-With\-Markers (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_ab532ec08ebb597cc237145f21eaa6b57}
+get word I\-D by word, \char`\"{}text\char`\"{} version may apply stemming and modify word inplace accepts words with already prepended M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D appends M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-T\-A\-I\-L returns 0 for stopwords 
+
+Reimplemented from \hyperlink{structCSphDictCRC_abbbf7feb7b6df84de9eba18135f421e2}{C\-Sph\-Dict\-C\-R\-C$<$ true $>$}.
+
+\hypertarget{classCSphDictKeywords_a0fd0e1a7ee944a3140356052e45e1e4a}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Hitblock\-Add\-Keyword@{Hitblock\-Add\-Keyword}}
+\index{Hitblock\-Add\-Keyword@{Hitblock\-Add\-Keyword}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Hitblock\-Add\-Keyword}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Dict\-Keywords\-::\-Hitblock\-Keyword\-\_\-t} $\ast$ C\-Sph\-Dict\-Keywords\-::\-Hitblock\-Add\-Keyword (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Hash, }
+\item[{const char $\ast$}]{p\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{u\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a0fd0e1a7ee944a3140356052e45e1e4a}
+\hypertarget{classCSphDictKeywords_a3d271d74b410172e3ea7f4d2ae0e90c2}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Hitblock\-Begin@{Hitblock\-Begin}}
+\index{Hitblock\-Begin@{Hitblock\-Begin}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Hitblock\-Begin}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dict\-Keywords\-::\-Hitblock\-Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDictKeywords_a3d271d74b410172e3ea7f4d2ae0e90c2}
+
+
+enable actually collecting keywords (needed for stopwords/wordforms loading) 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_a51bb25ba9d3d4e38bb0136b894fce2c3}{C\-Sph\-Dict}.
+
+\hypertarget{classCSphDictKeywords_a322696167f5a0bdae1c00659db53034d}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Hitblock\-Get\-I\-D@{Hitblock\-Get\-I\-D}}
+\index{Hitblock\-Get\-I\-D@{Hitblock\-Get\-I\-D}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Hitblock\-Get\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Keywords\-::\-Hitblock\-Get\-I\-D (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{u\-C\-R\-C}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a322696167f5a0bdae1c00659db53034d}
+\hypertarget{classCSphDictKeywords_a3afdfa74cf7783cb60c2746f8e5bf6d0}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Hitblock\-Get\-Keyword@{Hitblock\-Get\-Keyword}}
+\index{Hitblock\-Get\-Keyword@{Hitblock\-Get\-Keyword}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Hitblock\-Get\-Keyword}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ C\-Sph\-Dict\-Keywords\-::\-Hitblock\-Get\-Keyword (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_a3afdfa74cf7783cb60c2746f8e5bf6d0}
+
+
+resolve temporary hit block wide wordid (!) back to keyword 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_ae89d2ea5d0d6882c25aa654f2ff3bc62}{C\-Sph\-Dict}.
+
+\hypertarget{classCSphDictKeywords_a3f0b464042b7d40e19f6f792bdf3692b}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Hitblock\-Get\-Mem\-Use@{Hitblock\-Get\-Mem\-Use}}
+\index{Hitblock\-Get\-Mem\-Use@{Hitblock\-Get\-Mem\-Use}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Hitblock\-Get\-Mem\-Use}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Dict\-Keywords\-::\-Hitblock\-Get\-Mem\-Use (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDictKeywords_a3f0b464042b7d40e19f6f792bdf3692b}
+
+
+check current memory usage 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_a0c4ed1170b00eb24cf0fe54c3cf75f0c}{C\-Sph\-Dict}.
+
+\hypertarget{classCSphDictKeywords_a86a00591cb60035a2ed12c1f7f055b8a}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Hitblock\-Patch@{Hitblock\-Patch}}
+\index{Hitblock\-Patch@{Hitblock\-Patch}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Hitblock\-Patch}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Dict\-Keywords\-::\-Hitblock\-Patch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Word\-Hit} $\ast$}]{p\-Hits, }
+\item[{{\bf int}}]{i\-Hits}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_a86a00591cb60035a2ed12c1f7f055b8a}
+
+
+do hit block patching magic 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_acc7efa292e426ed72b13eef361634c5f}{C\-Sph\-Dict}.
+
+\hypertarget{classCSphDictKeywords_af48256d2e25162807d705700e069dc97}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!Hitblock\-Reset@{Hitblock\-Reset}}
+\index{Hitblock\-Reset@{Hitblock\-Reset}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{Hitblock\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Dict\-Keywords\-::\-Hitblock\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDictKeywords_af48256d2e25162807d705700e069dc97}
+
+
+hit block dismissed 
+
+
+
+Reimplemented from \hyperlink{classCSphDict_ac85eac348bb27851c0c00c8fc659e5b7}{C\-Sph\-Dict}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphDictKeywords_a255dfc91a949e77fc562e9379f125add}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!D\-I\-C\-T\-\_\-\-C\-H\-U\-N\-K@{D\-I\-C\-T\-\_\-\-C\-H\-U\-N\-K}}
+\index{D\-I\-C\-T\-\_\-\-C\-H\-U\-N\-K@{D\-I\-C\-T\-\_\-\-C\-H\-U\-N\-K}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{D\-I\-C\-T\-\_\-\-C\-H\-U\-N\-K}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Dict\-Keywords\-::\-D\-I\-C\-T\-\_\-\-C\-H\-U\-N\-K = 65536\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphDictKeywords_a255dfc91a949e77fc562e9379f125add}
+\hypertarget{classCSphDictKeywords_abbfdf8e6eeab873e5e66b5a8ceb6d244}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!E\-N\-T\-R\-Y\-\_\-\-C\-H\-U\-N\-K@{E\-N\-T\-R\-Y\-\_\-\-C\-H\-U\-N\-K}}
+\index{E\-N\-T\-R\-Y\-\_\-\-C\-H\-U\-N\-K@{E\-N\-T\-R\-Y\-\_\-\-C\-H\-U\-N\-K}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{E\-N\-T\-R\-Y\-\_\-\-C\-H\-U\-N\-K}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Dict\-Keywords\-::\-E\-N\-T\-R\-Y\-\_\-\-C\-H\-U\-N\-K = 65536\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphDictKeywords_abbfdf8e6eeab873e5e66b5a8ceb6d244}
+\hypertarget{classCSphDictKeywords_afaa811c6a9c346496846a6128558cb47}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!K\-E\-Y\-W\-O\-R\-D\-\_\-\-C\-H\-U\-N\-K@{K\-E\-Y\-W\-O\-R\-D\-\_\-\-C\-H\-U\-N\-K}}
+\index{K\-E\-Y\-W\-O\-R\-D\-\_\-\-C\-H\-U\-N\-K@{K\-E\-Y\-W\-O\-R\-D\-\_\-\-C\-H\-U\-N\-K}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{K\-E\-Y\-W\-O\-R\-D\-\_\-\-C\-H\-U\-N\-K}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Dict\-Keywords\-::\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-C\-H\-U\-N\-K = 1048576\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphDictKeywords_afaa811c6a9c346496846a6128558cb47}
+\hypertarget{classCSphDictKeywords_ad5633845850728ca963b77e62ccd5a44}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-b\-Hitblock@{m\-\_\-b\-Hitblock}}
+\index{m\-\_\-b\-Hitblock@{m\-\_\-b\-Hitblock}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-b\-Hitblock}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dict\-Keywords\-::m\-\_\-b\-Hitblock\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_ad5633845850728ca963b77e62ccd5a44}
+
+
+should we store words on Get\-Word\-I\-D or not 
+
+\hypertarget{classCSphDictKeywords_a5b0459374d93201a8d2fc4a169c44119}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-d\-Dict\-Blocks@{m\-\_\-d\-Dict\-Blocks}}
+\index{m\-\_\-d\-Dict\-Blocks@{m\-\_\-d\-Dict\-Blocks}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-d\-Dict\-Blocks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Dict\-Block\-\_\-t}$>$ C\-Sph\-Dict\-Keywords\-::m\-\_\-d\-Dict\-Blocks\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a5b0459374d93201a8d2fc4a169c44119}
+
+
+on-\/disk locations of dict entry blocks 
+
+\hypertarget{classCSphDictKeywords_a057492051773da1dc28351efaf14fb28}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-d\-Dict\-Chunks@{m\-\_\-d\-Dict\-Chunks}}
+\index{m\-\_\-d\-Dict\-Chunks@{m\-\_\-d\-Dict\-Chunks}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-d\-Dict\-Chunks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Dict\-Keyword\-\_\-t}$\ast$$>$ C\-Sph\-Dict\-Keywords\-::m\-\_\-d\-Dict\-Chunks\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a057492051773da1dc28351efaf14fb28}
+
+
+dict entry chunks, only used when sorting final dict 
+
+\hypertarget{classCSphDictKeywords_a10672cecefb227fec7ee87fc876b3343}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-d\-Entry\-Chunks@{m\-\_\-d\-Entry\-Chunks}}
+\index{m\-\_\-d\-Entry\-Chunks@{m\-\_\-d\-Entry\-Chunks}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-d\-Entry\-Chunks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Hitblock\-Keyword\-\_\-t}$\ast$$>$ C\-Sph\-Dict\-Keywords\-::m\-\_\-d\-Entry\-Chunks\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a10672cecefb227fec7ee87fc876b3343}
+
+
+hash chunks, only used when indexing hitblocks 
+
+\hypertarget{classCSphDictKeywords_a9972e58752289ba840cee41455c7131e}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-d\-Exceptions@{m\-\_\-d\-Exceptions}}
+\index{m\-\_\-d\-Exceptions@{m\-\_\-d\-Exceptions}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-d\-Exceptions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Hitblock\-Exception\-\_\-t}$>$ C\-Sph\-Dict\-Keywords\-::m\-\_\-d\-Exceptions\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a9972e58752289ba840cee41455c7131e}
+\hypertarget{classCSphDictKeywords_a011ad3a98db6ae7a6f123a1bd46e6edc}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-d\-Hash@{m\-\_\-d\-Hash}}
+\index{m\-\_\-d\-Hash@{m\-\_\-d\-Hash}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-d\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hitblock\-Keyword\-\_\-t}$\ast$ C\-Sph\-Dict\-Keywords\-::m\-\_\-d\-Hash\mbox{[}{\bf S\-L\-O\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a011ad3a98db6ae7a6f123a1bd46e6edc}
+
+
+hash by wordid (!) 
+
+\hypertarget{classCSphDictKeywords_a2f573557f042bc7bfc069b21b2c9fa1c}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-d\-Keyword\-Chunks@{m\-\_\-d\-Keyword\-Chunks}}
+\index{m\-\_\-d\-Keyword\-Chunks@{m\-\_\-d\-Keyword\-Chunks}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-d\-Keyword\-Chunks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf B\-Y\-T\-E}$\ast$$>$ C\-Sph\-Dict\-Keywords\-::m\-\_\-d\-Keyword\-Chunks\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a2f573557f042bc7bfc069b21b2c9fa1c}
+
+
+keyword storage 
+
+\hypertarget{classCSphDictKeywords_a6b1fa8fc0bacf8fbcd1f5bfef141ba01}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-i\-Dict\-Chunk\-Free@{m\-\_\-i\-Dict\-Chunk\-Free}}
+\index{m\-\_\-i\-Dict\-Chunk\-Free@{m\-\_\-i\-Dict\-Chunk\-Free}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-i\-Dict\-Chunk\-Free}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Keywords\-::m\-\_\-i\-Dict\-Chunk\-Free\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a6b1fa8fc0bacf8fbcd1f5bfef141ba01}
+\hypertarget{classCSphDictKeywords_a25baa11745a7d9bdc41b1f17455b20b4}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-i\-Dict\-Limit@{m\-\_\-i\-Dict\-Limit}}
+\index{m\-\_\-i\-Dict\-Limit@{m\-\_\-i\-Dict\-Limit}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-i\-Dict\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Keywords\-::m\-\_\-i\-Dict\-Limit\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a25baa11745a7d9bdc41b1f17455b20b4}
+
+
+allowed memory limit for dict block collection 
+
+\hypertarget{classCSphDictKeywords_acfa363c4f4c8e4c8feebbc09332ef2e4}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-i\-Entry\-Chunk\-Free@{m\-\_\-i\-Entry\-Chunk\-Free}}
+\index{m\-\_\-i\-Entry\-Chunk\-Free@{m\-\_\-i\-Entry\-Chunk\-Free}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-i\-Entry\-Chunk\-Free}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Keywords\-::m\-\_\-i\-Entry\-Chunk\-Free\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_acfa363c4f4c8e4c8feebbc09332ef2e4}
+\hypertarget{classCSphDictKeywords_a954a442142b5635312c9914f874390f3}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-i\-Keyword\-Chunk\-Free@{m\-\_\-i\-Keyword\-Chunk\-Free}}
+\index{m\-\_\-i\-Keyword\-Chunk\-Free@{m\-\_\-i\-Keyword\-Chunk\-Free}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-i\-Keyword\-Chunk\-Free}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Keywords\-::m\-\_\-i\-Keyword\-Chunk\-Free\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a954a442142b5635312c9914f874390f3}
+\hypertarget{classCSphDictKeywords_ab869747f899fc47a56ab0a8205f69ab7}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-i\-Mem\-Use@{m\-\_\-i\-Mem\-Use}}
+\index{m\-\_\-i\-Mem\-Use@{m\-\_\-i\-Mem\-Use}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-i\-Mem\-Use}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Keywords\-::m\-\_\-i\-Mem\-Use\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_ab869747f899fc47a56ab0a8205f69ab7}
+
+
+current memory use by all the chunks 
+
+\hypertarget{classCSphDictKeywords_a68707efef4729652343aee550d57a3b6}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-i\-Tmp\-F\-D@{m\-\_\-i\-Tmp\-F\-D}}
+\index{m\-\_\-i\-Tmp\-F\-D@{m\-\_\-i\-Tmp\-F\-D}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-i\-Tmp\-F\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Keywords\-::m\-\_\-i\-Tmp\-F\-D\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a68707efef4729652343aee550d57a3b6}
+
+
+temp dict file descriptor 
+
+\hypertarget{classCSphDictKeywords_ac4a783763cff892ddb1374d0b660fe8e}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-p\-Dict\-Chunk@{m\-\_\-p\-Dict\-Chunk}}
+\index{m\-\_\-p\-Dict\-Chunk@{m\-\_\-p\-Dict\-Chunk}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-p\-Dict\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dict\-Keyword\-\_\-t}$\ast$ C\-Sph\-Dict\-Keywords\-::m\-\_\-p\-Dict\-Chunk\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_ac4a783763cff892ddb1374d0b660fe8e}
+\hypertarget{classCSphDictKeywords_a12f05f6c94bf83311bddbbc6691f9565}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-p\-Entry\-Chunk@{m\-\_\-p\-Entry\-Chunk}}
+\index{m\-\_\-p\-Entry\-Chunk@{m\-\_\-p\-Entry\-Chunk}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-p\-Entry\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hitblock\-Keyword\-\_\-t}$\ast$ C\-Sph\-Dict\-Keywords\-::m\-\_\-p\-Entry\-Chunk\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a12f05f6c94bf83311bddbbc6691f9565}
+\hypertarget{classCSphDictKeywords_ac470e170cd907d141f37d5210efbc119}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-p\-Keyword\-Chunk@{m\-\_\-p\-Keyword\-Chunk}}
+\index{m\-\_\-p\-Keyword\-Chunk@{m\-\_\-p\-Keyword\-Chunk}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-p\-Keyword\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Dict\-Keywords\-::m\-\_\-p\-Keyword\-Chunk\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_ac470e170cd907d141f37d5210efbc119}
+\hypertarget{classCSphDictKeywords_ae2910d8b3b22ec08422d4b5c7f984e9a}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-s\-Clipped\-Word@{m\-\_\-s\-Clipped\-Word}}
+\index{m\-\_\-s\-Clipped\-Word@{m\-\_\-s\-Clipped\-Word}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-s\-Clipped\-Word}]{\setlength{\rightskip}{0pt plus 5cm}char C\-Sph\-Dict\-Keywords\-::m\-\_\-s\-Clipped\-Word\mbox{[}{\bf M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_ae2910d8b3b22ec08422d4b5c7f984e9a}
+
+
+keyword storage for cliiped word 
+
+\hypertarget{classCSphDictKeywords_a0c0584204b14648d1c1ba190cc7cb49a}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!m\-\_\-wr\-Tmp\-Dict@{m\-\_\-wr\-Tmp\-Dict}}
+\index{m\-\_\-wr\-Tmp\-Dict@{m\-\_\-wr\-Tmp\-Dict}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{m\-\_\-wr\-Tmp\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Writer} C\-Sph\-Dict\-Keywords\-::m\-\_\-wr\-Tmp\-Dict\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphDictKeywords_a0c0584204b14648d1c1ba190cc7cb49a}
+
+
+temp dict writer 
+
+\hypertarget{classCSphDictKeywords_a3ac7bc30b9bf83c02625ef675c5a4c82}{\index{C\-Sph\-Dict\-Keywords@{C\-Sph\-Dict\-Keywords}!S\-L\-O\-T\-S@{S\-L\-O\-T\-S}}
+\index{S\-L\-O\-T\-S@{S\-L\-O\-T\-S}!CSphDictKeywords@{C\-Sph\-Dict\-Keywords}}
+\subsubsection[{S\-L\-O\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Dict\-Keywords\-::\-S\-L\-O\-T\-S = 65536\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphDictKeywords_a3ac7bc30b9bf83c02625ef675c5a4c82}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

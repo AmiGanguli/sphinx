@@ -1,0 +1,556 @@
+\hypertarget{classCSphDummyIndex}{\section{C\-Sph\-Dummy\-Index Class Reference}
+\label{classCSphDummyIndex}\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}}
+}
+Inheritance diagram for C\-Sph\-Dummy\-Index\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphDummyIndex}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphDummyIndex_a949fc311a9743ecb38a9f8eae283cc8b}{C\-Sph\-Dummy\-Index} ()
+\item 
+virtual \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $\ast$ \hyperlink{classCSphDummyIndex_a6e1b5e0ea053f6fce94c4a540eb2909a}{Get\-Kill\-List} () const 
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDummyIndex_acc3dd24e36c2af9f6f31694e84509d76}{Get\-Kill\-List\-Size} () const 
+\item 
+virtual bool \hyperlink{classCSphDummyIndex_ad9574d57481f70067f81a4c6a21161a7}{Has\-Docid} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t}) const 
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDummyIndex_a02cb57467541a3c7fbba17e5e9b4bf21}{Build} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphSource}{C\-Sph\-Source} $\ast$ $>$ \&, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\begin{DoxyCompactList}\small\item\em build index by indexing given sources \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDummyIndex_a8640203372170a92541be30ffd95c261}{Merge} (\hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} $>$ \&, bool)
+\begin{DoxyCompactList}\small\item\em build index by mering current index with given index \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDummyIndex_a9ca432e4e70fd44987f0139f41de66e8}{Prealloc} (bool)
+\begin{DoxyCompactList}\small\item\em check all data files, preload schema, and preallocate enough R\-A\-M to load memory-\/cached data \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDummyIndex_aa5894c0a37e2d0c0048f612650cdfc32}{Dealloc} ()
+\begin{DoxyCompactList}\small\item\em deallocate all previously preallocated shared data \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDummyIndex_a78c61e3a7b8bede3990ee7dafca4402d}{Preread} ()
+\begin{DoxyCompactList}\small\item\em precache everything which needs to be precached \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDummyIndex_a61f8fcd54fa34f72cf84affcb1635822}{Set\-Memory\-Settings} (bool, bool, bool)
+\item 
+virtual void \hyperlink{classCSphDummyIndex_a88dcb3db2e760cd423245b88573ac8f9}{Set\-Base} (const char $\ast$)
+\begin{DoxyCompactList}\small\item\em set new index base path \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDummyIndex_a25ab6eb1f3e2b7c315d8bbc0b2408587}{Rename} (const char $\ast$)
+\begin{DoxyCompactList}\small\item\em set new index base path, and physically rename index files too \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDummyIndex_a9b9c193afae89019640df0078b8e7dc4}{Lock} ()
+\begin{DoxyCompactList}\small\item\em obtain exclusive lock on this index \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDummyIndex_a038f2a5405726cd9713499ca9dcb13b9}{Unlock} ()
+\begin{DoxyCompactList}\small\item\em dismiss exclusive lock and unlink lock file \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDummyIndex_a930195002116f2a5766b0a0a485aca75}{Post\-Setup} ()
+\begin{DoxyCompactList}\small\item\em called when index is loaded and prepared to work \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDummyIndex_a4ae5289218066268d997f6aa84b3ac04}{Early\-Reject} (\hyperlink{classCSphQueryContext}{C\-Sph\-Query\-Context} $\ast$, \hyperlink{classCSphMatch}{C\-Sph\-Match} \&) const 
+\item 
+virtual const \hyperlink{structCSphSourceStats}{C\-Sph\-Source\-Stats} \& \hyperlink{classCSphDummyIndex_ad23f5de63b16480df3c7ef4e4cae8d7b}{Get\-Stats} () const 
+\begin{DoxyCompactList}\small\item\em return index document, bytes totals (F\-I\-X\-M\-E? remove this in favor of \hyperlink{classCSphDummyIndex_ab12bbde4125ee6d5f5ea31c096a898ba}{Get\-Status()} maybe?) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDummyIndex_ab12bbde4125ee6d5f5ea31c096a898ba}{Get\-Status} (\hyperlink{structCSphIndexStatus}{C\-Sph\-Index\-Status} $\ast$p\-Res) const 
+\begin{DoxyCompactList}\small\item\em return additional index info \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphDummyIndex_a9d4dd68f75d918fc50346eae96583d1d}{Multi\-Query} (const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$$\ast$, const \hyperlink{structCSphMultiQueryArgs}{C\-Sph\-Multi\-Query\-Args} \&) const 
+\item 
+virtual bool \hyperlink{classCSphDummyIndex_ac73bb80d3299c9a4568a0e926b2353d4}{Multi\-Query\-Ex} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$, \hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} $\ast$$\ast$, \hyperlink{classISphMatchSorter}{I\-Sph\-Match\-Sorter} $\ast$$\ast$, const \hyperlink{structCSphMultiQueryArgs}{C\-Sph\-Multi\-Query\-Args} \&) const 
+\item 
+virtual bool \hyperlink{classCSphDummyIndex_a13756ca3a40efcf81dafdeab1d69ee7b}{Get\-Keywords} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphKeywordInfo}{C\-Sph\-Keyword\-Info} $>$ \&, const char $\ast$, const \hyperlink{structGetKeywordsSettings__t}{Get\-Keywords\-Settings\-\_\-t} \&, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$) const 
+\item 
+virtual bool \hyperlink{classCSphDummyIndex_a0ce40987f39a40d3dc9f6a55b7220fd9}{Fill\-Keywords} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphKeywordInfo}{C\-Sph\-Keyword\-Info} $>$ \&d\-Keywords) const 
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDummyIndex_a1673972bb18ea8a0ab246c12be50020c}{Update\-Attributes} (const \hyperlink{structCSphAttrUpdate}{C\-Sph\-Attr\-Update} \&, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \hyperlink{structCSphString}{C\-Sph\-String} \&, \hyperlink{structCSphString}{C\-Sph\-String} \&)
+\item 
+virtual bool \hyperlink{classCSphDummyIndex_af7136c4e16a1c27f97c855c182a6204e}{Save\-Attributes} (\hyperlink{structCSphString}{C\-Sph\-String} \&) const 
+\item 
+virtual \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphDummyIndex_a976d254ef10b2daf245cea83d2044343}{Get\-Attribute\-Status} () const 
+\item 
+virtual bool \hyperlink{classCSphDummyIndex_a2ed2abccd1b8f79814b4ea0801f8d6f0}{Create\-Modified\-Files} (bool, const \hyperlink{structCSphString}{C\-Sph\-String} \&, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr}, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \hyperlink{structCSphString}{C\-Sph\-String} \&)
+\item 
+virtual bool \hyperlink{classCSphDummyIndex_a2e36b5553b8aef2d86502d7fcd8ef874}{Add\-Remove\-Attribute} (bool, const \hyperlink{structCSphString}{C\-Sph\-String} \&, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr}, \hyperlink{structCSphString}{C\-Sph\-String} \&)
+\item 
+virtual void \hyperlink{classCSphDummyIndex_a87d1e7710dea7b57c6be4dff55dd5085}{Debug\-Dump\-Header} (F\-I\-L\-E $\ast$, const char $\ast$, bool)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDummyIndex_abd3aa10e26efd44c31d71620f315e2eb}{Debug\-Dump\-Docids} (F\-I\-L\-E $\ast$)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDummyIndex_a5ff781f5c33482ead0cfb51e4641a9bd}{Debug\-Dump\-Hitlist} (F\-I\-L\-E $\ast$, const char $\ast$, bool)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphDummyIndex_a6c0e94d8a3c6518daeb106eb337deeb7}{Debug\-Check} (F\-I\-L\-E $\ast$)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDummyIndex_a1a1dc0dd69fe7e5abd9d623b8fbd9233}{Debug\-Dump\-Dict} (F\-I\-L\-E $\ast$)
+\begin{DoxyCompactList}\small\item\em internal debugging hook, D\-O N\-O\-T U\-S\-E \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphDummyIndex_abb15a3013af5a5cf38052406c54d1200}{Set\-Progress\-Callback} (\hyperlink{structCSphIndexProgress_ae4d818fe1ea74a250088fcc7b77fdf63}{C\-Sph\-Index\-Progress\-::\-Indexing\-Progress\-\_\-fn})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCSphDummyIndex_a6bc38793a81cd2027c4f34df6c6d27b0}{m\-\_\-h\-Hits}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphDummyIndex_a949fc311a9743ecb38a9f8eae283cc8b}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}}
+\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{C\-Sph\-Dummy\-Index}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Dummy\-Index\-::\-C\-Sph\-Dummy\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphDummyIndex_a949fc311a9743ecb38a9f8eae283cc8b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphDummyIndex_a2e36b5553b8aef2d86502d7fcd8ef874}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Add\-Remove\-Attribute@{Add\-Remove\-Attribute}}
+\index{Add\-Remove\-Attribute@{Add\-Remove\-Attribute}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Add\-Remove\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Add\-Remove\-Attribute (
+\begin{DoxyParamCaption}
+\item[{bool}]{, }
+\item[{const {\bf C\-Sph\-String} \&}]{, }
+\item[{{\bf E\-Sph\-Attr}}]{, }
+\item[{{\bf C\-Sph\-String} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a2e36b5553b8aef2d86502d7fcd8ef874}
+
+
+Implements \hyperlink{classCSphIndex_ae03b4ecb65255ca5ff209f9d79df52ad}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a02cb57467541a3c7fbba17e5e9b4bf21}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Build@{Build}}
+\index{Build@{Build}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Build}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Dummy\-Index\-::\-Build (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Source} $\ast$ $>$ \&}]{d\-Sources, }
+\item[{{\bf int}}]{i\-Memory\-Limit, }
+\item[{{\bf int}}]{i\-Write\-Buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a02cb57467541a3c7fbba17e5e9b4bf21}
+
+
+build index by indexing given sources 
+
+
+
+Implements \hyperlink{classCSphIndex_a511623b7f266c3bdded675613aba2939}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a2ed2abccd1b8f79814b4ea0801f8d6f0}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Create\-Modified\-Files@{Create\-Modified\-Files}}
+\index{Create\-Modified\-Files@{Create\-Modified\-Files}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Create\-Modified\-Files}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Create\-Modified\-Files (
+\begin{DoxyParamCaption}
+\item[{bool}]{, }
+\item[{const {\bf C\-Sph\-String} \&}]{, }
+\item[{{\bf E\-Sph\-Attr}}]{, }
+\item[{{\bf int}}]{, }
+\item[{{\bf C\-Sph\-String} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a2ed2abccd1b8f79814b4ea0801f8d6f0}
+\hypertarget{classCSphDummyIndex_aa5894c0a37e2d0c0048f612650cdfc32}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Dealloc@{Dealloc}}
+\index{Dealloc@{Dealloc}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Dealloc}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Dealloc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_aa5894c0a37e2d0c0048f612650cdfc32}
+
+
+deallocate all previously preallocated shared data 
+
+
+
+Implements \hyperlink{classCSphIndex_a19cd46e34780cebed5ab7d4b0faed501}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a6c0e94d8a3c6518daeb106eb337deeb7}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Debug\-Check@{Debug\-Check}}
+\index{Debug\-Check@{Debug\-Check}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Debug\-Check}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Dummy\-Index\-::\-Debug\-Check (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a6c0e94d8a3c6518daeb106eb337deeb7}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_a0f44239433b6bef01f3590583fdf2f60}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a1a1dc0dd69fe7e5abd9d623b8fbd9233}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Debug\-Dump\-Dict@{Debug\-Dump\-Dict}}
+\index{Debug\-Dump\-Dict@{Debug\-Dump\-Dict}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Debug\-Dump\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Debug\-Dump\-Dict (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a1a1dc0dd69fe7e5abd9d623b8fbd9233}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_a684af9d03342c79a4ab6885f8250bc64}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_abd3aa10e26efd44c31d71620f315e2eb}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Debug\-Dump\-Docids@{Debug\-Dump\-Docids}}
+\index{Debug\-Dump\-Docids@{Debug\-Dump\-Docids}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Debug\-Dump\-Docids}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Debug\-Dump\-Docids (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_abd3aa10e26efd44c31d71620f315e2eb}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_a2385d5af2cc0403456f17dd3c5289a91}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a87d1e7710dea7b57c6be4dff55dd5085}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Debug\-Dump\-Header@{Debug\-Dump\-Header}}
+\index{Debug\-Dump\-Header@{Debug\-Dump\-Header}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Debug\-Dump\-Header}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Debug\-Dump\-Header (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{const char $\ast$}]{s\-Header\-Name, }
+\item[{bool}]{b\-Config}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a87d1e7710dea7b57c6be4dff55dd5085}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_ab1123cb39dff035759be9adaa800e2e6}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a5ff781f5c33482ead0cfb51e4641a9bd}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Debug\-Dump\-Hitlist@{Debug\-Dump\-Hitlist}}
+\index{Debug\-Dump\-Hitlist@{Debug\-Dump\-Hitlist}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Debug\-Dump\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Debug\-Dump\-Hitlist (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{const char $\ast$}]{s\-Keyword, }
+\item[{bool}]{b\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a5ff781f5c33482ead0cfb51e4641a9bd}
+
+
+internal debugging hook, D\-O N\-O\-T U\-S\-E 
+
+
+
+Implements \hyperlink{classCSphIndex_ac1f1f3287a7cc88920c76e62bd8750cf}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a4ae5289218066268d997f6aa84b3ac04}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Early\-Reject@{Early\-Reject}}
+\index{Early\-Reject@{Early\-Reject}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Early\-Reject}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Early\-Reject (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Query\-Context} $\ast$}]{, }
+\item[{{\bf C\-Sph\-Match} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a4ae5289218066268d997f6aa84b3ac04}
+
+
+Implements \hyperlink{classCSphIndex_a9b37c81e5a2ffe7be4d2a0265e8e7081}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a0ce40987f39a40d3dc9f6a55b7220fd9}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Fill\-Keywords@{Fill\-Keywords}}
+\index{Fill\-Keywords@{Fill\-Keywords}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Fill\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Dummy\-Index\-::\-Fill\-Keywords (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Keyword\-Info} $>$ \&}]{d\-Keywords}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphDummyIndex_a0ce40987f39a40d3dc9f6a55b7220fd9}
+
+
+Implements \hyperlink{classCSphIndex_a9b8cfa825762de9f49db54eeb39f6004}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a976d254ef10b2daf245cea83d2044343}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Get\-Attribute\-Status@{Get\-Attribute\-Status}}
+\index{Get\-Attribute\-Status@{Get\-Attribute\-Status}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Get\-Attribute\-Status}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf D\-W\-O\-R\-D} C\-Sph\-Dummy\-Index\-::\-Get\-Attribute\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a976d254ef10b2daf245cea83d2044343}
+
+
+Implements \hyperlink{classCSphIndex_a5ec250c0b3e1eb392f2b76796425e503}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a13756ca3a40efcf81dafdeab1d69ee7b}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Get\-Keywords@{Get\-Keywords}}
+\index{Get\-Keywords@{Get\-Keywords}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Get\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Get\-Keywords (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Keyword\-Info} $>$ \&}]{, }
+\item[{const char $\ast$}]{, }
+\item[{const {\bf Get\-Keywords\-Settings\-\_\-t} \&}]{, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a13756ca3a40efcf81dafdeab1d69ee7b}
+
+
+Implements \hyperlink{classCSphIndex_a3096853f1151b77ed5e3e666c4120a4b}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a6e1b5e0ea053f6fce94c4a540eb2909a}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Get\-Kill\-List@{Get\-Kill\-List}}
+\index{Get\-Kill\-List@{Get\-Kill\-List}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Get\-Kill\-List}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Sph\-Doc\-I\-D\-\_\-t}$\ast$ C\-Sph\-Dummy\-Index\-::\-Get\-Kill\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a6e1b5e0ea053f6fce94c4a540eb2909a}
+
+
+Implements \hyperlink{classCSphIndex_a742881b516501e4a60830a7051be32ef}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_acc3dd24e36c2af9f6f31694e84509d76}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Get\-Kill\-List\-Size@{Get\-Kill\-List\-Size}}
+\index{Get\-Kill\-List\-Size@{Get\-Kill\-List\-Size}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Get\-Kill\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Dummy\-Index\-::\-Get\-Kill\-List\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_acc3dd24e36c2af9f6f31694e84509d76}
+
+
+Implements \hyperlink{classCSphIndex_afc96ce6459f93e6a214a0433691bd6da}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_ad23f5de63b16480df3c7ef4e4cae8d7b}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Get\-Stats@{Get\-Stats}}
+\index{Get\-Stats@{Get\-Stats}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Get\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf C\-Sph\-Source\-Stats}\& C\-Sph\-Dummy\-Index\-::\-Get\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_ad23f5de63b16480df3c7ef4e4cae8d7b}
+
+
+return index document, bytes totals (F\-I\-X\-M\-E? remove this in favor of \hyperlink{classCSphDummyIndex_ab12bbde4125ee6d5f5ea31c096a898ba}{Get\-Status()} maybe?) 
+
+
+
+Implements \hyperlink{classCSphIndex_a993b7194dfa869f1fc53e88dbaea312e}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_ab12bbde4125ee6d5f5ea31c096a898ba}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Get\-Status@{Get\-Status}}
+\index{Get\-Status@{Get\-Status}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Get\-Status (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index\-Status} $\ast$}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_ab12bbde4125ee6d5f5ea31c096a898ba}
+
+
+return additional index info 
+
+
+
+Implements \hyperlink{classCSphIndex_aa62060b8df807b6beeb93efda865cd60}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_ad9574d57481f70067f81a4c6a21161a7}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Has\-Docid@{Has\-Docid}}
+\index{Has\-Docid@{Has\-Docid}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Has\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Has\-Docid (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_ad9574d57481f70067f81a4c6a21161a7}
+
+
+Implements \hyperlink{classCSphIndex_adb5aa35c6a81bb37cb9895a3938edb6e}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a9b9c193afae89019640df0078b8e7dc4}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Lock@{Lock}}
+\index{Lock@{Lock}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Lock}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a9b9c193afae89019640df0078b8e7dc4}
+
+
+obtain exclusive lock on this index 
+
+
+
+Implements \hyperlink{classCSphIndex_a0d9cb1bec9432296de727de7982fd28f}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a8640203372170a92541be30ffd95c261}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Merge@{Merge}}
+\index{Merge@{Merge}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Merge}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Merge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index} $\ast$}]{p\-Source, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Filter\-Settings} $>$ \&}]{d\-Filters, }
+\item[{bool}]{b\-Merge\-Kill\-Lists}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a8640203372170a92541be30ffd95c261}
+
+
+build index by mering current index with given index 
+
+
+
+Implements \hyperlink{classCSphIndex_ab27064d2a9275e8683fccaa9472894d5}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a9d4dd68f75d918fc50346eae96583d1d}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Multi\-Query@{Multi\-Query}}
+\index{Multi\-Query@{Multi\-Query}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Multi\-Query}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Multi\-Query (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$}]{, }
+\item[{{\bf int}}]{, }
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$$\ast$}]{, }
+\item[{const {\bf C\-Sph\-Multi\-Query\-Args} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a9d4dd68f75d918fc50346eae96583d1d}
+
+
+Implements \hyperlink{classCSphIndex_af9509496c555985ec9ccec4c2260391d}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_ac73bb80d3299c9a4568a0e926b2353d4}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Multi\-Query\-Ex@{Multi\-Query\-Ex}}
+\index{Multi\-Query\-Ex@{Multi\-Query\-Ex}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Multi\-Query\-Ex}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Multi\-Query\-Ex (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{, }
+\item[{{\bf C\-Sph\-Query\-Result} $\ast$$\ast$}]{, }
+\item[{{\bf I\-Sph\-Match\-Sorter} $\ast$$\ast$}]{, }
+\item[{const {\bf C\-Sph\-Multi\-Query\-Args} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_ac73bb80d3299c9a4568a0e926b2353d4}
+
+
+Implements \hyperlink{classCSphIndex_a19f5a3df99344e37a1d8a1e9ac7f8c22}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a930195002116f2a5766b0a0a485aca75}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Post\-Setup@{Post\-Setup}}
+\index{Post\-Setup@{Post\-Setup}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Post\-Setup}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Post\-Setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a930195002116f2a5766b0a0a485aca75}
+
+
+called when index is loaded and prepared to work 
+
+
+
+Implements \hyperlink{classCSphIndex_a903008e29c37e817e72e7e92d2ccb964}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a9ca432e4e70fd44987f0139f41de66e8}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Prealloc@{Prealloc}}
+\index{Prealloc@{Prealloc}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Prealloc}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Prealloc (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Strip\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a9ca432e4e70fd44987f0139f41de66e8}
+
+
+check all data files, preload schema, and preallocate enough R\-A\-M to load memory-\/cached data 
+
+
+
+Implements \hyperlink{classCSphIndex_a5ecebcd36640119821b2a3c44edf120c}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a78c61e3a7b8bede3990ee7dafca4402d}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Preread@{Preread}}
+\index{Preread@{Preread}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Preread}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Preread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a78c61e3a7b8bede3990ee7dafca4402d}
+
+
+precache everything which needs to be precached 
+
+
+
+Implements \hyperlink{classCSphIndex_acaa353c3d9d7753600527336efa6a0f8}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a25ab6eb1f3e2b7c315d8bbc0b2408587}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Rename@{Rename}}
+\index{Rename@{Rename}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Rename}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Rename (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-New\-Base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a25ab6eb1f3e2b7c315d8bbc0b2408587}
+
+
+set new index base path, and physically rename index files too 
+
+
+
+Implements \hyperlink{classCSphIndex_a8dc7ada3f2ed3d5e946b0b3b744c6ba7}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_af7136c4e16a1c27f97c855c182a6204e}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Save\-Attributes@{Save\-Attributes}}
+\index{Save\-Attributes@{Save\-Attributes}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Save\-Attributes}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Dummy\-Index\-::\-Save\-Attributes (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_af7136c4e16a1c27f97c855c182a6204e}
+saves memory-\/cached attributes, if there were any updates to them on failure, false is returned and \hyperlink{classCSphIndex_aa6c4f86ceb64733762450a5a37ba15d8}{Get\-Last\-Error()} contains error message 
+
+Implements \hyperlink{classCSphIndex_a125ab8314647e93a406f827ee6406a14}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a88dcb3db2e760cd423245b88573ac8f9}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Set\-Base@{Set\-Base}}
+\index{Set\-Base@{Set\-Base}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Set\-Base}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Set\-Base (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-New\-Base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a88dcb3db2e760cd423245b88573ac8f9}
+
+
+set new index base path 
+
+
+
+Implements \hyperlink{classCSphIndex_a390720d5982aedac1973de92f08fe821}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a61f8fcd54fa34f72cf84affcb1635822}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Set\-Memory\-Settings@{Set\-Memory\-Settings}}
+\index{Set\-Memory\-Settings@{Set\-Memory\-Settings}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Set\-Memory\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Set\-Memory\-Settings (
+\begin{DoxyParamCaption}
+\item[{bool}]{, }
+\item[{bool}]{, }
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a61f8fcd54fa34f72cf84affcb1635822}
+
+
+Implements \hyperlink{classCSphIndex_ae0bb2bd341cb41c0339ca5132284799e}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_abb15a3013af5a5cf38052406c54d1200}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Set\-Progress\-Callback@{Set\-Progress\-Callback}}
+\index{Set\-Progress\-Callback@{Set\-Progress\-Callback}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Set\-Progress\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Set\-Progress\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index\-Progress\-::\-Indexing\-Progress\-\_\-fn}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_abb15a3013af5a5cf38052406c54d1200}
+
+
+Implements \hyperlink{classCSphIndex_a787668511b48ea883bb2e9a9721a8652}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a038f2a5405726cd9713499ca9dcb13b9}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Unlock@{Unlock}}
+\index{Unlock@{Unlock}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Unlock}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Dummy\-Index\-::\-Unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a038f2a5405726cd9713499ca9dcb13b9}
+
+
+dismiss exclusive lock and unlink lock file 
+
+
+
+Implements \hyperlink{classCSphIndex_aaabb7c87f3776dc91be0ebb9978ea8d7}{C\-Sph\-Index}.
+
+\hypertarget{classCSphDummyIndex_a1673972bb18ea8a0ab246c12be50020c}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!Update\-Attributes@{Update\-Attributes}}
+\index{Update\-Attributes@{Update\-Attributes}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{Update\-Attributes}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Dummy\-Index\-::\-Update\-Attributes (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Update} \&}]{t\-Upd, }
+\item[{{\bf int}}]{i\-Index, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphDummyIndex_a1673972bb18ea8a0ab246c12be50020c}
+updates memory-\/cached attributes in real time returns non-\/negative amount of actually found and updated records on success on failure, -\/1 is returned and \hyperlink{classCSphIndex_aa6c4f86ceb64733762450a5a37ba15d8}{Get\-Last\-Error()} contains error message 
+
+Implements \hyperlink{classCSphIndex_a04bc00c3a4767aecd7f6ca953ef92f17}{C\-Sph\-Index}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphDummyIndex_a6bc38793a81cd2027c4f34df6c6d27b0}{\index{C\-Sph\-Dummy\-Index@{C\-Sph\-Dummy\-Index}!m\-\_\-h\-Hits@{m\-\_\-h\-Hits}}
+\index{m\-\_\-h\-Hits@{m\-\_\-h\-Hits}!CSphDummyIndex@{C\-Sph\-Dummy\-Index}}
+\subsubsection[{m\-\_\-h\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Small\-String\-Hash\-\_\-\-T}$<$ {\bf int} $>$ C\-Sph\-Dummy\-Index\-::m\-\_\-h\-Hits}}\label{classCSphDummyIndex_a6bc38793a81cd2027c4f34df6c6d27b0}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{tests_8cpp}{tests.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,172 @@
+\hypertarget{indextool_8cpp}{\section{src/indextool.cpp File Reference}
+\label{indextool_8cpp}\index{src/indextool.\-cpp@{src/indextool.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxrt.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structIDFWord__t}{I\-D\-F\-Word\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{indextool_8cpp_ac48526b7d876e1e4e85c9e6e91f1efbe}{sph\-Seek}~lseek
+\item 
+\#define \hyperlink{indextool_8cpp_a68b831d8b7c5398c76b4d2ddca1efa61}{O\-P\-T}(\-\_\-a1, \-\_\-a2)~else \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} ( !strcmp(argv\mbox{[}i\mbox{]},\-\_\-a1) $|$$|$ !strcmp(argv\mbox{[}i\mbox{]},\-\_\-a2) )
+\item 
+\#define \hyperlink{indextool_8cpp_a8790f5a78a02a03aee5b34599b59d2e7}{O\-P\-T1}(\-\_\-a1)~else \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} ( !strcmp(argv\mbox{[}i\mbox{]},\-\_\-a1) )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{indextool_8cpp_a352daab1e2ea73751978bc41ce66dbe0}{Strip\-Stdin} (const char $\ast$s\-Index\-Attrs, const char $\ast$s\-Remove\-Elements)
+\item 
+void \hyperlink{indextool_8cpp_afeab9513bdba218579af737fbba1ec00}{Apply\-Morphology} (\hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$p\-Index)
+\item 
+void \hyperlink{indextool_8cpp_afe9164ed7dfb8521e0ef5177a9888068}{Charset\-Fold} (\hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$p\-Index, F\-I\-L\-E $\ast$fp)
+\item 
+bool \hyperlink{indextool_8cpp_a7c774d85c9eeedbfc6590bd7975608c9}{Fixup\-Files} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Files, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+bool \hyperlink{indextool_8cpp_ae556195c4747ebc728fce7b924b8f7b7}{Do\-Klists\-Optimization} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Row\-Size, const char $\ast$s\-Path, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Chunk\-Count, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Files)
+\item 
+\hyperlink{indextool_8cpp_ad462484202eaf579d332e21851dced45}{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T} (\hyperlink{structIDFWord__t}{I\-D\-F\-Word\-\_\-t}, 12)
+\item 
+bool \hyperlink{indextool_8cpp_aeed85f4d18198ca476f47f3dc05dc573}{Build\-I\-D\-F} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Filename, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Files, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Skip\-Unique)
+\item 
+bool \hyperlink{indextool_8cpp_a2632c2eb71fb3e6a47aac412ecd67040}{Merge\-I\-D\-F} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Filename, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Files, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Skip\-Unique)
+\item 
+void \hyperlink{indextool_8cpp_ae2aa678aa48c216941885168b167cb98}{Optimize\-Rt\-Klists} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Index, const \hyperlink{sphinxutils_8h_a48ca2d6437aae9aaa279d7993e6ade56}{C\-Sph\-Config} \&h\-Conf)
+\item 
+void \hyperlink{indextool_8cpp_a4ec816a451eee988838d246e6958241c}{sph\-Dict\-Build\-Infixes} (const char $\ast$s\-Path)
+\item 
+void \hyperlink{indextool_8cpp_ae39f3147548f18b14237b75a4aa8f883}{sph\-Dict\-Build\-Skiplists} (const char $\ast$s\-Path)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{indextool_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{indextool_8cpp_a68b831d8b7c5398c76b4d2ddca1efa61}{\index{indextool.\-cpp@{indextool.\-cpp}!O\-P\-T@{O\-P\-T}}
+\index{O\-P\-T@{O\-P\-T}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{O\-P\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-P\-T(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-a1, }
+\item[{}]{\-\_\-a2}
+\end{DoxyParamCaption}
+)~else {\bf if} ( !strcmp(argv\mbox{[}i\mbox{]},\-\_\-a1) $|$$|$ !strcmp(argv\mbox{[}i\mbox{]},\-\_\-a2) )}}\label{indextool_8cpp_a68b831d8b7c5398c76b4d2ddca1efa61}
+\hypertarget{indextool_8cpp_a8790f5a78a02a03aee5b34599b59d2e7}{\index{indextool.\-cpp@{indextool.\-cpp}!O\-P\-T1@{O\-P\-T1}}
+\index{O\-P\-T1@{O\-P\-T1}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{O\-P\-T1}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-P\-T1(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-a1}
+\end{DoxyParamCaption}
+)~else {\bf if} ( !strcmp(argv\mbox{[}i\mbox{]},\-\_\-a1) )}}\label{indextool_8cpp_a8790f5a78a02a03aee5b34599b59d2e7}
+\hypertarget{indextool_8cpp_ac48526b7d876e1e4e85c9e6e91f1efbe}{\index{indextool.\-cpp@{indextool.\-cpp}!sph\-Seek@{sph\-Seek}}
+\index{sph\-Seek@{sph\-Seek}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{sph\-Seek}]{\setlength{\rightskip}{0pt plus 5cm}\#define sph\-Seek~lseek}}\label{indextool_8cpp_ac48526b7d876e1e4e85c9e6e91f1efbe}
+
+
+\subsection{Function Documentation}
+\hypertarget{indextool_8cpp_afeab9513bdba218579af737fbba1ec00}{\index{indextool.\-cpp@{indextool.\-cpp}!Apply\-Morphology@{Apply\-Morphology}}
+\index{Apply\-Morphology@{Apply\-Morphology}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{Apply\-Morphology}]{\setlength{\rightskip}{0pt plus 5cm}void Apply\-Morphology (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index} $\ast$}]{p\-Index}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_afeab9513bdba218579af737fbba1ec00}
+\hypertarget{indextool_8cpp_aeed85f4d18198ca476f47f3dc05dc573}{\index{indextool.\-cpp@{indextool.\-cpp}!Build\-I\-D\-F@{Build\-I\-D\-F}}
+\index{Build\-I\-D\-F@{Build\-I\-D\-F}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{Build\-I\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool Build\-I\-D\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Filename, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Files, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Skip\-Unique}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_aeed85f4d18198ca476f47f3dc05dc573}
+\hypertarget{indextool_8cpp_afe9164ed7dfb8521e0ef5177a9888068}{\index{indextool.\-cpp@{indextool.\-cpp}!Charset\-Fold@{Charset\-Fold}}
+\index{Charset\-Fold@{Charset\-Fold}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{Charset\-Fold}]{\setlength{\rightskip}{0pt plus 5cm}void Charset\-Fold (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index} $\ast$}]{p\-Index, }
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_afe9164ed7dfb8521e0ef5177a9888068}
+\hypertarget{indextool_8cpp_ae556195c4747ebc728fce7b924b8f7b7}{\index{indextool.\-cpp@{indextool.\-cpp}!Do\-Klists\-Optimization@{Do\-Klists\-Optimization}}
+\index{Do\-Klists\-Optimization@{Do\-Klists\-Optimization}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{Do\-Klists\-Optimization}]{\setlength{\rightskip}{0pt plus 5cm}bool Do\-Klists\-Optimization (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Row\-Size, }
+\item[{const char $\ast$}]{s\-Path, }
+\item[{{\bf int}}]{i\-Chunk\-Count, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Files}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_ae556195c4747ebc728fce7b924b8f7b7}
+\hypertarget{indextool_8cpp_a7c774d85c9eeedbfc6590bd7975608c9}{\index{indextool.\-cpp@{indextool.\-cpp}!Fixup\-Files@{Fixup\-Files}}
+\index{Fixup\-Files@{Fixup\-Files}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{Fixup\-Files}]{\setlength{\rightskip}{0pt plus 5cm}bool Fixup\-Files (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Files, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_a7c774d85c9eeedbfc6590bd7975608c9}
+\hypertarget{indextool_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{indextool.\-cpp@{indextool.\-cpp}!main@{main}}
+\index{main@{main}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} main (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+\hypertarget{indextool_8cpp_a2632c2eb71fb3e6a47aac412ecd67040}{\index{indextool.\-cpp@{indextool.\-cpp}!Merge\-I\-D\-F@{Merge\-I\-D\-F}}
+\index{Merge\-I\-D\-F@{Merge\-I\-D\-F}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{Merge\-I\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool Merge\-I\-D\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Filename, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Files, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Skip\-Unique}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_a2632c2eb71fb3e6a47aac412ecd67040}
+\hypertarget{indextool_8cpp_ae2aa678aa48c216941885168b167cb98}{\index{indextool.\-cpp@{indextool.\-cpp}!Optimize\-Rt\-Klists@{Optimize\-Rt\-Klists}}
+\index{Optimize\-Rt\-Klists@{Optimize\-Rt\-Klists}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{Optimize\-Rt\-Klists}]{\setlength{\rightskip}{0pt plus 5cm}void Optimize\-Rt\-Klists (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Index, }
+\item[{const {\bf C\-Sph\-Config} \&}]{h\-Conf}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_ae2aa678aa48c216941885168b167cb98}
+\hypertarget{indextool_8cpp_a4ec816a451eee988838d246e6958241c}{\index{indextool.\-cpp@{indextool.\-cpp}!sph\-Dict\-Build\-Infixes@{sph\-Dict\-Build\-Infixes}}
+\index{sph\-Dict\-Build\-Infixes@{sph\-Dict\-Build\-Infixes}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{sph\-Dict\-Build\-Infixes}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Dict\-Build\-Infixes (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Path}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_a4ec816a451eee988838d246e6958241c}
+\hypertarget{indextool_8cpp_ae39f3147548f18b14237b75a4aa8f883}{\index{indextool.\-cpp@{indextool.\-cpp}!sph\-Dict\-Build\-Skiplists@{sph\-Dict\-Build\-Skiplists}}
+\index{sph\-Dict\-Build\-Skiplists@{sph\-Dict\-Build\-Skiplists}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{sph\-Dict\-Build\-Skiplists}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Dict\-Build\-Skiplists (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Path}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_ae39f3147548f18b14237b75a4aa8f883}
+\hypertarget{indextool_8cpp_ad462484202eaf579d332e21851dced45}{\index{indextool.\-cpp@{indextool.\-cpp}!S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-D\-F\-Word\-\_\-t}}]{, }
+\item[{12}]{}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_ad462484202eaf579d332e21851dced45}
+\hypertarget{indextool_8cpp_a352daab1e2ea73751978bc41ce66dbe0}{\index{indextool.\-cpp@{indextool.\-cpp}!Strip\-Stdin@{Strip\-Stdin}}
+\index{Strip\-Stdin@{Strip\-Stdin}!indextool.cpp@{indextool.\-cpp}}
+\subsubsection[{Strip\-Stdin}]{\setlength{\rightskip}{0pt plus 5cm}void Strip\-Stdin (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Index\-Attrs, }
+\item[{const char $\ast$}]{s\-Remove\-Elements}
+\end{DoxyParamCaption}
+)}}\label{indextool_8cpp_a352daab1e2ea73751978bc41ce66dbe0}

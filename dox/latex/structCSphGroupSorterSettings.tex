@@ -1,0 +1,156 @@
+\hypertarget{structCSphGroupSorterSettings}{\section{C\-Sph\-Group\-Sorter\-Settings Struct Reference}
+\label{structCSphGroupSorterSettings}\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}}
+}
+
+
+additional group-\/by sorter settings  
+
+
+Inheritance diagram for C\-Sph\-Group\-Sorter\-Settings\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.201717cm]{structCSphGroupSorterSettings}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphGroupSorterSettings_a5d33597f9c7d25699c4425cac250da2a}{C\-Sph\-Group\-Sorter\-Settings} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{structCSphGroupSorterSettings_a0afffef6aac99d41a348961881960162}{m\-\_\-t\-Loc\-Groupby}
+\begin{DoxyCompactList}\small\item\em locator for  \end{DoxyCompactList}\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{structCSphGroupSorterSettings_a3b7a40d09116a62563a26b90dad2715a}{m\-\_\-t\-Loc\-Count}
+\begin{DoxyCompactList}\small\item\em locator for  \end{DoxyCompactList}\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{structCSphGroupSorterSettings_a34ecf99b7f404aab7476e459dea8df6d}{m\-\_\-t\-Loc\-Distinct}
+\begin{DoxyCompactList}\small\item\em locator for  \end{DoxyCompactList}\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{structCSphGroupSorterSettings_a84e448e7c765cdc8f4674a577f3ff6b1}{m\-\_\-t\-Distinct\-Loc}
+\begin{DoxyCompactList}\small\item\em locator for attribute to compute count(distinct) for \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} \hyperlink{structCSphGroupSorterSettings_a5cf4da17e82a9183dece0b40442bf6a8}{m\-\_\-e\-Distinct\-Attr}
+\begin{DoxyCompactList}\small\item\em type of attribute to compute count(distinct) for \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphGroupSorterSettings_a493fe7f4268046480bec6c40926796a4}{m\-\_\-b\-Distinct}
+\begin{DoxyCompactList}\small\item\em whether we need distinct \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphGroupSorterSettings_ac863dda0135c99dafcad40707d1301f7}{m\-\_\-b\-M\-V\-A}
+\begin{DoxyCompactList}\small\item\em whether we're grouping by M\-V\-A attribute \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphGroupSorterSettings_a6df446a75ac8695a79549585708c43b3}{m\-\_\-b\-Mva64}
+\item 
+\hyperlink{classCSphGrouper}{C\-Sph\-Grouper} $\ast$ \hyperlink{structCSphGroupSorterSettings_af976f035f4367a4ec872d85c16c1a83d}{m\-\_\-p\-Grouper}
+\begin{DoxyCompactList}\small\item\em group key calculator \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphGroupSorterSettings_a291e71d39fac0fc98b0392d81e42343f}{m\-\_\-b\-Implicit}
+\begin{DoxyCompactList}\small\item\em for queries with aggregate functions but without group by clause \end{DoxyCompactList}\item 
+const \hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$ \hyperlink{structCSphGroupSorterSettings_aa5f8d2e3257a5a814ff144f78fde90d7}{m\-\_\-p\-Aggr\-Filter\-Trait}
+\begin{DoxyCompactList}\small\item\em aggregate filter that got owned by grouper \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphGroupSorterSettings_a62e864860985d58566bfe3891aeaad59}{m\-\_\-b\-Json}
+\begin{DoxyCompactList}\small\item\em whether we're grouping by Json attribute \end{DoxyCompactList}\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{structCSphGroupSorterSettings_af5b5313a9a0042996f5d9723d0559189}{m\-\_\-t\-Loc\-Groupby\-Str}
+\begin{DoxyCompactList}\small\item\em locator for  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+additional group-\/by sorter settings 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphGroupSorterSettings_a5d33597f9c7d25699c4425cac250da2a}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}}
+\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{C\-Sph\-Group\-Sorter\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Group\-Sorter\-Settings\-::\-C\-Sph\-Group\-Sorter\-Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphGroupSorterSettings_a5d33597f9c7d25699c4425cac250da2a}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphGroupSorterSettings_a493fe7f4268046480bec6c40926796a4}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-b\-Distinct@{m\-\_\-b\-Distinct}}
+\index{m\-\_\-b\-Distinct@{m\-\_\-b\-Distinct}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-b\-Distinct}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-b\-Distinct}}\label{structCSphGroupSorterSettings_a493fe7f4268046480bec6c40926796a4}
+
+
+whether we need distinct 
+
+\hypertarget{structCSphGroupSorterSettings_a291e71d39fac0fc98b0392d81e42343f}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-b\-Implicit@{m\-\_\-b\-Implicit}}
+\index{m\-\_\-b\-Implicit@{m\-\_\-b\-Implicit}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-b\-Implicit}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-b\-Implicit}}\label{structCSphGroupSorterSettings_a291e71d39fac0fc98b0392d81e42343f}
+
+
+for queries with aggregate functions but without group by clause 
+
+\hypertarget{structCSphGroupSorterSettings_a62e864860985d58566bfe3891aeaad59}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-b\-Json@{m\-\_\-b\-Json}}
+\index{m\-\_\-b\-Json@{m\-\_\-b\-Json}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-b\-Json}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-b\-Json}}\label{structCSphGroupSorterSettings_a62e864860985d58566bfe3891aeaad59}
+
+
+whether we're grouping by Json attribute 
+
+\hypertarget{structCSphGroupSorterSettings_ac863dda0135c99dafcad40707d1301f7}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-b\-M\-V\-A@{m\-\_\-b\-M\-V\-A}}
+\index{m\-\_\-b\-M\-V\-A@{m\-\_\-b\-M\-V\-A}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-b\-M\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-b\-M\-V\-A}}\label{structCSphGroupSorterSettings_ac863dda0135c99dafcad40707d1301f7}
+
+
+whether we're grouping by M\-V\-A attribute 
+
+\hypertarget{structCSphGroupSorterSettings_a6df446a75ac8695a79549585708c43b3}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-b\-Mva64@{m\-\_\-b\-Mva64}}
+\index{m\-\_\-b\-Mva64@{m\-\_\-b\-Mva64}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-b\-Mva64}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-b\-Mva64}}\label{structCSphGroupSorterSettings_a6df446a75ac8695a79549585708c43b3}
+\hypertarget{structCSphGroupSorterSettings_a5cf4da17e82a9183dece0b40442bf6a8}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-e\-Distinct\-Attr@{m\-\_\-e\-Distinct\-Attr}}
+\index{m\-\_\-e\-Distinct\-Attr@{m\-\_\-e\-Distinct\-Attr}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-e\-Distinct\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Attr} C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-e\-Distinct\-Attr}}\label{structCSphGroupSorterSettings_a5cf4da17e82a9183dece0b40442bf6a8}
+
+
+type of attribute to compute count(distinct) for 
+
+\hypertarget{structCSphGroupSorterSettings_aa5f8d2e3257a5a814ff144f78fde90d7}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-p\-Aggr\-Filter\-Trait@{m\-\_\-p\-Aggr\-Filter\-Trait}}
+\index{m\-\_\-p\-Aggr\-Filter\-Trait@{m\-\_\-p\-Aggr\-Filter\-Trait}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-p\-Aggr\-Filter\-Trait}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf I\-Sph\-Filter}$\ast$ C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-p\-Aggr\-Filter\-Trait}}\label{structCSphGroupSorterSettings_aa5f8d2e3257a5a814ff144f78fde90d7}
+
+
+aggregate filter that got owned by grouper 
+
+\hypertarget{structCSphGroupSorterSettings_af976f035f4367a4ec872d85c16c1a83d}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-p\-Grouper@{m\-\_\-p\-Grouper}}
+\index{m\-\_\-p\-Grouper@{m\-\_\-p\-Grouper}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-p\-Grouper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Grouper}$\ast$ C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-p\-Grouper}}\label{structCSphGroupSorterSettings_af976f035f4367a4ec872d85c16c1a83d}
+
+
+group key calculator 
+
+\hypertarget{structCSphGroupSorterSettings_a84e448e7c765cdc8f4674a577f3ff6b1}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-t\-Distinct\-Loc@{m\-\_\-t\-Distinct\-Loc}}
+\index{m\-\_\-t\-Distinct\-Loc@{m\-\_\-t\-Distinct\-Loc}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-t\-Distinct\-Loc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Attr\-Locator} C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-t\-Distinct\-Loc}}\label{structCSphGroupSorterSettings_a84e448e7c765cdc8f4674a577f3ff6b1}
+
+
+locator for attribute to compute count(distinct) for 
+
+\hypertarget{structCSphGroupSorterSettings_a3b7a40d09116a62563a26b90dad2715a}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-t\-Loc\-Count@{m\-\_\-t\-Loc\-Count}}
+\index{m\-\_\-t\-Loc\-Count@{m\-\_\-t\-Loc\-Count}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-t\-Loc\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Attr\-Locator} C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-t\-Loc\-Count}}\label{structCSphGroupSorterSettings_a3b7a40d09116a62563a26b90dad2715a}
+
+
+locator for  
+
+\hypertarget{structCSphGroupSorterSettings_a34ecf99b7f404aab7476e459dea8df6d}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-t\-Loc\-Distinct@{m\-\_\-t\-Loc\-Distinct}}
+\index{m\-\_\-t\-Loc\-Distinct@{m\-\_\-t\-Loc\-Distinct}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-t\-Loc\-Distinct}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Attr\-Locator} C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-t\-Loc\-Distinct}}\label{structCSphGroupSorterSettings_a34ecf99b7f404aab7476e459dea8df6d}
+
+
+locator for  
+
+\hypertarget{structCSphGroupSorterSettings_a0afffef6aac99d41a348961881960162}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-t\-Loc\-Groupby@{m\-\_\-t\-Loc\-Groupby}}
+\index{m\-\_\-t\-Loc\-Groupby@{m\-\_\-t\-Loc\-Groupby}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-t\-Loc\-Groupby}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Attr\-Locator} C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-t\-Loc\-Groupby}}\label{structCSphGroupSorterSettings_a0afffef6aac99d41a348961881960162}
+
+
+locator for  
+
+\hypertarget{structCSphGroupSorterSettings_af5b5313a9a0042996f5d9723d0559189}{\index{C\-Sph\-Group\-Sorter\-Settings@{C\-Sph\-Group\-Sorter\-Settings}!m\-\_\-t\-Loc\-Groupby\-Str@{m\-\_\-t\-Loc\-Groupby\-Str}}
+\index{m\-\_\-t\-Loc\-Groupby\-Str@{m\-\_\-t\-Loc\-Groupby\-Str}!CSphGroupSorterSettings@{C\-Sph\-Group\-Sorter\-Settings}}
+\subsubsection[{m\-\_\-t\-Loc\-Groupby\-Str}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Attr\-Locator} C\-Sph\-Group\-Sorter\-Settings\-::m\-\_\-t\-Loc\-Groupby\-Str}}\label{structCSphGroupSorterSettings_af5b5313a9a0042996f5d9723d0559189}
+
+
+locator for  
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

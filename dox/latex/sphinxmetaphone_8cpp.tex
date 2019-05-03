@@ -1,0 +1,176 @@
+\hypertarget{sphinxmetaphone_8cpp}{\section{src/sphinxmetaphone.cpp File Reference}
+\label{sphinxmetaphone_8cpp}\index{src/sphinxmetaphone.\-cpp@{src/sphinxmetaphone.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCurrentWord__t}{Current\-Word\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxmetaphone_8cpp_ad4e958910bba1dc611ca89311b4d155d}{A\-D\-D\-\_\-\-R\-E\-T}(prim, sec, adv)
+\item 
+\#define \hyperlink{sphinxmetaphone_8cpp_aa49424504280719045a61725acdd815b}{A\-D\-D}(prim, sec)~\hyperlink{sphinxmetaphone_8cpp_a5fe1181b5b32ec0862914e79c0c17369}{Metaph\-Add} ( s\-Primary, s\-Secondary, prim, sec )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{sphinxmetaphone_8cpp_a3cfbfd1be8f12de9be894c73795c8ae7}{Is\-Vowel} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} c)
+\item 
+static bool \hyperlink{sphinxmetaphone_8cpp_af2a810793d37cd6873f551326af63cac}{Slavo\-Germanic} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-String)
+\item 
+static bool \hyperlink{sphinxmetaphone_8cpp_a198e2e343bc2091ab21032ec49b76171}{Str\-At} (const \hyperlink{structCurrentWord__t}{Current\-Word\-\_\-t} \&Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Length, const char $\ast$sz\-Str1)
+\item 
+static bool \hyperlink{sphinxmetaphone_8cpp_a7cbfdd9edca7f7c577702ce9989aacbe}{Str\-At} (const \hyperlink{structCurrentWord__t}{Current\-Word\-\_\-t} \&Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Length, const char $\ast$sz\-Str1, const char $\ast$sz\-Str2)
+\item 
+static bool \hyperlink{sphinxmetaphone_8cpp_a7765fb27987f0f5f74deb47ff79c1d75}{Str\-At} (const \hyperlink{structCurrentWord__t}{Current\-Word\-\_\-t} \&Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Length, const char $\ast$sz\-Str1, const char $\ast$sz\-Str2, const char $\ast$sz\-Str3)
+\item 
+static bool \hyperlink{sphinxmetaphone_8cpp_a60ec6f0f1068d7fb00b18c3bec9d1e81}{Str\-At} (const \hyperlink{structCurrentWord__t}{Current\-Word\-\_\-t} \&Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Length, const char $\ast$sz\-Str1, const char $\ast$sz\-Str2, const char $\ast$sz\-Str3, const char $\ast$sz\-Str4)
+\item 
+static bool \hyperlink{sphinxmetaphone_8cpp_a43a78a6814e1ed4c6925a51e5c769208}{Str\-At} (const \hyperlink{structCurrentWord__t}{Current\-Word\-\_\-t} \&Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Length, const char $\ast$sz\-Str1, const char $\ast$sz\-Str2, const char $\ast$sz\-Str3, const char $\ast$sz\-Str4, const char $\ast$sz\-Str5)
+\item 
+static void \hyperlink{sphinxmetaphone_8cpp_a5fe1181b5b32ec0862914e79c0c17369}{Metaph\-Add} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Primary, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Secondary, const char $\ast$sz\-Add\-Primary, const char $\ast$sz\-Add\-Secondary)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxmetaphone_8cpp_a914d06236fb8dffd17ec1589c1d6757d}{Process\-Code} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Code, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Cur, \hyperlink{structCurrentWord__t}{Current\-Word\-\_\-t} \&Word, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Primary, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Secondary)
+\item 
+void \hyperlink{sphinxmetaphone_8cpp_a91013117a6ab030283483797b4ee2929}{stem\-\_\-dmetaphone} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Word)
+\begin{DoxyCompactList}\small\item\em double metaphone stemmer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxmetaphone_8cpp_aa49424504280719045a61725acdd815b}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!A\-D\-D@{A\-D\-D}}
+\index{A\-D\-D@{A\-D\-D}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{A\-D\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-D(
+\begin{DoxyParamCaption}
+\item[{}]{prim, }
+\item[{}]{sec}
+\end{DoxyParamCaption}
+)~{\bf Metaph\-Add} ( s\-Primary, s\-Secondary, prim, sec )}}\label{sphinxmetaphone_8cpp_aa49424504280719045a61725acdd815b}
+\hypertarget{sphinxmetaphone_8cpp_ad4e958910bba1dc611ca89311b4d155d}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!A\-D\-D\-\_\-\-R\-E\-T@{A\-D\-D\-\_\-\-R\-E\-T}}
+\index{A\-D\-D\-\_\-\-R\-E\-T@{A\-D\-D\-\_\-\-R\-E\-T}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{A\-D\-D\-\_\-\-R\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-D\-\_\-\-R\-E\-T(
+\begin{DoxyParamCaption}
+\item[{}]{prim, }
+\item[{}]{sec, }
+\item[{}]{adv}
+\end{DoxyParamCaption}
+)}}\label{sphinxmetaphone_8cpp_ad4e958910bba1dc611ca89311b4d155d}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{\(\backslash\)
+    MetaphAdd ( sPrimary, sSecondary, prim, sec );\(\backslash\)
+    return (adv);\(\backslash\)
+\}
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxmetaphone_8cpp_a3cfbfd1be8f12de9be894c73795c8ae7}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!Is\-Vowel@{Is\-Vowel}}
+\index{Is\-Vowel@{Is\-Vowel}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{Is\-Vowel}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Vowel (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxmetaphone_8cpp_a3cfbfd1be8f12de9be894c73795c8ae7}
+\hypertarget{sphinxmetaphone_8cpp_a5fe1181b5b32ec0862914e79c0c17369}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!Metaph\-Add@{Metaph\-Add}}
+\index{Metaph\-Add@{Metaph\-Add}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{Metaph\-Add}]{\setlength{\rightskip}{0pt plus 5cm}static void Metaph\-Add (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Primary, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Secondary, }
+\item[{const char $\ast$}]{sz\-Add\-Primary, }
+\item[{const char $\ast$}]{sz\-Add\-Secondary}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxmetaphone_8cpp_a5fe1181b5b32ec0862914e79c0c17369}
+\hypertarget{sphinxmetaphone_8cpp_a914d06236fb8dffd17ec1589c1d6757d}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!Process\-Code@{Process\-Code}}
+\index{Process\-Code@{Process\-Code}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{Process\-Code}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Process\-Code (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Code, }
+\item[{{\bf int}}]{i\-Cur, }
+\item[{{\bf Current\-Word\-\_\-t} \&}]{Word, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Primary, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Secondary}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxmetaphone_8cpp_a914d06236fb8dffd17ec1589c1d6757d}
+\hypertarget{sphinxmetaphone_8cpp_af2a810793d37cd6873f551326af63cac}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!Slavo\-Germanic@{Slavo\-Germanic}}
+\index{Slavo\-Germanic@{Slavo\-Germanic}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{Slavo\-Germanic}]{\setlength{\rightskip}{0pt plus 5cm}static bool Slavo\-Germanic (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-String}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxmetaphone_8cpp_af2a810793d37cd6873f551326af63cac}
+\hypertarget{sphinxmetaphone_8cpp_a91013117a6ab030283483797b4ee2929}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!stem\-\_\-dmetaphone@{stem\-\_\-dmetaphone}}
+\index{stem\-\_\-dmetaphone@{stem\-\_\-dmetaphone}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{stem\-\_\-dmetaphone}]{\setlength{\rightskip}{0pt plus 5cm}void stem\-\_\-dmetaphone (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Word}
+\end{DoxyParamCaption}
+)}}\label{sphinxmetaphone_8cpp_a91013117a6ab030283483797b4ee2929}
+
+
+double metaphone stemmer 
+
+\hypertarget{sphinxmetaphone_8cpp_a198e2e343bc2091ab21032ec49b76171}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!Str\-At@{Str\-At}}
+\index{Str\-At@{Str\-At}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{Str\-At}]{\setlength{\rightskip}{0pt plus 5cm}static bool Str\-At (
+\begin{DoxyParamCaption}
+\item[{const {\bf Current\-Word\-\_\-t} \&}]{Word, }
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Length, }
+\item[{const char $\ast$}]{sz\-Str1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxmetaphone_8cpp_a198e2e343bc2091ab21032ec49b76171}
+\hypertarget{sphinxmetaphone_8cpp_a7cbfdd9edca7f7c577702ce9989aacbe}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!Str\-At@{Str\-At}}
+\index{Str\-At@{Str\-At}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{Str\-At}]{\setlength{\rightskip}{0pt plus 5cm}static bool Str\-At (
+\begin{DoxyParamCaption}
+\item[{const {\bf Current\-Word\-\_\-t} \&}]{Word, }
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Length, }
+\item[{const char $\ast$}]{sz\-Str1, }
+\item[{const char $\ast$}]{sz\-Str2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxmetaphone_8cpp_a7cbfdd9edca7f7c577702ce9989aacbe}
+\hypertarget{sphinxmetaphone_8cpp_a7765fb27987f0f5f74deb47ff79c1d75}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!Str\-At@{Str\-At}}
+\index{Str\-At@{Str\-At}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{Str\-At}]{\setlength{\rightskip}{0pt plus 5cm}static bool Str\-At (
+\begin{DoxyParamCaption}
+\item[{const {\bf Current\-Word\-\_\-t} \&}]{Word, }
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Length, }
+\item[{const char $\ast$}]{sz\-Str1, }
+\item[{const char $\ast$}]{sz\-Str2, }
+\item[{const char $\ast$}]{sz\-Str3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxmetaphone_8cpp_a7765fb27987f0f5f74deb47ff79c1d75}
+\hypertarget{sphinxmetaphone_8cpp_a60ec6f0f1068d7fb00b18c3bec9d1e81}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!Str\-At@{Str\-At}}
+\index{Str\-At@{Str\-At}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{Str\-At}]{\setlength{\rightskip}{0pt plus 5cm}static bool Str\-At (
+\begin{DoxyParamCaption}
+\item[{const {\bf Current\-Word\-\_\-t} \&}]{Word, }
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Length, }
+\item[{const char $\ast$}]{sz\-Str1, }
+\item[{const char $\ast$}]{sz\-Str2, }
+\item[{const char $\ast$}]{sz\-Str3, }
+\item[{const char $\ast$}]{sz\-Str4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxmetaphone_8cpp_a60ec6f0f1068d7fb00b18c3bec9d1e81}
+\hypertarget{sphinxmetaphone_8cpp_a43a78a6814e1ed4c6925a51e5c769208}{\index{sphinxmetaphone.\-cpp@{sphinxmetaphone.\-cpp}!Str\-At@{Str\-At}}
+\index{Str\-At@{Str\-At}!sphinxmetaphone.cpp@{sphinxmetaphone.\-cpp}}
+\subsubsection[{Str\-At}]{\setlength{\rightskip}{0pt plus 5cm}static bool Str\-At (
+\begin{DoxyParamCaption}
+\item[{const {\bf Current\-Word\-\_\-t} \&}]{Word, }
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Length, }
+\item[{const char $\ast$}]{sz\-Str1, }
+\item[{const char $\ast$}]{sz\-Str2, }
+\item[{const char $\ast$}]{sz\-Str3, }
+\item[{const char $\ast$}]{sz\-Str4, }
+\item[{const char $\ast$}]{sz\-Str5}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxmetaphone_8cpp_a43a78a6814e1ed4c6925a51e5c769208}

@@ -1,0 +1,266 @@
+\hypertarget{classExtNWayT}{\section{Ext\-N\-Way\-T Class Reference}
+\label{classExtNWayT}\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}}
+}
+
+
+generic operator over N nodes  
+
+
+Inheritance diagram for Ext\-N\-Way\-T\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classExtNWayT}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExtNWayT_aec7cc7ccae4e1aeff23d562c688ec85b}{Ext\-N\-Way\-T} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classExtNode__i}{Ext\-Node\-\_\-i} $\ast$ $>$ \&d\-Nodes, const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\item 
+\hyperlink{classExtNWayT_a80aff2211141000cf226cff964583250}{$\sim$\-Ext\-N\-Way\-T} ()
+\item 
+virtual void \hyperlink{classExtNWayT_aab7d8d51d29a7caeb907d4bb69ce1b53}{Reset} (const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExtNWayT_a6117123f191ac13a9da57b6105c134d0}{Get\-Qwords} (\hyperlink{sphinxsearch_8cpp_a814fc096e1ffb29d072d79b72b702fe6}{Ext\-Qwords\-Hash\-\_\-t} \&h\-Qwords)
+\item 
+virtual void \hyperlink{classExtNWayT_a56f222f0327ad8d5f2494869933a1fe8}{Set\-Qwords\-I\-D\-F} (const \hyperlink{sphinxsearch_8cpp_a814fc096e1ffb29d072d79b72b702fe6}{Ext\-Qwords\-Hash\-\_\-t} \&h\-Qwords)
+\item 
+virtual void \hyperlink{classExtNWayT_a05bb2880bd86a4da7f2232d048361580}{Get\-Terms} (const \hyperlink{sphinxsearch_8cpp_a814fc096e1ffb29d072d79b72b702fe6}{Ext\-Qwords\-Hash\-\_\-t} \&h\-Qwords, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structTermPos__t}{Term\-Pos\-\_\-t} $>$ \&d\-Term\-Dupes) const 
+\item 
+virtual bool \hyperlink{classExtNWayT_ae6777c57ad5dedc5d290a4962825fea6}{Got\-Hitless} ()
+\item 
+virtual void \hyperlink{classExtNWayT_ac07e76c34b876951d7d2c89cdc4cfc21}{Hint\-Docid} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Min\-I\-D)
+\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classExtNWayT_a798963603e85baa31b6c5fbffcd5e8a4}{Get\-Word\-I\-D} () const 
+\begin{DoxyCompactList}\small\item\em for now, only used for duplicate keyword checks in quorum operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classExtNWayT_ac958aff1f786963e8b8fec79cda6e03e}{Construct\-Node} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classExtNode__i}{Ext\-Node\-\_\-i} $\ast$ $>$ \&d\-Nodes, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} $>$ \&d\-Positions, const \hyperlink{classISphQwordSetup}{I\-Sph\-Qword\-Setup} \&t\-Setup)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExtNode__i}{Ext\-Node\-\_\-i} $\ast$ \hyperlink{classExtNWayT_a7d217596cb08caafd98d8906ad121403}{m\-\_\-p\-Node}
+\begin{DoxyCompactList}\small\item\em my and-\/node for all the terms \end{DoxyCompactList}\item 
+const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$ \hyperlink{classExtNWayT_a6c89c11051d51dacaa87cde3df1e075e}{m\-\_\-p\-Docs}
+\begin{DoxyCompactList}\small\item\em current docs chunk from and-\/node \end{DoxyCompactList}\item 
+const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classExtNWayT_a32939fecb6b143a06827474beb012f0c}{m\-\_\-p\-Hits}
+\begin{DoxyCompactList}\small\item\em current hits chunk from and-\/node \end{DoxyCompactList}\item 
+const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$ \hyperlink{classExtNWayT_a742a2d7095e8838c786d73f9a81244ea}{m\-\_\-p\-Doc}
+\begin{DoxyCompactList}\small\item\em current doc from and-\/node \end{DoxyCompactList}\item 
+const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classExtNWayT_a3830765f51cc9f63d55546a69409b293}{m\-\_\-p\-Hit}
+\begin{DoxyCompactList}\small\item\em current hit from and-\/node \end{DoxyCompactList}\item 
+const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$ \hyperlink{classExtNWayT_a884e4d44222ebfa66f6f91da110a853d}{m\-\_\-p\-My\-Doc}
+\begin{DoxyCompactList}\small\item\em current doc for hits getter \end{DoxyCompactList}\item 
+const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classExtNWayT_aa4353d3f8c4cdfbd72f58d86ea714882}{m\-\_\-p\-My\-Hit}
+\begin{DoxyCompactList}\small\item\em current hit for hits getter \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classExtNWayT_a48e5113ea25eec491cd4b08dfb5b595a}{m\-\_\-u\-Last\-Doc\-I\-D}
+\begin{DoxyCompactList}\small\item\em last emitted hit \end{DoxyCompactList}\item 
+\hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} \hyperlink{classExtNWayT_a55b3fa362f8bb9279f43af23a29c0bda}{m\-\_\-d\-My\-Hits} \mbox{[}\hyperlink{classExtNode__i_a79b81cba51253fdbe56fd3595fac9ab4}{M\-A\-X\-\_\-\-H\-I\-T\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em buffer for all my phrase hits; inherited m\-\_\-d\-Hits will receive filtered results \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classExtNWayT_a0193e0fa0a57905a1cf33035c58d8628}{m\-\_\-u\-Matched\-Docid}
+\begin{DoxyCompactList}\small\item\em doc currently in process \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classExtNWayT_a1e61aa842a09f843fff56f95f5618cc1}{m\-\_\-u\-Hits\-Over\-For}
+\begin{DoxyCompactList}\small\item\em there are no more hits for matches block starting with this I\-D \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+generic operator over N nodes 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExtNWayT_aec7cc7ccae4e1aeff23d562c688ec85b}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!Ext\-N\-Way\-T@{Ext\-N\-Way\-T}}
+\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{Ext\-N\-Way\-T}]{\setlength{\rightskip}{0pt plus 5cm}Ext\-N\-Way\-T\-::\-Ext\-N\-Way\-T (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Ext\-Node\-\_\-i} $\ast$ $>$ \&}]{d\-Nodes, }
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)}}\label{classExtNWayT_aec7cc7ccae4e1aeff23d562c688ec85b}
+\hypertarget{classExtNWayT_a80aff2211141000cf226cff964583250}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!$\sim$\-Ext\-N\-Way\-T@{$\sim$\-Ext\-N\-Way\-T}}
+\index{$\sim$\-Ext\-N\-Way\-T@{$\sim$\-Ext\-N\-Way\-T}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{$\sim$\-Ext\-N\-Way\-T}]{\setlength{\rightskip}{0pt plus 5cm}Ext\-N\-Way\-T\-::$\sim$\-Ext\-N\-Way\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classExtNWayT_a80aff2211141000cf226cff964583250}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExtNWayT_ac958aff1f786963e8b8fec79cda6e03e}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!Construct\-Node@{Construct\-Node}}
+\index{Construct\-Node@{Construct\-Node}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{Construct\-Node}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-N\-Way\-T\-::\-Construct\-Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Ext\-Node\-\_\-i} $\ast$ $>$ \&}]{d\-Nodes, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf W\-O\-R\-D} $>$ \&}]{d\-Positions, }
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classExtNWayT_ac958aff1f786963e8b8fec79cda6e03e}
+\hypertarget{classExtNWayT_a6117123f191ac13a9da57b6105c134d0}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!Get\-Qwords@{Get\-Qwords}}
+\index{Get\-Qwords@{Get\-Qwords}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{Get\-Qwords}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Ext\-N\-Way\-T\-::\-Get\-Qwords (
+\begin{DoxyParamCaption}
+\item[{{\bf Ext\-Qwords\-Hash\-\_\-t} \&}]{h\-Qwords}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtNWayT_a6117123f191ac13a9da57b6105c134d0}
+
+
+Implements \hyperlink{classExtNode__i_a11e49c90db27942ee8f5a174ebfe7212}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNWayT_a05bb2880bd86a4da7f2232d048361580}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!Get\-Terms@{Get\-Terms}}
+\index{Get\-Terms@{Get\-Terms}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{Get\-Terms}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-N\-Way\-T\-::\-Get\-Terms (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Qwords\-Hash\-\_\-t} \&}]{h\-Qwords, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Term\-Pos\-\_\-t} $>$ \&}]{d\-Term\-Dupes}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtNWayT_a05bb2880bd86a4da7f2232d048361580}
+
+
+Implements \hyperlink{classExtNode__i_a54f48b44df2f712dc1282a401a14e108}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNWayT_a798963603e85baa31b6c5fbffcd5e8a4}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!Get\-Word\-I\-D@{Get\-Word\-I\-D}}
+\index{Get\-Word\-I\-D@{Get\-Word\-I\-D}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{Get\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} Ext\-N\-Way\-T\-::\-Get\-Word\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtNWayT_a798963603e85baa31b6c5fbffcd5e8a4}
+
+
+for now, only used for duplicate keyword checks in quorum operator 
+
+
+
+Implements \hyperlink{classExtNode__i_ac05a844939491a1875fb8dbf84ba9f97}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNWayT_ae6777c57ad5dedc5d290a4962825fea6}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!Got\-Hitless@{Got\-Hitless}}
+\index{Got\-Hitless@{Got\-Hitless}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{Got\-Hitless}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Ext\-N\-Way\-T\-::\-Got\-Hitless (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtNWayT_ae6777c57ad5dedc5d290a4962825fea6}
+
+
+Implements \hyperlink{classExtNode__i_a08afc9f33bb800121ef8dccca67bdd75}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNWayT_ac07e76c34b876951d7d2c89cdc4cfc21}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!Hint\-Docid@{Hint\-Docid}}
+\index{Hint\-Docid@{Hint\-Docid}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{Hint\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ext\-N\-Way\-T\-::\-Hint\-Docid (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Min\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExtNWayT_ac07e76c34b876951d7d2c89cdc4cfc21}
+
+
+Implements \hyperlink{classExtNode__i_a83fface58e270a2074023d441d902ad1}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNWayT_aab7d8d51d29a7caeb907d4bb69ce1b53}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!Reset@{Reset}}
+\index{Reset@{Reset}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-N\-Way\-T\-::\-Reset (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Qword\-Setup} \&}]{t\-Setup}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtNWayT_aab7d8d51d29a7caeb907d4bb69ce1b53}
+
+
+Implements \hyperlink{classExtNode__i_adb612662cec19c54649244bec75d0e82}{Ext\-Node\-\_\-i}.
+
+\hypertarget{classExtNWayT_a56f222f0327ad8d5f2494869933a1fe8}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!Set\-Qwords\-I\-D\-F@{Set\-Qwords\-I\-D\-F}}
+\index{Set\-Qwords\-I\-D\-F@{Set\-Qwords\-I\-D\-F}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{Set\-Qwords\-I\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-N\-Way\-T\-::\-Set\-Qwords\-I\-D\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ext\-Qwords\-Hash\-\_\-t} \&}]{h\-Qwords}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExtNWayT_a56f222f0327ad8d5f2494869933a1fe8}
+
+
+Implements \hyperlink{classExtNode__i_a73f0d94f75d927ace362079f4794d702}{Ext\-Node\-\_\-i}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExtNWayT_a55b3fa362f8bb9279f43af23a29c0bda}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-d\-My\-Hits@{m\-\_\-d\-My\-Hits}}
+\index{m\-\_\-d\-My\-Hits@{m\-\_\-d\-My\-Hits}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-d\-My\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ext\-Hit\-\_\-t} Ext\-N\-Way\-T\-::m\-\_\-d\-My\-Hits\mbox{[}{\bf M\-A\-X\-\_\-\-H\-I\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_a55b3fa362f8bb9279f43af23a29c0bda}
+
+
+buffer for all my phrase hits; inherited m\-\_\-d\-Hits will receive filtered results 
+
+\hypertarget{classExtNWayT_a742a2d7095e8838c786d73f9a81244ea}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-p\-Doc@{m\-\_\-p\-Doc}}
+\index{m\-\_\-p\-Doc@{m\-\_\-p\-Doc}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-p\-Doc}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Doc\-\_\-t}$\ast$ Ext\-N\-Way\-T\-::m\-\_\-p\-Doc\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_a742a2d7095e8838c786d73f9a81244ea}
+
+
+current doc from and-\/node 
+
+\hypertarget{classExtNWayT_a6c89c11051d51dacaa87cde3df1e075e}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-p\-Docs@{m\-\_\-p\-Docs}}
+\index{m\-\_\-p\-Docs@{m\-\_\-p\-Docs}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-p\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Doc\-\_\-t}$\ast$ Ext\-N\-Way\-T\-::m\-\_\-p\-Docs\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_a6c89c11051d51dacaa87cde3df1e075e}
+
+
+current docs chunk from and-\/node 
+
+\hypertarget{classExtNWayT_a3830765f51cc9f63d55546a69409b293}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-p\-Hit@{m\-\_\-p\-Hit}}
+\index{m\-\_\-p\-Hit@{m\-\_\-p\-Hit}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-p\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Hit\-\_\-t}$\ast$ Ext\-N\-Way\-T\-::m\-\_\-p\-Hit\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_a3830765f51cc9f63d55546a69409b293}
+
+
+current hit from and-\/node 
+
+\hypertarget{classExtNWayT_a32939fecb6b143a06827474beb012f0c}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-p\-Hits@{m\-\_\-p\-Hits}}
+\index{m\-\_\-p\-Hits@{m\-\_\-p\-Hits}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-p\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Hit\-\_\-t}$\ast$ Ext\-N\-Way\-T\-::m\-\_\-p\-Hits\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_a32939fecb6b143a06827474beb012f0c}
+
+
+current hits chunk from and-\/node 
+
+\hypertarget{classExtNWayT_a884e4d44222ebfa66f6f91da110a853d}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-p\-My\-Doc@{m\-\_\-p\-My\-Doc}}
+\index{m\-\_\-p\-My\-Doc@{m\-\_\-p\-My\-Doc}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-p\-My\-Doc}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Doc\-\_\-t}$\ast$ Ext\-N\-Way\-T\-::m\-\_\-p\-My\-Doc\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_a884e4d44222ebfa66f6f91da110a853d}
+
+
+current doc for hits getter 
+
+\hypertarget{classExtNWayT_aa4353d3f8c4cdfbd72f58d86ea714882}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-p\-My\-Hit@{m\-\_\-p\-My\-Hit}}
+\index{m\-\_\-p\-My\-Hit@{m\-\_\-p\-My\-Hit}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-p\-My\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Hit\-\_\-t}$\ast$ Ext\-N\-Way\-T\-::m\-\_\-p\-My\-Hit\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_aa4353d3f8c4cdfbd72f58d86ea714882}
+
+
+current hit for hits getter 
+
+\hypertarget{classExtNWayT_a7d217596cb08caafd98d8906ad121403}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-p\-Node@{m\-\_\-p\-Node}}
+\index{m\-\_\-p\-Node@{m\-\_\-p\-Node}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-p\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ext\-Node\-\_\-i}$\ast$ Ext\-N\-Way\-T\-::m\-\_\-p\-Node\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_a7d217596cb08caafd98d8906ad121403}
+
+
+my and-\/node for all the terms 
+
+\hypertarget{classExtNWayT_a1e61aa842a09f843fff56f95f5618cc1}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-u\-Hits\-Over\-For@{m\-\_\-u\-Hits\-Over\-For}}
+\index{m\-\_\-u\-Hits\-Over\-For@{m\-\_\-u\-Hits\-Over\-For}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-u\-Hits\-Over\-For}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} Ext\-N\-Way\-T\-::m\-\_\-u\-Hits\-Over\-For\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_a1e61aa842a09f843fff56f95f5618cc1}
+
+
+there are no more hits for matches block starting with this I\-D 
+
+\hypertarget{classExtNWayT_a48e5113ea25eec491cd4b08dfb5b595a}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-u\-Last\-Doc\-I\-D@{m\-\_\-u\-Last\-Doc\-I\-D}}
+\index{m\-\_\-u\-Last\-Doc\-I\-D@{m\-\_\-u\-Last\-Doc\-I\-D}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-u\-Last\-Doc\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} Ext\-N\-Way\-T\-::m\-\_\-u\-Last\-Doc\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_a48e5113ea25eec491cd4b08dfb5b595a}
+
+
+last emitted hit 
+
+\hypertarget{classExtNWayT_a0193e0fa0a57905a1cf33035c58d8628}{\index{Ext\-N\-Way\-T@{Ext\-N\-Way\-T}!m\-\_\-u\-Matched\-Docid@{m\-\_\-u\-Matched\-Docid}}
+\index{m\-\_\-u\-Matched\-Docid@{m\-\_\-u\-Matched\-Docid}!ExtNWayT@{Ext\-N\-Way\-T}}
+\subsubsection[{m\-\_\-u\-Matched\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} Ext\-N\-Way\-T\-::m\-\_\-u\-Matched\-Docid\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExtNWayT_a0193e0fa0a57905a1cf33035c58d8628}
+
+
+doc currently in process 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsearch_8cpp}{sphinxsearch.\-cpp}\end{DoxyCompactItemize}

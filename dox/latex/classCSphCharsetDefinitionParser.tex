@@ -1,0 +1,146 @@
+\hypertarget{classCSphCharsetDefinitionParser}{\section{C\-Sph\-Charset\-Definition\-Parser Class Reference}
+\label{classCSphCharsetDefinitionParser}\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}}
+}
+
+
+parser to build lowercaser from textual config  
+
+
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphCharsetDefinitionParser_acfdc09c25c1b037d3e8ee7d73282438c}{C\-Sph\-Charset\-Definition\-Parser} ()
+\item 
+bool \hyperlink{classCSphCharsetDefinitionParser_a4942cc2c817ff35acec6b6c29853fcc0}{Parse} (const char $\ast$s\-Config, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphRemapRange}{C\-Sph\-Remap\-Range} $>$ \&d\-Ranges)
+\item 
+const char $\ast$ \hyperlink{classCSphCharsetDefinitionParser_af0f986416c2689526c1e45a05496dc8d}{Get\-Last\-Error} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCSphCharsetDefinitionParser_a653dbea8ef9ab50644ed5fe3976d81fb}{Error} (const char $\ast$s\-Message)
+\item 
+void \hyperlink{classCSphCharsetDefinitionParser_a1989bace348c4aaa644be356ab49a466}{Skip\-Spaces} ()
+\item 
+bool \hyperlink{classCSphCharsetDefinitionParser_a4cad7378b881dd7ea573c93bb905dbab}{Is\-Eof} ()
+\item 
+bool \hyperlink{classCSphCharsetDefinitionParser_af666bafec3d7eacc68ef8e8f7e70e039}{Check\-Eof} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphCharsetDefinitionParser_acf0ff78b5678c12e9c3ae56fc77e9c0e}{Hex\-Digit} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} c)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphCharsetDefinitionParser_a7dc727637b2e0b80b9936525e5a9dfbb}{Parse\-Charset\-Code} ()
+\item 
+bool \hyperlink{classCSphCharsetDefinitionParser_a9544a3f68ddac29fd7ebb7f3b814b6bb}{Add\-Range} (const \hyperlink{structCSphRemapRange}{C\-Sph\-Remap\-Range} \&t\-Range, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphRemapRange}{C\-Sph\-Remap\-Range} $>$ \&d\-Ranges)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCSphCharsetDefinitionParser_a7f6d8e9db0b43fdc7ff9503ec3944392}{m\-\_\-b\-Error}
+\item 
+char \hyperlink{classCSphCharsetDefinitionParser_a8912f66545e7904ad4ed0e6b72e319a6}{m\-\_\-s\-Error} \mbox{[}1024\mbox{]}
+\item 
+const char $\ast$ \hyperlink{classCSphCharsetDefinitionParser_a1ab6eed0a5c971fa005507684bbcb0b6}{m\-\_\-p\-Current}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+parser to build lowercaser from textual config 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphCharsetDefinitionParser_acfdc09c25c1b037d3e8ee7d73282438c}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}}
+\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{C\-Sph\-Charset\-Definition\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Charset\-Definition\-Parser\-::\-C\-Sph\-Charset\-Definition\-Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphCharsetDefinitionParser_acfdc09c25c1b037d3e8ee7d73282438c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphCharsetDefinitionParser_a9544a3f68ddac29fd7ebb7f3b814b6bb}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!Add\-Range@{Add\-Range}}
+\index{Add\-Range@{Add\-Range}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{Add\-Range}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Charset\-Definition\-Parser\-::\-Add\-Range (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Remap\-Range} \&}]{t\-Range, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Remap\-Range} $>$ \&}]{d\-Ranges}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphCharsetDefinitionParser_a9544a3f68ddac29fd7ebb7f3b814b6bb}
+\hypertarget{classCSphCharsetDefinitionParser_af666bafec3d7eacc68ef8e8f7e70e039}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!Check\-Eof@{Check\-Eof}}
+\index{Check\-Eof@{Check\-Eof}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{Check\-Eof}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Charset\-Definition\-Parser\-::\-Check\-Eof (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphCharsetDefinitionParser_af666bafec3d7eacc68ef8e8f7e70e039}
+\hypertarget{classCSphCharsetDefinitionParser_a653dbea8ef9ab50644ed5fe3976d81fb}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!Error@{Error}}
+\index{Error@{Error}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{Error}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Charset\-Definition\-Parser\-::\-Error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphCharsetDefinitionParser_a653dbea8ef9ab50644ed5fe3976d81fb}
+\hypertarget{classCSphCharsetDefinitionParser_af0f986416c2689526c1e45a05496dc8d}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!Get\-Last\-Error@{Get\-Last\-Error}}
+\index{Get\-Last\-Error@{Get\-Last\-Error}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{Get\-Last\-Error}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ C\-Sph\-Charset\-Definition\-Parser\-::\-Get\-Last\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphCharsetDefinitionParser_af0f986416c2689526c1e45a05496dc8d}
+\hypertarget{classCSphCharsetDefinitionParser_acf0ff78b5678c12e9c3ae56fc77e9c0e}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!Hex\-Digit@{Hex\-Digit}}
+\index{Hex\-Digit@{Hex\-Digit}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{Hex\-Digit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Charset\-Definition\-Parser\-::\-Hex\-Digit (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphCharsetDefinitionParser_acf0ff78b5678c12e9c3ae56fc77e9c0e}
+\hypertarget{classCSphCharsetDefinitionParser_a4cad7378b881dd7ea573c93bb905dbab}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!Is\-Eof@{Is\-Eof}}
+\index{Is\-Eof@{Is\-Eof}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{Is\-Eof}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Charset\-Definition\-Parser\-::\-Is\-Eof (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphCharsetDefinitionParser_a4cad7378b881dd7ea573c93bb905dbab}
+\hypertarget{classCSphCharsetDefinitionParser_a4942cc2c817ff35acec6b6c29853fcc0}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!Parse@{Parse}}
+\index{Parse@{Parse}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{Parse}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Charset\-Definition\-Parser\-::\-Parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Config, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Remap\-Range} $>$ \&}]{d\-Ranges}
+\end{DoxyParamCaption}
+)}}\label{classCSphCharsetDefinitionParser_a4942cc2c817ff35acec6b6c29853fcc0}
+\hypertarget{classCSphCharsetDefinitionParser_a7dc727637b2e0b80b9936525e5a9dfbb}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!Parse\-Charset\-Code@{Parse\-Charset\-Code}}
+\index{Parse\-Charset\-Code@{Parse\-Charset\-Code}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{Parse\-Charset\-Code}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Charset\-Definition\-Parser\-::\-Parse\-Charset\-Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphCharsetDefinitionParser_a7dc727637b2e0b80b9936525e5a9dfbb}
+\hypertarget{classCSphCharsetDefinitionParser_a1989bace348c4aaa644be356ab49a466}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!Skip\-Spaces@{Skip\-Spaces}}
+\index{Skip\-Spaces@{Skip\-Spaces}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{Skip\-Spaces}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Charset\-Definition\-Parser\-::\-Skip\-Spaces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphCharsetDefinitionParser_a1989bace348c4aaa644be356ab49a466}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphCharsetDefinitionParser_a7f6d8e9db0b43fdc7ff9503ec3944392}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!m\-\_\-b\-Error@{m\-\_\-b\-Error}}
+\index{m\-\_\-b\-Error@{m\-\_\-b\-Error}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{m\-\_\-b\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Charset\-Definition\-Parser\-::m\-\_\-b\-Error\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphCharsetDefinitionParser_a7f6d8e9db0b43fdc7ff9503ec3944392}
+\hypertarget{classCSphCharsetDefinitionParser_a1ab6eed0a5c971fa005507684bbcb0b6}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!m\-\_\-p\-Current@{m\-\_\-p\-Current}}
+\index{m\-\_\-p\-Current@{m\-\_\-p\-Current}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{m\-\_\-p\-Current}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ C\-Sph\-Charset\-Definition\-Parser\-::m\-\_\-p\-Current\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphCharsetDefinitionParser_a1ab6eed0a5c971fa005507684bbcb0b6}
+\hypertarget{classCSphCharsetDefinitionParser_a8912f66545e7904ad4ed0e6b72e319a6}{\index{C\-Sph\-Charset\-Definition\-Parser@{C\-Sph\-Charset\-Definition\-Parser}!m\-\_\-s\-Error@{m\-\_\-s\-Error}}
+\index{m\-\_\-s\-Error@{m\-\_\-s\-Error}!CSphCharsetDefinitionParser@{C\-Sph\-Charset\-Definition\-Parser}}
+\subsubsection[{m\-\_\-s\-Error}]{\setlength{\rightskip}{0pt plus 5cm}char C\-Sph\-Charset\-Definition\-Parser\-::m\-\_\-s\-Error\mbox{[}1024\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphCharsetDefinitionParser_a8912f66545e7904ad4ed0e6b72e319a6}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

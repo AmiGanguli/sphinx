@@ -1,0 +1,395 @@
+\hypertarget{structCSphString}{\section{C\-Sph\-String Struct Reference}
+\label{structCSphString}\index{C\-Sph\-String@{C\-Sph\-String}}
+}
+
+
+immutable C string proxy  
+
+
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString_a1d14a9116a2213020b6e8527a392f4b0}{C\-Sph\-String} ()
+\item 
+\hyperlink{structCSphString_a095ae8d119bff9f30c5446b8632f4c71}{C\-Sph\-String} (const \hyperlink{structCSphString}{C\-Sph\-String} \&rhs)
+\item 
+\hyperlink{structCSphString_a55d80fc8d1d2d557744920ce8b680dbb}{C\-Sph\-String} (\hyperlink{structCSphString}{C\-Sph\-String} \&\&rhs)
+\item 
+\hyperlink{structCSphString_a79e769fc4a3d12e170590ba6910cf3df}{$\sim$\-C\-Sph\-String} ()
+\item 
+const char $\ast$ \hyperlink{structCSphString_a6301bc267fc3578e8f6cde7490a177a0}{cstr} () const 
+\item 
+const char $\ast$ \hyperlink{structCSphString_a7f35b6bda71ff79f03bcec528b3c6674}{scstr} () const 
+\item 
+bool \hyperlink{structCSphString_a2c7e37a5400d37a5527c163309ada9f9}{operator==} (const char $\ast$t) const 
+\item 
+bool \hyperlink{structCSphString_acd995abf650ad2e3678c63721eb78e0c}{operator==} (const \hyperlink{structCSphString}{C\-Sph\-String} \&t) const 
+\item 
+bool \hyperlink{structCSphString_a0ed78b9aae9949154718f9af158cf210}{operator!=} (const \hyperlink{structCSphString}{C\-Sph\-String} \&t) const 
+\item 
+bool \hyperlink{structCSphString_a978c4893931a1a1aac3ea74b7c373d60}{operator!=} (const char $\ast$t) const 
+\item 
+\hyperlink{structCSphString_a054199e2453c38510f6b253787df0d5c}{C\-Sph\-String} (const char $\ast$s\-String)
+\item 
+\hyperlink{structCSphString_a346b8a5d60beab04f0c69f99e47a7c7a}{C\-Sph\-String} (const char $\ast$s\-Value, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+const \hyperlink{structCSphString}{C\-Sph\-String} \& \hyperlink{structCSphString_a328132cd4567c90ea43520565387c33e}{operator=} (const \hyperlink{structCSphString}{C\-Sph\-String} \&rhs)
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \& \hyperlink{structCSphString_a111c32ef89a83ff86975ea8a2f18a58c}{operator=} (\hyperlink{structCSphString}{C\-Sph\-String} \&\&rhs)
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphString_ac0c416323fb821485dceee5a36a16b8d}{Sub\-String} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count) const 
+\item 
+void \hyperlink{structCSphString_a88c4eb5903c982a8d0d7a2aac914c0ae}{Set\-Binary} (const char $\ast$s\-Value, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+void \hyperlink{structCSphString_a067958173bc99094ec2e37fb44ade79e}{Reserve} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+const \hyperlink{structCSphString}{C\-Sph\-String} \& \hyperlink{structCSphString_a88f9e008e7bb8015a035833581067cc6}{Set\-Sprintf} (const char $\ast$s\-Template,...) \hyperlink{sphinxstd_8h_a9d373a9b65ff25b2db84c07394e1c212}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((format(printf
+\item 
+\hyperlink{structCSphString_a0d012825d0ab784c3850aecd3d435b79}{va\-\_\-start} (\hyperlink{structCSphString_a4c58ce65bc91d1bbc191864b1f76b8e1}{ap}, s\-Template)
+\item 
+\hyperlink{structCSphString_a14e8b5b874b8bc6a64dd7da38703bc0b}{vsnprintf} (\hyperlink{structCSphString_a661025ca9389a788dad43bb9af8badd0}{s\-Buf}, sizeof(\hyperlink{structCSphString_a661025ca9389a788dad43bb9af8badd0}{s\-Buf}), s\-Template, \hyperlink{structCSphString_a4c58ce65bc91d1bbc191864b1f76b8e1}{ap})
+\item 
+\hyperlink{structCSphString_adac832ee9cafd96b4c0de82918384f39}{va\-\_\-end} (\hyperlink{structCSphString_a4c58ce65bc91d1bbc191864b1f76b8e1}{ap})
+\item 
+const \hyperlink{structCSphString}{C\-Sph\-String} \& \hyperlink{structCSphString_ab1dfec7c8259b0acce2b867d8680542f}{Set\-Sprintf\-Va} (const char $\ast$s\-Template, va\-\_\-list \hyperlink{structCSphString_a4c58ce65bc91d1bbc191864b1f76b8e1}{ap})
+\item 
+bool \hyperlink{structCSphString_a3a3ca1fb348a18bee87df82a25bd048c}{Is\-Empty} () const 
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \& \hyperlink{structCSphString_acfe1db93dbf833fd7776cf7f38b06f34}{To\-Lower} ()
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \& \hyperlink{structCSphString_a898e6458dba59a1f89dc768eba362312}{To\-Upper} ()
+\item 
+void \hyperlink{structCSphString_a77c5263f96951717b4a22a62b5988903}{Swap} (\hyperlink{structCSphString}{C\-Sph\-String} \&rhs)
+\item 
+bool \hyperlink{structCSphString_a1bafc45f79598b0ebdbd28ac93a86b0c}{Begins} (const char $\ast$s\-Prefix) const 
+\item 
+bool \hyperlink{structCSphString_a4a54f0b11b5cfc9a245f6ad8bffee65c}{Ends} (const char $\ast$s\-Suffix) const 
+\item 
+void \hyperlink{structCSphString_a8a9f0b2fc54c56a7a209a6225be2a47a}{Trim} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphString_a99f55954e883197be6fc24701b80bad0}{Length} () const 
+\item 
+char $\ast$ \hyperlink{structCSphString_a6595f0cd1155e234edf126de2453901c}{Leak} ()
+\item 
+void \hyperlink{structCSphString_a18782719ca3c6d1d110cac968cfc001b}{Adopt} (char $\ast$$\ast$s\-Value)
+\item 
+bool \hyperlink{structCSphString_ae092f06f697449a9c6cbbd1c0d4890f6}{operator$<$} (const \hyperlink{structCSphString}{C\-Sph\-String} \&b) const 
+\item 
+void \hyperlink{structCSphString_a472c07e7a76fd854ed16db2105e09c6b}{Unquote} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structCSphString}{C\-Sph\-String} char \hyperlink{structCSphString_a661025ca9389a788dad43bb9af8badd0}{s\-Buf} \mbox{[}1024\mbox{]}
+\item 
+va\-\_\-list \hyperlink{structCSphString_a4c58ce65bc91d1bbc191864b1f76b8e1}{ap}
+\item 
+\hyperlink{structCSphString_a149e21dab338f7bb7fa0b67c3cc2ebe2}{this} = \hyperlink{structCSphString_a661025ca9389a788dad43bb9af8badd0}{s\-Buf}
+\item 
+\hyperlink{sphinxsort_8cpp_a3a3a0de38f503963432a78b8a36aa74c}{return} $\ast$ \hyperlink{structCSphString_a6f470005cfc9ae68b042b8faae2cc197}{this}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{structCSphString_aa50edef52196b0da669df201b63364ae}{m\-\_\-s\-Value}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static char \hyperlink{structCSphString_ace1090ac1799f9efee5c0b6eddec9fc3}{E\-M\-P\-T\-Y} \mbox{[}$\,$\mbox{]} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphString_abc41c0298d1db9d9a09c839a926b2f2e}{S\-A\-F\-E\-T\-Y\-\_\-\-G\-A\-P} = 4
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+immutable C string proxy 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphString_a1d14a9116a2213020b6e8527a392f4b0}{\index{C\-Sph\-String@{C\-Sph\-String}!C\-Sph\-String@{C\-Sph\-String}}
+\index{C\-Sph\-String@{C\-Sph\-String}!CSphString@{C\-Sph\-String}}
+\subsubsection[{C\-Sph\-String}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-String\-::\-C\-Sph\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a1d14a9116a2213020b6e8527a392f4b0}
+\hypertarget{structCSphString_a095ae8d119bff9f30c5446b8632f4c71}{\index{C\-Sph\-String@{C\-Sph\-String}!C\-Sph\-String@{C\-Sph\-String}}
+\index{C\-Sph\-String@{C\-Sph\-String}!CSphString@{C\-Sph\-String}}
+\subsubsection[{C\-Sph\-String}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-String\-::\-C\-Sph\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a095ae8d119bff9f30c5446b8632f4c71}
+\hypertarget{structCSphString_a55d80fc8d1d2d557744920ce8b680dbb}{\index{C\-Sph\-String@{C\-Sph\-String}!C\-Sph\-String@{C\-Sph\-String}}
+\index{C\-Sph\-String@{C\-Sph\-String}!CSphString@{C\-Sph\-String}}
+\subsubsection[{C\-Sph\-String}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-String\-::\-C\-Sph\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a55d80fc8d1d2d557744920ce8b680dbb}
+\hypertarget{structCSphString_a79e769fc4a3d12e170590ba6910cf3df}{\index{C\-Sph\-String@{C\-Sph\-String}!$\sim$\-C\-Sph\-String@{$\sim$\-C\-Sph\-String}}
+\index{$\sim$\-C\-Sph\-String@{$\sim$\-C\-Sph\-String}!CSphString@{C\-Sph\-String}}
+\subsubsection[{$\sim$\-C\-Sph\-String}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-String\-::$\sim$\-C\-Sph\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a79e769fc4a3d12e170590ba6910cf3df}
+\hypertarget{structCSphString_a054199e2453c38510f6b253787df0d5c}{\index{C\-Sph\-String@{C\-Sph\-String}!C\-Sph\-String@{C\-Sph\-String}}
+\index{C\-Sph\-String@{C\-Sph\-String}!CSphString@{C\-Sph\-String}}
+\subsubsection[{C\-Sph\-String}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-String\-::\-C\-Sph\-String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-String}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a054199e2453c38510f6b253787df0d5c}
+\hypertarget{structCSphString_a346b8a5d60beab04f0c69f99e47a7c7a}{\index{C\-Sph\-String@{C\-Sph\-String}!C\-Sph\-String@{C\-Sph\-String}}
+\index{C\-Sph\-String@{C\-Sph\-String}!CSphString@{C\-Sph\-String}}
+\subsubsection[{C\-Sph\-String}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-String\-::\-C\-Sph\-String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Value, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a346b8a5d60beab04f0c69f99e47a7c7a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphString_a18782719ca3c6d1d110cac968cfc001b}{\index{C\-Sph\-String@{C\-Sph\-String}!Adopt@{Adopt}}
+\index{Adopt@{Adopt}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Adopt}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-String\-::\-Adopt (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{s\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a18782719ca3c6d1d110cac968cfc001b}
+\hypertarget{structCSphString_a1bafc45f79598b0ebdbd28ac93a86b0c}{\index{C\-Sph\-String@{C\-Sph\-String}!Begins@{Begins}}
+\index{Begins@{Begins}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Begins}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-String\-::\-Begins (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Prefix}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a1bafc45f79598b0ebdbd28ac93a86b0c}
+\hypertarget{structCSphString_a6301bc267fc3578e8f6cde7490a177a0}{\index{C\-Sph\-String@{C\-Sph\-String}!cstr@{cstr}}
+\index{cstr@{cstr}!CSphString@{C\-Sph\-String}}
+\subsubsection[{cstr}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ C\-Sph\-String\-::cstr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a6301bc267fc3578e8f6cde7490a177a0}
+\hypertarget{structCSphString_a4a54f0b11b5cfc9a245f6ad8bffee65c}{\index{C\-Sph\-String@{C\-Sph\-String}!Ends@{Ends}}
+\index{Ends@{Ends}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Ends}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-String\-::\-Ends (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Suffix}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a4a54f0b11b5cfc9a245f6ad8bffee65c}
+\hypertarget{structCSphString_a3a3ca1fb348a18bee87df82a25bd048c}{\index{C\-Sph\-String@{C\-Sph\-String}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-String\-::\-Is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a3a3ca1fb348a18bee87df82a25bd048c}
+\hypertarget{structCSphString_a6595f0cd1155e234edf126de2453901c}{\index{C\-Sph\-String@{C\-Sph\-String}!Leak@{Leak}}
+\index{Leak@{Leak}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Leak}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ C\-Sph\-String\-::\-Leak (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a6595f0cd1155e234edf126de2453901c}
+\hypertarget{structCSphString_a99f55954e883197be6fc24701b80bad0}{\index{C\-Sph\-String@{C\-Sph\-String}!Length@{Length}}
+\index{Length@{Length}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-String\-::\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a99f55954e883197be6fc24701b80bad0}
+\hypertarget{structCSphString_a0ed78b9aae9949154718f9af158cf210}{\index{C\-Sph\-String@{C\-Sph\-String}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!CSphString@{C\-Sph\-String}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-String\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{t}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a0ed78b9aae9949154718f9af158cf210}
+\hypertarget{structCSphString_a978c4893931a1a1aac3ea74b7c373d60}{\index{C\-Sph\-String@{C\-Sph\-String}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!CSphString@{C\-Sph\-String}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-String\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{t}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a978c4893931a1a1aac3ea74b7c373d60}
+\hypertarget{structCSphString_ae092f06f697449a9c6cbbd1c0d4890f6}{\index{C\-Sph\-String@{C\-Sph\-String}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!CSphString@{C\-Sph\-String}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-String\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{b}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_ae092f06f697449a9c6cbbd1c0d4890f6}
+\hypertarget{structCSphString_a328132cd4567c90ea43520565387c33e}{\index{C\-Sph\-String@{C\-Sph\-String}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphString@{C\-Sph\-String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-String}\& C\-Sph\-String\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a328132cd4567c90ea43520565387c33e}
+\hypertarget{structCSphString_a111c32ef89a83ff86975ea8a2f18a58c}{\index{C\-Sph\-String@{C\-Sph\-String}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphString@{C\-Sph\-String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String}\& C\-Sph\-String\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a111c32ef89a83ff86975ea8a2f18a58c}
+\hypertarget{structCSphString_a2c7e37a5400d37a5527c163309ada9f9}{\index{C\-Sph\-String@{C\-Sph\-String}!operator==@{operator==}}
+\index{operator==@{operator==}!CSphString@{C\-Sph\-String}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-String\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{t}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a2c7e37a5400d37a5527c163309ada9f9}
+\hypertarget{structCSphString_acd995abf650ad2e3678c63721eb78e0c}{\index{C\-Sph\-String@{C\-Sph\-String}!operator==@{operator==}}
+\index{operator==@{operator==}!CSphString@{C\-Sph\-String}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-String\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{t}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_acd995abf650ad2e3678c63721eb78e0c}
+\hypertarget{structCSphString_a067958173bc99094ec2e37fb44ade79e}{\index{C\-Sph\-String@{C\-Sph\-String}!Reserve@{Reserve}}
+\index{Reserve@{Reserve}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Reserve}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-String\-::\-Reserve (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a067958173bc99094ec2e37fb44ade79e}
+\hypertarget{structCSphString_a7f35b6bda71ff79f03bcec528b3c6674}{\index{C\-Sph\-String@{C\-Sph\-String}!scstr@{scstr}}
+\index{scstr@{scstr}!CSphString@{C\-Sph\-String}}
+\subsubsection[{scstr}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ C\-Sph\-String\-::scstr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a7f35b6bda71ff79f03bcec528b3c6674}
+\hypertarget{structCSphString_a88c4eb5903c982a8d0d7a2aac914c0ae}{\index{C\-Sph\-String@{C\-Sph\-String}!Set\-Binary@{Set\-Binary}}
+\index{Set\-Binary@{Set\-Binary}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Set\-Binary}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-String\-::\-Set\-Binary (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Value, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a88c4eb5903c982a8d0d7a2aac914c0ae}
+\hypertarget{structCSphString_a88f9e008e7bb8015a035833581067cc6}{\index{C\-Sph\-String@{C\-Sph\-String}!Set\-Sprintf@{Set\-Sprintf}}
+\index{Set\-Sprintf@{Set\-Sprintf}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Set\-Sprintf}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-String}\& C\-Sph\-String\-::\-Set\-Sprintf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Template, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{structCSphString_a88f9e008e7bb8015a035833581067cc6}
+\hypertarget{structCSphString_ab1dfec7c8259b0acce2b867d8680542f}{\index{C\-Sph\-String@{C\-Sph\-String}!Set\-Sprintf\-Va@{Set\-Sprintf\-Va}}
+\index{Set\-Sprintf\-Va@{Set\-Sprintf\-Va}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Set\-Sprintf\-Va}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-String}\& C\-Sph\-String\-::\-Set\-Sprintf\-Va (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Template, }
+\item[{va\-\_\-list}]{ap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_ab1dfec7c8259b0acce2b867d8680542f}
+\hypertarget{structCSphString_ac0c416323fb821485dceee5a36a16b8d}{\index{C\-Sph\-String@{C\-Sph\-String}!Sub\-String@{Sub\-String}}
+\index{Sub\-String@{Sub\-String}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Sub\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-String\-::\-Sub\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_ac0c416323fb821485dceee5a36a16b8d}
+\hypertarget{structCSphString_a77c5263f96951717b4a22a62b5988903}{\index{C\-Sph\-String@{C\-Sph\-String}!Swap@{Swap}}
+\index{Swap@{Swap}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Swap}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-String\-::\-Swap (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a77c5263f96951717b4a22a62b5988903}
+\hypertarget{structCSphString_acfe1db93dbf833fd7776cf7f38b06f34}{\index{C\-Sph\-String@{C\-Sph\-String}!To\-Lower@{To\-Lower}}
+\index{To\-Lower@{To\-Lower}!CSphString@{C\-Sph\-String}}
+\subsubsection[{To\-Lower}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String}\& C\-Sph\-String\-::\-To\-Lower (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_acfe1db93dbf833fd7776cf7f38b06f34}
+\hypertarget{structCSphString_a898e6458dba59a1f89dc768eba362312}{\index{C\-Sph\-String@{C\-Sph\-String}!To\-Upper@{To\-Upper}}
+\index{To\-Upper@{To\-Upper}!CSphString@{C\-Sph\-String}}
+\subsubsection[{To\-Upper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String}\& C\-Sph\-String\-::\-To\-Upper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a898e6458dba59a1f89dc768eba362312}
+\hypertarget{structCSphString_a8a9f0b2fc54c56a7a209a6225be2a47a}{\index{C\-Sph\-String@{C\-Sph\-String}!Trim@{Trim}}
+\index{Trim@{Trim}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Trim}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-String\-::\-Trim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a8a9f0b2fc54c56a7a209a6225be2a47a}
+\hypertarget{structCSphString_a472c07e7a76fd854ed16db2105e09c6b}{\index{C\-Sph\-String@{C\-Sph\-String}!Unquote@{Unquote}}
+\index{Unquote@{Unquote}!CSphString@{C\-Sph\-String}}
+\subsubsection[{Unquote}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-String\-::\-Unquote (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphString_a472c07e7a76fd854ed16db2105e09c6b}
+\hypertarget{structCSphString_adac832ee9cafd96b4c0de82918384f39}{\index{C\-Sph\-String@{C\-Sph\-String}!va\-\_\-end@{va\-\_\-end}}
+\index{va\-\_\-end@{va\-\_\-end}!CSphString@{C\-Sph\-String}}
+\subsubsection[{va\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-String\-::va\-\_\-end (
+\begin{DoxyParamCaption}
+\item[{{\bf ap}}]{}
+\end{DoxyParamCaption}
+)}}\label{structCSphString_adac832ee9cafd96b4c0de82918384f39}
+\hypertarget{structCSphString_a0d012825d0ab784c3850aecd3d435b79}{\index{C\-Sph\-String@{C\-Sph\-String}!va\-\_\-start@{va\-\_\-start}}
+\index{va\-\_\-start@{va\-\_\-start}!CSphString@{C\-Sph\-String}}
+\subsubsection[{va\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-String\-::va\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ap}}]{, }
+\item[{s\-Template}]{}
+\end{DoxyParamCaption}
+)}}\label{structCSphString_a0d012825d0ab784c3850aecd3d435b79}
+\hypertarget{structCSphString_a14e8b5b874b8bc6a64dd7da38703bc0b}{\index{C\-Sph\-String@{C\-Sph\-String}!vsnprintf@{vsnprintf}}
+\index{vsnprintf@{vsnprintf}!CSphString@{C\-Sph\-String}}
+\subsubsection[{vsnprintf}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-String\-::vsnprintf (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Buf}}]{, }
+\item[{sizeof({\bf s\-Buf})}]{, }
+\item[{s\-Template}]{, }
+\item[{{\bf ap}}]{}
+\end{DoxyParamCaption}
+)}}\label{structCSphString_a14e8b5b874b8bc6a64dd7da38703bc0b}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphString_a4c58ce65bc91d1bbc191864b1f76b8e1}{\index{C\-Sph\-String@{C\-Sph\-String}!ap@{ap}}
+\index{ap@{ap}!CSphString@{C\-Sph\-String}}
+\subsubsection[{ap}]{\setlength{\rightskip}{0pt plus 5cm}va\-\_\-list C\-Sph\-String\-::ap}}\label{structCSphString_a4c58ce65bc91d1bbc191864b1f76b8e1}
+\hypertarget{structCSphString_ace1090ac1799f9efee5c0b6eddec9fc3}{\index{C\-Sph\-String@{C\-Sph\-String}!E\-M\-P\-T\-Y@{E\-M\-P\-T\-Y}}
+\index{E\-M\-P\-T\-Y@{E\-M\-P\-T\-Y}!CSphString@{C\-Sph\-String}}
+\subsubsection[{E\-M\-P\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}char C\-Sph\-String\-::\-E\-M\-P\-T\-Y = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{structCSphString_ace1090ac1799f9efee5c0b6eddec9fc3}
+\hypertarget{structCSphString_aa50edef52196b0da669df201b63364ae}{\index{C\-Sph\-String@{C\-Sph\-String}!m\-\_\-s\-Value@{m\-\_\-s\-Value}}
+\index{m\-\_\-s\-Value@{m\-\_\-s\-Value}!CSphString@{C\-Sph\-String}}
+\subsubsection[{m\-\_\-s\-Value}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ C\-Sph\-String\-::m\-\_\-s\-Value\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphString_aa50edef52196b0da669df201b63364ae}
+\hypertarget{structCSphString_abc41c0298d1db9d9a09c839a926b2f2e}{\index{C\-Sph\-String@{C\-Sph\-String}!S\-A\-F\-E\-T\-Y\-\_\-\-G\-A\-P@{S\-A\-F\-E\-T\-Y\-\_\-\-G\-A\-P}}
+\index{S\-A\-F\-E\-T\-Y\-\_\-\-G\-A\-P@{S\-A\-F\-E\-T\-Y\-\_\-\-G\-A\-P}!CSphString@{C\-Sph\-String}}
+\subsubsection[{S\-A\-F\-E\-T\-Y\-\_\-\-G\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-String\-::\-S\-A\-F\-E\-T\-Y\-\_\-\-G\-A\-P = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{structCSphString_abc41c0298d1db9d9a09c839a926b2f2e}
+safety gap after the string end; for instance, U\-T\-F-\/8 Russian stemmer which treats strings as 16-\/bit word sequences needs this in some cases. note that this zero-\/filled gap does N\-O\-T include trailing C-\/string zero, and does N\-O\-T affect strlen() as well. \hypertarget{structCSphString_a661025ca9389a788dad43bb9af8badd0}{\index{C\-Sph\-String@{C\-Sph\-String}!s\-Buf@{s\-Buf}}
+\index{s\-Buf@{s\-Buf}!CSphString@{C\-Sph\-String}}
+\subsubsection[{s\-Buf}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-String} char C\-Sph\-String\-::s\-Buf\mbox{[}1024\mbox{]}}}\label{structCSphString_a661025ca9389a788dad43bb9af8badd0}
+\hypertarget{structCSphString_a149e21dab338f7bb7fa0b67c3cc2ebe2}{\index{C\-Sph\-String@{C\-Sph\-String}!this@{this}}
+\index{this@{this}!CSphString@{C\-Sph\-String}}
+\subsubsection[{this}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-String\-::this = {\bf s\-Buf}}}\label{structCSphString_a149e21dab338f7bb7fa0b67c3cc2ebe2}
+\hypertarget{structCSphString_a6f470005cfc9ae68b042b8faae2cc197}{\index{C\-Sph\-String@{C\-Sph\-String}!this@{this}}
+\index{this@{this}!CSphString@{C\-Sph\-String}}
+\subsubsection[{this}]{\setlength{\rightskip}{0pt plus 5cm}{\bf return}$\ast$ C\-Sph\-String\-::this}}\label{structCSphString_a6f470005cfc9ae68b042b8faae2cc197}
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\item 
+src/\hyperlink{sphinxstd_8cpp}{sphinxstd.\-cpp}\end{DoxyCompactItemize}

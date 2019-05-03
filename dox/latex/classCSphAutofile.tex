@@ -1,0 +1,206 @@
+\hypertarget{classCSphAutofile}{\section{C\-Sph\-Autofile Class Reference}
+\label{classCSphAutofile}\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}}
+}
+
+
+file which closes automatically when going out of scope  
+
+
+
+
+{\ttfamily \#include $<$sphinxint.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Autofile\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphAutofile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphAutofile_a2c95a115ba0e91b6b536ca19870f5307}{C\-Sph\-Autofile} ()
+\item 
+\hyperlink{classCSphAutofile_a633f516a7e3ae513cd8b294f57ea7117}{C\-Sph\-Autofile} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Name, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Mode, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Temp=false)
+\item 
+\hyperlink{classCSphAutofile_a1fa1f5a2b2117a173aeed3472504503c}{$\sim$\-C\-Sph\-Autofile} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphAutofile_ab06ddeab312b9440ee54ec5839af2965}{Open} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Name, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Mode, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Temp=false)
+\item 
+void \hyperlink{classCSphAutofile_af010e09fa8ddae598af8a9b09d104365}{Close} ()
+\item 
+void \hyperlink{classCSphAutofile_a9d330f328d8aa6631e0c362cb875182c}{Set\-Temporary} ()
+\begin{DoxyCompactList}\small\item\em would be set if a shit happened and the file is not actual. \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphAutofile_a994e59281c2c01b7ae0b5900ded66ea2}{Get\-F\-D} () const 
+\item 
+const char $\ast$ \hyperlink{classCSphAutofile_a7eeb1359f3745565003e4b2a2c9db60b}{Get\-Filename} () const 
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphAutofile_a8ddd85e46deccdd1f5bfa88df877d0e5}{Get\-Size} (\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} i\-Min\-Size, bool b\-Check\-Size\-T, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphAutofile_af1d617b0dc50cd37019d8b1386e12e61}{Get\-Size} ()
+\item 
+bool \hyperlink{classCSphAutofile_ac5fcf2a3cb7d5f464b51cb099fde9d40}{Read} (void $\ast$p\-Buf, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Count, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+void \hyperlink{classCSphAutofile_ac5c02b8b7ecfc92f7847aba094427661}{Set\-Progress\-Callback} (\hyperlink{structCSphIndexProgress}{C\-Sph\-Index\-Progress} $\ast$p\-Stat)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphAutofile_aca862db8620b51f8c5a83517080c2436}{m\-\_\-i\-F\-D}
+\begin{DoxyCompactList}\small\item\em my file descriptor \end{DoxyCompactList}\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphAutofile_ace9555717055d742239289a0eef5feb8}{m\-\_\-s\-Filename}
+\begin{DoxyCompactList}\small\item\em my file name \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphAutofile_a4d22136d629374124bf4e6e136f4130f}{m\-\_\-b\-Temporary}
+\begin{DoxyCompactList}\small\item\em whether to unlink this file on \hyperlink{classCSphAutofile_af010e09fa8ddae598af8a9b09d104365}{Close()} \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphAutofile_a037aa32a2262c8dea1f1c9fbf05a36f5}{m\-\_\-b\-Would\-Temporary}
+\begin{DoxyCompactList}\small\item\em backup of the m\-\_\-b\-Temporary \end{DoxyCompactList}\item 
+\hyperlink{structCSphIndexProgress}{C\-Sph\-Index\-Progress} $\ast$ \hyperlink{classCSphAutofile_a8f4a21d9d657efd75b15263eaae873fe}{m\-\_\-p\-Stat}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+file which closes automatically when going out of scope 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphAutofile_a2c95a115ba0e91b6b536ca19870f5307}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!C\-Sph\-Autofile@{C\-Sph\-Autofile}}
+\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{C\-Sph\-Autofile}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Autofile\-::\-C\-Sph\-Autofile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutofile_a2c95a115ba0e91b6b536ca19870f5307}
+\hypertarget{classCSphAutofile_a633f516a7e3ae513cd8b294f57ea7117}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!C\-Sph\-Autofile@{C\-Sph\-Autofile}}
+\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{C\-Sph\-Autofile}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Autofile\-::\-C\-Sph\-Autofile (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Name, }
+\item[{{\bf int}}]{i\-Mode, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Temp = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutofile_a633f516a7e3ae513cd8b294f57ea7117}
+\hypertarget{classCSphAutofile_a1fa1f5a2b2117a173aeed3472504503c}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!$\sim$\-C\-Sph\-Autofile@{$\sim$\-C\-Sph\-Autofile}}
+\index{$\sim$\-C\-Sph\-Autofile@{$\sim$\-C\-Sph\-Autofile}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{$\sim$\-C\-Sph\-Autofile}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Autofile\-::$\sim$\-C\-Sph\-Autofile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutofile_a1fa1f5a2b2117a173aeed3472504503c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphAutofile_af010e09fa8ddae598af8a9b09d104365}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!Close@{Close}}
+\index{Close@{Close}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Autofile\-::\-Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutofile_af010e09fa8ddae598af8a9b09d104365}
+\hypertarget{classCSphAutofile_a994e59281c2c01b7ae0b5900ded66ea2}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!Get\-F\-D@{Get\-F\-D}}
+\index{Get\-F\-D@{Get\-F\-D}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{Get\-F\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Autofile\-::\-Get\-F\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphAutofile_a994e59281c2c01b7ae0b5900ded66ea2}
+\hypertarget{classCSphAutofile_a7eeb1359f3745565003e4b2a2c9db60b}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!Get\-Filename@{Get\-Filename}}
+\index{Get\-Filename@{Get\-Filename}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{Get\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ C\-Sph\-Autofile\-::\-Get\-Filename (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCSphAutofile_a7eeb1359f3745565003e4b2a2c9db60b}
+\hypertarget{classCSphAutofile_a8ddd85e46deccdd1f5bfa88df877d0e5}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!Get\-Size@{Get\-Size}}
+\index{Get\-Size@{Get\-Size}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{Get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Autofile\-::\-Get\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Offset\-\_\-t}}]{i\-Min\-Size, }
+\item[{bool}]{b\-Check\-Size\-T, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutofile_a8ddd85e46deccdd1f5bfa88df877d0e5}
+\hypertarget{classCSphAutofile_af1d617b0dc50cd37019d8b1386e12e61}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!Get\-Size@{Get\-Size}}
+\index{Get\-Size@{Get\-Size}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{Get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Autofile\-::\-Get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutofile_af1d617b0dc50cd37019d8b1386e12e61}
+\hypertarget{classCSphAutofile_ab06ddeab312b9440ee54ec5839af2965}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!Open@{Open}}
+\index{Open@{Open}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{Open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Autofile\-::\-Open (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Name, }
+\item[{{\bf int}}]{i\-Mode, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Temp = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutofile_ab06ddeab312b9440ee54ec5839af2965}
+\hypertarget{classCSphAutofile_ac5fcf2a3cb7d5f464b51cb099fde9d40}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!Read@{Read}}
+\index{Read@{Read}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{Read}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Autofile\-::\-Read (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Buf, }
+\item[{{\bf int64\-\_\-t}}]{i\-Count, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutofile_ac5fcf2a3cb7d5f464b51cb099fde9d40}
+\hypertarget{classCSphAutofile_ac5c02b8b7ecfc92f7847aba094427661}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!Set\-Progress\-Callback@{Set\-Progress\-Callback}}
+\index{Set\-Progress\-Callback@{Set\-Progress\-Callback}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{Set\-Progress\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Autofile\-::\-Set\-Progress\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index\-Progress} $\ast$}]{p\-Stat}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutofile_ac5c02b8b7ecfc92f7847aba094427661}
+\hypertarget{classCSphAutofile_a9d330f328d8aa6631e0c362cb875182c}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!Set\-Temporary@{Set\-Temporary}}
+\index{Set\-Temporary@{Set\-Temporary}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{Set\-Temporary}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Autofile\-::\-Set\-Temporary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphAutofile_a9d330f328d8aa6631e0c362cb875182c}
+
+
+would be set if a shit happened and the file is not actual. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphAutofile_a4d22136d629374124bf4e6e136f4130f}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!m\-\_\-b\-Temporary@{m\-\_\-b\-Temporary}}
+\index{m\-\_\-b\-Temporary@{m\-\_\-b\-Temporary}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{m\-\_\-b\-Temporary}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Autofile\-::m\-\_\-b\-Temporary\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAutofile_a4d22136d629374124bf4e6e136f4130f}
+
+
+whether to unlink this file on \hyperlink{classCSphAutofile_af010e09fa8ddae598af8a9b09d104365}{Close()} 
+
+\hypertarget{classCSphAutofile_a037aa32a2262c8dea1f1c9fbf05a36f5}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!m\-\_\-b\-Would\-Temporary@{m\-\_\-b\-Would\-Temporary}}
+\index{m\-\_\-b\-Would\-Temporary@{m\-\_\-b\-Would\-Temporary}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{m\-\_\-b\-Would\-Temporary}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Autofile\-::m\-\_\-b\-Would\-Temporary\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAutofile_a037aa32a2262c8dea1f1c9fbf05a36f5}
+
+
+backup of the m\-\_\-b\-Temporary 
+
+\hypertarget{classCSphAutofile_aca862db8620b51f8c5a83517080c2436}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!m\-\_\-i\-F\-D@{m\-\_\-i\-F\-D}}
+\index{m\-\_\-i\-F\-D@{m\-\_\-i\-F\-D}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{m\-\_\-i\-F\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Autofile\-::m\-\_\-i\-F\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAutofile_aca862db8620b51f8c5a83517080c2436}
+
+
+my file descriptor 
+
+\hypertarget{classCSphAutofile_a8f4a21d9d657efd75b15263eaae873fe}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!m\-\_\-p\-Stat@{m\-\_\-p\-Stat}}
+\index{m\-\_\-p\-Stat@{m\-\_\-p\-Stat}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{m\-\_\-p\-Stat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Index\-Progress}$\ast$ C\-Sph\-Autofile\-::m\-\_\-p\-Stat\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAutofile_a8f4a21d9d657efd75b15263eaae873fe}
+\hypertarget{classCSphAutofile_ace9555717055d742239289a0eef5feb8}{\index{C\-Sph\-Autofile@{C\-Sph\-Autofile}!m\-\_\-s\-Filename@{m\-\_\-s\-Filename}}
+\index{m\-\_\-s\-Filename@{m\-\_\-s\-Filename}!CSphAutofile@{C\-Sph\-Autofile}}
+\subsubsection[{m\-\_\-s\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Autofile\-::m\-\_\-s\-Filename\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphAutofile_ace9555717055d742239289a0eef5feb8}
+
+
+my file name 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxint_8h}{sphinxint.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

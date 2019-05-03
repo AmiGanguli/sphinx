@@ -1,0 +1,488 @@
+\hypertarget{classCSphSource}{\section{C\-Sph\-Source Class Reference}
+\label{classCSphSource}\index{C\-Sph\-Source@{C\-Sph\-Source}}
+}
+
+
+generic data source  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Source\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.745098cm]{classCSphSource}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphSource_a2dcccbeef027aa1164910604cbc3e6a1}{C\-Sph\-Source} (const char $\ast$s\-Name)
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+virtual \hyperlink{classCSphSource_afe6bc4ddc5d26b782965df6ec73bc9f6}{$\sim$\-C\-Sph\-Source} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+void \hyperlink{classCSphSource_abd6fcc5464a2a98ee9503fa8bce5dbf8}{Set\-Dict} (\hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$dict)
+\begin{DoxyCompactList}\small\item\em set dictionary \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphSource_a08d22bb059b11265de6c50bdb21197df}{Set\-Strip\-H\-T\-M\-L} (const char $\ast$s\-Extract\-Attrs, const char $\ast$s\-Remove\-Elements, bool b\-Detect\-Paragraphs, const char $\ast$s\-Zones, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+virtual void \hyperlink{classCSphSource_aef881601e2db370b530a2895fece8aaf}{Set\-Field\-Filter} (\hyperlink{classISphFieldFilter}{I\-Sph\-Field\-Filter} $\ast$p\-Filter)
+\begin{DoxyCompactList}\small\item\em set field filter \end{DoxyCompactList}\item 
+void \hyperlink{classCSphSource_ab21105df5032913c9a3b4345b23f1c86}{Set\-Tokenizer} (\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer)
+\begin{DoxyCompactList}\small\item\em set tokenizer \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphSource_a7f2d4143bfbca9935db7b1a32a652103}{Set\-Dump\-Rows} (F\-I\-L\-E $\ast$)
+\begin{DoxyCompactList}\small\item\em set rows dump file \end{DoxyCompactList}\item 
+virtual const \hyperlink{structCSphSourceStats}{C\-Sph\-Source\-Stats} \& \hyperlink{classCSphSource_a051c9f5b12cece4e86106225987d217a}{Get\-Stats} ()
+\begin{DoxyCompactList}\small\item\em get stats \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphSource_a082c964ed9c6ffa34ffac69b29810f24}{Update\-Schema} (\hyperlink{classCSphSchema}{C\-Sph\-Schema} $\ast$p\-Info, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+void \hyperlink{classCSphSource_ab1c4e1f6cb14d7301a37b9ccf9efa0a2}{Setup} (const \hyperlink{structCSphSourceSettings}{C\-Sph\-Source\-Settings} \&t\-Settings)
+\begin{DoxyCompactList}\small\item\em setup misc indexing settings (prefix/infix/exact-\/word indexing, position steps) \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphSource_a50f73194db9b7580d03b877fad183d1d}{Connect} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)=0
+\item 
+virtual void \hyperlink{classCSphSource_ae8fb8afc3854b68c2b9f69421e2ba759}{Disconnect} ()=0
+\begin{DoxyCompactList}\small\item\em disconnect from the source \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphSource_a18a23aba5b933c8ed3c84d3fa360ac3b}{Has\-Attrs\-Configured} ()=0
+\item 
+virtual bool \hyperlink{classCSphSource_ae1d74fa79667e6952fdd905e581b70fc}{Has\-Joined\-Fields} ()
+\begin{DoxyCompactList}\small\item\em check if there are any joined fields \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphSource_a290f2ae8fbc60b2def57305ee08b0d3f}{Iterate\-Start} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)=0
+\item 
+virtual bool \hyperlink{classCSphSource_a9538a6f16bbb38bfa8d78516d10923fe}{Iterate\-Document} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)=0
+\item 
+virtual \hyperlink{classISphHits}{I\-Sph\-Hits} $\ast$ \hyperlink{classCSphSource_a06776f779e04709b3980421e00332dd8}{Iterate\-Hits} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)=0
+\item 
+virtual \hyperlink{classISphHits}{I\-Sph\-Hits} $\ast$ \hyperlink{classCSphSource_a59e3058af78b877c3fd864e99b9a23e0}{Iterate\-Joined\-Hits} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+virtual bool \hyperlink{classCSphSource_a9c153cf946c203bf8a8b29d1c10787bf}{Iterate\-Multivalued\-Start} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Attr, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)=0
+\item 
+virtual bool \hyperlink{classCSphSource_a96b70f84184221299e21078ba7c45405}{Iterate\-Multivalued\-Next} ()=0
+\begin{DoxyCompactList}\small\item\em get next multi-\/valued (id,attr-\/value) or (id, offset) for mva64 tuple to m\-\_\-t\-Doc\-Info \end{DoxyCompactList}\item 
+virtual \hyperlink{structSphRange__t}{Sph\-Range\-\_\-t} \hyperlink{classCSphSource_a246c838907aa826773dd777d7177603f}{Iterate\-Field\-M\-V\-A\-Start} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Attr)=0
+\item 
+virtual bool \hyperlink{classCSphSource_a03c3bdd36535b2ef9e3dca04efbfdee2}{Iterate\-Kill\-List\-Start} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)=0
+\begin{DoxyCompactList}\small\item\em begin iterating kill list \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphSource_a612f192dcf6b2705895fe1ca478cf224}{Iterate\-Kill\-List\-Next} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \&u\-Doc\-Id)=0
+\begin{DoxyCompactList}\small\item\em get next kill list doc id \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphSource_ab769d6c93df8cd8097f9836df6e5843a}{Post\-Index} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphMatch}{C\-Sph\-Match} \hyperlink{classCSphSource_a78d0c67d1455c1a49267f79ab36a2d31}{m\-\_\-t\-Doc\-Info}
+\begin{DoxyCompactList}\small\item\em current document info \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \hyperlink{classCSphSource_ab504e862bb01cd4e5e755f2713a14234}{m\-\_\-d\-Str\-Attrs}
+\begin{DoxyCompactList}\small\item\em current document string attrs \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \hyperlink{classCSphSource_a15249c45e1ca278d76525e2a0d8c828c}{m\-\_\-d\-Mva}
+\begin{DoxyCompactList}\small\item\em M\-V\-A storage for mva64. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classCSphSource_a2f3e7e13d9d8fd7833e0a81bcf2e389e}{Verify\-I\-D} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-I\-D)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$ \hyperlink{classCSphSource_a4fdb1d9e18e1db8b02d616d0a29c5153}{m\-\_\-p\-Tokenizer}
+\begin{DoxyCompactList}\small\item\em my tokenizer \end{DoxyCompactList}\item 
+\hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$ \hyperlink{classCSphSource_a4ac924707004945af25424567105a7e8}{m\-\_\-p\-Dict}
+\begin{DoxyCompactList}\small\item\em my dict \end{DoxyCompactList}\item 
+\hyperlink{classISphFieldFilter}{I\-Sph\-Field\-Filter} $\ast$ \hyperlink{classCSphSource_a0aba586db1c01324f1271b5caa739bcd}{m\-\_\-p\-Field\-Filter}
+\begin{DoxyCompactList}\small\item\em my field filter \end{DoxyCompactList}\item 
+\hyperlink{structCSphSourceStats}{C\-Sph\-Source\-Stats} \hyperlink{classCSphSource_aab2f058ba7edd25fccb64d3352cdc513}{m\-\_\-t\-Stats}
+\begin{DoxyCompactList}\small\item\em my stats \end{DoxyCompactList}\item 
+\hyperlink{classCSphSchema}{C\-Sph\-Schema} \hyperlink{classCSphSource_a3f565a200e543bd96724d53f9756b510}{m\-\_\-t\-Schema}
+\begin{DoxyCompactList}\small\item\em my schema \end{DoxyCompactList}\item 
+\hyperlink{classCSphHTMLStripper}{C\-Sph\-H\-T\-M\-L\-Stripper} $\ast$ \hyperlink{classCSphSource_aeca4a701b62373de45bfa69f5e5a4817}{m\-\_\-p\-Stripper}
+\begin{DoxyCompactList}\small\item\em my H\-T\-M\-L stripper \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSource_a667ff9e98ab9a219f7e49faf2e94b887}{m\-\_\-i\-Null\-Ids}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphSource_ac05e31f4dc3b344d46ef7417ded093b8}{m\-\_\-i\-Max\-Ids}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+generic data source 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphSource_a2dcccbeef027aa1164910604cbc3e6a1}{\index{C\-Sph\-Source@{C\-Sph\-Source}!C\-Sph\-Source@{C\-Sph\-Source}}
+\index{C\-Sph\-Source@{C\-Sph\-Source}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{C\-Sph\-Source}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Source\-::\-C\-Sph\-Source (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCSphSource_a2dcccbeef027aa1164910604cbc3e6a1}
+
+
+ctor 
+
+\hypertarget{classCSphSource_afe6bc4ddc5d26b782965df6ec73bc9f6}{\index{C\-Sph\-Source@{C\-Sph\-Source}!$\sim$\-C\-Sph\-Source@{$\sim$\-C\-Sph\-Source}}
+\index{$\sim$\-C\-Sph\-Source@{$\sim$\-C\-Sph\-Source}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{$\sim$\-C\-Sph\-Source}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Source\-::$\sim$\-C\-Sph\-Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSource_afe6bc4ddc5d26b782965df6ec73bc9f6}
+
+
+dtor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphSource_a50f73194db9b7580d03b877fad183d1d}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Connect@{Connect}}
+\index{Connect@{Connect}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-::\-Connect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_a50f73194db9b7580d03b877fad183d1d}
+connect to the source (eg. to the database) connection settings are specific for each source type and as such are implemented in specific descendants 
+
+Implemented in \hyperlink{classCSphSource__BaseSV_a2d7bfaa58ed537c37f825c5e940677ff}{C\-Sph\-Source\-\_\-\-Base\-S\-V}, \hyperlink{classSphDocRandomizer__c_a0bb503ce3f208efad5acdd2fd15b7c2c}{Sph\-Doc\-Randomizer\-\_\-c}, \hyperlink{classSphTestDoc__c_a65cb73ebd03cead2cb9c1784b260e9cf}{Sph\-Test\-Doc\-\_\-c}, \hyperlink{structCSphSource__SQL_a2c19c1d1ddab42d9eed3d6d3b3bf4c0a}{C\-Sph\-Source\-\_\-\-S\-Q\-L}, and \hyperlink{classCSphSource__StringVector_a10e2e9c807ad5011c00f6661d5ddc844}{C\-Sph\-Source\-\_\-\-String\-Vector}.
+
+\hypertarget{classCSphSource_ae8fb8afc3854b68c2b9f69421e2ba759}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Disconnect@{Disconnect}}
+\index{Disconnect@{Disconnect}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Source\-::\-Disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_ae8fb8afc3854b68c2b9f69421e2ba759}
+
+
+disconnect from the source 
+
+
+
+Implemented in \hyperlink{classCSphSource__BaseSV_aa4c4b9d4a350c04b5258bd2d0bae12f1}{C\-Sph\-Source\-\_\-\-Base\-S\-V}, \hyperlink{classSphDocRandomizer__c_a2c4a31fcff9e8364e04bb09d28502815}{Sph\-Doc\-Randomizer\-\_\-c}, \hyperlink{classSphTestDoc__c_af8ccd82f2099e545170071121a54ce96}{Sph\-Test\-Doc\-\_\-c}, \hyperlink{structCSphSource__SQL_a652ad7d017010cbeb85731060213a39c}{C\-Sph\-Source\-\_\-\-S\-Q\-L}, and \hyperlink{classCSphSource__StringVector_a58679b654e01091835fee32a4e605297}{C\-Sph\-Source\-\_\-\-String\-Vector}.
+
+\hypertarget{classCSphSource_a051c9f5b12cece4e86106225987d217a}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Get\-Stats@{Get\-Stats}}
+\index{Get\-Stats@{Get\-Stats}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Get\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Source\-Stats} \& C\-Sph\-Source\-::\-Get\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSource_a051c9f5b12cece4e86106225987d217a}
+
+
+get stats 
+
+\hypertarget{classCSphSource_a18a23aba5b933c8ed3c84d3fa360ac3b}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Has\-Attrs\-Configured@{Has\-Attrs\-Configured}}
+\index{Has\-Attrs\-Configured@{Has\-Attrs\-Configured}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Has\-Attrs\-Configured}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-::\-Has\-Attrs\-Configured (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_a18a23aba5b933c8ed3c84d3fa360ac3b}
+check if there are any attributes configured note that there might be N\-O actual attributes in the case if configured ones do not match those actually returned by the source 
+
+Implemented in \hyperlink{classCSphSource__BaseSV_a3777e2a157361b88188f0e563ca7d16c}{C\-Sph\-Source\-\_\-\-Base\-S\-V}, \hyperlink{classSphDocRandomizer__c_a06988239d5f52005346d3a1865e33e09}{Sph\-Doc\-Randomizer\-\_\-c}, \hyperlink{classSphTestDoc__c_accdef52affa97802f3f9080e5a1a5ea9}{Sph\-Test\-Doc\-\_\-c}, \hyperlink{structCSphSource__SQL_a0824aeedcde3bd86f3e4776fbae06702}{C\-Sph\-Source\-\_\-\-S\-Q\-L}, and \hyperlink{classCSphSource__StringVector_a86359f1aabfb01356a52d48629a63474}{C\-Sph\-Source\-\_\-\-String\-Vector}.
+
+\hypertarget{classCSphSource_ae1d74fa79667e6952fdd905e581b70fc}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Has\-Joined\-Fields@{Has\-Joined\-Fields}}
+\index{Has\-Joined\-Fields@{Has\-Joined\-Fields}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Has\-Joined\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-::\-Has\-Joined\-Fields (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSource_ae1d74fa79667e6952fdd905e581b70fc}
+
+
+check if there are any joined fields 
+
+
+
+Reimplemented in \hyperlink{classCSphSource__Document_aced2a6c70c2c3aac5c3c81fee5588b42}{C\-Sph\-Source\-\_\-\-Document}.
+
+\hypertarget{classCSphSource_a9538a6f16bbb38bfa8d78516d10923fe}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Iterate\-Document@{Iterate\-Document}}
+\index{Iterate\-Document@{Iterate\-Document}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Iterate\-Document}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-::\-Iterate\-Document (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_a9538a6f16bbb38bfa8d78516d10923fe}
+get next document to be implemented by descendants returns false on error returns true and fills m\-\_\-t\-Doc\-Info on success returns true and sets m\-\_\-t\-Doc\-Info.\-m\-\_\-u\-Doc\-I\-D to 0 on eof 
+
+Implemented in \hyperlink{classCSphSource__Document_a6cdbf8ff1decc25937f95b4cce51b712}{C\-Sph\-Source\-\_\-\-Document}.
+
+\hypertarget{classCSphSource_a246c838907aa826773dd777d7177603f}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Iterate\-Field\-M\-V\-A\-Start@{Iterate\-Field\-M\-V\-A\-Start}}
+\index{Iterate\-Field\-M\-V\-A\-Start@{Iterate\-Field\-M\-V\-A\-Start}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Iterate\-Field\-M\-V\-A\-Start}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Sph\-Range\-\_\-t} C\-Sph\-Source\-::\-Iterate\-Field\-M\-V\-A\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_a246c838907aa826773dd777d7177603f}
+begin iterating values of multi-\/valued attribute i\-Attr stored in a field will fail if i\-Attr is out of range, or is not multi-\/valued 
+
+Implemented in \hyperlink{classCSphSource__Document_ae8d12598658b395b3ecedc893fcf7e06}{C\-Sph\-Source\-\_\-\-Document}.
+
+\hypertarget{classCSphSource_a06776f779e04709b3980421e00332dd8}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Iterate\-Hits@{Iterate\-Hits}}
+\index{Iterate\-Hits@{Iterate\-Hits}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Iterate\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf I\-Sph\-Hits}$\ast$ C\-Sph\-Source\-::\-Iterate\-Hits (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_a06776f779e04709b3980421e00332dd8}
+get next hits chunk for current document to be implemented by descendants returns N\-U\-L\-L when there are no more hits returns pointer to hit vector (with at most M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-H\-I\-T\-S) on success fills out-\/string with error message on failure 
+
+Implemented in \hyperlink{classCSphSource__Document_afd28acf082b0c95a0e65f3299890bf45}{C\-Sph\-Source\-\_\-\-Document}.
+
+\hypertarget{classCSphSource_a59e3058af78b877c3fd864e99b9a23e0}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Iterate\-Joined\-Hits@{Iterate\-Joined\-Hits}}
+\index{Iterate\-Joined\-Hits@{Iterate\-Joined\-Hits}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Iterate\-Joined\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Hits} $\ast$ C\-Sph\-Source\-::\-Iterate\-Joined\-Hits (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSource_a59e3058af78b877c3fd864e99b9a23e0}
+get joined hits from joined fields (w/o attached docinfos) returns false and fills out-\/string with error message on failure returns true and sets m\-\_\-t\-Doc\-Info.\-m\-\_\-u\-Doc\-I\-D to 0 on eof returns true and sets m\-\_\-t\-Doc\-Info.\-m\-\_\-u\-Doc\-I\-D to non-\/0 on success 
+
+Reimplemented in \hyperlink{structCSphSource__SQL_a6a5582bcb8f7270e2b12b76a43080b3b}{C\-Sph\-Source\-\_\-\-S\-Q\-L}.
+
+\hypertarget{classCSphSource_a612f192dcf6b2705895fe1ca478cf224}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Iterate\-Kill\-List\-Next@{Iterate\-Kill\-List\-Next}}
+\index{Iterate\-Kill\-List\-Next@{Iterate\-Kill\-List\-Next}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Iterate\-Kill\-List\-Next}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-::\-Iterate\-Kill\-List\-Next (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t} \&}]{u\-Doc\-Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_a612f192dcf6b2705895fe1ca478cf224}
+
+
+get next kill list doc id 
+
+
+
+Implemented in \hyperlink{classCSphSource__BaseSV_ae81d1f575ac41eaf8d4a61856d774b2f}{C\-Sph\-Source\-\_\-\-Base\-S\-V}, \hyperlink{classSphDocRandomizer__c_a7ce113b1c56d810755a9bcdf4e6607f3}{Sph\-Doc\-Randomizer\-\_\-c}, \hyperlink{classSphTestDoc__c_a71f1018dc355354e5b316f2b45e9c1f0}{Sph\-Test\-Doc\-\_\-c}, \hyperlink{structCSphSource__SQL_a3b544950510e7b7d988fbf27d8d2fb40}{C\-Sph\-Source\-\_\-\-S\-Q\-L}, and \hyperlink{classCSphSource__StringVector_ae5f0abe89c1a5434ee8ee68a5293706d}{C\-Sph\-Source\-\_\-\-String\-Vector}.
+
+\hypertarget{classCSphSource_a03c3bdd36535b2ef9e3dca04efbfdee2}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Iterate\-Kill\-List\-Start@{Iterate\-Kill\-List\-Start}}
+\index{Iterate\-Kill\-List\-Start@{Iterate\-Kill\-List\-Start}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Iterate\-Kill\-List\-Start}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-::\-Iterate\-Kill\-List\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_a03c3bdd36535b2ef9e3dca04efbfdee2}
+
+
+begin iterating kill list 
+
+
+
+Implemented in \hyperlink{classCSphSource__BaseSV_a3884a4dd0fa2de86b1bf2e01cb81673b}{C\-Sph\-Source\-\_\-\-Base\-S\-V}, \hyperlink{classSphDocRandomizer__c_a8fc2ff11b6044bcb5965dfa02963b74b}{Sph\-Doc\-Randomizer\-\_\-c}, \hyperlink{classSphTestDoc__c_adff7bf46a1b2d592ba8ca648084b56f2}{Sph\-Test\-Doc\-\_\-c}, \hyperlink{structCSphSource__SQL_af57f75dc40263a881e4ca37d70fb42e6}{C\-Sph\-Source\-\_\-\-S\-Q\-L}, and \hyperlink{classCSphSource__StringVector_aab4dfaef5dfd33cc5c171ae922eeef72}{C\-Sph\-Source\-\_\-\-String\-Vector}.
+
+\hypertarget{classCSphSource_a96b70f84184221299e21078ba7c45405}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Iterate\-Multivalued\-Next@{Iterate\-Multivalued\-Next}}
+\index{Iterate\-Multivalued\-Next@{Iterate\-Multivalued\-Next}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Iterate\-Multivalued\-Next}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-::\-Iterate\-Multivalued\-Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_a96b70f84184221299e21078ba7c45405}
+
+
+get next multi-\/valued (id,attr-\/value) or (id, offset) for mva64 tuple to m\-\_\-t\-Doc\-Info 
+
+
+
+Implemented in \hyperlink{classCSphSource__BaseSV_ae8480463154311258b4fdfb86f6ac825}{C\-Sph\-Source\-\_\-\-Base\-S\-V}, \hyperlink{classSphDocRandomizer__c_a178560a6be2c7ce438a88e2f3f2ed748}{Sph\-Doc\-Randomizer\-\_\-c}, \hyperlink{classSphTestDoc__c_af0bedd1486b302aaf50c0f3ee4ac8686}{Sph\-Test\-Doc\-\_\-c}, \hyperlink{structCSphSource__SQL_a4405f6a4ce3496fe69a79847aed0d940}{C\-Sph\-Source\-\_\-\-S\-Q\-L}, and \hyperlink{classCSphSource__StringVector_a2706604a4e244484001dd68fd368bfb9}{C\-Sph\-Source\-\_\-\-String\-Vector}.
+
+\hypertarget{classCSphSource_a9c153cf946c203bf8a8b29d1c10787bf}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Iterate\-Multivalued\-Start@{Iterate\-Multivalued\-Start}}
+\index{Iterate\-Multivalued\-Start@{Iterate\-Multivalued\-Start}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Iterate\-Multivalued\-Start}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-::\-Iterate\-Multivalued\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Attr, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_a9c153cf946c203bf8a8b29d1c10787bf}
+begin iterating values of out-\/of-\/document multi-\/valued attribute i\-Attr will fail if i\-Attr is out of range, or is not multi-\/valued can also fail if configured settings are invalid (eg. S\-Q\-L query can not be executed) 
+
+Implemented in \hyperlink{classCSphSource__BaseSV_a17edb065bd1f6feeca0c399e5b11ea67}{C\-Sph\-Source\-\_\-\-Base\-S\-V}, \hyperlink{classSphDocRandomizer__c_a1ccac585a56c49f6db9d14d28e5785ac}{Sph\-Doc\-Randomizer\-\_\-c}, \hyperlink{classSphTestDoc__c_aec3fea624d4d0d9c6ef54fa445636bc6}{Sph\-Test\-Doc\-\_\-c}, \hyperlink{structCSphSource__SQL_aa0786fc1487fef5693d9b82748ce6b98}{C\-Sph\-Source\-\_\-\-S\-Q\-L}, and \hyperlink{classCSphSource__StringVector_ae9cc56033292c551a55e94b693e4888d}{C\-Sph\-Source\-\_\-\-String\-Vector}.
+
+\hypertarget{classCSphSource_a290f2ae8fbc60b2def57305ee08b0d3f}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Iterate\-Start@{Iterate\-Start}}
+\index{Iterate\-Start@{Iterate\-Start}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Iterate\-Start}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-::\-Iterate\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCSphSource_a290f2ae8fbc60b2def57305ee08b0d3f}
+begin indexing this source to be implemented by descendants 
+
+Implemented in \hyperlink{classCSphSource__BaseSV_a5b2b2753b3280a4353f3c8b87265934c}{C\-Sph\-Source\-\_\-\-Base\-S\-V}, \hyperlink{classSphDocRandomizer__c_a577e5d419b33f4c207cf6b916908a2a6}{Sph\-Doc\-Randomizer\-\_\-c}, \hyperlink{classSphTestDoc__c_a8e43d2c06e5bea028d9ef254cc435fdf}{Sph\-Test\-Doc\-\_\-c}, \hyperlink{structCSphSource__SQL_a5806ed4a14570cb3383431d165cceb66}{C\-Sph\-Source\-\_\-\-S\-Q\-L}, and \hyperlink{classCSphSource__StringVector_aca5fc9c9daae776478f76138cacce381}{C\-Sph\-Source\-\_\-\-String\-Vector}.
+
+\hypertarget{classCSphSource_ab769d6c93df8cd8097f9836df6e5843a}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Post\-Index@{Post\-Index}}
+\index{Post\-Index@{Post\-Index}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Post\-Index}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Source\-::\-Post\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSource_ab769d6c93df8cd8097f9836df6e5843a}
+post-\/index callback gets called when the indexing is succesfully (!) over 
+
+Reimplemented in \hyperlink{structCSphSource__SQL_a458e30ee09ccca767273609741a7311b}{C\-Sph\-Source\-\_\-\-S\-Q\-L}.
+
+\hypertarget{classCSphSource_abd6fcc5464a2a98ee9503fa8bce5dbf8}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Set\-Dict@{Set\-Dict}}
+\index{Set\-Dict@{Set\-Dict}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Set\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Source\-::\-Set\-Dict (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{dict}
+\end{DoxyParamCaption}
+)}}\label{classCSphSource_abd6fcc5464a2a98ee9503fa8bce5dbf8}
+
+
+set dictionary 
+
+\hypertarget{classCSphSource_a7f2d4143bfbca9935db7b1a32a652103}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Set\-Dump\-Rows@{Set\-Dump\-Rows}}
+\index{Set\-Dump\-Rows@{Set\-Dump\-Rows}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Set\-Dump\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Source\-::\-Set\-Dump\-Rows (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphSource_a7f2d4143bfbca9935db7b1a32a652103}
+
+
+set rows dump file 
+
+
+
+Reimplemented in \hyperlink{classCSphSource__Document_a5ad504e9e2723ca1347736fd4b742397}{C\-Sph\-Source\-\_\-\-Document}.
+
+\hypertarget{classCSphSource_aef881601e2db370b530a2895fece8aaf}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Set\-Field\-Filter@{Set\-Field\-Filter}}
+\index{Set\-Field\-Filter@{Set\-Field\-Filter}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Set\-Field\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Source\-::\-Set\-Field\-Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Field\-Filter} $\ast$}]{p\-Filter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSource_aef881601e2db370b530a2895fece8aaf}
+
+
+set field filter 
+
+\hypertarget{classCSphSource_a08d22bb059b11265de6c50bdb21197df}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Set\-Strip\-H\-T\-M\-L@{Set\-Strip\-H\-T\-M\-L}}
+\index{Set\-Strip\-H\-T\-M\-L@{Set\-Strip\-H\-T\-M\-L}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Set\-Strip\-H\-T\-M\-L}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-::\-Set\-Strip\-H\-T\-M\-L (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Extract\-Attrs, }
+\item[{const char $\ast$}]{s\-Remove\-Elements, }
+\item[{bool}]{b\-Detect\-Paragraphs, }
+\item[{const char $\ast$}]{s\-Zones, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphSource_a08d22bb059b11265de6c50bdb21197df}
+set H\-T\-M\-L stripping mode
+
+s\-Extract\-Attrs defines what attributes to store. format is \char`\"{}img=alt; a=alt,title\char`\"{}. empty string means to strip all tags; N\-U\-L\-L means to disable stripping.
+
+s\-Remove\-Elements defines what elements to cleanup. format is \char`\"{}style, script\char`\"{}
+
+on failure, returns false and fills s\-Error \hypertarget{classCSphSource_ab21105df5032913c9a3b4345b23f1c86}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Set\-Tokenizer@{Set\-Tokenizer}}
+\index{Set\-Tokenizer@{Set\-Tokenizer}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Set\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Source\-::\-Set\-Tokenizer (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer}
+\end{DoxyParamCaption}
+)}}\label{classCSphSource_ab21105df5032913c9a3b4345b23f1c86}
+
+
+set tokenizer 
+
+\hypertarget{classCSphSource_ab1c4e1f6cb14d7301a37b9ccf9efa0a2}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Setup@{Setup}}
+\index{Setup@{Setup}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Source\-::\-Setup (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Source\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)}}\label{classCSphSource_ab1c4e1f6cb14d7301a37b9ccf9efa0a2}
+
+
+setup misc indexing settings (prefix/infix/exact-\/word indexing, position steps) 
+
+\hypertarget{classCSphSource_a082c964ed9c6ffa34ffac69b29810f24}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Update\-Schema@{Update\-Schema}}
+\index{Update\-Schema@{Update\-Schema}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Update\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-::\-Update\-Schema (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Schema} $\ast$}]{p\-Info, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphSource_a082c964ed9c6ffa34ffac69b29810f24}
+updates schema fields and attributes updates p\-Info if it's empty; checks for match if it's not must be called after \hyperlink{classCSphSource_a290f2ae8fbc60b2def57305ee08b0d3f}{Iterate\-Start()}; will always fail otherwise \hypertarget{classCSphSource_a2f3e7e13d9d8fd7833e0a81bcf2e389e}{\index{C\-Sph\-Source@{C\-Sph\-Source}!Verify\-I\-D@{Verify\-I\-D}}
+\index{Verify\-I\-D@{Verify\-I\-D}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{Verify\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Source\-::\-Verify\-I\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource_a2f3e7e13d9d8fd7833e0a81bcf2e389e}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphSource_a15249c45e1ca278d76525e2a0d8c828c}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-d\-Mva@{m\-\_\-d\-Mva}}
+\index{m\-\_\-d\-Mva@{m\-\_\-d\-Mva}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-d\-Mva}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf D\-W\-O\-R\-D}$>$ C\-Sph\-Source\-::m\-\_\-d\-Mva}}\label{classCSphSource_a15249c45e1ca278d76525e2a0d8c828c}
+
+
+M\-V\-A storage for mva64. 
+
+\hypertarget{classCSphSource_ab504e862bb01cd4e5e755f2713a14234}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-d\-Str\-Attrs@{m\-\_\-d\-Str\-Attrs}}
+\index{m\-\_\-d\-Str\-Attrs@{m\-\_\-d\-Str\-Attrs}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-d\-Str\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-String}$>$ C\-Sph\-Source\-::m\-\_\-d\-Str\-Attrs}}\label{classCSphSource_ab504e862bb01cd4e5e755f2713a14234}
+
+
+current document string attrs 
+
+\hypertarget{classCSphSource_ac05e31f4dc3b344d46ef7417ded093b8}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-i\-Max\-Ids@{m\-\_\-i\-Max\-Ids}}
+\index{m\-\_\-i\-Max\-Ids@{m\-\_\-i\-Max\-Ids}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-i\-Max\-Ids}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-::m\-\_\-i\-Max\-Ids\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource_ac05e31f4dc3b344d46ef7417ded093b8}
+\hypertarget{classCSphSource_a667ff9e98ab9a219f7e49faf2e94b887}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-i\-Null\-Ids@{m\-\_\-i\-Null\-Ids}}
+\index{m\-\_\-i\-Null\-Ids@{m\-\_\-i\-Null\-Ids}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-i\-Null\-Ids}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-::m\-\_\-i\-Null\-Ids\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource_a667ff9e98ab9a219f7e49faf2e94b887}
+\hypertarget{classCSphSource_a4ac924707004945af25424567105a7e8}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-p\-Dict@{m\-\_\-p\-Dict}}
+\index{m\-\_\-p\-Dict@{m\-\_\-p\-Dict}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-p\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Dict}$\ast$ C\-Sph\-Source\-::m\-\_\-p\-Dict\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource_a4ac924707004945af25424567105a7e8}
+
+
+my dict 
+
+\hypertarget{classCSphSource_a0aba586db1c01324f1271b5caa739bcd}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-p\-Field\-Filter@{m\-\_\-p\-Field\-Filter}}
+\index{m\-\_\-p\-Field\-Filter@{m\-\_\-p\-Field\-Filter}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-p\-Field\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Field\-Filter}$\ast$ C\-Sph\-Source\-::m\-\_\-p\-Field\-Filter\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource_a0aba586db1c01324f1271b5caa739bcd}
+
+
+my field filter 
+
+\hypertarget{classCSphSource_aeca4a701b62373de45bfa69f5e5a4817}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-p\-Stripper@{m\-\_\-p\-Stripper}}
+\index{m\-\_\-p\-Stripper@{m\-\_\-p\-Stripper}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-p\-Stripper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-H\-T\-M\-L\-Stripper}$\ast$ C\-Sph\-Source\-::m\-\_\-p\-Stripper\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource_aeca4a701b62373de45bfa69f5e5a4817}
+
+
+my H\-T\-M\-L stripper 
+
+\hypertarget{classCSphSource_a4fdb1d9e18e1db8b02d616d0a29c5153}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-p\-Tokenizer@{m\-\_\-p\-Tokenizer}}
+\index{m\-\_\-p\-Tokenizer@{m\-\_\-p\-Tokenizer}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-p\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Tokenizer}$\ast$ C\-Sph\-Source\-::m\-\_\-p\-Tokenizer\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource_a4fdb1d9e18e1db8b02d616d0a29c5153}
+
+
+my tokenizer 
+
+\hypertarget{classCSphSource_a78d0c67d1455c1a49267f79ab36a2d31}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-t\-Doc\-Info@{m\-\_\-t\-Doc\-Info}}
+\index{m\-\_\-t\-Doc\-Info@{m\-\_\-t\-Doc\-Info}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-t\-Doc\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Match} C\-Sph\-Source\-::m\-\_\-t\-Doc\-Info}}\label{classCSphSource_a78d0c67d1455c1a49267f79ab36a2d31}
+
+
+current document info 
+
+\hypertarget{classCSphSource_a3f565a200e543bd96724d53f9756b510}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-t\-Schema@{m\-\_\-t\-Schema}}
+\index{m\-\_\-t\-Schema@{m\-\_\-t\-Schema}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-t\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Schema} C\-Sph\-Source\-::m\-\_\-t\-Schema\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource_a3f565a200e543bd96724d53f9756b510}
+
+
+my schema 
+
+\hypertarget{classCSphSource_aab2f058ba7edd25fccb64d3352cdc513}{\index{C\-Sph\-Source@{C\-Sph\-Source}!m\-\_\-t\-Stats@{m\-\_\-t\-Stats}}
+\index{m\-\_\-t\-Stats@{m\-\_\-t\-Stats}!CSphSource@{C\-Sph\-Source}}
+\subsubsection[{m\-\_\-t\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Source\-Stats} C\-Sph\-Source\-::m\-\_\-t\-Stats\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSource_aab2f058ba7edd25fccb64d3352cdc513}
+
+
+my stats 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

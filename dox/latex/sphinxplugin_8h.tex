@@ -1,0 +1,326 @@
+\hypertarget{sphinxplugin_8h}{\section{src/sphinxplugin.h File Reference}
+\label{sphinxplugin_8h}\index{src/sphinxplugin.\-h@{src/sphinxplugin.\-h}}
+}
+{\ttfamily \#include \char`\"{}sphinxstd.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxudf.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPluginDesc__c}{Plugin\-Desc\-\_\-c}
+\begin{DoxyCompactList}\small\item\em common plugin descriptor part \end{DoxyCompactList}\item 
+class \hyperlink{classPluginUDF__c}{Plugin\-U\-D\-F\-\_\-c}
+\begin{DoxyCompactList}\small\item\em registered user-\/defined function descriptor \end{DoxyCompactList}\item 
+class \hyperlink{classPluginRanker__c}{Plugin\-Ranker\-\_\-c}
+\begin{DoxyCompactList}\small\item\em registered user-\/defined ranker descriptor \end{DoxyCompactList}\item 
+class \hyperlink{classPluginTokenFilter__c}{Plugin\-Token\-Filter\-\_\-c}
+\begin{DoxyCompactList}\small\item\em registered user-\/defined token filter descriptor \end{DoxyCompactList}\item 
+class \hyperlink{classPluginQueryTokenFilter__c}{Plugin\-Query\-Token\-Filter\-\_\-c}
+\begin{DoxyCompactList}\small\item\em registered user-\/defined token filter descriptor \end{DoxyCompactList}\item 
+struct \hyperlink{structPluginInfo__t}{Plugin\-Info\-\_\-t}
+\begin{DoxyCompactList}\small\item\em human readable plugin description (basically for S\-H\-O\-W P\-L\-U\-G\-I\-N\-S) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}($\ast$ \hyperlink{sphinxplugin_8h_ac43d44cb157b47f83d642cb458124962}{Plugin\-Ver\-\_\-fn} )()
+\item 
+typedef void($\ast$ \hyperlink{sphinxplugin_8h_ae53d6fff1a158d773bac656cb0e1d284}{Plugin\-Reinit\-\_\-fn} )()
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}($\ast$ \hyperlink{sphinxplugin_8h_af4835063cff616ca763c1ba441e6c673}{Udf\-Init\-\_\-fn} )(\hyperlink{sphinxudf_8h_af57f73442a2d50129554ae57fd73e9e6}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init, \hyperlink{sphinxudf_8h_acd696630bd84382530fa56bb9a879532}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$args, char $\ast$error)
+\item 
+typedef void($\ast$ \hyperlink{sphinxplugin_8h_a2309c3f60f24849b0beb296edc299f3b}{Udf\-Deinit\-\_\-fn} )(\hyperlink{sphinxudf_8h_af57f73442a2d50129554ae57fd73e9e6}{S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init)
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}($\ast$ \hyperlink{sphinxplugin_8h_a37757dbf1f1d0e1b3460188c5cf8ee14}{Ranker\-Init\-\_\-fn} )(void $\ast$$\ast$userdata, \hyperlink{sphinxudf_8h_a3b8aae7b46a07f5dbf64feb28b26411f}{S\-P\-H\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-I\-N\-I\-T} $\ast$ranker, char $\ast$error)
+\item 
+typedef void($\ast$ \hyperlink{sphinxplugin_8h_aa877cc3f8bfeca5457cee6ffa6109f8f}{Ranker\-Update\-\_\-fn} )(void $\ast$userdata, \hyperlink{sphinxudf_8h_a973ddfb77ae26484adb223ffccab31bb}{S\-P\-H\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-H\-I\-T} $\ast$hit)
+\item 
+typedef unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}($\ast$ \hyperlink{sphinxplugin_8h_a162f1f4ce990ade1c0f0509cb0ec449b}{Ranker\-Finalize\-\_\-fn} )(void $\ast$userdata, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} match\-\_\-weight)
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}($\ast$ \hyperlink{sphinxplugin_8h_a3619db41c343ce6a97583c1b39c28d89}{Ranker\-Deinit\-\_\-fn} )(void $\ast$userdata)
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}($\ast$ \hyperlink{sphinxplugin_8h_a1653d874d9095e0db95ede8f594a0b89}{Token\-Filter\-Init\-\_\-fn} )(void $\ast$$\ast$userdata, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} num\-\_\-fields, const char $\ast$$\ast$field\-\_\-names, const char $\ast$options, char $\ast$error\-\_\-message)
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}($\ast$ \hyperlink{sphinxplugin_8h_a383de96c315cff58ad5beccab0feb641}{Token\-Filter\-Begin\-Document\-\_\-fn} )(void $\ast$userdata, const char $\ast$options, char $\ast$error\-\_\-message)
+\item 
+typedef void($\ast$ \hyperlink{sphinxplugin_8h_a776427a55286b76cc9d099412e1724aa}{Token\-Filter\-Begin\-Field\-\_\-fn} )(void $\ast$userdata, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} field\-\_\-index)
+\item 
+typedef char $\ast$($\ast$ \hyperlink{sphinxplugin_8h_a8beb5b805ece2481440451025eef2ec1}{Token\-Filter\-Push\-Token\-\_\-fn} )(void $\ast$userdata, char $\ast$token, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$extra, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$delta)
+\item 
+typedef char $\ast$($\ast$ \hyperlink{sphinxplugin_8h_ac394a5e97eca027b00042585b670e6e5}{Token\-Filter\-Get\-Extra\-Token\-\_\-fn} )(void $\ast$userdata, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$delta)
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}($\ast$ \hyperlink{sphinxplugin_8h_aee826797e426feed815ecd339b475ef7}{Token\-Filter\-End\-Field\-\_\-fn} )(void $\ast$userdata)
+\item 
+typedef void($\ast$ \hyperlink{sphinxplugin_8h_a0d6ebf9508d4a07415f665d7380f8ef5}{Token\-Filter\-Deinit\-\_\-fn} )(void $\ast$userdata)
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}($\ast$ \hyperlink{sphinxplugin_8h_a8048b12c6cdf6b1f54a1241661d0f31b}{Query\-Token\-Filter\-Init\-\_\-fn} )(void $\ast$$\ast$userdata, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} max\-\_\-len, const char $\ast$options, char $\ast$error)
+\item 
+typedef void($\ast$ \hyperlink{sphinxplugin_8h_ae6895137ebfb00e0ff9d2bfddc1f6ac6}{Query\-Token\-Filter\-Pre\-Morph\-\_\-fn} )(void $\ast$userdata, char $\ast$token, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$stopword)
+\item 
+typedef \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}($\ast$ \hyperlink{sphinxplugin_8h_aef43441c729334712d6d04be78ace206}{Query\-Token\-Filter\-Post\-Morph\-\_\-fn} )(void $\ast$userdata, char $\ast$token, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$stopword)
+\item 
+typedef char $\ast$($\ast$ \hyperlink{sphinxplugin_8h_a9e1805c3dbd9d5a88ecc38b77b4e48ed}{Query\-Token\-Filter\-Push\-Token\-\_\-fn} )(void $\ast$userdata, char $\ast$token, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$delta, const char $\ast$raw\-\_\-token\-\_\-start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} raw\-\_\-token\-\_\-len)
+\item 
+typedef void($\ast$ \hyperlink{sphinxplugin_8h_ae11305daf81d946af4272d4329884674}{Query\-Token\-Filter\-Deinit\-\_\-fn} )(void $\ast$userdata)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} \{ \\*
+\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a9b9ca2ca09db11f8b03564d35ee65bcf}{P\-L\-U\-G\-I\-N\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N} = 0, 
+\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a2dbe7530b29d08e9065ae04d99307fb7}{P\-L\-U\-G\-I\-N\-\_\-\-R\-A\-N\-K\-E\-R}, 
+\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a65db0c8e155d5ac553f17146777d2828}{P\-L\-U\-G\-I\-N\-\_\-\-I\-N\-D\-E\-X\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R}, 
+\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a9a43758b525e5be533276e36eafe82dd}{P\-L\-U\-G\-I\-N\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R}, 
+\\*
+\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20aeabfd79ac26b4f27f994747c384b8de6}{P\-L\-U\-G\-I\-N\-\_\-\-T\-O\-T\-A\-L}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sphinxplugin_8h_ad4beacf76a226585fdfe4cc306f3a09e}{sph\-Plugin\-Init} (const char $\ast$s\-Dir)
+\begin{DoxyCompactList}\small\item\em initialize plugin manager \end{DoxyCompactList}\item 
+void \hyperlink{sphinxplugin_8h_a1c9940def926a5bae05b273a5d25646c}{sph\-Plugin\-Save\-State} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&t\-Writer)
+\begin{DoxyCompactList}\small\item\em save Sphinx\-Q\-L state (ie. all active functions) \end{DoxyCompactList}\item 
+\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} \hyperlink{sphinxplugin_8h_a95de595b904545d93f61f6c0e9adcddb}{sph\-Plugin\-Get\-Type} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s)
+\begin{DoxyCompactList}\small\item\em convert plugin type string to enum \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxplugin_8h_a8fbfaea18e8b6b47503ee6fa9b679428}{sph\-Plugin\-Parse\-Spec} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Params, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Params, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em splits and checks plugin spec string in \char`\"{}mylib.\-dll\-:plugname\mbox{[}\-:options\mbox{]}\char`\"{} format \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxplugin_8h_afac7f135b48b9768694d810ca80624a9}{sph\-Plugin\-Exists} (\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} e\-Type, const char $\ast$s\-Name)
+\begin{DoxyCompactList}\small\item\em check if plugin exists (but do not acquire an instance) \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxplugin_8h_aa21aaa248d42f03f68b18d1ed7c1d8f3}{sph\-Plugin\-Create} (const char $\ast$s\-Lib, \hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} e\-Type, const char $\ast$s\-Name, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-U\-D\-F\-Ret\-Type, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+\hyperlink{classPluginDesc__c}{Plugin\-Desc\-\_\-c} $\ast$ \hyperlink{sphinxplugin_8h_a20bc543b09aad40088ba36c1cd3e8242}{sph\-Plugin\-Get} (\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} e\-Type, const char $\ast$s\-Name)
+\item 
+\hyperlink{classPluginDesc__c}{Plugin\-Desc\-\_\-c} $\ast$ \hyperlink{sphinxplugin_8h_a829394fbea8c3becc59c53b8584120c9}{sph\-Plugin\-Acquire} (const char $\ast$s\-Lib, \hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} e\-Type, const char $\ast$s\-Name, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+bool \hyperlink{sphinxplugin_8h_a1f71712ab6ff62ebe6639d9cc533e185}{sph\-Plugin\-Drop} (\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} e\-Type, const char $\ast$s\-Name, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em drop plugin by name \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxplugin_8h_a89c608af2c593dc1c69aff4ce956a01e}{sph\-Plugin\-Reload} (const char $\ast$s\-Name, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em reload all plugins from a given library \end{DoxyCompactList}\item 
+void \hyperlink{sphinxplugin_8h_a77e330b99b8b9d4358892aeec3c12d36}{sph\-Plugin\-List} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structPluginInfo__t}{Plugin\-Info\-\_\-t} $>$ \&d\-Result)
+\begin{DoxyCompactList}\small\item\em list all plugins (basically for S\-H\-O\-W P\-L\-U\-G\-I\-N\-S) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{sphinxplugin_8h_afd0a7c65ce59bc61d049387ea5aff2c3}{g\-\_\-d\-Plugin\-Types} \mbox{[}\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20aeabfd79ac26b4f27f994747c384b8de6}{P\-L\-U\-G\-I\-N\-\_\-\-T\-O\-T\-A\-L}\mbox{]}
+\begin{DoxyCompactList}\small\item\em plugin type to human readable name \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sphinxplugin_8h_ae53d6fff1a158d773bac656cb0e1d284}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Plugin\-Reinit\-\_\-fn@{Plugin\-Reinit\-\_\-fn}}
+\index{Plugin\-Reinit\-\_\-fn@{Plugin\-Reinit\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Plugin\-Reinit\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Plugin\-Reinit\-\_\-fn)()}}\label{sphinxplugin_8h_ae53d6fff1a158d773bac656cb0e1d284}
+\hypertarget{sphinxplugin_8h_ac43d44cb157b47f83d642cb458124962}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Plugin\-Ver\-\_\-fn@{Plugin\-Ver\-\_\-fn}}
+\index{Plugin\-Ver\-\_\-fn@{Plugin\-Ver\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Plugin\-Ver\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int}($\ast$ Plugin\-Ver\-\_\-fn)()}}\label{sphinxplugin_8h_ac43d44cb157b47f83d642cb458124962}
+\hypertarget{sphinxplugin_8h_ae11305daf81d946af4272d4329884674}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Query\-Token\-Filter\-Deinit\-\_\-fn@{Query\-Token\-Filter\-Deinit\-\_\-fn}}
+\index{Query\-Token\-Filter\-Deinit\-\_\-fn@{Query\-Token\-Filter\-Deinit\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Query\-Token\-Filter\-Deinit\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Query\-Token\-Filter\-Deinit\-\_\-fn)(void $\ast$userdata)}}\label{sphinxplugin_8h_ae11305daf81d946af4272d4329884674}
+\hypertarget{sphinxplugin_8h_a8048b12c6cdf6b1f54a1241661d0f31b}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Query\-Token\-Filter\-Init\-\_\-fn@{Query\-Token\-Filter\-Init\-\_\-fn}}
+\index{Query\-Token\-Filter\-Init\-\_\-fn@{Query\-Token\-Filter\-Init\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Query\-Token\-Filter\-Init\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int}($\ast$ Query\-Token\-Filter\-Init\-\_\-fn)(void $\ast$$\ast$userdata, {\bf int} max\-\_\-len, const char $\ast$options, char $\ast$error)}}\label{sphinxplugin_8h_a8048b12c6cdf6b1f54a1241661d0f31b}
+\hypertarget{sphinxplugin_8h_aef43441c729334712d6d04be78ace206}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Query\-Token\-Filter\-Post\-Morph\-\_\-fn@{Query\-Token\-Filter\-Post\-Morph\-\_\-fn}}
+\index{Query\-Token\-Filter\-Post\-Morph\-\_\-fn@{Query\-Token\-Filter\-Post\-Morph\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Query\-Token\-Filter\-Post\-Morph\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int}($\ast$ Query\-Token\-Filter\-Post\-Morph\-\_\-fn)(void $\ast$userdata, char $\ast$token, {\bf int} $\ast$stopword)}}\label{sphinxplugin_8h_aef43441c729334712d6d04be78ace206}
+\hypertarget{sphinxplugin_8h_ae6895137ebfb00e0ff9d2bfddc1f6ac6}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Query\-Token\-Filter\-Pre\-Morph\-\_\-fn@{Query\-Token\-Filter\-Pre\-Morph\-\_\-fn}}
+\index{Query\-Token\-Filter\-Pre\-Morph\-\_\-fn@{Query\-Token\-Filter\-Pre\-Morph\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Query\-Token\-Filter\-Pre\-Morph\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Query\-Token\-Filter\-Pre\-Morph\-\_\-fn)(void $\ast$userdata, char $\ast$token, {\bf int} $\ast$stopword)}}\label{sphinxplugin_8h_ae6895137ebfb00e0ff9d2bfddc1f6ac6}
+\hypertarget{sphinxplugin_8h_a9e1805c3dbd9d5a88ecc38b77b4e48ed}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Query\-Token\-Filter\-Push\-Token\-\_\-fn@{Query\-Token\-Filter\-Push\-Token\-\_\-fn}}
+\index{Query\-Token\-Filter\-Push\-Token\-\_\-fn@{Query\-Token\-Filter\-Push\-Token\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Query\-Token\-Filter\-Push\-Token\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef char$\ast$($\ast$ Query\-Token\-Filter\-Push\-Token\-\_\-fn)(void $\ast$userdata, char $\ast$token, {\bf int} $\ast$delta, const char $\ast$raw\-\_\-token\-\_\-start, {\bf int} raw\-\_\-token\-\_\-len)}}\label{sphinxplugin_8h_a9e1805c3dbd9d5a88ecc38b77b4e48ed}
+\hypertarget{sphinxplugin_8h_a3619db41c343ce6a97583c1b39c28d89}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Ranker\-Deinit\-\_\-fn@{Ranker\-Deinit\-\_\-fn}}
+\index{Ranker\-Deinit\-\_\-fn@{Ranker\-Deinit\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Ranker\-Deinit\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int}($\ast$ Ranker\-Deinit\-\_\-fn)(void $\ast$userdata)}}\label{sphinxplugin_8h_a3619db41c343ce6a97583c1b39c28d89}
+\hypertarget{sphinxplugin_8h_a162f1f4ce990ade1c0f0509cb0ec449b}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Ranker\-Finalize\-\_\-fn@{Ranker\-Finalize\-\_\-fn}}
+\index{Ranker\-Finalize\-\_\-fn@{Ranker\-Finalize\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Ranker\-Finalize\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned {\bf int}($\ast$ Ranker\-Finalize\-\_\-fn)(void $\ast$userdata, {\bf int} match\-\_\-weight)}}\label{sphinxplugin_8h_a162f1f4ce990ade1c0f0509cb0ec449b}
+\hypertarget{sphinxplugin_8h_a37757dbf1f1d0e1b3460188c5cf8ee14}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Ranker\-Init\-\_\-fn@{Ranker\-Init\-\_\-fn}}
+\index{Ranker\-Init\-\_\-fn@{Ranker\-Init\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Ranker\-Init\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int}($\ast$ Ranker\-Init\-\_\-fn)(void $\ast$$\ast$userdata, {\bf S\-P\-H\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-I\-N\-I\-T} $\ast$ranker, char $\ast$error)}}\label{sphinxplugin_8h_a37757dbf1f1d0e1b3460188c5cf8ee14}
+\hypertarget{sphinxplugin_8h_aa877cc3f8bfeca5457cee6ffa6109f8f}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Ranker\-Update\-\_\-fn@{Ranker\-Update\-\_\-fn}}
+\index{Ranker\-Update\-\_\-fn@{Ranker\-Update\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Ranker\-Update\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Ranker\-Update\-\_\-fn)(void $\ast$userdata, {\bf S\-P\-H\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-H\-I\-T} $\ast$hit)}}\label{sphinxplugin_8h_aa877cc3f8bfeca5457cee6ffa6109f8f}
+\hypertarget{sphinxplugin_8h_a383de96c315cff58ad5beccab0feb641}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Token\-Filter\-Begin\-Document\-\_\-fn@{Token\-Filter\-Begin\-Document\-\_\-fn}}
+\index{Token\-Filter\-Begin\-Document\-\_\-fn@{Token\-Filter\-Begin\-Document\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Token\-Filter\-Begin\-Document\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int}($\ast$ Token\-Filter\-Begin\-Document\-\_\-fn)(void $\ast$userdata, const char $\ast$options, char $\ast$error\-\_\-message)}}\label{sphinxplugin_8h_a383de96c315cff58ad5beccab0feb641}
+\hypertarget{sphinxplugin_8h_a776427a55286b76cc9d099412e1724aa}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Token\-Filter\-Begin\-Field\-\_\-fn@{Token\-Filter\-Begin\-Field\-\_\-fn}}
+\index{Token\-Filter\-Begin\-Field\-\_\-fn@{Token\-Filter\-Begin\-Field\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Token\-Filter\-Begin\-Field\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Token\-Filter\-Begin\-Field\-\_\-fn)(void $\ast$userdata, {\bf int} field\-\_\-index)}}\label{sphinxplugin_8h_a776427a55286b76cc9d099412e1724aa}
+\hypertarget{sphinxplugin_8h_a0d6ebf9508d4a07415f665d7380f8ef5}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Token\-Filter\-Deinit\-\_\-fn@{Token\-Filter\-Deinit\-\_\-fn}}
+\index{Token\-Filter\-Deinit\-\_\-fn@{Token\-Filter\-Deinit\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Token\-Filter\-Deinit\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Token\-Filter\-Deinit\-\_\-fn)(void $\ast$userdata)}}\label{sphinxplugin_8h_a0d6ebf9508d4a07415f665d7380f8ef5}
+\hypertarget{sphinxplugin_8h_aee826797e426feed815ecd339b475ef7}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Token\-Filter\-End\-Field\-\_\-fn@{Token\-Filter\-End\-Field\-\_\-fn}}
+\index{Token\-Filter\-End\-Field\-\_\-fn@{Token\-Filter\-End\-Field\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Token\-Filter\-End\-Field\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int}($\ast$ Token\-Filter\-End\-Field\-\_\-fn)(void $\ast$userdata)}}\label{sphinxplugin_8h_aee826797e426feed815ecd339b475ef7}
+\hypertarget{sphinxplugin_8h_ac394a5e97eca027b00042585b670e6e5}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Token\-Filter\-Get\-Extra\-Token\-\_\-fn@{Token\-Filter\-Get\-Extra\-Token\-\_\-fn}}
+\index{Token\-Filter\-Get\-Extra\-Token\-\_\-fn@{Token\-Filter\-Get\-Extra\-Token\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Token\-Filter\-Get\-Extra\-Token\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef char$\ast$($\ast$ Token\-Filter\-Get\-Extra\-Token\-\_\-fn)(void $\ast$userdata, {\bf int} $\ast$delta)}}\label{sphinxplugin_8h_ac394a5e97eca027b00042585b670e6e5}
+\hypertarget{sphinxplugin_8h_a1653d874d9095e0db95ede8f594a0b89}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Token\-Filter\-Init\-\_\-fn@{Token\-Filter\-Init\-\_\-fn}}
+\index{Token\-Filter\-Init\-\_\-fn@{Token\-Filter\-Init\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Token\-Filter\-Init\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int}($\ast$ Token\-Filter\-Init\-\_\-fn)(void $\ast$$\ast$userdata, {\bf int} num\-\_\-fields, const char $\ast$$\ast$field\-\_\-names, const char $\ast$options, char $\ast$error\-\_\-message)}}\label{sphinxplugin_8h_a1653d874d9095e0db95ede8f594a0b89}
+\hypertarget{sphinxplugin_8h_a8beb5b805ece2481440451025eef2ec1}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Token\-Filter\-Push\-Token\-\_\-fn@{Token\-Filter\-Push\-Token\-\_\-fn}}
+\index{Token\-Filter\-Push\-Token\-\_\-fn@{Token\-Filter\-Push\-Token\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Token\-Filter\-Push\-Token\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef char$\ast$($\ast$ Token\-Filter\-Push\-Token\-\_\-fn)(void $\ast$userdata, char $\ast$token, {\bf int} $\ast$extra, {\bf int} $\ast$delta)}}\label{sphinxplugin_8h_a8beb5b805ece2481440451025eef2ec1}
+\hypertarget{sphinxplugin_8h_a2309c3f60f24849b0beb296edc299f3b}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Udf\-Deinit\-\_\-fn@{Udf\-Deinit\-\_\-fn}}
+\index{Udf\-Deinit\-\_\-fn@{Udf\-Deinit\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Udf\-Deinit\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Udf\-Deinit\-\_\-fn)({\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init)}}\label{sphinxplugin_8h_a2309c3f60f24849b0beb296edc299f3b}
+\hypertarget{sphinxplugin_8h_af4835063cff616ca763c1ba441e6c673}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Udf\-Init\-\_\-fn@{Udf\-Init\-\_\-fn}}
+\index{Udf\-Init\-\_\-fn@{Udf\-Init\-\_\-fn}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Udf\-Init\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int}($\ast$ Udf\-Init\-\_\-fn)({\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-I\-N\-I\-T} $\ast$init, {\bf S\-P\-H\-\_\-\-U\-D\-F\-\_\-\-A\-R\-G\-S} $\ast$args, char $\ast$error)}}\label{sphinxplugin_8h_af4835063cff616ca763c1ba441e6c673}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!Plugin\-Type\-\_\-e@{Plugin\-Type\-\_\-e}}
+\index{Plugin\-Type\-\_\-e@{Plugin\-Type\-\_\-e}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{Plugin\-Type\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Plugin\-Type\-\_\-e}}}\label{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}
+plugin types M\-U\-S\-T be in sync with \hyperlink{sphinxplugin_8cpp_a1c9940def926a5bae05b273a5d25646c}{sph\-Plugin\-Save\-State()}, \hyperlink{sphinxplugin_8cpp_a95de595b904545d93f61f6c0e9adcddb}{sph\-Plugin\-Get\-Type()} \begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{P\-L\-U\-G\-I\-N\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N@{P\-L\-U\-G\-I\-N\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}!sphinxplugin.\-h@{sphinxplugin.\-h}}\index{sphinxplugin.\-h@{sphinxplugin.\-h}!P\-L\-U\-G\-I\-N\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N@{P\-L\-U\-G\-I\-N\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a9b9ca2ca09db11f8b03564d35ee65bcf}{P\-L\-U\-G\-I\-N\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}\label{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a9b9ca2ca09db11f8b03564d35ee65bcf}
+}]\index{P\-L\-U\-G\-I\-N\-\_\-\-R\-A\-N\-K\-E\-R@{P\-L\-U\-G\-I\-N\-\_\-\-R\-A\-N\-K\-E\-R}!sphinxplugin.\-h@{sphinxplugin.\-h}}\index{sphinxplugin.\-h@{sphinxplugin.\-h}!P\-L\-U\-G\-I\-N\-\_\-\-R\-A\-N\-K\-E\-R@{P\-L\-U\-G\-I\-N\-\_\-\-R\-A\-N\-K\-E\-R}}\item[{\em 
+\hypertarget{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a2dbe7530b29d08e9065ae04d99307fb7}{P\-L\-U\-G\-I\-N\-\_\-\-R\-A\-N\-K\-E\-R}\label{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a2dbe7530b29d08e9065ae04d99307fb7}
+}]\index{P\-L\-U\-G\-I\-N\-\_\-\-I\-N\-D\-E\-X\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R@{P\-L\-U\-G\-I\-N\-\_\-\-I\-N\-D\-E\-X\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R}!sphinxplugin.\-h@{sphinxplugin.\-h}}\index{sphinxplugin.\-h@{sphinxplugin.\-h}!P\-L\-U\-G\-I\-N\-\_\-\-I\-N\-D\-E\-X\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R@{P\-L\-U\-G\-I\-N\-\_\-\-I\-N\-D\-E\-X\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R}}\item[{\em 
+\hypertarget{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a65db0c8e155d5ac553f17146777d2828}{P\-L\-U\-G\-I\-N\-\_\-\-I\-N\-D\-E\-X\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R}\label{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a65db0c8e155d5ac553f17146777d2828}
+}]\index{P\-L\-U\-G\-I\-N\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R@{P\-L\-U\-G\-I\-N\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R}!sphinxplugin.\-h@{sphinxplugin.\-h}}\index{sphinxplugin.\-h@{sphinxplugin.\-h}!P\-L\-U\-G\-I\-N\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R@{P\-L\-U\-G\-I\-N\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R}}\item[{\em 
+\hypertarget{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a9a43758b525e5be533276e36eafe82dd}{P\-L\-U\-G\-I\-N\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-I\-L\-T\-E\-R}\label{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20a9a43758b525e5be533276e36eafe82dd}
+}]\index{P\-L\-U\-G\-I\-N\-\_\-\-T\-O\-T\-A\-L@{P\-L\-U\-G\-I\-N\-\_\-\-T\-O\-T\-A\-L}!sphinxplugin.\-h@{sphinxplugin.\-h}}\index{sphinxplugin.\-h@{sphinxplugin.\-h}!P\-L\-U\-G\-I\-N\-\_\-\-T\-O\-T\-A\-L@{P\-L\-U\-G\-I\-N\-\_\-\-T\-O\-T\-A\-L}}\item[{\em 
+\hypertarget{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20aeabfd79ac26b4f27f994747c384b8de6}{P\-L\-U\-G\-I\-N\-\_\-\-T\-O\-T\-A\-L}\label{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20aeabfd79ac26b4f27f994747c384b8de6}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxplugin_8h_a829394fbea8c3becc59c53b8584120c9}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-Acquire@{sph\-Plugin\-Acquire}}
+\index{sph\-Plugin\-Acquire@{sph\-Plugin\-Acquire}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-Acquire}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plugin\-Desc\-\_\-c}$\ast$ sph\-Plugin\-Acquire (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Lib, }
+\item[{{\bf Plugin\-Type\-\_\-e}}]{e\-Type, }
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_a829394fbea8c3becc59c53b8584120c9}
+acquire plugin instance; get-\/or-\/create-\/and-\/get essentially W\-A\-R\-N\-I\-N\-G, increments users count, so non-\/\-N\-U\-L\-L pointers you get back need to be Release()d \hypertarget{sphinxplugin_8h_aa21aaa248d42f03f68b18d1ed7c1d8f3}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-Create@{sph\-Plugin\-Create}}
+\index{sph\-Plugin\-Create@{sph\-Plugin\-Create}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-Create}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Plugin\-Create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Lib, }
+\item[{{\bf Plugin\-Type\-\_\-e}}]{e\-Type, }
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf E\-Sph\-Attr}}]{e\-U\-D\-F\-Ret\-Type, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_aa21aaa248d42f03f68b18d1ed7c1d8f3}
+create plugin that is, load the library if not yet loaded, import the symbols, register the plugin internally e\-Ret\-Type is only used for U\-D\-F type; might wanna change it to (void$\ast$) and pass a generic argument instead \hypertarget{sphinxplugin_8h_a1f71712ab6ff62ebe6639d9cc533e185}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-Drop@{sph\-Plugin\-Drop}}
+\index{sph\-Plugin\-Drop@{sph\-Plugin\-Drop}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-Drop}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Plugin\-Drop (
+\begin{DoxyParamCaption}
+\item[{{\bf Plugin\-Type\-\_\-e}}]{e\-Type, }
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_a1f71712ab6ff62ebe6639d9cc533e185}
+
+
+drop plugin by name 
+
+\hypertarget{sphinxplugin_8h_afac7f135b48b9768694d810ca80624a9}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-Exists@{sph\-Plugin\-Exists}}
+\index{sph\-Plugin\-Exists@{sph\-Plugin\-Exists}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Plugin\-Exists (
+\begin{DoxyParamCaption}
+\item[{{\bf Plugin\-Type\-\_\-e}}]{e\-Type, }
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_afac7f135b48b9768694d810ca80624a9}
+
+
+check if plugin exists (but do not acquire an instance) 
+
+\hypertarget{sphinxplugin_8h_a20bc543b09aad40088ba36c1cd3e8242}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-Get@{sph\-Plugin\-Get}}
+\index{sph\-Plugin\-Get@{sph\-Plugin\-Get}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-Get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plugin\-Desc\-\_\-c}$\ast$ sph\-Plugin\-Get (
+\begin{DoxyParamCaption}
+\item[{{\bf Plugin\-Type\-\_\-e}}]{e\-Type, }
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_a20bc543b09aad40088ba36c1cd3e8242}
+get plugin instance descriptor by name W\-A\-R\-N\-I\-N\-G, increments users count, so non-\/\-N\-U\-L\-L pointers you get back need to be Release()d \hypertarget{sphinxplugin_8h_a95de595b904545d93f61f6c0e9adcddb}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-Get\-Type@{sph\-Plugin\-Get\-Type}}
+\index{sph\-Plugin\-Get\-Type@{sph\-Plugin\-Get\-Type}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-Get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plugin\-Type\-\_\-e} sph\-Plugin\-Get\-Type (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_a95de595b904545d93f61f6c0e9adcddb}
+
+
+convert plugin type string to enum 
+
+\hypertarget{sphinxplugin_8h_ad4beacf76a226585fdfe4cc306f3a09e}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-Init@{sph\-Plugin\-Init}}
+\index{sph\-Plugin\-Init@{sph\-Plugin\-Init}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Plugin\-Init (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Dir}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_ad4beacf76a226585fdfe4cc306f3a09e}
+
+
+initialize plugin manager 
+
+\hypertarget{sphinxplugin_8h_a77e330b99b8b9d4358892aeec3c12d36}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-List@{sph\-Plugin\-List}}
+\index{sph\-Plugin\-List@{sph\-Plugin\-List}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-List}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Plugin\-List (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Plugin\-Info\-\_\-t} $>$ \&}]{d\-Result}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_a77e330b99b8b9d4358892aeec3c12d36}
+
+
+list all plugins (basically for S\-H\-O\-W P\-L\-U\-G\-I\-N\-S) 
+
+\hypertarget{sphinxplugin_8h_a8fbfaea18e8b6b47503ee6fa9b679428}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-Parse\-Spec@{sph\-Plugin\-Parse\-Spec}}
+\index{sph\-Plugin\-Parse\-Spec@{sph\-Plugin\-Parse\-Spec}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-Parse\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Plugin\-Parse\-Spec (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Params, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Params, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_a8fbfaea18e8b6b47503ee6fa9b679428}
+
+
+splits and checks plugin spec string in \char`\"{}mylib.\-dll\-:plugname\mbox{[}\-:options\mbox{]}\char`\"{} format 
+
+\hypertarget{sphinxplugin_8h_a89c608af2c593dc1c69aff4ce956a01e}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-Reload@{sph\-Plugin\-Reload}}
+\index{sph\-Plugin\-Reload@{sph\-Plugin\-Reload}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-Reload}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Plugin\-Reload (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_a89c608af2c593dc1c69aff4ce956a01e}
+
+
+reload all plugins from a given library 
+
+\hypertarget{sphinxplugin_8h_a1c9940def926a5bae05b273a5d25646c}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!sph\-Plugin\-Save\-State@{sph\-Plugin\-Save\-State}}
+\index{sph\-Plugin\-Save\-State@{sph\-Plugin\-Save\-State}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{sph\-Plugin\-Save\-State}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Plugin\-Save\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{t\-Writer}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8h_a1c9940def926a5bae05b273a5d25646c}
+
+
+save Sphinx\-Q\-L state (ie. all active functions) 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxplugin_8h_afd0a7c65ce59bc61d049387ea5aff2c3}{\index{sphinxplugin.\-h@{sphinxplugin.\-h}!g\-\_\-d\-Plugin\-Types@{g\-\_\-d\-Plugin\-Types}}
+\index{g\-\_\-d\-Plugin\-Types@{g\-\_\-d\-Plugin\-Types}!sphinxplugin.h@{sphinxplugin.\-h}}
+\subsubsection[{g\-\_\-d\-Plugin\-Types}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ g\-\_\-d\-Plugin\-Types\mbox{[}{\bf P\-L\-U\-G\-I\-N\-\_\-\-T\-O\-T\-A\-L}\mbox{]}}}\label{sphinxplugin_8h_afd0a7c65ce59bc61d049387ea5aff2c3}
+
+
+plugin type to human readable name 
+

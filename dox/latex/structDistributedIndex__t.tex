@@ -1,0 +1,160 @@
+\hypertarget{structDistributedIndex__t}{\section{Distributed\-Index\-\_\-t Struct Reference}
+\label{structDistributedIndex__t}\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}}
+}
+
+
+distributed index  
+
+
+Inheritance diagram for Distributed\-Index\-\_\-t\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structDistributedIndex__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structDistributedIndex__t_aa842706a494525ff564de2b0b28cc12b}{Distributed\-Index\-\_\-t} ()
+\item 
+\hyperlink{structDistributedIndex__t_a2abb0b3cd8660c2b20e790fd67b683d2}{$\sim$\-Distributed\-Index\-\_\-t} ()
+\item 
+\hyperlink{structDistributedIndex__t_af82d5fed65b4a67e2baf8c5be3e5d0c4}{Distributed\-Index\-\_\-t} (\hyperlink{structDistributedIndex__t}{Distributed\-Index\-\_\-t} \&\&rhs)
+\item 
+\hyperlink{structDistributedIndex__t}{Distributed\-Index\-\_\-t} \& \hyperlink{structDistributedIndex__t_ac252c81877da83f7d0a11baa22689dcf}{operator=} (\hyperlink{structDistributedIndex__t}{Distributed\-Index\-\_\-t} \&\&rhs)
+\item 
+\hyperlink{structDistributedIndex__t}{Distributed\-Index\-\_\-t} \& \hyperlink{structDistributedIndex__t_aa9f9b3aa41121cc3b6d5b23a337361fc}{operator=} (const \hyperlink{structDistributedIndex__t}{Distributed\-Index\-\_\-t} \&rhs)
+\item 
+void \hyperlink{structDistributedIndex__t_a442cf202e4ac14520e0c6654080eb5b8}{Get\-All\-Agents} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structAgentConn__t}{Agent\-Conn\-\_\-t} $>$ $\ast$p\-Target) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structMultiAgentDesc__t}{Multi\-Agent\-Desc\-\_\-t} $>$ \hyperlink{structDistributedIndex__t_a30d42315163c40fe2effe82d5a746e02}{m\-\_\-d\-Agents}
+\begin{DoxyCompactList}\small\item\em remote agents \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \hyperlink{structDistributedIndex__t_a77bfd2b43676a6daa3fe0e7d472005dd}{m\-\_\-d\-Local}
+\begin{DoxyCompactList}\small\item\em local indexes \end{DoxyCompactList}\item 
+\hyperlink{classCSphBitvec}{C\-Sph\-Bitvec} \hyperlink{structDistributedIndex__t_adf15d98e55c4768150b3343c5e6c86da}{m\-\_\-d\-Kill\-Break}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structDistributedIndex__t_a15c36f5ea8f86fc4222b961537049409}{m\-\_\-i\-Agent\-Connect\-Timeout}
+\begin{DoxyCompactList}\small\item\em in msec \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structDistributedIndex__t_a3158dadf0a6609da6d20ff828328ade8}{m\-\_\-i\-Agent\-Query\-Timeout}
+\begin{DoxyCompactList}\small\item\em in msec \end{DoxyCompactList}\item 
+bool \hyperlink{structDistributedIndex__t_a5cc105eb8b94891003cbf95a81ea19cb}{m\-\_\-b\-To\-Delete}
+\begin{DoxyCompactList}\small\item\em should be deleted \end{DoxyCompactList}\item 
+bool \hyperlink{structDistributedIndex__t_a1aaf61c935c3e71b18f229b02e7e00a4}{m\-\_\-b\-Divide\-Remote\-Ranges}
+\begin{DoxyCompactList}\small\item\em whether we divide big range onto agents or not \end{DoxyCompactList}\item 
+\hyperlink{searchdha_8h_a1b0cbd6f2db32182ca11738e289d0152}{H\-A\-Strategies\-\_\-e} \hyperlink{structDistributedIndex__t_a5ddafdbdd4be27caf676e0c77e86bdc6}{m\-\_\-e\-Ha\-Strategy}
+\begin{DoxyCompactList}\small\item\em how to select the best of my agents \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+distributed index 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structDistributedIndex__t_aa842706a494525ff564de2b0b28cc12b}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}}
+\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{Distributed\-Index\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Distributed\-Index\-\_\-t\-::\-Distributed\-Index\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structDistributedIndex__t_aa842706a494525ff564de2b0b28cc12b}
+\hypertarget{structDistributedIndex__t_a2abb0b3cd8660c2b20e790fd67b683d2}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!$\sim$\-Distributed\-Index\-\_\-t@{$\sim$\-Distributed\-Index\-\_\-t}}
+\index{$\sim$\-Distributed\-Index\-\_\-t@{$\sim$\-Distributed\-Index\-\_\-t}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{$\sim$\-Distributed\-Index\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Distributed\-Index\-\_\-t\-::$\sim$\-Distributed\-Index\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structDistributedIndex__t_a2abb0b3cd8660c2b20e790fd67b683d2}
+\hypertarget{structDistributedIndex__t_af82d5fed65b4a67e2baf8c5be3e5d0c4}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}}
+\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{Distributed\-Index\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}Distributed\-Index\-\_\-t\-::\-Distributed\-Index\-\_\-t (
+\begin{DoxyParamCaption}
+\item[{{\bf Distributed\-Index\-\_\-t} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{structDistributedIndex__t_af82d5fed65b4a67e2baf8c5be3e5d0c4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structDistributedIndex__t_a442cf202e4ac14520e0c6654080eb5b8}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!Get\-All\-Agents@{Get\-All\-Agents}}
+\index{Get\-All\-Agents@{Get\-All\-Agents}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{Get\-All\-Agents}]{\setlength{\rightskip}{0pt plus 5cm}void Distributed\-Index\-\_\-t\-::\-Get\-All\-Agents (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Agent\-Conn\-\_\-t} $>$ $\ast$}]{p\-Target}
+\end{DoxyParamCaption}
+) const}}\label{structDistributedIndex__t_a442cf202e4ac14520e0c6654080eb5b8}
+\hypertarget{structDistributedIndex__t_ac252c81877da83f7d0a11baa22689dcf}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!operator=@{operator=}}
+\index{operator=@{operator=}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Distributed\-Index\-\_\-t}\& Distributed\-Index\-\_\-t\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Distributed\-Index\-\_\-t} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{structDistributedIndex__t_ac252c81877da83f7d0a11baa22689dcf}
+\hypertarget{structDistributedIndex__t_aa9f9b3aa41121cc3b6d5b23a337361fc}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!operator=@{operator=}}
+\index{operator=@{operator=}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Distributed\-Index\-\_\-t}\& Distributed\-Index\-\_\-t\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Distributed\-Index\-\_\-t} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{structDistributedIndex__t_aa9f9b3aa41121cc3b6d5b23a337361fc}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structDistributedIndex__t_a1aaf61c935c3e71b18f229b02e7e00a4}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!m\-\_\-b\-Divide\-Remote\-Ranges@{m\-\_\-b\-Divide\-Remote\-Ranges}}
+\index{m\-\_\-b\-Divide\-Remote\-Ranges@{m\-\_\-b\-Divide\-Remote\-Ranges}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{m\-\_\-b\-Divide\-Remote\-Ranges}]{\setlength{\rightskip}{0pt plus 5cm}bool Distributed\-Index\-\_\-t\-::m\-\_\-b\-Divide\-Remote\-Ranges}}\label{structDistributedIndex__t_a1aaf61c935c3e71b18f229b02e7e00a4}
+
+
+whether we divide big range onto agents or not 
+
+\hypertarget{structDistributedIndex__t_a5cc105eb8b94891003cbf95a81ea19cb}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!m\-\_\-b\-To\-Delete@{m\-\_\-b\-To\-Delete}}
+\index{m\-\_\-b\-To\-Delete@{m\-\_\-b\-To\-Delete}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{m\-\_\-b\-To\-Delete}]{\setlength{\rightskip}{0pt plus 5cm}bool Distributed\-Index\-\_\-t\-::m\-\_\-b\-To\-Delete}}\label{structDistributedIndex__t_a5cc105eb8b94891003cbf95a81ea19cb}
+
+
+should be deleted 
+
+\hypertarget{structDistributedIndex__t_a30d42315163c40fe2effe82d5a746e02}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!m\-\_\-d\-Agents@{m\-\_\-d\-Agents}}
+\index{m\-\_\-d\-Agents@{m\-\_\-d\-Agents}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Agents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Multi\-Agent\-Desc\-\_\-t}$>$ Distributed\-Index\-\_\-t\-::m\-\_\-d\-Agents}}\label{structDistributedIndex__t_a30d42315163c40fe2effe82d5a746e02}
+
+
+remote agents 
+
+\hypertarget{structDistributedIndex__t_adf15d98e55c4768150b3343c5e6c86da}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!m\-\_\-d\-Kill\-Break@{m\-\_\-d\-Kill\-Break}}
+\index{m\-\_\-d\-Kill\-Break@{m\-\_\-d\-Kill\-Break}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Kill\-Break}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Bitvec} Distributed\-Index\-\_\-t\-::m\-\_\-d\-Kill\-Break}}\label{structDistributedIndex__t_adf15d98e55c4768150b3343c5e6c86da}
+\hypertarget{structDistributedIndex__t_a77bfd2b43676a6daa3fe0e7d472005dd}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!m\-\_\-d\-Local@{m\-\_\-d\-Local}}
+\index{m\-\_\-d\-Local@{m\-\_\-d\-Local}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{m\-\_\-d\-Local}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf C\-Sph\-String}$>$ Distributed\-Index\-\_\-t\-::m\-\_\-d\-Local}}\label{structDistributedIndex__t_a77bfd2b43676a6daa3fe0e7d472005dd}
+
+
+local indexes 
+
+\hypertarget{structDistributedIndex__t_a5ddafdbdd4be27caf676e0c77e86bdc6}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!m\-\_\-e\-Ha\-Strategy@{m\-\_\-e\-Ha\-Strategy}}
+\index{m\-\_\-e\-Ha\-Strategy@{m\-\_\-e\-Ha\-Strategy}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{m\-\_\-e\-Ha\-Strategy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-A\-Strategies\-\_\-e} Distributed\-Index\-\_\-t\-::m\-\_\-e\-Ha\-Strategy}}\label{structDistributedIndex__t_a5ddafdbdd4be27caf676e0c77e86bdc6}
+
+
+how to select the best of my agents 
+
+\hypertarget{structDistributedIndex__t_a15c36f5ea8f86fc4222b961537049409}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!m\-\_\-i\-Agent\-Connect\-Timeout@{m\-\_\-i\-Agent\-Connect\-Timeout}}
+\index{m\-\_\-i\-Agent\-Connect\-Timeout@{m\-\_\-i\-Agent\-Connect\-Timeout}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Agent\-Connect\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Distributed\-Index\-\_\-t\-::m\-\_\-i\-Agent\-Connect\-Timeout}}\label{structDistributedIndex__t_a15c36f5ea8f86fc4222b961537049409}
+
+
+in msec 
+
+\hypertarget{structDistributedIndex__t_a3158dadf0a6609da6d20ff828328ade8}{\index{Distributed\-Index\-\_\-t@{Distributed\-Index\-\_\-t}!m\-\_\-i\-Agent\-Query\-Timeout@{m\-\_\-i\-Agent\-Query\-Timeout}}
+\index{m\-\_\-i\-Agent\-Query\-Timeout@{m\-\_\-i\-Agent\-Query\-Timeout}!DistributedIndex_t@{Distributed\-Index\-\_\-t}}
+\subsubsection[{m\-\_\-i\-Agent\-Query\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Distributed\-Index\-\_\-t\-::m\-\_\-i\-Agent\-Query\-Timeout}}\label{structDistributedIndex__t_a3158dadf0a6609da6d20ff828328ade8}
+
+
+in msec 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{searchd_8cpp}{searchd.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,147 @@
+\hypertarget{classCSphQueryResult}{\section{C\-Sph\-Query\-Result Class Reference}
+\label{classCSphQueryResult}\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}}
+}
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Query\-Result\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphQueryResult}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphQueryResult_a6b5edb61ad56eff6f7fa969bd591bea5}{C\-Sph\-Query\-Result} ()
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+virtual \hyperlink{classCSphQueryResult_a7af90347774684ead733a71f43997372}{$\sim$\-C\-Sph\-Query\-Result} ()
+\begin{DoxyCompactList}\small\item\em dtor, which releases all owned stuff \end{DoxyCompactList}\item 
+void \hyperlink{classCSphQueryResult_a0bb6e502215160da811f11b0921b37bb}{Leak\-Storages} (\hyperlink{classCSphQueryResult}{C\-Sph\-Query\-Result} \&t\-Dst)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphSwapVector}{C\-Sph\-Swap\-Vector}$<$ \hyperlink{classCSphMatch}{C\-Sph\-Match} $>$ \hyperlink{classCSphQueryResult_a175999928dcd3d04f22d1096f7e8c2c3}{m\-\_\-d\-Matches}
+\begin{DoxyCompactList}\small\item\em top matching documents, no more than M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S \end{DoxyCompactList}\item 
+\hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} \hyperlink{classCSphQueryResult_abc7d673f1775f6e34f2dd1fb1d65e97b}{m\-\_\-t\-Schema}
+\begin{DoxyCompactList}\small\item\em result schema \end{DoxyCompactList}\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$ \hyperlink{classCSphQueryResult_aba6a0fd625b2379cebed04c18bf13d22}{m\-\_\-p\-Mva}
+\begin{DoxyCompactList}\small\item\em pointer to M\-V\-A storage \end{DoxyCompactList}\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphQueryResult_a13597176881ff26764c4dc5e1a0af864}{m\-\_\-p\-Strings}
+\begin{DoxyCompactList}\small\item\em pointer to strings storage \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphQueryResult_a01a221dd0e015c432f1e0646dbae6ecc}{m\-\_\-b\-Arena\-Prohibit}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ $>$ \hyperlink{classCSphQueryResult_aa314b61046cb6d31ef7f144e87672b7e}{m\-\_\-d\-Storage2\-Free}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryResult_ae6d9b89727716e85238f0eb6fab19ab0}{m\-\_\-i\-Offset}
+\begin{DoxyCompactList}\small\item\em $<$ aggregated external storage from rt indexes \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryResult_aea3eb975d92e04c36abfea37beff0a65}{m\-\_\-i\-Count}
+\begin{DoxyCompactList}\small\item\em count which will be actually served (computed from total, offset and limit) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphQueryResult_af75b01f74d175b7ae2ffd200e1347bf1}{m\-\_\-i\-Successes}
+\item 
+\hyperlink{classCSphQueryProfile}{C\-Sph\-Query\-Profile} $\ast$ \hyperlink{classCSphQueryResult_a35c2e07f1aec77d4aecfc655647a32bc}{m\-\_\-p\-Profile}
+\begin{DoxyCompactList}\small\item\em filled when query profiling is enabled; N\-U\-L\-L otherwise \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphQueryResult_a6b5edb61ad56eff6f7fa969bd591bea5}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}}
+\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{C\-Sph\-Query\-Result}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-Result\-::\-C\-Sph\-Query\-Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryResult_a6b5edb61ad56eff6f7fa969bd591bea5}
+
+
+ctor 
+
+\hypertarget{classCSphQueryResult_a7af90347774684ead733a71f43997372}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!$\sim$\-C\-Sph\-Query\-Result@{$\sim$\-C\-Sph\-Query\-Result}}
+\index{$\sim$\-C\-Sph\-Query\-Result@{$\sim$\-C\-Sph\-Query\-Result}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{$\sim$\-C\-Sph\-Query\-Result}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Query\-Result\-::$\sim$\-C\-Sph\-Query\-Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphQueryResult_a7af90347774684ead733a71f43997372}
+
+
+dtor, which releases all owned stuff 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphQueryResult_a0bb6e502215160da811f11b0921b37bb}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!Leak\-Storages@{Leak\-Storages}}
+\index{Leak\-Storages@{Leak\-Storages}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{Leak\-Storages}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Query\-Result\-::\-Leak\-Storages (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Query\-Result} \&}]{t\-Dst}
+\end{DoxyParamCaption}
+)}}\label{classCSphQueryResult_a0bb6e502215160da811f11b0921b37bb}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphQueryResult_a01a221dd0e015c432f1e0646dbae6ecc}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!m\-\_\-b\-Arena\-Prohibit@{m\-\_\-b\-Arena\-Prohibit}}
+\index{m\-\_\-b\-Arena\-Prohibit@{m\-\_\-b\-Arena\-Prohibit}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{m\-\_\-b\-Arena\-Prohibit}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Query\-Result\-::m\-\_\-b\-Arena\-Prohibit}}\label{classCSphQueryResult_a01a221dd0e015c432f1e0646dbae6ecc}
+\hypertarget{classCSphQueryResult_a175999928dcd3d04f22d1096f7e8c2c3}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!m\-\_\-d\-Matches@{m\-\_\-d\-Matches}}
+\index{m\-\_\-d\-Matches@{m\-\_\-d\-Matches}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{m\-\_\-d\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Swap\-Vector}$<${\bf C\-Sph\-Match}$>$ C\-Sph\-Query\-Result\-::m\-\_\-d\-Matches}}\label{classCSphQueryResult_a175999928dcd3d04f22d1096f7e8c2c3}
+
+
+top matching documents, no more than M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S 
+
+\hypertarget{classCSphQueryResult_aa314b61046cb6d31ef7f144e87672b7e}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!m\-\_\-d\-Storage2\-Free@{m\-\_\-d\-Storage2\-Free}}
+\index{m\-\_\-d\-Storage2\-Free@{m\-\_\-d\-Storage2\-Free}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{m\-\_\-d\-Storage2\-Free}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf B\-Y\-T\-E} $\ast$$>$ C\-Sph\-Query\-Result\-::m\-\_\-d\-Storage2\-Free}}\label{classCSphQueryResult_aa314b61046cb6d31ef7f144e87672b7e}
+\hypertarget{classCSphQueryResult_aea3eb975d92e04c36abfea37beff0a65}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!m\-\_\-i\-Count@{m\-\_\-i\-Count}}
+\index{m\-\_\-i\-Count@{m\-\_\-i\-Count}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{m\-\_\-i\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Result\-::m\-\_\-i\-Count}}\label{classCSphQueryResult_aea3eb975d92e04c36abfea37beff0a65}
+
+
+count which will be actually served (computed from total, offset and limit) 
+
+\hypertarget{classCSphQueryResult_ae6d9b89727716e85238f0eb6fab19ab0}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!m\-\_\-i\-Offset@{m\-\_\-i\-Offset}}
+\index{m\-\_\-i\-Offset@{m\-\_\-i\-Offset}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{m\-\_\-i\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Result\-::m\-\_\-i\-Offset}}\label{classCSphQueryResult_ae6d9b89727716e85238f0eb6fab19ab0}
+
+
+$<$ aggregated external storage from rt indexes 
+
+requested offset into matches array \hypertarget{classCSphQueryResult_af75b01f74d175b7ae2ffd200e1347bf1}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!m\-\_\-i\-Successes@{m\-\_\-i\-Successes}}
+\index{m\-\_\-i\-Successes@{m\-\_\-i\-Successes}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{m\-\_\-i\-Successes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Query\-Result\-::m\-\_\-i\-Successes}}\label{classCSphQueryResult_af75b01f74d175b7ae2ffd200e1347bf1}
+\hypertarget{classCSphQueryResult_aba6a0fd625b2379cebed04c18bf13d22}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!m\-\_\-p\-Mva@{m\-\_\-p\-Mva}}
+\index{m\-\_\-p\-Mva@{m\-\_\-p\-Mva}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{m\-\_\-p\-Mva}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D}$\ast$ C\-Sph\-Query\-Result\-::m\-\_\-p\-Mva}}\label{classCSphQueryResult_aba6a0fd625b2379cebed04c18bf13d22}
+
+
+pointer to M\-V\-A storage 
+
+\hypertarget{classCSphQueryResult_a35c2e07f1aec77d4aecfc655647a32bc}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!m\-\_\-p\-Profile@{m\-\_\-p\-Profile}}
+\index{m\-\_\-p\-Profile@{m\-\_\-p\-Profile}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{m\-\_\-p\-Profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Query\-Profile}$\ast$ C\-Sph\-Query\-Result\-::m\-\_\-p\-Profile}}\label{classCSphQueryResult_a35c2e07f1aec77d4aecfc655647a32bc}
+
+
+filled when query profiling is enabled; N\-U\-L\-L otherwise 
+
+\hypertarget{classCSphQueryResult_a13597176881ff26764c4dc5e1a0af864}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!m\-\_\-p\-Strings@{m\-\_\-p\-Strings}}
+\index{m\-\_\-p\-Strings@{m\-\_\-p\-Strings}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{m\-\_\-p\-Strings}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Query\-Result\-::m\-\_\-p\-Strings}}\label{classCSphQueryResult_a13597176881ff26764c4dc5e1a0af864}
+
+
+pointer to strings storage 
+
+\hypertarget{classCSphQueryResult_abc7d673f1775f6e34f2dd1fb1d65e97b}{\index{C\-Sph\-Query\-Result@{C\-Sph\-Query\-Result}!m\-\_\-t\-Schema@{m\-\_\-t\-Schema}}
+\index{m\-\_\-t\-Schema@{m\-\_\-t\-Schema}!CSphQueryResult@{C\-Sph\-Query\-Result}}
+\subsubsection[{m\-\_\-t\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Rset\-Schema} C\-Sph\-Query\-Result\-::m\-\_\-t\-Schema}}\label{classCSphQueryResult_abc7d673f1775f6e34f2dd1fb1d65e97b}
+
+
+result schema 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

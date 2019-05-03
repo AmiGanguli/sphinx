@@ -1,0 +1,615 @@
+\hypertarget{classCSphVector}{\section{C\-Sph\-Vector$<$ T, P\-O\-L\-I\-C\-Y $>$ Class Template Reference}
+\label{classCSphVector}\index{C\-Sph\-Vector$<$ T, P\-O\-L\-I\-C\-Y $>$@{C\-Sph\-Vector$<$ T, P\-O\-L\-I\-C\-Y $>$}}
+}
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector_ae22e90c1df8a313d3bae2618942b6179}{C\-Sph\-Vector} ()
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector_a997ba5244d9e09314e9ef987af394c0f}{C\-Sph\-Vector} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\begin{DoxyCompactList}\small\item\em ctor with initial size \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector_a3bcabcf6fed3714126d9c86cf457ced4}{C\-Sph\-Vector} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em copy ctor \end{DoxyCompactList}\item 
+\hyperlink{classCSphVector_a804f01dbe01dd31808d0e8a1745776be}{$\sim$\-C\-Sph\-Vector} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+T \& \hyperlink{classCSphVector_a8fff86e823ec871dd7a5410f03535e5a}{Add} ()
+\begin{DoxyCompactList}\small\item\em add entry \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_a971c51f7fc7af000d5ab3ac800586a3b}{Add} (const T \&t\-Value)
+\begin{DoxyCompactList}\small\item\em add entry \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_a8d9a46a58251daa5a2e1a714e660bde5}{Add} (T \&\&t\-Value)
+\item 
+T $\ast$ \hyperlink{classCSphVector_a3d9e649437927eb2a93b6fb6c17e7b69}{Add\-N} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\begin{DoxyCompactList}\small\item\em add N more entries, and return a pointer to that buffer \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_a7d579b96a81740df69561d839e3b69ff}{Add\-Unique} (const T \&t\-Value)
+\begin{DoxyCompactList}\small\item\em add unique entry (ie. do not add if equal to last one) \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classCSphVector_a69727c103715702138ba9141e4e593dc}{Begin} ()
+\begin{DoxyCompactList}\small\item\em get first entry ptr \end{DoxyCompactList}\item 
+const T $\ast$ \hyperlink{classCSphVector_a7a27d79606ce4dbb6ba944042cec1424}{Begin} () const 
+\begin{DoxyCompactList}\small\item\em get first entry ptr \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classCSphVector_ab9475f50784ad046ec3faa06d506f329}{begin} ()
+\begin{DoxyCompactList}\small\item\em make happy C++11 ranged for loops \end{DoxyCompactList}\item 
+const T $\ast$ \hyperlink{classCSphVector_ac89d3106e9e278c6c1a3bb008b614896}{begin} () const 
+\item 
+T $\ast$ \hyperlink{classCSphVector_acfab9c58d14273e32ec5d6d230d1a1bd}{end} ()
+\item 
+const T $\ast$ \hyperlink{classCSphVector_a8e54266f61fc1ee2d6a76c3e2983c753}{end} () const 
+\item 
+T \& \hyperlink{classCSphVector_abed89439189fcb978199b3c34071dfc8}{Last} ()
+\begin{DoxyCompactList}\small\item\em get last entry \end{DoxyCompactList}\item 
+const T \& \hyperlink{classCSphVector_a8c84f048a98fa1c6bb9eebd80a6ea7fb}{Last} () const 
+\begin{DoxyCompactList}\small\item\em get last entry \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_a9ebaf9cbc7f63b631e2223cb932b1ecf}{Remove} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)
+\begin{DoxyCompactList}\small\item\em remove element by index \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_a5603b6d8bd78462e13501ddb3c5c9793}{Remove\-Fast} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)
+\begin{DoxyCompactList}\small\item\em remove element by index, swapping it with the tail \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphVector_ab5c0a788503616a0ea4862e61d086321}{Remove\-Value} (T t\-Value)
+\begin{DoxyCompactList}\small\item\em remove element by value (warning, linear O(n) search) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F\-U\-N\-C\-T\-O\-R , typename U $>$ }\\bool \hyperlink{classCSphVector_a3940499e1e8d65d06ee5564268ed3d93}{Remove\-Value} (F\-U\-N\-C\-T\-O\-R C\-O\-M\-P, U t\-Value)
+\begin{DoxyCompactList}\small\item\em remove element by value (warning, linear O(n) search) \end{DoxyCompactList}\item 
+const T \& \hyperlink{classCSphVector_a35ec9c83ff3f850f8eaa1b47b3fbd5fe}{Pop} ()
+\begin{DoxyCompactList}\small\item\em pop last value \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_a3d7f637de701cc2c0a9bc6ac6ac84f08}{Reserve} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-New\-Limit)
+\begin{DoxyCompactList}\small\item\em grow enough to hold that much entries, if needed, but do {\itshape not} change the length \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_a3afe88be8f82e370daa83f1490670a59}{Resize} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-New\-Length)
+\begin{DoxyCompactList}\small\item\em resize \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_acd02e6d673981656c98e5d0d35f585d1}{Reset} ()
+\begin{DoxyCompactList}\small\item\em reset \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphVector_ab1de94ee40d818fa08e6c6e7f8efb616}{Get\-Length} () const 
+\begin{DoxyCompactList}\small\item\em query current length, in elements \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphVector_a8b7fe287d3ebbf1ffa474c10743fcec1}{Get\-Limit} () const 
+\begin{DoxyCompactList}\small\item\em query current reserved size, in elements \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphVector_a4a5f61c8066f8e4032b5c0cc9abc754d}{Get\-Size\-Bytes} () const 
+\begin{DoxyCompactList}\small\item\em query currently used R\-A\-M, in bytes \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_a1ddb1f9b17072c84d8247e6017087895}{Uniq} ()
+\begin{DoxyCompactList}\small\item\em filter unique \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_a17e7cac4604fa363618027995cace6aa}{Sort} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start=0, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-End=-\/1)
+\begin{DoxyCompactList}\small\item\em default sort \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_aa584a801c3e43a0dfe7016ce5a2c0635}{R\-Sort} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start=0, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-End=-\/1)
+\begin{DoxyCompactList}\small\item\em default reverse sort \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F $>$ }\\void \hyperlink{classCSphVector_a1eea2f11f3e7cc45e7f8bb3896794345}{Sort} (F C\-O\-M\-P, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start=0, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-End=-\/1)
+\begin{DoxyCompactList}\small\item\em generic sort \end{DoxyCompactList}\item 
+const T \& \hyperlink{classCSphVector_a1b465521e67a987b853837f5c7787b58}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index) const 
+\begin{DoxyCompactList}\small\item\em accessor by forward index \end{DoxyCompactList}\item 
+T \& \hyperlink{classCSphVector_a15671663be877f0e632342a2d362ab61}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)
+\begin{DoxyCompactList}\small\item\em accessor by forward index \end{DoxyCompactList}\item 
+const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T $>$ \& \hyperlink{classCSphVector_a87d8b4eb131a4ccd94759a96fda3118c}{operator=} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em copy \end{DoxyCompactList}\item 
+const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T $>$ \& \hyperlink{classCSphVector_a7f658e393b88a02ab593efd99da4dfda}{operator=} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T $>$ \&\&rhs)
+\begin{DoxyCompactList}\small\item\em move \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_ad885cae08002d3717b9fd126c1ee2c4c}{Swap\-Data} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em swap \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classCSphVector_ab830d86f6159ce6ef60e31b57c436b7b}{Leak\-Data} ()
+\begin{DoxyCompactList}\small\item\em leak \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U , typename P\-R\-E\-D $>$ }\\const T $\ast$ \hyperlink{classCSphVector_a9dca1ae58a4dc6845a82b497388eba9c}{Binary\-Search} (const P\-R\-E\-D \&t\-Pred, U t\-Ref) const 
+\item 
+const T $\ast$ \hyperlink{classCSphVector_a554c86eb72574ba3c0159f56cca33ddb}{Binary\-Search} (T t\-Ref) const 
+\item 
+bool \hyperlink{classCSphVector_aba09bed2fa878c51cabb05baf538658c}{Contains} (T t\-Ref) const 
+\begin{DoxyCompactList}\small\item\em generic linear search \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F\-U\-N\-C\-T\-O\-R , typename U $>$ }\\bool \hyperlink{classCSphVector_a8a515bc5bf4b2d2f0bf4e2de06fd14dc}{Contains} (F\-U\-N\-C\-T\-O\-R C\-O\-M\-P, U t\-Value)
+\begin{DoxyCompactList}\small\item\em generic linear search \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_a434a432972d71ea41b54895d2e59bd7d}{Fill} (const T \&rhs)
+\begin{DoxyCompactList}\small\item\em fill with given value \end{DoxyCompactList}\item 
+void \hyperlink{classCSphVector_aeaa7cc2c8e90cf82129333f97ce84475}{Insert} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index, const T \&t\-Value)
+\begin{DoxyCompactList}\small\item\em insert into a middle \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphVector_a53e89bf68104247f5092014e6eb4bbec}{m\-\_\-i\-Length}
+\begin{DoxyCompactList}\small\item\em entries actually used \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphVector_a7a44e1ebfb86dfd56bb8b48873ed5bde}{m\-\_\-i\-Limit}
+\begin{DoxyCompactList}\small\item\em entries allocated \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classCSphVector_aaaab95f327bf975e636a80077b22cfaf}{m\-\_\-p\-Data}
+\begin{DoxyCompactList}\small\item\em entries \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$class C\-Sph\-Vector$<$ T, P\-O\-L\-I\-C\-Y $>$}
+
+generic vector (don't even ask why it's not std\-::vector) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphVector_ae22e90c1df8a313d3bae2618942b6179}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!C\-Sph\-Vector@{C\-Sph\-Vector}}
+\index{C\-Sph\-Vector@{C\-Sph\-Vector}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{C\-Sph\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::{\bf C\-Sph\-Vector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_ae22e90c1df8a313d3bae2618942b6179}
+
+
+ctor 
+
+\hypertarget{classCSphVector_a997ba5244d9e09314e9ef987af394c0f}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!C\-Sph\-Vector@{C\-Sph\-Vector}}
+\index{C\-Sph\-Vector@{C\-Sph\-Vector}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{C\-Sph\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::{\bf C\-Sph\-Vector} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphVector_a997ba5244d9e09314e9ef987af394c0f}
+
+
+ctor with initial size 
+
+\hypertarget{classCSphVector_a3bcabcf6fed3714126d9c86cf457ced4}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!C\-Sph\-Vector@{C\-Sph\-Vector}}
+\index{C\-Sph\-Vector@{C\-Sph\-Vector}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{C\-Sph\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::{\bf C\-Sph\-Vector} (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a3bcabcf6fed3714126d9c86cf457ced4}
+
+
+copy ctor 
+
+\hypertarget{classCSphVector_a804f01dbe01dd31808d0e8a1745776be}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!$\sim$\-C\-Sph\-Vector@{$\sim$\-C\-Sph\-Vector}}
+\index{$\sim$\-C\-Sph\-Vector@{$\sim$\-C\-Sph\-Vector}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{$\sim$\-C\-Sph\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::$\sim${\bf C\-Sph\-Vector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a804f01dbe01dd31808d0e8a1745776be}
+
+
+dtor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphVector_a8fff86e823ec871dd7a5410f03535e5a}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Add@{Add}}
+\index{Add@{Add}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ T\& {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Add (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a8fff86e823ec871dd7a5410f03535e5a}
+
+
+add entry 
+
+\hypertarget{classCSphVector_a971c51f7fc7af000d5ab3ac800586a3b}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Add@{Add}}
+\index{Add@{Add}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Add (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{t\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a971c51f7fc7af000d5ab3ac800586a3b}
+
+
+add entry 
+
+\hypertarget{classCSphVector_a8d9a46a58251daa5a2e1a714e660bde5}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Add@{Add}}
+\index{Add@{Add}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Add (
+\begin{DoxyParamCaption}
+\item[{T \&\&}]{t\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a8d9a46a58251daa5a2e1a714e660bde5}
+\hypertarget{classCSphVector_a3d9e649437927eb2a93b6fb6c17e7b69}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Add\-N@{Add\-N}}
+\index{Add\-N@{Add\-N}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Add\-N}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Add\-N (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a3d9e649437927eb2a93b6fb6c17e7b69}
+
+
+add N more entries, and return a pointer to that buffer 
+
+\hypertarget{classCSphVector_a7d579b96a81740df69561d839e3b69ff}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Add\-Unique@{Add\-Unique}}
+\index{Add\-Unique@{Add\-Unique}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Add\-Unique}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Add\-Unique (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{t\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a7d579b96a81740df69561d839e3b69ff}
+
+
+add unique entry (ie. do not add if equal to last one) 
+
+\hypertarget{classCSphVector_a69727c103715702138ba9141e4e593dc}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Begin@{Begin}}
+\index{Begin@{Begin}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a69727c103715702138ba9141e4e593dc}
+
+
+get first entry ptr 
+
+\hypertarget{classCSphVector_a7a27d79606ce4dbb6ba944042cec1424}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Begin@{Begin}}
+\index{Begin@{Begin}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ const T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a7a27d79606ce4dbb6ba944042cec1424}
+
+
+get first entry ptr 
+
+\hypertarget{classCSphVector_ab9475f50784ad046ec3faa06d506f329}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!begin@{begin}}
+\index{begin@{begin}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_ab9475f50784ad046ec3faa06d506f329}
+
+
+make happy C++11 ranged for loops 
+
+\hypertarget{classCSphVector_ac89d3106e9e278c6c1a3bb008b614896}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!begin@{begin}}
+\index{begin@{begin}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ const T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_ac89d3106e9e278c6c1a3bb008b614896}
+\hypertarget{classCSphVector_a9dca1ae58a4dc6845a82b497388eba9c}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Binary\-Search@{Binary\-Search}}
+\index{Binary\-Search@{Binary\-Search}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Binary\-Search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ template$<$typename U , typename P\-R\-E\-D $>$ const T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Binary\-Search (
+\begin{DoxyParamCaption}
+\item[{const P\-R\-E\-D \&}]{t\-Pred, }
+\item[{U}]{t\-Ref}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a9dca1ae58a4dc6845a82b497388eba9c}
+generic binary search assumes that the array is sorted in ascending order \hypertarget{classCSphVector_a554c86eb72574ba3c0159f56cca33ddb}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Binary\-Search@{Binary\-Search}}
+\index{Binary\-Search@{Binary\-Search}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Binary\-Search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ const T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Binary\-Search (
+\begin{DoxyParamCaption}
+\item[{T}]{t\-Ref}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a554c86eb72574ba3c0159f56cca33ddb}
+generic binary search assumes that the array is sorted in ascending order \hypertarget{classCSphVector_aba09bed2fa878c51cabb05baf538658c}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Contains@{Contains}}
+\index{Contains@{Contains}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Contains}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ bool {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Contains (
+\begin{DoxyParamCaption}
+\item[{T}]{t\-Ref}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_aba09bed2fa878c51cabb05baf538658c}
+
+
+generic linear search 
+
+\hypertarget{classCSphVector_a8a515bc5bf4b2d2f0bf4e2de06fd14dc}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Contains@{Contains}}
+\index{Contains@{Contains}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Contains}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ template$<$typename F\-U\-N\-C\-T\-O\-R , typename U $>$ bool {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Contains (
+\begin{DoxyParamCaption}
+\item[{F\-U\-N\-C\-T\-O\-R}]{C\-O\-M\-P, }
+\item[{U}]{t\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a8a515bc5bf4b2d2f0bf4e2de06fd14dc}
+
+
+generic linear search 
+
+\hypertarget{classCSphVector_acfab9c58d14273e32ec5d6d230d1a1bd}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!end@{end}}
+\index{end@{end}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_acfab9c58d14273e32ec5d6d230d1a1bd}
+\hypertarget{classCSphVector_a8e54266f61fc1ee2d6a76c3e2983c753}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!end@{end}}
+\index{end@{end}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ const T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a8e54266f61fc1ee2d6a76c3e2983c753}
+\hypertarget{classCSphVector_a434a432972d71ea41b54895d2e59bd7d}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Fill@{Fill}}
+\index{Fill@{Fill}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Fill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Fill (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a434a432972d71ea41b54895d2e59bd7d}
+
+
+fill with given value 
+
+\hypertarget{classCSphVector_ab1de94ee40d818fa08e6c6e7f8efb616}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Get\-Length@{Get\-Length}}
+\index{Get\-Length@{Get\-Length}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Get\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ {\bf int} {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Get\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_ab1de94ee40d818fa08e6c6e7f8efb616}
+
+
+query current length, in elements 
+
+\hypertarget{classCSphVector_a8b7fe287d3ebbf1ffa474c10743fcec1}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Get\-Limit@{Get\-Limit}}
+\index{Get\-Limit@{Get\-Limit}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Get\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ {\bf int} {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Get\-Limit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a8b7fe287d3ebbf1ffa474c10743fcec1}
+
+
+query current reserved size, in elements 
+
+\hypertarget{classCSphVector_a4a5f61c8066f8e4032b5c0cc9abc754d}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Get\-Size\-Bytes@{Get\-Size\-Bytes}}
+\index{Get\-Size\-Bytes@{Get\-Size\-Bytes}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Get\-Size\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ {\bf int} {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Get\-Size\-Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a4a5f61c8066f8e4032b5c0cc9abc754d}
+
+
+query currently used R\-A\-M, in bytes 
+
+\hypertarget{classCSphVector_aeaa7cc2c8e90cf82129333f97ce84475}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Insert@{Insert}}
+\index{Insert@{Insert}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Insert (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index, }
+\item[{const T \&}]{t\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_aeaa7cc2c8e90cf82129333f97ce84475}
+
+
+insert into a middle 
+
+\hypertarget{classCSphVector_abed89439189fcb978199b3c34071dfc8}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Last@{Last}}
+\index{Last@{Last}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ T\& {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_abed89439189fcb978199b3c34071dfc8}
+
+
+get last entry 
+
+\hypertarget{classCSphVector_a8c84f048a98fa1c6bb9eebd80a6ea7fb}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Last@{Last}}
+\index{Last@{Last}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ const T\& {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a8c84f048a98fa1c6bb9eebd80a6ea7fb}
+
+
+get last entry 
+
+\hypertarget{classCSphVector_ab830d86f6159ce6ef60e31b57c436b7b}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Leak\-Data@{Leak\-Data}}
+\index{Leak\-Data@{Leak\-Data}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Leak\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Leak\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_ab830d86f6159ce6ef60e31b57c436b7b}
+
+
+leak 
+
+\hypertarget{classCSphVector_a87d8b4eb131a4ccd94759a96fda3118c}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ const {\bf C\-Sph\-Vector}$<$T$>$\& {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a87d8b4eb131a4ccd94759a96fda3118c}
+
+
+copy 
+
+\hypertarget{classCSphVector_a7f658e393b88a02ab593efd99da4dfda}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ const {\bf C\-Sph\-Vector}$<$T$>$\& {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ T $>$ \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a7f658e393b88a02ab593efd99da4dfda}
+
+
+move 
+
+\hypertarget{classCSphVector_a1b465521e67a987b853837f5c7787b58}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ const T\& {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a1b465521e67a987b853837f5c7787b58}
+
+
+accessor by forward index 
+
+\hypertarget{classCSphVector_a15671663be877f0e632342a2d362ab61}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ T\& {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a15671663be877f0e632342a2d362ab61}
+
+
+accessor by forward index 
+
+\hypertarget{classCSphVector_a35ec9c83ff3f850f8eaa1b47b3fbd5fe}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Pop@{Pop}}
+\index{Pop@{Pop}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Pop}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ const T\& {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a35ec9c83ff3f850f8eaa1b47b3fbd5fe}
+
+
+pop last value 
+
+\hypertarget{classCSphVector_a9ebaf9cbc7f63b631e2223cb932b1ecf}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Remove@{Remove}}
+\index{Remove@{Remove}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Remove (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a9ebaf9cbc7f63b631e2223cb932b1ecf}
+
+
+remove element by index 
+
+\hypertarget{classCSphVector_a5603b6d8bd78462e13501ddb3c5c9793}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Remove\-Fast@{Remove\-Fast}}
+\index{Remove\-Fast@{Remove\-Fast}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Remove\-Fast}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Remove\-Fast (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a5603b6d8bd78462e13501ddb3c5c9793}
+
+
+remove element by index, swapping it with the tail 
+
+\hypertarget{classCSphVector_ab5c0a788503616a0ea4862e61d086321}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Remove\-Value@{Remove\-Value}}
+\index{Remove\-Value@{Remove\-Value}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Remove\-Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ bool {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Remove\-Value (
+\begin{DoxyParamCaption}
+\item[{T}]{t\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_ab5c0a788503616a0ea4862e61d086321}
+
+
+remove element by value (warning, linear O(n) search) 
+
+\hypertarget{classCSphVector_a3940499e1e8d65d06ee5564268ed3d93}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Remove\-Value@{Remove\-Value}}
+\index{Remove\-Value@{Remove\-Value}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Remove\-Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ template$<$typename F\-U\-N\-C\-T\-O\-R , typename U $>$ bool {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Remove\-Value (
+\begin{DoxyParamCaption}
+\item[{F\-U\-N\-C\-T\-O\-R}]{C\-O\-M\-P, }
+\item[{U}]{t\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a3940499e1e8d65d06ee5564268ed3d93}
+
+
+remove element by value (warning, linear O(n) search) 
+
+\hypertarget{classCSphVector_a3d7f637de701cc2c0a9bc6ac6ac84f08}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Reserve@{Reserve}}
+\index{Reserve@{Reserve}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Reserve}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Reserve (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-New\-Limit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a3d7f637de701cc2c0a9bc6ac6ac84f08}
+
+
+grow enough to hold that much entries, if needed, but do {\itshape not} change the length 
+
+\hypertarget{classCSphVector_acd02e6d673981656c98e5d0d35f585d1}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_acd02e6d673981656c98e5d0d35f585d1}
+
+
+reset 
+
+\hypertarget{classCSphVector_a3afe88be8f82e370daa83f1490670a59}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Resize@{Resize}}
+\index{Resize@{Resize}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Resize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Resize (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-New\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a3afe88be8f82e370daa83f1490670a59}
+
+
+resize 
+
+\hypertarget{classCSphVector_aa584a801c3e43a0dfe7016ce5a2c0635}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!R\-Sort@{R\-Sort}}
+\index{R\-Sort@{R\-Sort}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{R\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::R\-Sort (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start = {\ttfamily 0}, }
+\item[{{\bf int}}]{i\-End = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_aa584a801c3e43a0dfe7016ce5a2c0635}
+
+
+default reverse sort 
+
+\hypertarget{classCSphVector_a17e7cac4604fa363618027995cace6aa}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Sort@{Sort}}
+\index{Sort@{Sort}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Sort (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start = {\ttfamily 0}, }
+\item[{{\bf int}}]{i\-End = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a17e7cac4604fa363618027995cace6aa}
+
+
+default sort 
+
+\hypertarget{classCSphVector_a1eea2f11f3e7cc45e7f8bb3896794345}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Sort@{Sort}}
+\index{Sort@{Sort}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ template$<$typename F $>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Sort (
+\begin{DoxyParamCaption}
+\item[{F}]{C\-O\-M\-P, }
+\item[{{\bf int}}]{i\-Start = {\ttfamily 0}, }
+\item[{{\bf int}}]{i\-End = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a1eea2f11f3e7cc45e7f8bb3896794345}
+
+
+generic sort 
+
+\hypertarget{classCSphVector_ad885cae08002d3717b9fd126c1ee2c4c}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Swap\-Data@{Swap\-Data}}
+\index{Swap\-Data@{Swap\-Data}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Swap\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Swap\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_ad885cae08002d3717b9fd126c1ee2c4c}
+
+
+swap 
+
+\hypertarget{classCSphVector_a1ddb1f9b17072c84d8247e6017087895}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!Uniq@{Uniq}}
+\index{Uniq@{Uniq}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{Uniq}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ void {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::Uniq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphVector_a1ddb1f9b17072c84d8247e6017087895}
+
+
+filter unique 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphVector_a53e89bf68104247f5092014e6eb4bbec}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!m\-\_\-i\-Length@{m\-\_\-i\-Length}}
+\index{m\-\_\-i\-Length@{m\-\_\-i\-Length}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{m\-\_\-i\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ {\bf int} {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::m\-\_\-i\-Length\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphVector_a53e89bf68104247f5092014e6eb4bbec}
+
+
+entries actually used 
+
+\hypertarget{classCSphVector_a7a44e1ebfb86dfd56bb8b48873ed5bde}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!m\-\_\-i\-Limit@{m\-\_\-i\-Limit}}
+\index{m\-\_\-i\-Limit@{m\-\_\-i\-Limit}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{m\-\_\-i\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ {\bf int} {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::m\-\_\-i\-Limit\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphVector_a7a44e1ebfb86dfd56bb8b48873ed5bde}
+
+
+entries allocated 
+
+\hypertarget{classCSphVector_aaaab95f327bf975e636a80077b22cfaf}{\index{C\-Sph\-Vector@{C\-Sph\-Vector}!m\-\_\-p\-Data@{m\-\_\-p\-Data}}
+\index{m\-\_\-p\-Data@{m\-\_\-p\-Data}!CSphVector@{C\-Sph\-Vector}}
+\subsubsection[{m\-\_\-p\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename P\-O\-L\-I\-C\-Y = C\-Sph\-Vector\-Policy$<$\-T$>$$>$ T$\ast$ {\bf C\-Sph\-Vector}$<$ T, P\-O\-L\-I\-C\-Y $>$\-::m\-\_\-p\-Data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphVector_aaaab95f327bf975e636a80077b22cfaf}
+
+
+entries 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

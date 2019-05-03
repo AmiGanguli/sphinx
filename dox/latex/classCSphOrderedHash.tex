@@ -1,0 +1,390 @@
+\hypertarget{classCSphOrderedHash}{\section{C\-Sph\-Ordered\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$ Class Template Reference}
+\label{classCSphOrderedHash}\index{C\-Sph\-Ordered\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$@{C\-Sph\-Ordered\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$}}
+}
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCSphOrderedHash_1_1HashEntry__t}{Hash\-Entry\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphOrderedHash_aa81ec84c201a815ffd78acd72b828d30}{C\-Sph\-Ordered\-Hash} ()
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+\hyperlink{classCSphOrderedHash_af3a241c270b95cf24e5d84b1e15a85f2}{$\sim$\-C\-Sph\-Ordered\-Hash} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+void \hyperlink{classCSphOrderedHash_a9b9ef42eb1209b6ac1184ce9340df7f1}{Reset} ()
+\begin{DoxyCompactList}\small\item\em reset \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphOrderedHash_ab15646f3c9dffc468e7f0f5dc1c87fd7}{Add} (T \&\&t\-Value, const K\-E\-Y \&t\-Key)
+\item 
+bool \hyperlink{classCSphOrderedHash_ab89cff2117635040668818c6fb63e840}{Add} (const T \&t\-Value, const K\-E\-Y \&t\-Key)
+\item 
+T \& \hyperlink{classCSphOrderedHash_ada003c0b38329a0219df3eccf95e78a6}{Add\-Unique} (const K\-E\-Y \&t\-Key)
+\item 
+bool \hyperlink{classCSphOrderedHash_a725799bbf0e27373e3534bdd7e660fbd}{Delete} (const K\-E\-Y \&t\-Key)
+\begin{DoxyCompactList}\small\item\em delete an entry \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphOrderedHash_a7e2922de52ec5809739283070689ab9a}{Exists} (const K\-E\-Y \&t\-Key) const 
+\begin{DoxyCompactList}\small\item\em check if key exists \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classCSphOrderedHash_aab38191b47c5d07d8771b6c25e962f11}{operator()} (const K\-E\-Y \&t\-Key) const 
+\begin{DoxyCompactList}\small\item\em get value pointer by key \end{DoxyCompactList}\item 
+T \& \hyperlink{classCSphOrderedHash_ad3713e8c0937d3b989426f63676046ab}{operator\mbox{[}$\,$\mbox{]}} (const K\-E\-Y \&t\-Key) const 
+\begin{DoxyCompactList}\small\item\em get value reference by key, asserting that the key exists in hash \end{DoxyCompactList}\item 
+const K\-E\-Y $\ast$ \hyperlink{classCSphOrderedHash_a4c57820dcaafe32df0943c58ad5f6c68}{Get\-Key\-Ptr} (const K\-E\-Y \&t\-Key) const 
+\begin{DoxyCompactList}\small\item\em get pointer to key storage \end{DoxyCompactList}\item 
+const \hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, \\*
+H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$ \& \hyperlink{classCSphOrderedHash_ac52e2d520e9a7756a3cde32784e160b5}{operator=} (const \hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em copying \end{DoxyCompactList}\item 
+\hyperlink{classCSphOrderedHash_a85cf6456a6e3923c67a83cca0ed314d7}{C\-Sph\-Ordered\-Hash} (const \hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em copying ctor \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphOrderedHash_aadac9e6282da402174cf8f6ab6cde3b8}{Get\-Length} () const 
+\begin{DoxyCompactList}\small\item\em length query \end{DoxyCompactList}\item 
+void \hyperlink{classCSphOrderedHash_aee66899d08410d19ec645d9ea381ff02}{Iterate\-Start} () const 
+\begin{DoxyCompactList}\small\item\em start iterating \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphOrderedHash_aa3ee203023560373cff15977321e63b4}{Iterate\-Start} (const K\-E\-Y \&t\-Key) const 
+\begin{DoxyCompactList}\small\item\em start iterating from key element \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphOrderedHash_a882b1c735dbf4c6d6809a8449ecd4678}{Iterate\-Next} () const 
+\begin{DoxyCompactList}\small\item\em go to next existing entry \end{DoxyCompactList}\item 
+T \& \hyperlink{classCSphOrderedHash_aef8d1c1028bcc660932c9ccf0d42d988}{Iterate\-Get} () const 
+\begin{DoxyCompactList}\small\item\em get entry value \end{DoxyCompactList}\item 
+const K\-E\-Y \& \hyperlink{classCSphOrderedHash_a6caf5243246b640042b76e6f3e9fadc7}{Iterate\-Get\-Key} () const 
+\begin{DoxyCompactList}\small\item\em get entry key \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphOrderedHash_a88ff99487a8766c4720d36836a19ebcd}{Iterate\-Next} (void $\ast$$\ast$pp\-Cookie) const 
+\begin{DoxyCompactList}\small\item\em go to next existing entry in terms of external independed iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T \& \hyperlink{classCSphOrderedHash_aa104dfb302b6e6aeb987baf3b616159d}{Iterate\-Get} (void $\ast$$\ast$pp\-Cookie)
+\begin{DoxyCompactList}\small\item\em get entry value in terms of external independed iterator \end{DoxyCompactList}\item 
+static const K\-E\-Y \& \hyperlink{classCSphOrderedHash_a3405cde1ba7d6ed96d83c047079130ad}{Iterate\-Get\-Key} (void $\ast$$\ast$pp\-Cookie)
+\begin{DoxyCompactList}\small\item\em get entry key in terms of external independed iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphOrderedHash_1_1HashEntry__t}{Hash\-Entry\-\_\-t} $\ast$ \hyperlink{classCSphOrderedHash_a70d4f61e49244a361238c8275db95356}{Find\-By\-Key} (const K\-E\-Y \&t\-Key) const 
+\begin{DoxyCompactList}\small\item\em find entry by key \end{DoxyCompactList}\item 
+\hyperlink{structCSphOrderedHash_1_1HashEntry__t}{Hash\-Entry\-\_\-t} $\ast$ \hyperlink{classCSphOrderedHash_a8b1463a8bb0731bf19e796f3e6b660dc}{Add\-Impl} (const K\-E\-Y \&t\-Key)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphOrderedHash_1_1HashEntry__t}{Hash\-Entry\-\_\-t} $\ast$ \hyperlink{classCSphOrderedHash_a1abcb449596527f25444484b7d50dc9f}{m\-\_\-d\-Hash} \mbox{[}L\-E\-N\-G\-T\-H\mbox{]}
+\begin{DoxyCompactList}\small\item\em all the hash entries \end{DoxyCompactList}\item 
+\hyperlink{structCSphOrderedHash_1_1HashEntry__t}{Hash\-Entry\-\_\-t} $\ast$ \hyperlink{classCSphOrderedHash_a5c5de4c3874059e02c6a3754881dd181}{m\-\_\-p\-First\-By\-Order}
+\begin{DoxyCompactList}\small\item\em first entry in the insertion order \end{DoxyCompactList}\item 
+\hyperlink{structCSphOrderedHash_1_1HashEntry__t}{Hash\-Entry\-\_\-t} $\ast$ \hyperlink{classCSphOrderedHash_abd1445b98881815257ff731a0b409886}{m\-\_\-p\-Last\-By\-Order}
+\begin{DoxyCompactList}\small\item\em last entry in the insertion order \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphOrderedHash_a4486f2e47eff93bb9f8ea00237cd8ebc}{m\-\_\-i\-Length}
+\begin{DoxyCompactList}\small\item\em entries count \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphOrderedHash_1_1HashEntry__t}{Hash\-Entry\-\_\-t} $\ast$ \hyperlink{classCSphOrderedHash_ad2e7790bd07bbd2d2f0b398fe88a9772}{m\-\_\-p\-Iterator}
+\begin{DoxyCompactList}\small\item\em current iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$class C\-Sph\-Ordered\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$}
+
+simple dynamic hash implementation\-: fixed-\/size bucket + chaining keeps the order, so Iterate() return the entries in the order they was inserted W\-A\-R\-N\-I\-N\-G\-: slow copy 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphOrderedHash_aa81ec84c201a815ffd78acd72b828d30}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}}
+\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{C\-Sph\-Ordered\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::{\bf C\-Sph\-Ordered\-Hash} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_aa81ec84c201a815ffd78acd72b828d30}
+
+
+ctor 
+
+\hypertarget{classCSphOrderedHash_af3a241c270b95cf24e5d84b1e15a85f2}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!$\sim$\-C\-Sph\-Ordered\-Hash@{$\sim$\-C\-Sph\-Ordered\-Hash}}
+\index{$\sim$\-C\-Sph\-Ordered\-Hash@{$\sim$\-C\-Sph\-Ordered\-Hash}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{$\sim$\-C\-Sph\-Ordered\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::$\sim${\bf C\-Sph\-Ordered\-Hash} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_af3a241c270b95cf24e5d84b1e15a85f2}
+
+
+dtor 
+
+\hypertarget{classCSphOrderedHash_a85cf6456a6e3923c67a83cca0ed314d7}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}}
+\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{C\-Sph\-Ordered\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::{\bf C\-Sph\-Ordered\-Hash} (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_a85cf6456a6e3923c67a83cca0ed314d7}
+
+
+copying ctor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphOrderedHash_ab15646f3c9dffc468e7f0f5dc1c87fd7}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Add@{Add}}
+\index{Add@{Add}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ bool {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Add (
+\begin{DoxyParamCaption}
+\item[{T \&\&}]{t\-Value, }
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_ab15646f3c9dffc468e7f0f5dc1c87fd7}
+add new entry returns true on success returns false if this key is already hashed \hypertarget{classCSphOrderedHash_ab89cff2117635040668818c6fb63e840}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Add@{Add}}
+\index{Add@{Add}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ bool {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Add (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{t\-Value, }
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_ab89cff2117635040668818c6fb63e840}
+\hypertarget{classCSphOrderedHash_a8b1463a8bb0731bf19e796f3e6b660dc}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Add\-Impl@{Add\-Impl}}
+\index{Add\-Impl@{Add\-Impl}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Add\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf Hash\-Entry\-\_\-t}$\ast$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Add\-Impl (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCSphOrderedHash_a8b1463a8bb0731bf19e796f3e6b660dc}
+\hypertarget{classCSphOrderedHash_ada003c0b38329a0219df3eccf95e78a6}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Add\-Unique@{Add\-Unique}}
+\index{Add\-Unique@{Add\-Unique}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Add\-Unique}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ T\& {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Add\-Unique (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_ada003c0b38329a0219df3eccf95e78a6}
+add new entry returns the pointer to just inserted or previously cached (if dupe) value \hypertarget{classCSphOrderedHash_a725799bbf0e27373e3534bdd7e660fbd}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Delete@{Delete}}
+\index{Delete@{Delete}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Delete}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ bool {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Delete (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_a725799bbf0e27373e3534bdd7e660fbd}
+
+
+delete an entry 
+
+\hypertarget{classCSphOrderedHash_a7e2922de52ec5809739283070689ab9a}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Exists@{Exists}}
+\index{Exists@{Exists}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Exists}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ bool {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Exists (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_a7e2922de52ec5809739283070689ab9a}
+
+
+check if key exists 
+
+\hypertarget{classCSphOrderedHash_a70d4f61e49244a361238c8275db95356}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Find\-By\-Key@{Find\-By\-Key}}
+\index{Find\-By\-Key@{Find\-By\-Key}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Find\-By\-Key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf Hash\-Entry\-\_\-t}$\ast$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Find\-By\-Key (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCSphOrderedHash_a70d4f61e49244a361238c8275db95356}
+
+
+find entry by key 
+
+\hypertarget{classCSphOrderedHash_a4c57820dcaafe32df0943c58ad5f6c68}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Get\-Key\-Ptr@{Get\-Key\-Ptr}}
+\index{Get\-Key\-Ptr@{Get\-Key\-Ptr}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Get\-Key\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ const K\-E\-Y$\ast$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Get\-Key\-Ptr (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_a4c57820dcaafe32df0943c58ad5f6c68}
+
+
+get pointer to key storage 
+
+\hypertarget{classCSphOrderedHash_aadac9e6282da402174cf8f6ab6cde3b8}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Get\-Length@{Get\-Length}}
+\index{Get\-Length@{Get\-Length}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Get\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf int} {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Get\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_aadac9e6282da402174cf8f6ab6cde3b8}
+
+
+length query 
+
+\hypertarget{classCSphOrderedHash_aef8d1c1028bcc660932c9ccf0d42d988}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Iterate\-Get@{Iterate\-Get}}
+\index{Iterate\-Get@{Iterate\-Get}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Iterate\-Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ T\& {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Iterate\-Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_aef8d1c1028bcc660932c9ccf0d42d988}
+
+
+get entry value 
+
+\hypertarget{classCSphOrderedHash_aa104dfb302b6e6aeb987baf3b616159d}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Iterate\-Get@{Iterate\-Get}}
+\index{Iterate\-Get@{Iterate\-Get}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Iterate\-Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ static T\& {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Iterate\-Get (
+\begin{DoxyParamCaption}
+\item[{void $\ast$$\ast$}]{pp\-Cookie}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCSphOrderedHash_aa104dfb302b6e6aeb987baf3b616159d}
+
+
+get entry value in terms of external independed iterator 
+
+\hypertarget{classCSphOrderedHash_a6caf5243246b640042b76e6f3e9fadc7}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Iterate\-Get\-Key@{Iterate\-Get\-Key}}
+\index{Iterate\-Get\-Key@{Iterate\-Get\-Key}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Iterate\-Get\-Key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ const K\-E\-Y\& {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Iterate\-Get\-Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_a6caf5243246b640042b76e6f3e9fadc7}
+
+
+get entry key 
+
+\hypertarget{classCSphOrderedHash_a3405cde1ba7d6ed96d83c047079130ad}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Iterate\-Get\-Key@{Iterate\-Get\-Key}}
+\index{Iterate\-Get\-Key@{Iterate\-Get\-Key}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Iterate\-Get\-Key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ static const K\-E\-Y\& {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Iterate\-Get\-Key (
+\begin{DoxyParamCaption}
+\item[{void $\ast$$\ast$}]{pp\-Cookie}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCSphOrderedHash_a3405cde1ba7d6ed96d83c047079130ad}
+
+
+get entry key in terms of external independed iterator 
+
+\hypertarget{classCSphOrderedHash_a882b1c735dbf4c6d6809a8449ecd4678}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Iterate\-Next@{Iterate\-Next}}
+\index{Iterate\-Next@{Iterate\-Next}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Iterate\-Next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ bool {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Iterate\-Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_a882b1c735dbf4c6d6809a8449ecd4678}
+
+
+go to next existing entry 
+
+\hypertarget{classCSphOrderedHash_a88ff99487a8766c4720d36836a19ebcd}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Iterate\-Next@{Iterate\-Next}}
+\index{Iterate\-Next@{Iterate\-Next}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Iterate\-Next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ bool {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Iterate\-Next (
+\begin{DoxyParamCaption}
+\item[{void $\ast$$\ast$}]{pp\-Cookie}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_a88ff99487a8766c4720d36836a19ebcd}
+
+
+go to next existing entry in terms of external independed iterator 
+
+\hypertarget{classCSphOrderedHash_aee66899d08410d19ec645d9ea381ff02}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Iterate\-Start@{Iterate\-Start}}
+\index{Iterate\-Start@{Iterate\-Start}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Iterate\-Start}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ void {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Iterate\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_aee66899d08410d19ec645d9ea381ff02}
+
+
+start iterating 
+
+\hypertarget{classCSphOrderedHash_aa3ee203023560373cff15977321e63b4}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Iterate\-Start@{Iterate\-Start}}
+\index{Iterate\-Start@{Iterate\-Start}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Iterate\-Start}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ bool {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Iterate\-Start (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_aa3ee203023560373cff15977321e63b4}
+
+
+start iterating from key element 
+
+\hypertarget{classCSphOrderedHash_aab38191b47c5d07d8771b6c25e962f11}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!operator()@{operator()}}
+\index{operator()@{operator()}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ T$\ast$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_aab38191b47c5d07d8771b6c25e962f11}
+
+
+get value pointer by key 
+
+\hypertarget{classCSphOrderedHash_ac52e2d520e9a7756a3cde32784e160b5}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ const {\bf C\-Sph\-Ordered\-Hash}$<$T,K\-E\-Y,H\-A\-S\-H\-F\-U\-N\-C,L\-E\-N\-G\-T\-H$>$\& {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_ac52e2d520e9a7756a3cde32784e160b5}
+
+
+copying 
+
+\hypertarget{classCSphOrderedHash_ad3713e8c0937d3b989426f63676046ab}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ T\& {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const K\-E\-Y \&}]{t\-Key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_ad3713e8c0937d3b989426f63676046ab}
+
+
+get value reference by key, asserting that the key exists in hash 
+
+\hypertarget{classCSphOrderedHash_a9b9ef42eb1209b6ac1184ce9340df7f1}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ void {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphOrderedHash_a9b9ef42eb1209b6ac1184ce9340df7f1}
+
+
+reset 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphOrderedHash_a1abcb449596527f25444484b7d50dc9f}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!m\-\_\-d\-Hash@{m\-\_\-d\-Hash}}
+\index{m\-\_\-d\-Hash@{m\-\_\-d\-Hash}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{m\-\_\-d\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf Hash\-Entry\-\_\-t}$\ast$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::m\-\_\-d\-Hash\mbox{[}L\-E\-N\-G\-T\-H\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphOrderedHash_a1abcb449596527f25444484b7d50dc9f}
+
+
+all the hash entries 
+
+\hypertarget{classCSphOrderedHash_a4486f2e47eff93bb9f8ea00237cd8ebc}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!m\-\_\-i\-Length@{m\-\_\-i\-Length}}
+\index{m\-\_\-i\-Length@{m\-\_\-i\-Length}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{m\-\_\-i\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf int} {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::m\-\_\-i\-Length\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphOrderedHash_a4486f2e47eff93bb9f8ea00237cd8ebc}
+
+
+entries count 
+
+\hypertarget{classCSphOrderedHash_a5c5de4c3874059e02c6a3754881dd181}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!m\-\_\-p\-First\-By\-Order@{m\-\_\-p\-First\-By\-Order}}
+\index{m\-\_\-p\-First\-By\-Order@{m\-\_\-p\-First\-By\-Order}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{m\-\_\-p\-First\-By\-Order}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf Hash\-Entry\-\_\-t}$\ast$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::m\-\_\-p\-First\-By\-Order\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphOrderedHash_a5c5de4c3874059e02c6a3754881dd181}
+
+
+first entry in the insertion order 
+
+\hypertarget{classCSphOrderedHash_ad2e7790bd07bbd2d2f0b398fe88a9772}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!m\-\_\-p\-Iterator@{m\-\_\-p\-Iterator}}
+\index{m\-\_\-p\-Iterator@{m\-\_\-p\-Iterator}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{m\-\_\-p\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf Hash\-Entry\-\_\-t}$\ast$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::m\-\_\-p\-Iterator\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}}\label{classCSphOrderedHash_ad2e7790bd07bbd2d2f0b398fe88a9772}
+
+
+current iterator 
+
+\hypertarget{classCSphOrderedHash_abd1445b98881815257ff731a0b409886}{\index{C\-Sph\-Ordered\-Hash@{C\-Sph\-Ordered\-Hash}!m\-\_\-p\-Last\-By\-Order@{m\-\_\-p\-Last\-By\-Order}}
+\index{m\-\_\-p\-Last\-By\-Order@{m\-\_\-p\-Last\-By\-Order}!CSphOrderedHash@{C\-Sph\-Ordered\-Hash}}
+\subsubsection[{m\-\_\-p\-Last\-By\-Order}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename K\-E\-Y, typename H\-A\-S\-H\-F\-U\-N\-C, int L\-E\-N\-G\-T\-H$>$ {\bf Hash\-Entry\-\_\-t}$\ast$ {\bf C\-Sph\-Ordered\-Hash}$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::m\-\_\-p\-Last\-By\-Order\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphOrderedHash_abd1445b98881815257ff731a0b409886}
+
+
+last entry in the insertion order 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

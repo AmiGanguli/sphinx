@@ -1,0 +1,164 @@
+\hypertarget{classCMorphAutomat}{\section{C\-Morph\-Automat Class Reference}
+\label{classCMorphAutomat}\index{C\-Morph\-Automat@{C\-Morph\-Automat}}
+}
+
+
+morphology automaton  
+
+
+Inheritance diagram for C\-Morph\-Automat\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCMorphAutomat}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCMorphAutomat_a4023a2ed16cf138a9534436eac474c97}{C\-Morph\-Automat} ()
+\item 
+\hyperlink{classCMorphAutomat_a2457698e13f7d426b6f1d4d41dabc991}{$\sim$\-C\-Morph\-Automat} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCMorphAutomat_a11458f7d5e00e8df81d01ccd8d393a9a}{Get\-Children\-Count} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i) const 
+\item 
+const \hyperlink{structCMorphAutomRelation}{C\-Morph\-Autom\-Relation} $\ast$ \hyperlink{classCMorphAutomat_a31ce13d237af44d1ae274aa4179c10e5}{Get\-Children} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i) const 
+\item 
+const \hyperlink{structCMorphAutomNode}{C\-Morph\-Autom\-Node} \hyperlink{classCMorphAutomat_ab016d540d96f9ebeba4c7446587eb984}{Get\-Node} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i) const 
+\item 
+bool \hyperlink{classCMorphAutomat_a79e72578ff4f25ea46072694196232a0}{Load\-Pak} (\hyperlink{classCSphReader}{C\-Sph\-Reader} \&rd, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Cache\-Size)
+\item 
+void \hyperlink{classCMorphAutomat_ae1b7dc7367efebab5b76758b9d1990cf}{Get\-Inner\-Morph\-Infos} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Text, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$Infos) const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCMorphAutomat_a9c31cbfc0b1144c30fbc360e26ef6310}{Next\-Node} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} Node\-No, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} Child) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCMorphAutomat_a6f1ef643908a6ba86f22bf0102e576aa}{Build\-Children\-Cache} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Cache\-Size)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCMorphAutomat_ad60b7c0e37dcdc8a0024470676b892a5}{Find\-String\-And\-Pass\-Annot\-Char} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Text) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCMorphAutomNode}{C\-Morph\-Autom\-Node} $\ast$ \hyperlink{classCMorphAutomat_a3f7881d65cc8ec2a0977f995e46fe3ed}{m\-\_\-p\-Nodes}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCMorphAutomat_a04f278a15cdd9a0e41ae55503e7c5625}{m\-\_\-\-Nodes\-Count}
+\item 
+\hyperlink{structCMorphAutomRelation}{C\-Morph\-Autom\-Relation} $\ast$ \hyperlink{classCMorphAutomat_a89b2e7c587803060660791aa877f5cc3}{m\-\_\-p\-Relations}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCMorphAutomat_aad30591acbb8dac7b9db5e5a9ac3cacf}{m\-\_\-\-Relations\-Count}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCMorphAutomat_a9c316e1eae4f39ca06901ab9f069df4c}{m\-\_\-i\-Cache\-Size}
+\item 
+\hyperlink{classCSphTightVector}{C\-Sph\-Tight\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \hyperlink{classCMorphAutomat_a07b9d37724a682cf56c14d690bcdecf2}{m\-\_\-\-Children\-Cache}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+morphology automaton 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCMorphAutomat_a4023a2ed16cf138a9534436eac474c97}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!C\-Morph\-Automat@{C\-Morph\-Automat}}
+\index{C\-Morph\-Automat@{C\-Morph\-Automat}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{C\-Morph\-Automat}]{\setlength{\rightskip}{0pt plus 5cm}C\-Morph\-Automat\-::\-C\-Morph\-Automat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCMorphAutomat_a4023a2ed16cf138a9534436eac474c97}
+\hypertarget{classCMorphAutomat_a2457698e13f7d426b6f1d4d41dabc991}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!$\sim$\-C\-Morph\-Automat@{$\sim$\-C\-Morph\-Automat}}
+\index{$\sim$\-C\-Morph\-Automat@{$\sim$\-C\-Morph\-Automat}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{$\sim$\-C\-Morph\-Automat}]{\setlength{\rightskip}{0pt plus 5cm}C\-Morph\-Automat\-::$\sim$\-C\-Morph\-Automat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCMorphAutomat_a2457698e13f7d426b6f1d4d41dabc991}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCMorphAutomat_a6f1ef643908a6ba86f22bf0102e576aa}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!Build\-Children\-Cache@{Build\-Children\-Cache}}
+\index{Build\-Children\-Cache@{Build\-Children\-Cache}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{Build\-Children\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Morph\-Automat\-::\-Build\-Children\-Cache (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Cache\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCMorphAutomat_a6f1ef643908a6ba86f22bf0102e576aa}
+\hypertarget{classCMorphAutomat_ad60b7c0e37dcdc8a0024470676b892a5}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!Find\-String\-And\-Pass\-Annot\-Char@{Find\-String\-And\-Pass\-Annot\-Char}}
+\index{Find\-String\-And\-Pass\-Annot\-Char@{Find\-String\-And\-Pass\-Annot\-Char}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{Find\-String\-And\-Pass\-Annot\-Char}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Morph\-Automat\-::\-Find\-String\-And\-Pass\-Annot\-Char (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Text}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCMorphAutomat_ad60b7c0e37dcdc8a0024470676b892a5}
+\hypertarget{classCMorphAutomat_a31ce13d237af44d1ae274aa4179c10e5}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!Get\-Children@{Get\-Children}}
+\index{Get\-Children@{Get\-Children}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{Get\-Children}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Morph\-Autom\-Relation}$\ast$ C\-Morph\-Automat\-::\-Get\-Children (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCMorphAutomat_a31ce13d237af44d1ae274aa4179c10e5}
+\hypertarget{classCMorphAutomat_a11458f7d5e00e8df81d01ccd8d393a9a}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!Get\-Children\-Count@{Get\-Children\-Count}}
+\index{Get\-Children\-Count@{Get\-Children\-Count}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{Get\-Children\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Morph\-Automat\-::\-Get\-Children\-Count (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCMorphAutomat_a11458f7d5e00e8df81d01ccd8d393a9a}
+\hypertarget{classCMorphAutomat_ae1b7dc7367efebab5b76758b9d1990cf}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!Get\-Inner\-Morph\-Infos@{Get\-Inner\-Morph\-Infos}}
+\index{Get\-Inner\-Morph\-Infos@{Get\-Inner\-Morph\-Infos}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{Get\-Inner\-Morph\-Infos}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Morph\-Automat\-::\-Get\-Inner\-Morph\-Infos (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Text, }
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{Infos}
+\end{DoxyParamCaption}
+) const}}\label{classCMorphAutomat_ae1b7dc7367efebab5b76758b9d1990cf}
+\hypertarget{classCMorphAutomat_ab016d540d96f9ebeba4c7446587eb984}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!Get\-Node@{Get\-Node}}
+\index{Get\-Node@{Get\-Node}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{Get\-Node}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Morph\-Autom\-Node} C\-Morph\-Automat\-::\-Get\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCMorphAutomat_ab016d540d96f9ebeba4c7446587eb984}
+\hypertarget{classCMorphAutomat_a79e72578ff4f25ea46072694196232a0}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!Load\-Pak@{Load\-Pak}}
+\index{Load\-Pak@{Load\-Pak}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{Load\-Pak}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Morph\-Automat\-::\-Load\-Pak (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Reader} \&}]{rd, }
+\item[{{\bf int}}]{i\-Cache\-Size}
+\end{DoxyParamCaption}
+)}}\label{classCMorphAutomat_a79e72578ff4f25ea46072694196232a0}
+\hypertarget{classCMorphAutomat_a9c31cbfc0b1144c30fbc360e26ef6310}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!Next\-Node@{Next\-Node}}
+\index{Next\-Node@{Next\-Node}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{Next\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Morph\-Automat\-::\-Next\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{Node\-No, }
+\item[{{\bf B\-Y\-T\-E}}]{Child}
+\end{DoxyParamCaption}
+) const}}\label{classCMorphAutomat_a9c31cbfc0b1144c30fbc360e26ef6310}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCMorphAutomat_a07b9d37724a682cf56c14d690bcdecf2}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!m\-\_\-\-Children\-Cache@{m\-\_\-\-Children\-Cache}}
+\index{m\-\_\-\-Children\-Cache@{m\-\_\-\-Children\-Cache}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{m\-\_\-\-Children\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Tight\-Vector}$<${\bf int}$>$ C\-Morph\-Automat\-::m\-\_\-\-Children\-Cache\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCMorphAutomat_a07b9d37724a682cf56c14d690bcdecf2}
+\hypertarget{classCMorphAutomat_a9c316e1eae4f39ca06901ab9f069df4c}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!m\-\_\-i\-Cache\-Size@{m\-\_\-i\-Cache\-Size}}
+\index{m\-\_\-i\-Cache\-Size@{m\-\_\-i\-Cache\-Size}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{m\-\_\-i\-Cache\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Morph\-Automat\-::m\-\_\-i\-Cache\-Size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCMorphAutomat_a9c316e1eae4f39ca06901ab9f069df4c}
+\hypertarget{classCMorphAutomat_a04f278a15cdd9a0e41ae55503e7c5625}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!m\-\_\-\-Nodes\-Count@{m\-\_\-\-Nodes\-Count}}
+\index{m\-\_\-\-Nodes\-Count@{m\-\_\-\-Nodes\-Count}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{m\-\_\-\-Nodes\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Morph\-Automat\-::m\-\_\-\-Nodes\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCMorphAutomat_a04f278a15cdd9a0e41ae55503e7c5625}
+\hypertarget{classCMorphAutomat_a3f7881d65cc8ec2a0977f995e46fe3ed}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!m\-\_\-p\-Nodes@{m\-\_\-p\-Nodes}}
+\index{m\-\_\-p\-Nodes@{m\-\_\-p\-Nodes}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{m\-\_\-p\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Morph\-Autom\-Node}$\ast$ C\-Morph\-Automat\-::m\-\_\-p\-Nodes\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCMorphAutomat_a3f7881d65cc8ec2a0977f995e46fe3ed}
+\hypertarget{classCMorphAutomat_a89b2e7c587803060660791aa877f5cc3}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!m\-\_\-p\-Relations@{m\-\_\-p\-Relations}}
+\index{m\-\_\-p\-Relations@{m\-\_\-p\-Relations}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{m\-\_\-p\-Relations}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Morph\-Autom\-Relation}$\ast$ C\-Morph\-Automat\-::m\-\_\-p\-Relations\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCMorphAutomat_a89b2e7c587803060660791aa877f5cc3}
+\hypertarget{classCMorphAutomat_aad30591acbb8dac7b9db5e5a9ac3cacf}{\index{C\-Morph\-Automat@{C\-Morph\-Automat}!m\-\_\-\-Relations\-Count@{m\-\_\-\-Relations\-Count}}
+\index{m\-\_\-\-Relations\-Count@{m\-\_\-\-Relations\-Count}!CMorphAutomat@{C\-Morph\-Automat}}
+\subsubsection[{m\-\_\-\-Relations\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Morph\-Automat\-::m\-\_\-\-Relations\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCMorphAutomat_aad30591acbb8dac7b9db5e5a9ac3cacf}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxaot_8cpp}{sphinxaot.\-cpp}\end{DoxyCompactItemize}

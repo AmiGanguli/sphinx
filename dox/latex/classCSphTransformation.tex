@@ -1,0 +1,419 @@
+\hypertarget{classCSphTransformation}{\section{C\-Sph\-Transformation Class Reference}
+\label{classCSphTransformation}\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}}
+}
+Inheritance diagram for C\-Sph\-Transformation\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphTransformation}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCSphTransformation_1_1CurrentNode}{Current\-Node}
+\item 
+struct \hyperlink{structCSphTransformation_1_1Grand2Node}{Grand2\-Node}
+\item 
+struct \hyperlink{structCSphTransformation_1_1Grand3Node}{Grand3\-Node}
+\item 
+struct \hyperlink{structCSphTransformation_1_1GrandNode}{Grand\-Node}
+\item 
+struct \hyperlink{structCSphTransformation_1_1NullNode}{Null\-Node}
+\item 
+struct \hyperlink{structCSphTransformation_1_1ParentNode}{Parent\-Node}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphTransformation_ae7b815b4872b85ce40b51e64565b1be9}{C\-Sph\-Transformation} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$$\ast$pp\-Root, const \hyperlink{structISphKeywordsStat}{I\-Sph\-Keywords\-Stat} $\ast$p\-Keywords)
+\item 
+void \hyperlink{classCSphTransformation_ac1003936970b7a1a7b479ee2f99f8e17}{Transform} ()
+\item 
+void \hyperlink{classCSphTransformation_a63475b8035e00036af9cf0f79ff2f6b1}{Dump} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, const char $\ast$s\-Header=\char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}\\*
+$<$ \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$\\*
+, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t}, \hyperlink{structIdentityHash__fn}{Identity\-Hash\-\_\-fn}, 32 $>$ \hyperlink{classCSphTransformation_ac577c5486ae52a9b956ca6974fa77ab6}{Hash\-Similar\-\_\-t}
+\item 
+typedef bool($\ast$ \hyperlink{classCSphTransformation_a4dd48bef2df238bb92404413ebdaf62d}{Checker\-\_\-fn} )(const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCSphTransformation_a4ae30cdab92b2554e3f3900ba9623495}{Dump} ()
+\item 
+void \hyperlink{classCSphTransformation_abdfe91fb0965ce72e0fadf371317320d}{Set\-Costs} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-Nodes)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphTransformation_a8c7f605c26b3e9f4f6fa9a8416a44a07}{Get\-Weakest\-Index} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-Nodes)
+\item 
+{\footnotesize template$<$typename Group , typename Sub\-Group $>$ }\\void \hyperlink{classCSphTransformation_a7282eaf26946293ec43c1f7324b3f458}{Tree\-Collect\-Info} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Parent, \hyperlink{classCSphTransformation_a4dd48bef2df238bb92404413ebdaf62d}{Checker\-\_\-fn} pfn\-Checker)
+\item 
+{\footnotesize template$<$typename Group , typename Sub\-Group $>$ }\\bool \hyperlink{classCSphTransformation_ac9662ee6c2b7a5a7789fbd92427fd821}{Collect\-Info} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Parent, \hyperlink{classCSphTransformation_a4dd48bef2df238bb92404413ebdaf62d}{Checker\-\_\-fn} pfn\-Checker)
+\item 
+{\footnotesize template$<$typename Excluder , typename Parenter $>$ }\\bool \hyperlink{classCSphTransformation_a70d1fcce7428a924341d97bdd6371953}{Collect\-Related\-Nodes} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-Similar\-Nodes)
+\item 
+bool \hyperlink{classCSphTransformation_a358e33dbe43a59898c456a6258492c8f}{Transform\-Common\-Not} ()
+\item 
+bool \hyperlink{classCSphTransformation_a33ada49b2aed4124a9d14478aedd4fa3}{Make\-Transform\-Common\-Not} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-Similar\-Nodes)
+\item 
+bool \hyperlink{classCSphTransformation_ac273e38f226a3d7f495af9036fba7e9b}{Transform\-Common\-Compound\-Not} ()
+\item 
+bool \hyperlink{classCSphTransformation_ae54a324f23c9b053d99baeadf832f129}{Make\-Transform\-Common\-Compound\-Not} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-Similar\-Nodes)
+\item 
+bool \hyperlink{classCSphTransformation_a4423f7a7da713db07059413fcf989819}{Transform\-Common\-Sub\-Term} ()
+\item 
+void \hyperlink{classCSphTransformation_aa2572a8856254cb37a3bc1ed09da8d36}{Make\-Transform\-Common\-Sub\-Term} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-X)
+\item 
+bool \hyperlink{classCSphTransformation_aa0ca5b0e3e6987611d5a2a3cc8e06890}{Transform\-Common\-Keywords} ()
+\item 
+bool \hyperlink{classCSphTransformation_ac6e875fd4024d231ad9178a4cddb6d5f}{Transform\-Common\-Phrase} ()
+\item 
+void \hyperlink{classCSphTransformation_a2c12cd3a5bb09022db8a716c76b5e51f}{Make\-Transform\-Common\-Phrase} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-Common\-Nodes, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Common\-Len, bool b\-Head\-Is\-Common)
+\item 
+bool \hyperlink{classCSphTransformation_a22f2fd7119d9928e1375628e6bc14a7f}{Transform\-Common\-And\-Not\-Factor} ()
+\item 
+bool \hyperlink{classCSphTransformation_a639ed326d99e11646edd04163793450c}{Make\-Transform\-Common\-And\-Not\-Factor} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-Similar\-Nodes)
+\item 
+bool \hyperlink{classCSphTransformation_ad4ab477537209c023a94f10df30c7949}{Transform\-Common\-Or\-Not} ()
+\item 
+bool \hyperlink{classCSphTransformation_ae864e8b4d4349e3f134cdbfb6ceae098}{Make\-Transform\-Common\-Or\-Not} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \&d\-Similar\-Nodes)
+\item 
+bool \hyperlink{classCSphTransformation_ab89941fadea01e74e93a8f278f9dfe8a}{Transform\-Hung\-Operand} ()
+\item 
+bool \hyperlink{classCSphTransformation_a18b4935d0c2bf3815365543401e52f75}{Transform\-Excess\-Brackets} ()
+\item 
+bool \hyperlink{classCSphTransformation_ad572551c4b16c15fb55e12ade9bc2e9a}{Transform\-Excess\-And\-Not} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classCSphTransformation_a789782fc2ff4f5ffc07b8dc7fac2cd72}{Check\-Common\-Not} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static bool \hyperlink{classCSphTransformation_af6eb75405c566736ddccc428657bb89d}{Check\-Common\-Compound\-Not} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static bool \hyperlink{classCSphTransformation_a82b63f34c160cccc25ef343624f4fa13}{Check\-Common\-Sub\-Term} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static bool \hyperlink{classCSphTransformation_a0127dc64febc9336dedba787cc20a3a1}{Check\-Common\-Keywords} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static bool \hyperlink{classCSphTransformation_a630204a4a8f30aaaf5afbbac52db0759}{Check\-Common\-Phrase} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static bool \hyperlink{classCSphTransformation_ad6a31470c49c62470e6f449fc122e05e}{Check\-Common\-And\-Not\-Factor} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static bool \hyperlink{classCSphTransformation_adf6d3e4db3d2c4200c9e5013bbf37d78}{Check\-Common\-Or\-Not} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static bool \hyperlink{classCSphTransformation_a84b0faf19d5ff36bb0e1fa6a87a82aeb}{Check\-Hung\-Operand} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static bool \hyperlink{classCSphTransformation_a5abfd421dd83d2599fc7a5615a201bc1}{Check\-Excess\-Brackets} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\item 
+static bool \hyperlink{classCSphTransformation_a7d1e5c33e2b5972e406f49d84c3073c3}{Check\-Excess\-And\-Not} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}$<$ \hyperlink{classCSphTransformation_ac577c5486ae52a9b956ca6974fa77ab6}{Hash\-Similar\-\_\-t}, \\*
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t}, \hyperlink{structIdentityHash__fn}{Identity\-Hash\-\_\-fn}, 256 $>$ \hyperlink{classCSphTransformation_a86a5ccda35fdd2db173ed3b866f2b835}{m\-\_\-h\-Similar}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ $>$ \hyperlink{classCSphTransformation_a0b7851b1247b258d6cc257167bb208bf}{m\-\_\-d\-Related\-Nodes}
+\item 
+const \hyperlink{structISphKeywordsStat}{I\-Sph\-Keywords\-Stat} $\ast$ \hyperlink{classCSphTransformation_a30ec948b31d378614b00f6846eb86810}{m\-\_\-p\-Keywords}
+\item 
+\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$$\ast$ \hyperlink{classCSphTransformation_a22e11aba813c6cd8fccd1268da6f099e}{m\-\_\-pp\-Root}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classCSphTransformation_aeca4dfd2d1c8e70ca26e68eeb9957b8b}{C\-O\-N\-S\-T\-\_\-\-G\-R\-O\-U\-P\-\_\-\-F\-A\-C\-T\-O\-R} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classCSphTransformation_a4dd48bef2df238bb92404413ebdaf62d}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Checker\-\_\-fn@{Checker\-\_\-fn}}
+\index{Checker\-\_\-fn@{Checker\-\_\-fn}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Checker\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef bool( $\ast$ C\-Sph\-Transformation\-::\-Checker\-\_\-fn)(const {\bf X\-Q\-Node\-\_\-t} $\ast$)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a4dd48bef2df238bb92404413ebdaf62d}
+\hypertarget{classCSphTransformation_ac577c5486ae52a9b956ca6974fa77ab6}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Hash\-Similar\-\_\-t@{Hash\-Similar\-\_\-t}}
+\index{Hash\-Similar\-\_\-t@{Hash\-Similar\-\_\-t}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Hash\-Similar\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf C\-Sph\-Ordered\-Hash}$<$ {\bf C\-Sph\-Vector}$<${\bf X\-Q\-Node\-\_\-t}$\ast$$>$, {\bf uint64\-\_\-t}, {\bf Identity\-Hash\-\_\-fn}, 32$>$ {\bf C\-Sph\-Transformation\-::\-Hash\-Similar\-\_\-t}\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_ac577c5486ae52a9b956ca6974fa77ab6}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphTransformation_ae7b815b4872b85ce40b51e64565b1be9}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!C\-Sph\-Transformation@{C\-Sph\-Transformation}}
+\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{C\-Sph\-Transformation}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Transformation\-::\-C\-Sph\-Transformation (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$$\ast$}]{pp\-Root, }
+\item[{const {\bf I\-Sph\-Keywords\-Stat} $\ast$}]{p\-Keywords}
+\end{DoxyParamCaption}
+)}}\label{classCSphTransformation_ae7b815b4872b85ce40b51e64565b1be9}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphTransformation_ad6a31470c49c62470e6f449fc122e05e}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Check\-Common\-And\-Not\-Factor@{Check\-Common\-And\-Not\-Factor}}
+\index{Check\-Common\-And\-Not\-Factor@{Check\-Common\-And\-Not\-Factor}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Check\-Common\-And\-Not\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Check\-Common\-And\-Not\-Factor (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_ad6a31470c49c62470e6f449fc122e05e}
+\hypertarget{classCSphTransformation_af6eb75405c566736ddccc428657bb89d}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Check\-Common\-Compound\-Not@{Check\-Common\-Compound\-Not}}
+\index{Check\-Common\-Compound\-Not@{Check\-Common\-Compound\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Check\-Common\-Compound\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Check\-Common\-Compound\-Not (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_af6eb75405c566736ddccc428657bb89d}
+\hypertarget{classCSphTransformation_a0127dc64febc9336dedba787cc20a3a1}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Check\-Common\-Keywords@{Check\-Common\-Keywords}}
+\index{Check\-Common\-Keywords@{Check\-Common\-Keywords}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Check\-Common\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Check\-Common\-Keywords (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_a0127dc64febc9336dedba787cc20a3a1}
+\hypertarget{classCSphTransformation_a789782fc2ff4f5ffc07b8dc7fac2cd72}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Check\-Common\-Not@{Check\-Common\-Not}}
+\index{Check\-Common\-Not@{Check\-Common\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Check\-Common\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Check\-Common\-Not (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_a789782fc2ff4f5ffc07b8dc7fac2cd72}
+\hypertarget{classCSphTransformation_adf6d3e4db3d2c4200c9e5013bbf37d78}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Check\-Common\-Or\-Not@{Check\-Common\-Or\-Not}}
+\index{Check\-Common\-Or\-Not@{Check\-Common\-Or\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Check\-Common\-Or\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Check\-Common\-Or\-Not (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_adf6d3e4db3d2c4200c9e5013bbf37d78}
+\hypertarget{classCSphTransformation_a630204a4a8f30aaaf5afbbac52db0759}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Check\-Common\-Phrase@{Check\-Common\-Phrase}}
+\index{Check\-Common\-Phrase@{Check\-Common\-Phrase}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Check\-Common\-Phrase}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Check\-Common\-Phrase (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_a630204a4a8f30aaaf5afbbac52db0759}
+\hypertarget{classCSphTransformation_a82b63f34c160cccc25ef343624f4fa13}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Check\-Common\-Sub\-Term@{Check\-Common\-Sub\-Term}}
+\index{Check\-Common\-Sub\-Term@{Check\-Common\-Sub\-Term}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Check\-Common\-Sub\-Term}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Check\-Common\-Sub\-Term (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_a82b63f34c160cccc25ef343624f4fa13}
+\hypertarget{classCSphTransformation_a7d1e5c33e2b5972e406f49d84c3073c3}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Check\-Excess\-And\-Not@{Check\-Excess\-And\-Not}}
+\index{Check\-Excess\-And\-Not@{Check\-Excess\-And\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Check\-Excess\-And\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Check\-Excess\-And\-Not (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_a7d1e5c33e2b5972e406f49d84c3073c3}
+\hypertarget{classCSphTransformation_a5abfd421dd83d2599fc7a5615a201bc1}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Check\-Excess\-Brackets@{Check\-Excess\-Brackets}}
+\index{Check\-Excess\-Brackets@{Check\-Excess\-Brackets}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Check\-Excess\-Brackets}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Check\-Excess\-Brackets (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_a5abfd421dd83d2599fc7a5615a201bc1}
+\hypertarget{classCSphTransformation_a84b0faf19d5ff36bb0e1fa6a87a82aeb}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Check\-Hung\-Operand@{Check\-Hung\-Operand}}
+\index{Check\-Hung\-Operand@{Check\-Hung\-Operand}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Check\-Hung\-Operand}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Check\-Hung\-Operand (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_a84b0faf19d5ff36bb0e1fa6a87a82aeb}
+\hypertarget{classCSphTransformation_ac9662ee6c2b7a5a7789fbd92427fd821}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Collect\-Info@{Collect\-Info}}
+\index{Collect\-Info@{Collect\-Info}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Collect\-Info}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Group , typename Sub\-Group $>$ bool C\-Sph\-Transformation\-::\-Collect\-Info (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Parent, }
+\item[{{\bf Checker\-\_\-fn}}]{pfn\-Checker}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphTransformation_ac9662ee6c2b7a5a7789fbd92427fd821}
+\hypertarget{classCSphTransformation_a70d1fcce7428a924341d97bdd6371953}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Collect\-Related\-Nodes@{Collect\-Related\-Nodes}}
+\index{Collect\-Related\-Nodes@{Collect\-Related\-Nodes}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Collect\-Related\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Excluder , typename Parenter $>$ bool C\-Sph\-Transformation\-::\-Collect\-Related\-Nodes (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-Similar\-Nodes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphTransformation_a70d1fcce7428a924341d97bdd6371953}
+\hypertarget{classCSphTransformation_a63475b8035e00036af9cf0f79ff2f6b1}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Dump@{Dump}}
+\index{Dump@{Dump}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Dump}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Transformation\-::\-Dump (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{const char $\ast$}]{s\-Header = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphTransformation_a63475b8035e00036af9cf0f79ff2f6b1}
+\hypertarget{classCSphTransformation_a4ae30cdab92b2554e3f3900ba9623495}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Dump@{Dump}}
+\index{Dump@{Dump}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Dump}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Transformation\-::\-Dump (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a4ae30cdab92b2554e3f3900ba9623495}
+\hypertarget{classCSphTransformation_a8c7f605c26b3e9f4f6fa9a8416a44a07}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Get\-Weakest\-Index@{Get\-Weakest\-Index}}
+\index{Get\-Weakest\-Index@{Get\-Weakest\-Index}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Get\-Weakest\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Transformation\-::\-Get\-Weakest\-Index (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-Nodes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a8c7f605c26b3e9f4f6fa9a8416a44a07}
+\hypertarget{classCSphTransformation_a639ed326d99e11646edd04163793450c}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Make\-Transform\-Common\-And\-Not\-Factor@{Make\-Transform\-Common\-And\-Not\-Factor}}
+\index{Make\-Transform\-Common\-And\-Not\-Factor@{Make\-Transform\-Common\-And\-Not\-Factor}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Make\-Transform\-Common\-And\-Not\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Make\-Transform\-Common\-And\-Not\-Factor (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-Similar\-Nodes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a639ed326d99e11646edd04163793450c}
+\hypertarget{classCSphTransformation_ae54a324f23c9b053d99baeadf832f129}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Make\-Transform\-Common\-Compound\-Not@{Make\-Transform\-Common\-Compound\-Not}}
+\index{Make\-Transform\-Common\-Compound\-Not@{Make\-Transform\-Common\-Compound\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Make\-Transform\-Common\-Compound\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Make\-Transform\-Common\-Compound\-Not (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-Similar\-Nodes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_ae54a324f23c9b053d99baeadf832f129}
+\hypertarget{classCSphTransformation_a33ada49b2aed4124a9d14478aedd4fa3}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Make\-Transform\-Common\-Not@{Make\-Transform\-Common\-Not}}
+\index{Make\-Transform\-Common\-Not@{Make\-Transform\-Common\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Make\-Transform\-Common\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Make\-Transform\-Common\-Not (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-Similar\-Nodes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a33ada49b2aed4124a9d14478aedd4fa3}
+\hypertarget{classCSphTransformation_ae864e8b4d4349e3f134cdbfb6ceae098}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Make\-Transform\-Common\-Or\-Not@{Make\-Transform\-Common\-Or\-Not}}
+\index{Make\-Transform\-Common\-Or\-Not@{Make\-Transform\-Common\-Or\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Make\-Transform\-Common\-Or\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Make\-Transform\-Common\-Or\-Not (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-Similar\-Nodes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_ae864e8b4d4349e3f134cdbfb6ceae098}
+\hypertarget{classCSphTransformation_a2c12cd3a5bb09022db8a716c76b5e51f}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Make\-Transform\-Common\-Phrase@{Make\-Transform\-Common\-Phrase}}
+\index{Make\-Transform\-Common\-Phrase@{Make\-Transform\-Common\-Phrase}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Make\-Transform\-Common\-Phrase}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Transformation\-::\-Make\-Transform\-Common\-Phrase (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-Common\-Nodes, }
+\item[{{\bf int}}]{i\-Common\-Len, }
+\item[{bool}]{b\-Head\-Is\-Common}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a2c12cd3a5bb09022db8a716c76b5e51f}
+\hypertarget{classCSphTransformation_aa2572a8856254cb37a3bc1ed09da8d36}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Make\-Transform\-Common\-Sub\-Term@{Make\-Transform\-Common\-Sub\-Term}}
+\index{Make\-Transform\-Common\-Sub\-Term@{Make\-Transform\-Common\-Sub\-Term}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Make\-Transform\-Common\-Sub\-Term}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Transformation\-::\-Make\-Transform\-Common\-Sub\-Term (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-X}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_aa2572a8856254cb37a3bc1ed09da8d36}
+\hypertarget{classCSphTransformation_abdfe91fb0965ce72e0fadf371317320d}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Set\-Costs@{Set\-Costs}}
+\index{Set\-Costs@{Set\-Costs}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Set\-Costs}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Transformation\-::\-Set\-Costs (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf X\-Q\-Node\-\_\-t} $\ast$ $>$ \&}]{d\-Nodes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_abdfe91fb0965ce72e0fadf371317320d}
+\hypertarget{classCSphTransformation_ac1003936970b7a1a7b479ee2f99f8e17}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform@{Transform}}
+\index{Transform@{Transform}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Transformation\-::\-Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphTransformation_ac1003936970b7a1a7b479ee2f99f8e17}
+\hypertarget{classCSphTransformation_a22f2fd7119d9928e1375628e6bc14a7f}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform\-Common\-And\-Not\-Factor@{Transform\-Common\-And\-Not\-Factor}}
+\index{Transform\-Common\-And\-Not\-Factor@{Transform\-Common\-And\-Not\-Factor}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform\-Common\-And\-Not\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Transform\-Common\-And\-Not\-Factor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a22f2fd7119d9928e1375628e6bc14a7f}
+\hypertarget{classCSphTransformation_ac273e38f226a3d7f495af9036fba7e9b}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform\-Common\-Compound\-Not@{Transform\-Common\-Compound\-Not}}
+\index{Transform\-Common\-Compound\-Not@{Transform\-Common\-Compound\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform\-Common\-Compound\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Transform\-Common\-Compound\-Not (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_ac273e38f226a3d7f495af9036fba7e9b}
+\hypertarget{classCSphTransformation_aa0ca5b0e3e6987611d5a2a3cc8e06890}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform\-Common\-Keywords@{Transform\-Common\-Keywords}}
+\index{Transform\-Common\-Keywords@{Transform\-Common\-Keywords}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform\-Common\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Transform\-Common\-Keywords (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_aa0ca5b0e3e6987611d5a2a3cc8e06890}
+\hypertarget{classCSphTransformation_a358e33dbe43a59898c456a6258492c8f}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform\-Common\-Not@{Transform\-Common\-Not}}
+\index{Transform\-Common\-Not@{Transform\-Common\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform\-Common\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Transform\-Common\-Not (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a358e33dbe43a59898c456a6258492c8f}
+\hypertarget{classCSphTransformation_ad4ab477537209c023a94f10df30c7949}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform\-Common\-Or\-Not@{Transform\-Common\-Or\-Not}}
+\index{Transform\-Common\-Or\-Not@{Transform\-Common\-Or\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform\-Common\-Or\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Transform\-Common\-Or\-Not (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_ad4ab477537209c023a94f10df30c7949}
+\hypertarget{classCSphTransformation_ac6e875fd4024d231ad9178a4cddb6d5f}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform\-Common\-Phrase@{Transform\-Common\-Phrase}}
+\index{Transform\-Common\-Phrase@{Transform\-Common\-Phrase}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform\-Common\-Phrase}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Transform\-Common\-Phrase (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_ac6e875fd4024d231ad9178a4cddb6d5f}
+\hypertarget{classCSphTransformation_a4423f7a7da713db07059413fcf989819}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform\-Common\-Sub\-Term@{Transform\-Common\-Sub\-Term}}
+\index{Transform\-Common\-Sub\-Term@{Transform\-Common\-Sub\-Term}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform\-Common\-Sub\-Term}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Transform\-Common\-Sub\-Term (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a4423f7a7da713db07059413fcf989819}
+\hypertarget{classCSphTransformation_ad572551c4b16c15fb55e12ade9bc2e9a}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform\-Excess\-And\-Not@{Transform\-Excess\-And\-Not}}
+\index{Transform\-Excess\-And\-Not@{Transform\-Excess\-And\-Not}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform\-Excess\-And\-Not}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Transform\-Excess\-And\-Not (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_ad572551c4b16c15fb55e12ade9bc2e9a}
+\hypertarget{classCSphTransformation_a18b4935d0c2bf3815365543401e52f75}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform\-Excess\-Brackets@{Transform\-Excess\-Brackets}}
+\index{Transform\-Excess\-Brackets@{Transform\-Excess\-Brackets}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform\-Excess\-Brackets}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Transform\-Excess\-Brackets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a18b4935d0c2bf3815365543401e52f75}
+\hypertarget{classCSphTransformation_ab89941fadea01e74e93a8f278f9dfe8a}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Transform\-Hung\-Operand@{Transform\-Hung\-Operand}}
+\index{Transform\-Hung\-Operand@{Transform\-Hung\-Operand}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Transform\-Hung\-Operand}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Transformation\-::\-Transform\-Hung\-Operand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_ab89941fadea01e74e93a8f278f9dfe8a}
+\hypertarget{classCSphTransformation_a7282eaf26946293ec43c1f7324b3f458}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!Tree\-Collect\-Info@{Tree\-Collect\-Info}}
+\index{Tree\-Collect\-Info@{Tree\-Collect\-Info}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{Tree\-Collect\-Info}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Group , typename Sub\-Group $>$ void C\-Sph\-Transformation\-::\-Tree\-Collect\-Info (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Parent, }
+\item[{{\bf Checker\-\_\-fn}}]{pfn\-Checker}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphTransformation_a7282eaf26946293ec43c1f7324b3f458}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphTransformation_aeca4dfd2d1c8e70ca26e68eeb9957b8b}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!C\-O\-N\-S\-T\-\_\-\-G\-R\-O\-U\-P\-\_\-\-F\-A\-C\-T\-O\-R@{C\-O\-N\-S\-T\-\_\-\-G\-R\-O\-U\-P\-\_\-\-F\-A\-C\-T\-O\-R}}
+\index{C\-O\-N\-S\-T\-\_\-\-G\-R\-O\-U\-P\-\_\-\-F\-A\-C\-T\-O\-R@{C\-O\-N\-S\-T\-\_\-\-G\-R\-O\-U\-P\-\_\-\-F\-A\-C\-T\-O\-R}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{C\-O\-N\-S\-T\-\_\-\-G\-R\-O\-U\-P\-\_\-\-F\-A\-C\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint64\-\_\-t} C\-Sph\-Transformation\-::\-C\-O\-N\-S\-T\-\_\-\-G\-R\-O\-U\-P\-\_\-\-F\-A\-C\-T\-O\-R = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCSphTransformation_aeca4dfd2d1c8e70ca26e68eeb9957b8b}
+\hypertarget{classCSphTransformation_a0b7851b1247b258d6cc257167bb208bf}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!m\-\_\-d\-Related\-Nodes@{m\-\_\-d\-Related\-Nodes}}
+\index{m\-\_\-d\-Related\-Nodes@{m\-\_\-d\-Related\-Nodes}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{m\-\_\-d\-Related\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf X\-Q\-Node\-\_\-t} $\ast$$>$ C\-Sph\-Transformation\-::m\-\_\-d\-Related\-Nodes\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a0b7851b1247b258d6cc257167bb208bf}
+\hypertarget{classCSphTransformation_a86a5ccda35fdd2db173ed3b866f2b835}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!m\-\_\-h\-Similar@{m\-\_\-h\-Similar}}
+\index{m\-\_\-h\-Similar@{m\-\_\-h\-Similar}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{m\-\_\-h\-Similar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Ordered\-Hash}$<$ {\bf Hash\-Similar\-\_\-t}, {\bf uint64\-\_\-t}, {\bf Identity\-Hash\-\_\-fn}, 256 $>$ C\-Sph\-Transformation\-::m\-\_\-h\-Similar\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a86a5ccda35fdd2db173ed3b866f2b835}
+\hypertarget{classCSphTransformation_a30ec948b31d378614b00f6846eb86810}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!m\-\_\-p\-Keywords@{m\-\_\-p\-Keywords}}
+\index{m\-\_\-p\-Keywords@{m\-\_\-p\-Keywords}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{m\-\_\-p\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf I\-Sph\-Keywords\-Stat}$\ast$ C\-Sph\-Transformation\-::m\-\_\-p\-Keywords\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a30ec948b31d378614b00f6846eb86810}
+\hypertarget{classCSphTransformation_a22e11aba813c6cd8fccd1268da6f099e}{\index{C\-Sph\-Transformation@{C\-Sph\-Transformation}!m\-\_\-pp\-Root@{m\-\_\-pp\-Root}}
+\index{m\-\_\-pp\-Root@{m\-\_\-pp\-Root}!CSphTransformation@{C\-Sph\-Transformation}}
+\subsubsection[{m\-\_\-pp\-Root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\-Q\-Node\-\_\-t}$\ast$$\ast$ C\-Sph\-Transformation\-::m\-\_\-pp\-Root\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphTransformation_a22e11aba813c6cd8fccd1268da6f099e}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxquery_8cpp}{sphinxquery.\-cpp}\end{DoxyCompactItemize}

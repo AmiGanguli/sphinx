@@ -1,0 +1,123 @@
+\hypertarget{classCSphConfigSection}{\section{C\-Sph\-Config\-Section Class Reference}
+\label{classCSphConfigSection}\index{C\-Sph\-Config\-Section@{C\-Sph\-Config\-Section}}
+}
+
+
+config section (hash of variant values)  
+
+
+
+
+{\ttfamily \#include $<$sphinxutils.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Config\-Section\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSphConfigSection}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphConfigSection_ab9e07acc5a545ee092586106344a6cdd}{C\-Sph\-Config\-Section} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphConfigSection_ad704d0ca1fcd8fada808b5747ad2a165}{Get\-Int} (const char $\ast$s\-Key, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Default=0) const 
+\begin{DoxyCompactList}\small\item\em get integer option value by key and default value \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classCSphConfigSection_a800c93734f4b6f25282055c02b1d8563}{Get\-Float} (const char $\ast$s\-Key, \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} f\-Default=0.\-0f) const 
+\begin{DoxyCompactList}\small\item\em get float option value by key and default value \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{classCSphConfigSection_a18fa71434c9f5347bcc5f289eb90c8be}{Get\-Str} (const char $\ast$s\-Key, const char $\ast$s\-Default=\char`\"{}\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em get string option value by key and default value \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphConfigSection_a4b3e6779c3145cf2a169acfab4737511}{Get\-Size} (const char $\ast$s\-Key, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Default) const 
+\begin{DoxyCompactList}\small\item\em get size option (plain int, or with K/\-M prefix) value by key and default value \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphConfigSection_a47891c72cf040e8ef4f03e661385e311}{Get\-Size64} (const char $\ast$s\-Key, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Default) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphConfigSection_a9a8617920d78c4feb75f2d5c2b7c7ec4}{m\-\_\-i\-Tag}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+config section (hash of variant values) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphConfigSection_ab9e07acc5a545ee092586106344a6cdd}{\index{C\-Sph\-Config\-Section@{C\-Sph\-Config\-Section}!C\-Sph\-Config\-Section@{C\-Sph\-Config\-Section}}
+\index{C\-Sph\-Config\-Section@{C\-Sph\-Config\-Section}!CSphConfigSection@{C\-Sph\-Config\-Section}}
+\subsubsection[{C\-Sph\-Config\-Section}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Config\-Section\-::\-C\-Sph\-Config\-Section (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphConfigSection_ab9e07acc5a545ee092586106344a6cdd}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphConfigSection_a800c93734f4b6f25282055c02b1d8563}{\index{C\-Sph\-Config\-Section@{C\-Sph\-Config\-Section}!Get\-Float@{Get\-Float}}
+\index{Get\-Float@{Get\-Float}!CSphConfigSection@{C\-Sph\-Config\-Section}}
+\subsubsection[{Get\-Float}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} C\-Sph\-Config\-Section\-::\-Get\-Float (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key, }
+\item[{{\bf float}}]{f\-Default = {\ttfamily 0.0f}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphConfigSection_a800c93734f4b6f25282055c02b1d8563}
+
+
+get float option value by key and default value 
+
+\hypertarget{classCSphConfigSection_ad704d0ca1fcd8fada808b5747ad2a165}{\index{C\-Sph\-Config\-Section@{C\-Sph\-Config\-Section}!Get\-Int@{Get\-Int}}
+\index{Get\-Int@{Get\-Int}!CSphConfigSection@{C\-Sph\-Config\-Section}}
+\subsubsection[{Get\-Int}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Config\-Section\-::\-Get\-Int (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key, }
+\item[{{\bf int}}]{i\-Default = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphConfigSection_ad704d0ca1fcd8fada808b5747ad2a165}
+
+
+get integer option value by key and default value 
+
+\hypertarget{classCSphConfigSection_a4b3e6779c3145cf2a169acfab4737511}{\index{C\-Sph\-Config\-Section@{C\-Sph\-Config\-Section}!Get\-Size@{Get\-Size}}
+\index{Get\-Size@{Get\-Size}!CSphConfigSection@{C\-Sph\-Config\-Section}}
+\subsubsection[{Get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Config\-Section\-::\-Get\-Size (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key, }
+\item[{{\bf int}}]{i\-Default}
+\end{DoxyParamCaption}
+) const}}\label{classCSphConfigSection_a4b3e6779c3145cf2a169acfab4737511}
+
+
+get size option (plain int, or with K/\-M prefix) value by key and default value 
+
+\hypertarget{classCSphConfigSection_a47891c72cf040e8ef4f03e661385e311}{\index{C\-Sph\-Config\-Section@{C\-Sph\-Config\-Section}!Get\-Size64@{Get\-Size64}}
+\index{Get\-Size64@{Get\-Size64}!CSphConfigSection@{C\-Sph\-Config\-Section}}
+\subsubsection[{Get\-Size64}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Config\-Section\-::\-Get\-Size64 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key, }
+\item[{{\bf int64\-\_\-t}}]{i\-Default}
+\end{DoxyParamCaption}
+) const}}\label{classCSphConfigSection_a47891c72cf040e8ef4f03e661385e311}
+\hypertarget{classCSphConfigSection_a18fa71434c9f5347bcc5f289eb90c8be}{\index{C\-Sph\-Config\-Section@{C\-Sph\-Config\-Section}!Get\-Str@{Get\-Str}}
+\index{Get\-Str@{Get\-Str}!CSphConfigSection@{C\-Sph\-Config\-Section}}
+\subsubsection[{Get\-Str}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ C\-Sph\-Config\-Section\-::\-Get\-Str (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Key, }
+\item[{const char $\ast$}]{s\-Default = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphConfigSection_a18fa71434c9f5347bcc5f289eb90c8be}
+
+
+get string option value by key and default value 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphConfigSection_a9a8617920d78c4feb75f2d5c2b7c7ec4}{\index{C\-Sph\-Config\-Section@{C\-Sph\-Config\-Section}!m\-\_\-i\-Tag@{m\-\_\-i\-Tag}}
+\index{m\-\_\-i\-Tag@{m\-\_\-i\-Tag}!CSphConfigSection@{C\-Sph\-Config\-Section}}
+\subsubsection[{m\-\_\-i\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Config\-Section\-::m\-\_\-i\-Tag}}\label{classCSphConfigSection_a9a8617920d78c4feb75f2d5c2b7c7ec4}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxutils_8h}{sphinxutils.\-h}\item 
+src/\hyperlink{sphinxutils_8cpp}{sphinxutils.\-cpp}\end{DoxyCompactItemize}

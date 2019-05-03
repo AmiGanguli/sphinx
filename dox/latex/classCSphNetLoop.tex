@@ -1,0 +1,140 @@
+\hypertarget{classCSphNetLoop}{\section{C\-Sph\-Net\-Loop Class Reference}
+\label{classCSphNetLoop}\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCSphNetLoop_a8c747409d637f464804144052e4132a2}{Add\-Action} (\hyperlink{structISphNetAction}{I\-Sph\-Net\-Action} $\ast$p\-Elem)
+\item 
+void \hyperlink{classCSphNetLoop_a31108fb8e5481ea91f926bd9ce60eb81}{Remove\-Iter\-Event} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classCSphNetLoop_a65ea7c20ab049f2e369b20e585f98590}{Thd\-Tick} (void $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphNetLoop_af12e17a09dcd10377cfa6010295981ac}{m\-\_\-u\-Tick}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphNetLoop_a7b5014e679cddc6c4e3a6def4dff0271}{C\-Sph\-Net\-Loop} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structListener__t}{Listener\-\_\-t} $>$ \&d\-Listeners)
+\item 
+\hyperlink{classCSphNetLoop_ae6e0e20803d610c74f04d9985681d21c}{$\sim$\-C\-Sph\-Net\-Loop} ()
+\item 
+void \hyperlink{classCSphNetLoop_adea417f83046603d7506b6db306c4b5e}{Tick} ()
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphNetLoop_a8312e745b44a21cdb19bf44602dbf859}{Remove\-Outdated} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} tm\-Next\-Check, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphNetAction}{I\-Sph\-Net\-Action} $\ast$ $>$ \&d\-Cleanup)
+\item 
+void \hyperlink{classCSphNetLoop_a4356fc3b4044d19fa49ce7c5a63516fe}{Cleanup} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphNetAction}{I\-Sph\-Net\-Action} $\ast$ $>$ \&d\-Cleanup)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphNetAction}{I\-Sph\-Net\-Action} $\ast$ $>$ \hyperlink{classCSphNetLoop_ad3d1854c663606739d14dfd7f96782e0}{m\-\_\-d\-Work\-External}
+\item 
+volatile bool \hyperlink{classCSphNetLoop_aa36a2fe80bfd133e77af0f699c455f81}{m\-\_\-b\-Got\-External}
+\item 
+\hyperlink{classCSphWakeupEvent}{C\-Sph\-Wakeup\-Event} $\ast$ \hyperlink{classCSphNetLoop_af9d0995cce3f8a59434c126c6d8fa95d}{m\-\_\-p\-Wakeup\-External}
+\item 
+C\-Sph\-Mutex \hyperlink{classCSphNetLoop_a2ca32440d5457093b9c9f16d9ba724dd}{m\-\_\-t\-Ext\-Lock}
+\item 
+\hyperlink{structLoopProfiler__t}{Loop\-Profiler\-\_\-t} \hyperlink{classCSphNetLoop_a1d9f3234aaa76cf5121f0ceb12b47974}{m\-\_\-t\-Prf}
+\item 
+\hyperlink{classNetActionsPoller}{Net\-Actions\-Poller} \hyperlink{classCSphNetLoop_a15ed08f689873d6f9fa79ce8c0cb8fc7}{m\-\_\-t\-Poller}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphNetLoop_a7b5014e679cddc6c4e3a6def4dff0271}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}}
+\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{C\-Sph\-Net\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Net\-Loop\-::\-C\-Sph\-Net\-Loop (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Listener\-\_\-t} $>$ \&}]{d\-Listeners}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [private]}}}\label{classCSphNetLoop_a7b5014e679cddc6c4e3a6def4dff0271}
+\hypertarget{classCSphNetLoop_ae6e0e20803d610c74f04d9985681d21c}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!$\sim$\-C\-Sph\-Net\-Loop@{$\sim$\-C\-Sph\-Net\-Loop}}
+\index{$\sim$\-C\-Sph\-Net\-Loop@{$\sim$\-C\-Sph\-Net\-Loop}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{$\sim$\-C\-Sph\-Net\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Net\-Loop\-::$\sim$\-C\-Sph\-Net\-Loop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphNetLoop_ae6e0e20803d610c74f04d9985681d21c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphNetLoop_a8c747409d637f464804144052e4132a2}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!Add\-Action@{Add\-Action}}
+\index{Add\-Action@{Add\-Action}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{Add\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Net\-Loop\-::\-Add\-Action (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Net\-Action} $\ast$}]{p\-Elem}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphNetLoop_a8c747409d637f464804144052e4132a2}
+\hypertarget{classCSphNetLoop_a4356fc3b4044d19fa49ce7c5a63516fe}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!Cleanup@{Cleanup}}
+\index{Cleanup@{Cleanup}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{Cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Net\-Loop\-::\-Cleanup (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf I\-Sph\-Net\-Action} $\ast$ $>$ \&}]{d\-Cleanup}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphNetLoop_a4356fc3b4044d19fa49ce7c5a63516fe}
+\hypertarget{classCSphNetLoop_a31108fb8e5481ea91f926bd9ce60eb81}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!Remove\-Iter\-Event@{Remove\-Iter\-Event}}
+\index{Remove\-Iter\-Event@{Remove\-Iter\-Event}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{Remove\-Iter\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Net\-Loop\-::\-Remove\-Iter\-Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphNetLoop_a31108fb8e5481ea91f926bd9ce60eb81}
+\hypertarget{classCSphNetLoop_a8312e745b44a21cdb19bf44602dbf859}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!Remove\-Outdated@{Remove\-Outdated}}
+\index{Remove\-Outdated@{Remove\-Outdated}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{Remove\-Outdated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Net\-Loop\-::\-Remove\-Outdated (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{tm\-Next\-Check, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf I\-Sph\-Net\-Action} $\ast$ $>$ \&}]{d\-Cleanup}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphNetLoop_a8312e745b44a21cdb19bf44602dbf859}
+\hypertarget{classCSphNetLoop_a65ea7c20ab049f2e369b20e585f98590}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!Thd\-Tick@{Thd\-Tick}}
+\index{Thd\-Tick@{Thd\-Tick}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{Thd\-Tick}]{\setlength{\rightskip}{0pt plus 5cm}static void C\-Sph\-Net\-Loop\-::\-Thd\-Tick (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCSphNetLoop_a65ea7c20ab049f2e369b20e585f98590}
+\hypertarget{classCSphNetLoop_adea417f83046603d7506b6db306c4b5e}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!Tick@{Tick}}
+\index{Tick@{Tick}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{Tick}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Net\-Loop\-::\-Tick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCSphNetLoop_adea417f83046603d7506b6db306c4b5e}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphNetLoop_aa36a2fe80bfd133e77af0f699c455f81}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!m\-\_\-b\-Got\-External@{m\-\_\-b\-Got\-External}}
+\index{m\-\_\-b\-Got\-External@{m\-\_\-b\-Got\-External}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{m\-\_\-b\-Got\-External}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool C\-Sph\-Net\-Loop\-::m\-\_\-b\-Got\-External\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphNetLoop_aa36a2fe80bfd133e77af0f699c455f81}
+\hypertarget{classCSphNetLoop_ad3d1854c663606739d14dfd7f96782e0}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!m\-\_\-d\-Work\-External@{m\-\_\-d\-Work\-External}}
+\index{m\-\_\-d\-Work\-External@{m\-\_\-d\-Work\-External}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{m\-\_\-d\-Work\-External}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf I\-Sph\-Net\-Action} $\ast$$>$ C\-Sph\-Net\-Loop\-::m\-\_\-d\-Work\-External\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphNetLoop_ad3d1854c663606739d14dfd7f96782e0}
+\hypertarget{classCSphNetLoop_af9d0995cce3f8a59434c126c6d8fa95d}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!m\-\_\-p\-Wakeup\-External@{m\-\_\-p\-Wakeup\-External}}
+\index{m\-\_\-p\-Wakeup\-External@{m\-\_\-p\-Wakeup\-External}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{m\-\_\-p\-Wakeup\-External}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Wakeup\-Event}$\ast$ C\-Sph\-Net\-Loop\-::m\-\_\-p\-Wakeup\-External\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphNetLoop_af9d0995cce3f8a59434c126c6d8fa95d}
+\hypertarget{classCSphNetLoop_a2ca32440d5457093b9c9f16d9ba724dd}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!m\-\_\-t\-Ext\-Lock@{m\-\_\-t\-Ext\-Lock}}
+\index{m\-\_\-t\-Ext\-Lock@{m\-\_\-t\-Ext\-Lock}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{m\-\_\-t\-Ext\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Mutex C\-Sph\-Net\-Loop\-::m\-\_\-t\-Ext\-Lock\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphNetLoop_a2ca32440d5457093b9c9f16d9ba724dd}
+\hypertarget{classCSphNetLoop_a15ed08f689873d6f9fa79ce8c0cb8fc7}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!m\-\_\-t\-Poller@{m\-\_\-t\-Poller}}
+\index{m\-\_\-t\-Poller@{m\-\_\-t\-Poller}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{m\-\_\-t\-Poller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\-Actions\-Poller} C\-Sph\-Net\-Loop\-::m\-\_\-t\-Poller\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphNetLoop_a15ed08f689873d6f9fa79ce8c0cb8fc7}
+\hypertarget{classCSphNetLoop_a1d9f3234aaa76cf5121f0ceb12b47974}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!m\-\_\-t\-Prf@{m\-\_\-t\-Prf}}
+\index{m\-\_\-t\-Prf@{m\-\_\-t\-Prf}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{m\-\_\-t\-Prf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Loop\-Profiler\-\_\-t} C\-Sph\-Net\-Loop\-::m\-\_\-t\-Prf\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphNetLoop_a1d9f3234aaa76cf5121f0ceb12b47974}
+\hypertarget{classCSphNetLoop_af12e17a09dcd10377cfa6010295981ac}{\index{C\-Sph\-Net\-Loop@{C\-Sph\-Net\-Loop}!m\-\_\-u\-Tick@{m\-\_\-u\-Tick}}
+\index{m\-\_\-u\-Tick@{m\-\_\-u\-Tick}!CSphNetLoop@{C\-Sph\-Net\-Loop}}
+\subsubsection[{m\-\_\-u\-Tick}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Net\-Loop\-::m\-\_\-u\-Tick}}\label{classCSphNetLoop_af12e17a09dcd10377cfa6010295981ac}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{searchd_8cpp}{searchd.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,152 @@
+\hypertarget{classCSphRefcountedPtr}{\section{C\-Sph\-Refcounted\-Ptr$<$ T $>$ Class Template Reference}
+\label{classCSphRefcountedPtr}\index{C\-Sph\-Refcounted\-Ptr$<$ T $>$@{C\-Sph\-Refcounted\-Ptr$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphRefcountedPtr_aef9ccbecbe79873ac7ab5374ca025e35}{C\-Sph\-Refcounted\-Ptr} ()
+\begin{DoxyCompactList}\small\item\em default N\-U\-L\-L wrapper construction (for vectors) \end{DoxyCompactList}\item 
+\hyperlink{classCSphRefcountedPtr_a526110be0e4dfcc510d99247645dc567}{C\-Sph\-Refcounted\-Ptr} (T $\ast$p\-Ptr)
+\begin{DoxyCompactList}\small\item\em construction from raw pointer, takes over ownership! \end{DoxyCompactList}\item 
+\hyperlink{classCSphRefcountedPtr_ad391c2977b8f14066d4b78ee72af44b6}{C\-Sph\-Refcounted\-Ptr} (const \hyperlink{classCSphRefcountedPtr}{C\-Sph\-Refcounted\-Ptr} \&rhs)
+\item 
+\hyperlink{classCSphRefcountedPtr_ae937bbdd53285c4da0ffb56a2277047c}{C\-Sph\-Refcounted\-Ptr} (\hyperlink{classCSphRefcountedPtr}{C\-Sph\-Refcounted\-Ptr} \&\&rhs)
+\item 
+\hyperlink{classCSphRefcountedPtr_adfe0b7440e8d1bf72233198eaf9511d8}{$\sim$\-C\-Sph\-Refcounted\-Ptr} ()
+\item 
+T $\ast$ \hyperlink{classCSphRefcountedPtr_ab25d2073ef1be887dcc10fe66bb9f631}{Ptr} () const 
+\item 
+T $\ast$ \hyperlink{classCSphRefcountedPtr_a5da198e6fdccabd11671f12064549d2a}{operator-\/$>$} () const 
+\item 
+bool \hyperlink{classCSphRefcountedPtr_a09e4e6ce7d58bd719e273e78727d8ef5}{operator!} () const 
+\item 
+\hyperlink{classCSphRefcountedPtr}{C\-Sph\-Refcounted\-Ptr}$<$ T $>$ \& \hyperlink{classCSphRefcountedPtr_a2d9960182f99a7e7f10d03ad4d322023}{operator=} (T $\ast$p\-Ptr)
+\begin{DoxyCompactList}\small\item\em assignment of a raw pointer, takes over ownership! \end{DoxyCompactList}\item 
+\hyperlink{classCSphRefcountedPtr}{C\-Sph\-Refcounted\-Ptr}$<$ T $>$ \& \hyperlink{classCSphRefcountedPtr_ac804e476639c3cc652bf2ba3498f049e}{operator=} (const \hyperlink{classCSphRefcountedPtr}{C\-Sph\-Refcounted\-Ptr}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em wrapper assignment, does automated reference tracking \end{DoxyCompactList}\item 
+\hyperlink{classCSphRefcountedPtr}{C\-Sph\-Refcounted\-Ptr}$<$ T $>$ \& \hyperlink{classCSphRefcountedPtr_a5b57aaea811bdf20b0fc48775ac2fda1}{operator=} (\hyperlink{classCSphRefcountedPtr}{C\-Sph\-Refcounted\-Ptr}$<$ T $>$ \&\&rhs)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{classCSphRefcountedPtr_ac8a06f97ff0fe3545c736650dedb4b69}{m\-\_\-p\-Ptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class C\-Sph\-Refcounted\-Ptr$<$ T $>$}
+
+automatic pointer wrapper for refcounted objects construction from or assignment of a raw pointer takes over (!) the ownership 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphRefcountedPtr_aef9ccbecbe79873ac7ab5374ca025e35}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}}
+\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{C\-Sph\-Refcounted\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::{\bf C\-Sph\-Refcounted\-Ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphRefcountedPtr_aef9ccbecbe79873ac7ab5374ca025e35}
+
+
+default N\-U\-L\-L wrapper construction (for vectors) 
+
+\hypertarget{classCSphRefcountedPtr_a526110be0e4dfcc510d99247645dc567}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}}
+\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{C\-Sph\-Refcounted\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::{\bf C\-Sph\-Refcounted\-Ptr} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classCSphRefcountedPtr_a526110be0e4dfcc510d99247645dc567}
+
+
+construction from raw pointer, takes over ownership! 
+
+\hypertarget{classCSphRefcountedPtr_ad391c2977b8f14066d4b78ee72af44b6}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}}
+\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{C\-Sph\-Refcounted\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::{\bf C\-Sph\-Refcounted\-Ptr} (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphRefcountedPtr_ad391c2977b8f14066d4b78ee72af44b6}
+\hypertarget{classCSphRefcountedPtr_ae937bbdd53285c4da0ffb56a2277047c}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}}
+\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{C\-Sph\-Refcounted\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::{\bf C\-Sph\-Refcounted\-Ptr} (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$ \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphRefcountedPtr_ae937bbdd53285c4da0ffb56a2277047c}
+\hypertarget{classCSphRefcountedPtr_adfe0b7440e8d1bf72233198eaf9511d8}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!$\sim$\-C\-Sph\-Refcounted\-Ptr@{$\sim$\-C\-Sph\-Refcounted\-Ptr}}
+\index{$\sim$\-C\-Sph\-Refcounted\-Ptr@{$\sim$\-C\-Sph\-Refcounted\-Ptr}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{$\sim$\-C\-Sph\-Refcounted\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::$\sim${\bf C\-Sph\-Refcounted\-Ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphRefcountedPtr_adfe0b7440e8d1bf72233198eaf9511d8}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphRefcountedPtr_a09e4e6ce7d58bd719e273e78727d8ef5}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!operator!@{operator!}}
+\index{operator!@{operator!}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{operator!}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::operator! (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphRefcountedPtr_a09e4e6ce7d58bd719e273e78727d8ef5}
+\hypertarget{classCSphRefcountedPtr_a5da198e6fdccabd11671f12064549d2a}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphRefcountedPtr_a5da198e6fdccabd11671f12064549d2a}
+\hypertarget{classCSphRefcountedPtr_a2d9960182f99a7e7f10d03ad4d322023}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Refcounted\-Ptr}$<$T$>$\& {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphRefcountedPtr_a2d9960182f99a7e7f10d03ad4d322023}
+
+
+assignment of a raw pointer, takes over ownership! 
+
+\hypertarget{classCSphRefcountedPtr_ac804e476639c3cc652bf2ba3498f049e}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Refcounted\-Ptr}$<$T$>$\& {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphRefcountedPtr_ac804e476639c3cc652bf2ba3498f049e}
+
+
+wrapper assignment, does automated reference tracking 
+
+\hypertarget{classCSphRefcountedPtr_a5b57aaea811bdf20b0fc48775ac2fda1}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\-Sph\-Refcounted\-Ptr}$<$T$>$\& {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$ \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphRefcountedPtr_a5b57aaea811bdf20b0fc48775ac2fda1}
+\hypertarget{classCSphRefcountedPtr_ab25d2073ef1be887dcc10fe66bb9f631}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphRefcountedPtr_ab25d2073ef1be887dcc10fe66bb9f631}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphRefcountedPtr_ac8a06f97ff0fe3545c736650dedb4b69}{\index{C\-Sph\-Refcounted\-Ptr@{C\-Sph\-Refcounted\-Ptr}!m\-\_\-p\-Ptr@{m\-\_\-p\-Ptr}}
+\index{m\-\_\-p\-Ptr@{m\-\_\-p\-Ptr}!CSphRefcountedPtr@{C\-Sph\-Refcounted\-Ptr}}
+\subsubsection[{m\-\_\-p\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf C\-Sph\-Refcounted\-Ptr}$<$ T $>$\-::m\-\_\-p\-Ptr\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphRefcountedPtr_ac8a06f97ff0fe3545c736650dedb4b69}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\end{DoxyCompactItemize}

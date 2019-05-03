@@ -1,0 +1,355 @@
+\hypertarget{classCSphHitBuilder}{\section{C\-Sph\-Hit\-Builder Class Reference}
+\label{classCSphHitBuilder}\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphHitBuilder_a0c2715f92212640ff53720e81d72f9fd}{C\-Sph\-Hit\-Builder} (const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} $>$ \&d\-Hitless, bool b\-Merging, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Buf\-Size, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$s\-Error)
+\item 
+\hyperlink{classCSphHitBuilder_a959b3116d27917194b32f2d417848d39}{$\sim$\-C\-Sph\-Hit\-Builder} ()
+\item 
+bool \hyperlink{classCSphHitBuilder_a2c25708d8c2a3d7480784b40fcf6e4af}{Create\-Index\-Files} (const char $\ast$s\-Doc\-Name, const char $\ast$s\-Hit\-Name, const char $\ast$s\-Skip\-Name, bool b\-Inplace, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Write\-Buffer, \hyperlink{classCSphAutofile}{C\-Sph\-Autofile} \&t\-Hit, \hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} $\ast$p\-Shared\-Offset)
+\item 
+void \hyperlink{classCSphHitBuilder_ac71eb4424d38b63c08444cf7dbb14a4c}{Hit\-Reset} ()
+\item 
+void \hyperlink{classCSphHitBuilder_a3f298afa2c28a0868c7d0c050d538411}{cidx\-Hit} (\hyperlink{structCSphAggregateHit}{C\-Sph\-Aggregate\-Hit} $\ast$p\-Hit, const \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$p\-Attrs)
+\item 
+bool \hyperlink{classCSphHitBuilder_abf105134e87332c234ccd2e216c19e64}{cidx\-Done} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Mem\-Limit, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Min\-Infix\-Len, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Max\-Codepoint\-Len, \hyperlink{structDictHeader__t}{Dict\-Header\-\_\-t} $\ast$p\-Dict\-Header)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphHitBuilder_a229e1fc6c368a9d8595a2408be40e70c}{cidx\-Write\-Raw\-V\-L\-B} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} fd, \hyperlink{structCSphWordHit}{C\-Sph\-Word\-Hit} $\ast$p\-Hit, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Hits, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Docinfo, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Docinfos, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Stride)
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphHitBuilder_a1f288c61937a17b7ba825caf239e5ff8}{Get\-Hitfile\-Pos} () const 
+\item 
+void \hyperlink{classCSphHitBuilder_a7007b74099a377815a8b0b9fa423b39d}{Close\-Hitlist} ()
+\item 
+bool \hyperlink{classCSphHitBuilder_ab35ebef10c9f86025b58aade48ee2024}{Is\-Error} () const 
+\item 
+void \hyperlink{classCSphHitBuilder_a91144ca0d5d43fcf9a67c4a047d2cf79}{Set\-Min} (const \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $\ast$p\-Dynamic, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Dynamic)
+\item 
+void \hyperlink{classCSphHitBuilder_a356d74d80ac4c9f01a9dac4bece9b6ac}{Hitblock\-Begin} ()
+\item 
+bool \hyperlink{classCSphHitBuilder_a5d7a0ec029e5dd66d5025fd7cdb5190c}{Is\-Word\-Dict} () const 
+\item 
+void \hyperlink{classCSphHitBuilder_a27220f2e63577c61f9dfc0682edbce19}{Set\-Throttle} (\hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-State)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCSphHitBuilder_ad72602c48cbcfc7c2ba8ca4fe60f5a9a}{Doclist\-Begin\-Entry} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} u\-Docid, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Attrs)
+\item 
+void \hyperlink{classCSphHitBuilder_a5cac1ea4e077f7fdc105abb36526fc43}{Doclist\-End\-Entry} (\hyperlink{sphinx_8h_af1385e83d53e0648b15eae6d8f101847}{Hitpos\-\_\-t} u\-Last\-Pos)
+\item 
+void \hyperlink{classCSphHitBuilder_ac6665b2c0ab70048e12516d0662f1194}{Doclist\-End\-List} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphWriter}{C\-Sph\-Writer} \hyperlink{classCSphHitBuilder_a0755d7324f9859544faf7c15d9eb4c21}{m\-\_\-wr\-Doclist}
+\begin{DoxyCompactList}\small\item\em wordlist writer \end{DoxyCompactList}\item 
+\hyperlink{classCSphWriter}{C\-Sph\-Writer} \hyperlink{classCSphHitBuilder_ada1e5504058e0b142ea1e59856308bae}{m\-\_\-wr\-Hitlist}
+\begin{DoxyCompactList}\small\item\em hitlist writer \end{DoxyCompactList}\item 
+\hyperlink{classCSphWriter}{C\-Sph\-Writer} \hyperlink{classCSphHitBuilder_a25cffe2489b5a47bcbefae0836ed5dad}{m\-\_\-wr\-Skiplist}
+\begin{DoxyCompactList}\small\item\em skiplist writer \end{DoxyCompactList}\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \hyperlink{classCSphHitBuilder_a8cbbb9538f110fe5b434266164f97f22}{m\-\_\-d\-Write\-Buffer}
+\begin{DoxyCompactList}\small\item\em my write buffer (for temp files) \end{DoxyCompactList}\item 
+\hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$ \hyperlink{classCSphHitBuilder_a3bff4d2a765ef1e9fcaf684ceacf94ea}{m\-\_\-p\-Throttle}
+\item 
+\hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinx_8h_a6a2df0f05f3397df8b6e230fda6f852f}{C\-Sph\-Rowitem} $>$ \hyperlink{classCSphHitBuilder_aaff44dbc2bd11c9b3cd40d0beee07b16}{m\-\_\-d\-Min\-Row}
+\item 
+\hyperlink{structCSphAggregateHit}{C\-Sph\-Aggregate\-Hit} \hyperlink{classCSphHitBuilder_a2d91f6e0d9a26abfa66e29557e8559e5}{m\-\_\-t\-Last\-Hit}
+\begin{DoxyCompactList}\small\item\em hitlist entry \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_af1385e83d53e0648b15eae6d8f101847}{Hitpos\-\_\-t} \hyperlink{classCSphHitBuilder_af58f603397e11110becbdd058312572d}{m\-\_\-i\-Prev\-Hit\-Pos}
+\begin{DoxyCompactList}\small\item\em previous hit position \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphHitBuilder_aa37b6ff55e60577dfdb03c854507feb6}{m\-\_\-b\-Got\-Field\-End}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{classCSphHitBuilder_a8d5b93432c3e9be9a2612701545aa359}{m\-\_\-s\-Last\-Keyword} \mbox{[}\hyperlink{sphinx_8cpp_aeb328d19a9780d5c5defcd7e9b08239b}{M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}
+\item 
+const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} $>$ \& \hyperlink{classCSphHitBuilder_a9c9b7ebb189e11c6b60722e635bdff2f}{m\-\_\-d\-Hitless\-Words}
+\item 
+\hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$ \hyperlink{classCSphHitBuilder_a791f30ee7760e0ea02d3bcfd7b23d1a3}{m\-\_\-p\-Dict}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} $\ast$ \hyperlink{classCSphHitBuilder_af780d68ea6f2b2ca9beba35b93c75a57}{m\-\_\-p\-Last\-Error}
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphHitBuilder_a528c089e34d95b22beb58b200a22af2b}{m\-\_\-i\-Last\-Hitlist\-Pos}
+\begin{DoxyCompactList}\small\item\em doclist entry \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphHitBuilder_acc6f2ea21c55a9d3ce81ff3cb0534f64}{m\-\_\-i\-Last\-Hitlist\-Delta}
+\begin{DoxyCompactList}\small\item\em doclist entry \end{DoxyCompactList}\item 
+\hyperlink{structFieldMask__t}{Field\-Mask\-\_\-t} \hyperlink{classCSphHitBuilder_a30d059157f256bfd160a6aa7d4b2531a}{m\-\_\-d\-Last\-Doc\-Fields}
+\begin{DoxyCompactList}\small\item\em doclist entry \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphHitBuilder_a4e7e584c5fab7b09ab72e21fb9b75634}{m\-\_\-u\-Last\-Doc\-Hits}
+\begin{DoxyCompactList}\small\item\em doclist entry \end{DoxyCompactList}\item 
+\hyperlink{structCSphDictEntry}{C\-Sph\-Dict\-Entry} \hyperlink{classCSphHitBuilder_ac62cd2193a0160da84318f5b2ad3cc34}{m\-\_\-t\-Word}
+\begin{DoxyCompactList}\small\item\em dictionary entry \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a82ffff53ad1eb4da2ba352fcd9b2626c}{E\-Sph\-Hit\-Format} \hyperlink{classCSphHitBuilder_aa52ef81ce6ba97726bb62ebba78092af}{m\-\_\-e\-Hit\-Format}
+\item 
+\hyperlink{sphinx_8h_a1920852c5151009d65cf2bc8204a685b}{E\-Sph\-Hitless} \hyperlink{classCSphHitBuilder_afd80c22b913c3ea9baeae07c61ad00a5}{m\-\_\-e\-Hitless}
+\item 
+bool \hyperlink{classCSphHitBuilder_ad5f96dc66efde0b7ea48afd219f94f74}{m\-\_\-b\-Merging}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structSkiplistEntry__t}{Skiplist\-Entry\-\_\-t} $>$ \hyperlink{classCSphHitBuilder_a4207caaa773f50263a35ff104e2a8c3f}{m\-\_\-d\-Skiplist}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphHitBuilder_a0c2715f92212640ff53720e81d72f9fd}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}}
+\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{C\-Sph\-Hit\-Builder}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Hit\-Builder\-::\-C\-Sph\-Hit\-Builder (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Word\-I\-D\-\_\-t} $>$ \&}]{d\-Hitless, }
+\item[{bool}]{b\-Merging, }
+\item[{{\bf int}}]{i\-Buf\-Size, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphHitBuilder_a0c2715f92212640ff53720e81d72f9fd}
+\hypertarget{classCSphHitBuilder_a959b3116d27917194b32f2d417848d39}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!$\sim$\-C\-Sph\-Hit\-Builder@{$\sim$\-C\-Sph\-Hit\-Builder}}
+\index{$\sim$\-C\-Sph\-Hit\-Builder@{$\sim$\-C\-Sph\-Hit\-Builder}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{$\sim$\-C\-Sph\-Hit\-Builder}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Hit\-Builder\-::$\sim$\-C\-Sph\-Hit\-Builder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHitBuilder_a959b3116d27917194b32f2d417848d39}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphHitBuilder_abf105134e87332c234ccd2e216c19e64}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!cidx\-Done@{cidx\-Done}}
+\index{cidx\-Done@{cidx\-Done}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{cidx\-Done}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Hit\-Builder\-::cidx\-Done (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Mem\-Limit, }
+\item[{{\bf int}}]{i\-Min\-Infix\-Len, }
+\item[{{\bf int}}]{i\-Max\-Codepoint\-Len, }
+\item[{{\bf Dict\-Header\-\_\-t} $\ast$}]{p\-Dict\-Header}
+\end{DoxyParamCaption}
+)}}\label{classCSphHitBuilder_abf105134e87332c234ccd2e216c19e64}
+\hypertarget{classCSphHitBuilder_a3f298afa2c28a0868c7d0c050d538411}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!cidx\-Hit@{cidx\-Hit}}
+\index{cidx\-Hit@{cidx\-Hit}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{cidx\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Builder\-::cidx\-Hit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Aggregate\-Hit} $\ast$}]{p\-Hit, }
+\item[{const {\bf C\-Sph\-Rowitem} $\ast$}]{p\-Attrs}
+\end{DoxyParamCaption}
+)}}\label{classCSphHitBuilder_a3f298afa2c28a0868c7d0c050d538411}
+\hypertarget{classCSphHitBuilder_a229e1fc6c368a9d8595a2408be40e70c}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!cidx\-Write\-Raw\-V\-L\-B@{cidx\-Write\-Raw\-V\-L\-B}}
+\index{cidx\-Write\-Raw\-V\-L\-B@{cidx\-Write\-Raw\-V\-L\-B}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{cidx\-Write\-Raw\-V\-L\-B}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Hit\-Builder\-::cidx\-Write\-Raw\-V\-L\-B (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{fd, }
+\item[{{\bf C\-Sph\-Word\-Hit} $\ast$}]{p\-Hit, }
+\item[{{\bf int}}]{i\-Hits, }
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Docinfo, }
+\item[{{\bf int}}]{i\-Docinfos, }
+\item[{{\bf int}}]{i\-Stride}
+\end{DoxyParamCaption}
+)}}\label{classCSphHitBuilder_a229e1fc6c368a9d8595a2408be40e70c}
+\hypertarget{classCSphHitBuilder_a7007b74099a377815a8b0b9fa423b39d}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Close\-Hitlist@{Close\-Hitlist}}
+\index{Close\-Hitlist@{Close\-Hitlist}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Close\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Builder\-::\-Close\-Hitlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHitBuilder_a7007b74099a377815a8b0b9fa423b39d}
+\hypertarget{classCSphHitBuilder_a2c25708d8c2a3d7480784b40fcf6e4af}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Create\-Index\-Files@{Create\-Index\-Files}}
+\index{Create\-Index\-Files@{Create\-Index\-Files}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Create\-Index\-Files}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Hit\-Builder\-::\-Create\-Index\-Files (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Doc\-Name, }
+\item[{const char $\ast$}]{s\-Hit\-Name, }
+\item[{const char $\ast$}]{s\-Skip\-Name, }
+\item[{bool}]{b\-Inplace, }
+\item[{{\bf int}}]{i\-Write\-Buffer, }
+\item[{{\bf C\-Sph\-Autofile} \&}]{t\-Hit, }
+\item[{{\bf Sph\-Offset\-\_\-t} $\ast$}]{p\-Shared\-Offset}
+\end{DoxyParamCaption}
+)}}\label{classCSphHitBuilder_a2c25708d8c2a3d7480784b40fcf6e4af}
+\hypertarget{classCSphHitBuilder_ad72602c48cbcfc7c2ba8ca4fe60f5a9a}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Doclist\-Begin\-Entry@{Doclist\-Begin\-Entry}}
+\index{Doclist\-Begin\-Entry@{Doclist\-Begin\-Entry}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Doclist\-Begin\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Builder\-::\-Doclist\-Begin\-Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t}}]{u\-Docid, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Attrs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_ad72602c48cbcfc7c2ba8ca4fe60f5a9a}
+\hypertarget{classCSphHitBuilder_a5cac1ea4e077f7fdc105abb36526fc43}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Doclist\-End\-Entry@{Doclist\-End\-Entry}}
+\index{Doclist\-End\-Entry@{Doclist\-End\-Entry}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Doclist\-End\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Builder\-::\-Doclist\-End\-Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf Hitpos\-\_\-t}}]{u\-Last\-Pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a5cac1ea4e077f7fdc105abb36526fc43}
+\hypertarget{classCSphHitBuilder_ac6665b2c0ab70048e12516d0662f1194}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Doclist\-End\-List@{Doclist\-End\-List}}
+\index{Doclist\-End\-List@{Doclist\-End\-List}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Doclist\-End\-List}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Builder\-::\-Doclist\-End\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_ac6665b2c0ab70048e12516d0662f1194}
+\hypertarget{classCSphHitBuilder_a1f288c61937a17b7ba825caf239e5ff8}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Get\-Hitfile\-Pos@{Get\-Hitfile\-Pos}}
+\index{Get\-Hitfile\-Pos@{Get\-Hitfile\-Pos}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Get\-Hitfile\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Hit\-Builder\-::\-Get\-Hitfile\-Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHitBuilder_a1f288c61937a17b7ba825caf239e5ff8}
+\hypertarget{classCSphHitBuilder_a356d74d80ac4c9f01a9dac4bece9b6ac}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Hitblock\-Begin@{Hitblock\-Begin}}
+\index{Hitblock\-Begin@{Hitblock\-Begin}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Hitblock\-Begin}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Builder\-::\-Hitblock\-Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHitBuilder_a356d74d80ac4c9f01a9dac4bece9b6ac}
+\hypertarget{classCSphHitBuilder_ac71eb4424d38b63c08444cf7dbb14a4c}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Hit\-Reset@{Hit\-Reset}}
+\index{Hit\-Reset@{Hit\-Reset}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Hit\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Builder\-::\-Hit\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphHitBuilder_ac71eb4424d38b63c08444cf7dbb14a4c}
+\hypertarget{classCSphHitBuilder_ab35ebef10c9f86025b58aade48ee2024}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Is\-Error@{Is\-Error}}
+\index{Is\-Error@{Is\-Error}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Is\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Hit\-Builder\-::\-Is\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHitBuilder_ab35ebef10c9f86025b58aade48ee2024}
+\hypertarget{classCSphHitBuilder_a5d7a0ec029e5dd66d5025fd7cdb5190c}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Is\-Word\-Dict@{Is\-Word\-Dict}}
+\index{Is\-Word\-Dict@{Is\-Word\-Dict}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Is\-Word\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Hit\-Builder\-::\-Is\-Word\-Dict (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHitBuilder_a5d7a0ec029e5dd66d5025fd7cdb5190c}
+\hypertarget{classCSphHitBuilder_a91144ca0d5d43fcf9a67c4a047d2cf79}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Set\-Min@{Set\-Min}}
+\index{Set\-Min@{Set\-Min}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Set\-Min}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Builder\-::\-Set\-Min (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Rowitem} $\ast$}]{p\-Dynamic, }
+\item[{{\bf int}}]{i\-Dynamic}
+\end{DoxyParamCaption}
+)}}\label{classCSphHitBuilder_a91144ca0d5d43fcf9a67c4a047d2cf79}
+\hypertarget{classCSphHitBuilder_a27220f2e63577c61f9dfc0682edbce19}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!Set\-Throttle@{Set\-Throttle}}
+\index{Set\-Throttle@{Set\-Throttle}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{Set\-Throttle}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Builder\-::\-Set\-Throttle (
+\begin{DoxyParamCaption}
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-State}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphHitBuilder_a27220f2e63577c61f9dfc0682edbce19}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphHitBuilder_aa37b6ff55e60577dfdb03c854507feb6}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-b\-Got\-Field\-End@{m\-\_\-b\-Got\-Field\-End}}
+\index{m\-\_\-b\-Got\-Field\-End@{m\-\_\-b\-Got\-Field\-End}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-b\-Got\-Field\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Hit\-Builder\-::m\-\_\-b\-Got\-Field\-End\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_aa37b6ff55e60577dfdb03c854507feb6}
+\hypertarget{classCSphHitBuilder_ad5f96dc66efde0b7ea48afd219f94f74}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-b\-Merging@{m\-\_\-b\-Merging}}
+\index{m\-\_\-b\-Merging@{m\-\_\-b\-Merging}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-b\-Merging}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Hit\-Builder\-::m\-\_\-b\-Merging\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_ad5f96dc66efde0b7ea48afd219f94f74}
+\hypertarget{classCSphHitBuilder_a9c9b7ebb189e11c6b60722e635bdff2f}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-d\-Hitless\-Words@{m\-\_\-d\-Hitless\-Words}}
+\index{m\-\_\-d\-Hitless\-Words@{m\-\_\-d\-Hitless\-Words}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-d\-Hitless\-Words}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Vector}$<${\bf Sph\-Word\-I\-D\-\_\-t}$>$\& C\-Sph\-Hit\-Builder\-::m\-\_\-d\-Hitless\-Words\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a9c9b7ebb189e11c6b60722e635bdff2f}
+\hypertarget{classCSphHitBuilder_a30d059157f256bfd160a6aa7d4b2531a}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-d\-Last\-Doc\-Fields@{m\-\_\-d\-Last\-Doc\-Fields}}
+\index{m\-\_\-d\-Last\-Doc\-Fields@{m\-\_\-d\-Last\-Doc\-Fields}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-d\-Last\-Doc\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Field\-Mask\-\_\-t} C\-Sph\-Hit\-Builder\-::m\-\_\-d\-Last\-Doc\-Fields\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a30d059157f256bfd160a6aa7d4b2531a}
+
+
+doclist entry 
+
+\hypertarget{classCSphHitBuilder_aaff44dbc2bd11c9b3cd40d0beee07b16}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-d\-Min\-Row@{m\-\_\-d\-Min\-Row}}
+\index{m\-\_\-d\-Min\-Row@{m\-\_\-d\-Min\-Row}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-d\-Min\-Row}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf C\-Sph\-Rowitem}$>$ C\-Sph\-Hit\-Builder\-::m\-\_\-d\-Min\-Row\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_aaff44dbc2bd11c9b3cd40d0beee07b16}
+\hypertarget{classCSphHitBuilder_a4207caaa773f50263a35ff104e2a8c3f}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-d\-Skiplist@{m\-\_\-d\-Skiplist}}
+\index{m\-\_\-d\-Skiplist@{m\-\_\-d\-Skiplist}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-d\-Skiplist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Skiplist\-Entry\-\_\-t}$>$ C\-Sph\-Hit\-Builder\-::m\-\_\-d\-Skiplist\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a4207caaa773f50263a35ff104e2a8c3f}
+\hypertarget{classCSphHitBuilder_a8cbbb9538f110fe5b434266164f97f22}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-d\-Write\-Buffer@{m\-\_\-d\-Write\-Buffer}}
+\index{m\-\_\-d\-Write\-Buffer@{m\-\_\-d\-Write\-Buffer}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-d\-Write\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Fixed\-Vector}$<${\bf B\-Y\-T\-E}$>$ C\-Sph\-Hit\-Builder\-::m\-\_\-d\-Write\-Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a8cbbb9538f110fe5b434266164f97f22}
+
+
+my write buffer (for temp files) 
+
+\hypertarget{classCSphHitBuilder_aa52ef81ce6ba97726bb62ebba78092af}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-e\-Hit\-Format@{m\-\_\-e\-Hit\-Format}}
+\index{m\-\_\-e\-Hit\-Format@{m\-\_\-e\-Hit\-Format}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-e\-Hit\-Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Hit\-Format} C\-Sph\-Hit\-Builder\-::m\-\_\-e\-Hit\-Format\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_aa52ef81ce6ba97726bb62ebba78092af}
+\hypertarget{classCSphHitBuilder_afd80c22b913c3ea9baeae07c61ad00a5}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-e\-Hitless@{m\-\_\-e\-Hitless}}
+\index{m\-\_\-e\-Hitless@{m\-\_\-e\-Hitless}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-e\-Hitless}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Hitless} C\-Sph\-Hit\-Builder\-::m\-\_\-e\-Hitless\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_afd80c22b913c3ea9baeae07c61ad00a5}
+\hypertarget{classCSphHitBuilder_acc6f2ea21c55a9d3ce81ff3cb0534f64}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-i\-Last\-Hitlist\-Delta@{m\-\_\-i\-Last\-Hitlist\-Delta}}
+\index{m\-\_\-i\-Last\-Hitlist\-Delta@{m\-\_\-i\-Last\-Hitlist\-Delta}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-i\-Last\-Hitlist\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Hit\-Builder\-::m\-\_\-i\-Last\-Hitlist\-Delta\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_acc6f2ea21c55a9d3ce81ff3cb0534f64}
+
+
+doclist entry 
+
+\hypertarget{classCSphHitBuilder_a528c089e34d95b22beb58b200a22af2b}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-i\-Last\-Hitlist\-Pos@{m\-\_\-i\-Last\-Hitlist\-Pos}}
+\index{m\-\_\-i\-Last\-Hitlist\-Pos@{m\-\_\-i\-Last\-Hitlist\-Pos}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-i\-Last\-Hitlist\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Hit\-Builder\-::m\-\_\-i\-Last\-Hitlist\-Pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a528c089e34d95b22beb58b200a22af2b}
+
+
+doclist entry 
+
+\hypertarget{classCSphHitBuilder_af58f603397e11110becbdd058312572d}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-i\-Prev\-Hit\-Pos@{m\-\_\-i\-Prev\-Hit\-Pos}}
+\index{m\-\_\-i\-Prev\-Hit\-Pos@{m\-\_\-i\-Prev\-Hit\-Pos}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-i\-Prev\-Hit\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hitpos\-\_\-t} C\-Sph\-Hit\-Builder\-::m\-\_\-i\-Prev\-Hit\-Pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_af58f603397e11110becbdd058312572d}
+
+
+previous hit position 
+
+\hypertarget{classCSphHitBuilder_a791f30ee7760e0ea02d3bcfd7b23d1a3}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-p\-Dict@{m\-\_\-p\-Dict}}
+\index{m\-\_\-p\-Dict@{m\-\_\-p\-Dict}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-p\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Dict}$\ast$ C\-Sph\-Hit\-Builder\-::m\-\_\-p\-Dict\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a791f30ee7760e0ea02d3bcfd7b23d1a3}
+\hypertarget{classCSphHitBuilder_af780d68ea6f2b2ca9beba35b93c75a57}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-p\-Last\-Error@{m\-\_\-p\-Last\-Error}}
+\index{m\-\_\-p\-Last\-Error@{m\-\_\-p\-Last\-Error}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-p\-Last\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String}$\ast$ C\-Sph\-Hit\-Builder\-::m\-\_\-p\-Last\-Error\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_af780d68ea6f2b2ca9beba35b93c75a57}
+\hypertarget{classCSphHitBuilder_a3bff4d2a765ef1e9fcaf684ceacf94ea}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-p\-Throttle@{m\-\_\-p\-Throttle}}
+\index{m\-\_\-p\-Throttle@{m\-\_\-p\-Throttle}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-p\-Throttle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Throttle\-State\-\_\-t}$\ast$ C\-Sph\-Hit\-Builder\-::m\-\_\-p\-Throttle\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a3bff4d2a765ef1e9fcaf684ceacf94ea}
+\hypertarget{classCSphHitBuilder_a8d5b93432c3e9be9a2612701545aa359}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-s\-Last\-Keyword@{m\-\_\-s\-Last\-Keyword}}
+\index{m\-\_\-s\-Last\-Keyword@{m\-\_\-s\-Last\-Keyword}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-s\-Last\-Keyword}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} C\-Sph\-Hit\-Builder\-::m\-\_\-s\-Last\-Keyword\mbox{[}{\bf M\-A\-X\-\_\-\-K\-E\-Y\-W\-O\-R\-D\-\_\-\-B\-Y\-T\-E\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a8d5b93432c3e9be9a2612701545aa359}
+\hypertarget{classCSphHitBuilder_a2d91f6e0d9a26abfa66e29557e8559e5}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-t\-Last\-Hit@{m\-\_\-t\-Last\-Hit}}
+\index{m\-\_\-t\-Last\-Hit@{m\-\_\-t\-Last\-Hit}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-t\-Last\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Aggregate\-Hit} C\-Sph\-Hit\-Builder\-::m\-\_\-t\-Last\-Hit\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a2d91f6e0d9a26abfa66e29557e8559e5}
+
+
+hitlist entry 
+
+\hypertarget{classCSphHitBuilder_ac62cd2193a0160da84318f5b2ad3cc34}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-t\-Word@{m\-\_\-t\-Word}}
+\index{m\-\_\-t\-Word@{m\-\_\-t\-Word}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-t\-Word}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Dict\-Entry} C\-Sph\-Hit\-Builder\-::m\-\_\-t\-Word\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_ac62cd2193a0160da84318f5b2ad3cc34}
+
+
+dictionary entry 
+
+\hypertarget{classCSphHitBuilder_a4e7e584c5fab7b09ab72e21fb9b75634}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-u\-Last\-Doc\-Hits@{m\-\_\-u\-Last\-Doc\-Hits}}
+\index{m\-\_\-u\-Last\-Doc\-Hits@{m\-\_\-u\-Last\-Doc\-Hits}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-u\-Last\-Doc\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Hit\-Builder\-::m\-\_\-u\-Last\-Doc\-Hits\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a4e7e584c5fab7b09ab72e21fb9b75634}
+
+
+doclist entry 
+
+\hypertarget{classCSphHitBuilder_a0755d7324f9859544faf7c15d9eb4c21}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-wr\-Doclist@{m\-\_\-wr\-Doclist}}
+\index{m\-\_\-wr\-Doclist@{m\-\_\-wr\-Doclist}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-wr\-Doclist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Writer} C\-Sph\-Hit\-Builder\-::m\-\_\-wr\-Doclist\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a0755d7324f9859544faf7c15d9eb4c21}
+
+
+wordlist writer 
+
+\hypertarget{classCSphHitBuilder_ada1e5504058e0b142ea1e59856308bae}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-wr\-Hitlist@{m\-\_\-wr\-Hitlist}}
+\index{m\-\_\-wr\-Hitlist@{m\-\_\-wr\-Hitlist}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-wr\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Writer} C\-Sph\-Hit\-Builder\-::m\-\_\-wr\-Hitlist\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_ada1e5504058e0b142ea1e59856308bae}
+
+
+hitlist writer 
+
+\hypertarget{classCSphHitBuilder_a25cffe2489b5a47bcbefae0836ed5dad}{\index{C\-Sph\-Hit\-Builder@{C\-Sph\-Hit\-Builder}!m\-\_\-wr\-Skiplist@{m\-\_\-wr\-Skiplist}}
+\index{m\-\_\-wr\-Skiplist@{m\-\_\-wr\-Skiplist}!CSphHitBuilder@{C\-Sph\-Hit\-Builder}}
+\subsubsection[{m\-\_\-wr\-Skiplist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Writer} C\-Sph\-Hit\-Builder\-::m\-\_\-wr\-Skiplist\hspace{0.3cm}{\ttfamily [private]}}}\label{classCSphHitBuilder_a25cffe2489b5a47bcbefae0836ed5dad}
+
+
+skiplist writer 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

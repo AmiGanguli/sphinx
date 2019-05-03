@@ -1,0 +1,1050 @@
+\hypertarget{tests_8cpp}{\section{src/tests.cpp File Reference}
+\label{tests_8cpp}\index{src/tests.\-cpp@{src/tests.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxexpr.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxquery.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxrt.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxstem.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCmpAtomPos__fn}{Cmp\-Atom\-Pos\-\_\-fn}
+\item 
+class \hyperlink{classCSphDummyIndex}{C\-Sph\-Dummy\-Index}
+\item 
+struct \hyperlink{structSortDataGenDesc__t}{Sort\-Data\-Gen\-Desc\-\_\-t}
+\item 
+struct \hyperlink{structSortPayload__t}{Sort\-Payload\-\_\-t}
+\item 
+struct \hyperlink{structTestAccCmp__fn}{Test\-Acc\-Cmp\-\_\-fn}
+\item 
+class \hyperlink{classSphTestDoc__c}{Sph\-Test\-Doc\-\_\-c}
+\item 
+class \hyperlink{classSphDocRandomizer__c}{Sph\-Doc\-Randomizer\-\_\-c}
+\item 
+class \hyperlink{classGeodistStatic}{Geodist\-Static}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tests_8cpp_ad44b0ef4b5e9ad4f7cf6681b14e1c351}{S\-N\-O\-W\-B\-A\-L\-L}~0
+\item 
+\#define \hyperlink{tests_8cpp_ab8f2f6d63352a3eea79d5bf924ee0b1c}{C\-R\-O\-S\-S\-C\-H\-E\-C\-K}~0
+\item 
+\#define \hyperlink{tests_8cpp_a74f744e5a69aaffeb4bdf525a8b74122}{P\-O\-R\-T\-E\-R1}~0
+\item 
+\#define \hyperlink{tests_8cpp_a1b173d22e57d9395897acbd8de62d505}{N\-O\-I\-N\-L\-I\-N\-E}
+\item 
+\#define \hyperlink{tests_8cpp_aaa395e97f585ddcb72524058797caf37}{A\-A\-A}~\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float}(t\-Match.\-m\-\_\-p\-Static\mbox{[}0\mbox{]})
+\item 
+\#define \hyperlink{tests_8cpp_a56f71db70e5d3eb35f197bd1499987b1}{B\-B\-B}~\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float}(t\-Match.\-m\-\_\-p\-Static\mbox{[}1\mbox{]})
+\item 
+\#define \hyperlink{tests_8cpp_aac3f153b43e30e4004c50123561bb145}{C\-C\-C}~\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float}(t\-Match.\-m\-\_\-p\-Static\mbox{[}2\mbox{]})
+\item 
+\#define \hyperlink{tests_8cpp_ae3ff19a34744ef044602833b83a28942}{R\-T\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E}~\char`\"{}test\-\_\-temp\char`\"{}
+\item 
+\#define \hyperlink{tests_8cpp_a2f3d1683547013f53ed70486b68773cf}{R\-T\-\_\-\-P\-A\-S\-S\-\_\-\-C\-O\-U\-N\-T}~5
+\item 
+\#define \hyperlink{tests_8cpp_a6c1dbf43a65932277cb15899d27e2437}{W\-R\-I\-T\-E\-\_\-\-O\-U\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}~0x40000
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{tests_8cpp_ab3f5ffd99b2b93da12d79aedb6188907}{Sort\-Data\-Gen\-\_\-fn} )(\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{tests_8cpp_a297e7caf027208eef4d79f0cc5d77104}{Create\-Synonyms\-File} (const char $\ast$s\-Magic)
+\item 
+\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$ \hyperlink{tests_8cpp_a3e856ec128b362c67696ebb9cfbfad4e}{Create\-Test\-Tokenizer} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Mode)
+\item 
+void \hyperlink{tests_8cpp_ad6c06504520bbf5abc63a53a58488550}{Test\-Tokenizer} ()
+\item 
+char $\ast$ \hyperlink{tests_8cpp_a2068ac64b4ce70eeae1ef186347a1e2c}{Load\-File} (const char $\ast$s\-Name, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$p\-Len, bool b\-Report\-Errors)
+\item 
+void \hyperlink{tests_8cpp_a36a3a6cc336aa9051573a51c14fc3b67}{Bench\-Tokenizer} (\hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Bytes)
+\item 
+void \hyperlink{tests_8cpp_a68ee69ddfee248ce670e740c929d499c}{Bench\-Tokenizer} ()
+\item 
+void \hyperlink{tests_8cpp_a2c9c3e559ea74fe51dbbcb1f4e8b2f2e}{Test\-Stripper} ()
+\item 
+void \hyperlink{tests_8cpp_afe8fdf00555b4c98e3f12a3906f53654}{Bench\-Stripper} ()
+\item 
+void \hyperlink{tests_8cpp_a902f364070eb73ed081ff794ccf75d38}{Test\-Expr} ()
+\item 
+\hyperlink{tests_8cpp_a1b173d22e57d9395897acbd8de62d505}{N\-O\-I\-N\-L\-I\-N\-E} \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{tests_8cpp_a8e1838ad298dfe960ee7cbb8ebde66cb}{Expr\-Native1} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match)
+\item 
+\hyperlink{tests_8cpp_a1b173d22e57d9395897acbd8de62d505}{N\-O\-I\-N\-L\-I\-N\-E} \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{tests_8cpp_ae206cfde82b7aee22fc55c3e9e49ad0d}{Expr\-Native2} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match)
+\item 
+\hyperlink{tests_8cpp_a1b173d22e57d9395897acbd8de62d505}{N\-O\-I\-N\-L\-I\-N\-E} \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{tests_8cpp_a730ed52622c07a4800e966a520dc9927}{Expr\-Native3} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&)
+\item 
+void \hyperlink{tests_8cpp_aa54b06fa066643d3adc074a42a7f84c7}{Bench\-Expr} ()
+\item 
+static void \hyperlink{tests_8cpp_a27917b2a5689de87df1acee52c75c559}{Check\-Query\-Soft\-Space} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$p\-Q\-Pos, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_aed3dc49b020ed6066778791e97900f6c}{Test\-Query\-Parser} ()
+\item 
+void \hyperlink{tests_8cpp_a06f509a3c8e6b8fcf4803088ec4ccd30}{Test\-Query\-Transforms} ()
+\item 
+void \hyperlink{tests_8cpp_a59df20252bcb59de6a3b72c117abacaf}{Test\-Misc} ()
+\item 
+void \hyperlink{tests_8cpp_a90ab11963385e30aa24b3b49250e759a}{Bench\-Locators} ()
+\item 
+void \hyperlink{tests_8cpp_a098fe10c1883e01ae39c6655be103d20}{Rwlock\-Reader} (void $\ast$p\-Arg)
+\item 
+void \hyperlink{tests_8cpp_a4d31cfe02526c27010ec149b0600864e}{Rwlock\-Writer} (void $\ast$p\-Arg)
+\item 
+void \hyperlink{tests_8cpp_a89e04f761f3cfb661691c91fde5f4b1e}{Test\-Rwlock} ()
+\item 
+void \hyperlink{tests_8cpp_a1209ff1bf2d2560c02869583bb8a517a}{Cleanup\-Callback} (void $\ast$p\-Arg)
+\item 
+void \hyperlink{tests_8cpp_aca5a85a17320d27851e41fd98a687031}{Cleanup\-Thread} (void $\ast$p\-Arg)
+\item 
+void \hyperlink{tests_8cpp_a4e78e6153a83bd65d540676e9d489715}{Test\-Cleanup} ()
+\item 
+void \hyperlink{tests_8cpp_a3b92b945296adbf04f504aecb3d4f732}{Dummy\-Thread} (void $\ast$)
+\item 
+void \hyperlink{tests_8cpp_a53109ebf4d4d7f106dcc4d9c79fa7e67}{Mutex\-Bench\-Thread} (void $\ast$p\-Arg)
+\item 
+void \hyperlink{tests_8cpp_aa2f0245108cc511fcbf014928c709a05}{Bench\-Threads} ()
+\item 
+void \hyperlink{tests_8cpp_a57d385d0687ecbcbc1a3426e47761977}{Sort\-Data\-Repeat1245} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a27e851bae879b7483556a6ca9ffea992}{Sort\-Data\-End0} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a24b6cc1718f20efbd033af51323c05af}{Sort\-Data\-Identical} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a2b17f1eebc6822cf9cd8d2e3e43a1037}{Sort\-Data\-Med3\-Killer} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_ae29a3940dfab61f19d08ca6b8c499312}{Sort\-Data\-Mid\-Killer} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_ab5de87a8cd12e895a4b20826da074ee2}{Sort\-Data\-Rand\-Dupes} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_ae705351175f63717dd50cd5867db883f}{Sort\-Data\-Rand\-Uniq} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_af6687623dc00abdab41490d0fb7991ec}{Sort\-Data\-Rand\-Steps} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a6ce1647a89531315e70baf34bebdf055}{Sort\-Data\-Rev\-Ends} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_af1ee2829472ea9367b5e1a421d8c7a94}{Sort\-Data\-Rev\-Partial} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a0955ebb3982134fd29c7fd144d1222ce}{Sort\-Data\-Rev\-Saw} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_aa12a480d1f7eb6d3edb078cbb7838aa3}{Sort\-Data\-Reverse} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a90eb864c5565e747b465877febebe026}{Sort\-Data\-Start1000} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_aaf871e93b01da9ed57d119738babcf7f}{Sort\-Data\-Seq\-Partial} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a9639bfe62e7b7546a30692fb9aa068a1}{Sort\-Data\-Seq\-Saw} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a9b857beb65bb0865483fabcc033573bb}{Sort\-Data\-Seq} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_aaea83c177633167a17d81f3c01c5ff79}{Sort\-Data\-Asc\-Desc} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a5faaca8c602042d8995b713a208b83f5}{Sort\-Data\-Desc\-Asc} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a842640dc0729e93f60259f2976f3910c}{Sort\-Data\-Rand01} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+bool \hyperlink{tests_8cpp_ab1e01468f5799ffec28a6f74630a048d}{operator$<$} (const \hyperlink{structCSphWordHit}{C\-Sph\-Word\-Hit} \&a, const \hyperlink{structCSphWordHit}{C\-Sph\-Word\-Hit} \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{tests_8cpp_a9b5874a65932034b4bfb19a2a4c317ea}{Bench\-Sort} (T $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count, bool b\-Check)
+\item 
+void \hyperlink{tests_8cpp_ad614147c0cb0e3ca7af4d8dd422bb205}{Bench\-Sort} ()
+\item 
+static bool \hyperlink{tests_8cpp_a10749544c1bffb4fbf9917edf84c1f04}{Is\-Sorted} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count, const \hyperlink{structTestAccCmp__fn}{Test\-Acc\-Cmp\-\_\-fn} \&fn)
+\item 
+void \hyperlink{tests_8cpp_a34016cb173cde59d24712cf6c7e0e2c7}{Random\-Fill} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count, const \hyperlink{structTestAccCmp__fn}{Test\-Acc\-Cmp\-\_\-fn} \&fn, bool b\-Chainsaw)
+\item 
+void \hyperlink{tests_8cpp_a76aa41546cce3ad012066f08e7f027f3}{Test\-Strided\-Sort\-Pass} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Stride, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+void \hyperlink{tests_8cpp_a580bbdbd7c6ab18aab70bfb8ccc15d97}{Test\-Strided\-Sort} ()
+\item 
+static void \hyperlink{tests_8cpp_a10c893af93119cd2b56ffb380afae74a}{Check\-R\-T} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Val, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Ref, const char $\ast$s\-Msg)
+\item 
+static void \hyperlink{tests_8cpp_af2075abb3f6c4454699f6e1461fd6c14}{Delete\-Index\-Files} (const char $\ast$s\-Index)
+\item 
+void \hyperlink{tests_8cpp_a951573a2feefa8e77e0710ac713dc543}{Test\-R\-T\-Init} ()
+\item 
+void \hyperlink{tests_8cpp_a51319efc5ad12193b898b0b36503547f}{Test\-R\-T\-Weight\-Boundary} ()
+\item 
+void \hyperlink{tests_8cpp_a449724ca348a564a44b95d34f0fd1002}{Test\-Writer} ()
+\item 
+void \hyperlink{tests_8cpp_adfdd22a1be9b58a69814ed29d352f569}{Test\-R\-T\-Send\-Vs\-Merge} ()
+\item 
+void \hyperlink{tests_8cpp_aec776eb78038420e4f98c34314ca342c}{Test\-Ranker\-Factors} ()
+\item 
+void \hyperlink{tests_8cpp_adaf457ef1de69b39945f26e5005a77dd}{Test\-Sentence\-Tokenizer} ()
+\item 
+void \hyperlink{tests_8cpp_ad40834e609c761c3054e0d98a09b0577}{Test\-Span\-Search} ()
+\item 
+static void \hyperlink{tests_8cpp_a31d601598aa33313e687cb89bd087656}{Test\-Rebalance\-\_\-fn} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Stride, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Weights)
+\item 
+void \hyperlink{tests_8cpp_a818c60205e5d7ff54707581468266d25}{Test\-Rebalance} ()
+\item 
+void \hyperlink{tests_8cpp_a62eb4cbad18f2fdb716a5be54aaaf59f}{Bench\-Stemmer} ()
+\item 
+void \hyperlink{tests_8cpp_ac3c81e8d7a3947cc81037159363e55b3}{Test\-Wildcards} ()
+\item 
+void \hyperlink{tests_8cpp_ab8d39f741a361eaaada723d0f75453c1}{Test\-Log2} ()
+\item 
+void \hyperlink{tests_8cpp_a8805ac4b6e6d1fa68e5cffc583906121}{Bench\-Timer\-Thread} (void $\ast$p\-Endtime)
+\item 
+void \hyperlink{tests_8cpp_a6a23a507fc93c55537ef2c158e376e71}{Bench\-Misc} ()
+\item 
+void \hyperlink{tests_8cpp_a3d835cb70d37dc5fb0c824a73822a58f}{Test\-Arabic\-Stemmer} ()
+\item 
+void \hyperlink{tests_8cpp_a519ead1816f0832bebdfccccc4395daf}{Test\-Appendf} ()
+\item 
+void \hyperlink{tests_8cpp_a5dd6be0c3714f5823a3b80e968d12b04}{Bench\-Appendf} ()
+\item 
+static \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{tests_8cpp_a69c113963ea9cd73e71a052665580185}{Geodist\-Vincenty} (double lat1, double lon1, double lat2, double lon2)
+\item 
+void \hyperlink{tests_8cpp_ad2006418f23993b931e33703dab4df21}{Dest\-Vincenty} (double lat1, double lon1, double brng, double dist, double $\ast$lat2, double $\ast$lon2)
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{tests_8cpp_a10c40123fd4d839e1d32d1eb16d08b38}{Calc\-Geofunc} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Func, double $\ast$t)
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{tests_8cpp_a58dc3c3266aafa486e5339c5af5ae09c}{Max\-Err} (\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} f\-Max, \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} f\-Res, double f\-Ref)
+\item 
+void \hyperlink{tests_8cpp_a0b2befca3e72a33af3b874731ed88d02}{Test\-Geodist} ()
+\item 
+void \hyperlink{tests_8cpp_aa4c7851f0cfce0804e42feb557d79383}{Test\-Source} ()
+\item 
+void \hyperlink{tests_8cpp_a2390c79565aa056b2df7ef1a4a7ac68e}{Test\-Hash} ()
+\item 
+void \hyperlink{tests_8cpp_a6554bb08e7585a269c9c7b934fbbfbaf}{Timed\-Lock\-Test} (void $\ast$)
+\item 
+void \hyperlink{tests_8cpp_a1d7304ad8a216f20942a742a74889bdf}{Test\-Mutex} ()
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{tests_8cpp_a0a1a30af5e0fc9971baf6b0ce297ed57}{Proxy\-Levenshtein} (const char $\ast$s\-A, const char $\ast$s\-B)
+\item 
+void \hyperlink{tests_8cpp_afc6524fb560fc6514f48a81f44faa7ef}{Test\-Levenshtein} ()
+\item 
+void \hyperlink{tests_8cpp_ad98e1e5fa696da7d375a451e08c25f4d}{Test\-T\-Digest} ()
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{tests_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ \hyperlink{tests_8cpp_a9cbde555b580f7de1bbd90672fb68acd}{g\-\_\-s\-Tmpfile} = \char`\"{}\-\_\-\-\_\-libsphinxtest.\-tmp\char`\"{}
+\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{tests_8cpp_a217ef6dd1e81621fd07cb900d7d9cdd5}{T\-O\-K\-\_\-\-E\-X\-C\-E\-P\-T\-I\-O\-N\-S} = 1
+\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{tests_8cpp_aee5a6bacccd3322960def9f3145231a3}{T\-O\-K\-\_\-\-N\-O\-\_\-\-D\-A\-S\-H} = 2
+\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{tests_8cpp_a8fe1cfc8d95e6d48b978ba3e70007d9a}{T\-O\-K\-\_\-\-N\-O\-\_\-\-S\-H\-O\-R\-T} = 4
+\item 
+static \hyperlink{structCSphSourceStats}{C\-Sph\-Source\-Stats} \hyperlink{tests_8cpp_af294f19cfce23c3d8f8148c30616fc72}{g\-\_\-t\-Tmp\-Dummy\-Stat}
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{tests_8cpp_a7462bc6069ddbe0caf5e589fe7d40967}{g\-\_\-i\-Rwlock}
+\item 
+static C\-Sph\-Rwlock \hyperlink{tests_8cpp_a9acc5c4ebdb39f7ea55af64b9879c1bb}{g\-\_\-t\-Rwlock}
+\item 
+static volatile \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{tests_8cpp_ad16f7380f71a2cefd68b4d9f366e9afd}{g\-\_\-i\-Mutex\-Bench} = 0
+\item 
+static \hyperlink{structSortDataGenDesc__t}{Sort\-Data\-Gen\-Desc\-\_\-t} \hyperlink{tests_8cpp_a753e0997185913bc90b73d78aaf1302b}{g\-\_\-d\-Sort\-Data\-Gens} \mbox{[}$\,$\mbox{]}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{tests_8cpp_aedc47b3fc2b43ec88a3981d484d5261f}{g\-\_\-i\-Weights} \mbox{[}\hyperlink{tests_8cpp_a2f3d1683547013f53ed70486b68773cf}{R\-T\-\_\-\-P\-A\-S\-S\-\_\-\-C\-O\-U\-N\-T}\mbox{]} = \{ 1500, 1500, 1500, 1500, 1500 \}
+\item 
+static const char $\ast$ \hyperlink{tests_8cpp_a66c26364f6388963a8a95c3879f71f05}{C\-O\-R\-P\-U\-S} = \char`\"{}corpus.\-txt\char`\"{}
+\item 
+const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{tests_8cpp_a67e5262f564a215226888e4aaaf5151d}{P\-O\-O\-L\-S\-I\-Z\-E} = 80$\ast$1048576
+\item 
+const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{tests_8cpp_a8164f3fe18946ad6d73fa48b336073ee}{G\-A\-P} = 4
+\item 
+const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{tests_8cpp_a6727f2fb1264c3cbec9a845306509fbf}{T\-I\-M\-E\-R\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-N\-R\-U\-N\-S} = 10$\ast$1000$\ast$1000
+\item 
+static const double \hyperlink{tests_8cpp_aa022ec205ea7f284ced2a5ad56243e3f}{M\-Y\-\_\-\-P\-I} = 3.\-14159265358979323846
+\item 
+static const double \hyperlink{tests_8cpp_a0801d0cf598487a3790cf60db37197f9}{T\-O\-\_\-\-R\-A\-D\-D} = \hyperlink{tests_8cpp_aa022ec205ea7f284ced2a5ad56243e3f}{M\-Y\-\_\-\-P\-I} / 180.\-0
+\item 
+static const double \hyperlink{tests_8cpp_a1f7e3ebe4380a80f28e6da2cad94cbd3}{T\-O\-\_\-\-R\-A\-D\-D2} = \hyperlink{tests_8cpp_aa022ec205ea7f284ced2a5ad56243e3f}{M\-Y\-\_\-\-P\-I} / 360.\-0
+\item 
+static const double \hyperlink{tests_8cpp_a8407990a7afe9b8cb997bdb1c60ffac5}{T\-O\-\_\-\-D\-E\-G\-D} = 180.\-0 / \hyperlink{tests_8cpp_aa022ec205ea7f284ced2a5ad56243e3f}{M\-Y\-\_\-\-P\-I}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{tests_8cpp_a9cd9ca08cf4c9f367a6c6ff9e975c70c}{N\-F\-U\-N\-C\-S} = 3
+\item 
+C\-Sph\-Mutex \hyperlink{tests_8cpp_aacff0a82fe00b835cfec453cf0c73fee}{g\-\_\-\-Mutex1}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{tests_8cpp_aaa395e97f585ddcb72524058797caf37}{\index{tests.\-cpp@{tests.\-cpp}!A\-A\-A@{A\-A\-A}}
+\index{A\-A\-A@{A\-A\-A}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{A\-A\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-A\-A~{\bf float}(t\-Match.\-m\-\_\-p\-Static\mbox{[}0\mbox{]})}}\label{tests_8cpp_aaa395e97f585ddcb72524058797caf37}
+\hypertarget{tests_8cpp_a56f71db70e5d3eb35f197bd1499987b1}{\index{tests.\-cpp@{tests.\-cpp}!B\-B\-B@{B\-B\-B}}
+\index{B\-B\-B@{B\-B\-B}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{B\-B\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-B\-B~{\bf float}(t\-Match.\-m\-\_\-p\-Static\mbox{[}1\mbox{]})}}\label{tests_8cpp_a56f71db70e5d3eb35f197bd1499987b1}
+\hypertarget{tests_8cpp_aac3f153b43e30e4004c50123561bb145}{\index{tests.\-cpp@{tests.\-cpp}!C\-C\-C@{C\-C\-C}}
+\index{C\-C\-C@{C\-C\-C}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{C\-C\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-C\-C~{\bf float}(t\-Match.\-m\-\_\-p\-Static\mbox{[}2\mbox{]})}}\label{tests_8cpp_aac3f153b43e30e4004c50123561bb145}
+\hypertarget{tests_8cpp_ab8f2f6d63352a3eea79d5bf924ee0b1c}{\index{tests.\-cpp@{tests.\-cpp}!C\-R\-O\-S\-S\-C\-H\-E\-C\-K@{C\-R\-O\-S\-S\-C\-H\-E\-C\-K}}
+\index{C\-R\-O\-S\-S\-C\-H\-E\-C\-K@{C\-R\-O\-S\-S\-C\-H\-E\-C\-K}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{C\-R\-O\-S\-S\-C\-H\-E\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-R\-O\-S\-S\-C\-H\-E\-C\-K~0}}\label{tests_8cpp_ab8f2f6d63352a3eea79d5bf924ee0b1c}
+\hypertarget{tests_8cpp_a1b173d22e57d9395897acbd8de62d505}{\index{tests.\-cpp@{tests.\-cpp}!N\-O\-I\-N\-L\-I\-N\-E@{N\-O\-I\-N\-L\-I\-N\-E}}
+\index{N\-O\-I\-N\-L\-I\-N\-E@{N\-O\-I\-N\-L\-I\-N\-E}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{N\-O\-I\-N\-L\-I\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-I\-N\-L\-I\-N\-E}}\label{tests_8cpp_a1b173d22e57d9395897acbd8de62d505}
+\hypertarget{tests_8cpp_a74f744e5a69aaffeb4bdf525a8b74122}{\index{tests.\-cpp@{tests.\-cpp}!P\-O\-R\-T\-E\-R1@{P\-O\-R\-T\-E\-R1}}
+\index{P\-O\-R\-T\-E\-R1@{P\-O\-R\-T\-E\-R1}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{P\-O\-R\-T\-E\-R1}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-R\-T\-E\-R1~0}}\label{tests_8cpp_a74f744e5a69aaffeb4bdf525a8b74122}
+\hypertarget{tests_8cpp_ae3ff19a34744ef044602833b83a28942}{\index{tests.\-cpp@{tests.\-cpp}!R\-T\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E@{R\-T\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E}}
+\index{R\-T\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E@{R\-T\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{R\-T\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E~\char`\"{}test\-\_\-temp\char`\"{}}}\label{tests_8cpp_ae3ff19a34744ef044602833b83a28942}
+\hypertarget{tests_8cpp_a2f3d1683547013f53ed70486b68773cf}{\index{tests.\-cpp@{tests.\-cpp}!R\-T\-\_\-\-P\-A\-S\-S\-\_\-\-C\-O\-U\-N\-T@{R\-T\-\_\-\-P\-A\-S\-S\-\_\-\-C\-O\-U\-N\-T}}
+\index{R\-T\-\_\-\-P\-A\-S\-S\-\_\-\-C\-O\-U\-N\-T@{R\-T\-\_\-\-P\-A\-S\-S\-\_\-\-C\-O\-U\-N\-T}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{R\-T\-\_\-\-P\-A\-S\-S\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-\_\-\-P\-A\-S\-S\-\_\-\-C\-O\-U\-N\-T~5}}\label{tests_8cpp_a2f3d1683547013f53ed70486b68773cf}
+\hypertarget{tests_8cpp_ad44b0ef4b5e9ad4f7cf6681b14e1c351}{\index{tests.\-cpp@{tests.\-cpp}!S\-N\-O\-W\-B\-A\-L\-L@{S\-N\-O\-W\-B\-A\-L\-L}}
+\index{S\-N\-O\-W\-B\-A\-L\-L@{S\-N\-O\-W\-B\-A\-L\-L}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{S\-N\-O\-W\-B\-A\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-N\-O\-W\-B\-A\-L\-L~0}}\label{tests_8cpp_ad44b0ef4b5e9ad4f7cf6681b14e1c351}
+\hypertarget{tests_8cpp_a6c1dbf43a65932277cb15899d27e2437}{\index{tests.\-cpp@{tests.\-cpp}!W\-R\-I\-T\-E\-\_\-\-O\-U\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E@{W\-R\-I\-T\-E\-\_\-\-O\-U\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}}
+\index{W\-R\-I\-T\-E\-\_\-\-O\-U\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E@{W\-R\-I\-T\-E\-\_\-\-O\-U\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{W\-R\-I\-T\-E\-\_\-\-O\-U\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-R\-I\-T\-E\-\_\-\-O\-U\-T\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E~0x40000}}\label{tests_8cpp_a6c1dbf43a65932277cb15899d27e2437}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{tests_8cpp_ab3f5ffd99b2b93da12d79aedb6188907}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Gen\-\_\-fn@{Sort\-Data\-Gen\-\_\-fn}}
+\index{Sort\-Data\-Gen\-\_\-fn@{Sort\-Data\-Gen\-\_\-fn}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Gen\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Sort\-Data\-Gen\-\_\-fn)({\bf D\-W\-O\-R\-D} $\ast$, {\bf int})}}\label{tests_8cpp_ab3f5ffd99b2b93da12d79aedb6188907}
+
+
+\subsection{Function Documentation}
+\hypertarget{tests_8cpp_a5dd6be0c3714f5823a3b80e968d12b04}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Appendf@{Bench\-Appendf}}
+\index{Bench\-Appendf@{Bench\-Appendf}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Appendf}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Appendf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a5dd6be0c3714f5823a3b80e968d12b04}
+\hypertarget{tests_8cpp_aa54b06fa066643d3adc074a42a7f84c7}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Expr@{Bench\-Expr}}
+\index{Bench\-Expr@{Bench\-Expr}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Expr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_aa54b06fa066643d3adc074a42a7f84c7}
+\hypertarget{tests_8cpp_a90ab11963385e30aa24b3b49250e759a}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Locators@{Bench\-Locators}}
+\index{Bench\-Locators@{Bench\-Locators}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Locators}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Locators (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a90ab11963385e30aa24b3b49250e759a}
+\hypertarget{tests_8cpp_a6a23a507fc93c55537ef2c158e376e71}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Misc@{Bench\-Misc}}
+\index{Bench\-Misc@{Bench\-Misc}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Misc}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Misc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a6a23a507fc93c55537ef2c158e376e71}
+\hypertarget{tests_8cpp_a9b5874a65932034b4bfb19a2a4c317ea}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Sort@{Bench\-Sort}}
+\index{Bench\-Sort@{Bench\-Sort}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf int64\-\_\-t} Bench\-Sort (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count, }
+\item[{bool}]{b\-Check}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a9b5874a65932034b4bfb19a2a4c317ea}
+\hypertarget{tests_8cpp_ad614147c0cb0e3ca7af4d8dd422bb205}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Sort@{Bench\-Sort}}
+\index{Bench\-Sort@{Bench\-Sort}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Sort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ad614147c0cb0e3ca7af4d8dd422bb205}
+\hypertarget{tests_8cpp_a62eb4cbad18f2fdb716a5be54aaaf59f}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Stemmer@{Bench\-Stemmer}}
+\index{Bench\-Stemmer@{Bench\-Stemmer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Stemmer}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Stemmer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a62eb4cbad18f2fdb716a5be54aaaf59f}
+\hypertarget{tests_8cpp_afe8fdf00555b4c98e3f12a3906f53654}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Stripper@{Bench\-Stripper}}
+\index{Bench\-Stripper@{Bench\-Stripper}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Stripper}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Stripper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_afe8fdf00555b4c98e3f12a3906f53654}
+\hypertarget{tests_8cpp_aa2f0245108cc511fcbf014928c709a05}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Threads@{Bench\-Threads}}
+\index{Bench\-Threads@{Bench\-Threads}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Threads}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Threads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_aa2f0245108cc511fcbf014928c709a05}
+\hypertarget{tests_8cpp_a8805ac4b6e6d1fa68e5cffc583906121}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Timer\-Thread@{Bench\-Timer\-Thread}}
+\index{Bench\-Timer\-Thread@{Bench\-Timer\-Thread}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Timer\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Timer\-Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Endtime}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a8805ac4b6e6d1fa68e5cffc583906121}
+\hypertarget{tests_8cpp_a36a3a6cc336aa9051573a51c14fc3b67}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Tokenizer@{Bench\-Tokenizer}}
+\index{Bench\-Tokenizer@{Bench\-Tokenizer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Tokenizer (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Data, }
+\item[{{\bf int}}]{i\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a36a3a6cc336aa9051573a51c14fc3b67}
+\hypertarget{tests_8cpp_a68ee69ddfee248ce670e740c929d499c}{\index{tests.\-cpp@{tests.\-cpp}!Bench\-Tokenizer@{Bench\-Tokenizer}}
+\index{Bench\-Tokenizer@{Bench\-Tokenizer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Bench\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}void Bench\-Tokenizer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a68ee69ddfee248ce670e740c929d499c}
+\hypertarget{tests_8cpp_a10c40123fd4d839e1d32d1eb16d08b38}{\index{tests.\-cpp@{tests.\-cpp}!Calc\-Geofunc@{Calc\-Geofunc}}
+\index{Calc\-Geofunc@{Calc\-Geofunc}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Calc\-Geofunc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} Calc\-Geofunc (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Func, }
+\item[{double $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a10c40123fd4d839e1d32d1eb16d08b38}
+\hypertarget{tests_8cpp_a27917b2a5689de87df1acee52c75c559}{\index{tests.\-cpp@{tests.\-cpp}!Check\-Query\-Soft\-Space@{Check\-Query\-Soft\-Space}}
+\index{Check\-Query\-Soft\-Space@{Check\-Query\-Soft\-Space}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Check\-Query\-Soft\-Space}]{\setlength{\rightskip}{0pt plus 5cm}static void Check\-Query\-Soft\-Space (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{const {\bf int} $\ast$}]{p\-Q\-Pos, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a27917b2a5689de87df1acee52c75c559}
+\hypertarget{tests_8cpp_a10c893af93119cd2b56ffb380afae74a}{\index{tests.\-cpp@{tests.\-cpp}!Check\-R\-T@{Check\-R\-T}}
+\index{Check\-R\-T@{Check\-R\-T}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Check\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}static void Check\-R\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Val, }
+\item[{{\bf int}}]{i\-Ref, }
+\item[{const char $\ast$}]{s\-Msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a10c893af93119cd2b56ffb380afae74a}
+\hypertarget{tests_8cpp_a1209ff1bf2d2560c02869583bb8a517a}{\index{tests.\-cpp@{tests.\-cpp}!Cleanup\-Callback@{Cleanup\-Callback}}
+\index{Cleanup\-Callback@{Cleanup\-Callback}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Cleanup\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void Cleanup\-Callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a1209ff1bf2d2560c02869583bb8a517a}
+\hypertarget{tests_8cpp_aca5a85a17320d27851e41fd98a687031}{\index{tests.\-cpp@{tests.\-cpp}!Cleanup\-Thread@{Cleanup\-Thread}}
+\index{Cleanup\-Thread@{Cleanup\-Thread}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Cleanup\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Cleanup\-Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_aca5a85a17320d27851e41fd98a687031}
+\hypertarget{tests_8cpp_a297e7caf027208eef4d79f0cc5d77104}{\index{tests.\-cpp@{tests.\-cpp}!Create\-Synonyms\-File@{Create\-Synonyms\-File}}
+\index{Create\-Synonyms\-File@{Create\-Synonyms\-File}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Create\-Synonyms\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool Create\-Synonyms\-File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Magic}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a297e7caf027208eef4d79f0cc5d77104}
+\hypertarget{tests_8cpp_a3e856ec128b362c67696ebb9cfbfad4e}{\index{tests.\-cpp@{tests.\-cpp}!Create\-Test\-Tokenizer@{Create\-Test\-Tokenizer}}
+\index{Create\-Test\-Tokenizer@{Create\-Test\-Tokenizer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Create\-Test\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Tokenizer}$\ast$ Create\-Test\-Tokenizer (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Mode}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a3e856ec128b362c67696ebb9cfbfad4e}
+\hypertarget{tests_8cpp_af2075abb3f6c4454699f6e1461fd6c14}{\index{tests.\-cpp@{tests.\-cpp}!Delete\-Index\-Files@{Delete\-Index\-Files}}
+\index{Delete\-Index\-Files@{Delete\-Index\-Files}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Delete\-Index\-Files}]{\setlength{\rightskip}{0pt plus 5cm}static void Delete\-Index\-Files (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_af2075abb3f6c4454699f6e1461fd6c14}
+\hypertarget{tests_8cpp_ad2006418f23993b931e33703dab4df21}{\index{tests.\-cpp@{tests.\-cpp}!Dest\-Vincenty@{Dest\-Vincenty}}
+\index{Dest\-Vincenty@{Dest\-Vincenty}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Dest\-Vincenty}]{\setlength{\rightskip}{0pt plus 5cm}void Dest\-Vincenty (
+\begin{DoxyParamCaption}
+\item[{double}]{lat1, }
+\item[{double}]{lon1, }
+\item[{double}]{brng, }
+\item[{double}]{dist, }
+\item[{double $\ast$}]{lat2, }
+\item[{double $\ast$}]{lon2}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ad2006418f23993b931e33703dab4df21}
+\hypertarget{tests_8cpp_a3b92b945296adbf04f504aecb3d4f732}{\index{tests.\-cpp@{tests.\-cpp}!Dummy\-Thread@{Dummy\-Thread}}
+\index{Dummy\-Thread@{Dummy\-Thread}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Dummy\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Dummy\-Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a3b92b945296adbf04f504aecb3d4f732}
+\hypertarget{tests_8cpp_a8e1838ad298dfe960ee7cbb8ebde66cb}{\index{tests.\-cpp@{tests.\-cpp}!Expr\-Native1@{Expr\-Native1}}
+\index{Expr\-Native1@{Expr\-Native1}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Expr\-Native1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\-O\-I\-N\-L\-I\-N\-E} {\bf float} Expr\-Native1 (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a8e1838ad298dfe960ee7cbb8ebde66cb}
+\hypertarget{tests_8cpp_ae206cfde82b7aee22fc55c3e9e49ad0d}{\index{tests.\-cpp@{tests.\-cpp}!Expr\-Native2@{Expr\-Native2}}
+\index{Expr\-Native2@{Expr\-Native2}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Expr\-Native2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\-O\-I\-N\-L\-I\-N\-E} {\bf float} Expr\-Native2 (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ae206cfde82b7aee22fc55c3e9e49ad0d}
+\hypertarget{tests_8cpp_a730ed52622c07a4800e966a520dc9927}{\index{tests.\-cpp@{tests.\-cpp}!Expr\-Native3@{Expr\-Native3}}
+\index{Expr\-Native3@{Expr\-Native3}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Expr\-Native3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\-O\-I\-N\-L\-I\-N\-E} {\bf float} Expr\-Native3 (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a730ed52622c07a4800e966a520dc9927}
+\hypertarget{tests_8cpp_a69c113963ea9cd73e71a052665580185}{\index{tests.\-cpp@{tests.\-cpp}!Geodist\-Vincenty@{Geodist\-Vincenty}}
+\index{Geodist\-Vincenty@{Geodist\-Vincenty}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Geodist\-Vincenty}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf float} Geodist\-Vincenty (
+\begin{DoxyParamCaption}
+\item[{double}]{lat1, }
+\item[{double}]{lon1, }
+\item[{double}]{lat2, }
+\item[{double}]{lon2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{tests_8cpp_a69c113963ea9cd73e71a052665580185}
+\hypertarget{tests_8cpp_a10749544c1bffb4fbf9917edf84c1f04}{\index{tests.\-cpp@{tests.\-cpp}!Is\-Sorted@{Is\-Sorted}}
+\index{Is\-Sorted@{Is\-Sorted}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Is\-Sorted}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Sorted (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count, }
+\item[{const {\bf Test\-Acc\-Cmp\-\_\-fn} \&}]{fn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a10749544c1bffb4fbf9917edf84c1f04}
+\hypertarget{tests_8cpp_a2068ac64b4ce70eeae1ef186347a1e2c}{\index{tests.\-cpp@{tests.\-cpp}!Load\-File@{Load\-File}}
+\index{Load\-File@{Load\-File}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Load\-File}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Load\-File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf int} $\ast$}]{p\-Len, }
+\item[{bool}]{b\-Report\-Errors}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a2068ac64b4ce70eeae1ef186347a1e2c}
+\hypertarget{tests_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{tests.\-cpp@{tests.\-cpp}!main@{main}}
+\index{main@{main}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+\hypertarget{tests_8cpp_a58dc3c3266aafa486e5339c5af5ae09c}{\index{tests.\-cpp@{tests.\-cpp}!Max\-Err@{Max\-Err}}
+\index{Max\-Err@{Max\-Err}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Max\-Err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} Max\-Err (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{f\-Max, }
+\item[{{\bf float}}]{f\-Res, }
+\item[{double}]{f\-Ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{tests_8cpp_a58dc3c3266aafa486e5339c5af5ae09c}
+\hypertarget{tests_8cpp_a53109ebf4d4d7f106dcc4d9c79fa7e67}{\index{tests.\-cpp@{tests.\-cpp}!Mutex\-Bench\-Thread@{Mutex\-Bench\-Thread}}
+\index{Mutex\-Bench\-Thread@{Mutex\-Bench\-Thread}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Mutex\-Bench\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Mutex\-Bench\-Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a53109ebf4d4d7f106dcc4d9c79fa7e67}
+\hypertarget{tests_8cpp_ab1e01468f5799ffec28a6f74630a048d}{\index{tests.\-cpp@{tests.\-cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Word\-Hit} \&}]{a, }
+\item[{const {\bf C\-Sph\-Word\-Hit} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{tests_8cpp_ab1e01468f5799ffec28a6f74630a048d}
+\hypertarget{tests_8cpp_a0a1a30af5e0fc9971baf6b0ce297ed57}{\index{tests.\-cpp@{tests.\-cpp}!Proxy\-Levenshtein@{Proxy\-Levenshtein}}
+\index{Proxy\-Levenshtein@{Proxy\-Levenshtein}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Proxy\-Levenshtein}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Proxy\-Levenshtein (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-A, }
+\item[{const char $\ast$}]{s\-B}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a0a1a30af5e0fc9971baf6b0ce297ed57}
+\hypertarget{tests_8cpp_a34016cb173cde59d24712cf6c7e0e2c7}{\index{tests.\-cpp@{tests.\-cpp}!Random\-Fill@{Random\-Fill}}
+\index{Random\-Fill@{Random\-Fill}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Random\-Fill}]{\setlength{\rightskip}{0pt plus 5cm}void Random\-Fill (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count, }
+\item[{const {\bf Test\-Acc\-Cmp\-\_\-fn} \&}]{fn, }
+\item[{bool}]{b\-Chainsaw}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a34016cb173cde59d24712cf6c7e0e2c7}
+\hypertarget{tests_8cpp_a098fe10c1883e01ae39c6655be103d20}{\index{tests.\-cpp@{tests.\-cpp}!Rwlock\-Reader@{Rwlock\-Reader}}
+\index{Rwlock\-Reader@{Rwlock\-Reader}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Rwlock\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}void Rwlock\-Reader (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a098fe10c1883e01ae39c6655be103d20}
+\hypertarget{tests_8cpp_a4d31cfe02526c27010ec149b0600864e}{\index{tests.\-cpp@{tests.\-cpp}!Rwlock\-Writer@{Rwlock\-Writer}}
+\index{Rwlock\-Writer@{Rwlock\-Writer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Rwlock\-Writer}]{\setlength{\rightskip}{0pt plus 5cm}void Rwlock\-Writer (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a4d31cfe02526c27010ec149b0600864e}
+\hypertarget{tests_8cpp_aaea83c177633167a17d81f3c01c5ff79}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Asc\-Desc@{Sort\-Data\-Asc\-Desc}}
+\index{Sort\-Data\-Asc\-Desc@{Sort\-Data\-Asc\-Desc}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Asc\-Desc}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Asc\-Desc (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_aaea83c177633167a17d81f3c01c5ff79}
+\hypertarget{tests_8cpp_a5faaca8c602042d8995b713a208b83f5}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Desc\-Asc@{Sort\-Data\-Desc\-Asc}}
+\index{Sort\-Data\-Desc\-Asc@{Sort\-Data\-Desc\-Asc}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Desc\-Asc}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Desc\-Asc (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a5faaca8c602042d8995b713a208b83f5}
+\hypertarget{tests_8cpp_a27e851bae879b7483556a6ca9ffea992}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-End0@{Sort\-Data\-End0}}
+\index{Sort\-Data\-End0@{Sort\-Data\-End0}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-End0}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-End0 (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a27e851bae879b7483556a6ca9ffea992}
+\hypertarget{tests_8cpp_a24b6cc1718f20efbd033af51323c05af}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Identical@{Sort\-Data\-Identical}}
+\index{Sort\-Data\-Identical@{Sort\-Data\-Identical}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Identical}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Identical (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a24b6cc1718f20efbd033af51323c05af}
+\hypertarget{tests_8cpp_a2b17f1eebc6822cf9cd8d2e3e43a1037}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Med3\-Killer@{Sort\-Data\-Med3\-Killer}}
+\index{Sort\-Data\-Med3\-Killer@{Sort\-Data\-Med3\-Killer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Med3\-Killer}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Med3\-Killer (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a2b17f1eebc6822cf9cd8d2e3e43a1037}
+\hypertarget{tests_8cpp_ae29a3940dfab61f19d08ca6b8c499312}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Mid\-Killer@{Sort\-Data\-Mid\-Killer}}
+\index{Sort\-Data\-Mid\-Killer@{Sort\-Data\-Mid\-Killer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Mid\-Killer}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Mid\-Killer (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ae29a3940dfab61f19d08ca6b8c499312}
+\hypertarget{tests_8cpp_a842640dc0729e93f60259f2976f3910c}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Rand01@{Sort\-Data\-Rand01}}
+\index{Sort\-Data\-Rand01@{Sort\-Data\-Rand01}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Rand01}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Rand01 (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a842640dc0729e93f60259f2976f3910c}
+\hypertarget{tests_8cpp_ab5de87a8cd12e895a4b20826da074ee2}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Rand\-Dupes@{Sort\-Data\-Rand\-Dupes}}
+\index{Sort\-Data\-Rand\-Dupes@{Sort\-Data\-Rand\-Dupes}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Rand\-Dupes}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Rand\-Dupes (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ab5de87a8cd12e895a4b20826da074ee2}
+\hypertarget{tests_8cpp_af6687623dc00abdab41490d0fb7991ec}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Rand\-Steps@{Sort\-Data\-Rand\-Steps}}
+\index{Sort\-Data\-Rand\-Steps@{Sort\-Data\-Rand\-Steps}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Rand\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Rand\-Steps (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_af6687623dc00abdab41490d0fb7991ec}
+\hypertarget{tests_8cpp_ae705351175f63717dd50cd5867db883f}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Rand\-Uniq@{Sort\-Data\-Rand\-Uniq}}
+\index{Sort\-Data\-Rand\-Uniq@{Sort\-Data\-Rand\-Uniq}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Rand\-Uniq}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Rand\-Uniq (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ae705351175f63717dd50cd5867db883f}
+\hypertarget{tests_8cpp_a57d385d0687ecbcbc1a3426e47761977}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Repeat1245@{Sort\-Data\-Repeat1245}}
+\index{Sort\-Data\-Repeat1245@{Sort\-Data\-Repeat1245}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Repeat1245}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Repeat1245 (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a57d385d0687ecbcbc1a3426e47761977}
+\hypertarget{tests_8cpp_a6ce1647a89531315e70baf34bebdf055}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Rev\-Ends@{Sort\-Data\-Rev\-Ends}}
+\index{Sort\-Data\-Rev\-Ends@{Sort\-Data\-Rev\-Ends}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Rev\-Ends}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Rev\-Ends (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a6ce1647a89531315e70baf34bebdf055}
+\hypertarget{tests_8cpp_aa12a480d1f7eb6d3edb078cbb7838aa3}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Reverse@{Sort\-Data\-Reverse}}
+\index{Sort\-Data\-Reverse@{Sort\-Data\-Reverse}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Reverse}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Reverse (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_aa12a480d1f7eb6d3edb078cbb7838aa3}
+\hypertarget{tests_8cpp_af1ee2829472ea9367b5e1a421d8c7a94}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Rev\-Partial@{Sort\-Data\-Rev\-Partial}}
+\index{Sort\-Data\-Rev\-Partial@{Sort\-Data\-Rev\-Partial}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Rev\-Partial}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Rev\-Partial (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_af1ee2829472ea9367b5e1a421d8c7a94}
+\hypertarget{tests_8cpp_a0955ebb3982134fd29c7fd144d1222ce}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Rev\-Saw@{Sort\-Data\-Rev\-Saw}}
+\index{Sort\-Data\-Rev\-Saw@{Sort\-Data\-Rev\-Saw}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Rev\-Saw}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Rev\-Saw (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a0955ebb3982134fd29c7fd144d1222ce}
+\hypertarget{tests_8cpp_a9b857beb65bb0865483fabcc033573bb}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Seq@{Sort\-Data\-Seq}}
+\index{Sort\-Data\-Seq@{Sort\-Data\-Seq}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Seq}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Seq (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a9b857beb65bb0865483fabcc033573bb}
+\hypertarget{tests_8cpp_aaf871e93b01da9ed57d119738babcf7f}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Seq\-Partial@{Sort\-Data\-Seq\-Partial}}
+\index{Sort\-Data\-Seq\-Partial@{Sort\-Data\-Seq\-Partial}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Seq\-Partial}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Seq\-Partial (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_aaf871e93b01da9ed57d119738babcf7f}
+\hypertarget{tests_8cpp_a9639bfe62e7b7546a30692fb9aa068a1}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Seq\-Saw@{Sort\-Data\-Seq\-Saw}}
+\index{Sort\-Data\-Seq\-Saw@{Sort\-Data\-Seq\-Saw}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Seq\-Saw}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Seq\-Saw (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a9639bfe62e7b7546a30692fb9aa068a1}
+\hypertarget{tests_8cpp_a90eb864c5565e747b465877febebe026}{\index{tests.\-cpp@{tests.\-cpp}!Sort\-Data\-Start1000@{Sort\-Data\-Start1000}}
+\index{Sort\-Data\-Start1000@{Sort\-Data\-Start1000}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Sort\-Data\-Start1000}]{\setlength{\rightskip}{0pt plus 5cm}void Sort\-Data\-Start1000 (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a90eb864c5565e747b465877febebe026}
+\hypertarget{tests_8cpp_a519ead1816f0832bebdfccccc4395daf}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Appendf@{Test\-Appendf}}
+\index{Test\-Appendf@{Test\-Appendf}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Appendf}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Appendf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a519ead1816f0832bebdfccccc4395daf}
+\hypertarget{tests_8cpp_a3d835cb70d37dc5fb0c824a73822a58f}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Arabic\-Stemmer@{Test\-Arabic\-Stemmer}}
+\index{Test\-Arabic\-Stemmer@{Test\-Arabic\-Stemmer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Arabic\-Stemmer}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Arabic\-Stemmer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a3d835cb70d37dc5fb0c824a73822a58f}
+\hypertarget{tests_8cpp_a4e78e6153a83bd65d540676e9d489715}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Cleanup@{Test\-Cleanup}}
+\index{Test\-Cleanup@{Test\-Cleanup}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a4e78e6153a83bd65d540676e9d489715}
+\hypertarget{tests_8cpp_a902f364070eb73ed081ff794ccf75d38}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Expr@{Test\-Expr}}
+\index{Test\-Expr@{Test\-Expr}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Expr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a902f364070eb73ed081ff794ccf75d38}
+\hypertarget{tests_8cpp_a0b2befca3e72a33af3b874731ed88d02}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Geodist@{Test\-Geodist}}
+\index{Test\-Geodist@{Test\-Geodist}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Geodist}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Geodist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a0b2befca3e72a33af3b874731ed88d02}
+\hypertarget{tests_8cpp_a2390c79565aa056b2df7ef1a4a7ac68e}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Hash@{Test\-Hash}}
+\index{Test\-Hash@{Test\-Hash}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Hash (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a2390c79565aa056b2df7ef1a4a7ac68e}
+\hypertarget{tests_8cpp_afc6524fb560fc6514f48a81f44faa7ef}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Levenshtein@{Test\-Levenshtein}}
+\index{Test\-Levenshtein@{Test\-Levenshtein}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Levenshtein}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Levenshtein (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_afc6524fb560fc6514f48a81f44faa7ef}
+\hypertarget{tests_8cpp_ab8d39f741a361eaaada723d0f75453c1}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Log2@{Test\-Log2}}
+\index{Test\-Log2@{Test\-Log2}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Log2}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Log2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ab8d39f741a361eaaada723d0f75453c1}
+\hypertarget{tests_8cpp_a59df20252bcb59de6a3b72c117abacaf}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Misc@{Test\-Misc}}
+\index{Test\-Misc@{Test\-Misc}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Misc}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Misc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a59df20252bcb59de6a3b72c117abacaf}
+\hypertarget{tests_8cpp_a1d7304ad8a216f20942a742a74889bdf}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Mutex@{Test\-Mutex}}
+\index{Test\-Mutex@{Test\-Mutex}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Mutex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a1d7304ad8a216f20942a742a74889bdf}
+\hypertarget{tests_8cpp_aed3dc49b020ed6066778791e97900f6c}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Query\-Parser@{Test\-Query\-Parser}}
+\index{Test\-Query\-Parser@{Test\-Query\-Parser}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Query\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Query\-Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_aed3dc49b020ed6066778791e97900f6c}
+\hypertarget{tests_8cpp_a06f509a3c8e6b8fcf4803088ec4ccd30}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Query\-Transforms@{Test\-Query\-Transforms}}
+\index{Test\-Query\-Transforms@{Test\-Query\-Transforms}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Query\-Transforms}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Query\-Transforms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a06f509a3c8e6b8fcf4803088ec4ccd30}
+\hypertarget{tests_8cpp_aec776eb78038420e4f98c34314ca342c}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Ranker\-Factors@{Test\-Ranker\-Factors}}
+\index{Test\-Ranker\-Factors@{Test\-Ranker\-Factors}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Ranker\-Factors}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Ranker\-Factors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_aec776eb78038420e4f98c34314ca342c}
+\hypertarget{tests_8cpp_a818c60205e5d7ff54707581468266d25}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Rebalance@{Test\-Rebalance}}
+\index{Test\-Rebalance@{Test\-Rebalance}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Rebalance}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Rebalance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a818c60205e5d7ff54707581468266d25}
+\hypertarget{tests_8cpp_a31d601598aa33313e687cb89bd087656}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Rebalance\-\_\-fn@{Test\-Rebalance\-\_\-fn}}
+\index{Test\-Rebalance\-\_\-fn@{Test\-Rebalance\-\_\-fn}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Rebalance\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}static void Test\-Rebalance\-\_\-fn (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf int}}]{i\-Stride, }
+\item[{{\bf int}}]{i\-Weights}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a31d601598aa33313e687cb89bd087656}
+\hypertarget{tests_8cpp_a951573a2feefa8e77e0710ac713dc543}{\index{tests.\-cpp@{tests.\-cpp}!Test\-R\-T\-Init@{Test\-R\-T\-Init}}
+\index{Test\-R\-T\-Init@{Test\-R\-T\-Init}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-R\-T\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-R\-T\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a951573a2feefa8e77e0710ac713dc543}
+\hypertarget{tests_8cpp_adfdd22a1be9b58a69814ed29d352f569}{\index{tests.\-cpp@{tests.\-cpp}!Test\-R\-T\-Send\-Vs\-Merge@{Test\-R\-T\-Send\-Vs\-Merge}}
+\index{Test\-R\-T\-Send\-Vs\-Merge@{Test\-R\-T\-Send\-Vs\-Merge}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-R\-T\-Send\-Vs\-Merge}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-R\-T\-Send\-Vs\-Merge (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_adfdd22a1be9b58a69814ed29d352f569}
+\hypertarget{tests_8cpp_a51319efc5ad12193b898b0b36503547f}{\index{tests.\-cpp@{tests.\-cpp}!Test\-R\-T\-Weight\-Boundary@{Test\-R\-T\-Weight\-Boundary}}
+\index{Test\-R\-T\-Weight\-Boundary@{Test\-R\-T\-Weight\-Boundary}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-R\-T\-Weight\-Boundary}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-R\-T\-Weight\-Boundary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a51319efc5ad12193b898b0b36503547f}
+\hypertarget{tests_8cpp_a89e04f761f3cfb661691c91fde5f4b1e}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Rwlock@{Test\-Rwlock}}
+\index{Test\-Rwlock@{Test\-Rwlock}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Rwlock}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Rwlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a89e04f761f3cfb661691c91fde5f4b1e}
+\hypertarget{tests_8cpp_adaf457ef1de69b39945f26e5005a77dd}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Sentence\-Tokenizer@{Test\-Sentence\-Tokenizer}}
+\index{Test\-Sentence\-Tokenizer@{Test\-Sentence\-Tokenizer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Sentence\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Sentence\-Tokenizer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_adaf457ef1de69b39945f26e5005a77dd}
+\hypertarget{tests_8cpp_aa4c7851f0cfce0804e42feb557d79383}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Source@{Test\-Source}}
+\index{Test\-Source@{Test\-Source}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Source}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_aa4c7851f0cfce0804e42feb557d79383}
+\hypertarget{tests_8cpp_ad40834e609c761c3054e0d98a09b0577}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Span\-Search@{Test\-Span\-Search}}
+\index{Test\-Span\-Search@{Test\-Span\-Search}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Span\-Search}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Span\-Search (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ad40834e609c761c3054e0d98a09b0577}
+\hypertarget{tests_8cpp_a580bbdbd7c6ab18aab70bfb8ccc15d97}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Strided\-Sort@{Test\-Strided\-Sort}}
+\index{Test\-Strided\-Sort@{Test\-Strided\-Sort}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Strided\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Strided\-Sort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a580bbdbd7c6ab18aab70bfb8ccc15d97}
+\hypertarget{tests_8cpp_a76aa41546cce3ad012066f08e7f027f3}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Strided\-Sort\-Pass@{Test\-Strided\-Sort\-Pass}}
+\index{Test\-Strided\-Sort\-Pass@{Test\-Strided\-Sort\-Pass}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Strided\-Sort\-Pass}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Strided\-Sort\-Pass (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Stride, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a76aa41546cce3ad012066f08e7f027f3}
+\hypertarget{tests_8cpp_a2c9c3e559ea74fe51dbbcb1f4e8b2f2e}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Stripper@{Test\-Stripper}}
+\index{Test\-Stripper@{Test\-Stripper}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Stripper}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Stripper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a2c9c3e559ea74fe51dbbcb1f4e8b2f2e}
+\hypertarget{tests_8cpp_ad98e1e5fa696da7d375a451e08c25f4d}{\index{tests.\-cpp@{tests.\-cpp}!Test\-T\-Digest@{Test\-T\-Digest}}
+\index{Test\-T\-Digest@{Test\-T\-Digest}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-T\-Digest}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-T\-Digest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ad98e1e5fa696da7d375a451e08c25f4d}
+\hypertarget{tests_8cpp_ad6c06504520bbf5abc63a53a58488550}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Tokenizer@{Test\-Tokenizer}}
+\index{Test\-Tokenizer@{Test\-Tokenizer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Tokenizer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ad6c06504520bbf5abc63a53a58488550}
+\hypertarget{tests_8cpp_ac3c81e8d7a3947cc81037159363e55b3}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Wildcards@{Test\-Wildcards}}
+\index{Test\-Wildcards@{Test\-Wildcards}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Wildcards}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Wildcards (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_ac3c81e8d7a3947cc81037159363e55b3}
+\hypertarget{tests_8cpp_a449724ca348a564a44b95d34f0fd1002}{\index{tests.\-cpp@{tests.\-cpp}!Test\-Writer@{Test\-Writer}}
+\index{Test\-Writer@{Test\-Writer}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Test\-Writer}]{\setlength{\rightskip}{0pt plus 5cm}void Test\-Writer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a449724ca348a564a44b95d34f0fd1002}
+\hypertarget{tests_8cpp_a6554bb08e7585a269c9c7b934fbbfbaf}{\index{tests.\-cpp@{tests.\-cpp}!Timed\-Lock\-Test@{Timed\-Lock\-Test}}
+\index{Timed\-Lock\-Test@{Timed\-Lock\-Test}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{Timed\-Lock\-Test}]{\setlength{\rightskip}{0pt plus 5cm}void Timed\-Lock\-Test (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{tests_8cpp_a6554bb08e7585a269c9c7b934fbbfbaf}
+
+
+\subsection{Variable Documentation}
+\hypertarget{tests_8cpp_a66c26364f6388963a8a95c3879f71f05}{\index{tests.\-cpp@{tests.\-cpp}!C\-O\-R\-P\-U\-S@{C\-O\-R\-P\-U\-S}}
+\index{C\-O\-R\-P\-U\-S@{C\-O\-R\-P\-U\-S}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{C\-O\-R\-P\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ C\-O\-R\-P\-U\-S = \char`\"{}corpus.\-txt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a66c26364f6388963a8a95c3879f71f05}
+\hypertarget{tests_8cpp_a753e0997185913bc90b73d78aaf1302b}{\index{tests.\-cpp@{tests.\-cpp}!g\-\_\-d\-Sort\-Data\-Gens@{g\-\_\-d\-Sort\-Data\-Gens}}
+\index{g\-\_\-d\-Sort\-Data\-Gens@{g\-\_\-d\-Sort\-Data\-Gens}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{g\-\_\-d\-Sort\-Data\-Gens}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sort\-Data\-Gen\-Desc\-\_\-t} g\-\_\-d\-Sort\-Data\-Gens\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a753e0997185913bc90b73d78aaf1302b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{ \hyperlink{tests_8cpp_a57d385d0687ecbcbc1a3426e47761977}{SortDataRepeat1245}, \textcolor{stringliteral}{"repeat1245"} \},
+    \{ \hyperlink{tests_8cpp_a27e851bae879b7483556a6ca9ffea992}{SortDataEnd0},         \textcolor{stringliteral}{"end0"} \},
+    \{ \hyperlink{tests_8cpp_a24b6cc1718f20efbd033af51323c05af}{SortDataIdentical},   \textcolor{stringliteral}{"identical"} \},
+    \{ \hyperlink{tests_8cpp_a2b17f1eebc6822cf9cd8d2e3e43a1037}{SortDataMed3Killer}, \textcolor{stringliteral}{"med3killer"} \},
+    \{ \hyperlink{tests_8cpp_ae29a3940dfab61f19d08ca6b8c499312}{SortDataMidKiller},   \textcolor{stringliteral}{"midkiller"} \},
+    \{ \hyperlink{tests_8cpp_ab5de87a8cd12e895a4b20826da074ee2}{SortDataRandDupes},   \textcolor{stringliteral}{"randdupes"} \},
+    \{ \hyperlink{tests_8cpp_ae705351175f63717dd50cd5867db883f}{SortDataRandUniq},     \textcolor{stringliteral}{"randuniq"} \},
+    \{ \hyperlink{tests_8cpp_af6687623dc00abdab41490d0fb7991ec}{SortDataRandSteps},   \textcolor{stringliteral}{"randsteps"} \},
+    \{ \hyperlink{tests_8cpp_a6ce1647a89531315e70baf34bebdf055}{SortDataRevEnds},       \textcolor{stringliteral}{"revends"} \},
+    \{ \hyperlink{tests_8cpp_af1ee2829472ea9367b5e1a421d8c7a94}{SortDataRevPartial}, \textcolor{stringliteral}{"revpartial"} \},
+    \{ \hyperlink{tests_8cpp_a0955ebb3982134fd29c7fd144d1222ce}{SortDataRevSaw},     \textcolor{stringliteral}{"revsaw"} \},
+    \{ \hyperlink{tests_8cpp_aa12a480d1f7eb6d3edb078cbb7838aa3}{SortDataReverse},       \textcolor{stringliteral}{"reverse"} \},
+    \{ \hyperlink{tests_8cpp_a90eb864c5565e747b465877febebe026}{SortDataStart1000},   \textcolor{stringliteral}{"start1000"} \},
+    \{ \hyperlink{tests_8cpp_aaf871e93b01da9ed57d119738babcf7f}{SortDataSeqPartial}, \textcolor{stringliteral}{"seqpartial"} \},
+    \{ \hyperlink{tests_8cpp_a9639bfe62e7b7546a30692fb9aa068a1}{SortDataSeqSaw},     \textcolor{stringliteral}{"seqsaw"} \},
+    \{ \hyperlink{tests_8cpp_a9b857beb65bb0865483fabcc033573bb}{SortDataSeq},           \textcolor{stringliteral}{"sequential"} \},
+    \{ \hyperlink{tests_8cpp_aaea83c177633167a17d81f3c01c5ff79}{SortDataAscDesc},       \textcolor{stringliteral}{"ascdesc"} \},
+    \{ \hyperlink{tests_8cpp_a5faaca8c602042d8995b713a208b83f5}{SortDataDescAsc},       \textcolor{stringliteral}{"descasc"} \},
+    \{ \hyperlink{tests_8cpp_a842640dc0729e93f60259f2976f3910c}{SortDataRand01},     \textcolor{stringliteral}{"rand01"} \},
+\}
+\end{DoxyCode}
+\hypertarget{tests_8cpp_ad16f7380f71a2cefd68b4d9f366e9afd}{\index{tests.\-cpp@{tests.\-cpp}!g\-\_\-i\-Mutex\-Bench@{g\-\_\-i\-Mutex\-Bench}}
+\index{g\-\_\-i\-Mutex\-Bench@{g\-\_\-i\-Mutex\-Bench}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{g\-\_\-i\-Mutex\-Bench}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf int} g\-\_\-i\-Mutex\-Bench = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_ad16f7380f71a2cefd68b4d9f366e9afd}
+\hypertarget{tests_8cpp_a7462bc6069ddbe0caf5e589fe7d40967}{\index{tests.\-cpp@{tests.\-cpp}!g\-\_\-i\-Rwlock@{g\-\_\-i\-Rwlock}}
+\index{g\-\_\-i\-Rwlock@{g\-\_\-i\-Rwlock}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{g\-\_\-i\-Rwlock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Rwlock\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a7462bc6069ddbe0caf5e589fe7d40967}
+\hypertarget{tests_8cpp_aedc47b3fc2b43ec88a3981d484d5261f}{\index{tests.\-cpp@{tests.\-cpp}!g\-\_\-i\-Weights@{g\-\_\-i\-Weights}}
+\index{g\-\_\-i\-Weights@{g\-\_\-i\-Weights}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{g\-\_\-i\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} g\-\_\-i\-Weights\mbox{[}{\bf R\-T\-\_\-\-P\-A\-S\-S\-\_\-\-C\-O\-U\-N\-T}\mbox{]} = \{ 1500, 1500, 1500, 1500, 1500 \}\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_aedc47b3fc2b43ec88a3981d484d5261f}
+\hypertarget{tests_8cpp_aacff0a82fe00b835cfec453cf0c73fee}{\index{tests.\-cpp@{tests.\-cpp}!g\-\_\-\-Mutex1@{g\-\_\-\-Mutex1}}
+\index{g\-\_\-\-Mutex1@{g\-\_\-\-Mutex1}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{g\-\_\-\-Mutex1}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Mutex g\-\_\-\-Mutex1}}\label{tests_8cpp_aacff0a82fe00b835cfec453cf0c73fee}
+\hypertarget{tests_8cpp_a9cbde555b580f7de1bbd90672fb68acd}{\index{tests.\-cpp@{tests.\-cpp}!g\-\_\-s\-Tmpfile@{g\-\_\-s\-Tmpfile}}
+\index{g\-\_\-s\-Tmpfile@{g\-\_\-s\-Tmpfile}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{g\-\_\-s\-Tmpfile}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ g\-\_\-s\-Tmpfile = \char`\"{}\-\_\-\-\_\-libsphinxtest.\-tmp\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a9cbde555b580f7de1bbd90672fb68acd}
+\hypertarget{tests_8cpp_a9acc5c4ebdb39f7ea55af64b9879c1bb}{\index{tests.\-cpp@{tests.\-cpp}!g\-\_\-t\-Rwlock@{g\-\_\-t\-Rwlock}}
+\index{g\-\_\-t\-Rwlock@{g\-\_\-t\-Rwlock}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{g\-\_\-t\-Rwlock}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Rwlock g\-\_\-t\-Rwlock\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a9acc5c4ebdb39f7ea55af64b9879c1bb}
+\hypertarget{tests_8cpp_af294f19cfce23c3d8f8148c30616fc72}{\index{tests.\-cpp@{tests.\-cpp}!g\-\_\-t\-Tmp\-Dummy\-Stat@{g\-\_\-t\-Tmp\-Dummy\-Stat}}
+\index{g\-\_\-t\-Tmp\-Dummy\-Stat@{g\-\_\-t\-Tmp\-Dummy\-Stat}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{g\-\_\-t\-Tmp\-Dummy\-Stat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Source\-Stats} g\-\_\-t\-Tmp\-Dummy\-Stat\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_af294f19cfce23c3d8f8148c30616fc72}
+\hypertarget{tests_8cpp_a8164f3fe18946ad6d73fa48b336073ee}{\index{tests.\-cpp@{tests.\-cpp}!G\-A\-P@{G\-A\-P}}
+\index{G\-A\-P@{G\-A\-P}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{G\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} G\-A\-P = 4}}\label{tests_8cpp_a8164f3fe18946ad6d73fa48b336073ee}
+\hypertarget{tests_8cpp_aa022ec205ea7f284ced2a5ad56243e3f}{\index{tests.\-cpp@{tests.\-cpp}!M\-Y\-\_\-\-P\-I@{M\-Y\-\_\-\-P\-I}}
+\index{M\-Y\-\_\-\-P\-I@{M\-Y\-\_\-\-P\-I}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{M\-Y\-\_\-\-P\-I}]{\setlength{\rightskip}{0pt plus 5cm}const double M\-Y\-\_\-\-P\-I = 3.\-14159265358979323846\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_aa022ec205ea7f284ced2a5ad56243e3f}
+\hypertarget{tests_8cpp_a9cd9ca08cf4c9f367a6c6ff9e975c70c}{\index{tests.\-cpp@{tests.\-cpp}!N\-F\-U\-N\-C\-S@{N\-F\-U\-N\-C\-S}}
+\index{N\-F\-U\-N\-C\-S@{N\-F\-U\-N\-C\-S}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{N\-F\-U\-N\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} N\-F\-U\-N\-C\-S = 3\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a9cd9ca08cf4c9f367a6c6ff9e975c70c}
+\hypertarget{tests_8cpp_a67e5262f564a215226888e4aaaf5151d}{\index{tests.\-cpp@{tests.\-cpp}!P\-O\-O\-L\-S\-I\-Z\-E@{P\-O\-O\-L\-S\-I\-Z\-E}}
+\index{P\-O\-O\-L\-S\-I\-Z\-E@{P\-O\-O\-L\-S\-I\-Z\-E}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{P\-O\-O\-L\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} P\-O\-O\-L\-S\-I\-Z\-E = 80$\ast$1048576}}\label{tests_8cpp_a67e5262f564a215226888e4aaaf5151d}
+\hypertarget{tests_8cpp_a6727f2fb1264c3cbec9a845306509fbf}{\index{tests.\-cpp@{tests.\-cpp}!T\-I\-M\-E\-R\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-N\-R\-U\-N\-S@{T\-I\-M\-E\-R\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-N\-R\-U\-N\-S}}
+\index{T\-I\-M\-E\-R\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-N\-R\-U\-N\-S@{T\-I\-M\-E\-R\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-N\-R\-U\-N\-S}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{T\-I\-M\-E\-R\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-N\-R\-U\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} T\-I\-M\-E\-R\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-N\-R\-U\-N\-S = 10$\ast$1000$\ast$1000}}\label{tests_8cpp_a6727f2fb1264c3cbec9a845306509fbf}
+\hypertarget{tests_8cpp_a8407990a7afe9b8cb997bdb1c60ffac5}{\index{tests.\-cpp@{tests.\-cpp}!T\-O\-\_\-\-D\-E\-G\-D@{T\-O\-\_\-\-D\-E\-G\-D}}
+\index{T\-O\-\_\-\-D\-E\-G\-D@{T\-O\-\_\-\-D\-E\-G\-D}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{T\-O\-\_\-\-D\-E\-G\-D}]{\setlength{\rightskip}{0pt plus 5cm}const double T\-O\-\_\-\-D\-E\-G\-D = 180.\-0 / {\bf M\-Y\-\_\-\-P\-I}\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a8407990a7afe9b8cb997bdb1c60ffac5}
+\hypertarget{tests_8cpp_a0801d0cf598487a3790cf60db37197f9}{\index{tests.\-cpp@{tests.\-cpp}!T\-O\-\_\-\-R\-A\-D\-D@{T\-O\-\_\-\-R\-A\-D\-D}}
+\index{T\-O\-\_\-\-R\-A\-D\-D@{T\-O\-\_\-\-R\-A\-D\-D}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{T\-O\-\_\-\-R\-A\-D\-D}]{\setlength{\rightskip}{0pt plus 5cm}const double T\-O\-\_\-\-R\-A\-D\-D = {\bf M\-Y\-\_\-\-P\-I} / 180.\-0\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a0801d0cf598487a3790cf60db37197f9}
+\hypertarget{tests_8cpp_a1f7e3ebe4380a80f28e6da2cad94cbd3}{\index{tests.\-cpp@{tests.\-cpp}!T\-O\-\_\-\-R\-A\-D\-D2@{T\-O\-\_\-\-R\-A\-D\-D2}}
+\index{T\-O\-\_\-\-R\-A\-D\-D2@{T\-O\-\_\-\-R\-A\-D\-D2}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{T\-O\-\_\-\-R\-A\-D\-D2}]{\setlength{\rightskip}{0pt plus 5cm}const double T\-O\-\_\-\-R\-A\-D\-D2 = {\bf M\-Y\-\_\-\-P\-I} / 360.\-0\hspace{0.3cm}{\ttfamily [static]}}}\label{tests_8cpp_a1f7e3ebe4380a80f28e6da2cad94cbd3}
+\hypertarget{tests_8cpp_a217ef6dd1e81621fd07cb900d7d9cdd5}{\index{tests.\-cpp@{tests.\-cpp}!T\-O\-K\-\_\-\-E\-X\-C\-E\-P\-T\-I\-O\-N\-S@{T\-O\-K\-\_\-\-E\-X\-C\-E\-P\-T\-I\-O\-N\-S}}
+\index{T\-O\-K\-\_\-\-E\-X\-C\-E\-P\-T\-I\-O\-N\-S@{T\-O\-K\-\_\-\-E\-X\-C\-E\-P\-T\-I\-O\-N\-S}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{T\-O\-K\-\_\-\-E\-X\-C\-E\-P\-T\-I\-O\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D} T\-O\-K\-\_\-\-E\-X\-C\-E\-P\-T\-I\-O\-N\-S = 1}}\label{tests_8cpp_a217ef6dd1e81621fd07cb900d7d9cdd5}
+\hypertarget{tests_8cpp_aee5a6bacccd3322960def9f3145231a3}{\index{tests.\-cpp@{tests.\-cpp}!T\-O\-K\-\_\-\-N\-O\-\_\-\-D\-A\-S\-H@{T\-O\-K\-\_\-\-N\-O\-\_\-\-D\-A\-S\-H}}
+\index{T\-O\-K\-\_\-\-N\-O\-\_\-\-D\-A\-S\-H@{T\-O\-K\-\_\-\-N\-O\-\_\-\-D\-A\-S\-H}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{T\-O\-K\-\_\-\-N\-O\-\_\-\-D\-A\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D} T\-O\-K\-\_\-\-N\-O\-\_\-\-D\-A\-S\-H = 2}}\label{tests_8cpp_aee5a6bacccd3322960def9f3145231a3}
+\hypertarget{tests_8cpp_a8fe1cfc8d95e6d48b978ba3e70007d9a}{\index{tests.\-cpp@{tests.\-cpp}!T\-O\-K\-\_\-\-N\-O\-\_\-\-S\-H\-O\-R\-T@{T\-O\-K\-\_\-\-N\-O\-\_\-\-S\-H\-O\-R\-T}}
+\index{T\-O\-K\-\_\-\-N\-O\-\_\-\-S\-H\-O\-R\-T@{T\-O\-K\-\_\-\-N\-O\-\_\-\-S\-H\-O\-R\-T}!tests.cpp@{tests.\-cpp}}
+\subsubsection[{T\-O\-K\-\_\-\-N\-O\-\_\-\-S\-H\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D} T\-O\-K\-\_\-\-N\-O\-\_\-\-S\-H\-O\-R\-T = 4}}\label{tests_8cpp_a8fe1cfc8d95e6d48b978ba3e70007d9a}

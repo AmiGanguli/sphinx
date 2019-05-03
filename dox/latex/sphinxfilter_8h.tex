@@ -1,0 +1,62 @@
+\hypertarget{sphinxfilter_8h}{\section{src/sphinxfilter.h File Reference}
+\label{sphinxfilter_8h}\index{src/sphinxfilter.\-h@{src/sphinxfilter.\-h}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structISphFilter}{I\-Sph\-Filter}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$ \hyperlink{sphinxfilter_8h_a22a1b40504bd045948e85da3384b7b8c}{sph\-Create\-Filter} (const \hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} \&t\-Settings, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Schema, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mva\-Pool, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Strings, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning, \hyperlink{sphinxexpr_8h_a78197b7b74319074237ecaf5d99cfbe5}{E\-Sph\-Collation} e\-Collation, bool b\-Arena\-Prohibit)
+\item 
+\hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$ \hyperlink{sphinxfilter_8h_af7f66936e1a4ee7048034abb77ddf54b}{sph\-Create\-Aggr\-Filter} (const \hyperlink{classCSphFilterSettings}{C\-Sph\-Filter\-Settings} $\ast$p\-Settings, const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Attr\-Name, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Schema, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+\hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$ \hyperlink{sphinxfilter_8h_aa630060c6bd78813ac90d0cb0af23d86}{sph\-Create\-Filter} (const \hyperlink{sphinx_8h_a1510ca22159d6c94f7fd300b5d3be431}{Kill\-List\-Vector} \&d\-Kill\-List)
+\item 
+\hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$ \hyperlink{sphinxfilter_8h_a9993d7da1a2b6f242df983b7e57edded}{sph\-Join\-Filters} (\hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$, \hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxfilter_8h_af7f66936e1a4ee7048034abb77ddf54b}{\index{sphinxfilter.\-h@{sphinxfilter.\-h}!sph\-Create\-Aggr\-Filter@{sph\-Create\-Aggr\-Filter}}
+\index{sph\-Create\-Aggr\-Filter@{sph\-Create\-Aggr\-Filter}!sphinxfilter.h@{sphinxfilter.\-h}}
+\subsubsection[{sph\-Create\-Aggr\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Filter}$\ast$ sph\-Create\-Aggr\-Filter (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Filter\-Settings} $\ast$}]{p\-Settings, }
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Attr\-Name, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxfilter_8h_af7f66936e1a4ee7048034abb77ddf54b}
+\hypertarget{sphinxfilter_8h_a22a1b40504bd045948e85da3384b7b8c}{\index{sphinxfilter.\-h@{sphinxfilter.\-h}!sph\-Create\-Filter@{sph\-Create\-Filter}}
+\index{sph\-Create\-Filter@{sph\-Create\-Filter}!sphinxfilter.h@{sphinxfilter.\-h}}
+\subsubsection[{sph\-Create\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Filter}$\ast$ sph\-Create\-Filter (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Filter\-Settings} \&}]{t\-Settings, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mva\-Pool, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Strings, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning, }
+\item[{{\bf E\-Sph\-Collation}}]{e\-Collation, }
+\item[{bool}]{b\-Arena\-Prohibit}
+\end{DoxyParamCaption}
+)}}\label{sphinxfilter_8h_a22a1b40504bd045948e85da3384b7b8c}
+\hypertarget{sphinxfilter_8h_aa630060c6bd78813ac90d0cb0af23d86}{\index{sphinxfilter.\-h@{sphinxfilter.\-h}!sph\-Create\-Filter@{sph\-Create\-Filter}}
+\index{sph\-Create\-Filter@{sph\-Create\-Filter}!sphinxfilter.h@{sphinxfilter.\-h}}
+\subsubsection[{sph\-Create\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Filter}$\ast$ sph\-Create\-Filter (
+\begin{DoxyParamCaption}
+\item[{const {\bf Kill\-List\-Vector} \&}]{d\-Kill\-List}
+\end{DoxyParamCaption}
+)}}\label{sphinxfilter_8h_aa630060c6bd78813ac90d0cb0af23d86}
+\hypertarget{sphinxfilter_8h_a9993d7da1a2b6f242df983b7e57edded}{\index{sphinxfilter.\-h@{sphinxfilter.\-h}!sph\-Join\-Filters@{sph\-Join\-Filters}}
+\index{sph\-Join\-Filters@{sph\-Join\-Filters}!sphinxfilter.h@{sphinxfilter.\-h}}
+\subsubsection[{sph\-Join\-Filters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Filter}$\ast$ sph\-Join\-Filters (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Filter} $\ast$}]{, }
+\item[{{\bf I\-Sph\-Filter} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{sphinxfilter_8h_a9993d7da1a2b6f242df983b7e57edded}

@@ -1,0 +1,1590 @@
+\hypertarget{sphinxint_8h}{\section{src/sphinxint.h File Reference}
+\label{sphinxint_8h}\index{src/sphinxint.\-h@{src/sphinxint.\-h}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxfilter.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxrt.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxquery.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxexcerpt.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxudf.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$float.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCSphQueryProfile}{C\-Sph\-Query\-Profile}
+\begin{DoxyCompactList}\small\item\em search query profile \end{DoxyCompactList}\item 
+class \hyperlink{classCSphScopedProfile}{C\-Sph\-Scoped\-Profile}
+\item 
+class \hyperlink{classCSphWriter}{C\-Sph\-Writer}
+\begin{DoxyCompactList}\small\item\em file writer with write buffering and int encoder \end{DoxyCompactList}\item 
+class \hyperlink{classCSphAutofile}{C\-Sph\-Autofile}
+\begin{DoxyCompactList}\small\item\em file which closes automatically when going out of scope \end{DoxyCompactList}\item 
+class \hyperlink{classCSphReader}{C\-Sph\-Reader}
+\begin{DoxyCompactList}\small\item\em file reader with read buffering and int decoder \end{DoxyCompactList}\item 
+class \hyperlink{classCSphAutoreader}{C\-Sph\-Autoreader}
+\begin{DoxyCompactList}\small\item\em scoped reader \end{DoxyCompactList}\item 
+class \hyperlink{classISphExtra}{I\-Sph\-Extra}
+\begin{DoxyCompactList}\small\item\em generic C\-O\-M-\/like interface \end{DoxyCompactList}\item 
+class \hyperlink{classCSphQueryContext}{C\-Sph\-Query\-Context}
+\item 
+struct \hyperlink{structCSphQueryContext_1_1CalcItem__t}{C\-Sph\-Query\-Context\-::\-Calc\-Item\-\_\-t}
+\item 
+class \hyperlink{classAttrIndexBuilder__t}{Attr\-Index\-Builder\-\_\-t$<$ D\-O\-C\-I\-D $>$}
+\begin{DoxyCompactList}\small\item\em attr min-\/max builder \end{DoxyCompactList}\item 
+struct \hyperlink{structPoolPtrs__t}{Pool\-Ptrs\-\_\-t}
+\item 
+class \hyperlink{classCSphTaggedVector}{C\-Sph\-Tagged\-Vector}
+\item 
+class \hyperlink{classCSphFreeList}{C\-Sph\-Free\-List}
+\item 
+struct \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t}
+\item 
+class \hyperlink{classISphZoneCheck}{I\-Sph\-Zone\-Check}
+\item 
+struct \hyperlink{structSphFactorHashEntry__t}{Sph\-Factor\-Hash\-Entry\-\_\-t}
+\item 
+struct \hyperlink{structSphExtraDataRankerState__t}{Sph\-Extra\-Data\-Ranker\-State\-\_\-t}
+\item 
+struct \hyperlink{structMatchSortAccessor__t}{Match\-Sort\-Accessor\-\_\-t}
+\item 
+struct \hyperlink{structLocatorPair__t}{Locator\-Pair\-\_\-t}
+\begin{DoxyCompactList}\small\item\em locator pair, for R\-T string dynamization \end{DoxyCompactList}\item 
+class \hyperlink{classCSphDictTraits}{C\-Sph\-Dict\-Traits}
+\begin{DoxyCompactList}\small\item\em dict traits \end{DoxyCompactList}\item 
+class \hyperlink{classCSphDictStar}{C\-Sph\-Dict\-Star}
+\begin{DoxyCompactList}\small\item\em dict wrapper for star-\/syntax support in prefix-\/indexes \end{DoxyCompactList}\item 
+class \hyperlink{classCSphDictStarV8}{C\-Sph\-Dict\-Star\-V8}
+\begin{DoxyCompactList}\small\item\em star dict for index v.\-8+ \end{DoxyCompactList}\item 
+class \hyperlink{classCSphDictExact}{C\-Sph\-Dict\-Exact}
+\begin{DoxyCompactList}\small\item\em dict wrapper for exact-\/word syntax \end{DoxyCompactList}\item 
+class \hyperlink{classCSphTokenFilter}{C\-Sph\-Token\-Filter}
+\begin{DoxyCompactList}\small\item\em token filter base (boring proxy stuff) \end{DoxyCompactList}\item 
+struct \hyperlink{structCSphReconfigureSettings}{C\-Sph\-Reconfigure\-Settings}
+\item 
+struct \hyperlink{structCSphReconfigureSetup}{C\-Sph\-Reconfigure\-Setup}
+\item 
+class \hyperlink{classUservarIntSet__c}{Uservar\-Int\-Set\-\_\-c}
+\begin{DoxyCompactList}\small\item\em value container for the intset uservar type \end{DoxyCompactList}\item 
+class \hyperlink{classISphBinlog}{I\-Sph\-Binlog}
+\begin{DoxyCompactList}\small\item\em global binlog interface \end{DoxyCompactList}\item 
+struct \hyperlink{structSphStringSorterRemap__t}{Sph\-String\-Sorter\-Remap\-\_\-t}
+\item 
+struct \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t}
+\item 
+struct \hyperlink{structSphWordStatChecker__t}{Sph\-Word\-Stat\-Checker\-\_\-t}
+\item 
+struct \hyperlink{structSphCheckpointAccess__fn}{Sph\-Checkpoint\-Access\-\_\-fn$<$ C\-P $>$}
+\item 
+class \hyperlink{classISphRtDictWraper}{I\-Sph\-Rt\-Dict\-Wraper}
+\item 
+struct \hyperlink{structSphExpanded__t}{Sph\-Expanded\-\_\-t}
+\item 
+struct \hyperlink{structISphSubstringPayload}{I\-Sph\-Substring\-Payload}
+\item 
+struct \hyperlink{structSlice__t}{Slice\-\_\-t}
+\item 
+struct \hyperlink{structSuggestWord__t}{Suggest\-Word\-\_\-t}
+\item 
+struct \hyperlink{structSuggestArgs__t}{Suggest\-Args\-\_\-t}
+\item 
+struct \hyperlink{structSuggestResult__t}{Suggest\-Result\-\_\-t}
+\item 
+class \hyperlink{classISphWordlistSuggest}{I\-Sph\-Wordlist\-Suggest}
+\item 
+struct \hyperlink{structISphWordlistSuggest_1_1DictWord__t}{I\-Sph\-Wordlist\-Suggest\-::\-Dict\-Word\-\_\-t}
+\item 
+class \hyperlink{classISphWordlist}{I\-Sph\-Wordlist}
+\item 
+struct \hyperlink{structISphWordlist_1_1Args__t}{I\-Sph\-Wordlist\-::\-Args\-\_\-t}
+\item 
+class \hyperlink{classCSphScopedPayload}{C\-Sph\-Scoped\-Payload}
+\item 
+struct \hyperlink{structExpansionContext__t}{Expansion\-Context\-\_\-t}
+\item 
+struct \hyperlink{structGetKeywordsSettings__t}{Get\-Keywords\-Settings\-\_\-t}
+\item 
+struct \hyperlink{structISphQueryFilter}{I\-Sph\-Query\-Filter}
+\item 
+struct \hyperlink{structExpandedOrderDesc__T}{Expanded\-Order\-Desc\-\_\-\-T$<$ T $>$}
+\item 
+class \hyperlink{classCSphKeywordDeltaWriter}{C\-Sph\-Keyword\-Delta\-Writer}
+\item 
+struct \hyperlink{structInfixBlock__t}{Infix\-Block\-\_\-t}
+\item 
+class \hyperlink{classISphInfixBuilder}{I\-Sph\-Infix\-Builder}
+\begin{DoxyCompactList}\small\item\em infix hash builder \end{DoxyCompactList}\item 
+class \hyperlink{classSnippetContext__t}{Snippet\-Context\-\_\-t}
+\item 
+class \hyperlink{classCSphCharsetDefinitionParser}{C\-Sph\-Charset\-Definition\-Parser}
+\begin{DoxyCompactList}\small\item\em parser to build lowercaser from textual config \end{DoxyCompactList}\item 
+struct \hyperlink{structStoredToken__t}{Stored\-Token\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxint_8h_a238c56681755d9960a26ad2e5f2455fb}{S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y}~0
+\item 
+\#define \hyperlink{sphinxint_8h_a420a7b90d132fb25e0a25d9fe662fdc5}{S\-P\-H\-\_\-\-O\-\_\-\-R\-E\-A\-D}~( O\-\_\-\-R\-D\-O\-N\-L\-Y $|$ \hyperlink{sphinxint_8h_a238c56681755d9960a26ad2e5f2455fb}{S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y} )
+\item 
+\#define \hyperlink{sphinxint_8h_aff27d0700297983c4ed2667bcca47625}{S\-P\-H\-\_\-\-O\-\_\-\-N\-E\-W}~( O\-\_\-\-C\-R\-E\-A\-T $|$ O\-\_\-\-R\-D\-W\-R $|$ O\-\_\-\-T\-R\-U\-N\-C $|$ \hyperlink{sphinxint_8h_a238c56681755d9960a26ad2e5f2455fb}{S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y} )
+\item 
+\#define \hyperlink{sphinxint_8h_a04b49b9311e987ea457a8cb15ee6ede3}{M\-V\-A\-\_\-\-D\-O\-W\-N\-S\-I\-Z\-E}~\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D}
+\item 
+\#define \hyperlink{sphinxint_8h_a346d31067e7e3acbbfef7b32a95dcb53}{M\-V\-A\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-M\-A\-S\-K}~0x7fffffff\-U\-L
+\item 
+\#define \hyperlink{sphinxint_8h_a0c892d9d6fd8b4378b30b1731faf5384}{M\-V\-A\-\_\-\-A\-R\-E\-N\-A\-\_\-\-F\-L\-A\-G}~0x80000000\-U\-L
+\item 
+\#define \hyperlink{sphinxint_8h_ad677e14c76f2e656672c93f0577b11df}{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S}~1000
+\item 
+\#define \hyperlink{sphinxint_8h_ae143ce1aeedad8059371d1746ef8c0c2}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E\-S}
+\item 
+\#define \hyperlink{sphinxint_8h_acac985c6224c4257a027f19f97474dde}{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E}(\-\_\-name, \-\_\-desc)~S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\#\#\-\_\-name,
+\item 
+\#define \hyperlink{sphinxint_8h_ac96d125107142311596d8a5c4f5541f3}{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S}
+\item 
+\#define \hyperlink{sphinxint_8h_a0fc41da7737a8f58387486c8d7003c24}{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y}(\-\_\-arg)~\-\_\-arg
+\item 
+\#define \hyperlink{sphinxint_8h_afcb914d56476a55b636d7adb35777fe3}{M\-E\-M\-O\-R\-Y}(name)
+\item 
+\#define \hyperlink{sphinxint_8h_a760d757eb1c36f30dcc34b6ce9715370}{D\-O\-C\-I\-N\-F\-O\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-R\-E\-Q}~128
+\item 
+\#define \hyperlink{sphinxint_8h_a26db3915e7c2e229b29db9c44db242cf}{S\-P\-H\-\_\-\-S\-K\-I\-P\-L\-I\-S\-T\-\_\-\-B\-L\-O\-C\-K}~128
+\begin{DoxyCompactList}\small\item\em must be a power of two \end{DoxyCompactList}\item 
+\#define \hyperlink{sphinxint_8h_a23ec2cf7fc07ea8f817bbac758402baf}{L\-L\-O\-N\-G\-\_\-\-M\-A\-X}~(((unsigned long long)(-\/1))$>$$>$1)
+\item 
+\#define \hyperlink{sphinxint_8h_af17a13b2ae0e9c24c020ac1f044f30c2}{L\-L\-O\-N\-G\-\_\-\-M\-I\-N}~(-\/\hyperlink{sphinxint_8h_a23ec2cf7fc07ea8f817bbac758402baf}{L\-L\-O\-N\-G\-\_\-\-M\-A\-X}-\/1)
+\item 
+\#define \hyperlink{sphinxint_8h_aa1dd7166a75b73ad62b111ae6fc17c59}{U\-L\-L\-O\-N\-G\-\_\-\-M\-A\-X}~(\hyperlink{sphinxint_8h_a23ec2cf7fc07ea8f817bbac758402baf}{L\-L\-O\-N\-G\-\_\-\-M\-A\-X} $\ast$ 2\-U\-L\-L + 1)
+\item 
+\#define \hyperlink{sphinxint_8h_affdd75641918bec2ec3bd6ba6e8543a7}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F8\-\_\-\-B\-Y\-T\-E\-S}~4
+\item 
+\#define \hyperlink{sphinxint_8h_ab99567c9b4789581603347e53481d0db}{S\-P\-H\-\_\-\-U\-T\-F8\-\_\-\-E\-N\-C\-O\-D\-E}(\-\_\-ptr, \-\_\-code)
+\begin{DoxyCompactList}\small\item\em encode U\-T\-F-\/8 codepoint to buffer, macro version for the Really Critical places \end{DoxyCompactList}\item 
+\#define \hyperlink{sphinxint_8h_ac4e2bc0d156d55f652b68403bade27f4}{S\-P\-H\-\_\-\-W\-O\-R\-D\-L\-I\-S\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T}~64
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classAttrIndexBuilder__t}{Attr\-Index\-Builder\-\_\-t} \hyperlink{sphinxint_8h_a2b40d230ec57b961fea1a8f6bb9eb2e6}{Attr\-Index\-Builder\-\_\-c}
+\item 
+typedef \hyperlink{classHitman__c}{Hitman\-\_\-c}$<$ \hyperlink{sphinxint_8h_afcd8f7f8ba79e2ce523b7d80dbd2da9f}{F\-I\-E\-L\-D\-\_\-\-B\-I\-T\-S} $>$ \hyperlink{sphinxint_8h_af098947e73431e5b058e8698e23fc3bd}{H\-I\-T\-M\-A\-N}
+\item 
+typedef \hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}\\*
+$<$ \hyperlink{structSphFactorHashEntry__t}{Sph\-Factor\-Hash\-Entry\-\_\-t} $\ast$ $>$ \hyperlink{sphinxint_8h_ad10cf8fddc53077dfb9d731819db9ec0}{Sph\-Factor\-Hash\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06}{E\-Sph\-Query\-State} \{ \hyperlink{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06ae847767743b8cebcc9fec41bf978d6a1}{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-I\-N\-F\-I\-N\-U\-M} = -\/1, 
+\hyperlink{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06ae270d5641ecc03dcb7311b79bba3b473}{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-T\-O\-T\-A\-L}
+ \}
+\begin{DoxyCompactList}\small\item\em possible query states, used for profiling \end{DoxyCompactList}\item 
+enum \hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88}{Extra\-Data\-\_\-e} \{ \\*
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88acb6f6bf0cdcebd6c784a8cf57f2052e0}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-S}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a3593a5cce72fd35e15cd6e492d3a800a}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-L\-I\-S\-T}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a6bd506f7cd9b479fdc3baae3e932dae3}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-F\-A\-C\-T\-O\-R\-S}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88aecdc5107d551226a31ebab1a3a918fa4}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-D\-F\-A\-C\-T\-O\-R\-S}, 
+\\*
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88ac3ddbd25795981559c3373de8573dead}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-S\-T\-A\-T\-E}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a9d33418616573e4972208a8b430fcdd8}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-W\-O\-R\-S\-T}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a10ff5ec7eb0994ee706bd21c685d0dbd}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-O\-R\-T\-V\-A\-L}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a16379be3c030252bb45ade3a74ee4a1c}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-V\-A\-P\-O\-O\-L}, 
+\\*
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a8454331aabbb970d1ea2b269f42dd19c}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-S\-T\-R\-I\-N\-G\-P\-O\-O\-L}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88adedd1f8fbdcaee0fbe245472240ca124}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-C\-A\-P\-A\-C\-I\-T\-Y}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a5002c102987bfa19a87c1062e4016b77}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-U\-S\-H\-E\-D}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a2676ea652d293f87466d186a5d582d88}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-O\-P\-P\-E\-D}, 
+\\*
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a303369bd17e59b7cf8ed8c6397ea0b30}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88aec1819eb572cb77e9bfc3cc532967fc9}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N\-\_\-\-O\-P\-T\-S}, 
+\hyperlink{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88ab706dae0ec2b5a9c8e17f79e49e1d3ff}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E}
+ \}
+\begin{DoxyCompactList}\small\item\em generic C\-O\-M-\/like uids \end{DoxyCompactList}\item 
+enum \hyperlink{sphinxint_8h_a8ea364ae7c15b16cd4a3fdcf15de8dbf}{Query\-Debug\-\_\-e} \{ \hyperlink{sphinxint_8h_a8ea364ae7c15b16cd4a3fdcf15de8dbfaf09f2f6b0cc196664745e442a7cc552a}{Q\-U\-E\-R\-Y\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-O\-\_\-\-P\-A\-Y\-L\-O\-A\-D} = 1$<$$<$0
+ \}
+\item 
+enum \hyperlink{sphinxint_8h_ab111a33e7e8caec444de293528dc3d6b}{Mem\-Category\-\_\-e} \{ \hyperlink{sphinxint_8h_ab111a33e7e8caec444de293528dc3d6ba8d73968098b6599f68a40201e3a4df6d}{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S}, 
+\hyperlink{sphinxint_8h_ab111a33e7e8caec444de293528dc3d6ba6371edc4665ddfded5908ebcde6e3d66}{M\-E\-M\-\_\-\-T\-O\-T\-A\-L}
+ \}
+\item 
+enum \hyperlink{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9}{Sph\-Zone\-Hit\-\_\-e} \{ \hyperlink{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9a3526a307c31f9976f0240756f7a5e7cb}{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-F\-O\-U\-N\-D}, 
+\hyperlink{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9ab50d1256a2217e62e8c31627c6e6cd64}{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-S\-P\-A\-N}, 
+\hyperlink{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9a69119b1580b7a70c72efce3e5bdd0f33}{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T}
+ \}
+\item 
+enum \hyperlink{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2}{E\-Sph\-Ext\-Type} \{ \hyperlink{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2a1186bfc20370aa4d33b0fe2290919cb6}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R} = 0, 
+\hyperlink{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2a0fb5bdae4717dfe87bbbdbfbc56bc867}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-E\-W}, 
+\hyperlink{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2af5330b37be73dd233bd230afe684db34}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-L\-D}, 
+\hyperlink{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2a685d8d5490d06df7ed06adb2e8769a07}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-O\-C}
+ \}
+\item 
+enum \hyperlink{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30a}{E\-Sph\-Ext} \{ \hyperlink{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30aa9bdf4b078d27a6c313f5c0a6eb5abd13}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-H} = 0, 
+\hyperlink{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30aa65c20351ad0d0c5405923cb9d6cf92ab}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-A} = 1, 
+\hyperlink{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30aace88c2b71a2aa376a8ffadad4db1feb4}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-M\-V\-P} = 9
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxint_8h_ae3db867d5d10a9f3af5b6787269ba156}{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T} (S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N==0, B\-A\-D\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-E\-N\-U\-M\-\_\-\-B\-A\-S\-E)
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{sphinxint_8h_a88bdecf4ea86bb1a94f33966045488ce}{M\-V\-A\-\_\-\-U\-P\-S\-I\-Z\-E} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Mva)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a2cac261d7a937db1ceefce4a4aeacf62}{Find\-Span} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T $>$ \&d\-Vec, U t\-Ref, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Small\-Treshold=8)
+\begin{DoxyCompactList}\small\item\em find a value-\/enclosing span in a sorted vector (aka an index at which vec\mbox{[}i\mbox{]} $<$= val $<$ vec\mbox{[}i+1\mbox{]}) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_ab9900a702087a12c14085ffe059da330}{Find\-Bit} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a42455f77db25355409133b33b8cc8af3}{sph\-Encode\-V\-L\-B8} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$buf, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} v)
+\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{sphinxint_8h_aaecab9c81ac8808d5f580d3c8d14b918}{spn\-Decode\-V\-L\-B8} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-In, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \&\hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a6938d543ea8cc9b8b7a0af0347c118ac}{sph\-U\-T\-F8\-Decode} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$\&p\-Buf)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a3da48d6994f088de94f95c619f817b1c}{sph\-U\-T\-F8\-Encode} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Buf, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Code)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_af65dfa5032e9e7c46f2e5e4dfbdb7192}{sph\-U\-T\-F8\-Len} (const char $\ast$p\-Str)
+\begin{DoxyCompactList}\small\item\em compute U\-T\-F-\/8 string length in codepoints \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a9e4457023a19fed52bf54ed617022320}{sph\-U\-T\-F8\-Len} (const char $\ast$p\-Str, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Max)
+\begin{DoxyCompactList}\small\item\em compute U\-T\-F-\/8 string length in codepoints \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxint_8h_ab7530a97618965ad1beae08f1e9eb076}{sph\-Is\-U\-T\-F8} (const char $\ast$p\-Str)
+\begin{DoxyCompactList}\small\item\em quick check for U\-T\-F-\/8 \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_aee0fdabd5575b24ec9295714fc3d25f5}{sph\-U\-T\-F8\-To\-Wide\-Char} (const char $\ast$p\-Src, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$p\-Dst, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Max\-Len)
+\begin{DoxyCompactList}\small\item\em convert U\-T\-F-\/8 to codepoints, return string length \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{sphinxint_8h_ae561f586c65229f0a4ff581016cf5164}{sph\-Type\-Name} (\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-Type)
+\item 
+const char $\ast$ \hyperlink{sphinxint_8h_a8d06e4830dd01320a1c217afbc4ba2a0}{sph\-Type\-Directive} (\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-Type)
+\item 
+void \hyperlink{sphinxint_8h_af4dc02ebf7cf6daa5e695a2008939afd}{Sql\-Unescape} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Res, const char $\ast$s\-Escaped, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+void \hyperlink{sphinxint_8h_a34ced2e2673521e005d37567a1c3729e}{Strip\-Path} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Path)
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxint_8h_acaa39e63695c500227e5dce461326edf}{sph\-Parse\-Morph\-Aot} (const char $\ast$)
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxint_8h_afcb4bc0e314e7a9a22f0b4d0442d0d50}{sph\-Get\-Settings\-F\-N\-V} (const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings)
+\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{sphinxint_8h_aacdb30f5e6be6d086120e738bf1fc968}{Skip\-Quoted} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p)
+\item 
+bool \hyperlink{sphinxint_8h_a7af81ead1c04ec191065b9522d6c2467}{sph\-Sort\-Get\-String\-Remap} (const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Index\-Schema, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structSphStringSorterRemap__t}{Sph\-String\-Sorter\-Remap\-\_\-t} $>$ \&d\-Attrs)
+\item 
+bool \hyperlink{sphinxint_8h_abec81568b949db53d7d3eaedfa94bca2}{sph\-Is\-Sort\-String\-Internal} (const char $\ast$s\-Column\-Name)
+\item 
+void \hyperlink{sphinxint_8h_ab9368907a74d142c3fbb303251d22fe6}{sph\-Column\-To\-Lowercase} (char $\ast$s\-Val)
+\begin{DoxyCompactList}\small\item\em make string lowercase but keep case of J\-S\-O\-N.\-field \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxint_8h_a2e7a2e9bb92f0b631ca1b5f3759b08bc}{sph\-Check\-Query\-Height} (const struct \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Root, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+void \hyperlink{sphinxint_8h_af526a0be0edf86abcdccea7cda66dd31}{sph\-Transform\-Extended\-Query} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$$\ast$pp\-Node, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings, bool b\-Has\-Boolean\-Optimization, const \hyperlink{structISphKeywordsStat}{I\-Sph\-Keywords\-Stat} $\ast$p\-Keywords)
+\item 
+void \hyperlink{sphinxint_8h_a697e4bc9dfbbc3eecf12fa818afba82c}{Transform\-Aot\-Filter} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, const \hyperlink{structCSphWordforms}{C\-Sph\-Wordforms} $\ast$p\-Wordforms, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings)
+\item 
+bool \hyperlink{sphinxint_8h_ae80302782c9679860c091ff41b18d549}{sph\-Merge} (const \hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$p\-Dst, const \hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$p\-Src, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} $>$ \&d\-Kill\-List, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{structCSphIndexProgress}{C\-Sph\-Index\-Progress} \&t\-Progress, \hyperlink{structThrottleState__t}{Throttle\-State\-\_\-t} $\ast$p\-Throttle, volatile bool $\ast$p\-Global\-Stop, volatile bool $\ast$p\-Local\-Stop)
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{sphinxint_8h_adb1268c2c2a0f63a876beeb95087ebfc}{sph\-Reconstruct\-Node} (const \hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, const \hyperlink{classCSphSchema}{C\-Sph\-Schema} $\ast$p\-Schema)
+\item 
+void \hyperlink{sphinxint_8h_acd3d1cb65f53917dd98ad3eaddc60bd6}{sph\-Set\-Unlink\-Old} (bool b\-Unlink)
+\item 
+void \hyperlink{sphinxint_8h_aa8e960cbeff2edb4281ba947eaf61e4f}{sph\-Unlink\-Index} (const char $\ast$s\-Name, bool b\-Force)
+\item 
+void \hyperlink{sphinxint_8h_a5fb482c689a6a1784cfa63501334cf2c}{Write\-Schema} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&fd\-Info, const \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Schema)
+\item 
+void \hyperlink{sphinxint_8h_a836b66e0f1784aadd20f1f689a75e989}{Read\-Schema} (\hyperlink{classCSphReader}{C\-Sph\-Reader} \&rd\-Info, \hyperlink{classCSphSchema}{C\-Sph\-Schema} \&m\-\_\-t\-Schema, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Version, bool b\-Dynamic)
+\item 
+void \hyperlink{sphinxint_8h_af72a6dfeb355dad9b822959e17ac436d}{Save\-Index\-Settings} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&t\-Writer, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings)
+\item 
+void \hyperlink{sphinxint_8h_a574c774c83e638debb7733190d545ef3}{Load\-Index\-Settings} (\hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings, \hyperlink{classCSphReader}{C\-Sph\-Reader} \&t\-Reader, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Version)
+\item 
+void \hyperlink{sphinxint_8h_a2a6db54302e11409b3f5b96c1c57aa36}{Save\-Tokenizer\-Settings} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&t\-Writer, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Embedded\-Limit)
+\item 
+bool \hyperlink{sphinxint_8h_a40925e6eb0b159583f260747f7b674de}{Load\-Tokenizer\-Settings} (\hyperlink{classCSphReader}{C\-Sph\-Reader} \&t\-Reader, \hyperlink{structCSphTokenizerSettings}{C\-Sph\-Tokenizer\-Settings} \&t\-Settings, \hyperlink{structCSphEmbeddedFiles}{C\-Sph\-Embedded\-Files} \&t\-Embedded\-Files, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Version, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning)
+\item 
+void \hyperlink{sphinxint_8h_a83627db03d852b2c94c098860824ceb9}{Save\-Dictionary\-Settings} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&t\-Writer, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, bool b\-Force\-Word\-Dict, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Embedded\-Limit)
+\item 
+void \hyperlink{sphinxint_8h_a86d0536a6eb6e8edf0b7f2b4b233c384}{Load\-Dictionary\-Settings} (\hyperlink{classCSphReader}{C\-Sph\-Reader} \&t\-Reader, \hyperlink{structCSphDictSettings}{C\-Sph\-Dict\-Settings} \&t\-Settings, \hyperlink{structCSphEmbeddedFiles}{C\-Sph\-Embedded\-Files} \&t\-Embedded\-Files, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Version, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning)
+\item 
+void \hyperlink{sphinxint_8h_a7c0caa7a9a00463c196adacad458fef1}{Load\-Field\-Filter\-Settings} (\hyperlink{classCSphReader}{C\-Sph\-Reader} \&t\-Reader, \hyperlink{structCSphFieldFilterSettings}{C\-Sph\-Field\-Filter\-Settings} \&t\-Field\-Filter\-Settings)
+\item 
+void \hyperlink{sphinxint_8h_ac4dc521c2475e99375f1db0549507e01}{Save\-Field\-Filter\-Settings} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&t\-Writer, \hyperlink{classISphFieldFilter}{I\-Sph\-Field\-Filter} $\ast$p\-Field\-Filter)
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxint_8h_a893e782e366807f19a5080083e4e4661}{Read\-Version} (const char $\ast$s\-Path, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+bool \hyperlink{sphinxint_8h_a6cade5a7cdad17720522d287945269c1}{Add\-Field\-Lens} (\hyperlink{classCSphSchema}{C\-Sph\-Schema} \&t\-Schema, bool b\-Dynamic, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+\hyperlink{classISphRtIndex}{I\-Sph\-Rt\-Index} $\ast$ \hyperlink{sphinxint_8h_a302f0ce15ba9a67baba1b62f1bb37e60}{sph\-Get\-Current\-Index\-R\-T} ()
+\begin{DoxyCompactList}\small\item\em Get current thread local index -\/ internal do not use. \end{DoxyCompactList}\item 
+void \hyperlink{sphinxint_8h_afd8d2c15c7eba184538191394270d11c}{Rebalance\-Weights} (const \hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector}$<$ \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $>$ \&d\-Timers, \hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D} $\ast$p\-Weights)
+\item 
+const char $\ast$$\ast$ \hyperlink{sphinxint_8h_a0ae9f8a4e3cbb91f96075c35580a23ce}{sph\-Get\-Exts} (\hyperlink{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2}{E\-Sph\-Ext\-Type} e\-Type, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Version=\hyperlink{sphinxint_8h_a63fc57b712a99d4aa62df1140a75086d}{I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N})
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a89037a4f8943592af0e01cf28e9b52bd}{sph\-Get\-Ext\-Count} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Version=\hyperlink{sphinxint_8h_a63fc57b712a99d4aa62df1140a75086d}{I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N})
+\item 
+const char $\ast$ \hyperlink{sphinxint_8h_ac6734c530144fe841b96190bba5f0fa9}{sph\-Get\-Ext} (\hyperlink{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2}{E\-Sph\-Ext\-Type} e\-Type, \hyperlink{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30a}{E\-Sph\-Ext} e\-Ext)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_aeb2d6359d3d15c12a9f5f2bc5dd7a62e}{sph\-Dict\-Cmp} (const char $\ast$p\-Str1, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len1, const char $\ast$p\-Str2, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len2)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a28a6a3e90afdc964ecca1e18a206ae91}{sph\-Dict\-Cmp\-Strictly} (const char $\ast$p\-Str1, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len1, const char $\ast$p\-Str2, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len2)
+\item 
+{\footnotesize template$<$typename C\-P $>$ }\\\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a2d27becd3d9c45b941ef520a2dc90e7c}{sph\-Checkpoint\-Cmp} (const char $\ast$s\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} i\-Word\-I\-D, bool b\-Word\-Dict, const C\-P \&t\-C\-P)
+\item 
+{\footnotesize template$<$typename C\-P $>$ }\\\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a8c164bb9bbae521e5f78587b3e103445}{sph\-Checkpoint\-Cmp\-Strictly} (const char $\ast$s\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} i\-Word\-I\-D, bool b\-Word\-Dict, const C\-P \&t\-C\-P)
+\item 
+{\footnotesize template$<$typename C\-P , typename P\-R\-E\-D $>$ }\\const C\-P $\ast$ \hyperlink{sphinxint_8h_a44e35201fb87de955655a7acf6f386b9}{sph\-Search\-Checkpoint} (const char $\ast$s\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Word\-Len, \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} i\-Word\-I\-D, bool b\-Star\-Mode, bool b\-Word\-Dict, const C\-P $\ast$p\-First\-C\-P, const C\-P $\ast$p\-Last\-C\-P, const P\-R\-E\-D \&t\-Pred)
+\item 
+{\footnotesize template$<$typename C\-P $>$ }\\const C\-P $\ast$ \hyperlink{sphinxint_8h_aaacad0501e3b19a05d9a5698e56045d7}{sph\-Search\-Checkpoint} (const char $\ast$s\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Word\-Len, \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} i\-Word\-I\-D, bool b\-Star\-Mode, bool b\-Word\-Dict, const C\-P $\ast$p\-First\-C\-P, const C\-P $\ast$p\-Last\-C\-P)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a48fe79b0d5d3c4871dd7e90b4d74b21f}{sph\-Collate\-Libc\-C\-I} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str1, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str2, bool b\-Packed)
+\begin{DoxyCompactList}\small\item\em libc\-\_\-ci, wrapper for strcasecmp \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a6106d5b56ac4ec38984b66f59f68b821}{sph\-Collate\-Libc\-C\-S} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str1, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str2, bool b\-Packed)
+\begin{DoxyCompactList}\small\item\em libc\-\_\-cs, wrapper for strcoll \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a057ea2218614fda23dfc1a69ae90b232}{sph\-Collate\-Utf8\-General\-C\-I} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Arg1, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Arg2, bool b\-Packed)
+\begin{DoxyCompactList}\small\item\em utf8\-\_\-general\-\_\-ci \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a66f83973ed60482106aa77b8387b6bc0}{sph\-Collate\-Binary} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str1, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Str2, bool b\-Packed)
+\item 
+\hyperlink{classISphRtDictWraper}{I\-Sph\-Rt\-Dict\-Wraper} $\ast$ \hyperlink{sphinxint_8h_a7d9c434dd6d97b64515deb0e6cbb330e}{sph\-Create\-Rt\-Keywords\-Dictionary\-Wrapper} (\hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Base)
+\item 
+void \hyperlink{sphinxint_8h_a4b359ad93067f9fb216b78bd6cf696f7}{sph\-Build\-N\-Grams} (const char $\ast$s\-Word, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, char c\-Delimiter, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ char $>$ \&d\-Ngrams)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a50aeb4d473beae70467db7f82b37e80c}{sph\-Levenshtein} (const char $\ast$s\-Word1, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len1, const char $\ast$s\-Word2, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len2)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_abc161e85c761709d597a5c15e172f260}{sph\-Levenshtein} (const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$s\-Word1, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len1, const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$s\-Word2, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len2)
+\item 
+void \hyperlink{sphinxint_8h_add9872a7f7b6542da149d6093d5c7ffe}{sph\-Get\-Suggest} (const \hyperlink{classISphWordlistSuggest}{I\-Sph\-Wordlist\-Suggest} $\ast$p\-Wordlist, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Infix\-Codepoint\-Bytes, const \hyperlink{structSuggestArgs__t}{Suggest\-Args\-\_\-t} \&t\-Args, \hyperlink{structSuggestResult__t}{Suggest\-Result\-\_\-t} \&t\-Res)
+\item 
+\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ \hyperlink{sphinxint_8h_a4fc605669f9b1cc548e6f2540e5b072e}{sph\-Expand\-X\-Q\-Node} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, \hyperlink{structExpansionContext__t}{Expansion\-Context\-\_\-t} \&t\-Ctx)
+\item 
+\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$ \hyperlink{sphinxint_8h_aaae7921a3e92e35299faa00eef7de42a}{sph\-Query\-Expand\-Keywords} (\hyperlink{structXQNode__t}{X\-Q\-Node\-\_\-t} $\ast$p\-Node, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a04ac24ba142f7916ff04222bb35f25a2}{sph\-Get\-Expansion\-Magic} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Docs, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Hits)
+\item 
+bool \hyperlink{sphinxint_8h_a43defd9e393ff4ad0c394869f093bf42}{sph\-Is\-Expanded\-Payload} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Docs, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Hits)
+\item 
+bool \hyperlink{sphinxint_8h_ae7512882cec20bd857a78affdcd2a2d9}{sph\-Has\-Expandable\-Wildcards} (const char $\ast$s\-Word)
+\item 
+bool \hyperlink{sphinxint_8h_a1b7c1ad7a8fec748bf3a7dedd4f85ac5}{sph\-Expand\-Get\-Words} (const char $\ast$s\-Word, const \hyperlink{structExpansionContext__t}{Expansion\-Context\-\_\-t} \&t\-Ctx, \hyperlink{structISphWordlist_1_1Args__t}{I\-Sph\-Wordlist\-::\-Args\-\_\-t} \&t\-Wordlist)
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{sphinxint_8h_ad1a188b21781bb5554835b5f0618c88a}{sph\-Doclist\-Hint\-Pack} (\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} i\-Docs, \hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} i\-Len)
+\item 
+const char $\ast$ \hyperlink{sphinxint_8h_a4e303b146e6fb83843a230d5d625b9fe}{sph\-Arena\-Init} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Max\-Bytes)
+\begin{DoxyCompactList}\small\item\em startup mva updates arena \end{DoxyCompactList}\item 
+\hyperlink{classISphInfixBuilder}{I\-Sph\-Infix\-Builder} $\ast$ \hyperlink{sphinxint_8h_a7d1ec162fd9afce08b7d9fecd8b31bd6}{sph\-Create\-Infix\-Builder} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Codepoint\-Bytes, \hyperlink{structCSphString}{C\-Sph\-String} $\ast$p\-Error)
+\item 
+bool \hyperlink{sphinxint_8h_a027ea572f2f26a58c751634e1e5cc9a6}{sph\-Lookup\-Infix\-Checkpoints} (const char $\ast$s\-Infix, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Bytes, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Infixes, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structInfixBlock__t}{Infix\-Block\-\_\-t} $>$ \&d\-Infix\-Blocks, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Infix\-Codepoint\-Bytes, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $>$ \&d\-Checkpoints)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_ae7d1963fe563b5193653e94cba99ee5b}{sph\-Get\-Infix\-Length} (const char $\ast$s\-Infix, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Bytes, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Infix\-Codepoint\-Bytes)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a0847aee57c319b8d06dd0ddb715fd157}{sph\-Utf8\-Char\-Bytes} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} u\-First)
+\begin{DoxyCompactList}\small\item\em compute utf-\/8 character length in bytes from its first byte \end{DoxyCompactList}\item 
+void \hyperlink{sphinxint_8h_aa1d745b69e7909336b1570ee5133cabe}{Fill\-Stored\-Token\-Info} (\hyperlink{structStoredToken__t}{Stored\-Token\-\_\-t} \&t\-Token, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Token, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer)
+\item 
+\hyperlink{classCSphSource}{C\-Sph\-Source} $\ast$ \hyperlink{sphinxint_8h_a3e049ae70c9f47a2afba7e68b12a6607}{sph\-Create\-Source\-T\-S\-Vpipe} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} $\ast$p\-Source, F\-I\-L\-E $\ast$p\-Pipe, const char $\ast$s\-Source\-Name, bool b\-Proxy)
+\item 
+\hyperlink{classCSphSource}{C\-Sph\-Source} $\ast$ \hyperlink{sphinxint_8h_ac15cd5de78d333fe0d4a0daff4a708e2}{sph\-Create\-Source\-C\-S\-Vpipe} (const \hyperlink{classCSphConfigSection}{C\-Sph\-Config\-Section} $\ast$p\-Source, F\-I\-L\-E $\ast$p\-Pipe, const char $\ast$s\-Source\-Name, bool b\-Proxy)
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxint_8h_a8db394dbf4f84333b32c50a03dd6168b}{sph\-Calc\-Locator\-Hash} (const \hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \&t\-Loc, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Prev\-Hash)
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxint_8h_af4e7ec2f3e013dce2d62d7dd5c134692}{sph\-Calc\-Expr\-Dep\-Hash} (const char $\ast$sz\-Tag, \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Expr, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Prev\-Hash, bool \&b\-Disable)
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxint_8h_aa4d45eb527fc72331bf90ee2e37e2c95}{sph\-Calc\-Expr\-Dep\-Hash} (\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$p\-Expr, const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Prev\-Hash, bool \&b\-Disable)
+\item 
+void \hyperlink{sphinxint_8h_a09be803ad7a3778fe8ee222415e73564}{Flip\-Endianess} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Data)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxint_8h_a7c31a5d4e3e09df8810ec3c82264ea94}{I\-N\-D\-E\-X\-\_\-\-M\-A\-G\-I\-C\-\_\-\-H\-E\-A\-D\-E\-R} = 0x58485053
+\begin{DoxyCompactList}\small\item\em my magic 'S\-P\-H\-X' header \end{DoxyCompactList}\item 
+const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxint_8h_a63fc57b712a99d4aa62df1140a75086d}{I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N} = 42
+\begin{DoxyCompactList}\small\item\em my format version \end{DoxyCompactList}\item 
+const char \hyperlink{sphinxint_8h_a9f361c2dfb5c648db55193694b4d3bcd}{M\-A\-G\-I\-C\-\_\-\-S\-Y\-N\-O\-N\-Y\-M\-\_\-\-W\-H\-I\-T\-E\-S\-P\-A\-C\-E} = 1
+\item 
+const char \hyperlink{sphinxint_8h_aab6757db05e350954f0a0821ff590029}{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E} = 2
+\item 
+const char \hyperlink{sphinxint_8h_a5cfad3727e7f77dac50bb9bf43f48641}{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H} = 3
+\item 
+const char \hyperlink{sphinxint_8h_a1dbc79502cbdd7e72ad6c40a4a3f455c}{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-Z\-O\-N\-E} = 4
+\item 
+const char \hyperlink{sphinxint_8h_ad19ffe2d4983b0cce98d462580b62b2f}{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D} = 1
+\item 
+const char \hyperlink{sphinxint_8h_a89e5b8253a6aae17573dceb2d0288626}{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-T\-A\-I\-L} = 1
+\item 
+const char \hyperlink{sphinxint_8h_a1da506dff5d9429bb4e9739a8f216b96}{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D} = 2
+\item 
+const char \hyperlink{sphinxint_8h_a225d2d67be3bf6ce1bb2809d25acb894}{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-B\-I\-G\-R\-A\-M} = 3
+\item 
+const char $\ast$ \hyperlink{sphinxint_8h_a776db1606ce6aa0ad1e51093dc563087}{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}
+\begin{DoxyCompactList}\small\item\em value is \char`\"{}\textbackslash{}3sentence\char`\"{} \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{sphinxint_8h_a51babfa062b585c1ce2ce833364c5c46}{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}
+\begin{DoxyCompactList}\small\item\em value is \char`\"{}\textbackslash{}3paragraph\char`\"{} \end{DoxyCompactList}\item 
+class \hyperlink{classISphBinlog}{I\-Sph\-Binlog} $\ast$ \hyperlink{sphinxint_8h_a1c89b7fc410020e32845e88d7d156fa4}{g\-\_\-p\-Binlog}
+\begin{DoxyCompactList}\small\item\em binlog, defined in \hyperlink{sphinxrt_8cpp}{sphinxrt.\-cpp} \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a3e1b8bb8a713ed247fd4ea10619b270d}{g\-\_\-i\-Predictor\-Cost\-Skip}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_abae0f830a619a51e61f213e335b5fa91}{g\-\_\-i\-Predictor\-Cost\-Doc}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a698b0b2c61c7a7fcf266be53c3fa423f}{g\-\_\-i\-Predictor\-Cost\-Hit}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_a393b260536a3c366fa1e225333c3da71}{g\-\_\-i\-Predictor\-Cost\-Match}
+\item 
+bool \hyperlink{sphinxint_8h_ad40e35b4e18e9e87eab7330356fdf88f}{g\-\_\-b\-Json\-Strict}
+\item 
+bool \hyperlink{sphinxint_8h_a52cc7e4261b678a5f82fe85ed05d7ecf}{g\-\_\-b\-Json\-Autoconv\-Numbers}
+\item 
+bool \hyperlink{sphinxint_8h_aa239826e9874d835320f02ecbe375164}{g\-\_\-b\-Json\-Keynames\-To\-Lowercase}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxint_8h_afcd8f7f8ba79e2ce523b7d80dbd2da9f}{F\-I\-E\-L\-D\-\_\-\-B\-I\-T\-S} = 8
+\item 
+\hyperlink{classUservarIntSet__c}{Uservar\-Int\-Set\-\_\-c} $\ast$($\ast$ \hyperlink{sphinxint_8h_a3b3d6360c14ea367557cbeb5af6a49e8}{g\-\_\-p\-Uservars\-Hook} )(const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Uservar)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxint_8h_ad677e14c76f2e656672c93f0577b11df}{\index{sphinxint.\-h@{sphinxint.\-h}!D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S@{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S@{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-M\-A\-T\-C\-H\-E\-S~1000}}\label{sphinxint_8h_ad677e14c76f2e656672c93f0577b11df}
+\hypertarget{sphinxint_8h_a760d757eb1c36f30dcc34b6ce9715370}{\index{sphinxint.\-h@{sphinxint.\-h}!D\-O\-C\-I\-N\-F\-O\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-R\-E\-Q@{D\-O\-C\-I\-N\-F\-O\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-R\-E\-Q}}
+\index{D\-O\-C\-I\-N\-F\-O\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-R\-E\-Q@{D\-O\-C\-I\-N\-F\-O\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-R\-E\-Q}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{D\-O\-C\-I\-N\-F\-O\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-R\-E\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-O\-C\-I\-N\-F\-O\-\_\-\-I\-N\-D\-E\-X\-\_\-\-F\-R\-E\-Q~128}}\label{sphinxint_8h_a760d757eb1c36f30dcc34b6ce9715370}
+\hypertarget{sphinxint_8h_a23ec2cf7fc07ea8f817bbac758402baf}{\index{sphinxint.\-h@{sphinxint.\-h}!L\-L\-O\-N\-G\-\_\-\-M\-A\-X@{L\-L\-O\-N\-G\-\_\-\-M\-A\-X}}
+\index{L\-L\-O\-N\-G\-\_\-\-M\-A\-X@{L\-L\-O\-N\-G\-\_\-\-M\-A\-X}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{L\-L\-O\-N\-G\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-O\-N\-G\-\_\-\-M\-A\-X~(((unsigned long long)(-\/1))$>$$>$1)}}\label{sphinxint_8h_a23ec2cf7fc07ea8f817bbac758402baf}
+\hypertarget{sphinxint_8h_af17a13b2ae0e9c24c020ac1f044f30c2}{\index{sphinxint.\-h@{sphinxint.\-h}!L\-L\-O\-N\-G\-\_\-\-M\-I\-N@{L\-L\-O\-N\-G\-\_\-\-M\-I\-N}}
+\index{L\-L\-O\-N\-G\-\_\-\-M\-I\-N@{L\-L\-O\-N\-G\-\_\-\-M\-I\-N}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{L\-L\-O\-N\-G\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-L\-O\-N\-G\-\_\-\-M\-I\-N~(-\/{\bf L\-L\-O\-N\-G\-\_\-\-M\-A\-X}-\/1)}}\label{sphinxint_8h_af17a13b2ae0e9c24c020ac1f044f30c2}
+\hypertarget{sphinxint_8h_ac96d125107142311596d8a5c4f5541f3}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S@{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S}}
+\index{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S@{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S}}\label{sphinxint_8h_ac96d125107142311596d8a5c4f5541f3}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\hyperlink{sphinxint_8h_a0fc41da7737a8f58387486c8d7003c24}{MEM\_CATEGORY}(MEM\_CORE), \(\backslash\)
+    MEM\_CATEGORY(MEM\_INDEX\_DISK), \(\backslash\)
+    MEM\_CATEGORY(MEM\_INDEX\_RT), \(\backslash\)
+    MEM\_CATEGORY(MEM\_API\_HANDLE ), \(\backslash\)
+    MEM\_CATEGORY(MEM\_API\_SEARCH ), \(\backslash\)
+    MEM\_CATEGORY(MEM\_API\_QUERY ), \(\backslash\)
+    MEM\_CATEGORY(MEM\_RT\_ACCUM), \(\backslash\)
+    MEM\_CATEGORY(MEM\_MMAPED), \(\backslash\)
+    MEM\_CATEGORY(MEM\_BINLOG), \(\backslash\)
+    MEM\_CATEGORY(MEM\_SQL\_HANDLE), \(\backslash\)
+    MEM\_CATEGORY(MEM\_SQL\_INSERT), \(\backslash\)
+    MEM\_CATEGORY(MEM\_SQL\_SELECT), \(\backslash\)
+    MEM\_CATEGORY(MEM\_SQL\_DELETE), \(\backslash\)
+    MEM\_CATEGORY(MEM\_SQL\_SET), \(\backslash\)
+    MEM\_CATEGORY(MEM\_SQL\_BEGIN), \(\backslash\)
+    MEM\_CATEGORY(MEM\_SQL\_COMMIT), \(\backslash\)
+    MEM\_CATEGORY(MEM\_SQL\_ALTER), \(\backslash\)
+    MEM\_CATEGORY(MEM\_DISK\_QUERY), \(\backslash\)
+    MEM\_CATEGORY(MEM\_DISK\_QUERYEX), \(\backslash\)
+    MEM\_CATEGORY(MEM\_RT\_QUERY), \(\backslash\)
+    MEM\_CATEGORY(MEM\_RT\_RES\_MATCHES), \(\backslash\)
+    MEM\_CATEGORY(MEM\_RT\_RES\_STRINGS)
+\end{DoxyCode}
+\hypertarget{sphinxint_8h_a0fc41da7737a8f58387486c8d7003c24}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y@{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y}}
+\index{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y@{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg}
+\end{DoxyParamCaption}
+)~\-\_\-arg}}\label{sphinxint_8h_a0fc41da7737a8f58387486c8d7003c24}
+\hypertarget{sphinxint_8h_afcb914d56476a55b636d7adb35777fe3}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-E\-M\-O\-R\-Y@{M\-E\-M\-O\-R\-Y}}
+\index{M\-E\-M\-O\-R\-Y@{M\-E\-M\-O\-R\-Y}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-E\-M\-O\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-E\-M\-O\-R\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{name}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_afcb914d56476a55b636d7adb35777fe3}
+\hypertarget{sphinxint_8h_a0c892d9d6fd8b4378b30b1731faf5384}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-V\-A\-\_\-\-A\-R\-E\-N\-A\-\_\-\-F\-L\-A\-G@{M\-V\-A\-\_\-\-A\-R\-E\-N\-A\-\_\-\-F\-L\-A\-G}}
+\index{M\-V\-A\-\_\-\-A\-R\-E\-N\-A\-\_\-\-F\-L\-A\-G@{M\-V\-A\-\_\-\-A\-R\-E\-N\-A\-\_\-\-F\-L\-A\-G}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-V\-A\-\_\-\-A\-R\-E\-N\-A\-\_\-\-F\-L\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-V\-A\-\_\-\-A\-R\-E\-N\-A\-\_\-\-F\-L\-A\-G~0x80000000\-U\-L}}\label{sphinxint_8h_a0c892d9d6fd8b4378b30b1731faf5384}
+\hypertarget{sphinxint_8h_a04b49b9311e987ea457a8cb15ee6ede3}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-V\-A\-\_\-\-D\-O\-W\-N\-S\-I\-Z\-E@{M\-V\-A\-\_\-\-D\-O\-W\-N\-S\-I\-Z\-E}}
+\index{M\-V\-A\-\_\-\-D\-O\-W\-N\-S\-I\-Z\-E@{M\-V\-A\-\_\-\-D\-O\-W\-N\-S\-I\-Z\-E}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-V\-A\-\_\-\-D\-O\-W\-N\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-V\-A\-\_\-\-D\-O\-W\-N\-S\-I\-Z\-E~{\bf D\-W\-O\-R\-D}}}\label{sphinxint_8h_a04b49b9311e987ea457a8cb15ee6ede3}
+\hypertarget{sphinxint_8h_a346d31067e7e3acbbfef7b32a95dcb53}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-V\-A\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-M\-A\-S\-K@{M\-V\-A\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-M\-A\-S\-K}}
+\index{M\-V\-A\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-M\-A\-S\-K@{M\-V\-A\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-M\-A\-S\-K}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-V\-A\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-V\-A\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-M\-A\-S\-K~0x7fffffff\-U\-L}}\label{sphinxint_8h_a346d31067e7e3acbbfef7b32a95dcb53}
+\hypertarget{sphinxint_8h_affdd75641918bec2ec3bd6ba6e8543a7}{\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F8\-\_\-\-B\-Y\-T\-E\-S@{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F8\-\_\-\-B\-Y\-T\-E\-S}}
+\index{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F8\-\_\-\-B\-Y\-T\-E\-S@{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F8\-\_\-\-B\-Y\-T\-E\-S}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F8\-\_\-\-B\-Y\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F8\-\_\-\-B\-Y\-T\-E\-S~4}}\label{sphinxint_8h_affdd75641918bec2ec3bd6ba6e8543a7}
+\hypertarget{sphinxint_8h_a238c56681755d9960a26ad2e5f2455fb}{\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y@{S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y}}
+\index{S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y@{S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y~0}}\label{sphinxint_8h_a238c56681755d9960a26ad2e5f2455fb}
+\hypertarget{sphinxint_8h_aff27d0700297983c4ed2667bcca47625}{\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-O\-\_\-\-N\-E\-W@{S\-P\-H\-\_\-\-O\-\_\-\-N\-E\-W}}
+\index{S\-P\-H\-\_\-\-O\-\_\-\-N\-E\-W@{S\-P\-H\-\_\-\-O\-\_\-\-N\-E\-W}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-O\-\_\-\-N\-E\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-O\-\_\-\-N\-E\-W~( O\-\_\-\-C\-R\-E\-A\-T $|$ O\-\_\-\-R\-D\-W\-R $|$ O\-\_\-\-T\-R\-U\-N\-C $|$ {\bf S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y} )}}\label{sphinxint_8h_aff27d0700297983c4ed2667bcca47625}
+\hypertarget{sphinxint_8h_a420a7b90d132fb25e0a25d9fe662fdc5}{\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-O\-\_\-\-R\-E\-A\-D@{S\-P\-H\-\_\-\-O\-\_\-\-R\-E\-A\-D}}
+\index{S\-P\-H\-\_\-\-O\-\_\-\-R\-E\-A\-D@{S\-P\-H\-\_\-\-O\-\_\-\-R\-E\-A\-D}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-O\-\_\-\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-O\-\_\-\-R\-E\-A\-D~( O\-\_\-\-R\-D\-O\-N\-L\-Y $|$ {\bf S\-P\-H\-\_\-\-O\-\_\-\-B\-I\-N\-A\-R\-Y} )}}\label{sphinxint_8h_a420a7b90d132fb25e0a25d9fe662fdc5}
+\hypertarget{sphinxint_8h_acac985c6224c4257a027f19f97474dde}{\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E}}
+\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-name, }
+\item[{}]{\-\_\-desc}
+\end{DoxyParamCaption}
+)~S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\#\#\-\_\-name,}}\label{sphinxint_8h_acac985c6224c4257a027f19f97474dde}
+\hypertarget{sphinxint_8h_ae143ce1aeedad8059371d1746ef8c0c2}{\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E\-S@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E\-S}}
+\index{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E\-S@{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E\-S}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E\-S}}\label{sphinxint_8h_ae143ce1aeedad8059371d1746ef8c0c2}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\hyperlink{sphinxint_8h_acac985c6224c4257a027f19f97474dde}{SPH\_QUERY\_STATE} ( UNKNOWN,       \textcolor{stringliteral}{"unknown"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( NET\_READ,     \textcolor{stringliteral}{"net\_read"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( IO,           \textcolor{stringliteral}{"io"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( DIST\_CONNECT, \textcolor{stringliteral}{"dist\_connect"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( LOCAL\_DF,     \textcolor{stringliteral}{"local\_df"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( LOCAL\_SEARCH, \textcolor{stringliteral}{"local\_search"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( SQL\_PARSE,    \textcolor{stringliteral}{"sql\_parse"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( FULLSCAN,     \textcolor{stringliteral}{"fullscan"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( DICT\_SETUP,   \textcolor{stringliteral}{"dict\_setup"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( PARSE,        \textcolor{stringliteral}{"parse"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( TRANSFORMS,   \textcolor{stringliteral}{"transforms"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( INIT,         \textcolor{stringliteral}{"init"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( INIT\_SEGMENT, \textcolor{stringliteral}{"init\_segment"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( OPEN,         \textcolor{stringliteral}{"open"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( READ\_DOCS,    \textcolor{stringliteral}{"read\_docs"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( READ\_HITS,    \textcolor{stringliteral}{"read\_hits"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( GET\_DOCS,     \textcolor{stringliteral}{"get\_docs"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( GET\_HITS,     \textcolor{stringliteral}{"get\_hits"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( FILTER,       \textcolor{stringliteral}{"filter"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( RANK,         \textcolor{stringliteral}{"rank"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( SORT,         \textcolor{stringliteral}{"sort"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( FINALIZE,     \textcolor{stringliteral}{"finalize"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( DIST\_WAIT,    \textcolor{stringliteral}{"dist\_wait"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( AGGREGATE,    \textcolor{stringliteral}{"aggregate"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( NET\_WRITE,    \textcolor{stringliteral}{"net\_write"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( EVAL\_POST,    \textcolor{stringliteral}{"eval\_post"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( SNIPPET,      \textcolor{stringliteral}{"eval\_snippet"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( EVAL\_UDF,     \textcolor{stringliteral}{"eval\_udf"} ) \(\backslash\)
+    SPH\_QUERY\_STATE ( TABLE\_FUNC,   \textcolor{stringliteral}{"table\_func"} )
+\end{DoxyCode}
+\hypertarget{sphinxint_8h_a26db3915e7c2e229b29db9c44db242cf}{\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-S\-K\-I\-P\-L\-I\-S\-T\-\_\-\-B\-L\-O\-C\-K@{S\-P\-H\-\_\-\-S\-K\-I\-P\-L\-I\-S\-T\-\_\-\-B\-L\-O\-C\-K}}
+\index{S\-P\-H\-\_\-\-S\-K\-I\-P\-L\-I\-S\-T\-\_\-\-B\-L\-O\-C\-K@{S\-P\-H\-\_\-\-S\-K\-I\-P\-L\-I\-S\-T\-\_\-\-B\-L\-O\-C\-K}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-S\-K\-I\-P\-L\-I\-S\-T\-\_\-\-B\-L\-O\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-S\-K\-I\-P\-L\-I\-S\-T\-\_\-\-B\-L\-O\-C\-K~128}}\label{sphinxint_8h_a26db3915e7c2e229b29db9c44db242cf}
+
+
+must be a power of two 
+
+\hypertarget{sphinxint_8h_ab99567c9b4789581603347e53481d0db}{\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-U\-T\-F8\-\_\-\-E\-N\-C\-O\-D\-E@{S\-P\-H\-\_\-\-U\-T\-F8\-\_\-\-E\-N\-C\-O\-D\-E}}
+\index{S\-P\-H\-\_\-\-U\-T\-F8\-\_\-\-E\-N\-C\-O\-D\-E@{S\-P\-H\-\_\-\-U\-T\-F8\-\_\-\-E\-N\-C\-O\-D\-E}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-U\-T\-F8\-\_\-\-E\-N\-C\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-U\-T\-F8\-\_\-\-E\-N\-C\-O\-D\-E(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-ptr, }
+\item[{}]{\-\_\-code}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_ab99567c9b4789581603347e53481d0db}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( (\_code)<0x80 ) \(\backslash\)
+    \{ \(\backslash\)
+        *\_ptr++ = (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE})( (\_code) & 0x7F ); \(\backslash\)
+    \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( (\_code)<0x800 ) \(\backslash\)
+    \{ \(\backslash\)
+        \_ptr[0] = (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE})( ( ((\_code)>>6) & 0x1F ) | 0xC0 ); \(\backslash\)
+        \_ptr[1] = (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE})( ( (\_code) & 0x3F ) | 0x80 ); \(\backslash\)
+        \_ptr += 2; \(\backslash\)
+    \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( (\_code)<0x10000 )\(\backslash\)
+    \{ \(\backslash\)
+        \_ptr[0] = (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE})( ( ((\_code)>>12) & 0x0F ) | 0xE0 ); \(\backslash\)
+        \_ptr[1] = (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE})( ( ((\_code)>>6) & 0x3F ) | 0x80 ); \(\backslash\)
+        \_ptr[2] = (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE})( ( (\_code) & 0x3F ) | 0x80 ); \(\backslash\)
+        \_ptr += 3; \(\backslash\)
+    \} \textcolor{keywordflow}{else} \(\backslash\)
+    \{ \(\backslash\)
+        \_ptr[0] = (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE})( ( ((\_code)>>18) & 0x0F ) | 0xF0 ); \(\backslash\)
+        \_ptr[1] = (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE})( ( ((\_code)>>12) & 0x3F ) | 0x80 ); \(\backslash\)
+        \_ptr[2] = (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE})( ( ((\_code)>>6) & 0x3F ) | 0x80 ); \(\backslash\)
+        \_ptr[3] = (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE})( ( (\_code) & 0x3F ) | 0x80 ); \(\backslash\)
+        \_ptr += 4; \(\backslash\)
+    \}
+\end{DoxyCode}
+
+
+encode U\-T\-F-\/8 codepoint to buffer, macro version for the Really Critical places 
+
+\hypertarget{sphinxint_8h_ac4e2bc0d156d55f652b68403bade27f4}{\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-W\-O\-R\-D\-L\-I\-S\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T@{S\-P\-H\-\_\-\-W\-O\-R\-D\-L\-I\-S\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T}}
+\index{S\-P\-H\-\_\-\-W\-O\-R\-D\-L\-I\-S\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T@{S\-P\-H\-\_\-\-W\-O\-R\-D\-L\-I\-S\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-W\-O\-R\-D\-L\-I\-S\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-W\-O\-R\-D\-L\-I\-S\-T\-\_\-\-C\-H\-E\-C\-K\-P\-O\-I\-N\-T~64}}\label{sphinxint_8h_ac4e2bc0d156d55f652b68403bade27f4}
+\hypertarget{sphinxint_8h_aa1dd7166a75b73ad62b111ae6fc17c59}{\index{sphinxint.\-h@{sphinxint.\-h}!U\-L\-L\-O\-N\-G\-\_\-\-M\-A\-X@{U\-L\-L\-O\-N\-G\-\_\-\-M\-A\-X}}
+\index{U\-L\-L\-O\-N\-G\-\_\-\-M\-A\-X@{U\-L\-L\-O\-N\-G\-\_\-\-M\-A\-X}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{U\-L\-L\-O\-N\-G\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-L\-L\-O\-N\-G\-\_\-\-M\-A\-X~({\bf L\-L\-O\-N\-G\-\_\-\-M\-A\-X} $\ast$ 2\-U\-L\-L + 1)}}\label{sphinxint_8h_aa1dd7166a75b73ad62b111ae6fc17c59}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sphinxint_8h_a2b40d230ec57b961fea1a8f6bb9eb2e6}{\index{sphinxint.\-h@{sphinxint.\-h}!Attr\-Index\-Builder\-\_\-c@{Attr\-Index\-Builder\-\_\-c}}
+\index{Attr\-Index\-Builder\-\_\-c@{Attr\-Index\-Builder\-\_\-c}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Attr\-Index\-Builder\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Attr\-Index\-Builder\-\_\-t} {\bf Attr\-Index\-Builder\-\_\-c}}}\label{sphinxint_8h_a2b40d230ec57b961fea1a8f6bb9eb2e6}
+\hypertarget{sphinxint_8h_af098947e73431e5b058e8698e23fc3bd}{\index{sphinxint.\-h@{sphinxint.\-h}!H\-I\-T\-M\-A\-N@{H\-I\-T\-M\-A\-N}}
+\index{H\-I\-T\-M\-A\-N@{H\-I\-T\-M\-A\-N}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{H\-I\-T\-M\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Hitman\-\_\-c}$<${\bf F\-I\-E\-L\-D\-\_\-\-B\-I\-T\-S}$>$ {\bf H\-I\-T\-M\-A\-N}}}\label{sphinxint_8h_af098947e73431e5b058e8698e23fc3bd}
+\hypertarget{sphinxint_8h_ad10cf8fddc53077dfb9d731819db9ec0}{\index{sphinxint.\-h@{sphinxint.\-h}!Sph\-Factor\-Hash\-\_\-t@{Sph\-Factor\-Hash\-\_\-t}}
+\index{Sph\-Factor\-Hash\-\_\-t@{Sph\-Factor\-Hash\-\_\-t}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Sph\-Factor\-Hash\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf C\-Sph\-Fixed\-Vector}$<${\bf Sph\-Factor\-Hash\-Entry\-\_\-t} $\ast$$>$ {\bf Sph\-Factor\-Hash\-\_\-t}}}\label{sphinxint_8h_ad10cf8fddc53077dfb9d731819db9ec0}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30a}{\index{sphinxint.\-h@{sphinxint.\-h}!E\-Sph\-Ext@{E\-Sph\-Ext}}
+\index{E\-Sph\-Ext@{E\-Sph\-Ext}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{E\-Sph\-Ext}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf E\-Sph\-Ext}}}\label{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30a}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-H@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-H}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-H@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-H}}\item[{\em 
+\hypertarget{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30aa9bdf4b078d27a6c313f5c0a6eb5abd13}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-H}\label{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30aa9bdf4b078d27a6c313f5c0a6eb5abd13}
+}]\index{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-A@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-A}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-A@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-A}}\item[{\em 
+\hypertarget{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30aa65c20351ad0d0c5405923cb9d6cf92ab}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-S\-P\-A}\label{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30aa65c20351ad0d0c5405923cb9d6cf92ab}
+}]\index{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-M\-V\-P@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-M\-V\-P}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-M\-V\-P@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-M\-V\-P}}\item[{\em 
+\hypertarget{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30aace88c2b71a2aa376a8ffadad4db1feb4}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-M\-V\-P}\label{sphinxint_8h_aea4f8aab7e27402cbf65a951c126c30aace88c2b71a2aa376a8ffadad4db1feb4}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2}{\index{sphinxint.\-h@{sphinxint.\-h}!E\-Sph\-Ext\-Type@{E\-Sph\-Ext\-Type}}
+\index{E\-Sph\-Ext\-Type@{E\-Sph\-Ext\-Type}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{E\-Sph\-Ext\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf E\-Sph\-Ext\-Type}}}\label{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R}}\item[{\em 
+\hypertarget{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2a1186bfc20370aa4d33b0fe2290919cb6}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R}\label{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2a1186bfc20370aa4d33b0fe2290919cb6}
+}]\index{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-E\-W@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-E\-W}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-E\-W@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-E\-W}}\item[{\em 
+\hypertarget{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2a0fb5bdae4717dfe87bbbdbfbc56bc867}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-E\-W}\label{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2a0fb5bdae4717dfe87bbbdbfbc56bc867}
+}]\index{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-L\-D@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-L\-D}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-L\-D@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-L\-D}}\item[{\em 
+\hypertarget{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2af5330b37be73dd233bd230afe684db34}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-L\-D}\label{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2af5330b37be73dd233bd230afe684db34}
+}]\index{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-O\-C@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-O\-C}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-O\-C@{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-O\-C}}\item[{\em 
+\hypertarget{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2a685d8d5490d06df7ed06adb2e8769a07}{S\-P\-H\-\_\-\-E\-X\-T\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-O\-C}\label{sphinxint_8h_a46aa4b85919467d4c7aec4c006f0dac2a685d8d5490d06df7ed06adb2e8769a07}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06}{\index{sphinxint.\-h@{sphinxint.\-h}!E\-Sph\-Query\-State@{E\-Sph\-Query\-State}}
+\index{E\-Sph\-Query\-State@{E\-Sph\-Query\-State}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{E\-Sph\-Query\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf E\-Sph\-Query\-State}}}\label{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06}
+
+
+possible query states, used for profiling 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-I\-N\-F\-I\-N\-U\-M@{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-I\-N\-F\-I\-N\-U\-M}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-I\-N\-F\-I\-N\-U\-M@{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-I\-N\-F\-I\-N\-U\-M}}\item[{\em 
+\hypertarget{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06ae847767743b8cebcc9fec41bf978d6a1}{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-I\-N\-F\-I\-N\-U\-M}\label{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06ae847767743b8cebcc9fec41bf978d6a1}
+}]\index{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-T\-O\-T\-A\-L@{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-T\-O\-T\-A\-L}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-T\-O\-T\-A\-L@{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-T\-O\-T\-A\-L}}\item[{\em 
+\hypertarget{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06ae270d5641ecc03dcb7311b79bba3b473}{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-T\-O\-T\-A\-L}\label{sphinxint_8h_a917e3d03a8db1617916e74f4d4078c06ae270d5641ecc03dcb7311b79bba3b473}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88}{\index{sphinxint.\-h@{sphinxint.\-h}!Extra\-Data\-\_\-e@{Extra\-Data\-\_\-e}}
+\index{Extra\-Data\-\_\-e@{Extra\-Data\-\_\-e}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Extra\-Data\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Extra\-Data\-\_\-e}}}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88}
+
+
+generic C\-O\-M-\/like uids 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-S@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-S}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-S@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-S}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88acb6f6bf0cdcebd6c784a8cf57f2052e0}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-S}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88acb6f6bf0cdcebd6c784a8cf57f2052e0}
+}]\index{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-L\-I\-S\-T@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-L\-I\-S\-T}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-L\-I\-S\-T@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-L\-I\-S\-T}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a3593a5cce72fd35e15cd6e492d3a800a}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-Z\-O\-N\-E\-S\-P\-A\-N\-L\-I\-S\-T}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a3593a5cce72fd35e15cd6e492d3a800a}
+}]\index{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-F\-A\-C\-T\-O\-R\-S@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-F\-A\-C\-T\-O\-R\-S}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-F\-A\-C\-T\-O\-R\-S@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-F\-A\-C\-T\-O\-R\-S}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a6bd506f7cd9b479fdc3baae3e932dae3}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-F\-A\-C\-T\-O\-R\-S}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a6bd506f7cd9b479fdc3baae3e932dae3}
+}]\index{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-D\-F\-A\-C\-T\-O\-R\-S@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-D\-F\-A\-C\-T\-O\-R\-S}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-D\-F\-A\-C\-T\-O\-R\-S@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-D\-F\-A\-C\-T\-O\-R\-S}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88aecdc5107d551226a31ebab1a3a918fa4}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-P\-A\-C\-K\-E\-D\-F\-A\-C\-T\-O\-R\-S}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88aecdc5107d551226a31ebab1a3a918fa4}
+}]\index{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-S\-T\-A\-T\-E@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-S\-T\-A\-T\-E}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-S\-T\-A\-T\-E@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-S\-T\-A\-T\-E}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88ac3ddbd25795981559c3373de8573dead}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-D\-A\-T\-A\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-S\-T\-A\-T\-E}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88ac3ddbd25795981559c3373de8573dead}
+}]\index{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-W\-O\-R\-S\-T@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-W\-O\-R\-S\-T}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-W\-O\-R\-S\-T@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-W\-O\-R\-S\-T}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a9d33418616573e4972208a8b430fcdd8}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-W\-O\-R\-S\-T}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a9d33418616573e4972208a8b430fcdd8}
+}]\index{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-O\-R\-T\-V\-A\-L@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-O\-R\-T\-V\-A\-L}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-O\-R\-T\-V\-A\-L@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-O\-R\-T\-V\-A\-L}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a10ff5ec7eb0994ee706bd21c685d0dbd}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-O\-R\-T\-V\-A\-L}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a10ff5ec7eb0994ee706bd21c685d0dbd}
+}]\index{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-V\-A\-P\-O\-O\-L@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-V\-A\-P\-O\-O\-L}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-V\-A\-P\-O\-O\-L@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-V\-A\-P\-O\-O\-L}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a16379be3c030252bb45ade3a74ee4a1c}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-V\-A\-P\-O\-O\-L}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a16379be3c030252bb45ade3a74ee4a1c}
+}]\index{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-S\-T\-R\-I\-N\-G\-P\-O\-O\-L@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-S\-T\-R\-I\-N\-G\-P\-O\-O\-L}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-S\-T\-R\-I\-N\-G\-P\-O\-O\-L@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-S\-T\-R\-I\-N\-G\-P\-O\-O\-L}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a8454331aabbb970d1ea2b269f42dd19c}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-S\-T\-R\-I\-N\-G\-P\-O\-O\-L}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a8454331aabbb970d1ea2b269f42dd19c}
+}]\index{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-C\-A\-P\-A\-C\-I\-T\-Y@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-C\-A\-P\-A\-C\-I\-T\-Y}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-C\-A\-P\-A\-C\-I\-T\-Y@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-C\-A\-P\-A\-C\-I\-T\-Y}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88adedd1f8fbdcaee0fbe245472240ca124}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-C\-A\-P\-A\-C\-I\-T\-Y}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88adedd1f8fbdcaee0fbe245472240ca124}
+}]\index{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-U\-S\-H\-E\-D@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-U\-S\-H\-E\-D}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-U\-S\-H\-E\-D@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-U\-S\-H\-E\-D}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a5002c102987bfa19a87c1062e4016b77}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-U\-S\-H\-E\-D}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a5002c102987bfa19a87c1062e4016b77}
+}]\index{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-O\-P\-P\-E\-D@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-O\-P\-P\-E\-D}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-O\-P\-P\-E\-D@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-O\-P\-P\-E\-D}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a2676ea652d293f87466d186a5d582d88}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-M\-A\-T\-C\-H\-P\-O\-P\-P\-E\-D}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a2676ea652d293f87466d186a5d582d88}
+}]\index{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a303369bd17e59b7cf8ed8c6397ea0b30}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88a303369bd17e59b7cf8ed8c6397ea0b30}
+}]\index{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N\-\_\-\-O\-P\-T\-S@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N\-\_\-\-O\-P\-T\-S}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N\-\_\-\-O\-P\-T\-S@{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N\-\_\-\-O\-P\-T\-S}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88aec1819eb572cb77e9bfc3cc532967fc9}{E\-X\-T\-R\-A\-\_\-\-S\-E\-T\-\_\-\-R\-A\-N\-K\-E\-R\-\_\-\-P\-L\-U\-G\-I\-N\-\_\-\-O\-P\-T\-S}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88aec1819eb572cb77e9bfc3cc532967fc9}
+}]\index{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E@{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E}}\item[{\em 
+\hypertarget{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88ab706dae0ec2b5a9c8e17f79e49e1d3ff}{E\-X\-T\-R\-A\-\_\-\-G\-E\-T\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E}\label{sphinxint_8h_ad3985aadf484a2191d9758968e2dfa88ab706dae0ec2b5a9c8e17f79e49e1d3ff}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{sphinxint_8h_ab111a33e7e8caec444de293528dc3d6b}{\index{sphinxint.\-h@{sphinxint.\-h}!Mem\-Category\-\_\-e@{Mem\-Category\-\_\-e}}
+\index{Mem\-Category\-\_\-e@{Mem\-Category\-\_\-e}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Mem\-Category\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Mem\-Category\-\_\-e}}}\label{sphinxint_8h_ab111a33e7e8caec444de293528dc3d6b}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S@{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S@{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S}}\item[{\em 
+\hypertarget{sphinxint_8h_ab111a33e7e8caec444de293528dc3d6ba8d73968098b6599f68a40201e3a4df6d}{M\-E\-M\-\_\-\-C\-A\-T\-E\-G\-O\-R\-I\-E\-S}\label{sphinxint_8h_ab111a33e7e8caec444de293528dc3d6ba8d73968098b6599f68a40201e3a4df6d}
+}]\index{M\-E\-M\-\_\-\-T\-O\-T\-A\-L@{M\-E\-M\-\_\-\-T\-O\-T\-A\-L}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!M\-E\-M\-\_\-\-T\-O\-T\-A\-L@{M\-E\-M\-\_\-\-T\-O\-T\-A\-L}}\item[{\em 
+\hypertarget{sphinxint_8h_ab111a33e7e8caec444de293528dc3d6ba6371edc4665ddfded5908ebcde6e3d66}{M\-E\-M\-\_\-\-T\-O\-T\-A\-L}\label{sphinxint_8h_ab111a33e7e8caec444de293528dc3d6ba6371edc4665ddfded5908ebcde6e3d66}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{sphinxint_8h_a8ea364ae7c15b16cd4a3fdcf15de8dbf}{\index{sphinxint.\-h@{sphinxint.\-h}!Query\-Debug\-\_\-e@{Query\-Debug\-\_\-e}}
+\index{Query\-Debug\-\_\-e@{Query\-Debug\-\_\-e}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Query\-Debug\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Query\-Debug\-\_\-e}}}\label{sphinxint_8h_a8ea364ae7c15b16cd4a3fdcf15de8dbf}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Q\-U\-E\-R\-Y\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-O\-\_\-\-P\-A\-Y\-L\-O\-A\-D@{Q\-U\-E\-R\-Y\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-O\-\_\-\-P\-A\-Y\-L\-O\-A\-D}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!Q\-U\-E\-R\-Y\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-O\-\_\-\-P\-A\-Y\-L\-O\-A\-D@{Q\-U\-E\-R\-Y\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-O\-\_\-\-P\-A\-Y\-L\-O\-A\-D}}\item[{\em 
+\hypertarget{sphinxint_8h_a8ea364ae7c15b16cd4a3fdcf15de8dbfaf09f2f6b0cc196664745e442a7cc552a}{Q\-U\-E\-R\-Y\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-O\-\_\-\-P\-A\-Y\-L\-O\-A\-D}\label{sphinxint_8h_a8ea364ae7c15b16cd4a3fdcf15de8dbfaf09f2f6b0cc196664745e442a7cc552a}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9}{\index{sphinxint.\-h@{sphinxint.\-h}!Sph\-Zone\-Hit\-\_\-e@{Sph\-Zone\-Hit\-\_\-e}}
+\index{Sph\-Zone\-Hit\-\_\-e@{Sph\-Zone\-Hit\-\_\-e}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Sph\-Zone\-Hit\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Sph\-Zone\-Hit\-\_\-e}}}\label{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-F\-O\-U\-N\-D@{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-F\-O\-U\-N\-D}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-F\-O\-U\-N\-D@{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-F\-O\-U\-N\-D}}\item[{\em 
+\hypertarget{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9a3526a307c31f9976f0240756f7a5e7cb}{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-F\-O\-U\-N\-D}\label{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9a3526a307c31f9976f0240756f7a5e7cb}
+}]\index{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-S\-P\-A\-N@{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-S\-P\-A\-N}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-S\-P\-A\-N@{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-S\-P\-A\-N}}\item[{\em 
+\hypertarget{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9ab50d1256a2217e62e8c31627c6e6cd64}{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-S\-P\-A\-N}\label{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9ab50d1256a2217e62e8c31627c6e6cd64}
+}]\index{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T@{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T}!sphinxint.\-h@{sphinxint.\-h}}\index{sphinxint.\-h@{sphinxint.\-h}!S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T@{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T}}\item[{\em 
+\hypertarget{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9a69119b1580b7a70c72efce3e5bdd0f33}{S\-P\-H\-\_\-\-Z\-O\-N\-E\-\_\-\-N\-O\-\_\-\-D\-O\-C\-U\-M\-E\-N\-T}\label{sphinxint_8h_a988ad80ed2f21b4c66b7fe2bdfa18ad9a69119b1580b7a70c72efce3e5bdd0f33}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxint_8h_a6cade5a7cdad17720522d287945269c1}{\index{sphinxint.\-h@{sphinxint.\-h}!Add\-Field\-Lens@{Add\-Field\-Lens}}
+\index{Add\-Field\-Lens@{Add\-Field\-Lens}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Add\-Field\-Lens}]{\setlength{\rightskip}{0pt plus 5cm}bool Add\-Field\-Lens (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Schema} \&}]{t\-Schema, }
+\item[{bool}]{b\-Dynamic, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a6cade5a7cdad17720522d287945269c1}
+\hypertarget{sphinxint_8h_aa1d745b69e7909336b1570ee5133cabe}{\index{sphinxint.\-h@{sphinxint.\-h}!Fill\-Stored\-Token\-Info@{Fill\-Stored\-Token\-Info}}
+\index{Fill\-Stored\-Token\-Info@{Fill\-Stored\-Token\-Info}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Fill\-Stored\-Token\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void Fill\-Stored\-Token\-Info (
+\begin{DoxyParamCaption}
+\item[{{\bf Stored\-Token\-\_\-t} \&}]{t\-Token, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-Token, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_aa1d745b69e7909336b1570ee5133cabe}
+\hypertarget{sphinxint_8h_ab9900a702087a12c14085ffe059da330}{\index{sphinxint.\-h@{sphinxint.\-h}!Find\-Bit@{Find\-Bit}}
+\index{Find\-Bit@{Find\-Bit}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Find\-Bit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Find\-Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_ab9900a702087a12c14085ffe059da330}
+\hypertarget{sphinxint_8h_a2cac261d7a937db1ceefce4a4aeacf62}{\index{sphinxint.\-h@{sphinxint.\-h}!Find\-Span@{Find\-Span}}
+\index{Find\-Span@{Find\-Span}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Find\-Span}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U $>$ static {\bf int} Find\-Span (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ T $>$ \&}]{d\-Vec, }
+\item[{U}]{t\-Ref, }
+\item[{{\bf int}}]{i\-Small\-Treshold = {\ttfamily 8}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxint_8h_a2cac261d7a937db1ceefce4a4aeacf62}
+
+
+find a value-\/enclosing span in a sorted vector (aka an index at which vec\mbox{[}i\mbox{]} $<$= val $<$ vec\mbox{[}i+1\mbox{]}) 
+
+\hypertarget{sphinxint_8h_a09be803ad7a3778fe8ee222415e73564}{\index{sphinxint.\-h@{sphinxint.\-h}!Flip\-Endianess@{Flip\-Endianess}}
+\index{Flip\-Endianess@{Flip\-Endianess}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Flip\-Endianess}]{\setlength{\rightskip}{0pt plus 5cm}void Flip\-Endianess (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D} $\ast$}]{p\-Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a09be803ad7a3778fe8ee222415e73564}
+\hypertarget{sphinxint_8h_a86d0536a6eb6e8edf0b7f2b4b233c384}{\index{sphinxint.\-h@{sphinxint.\-h}!Load\-Dictionary\-Settings@{Load\-Dictionary\-Settings}}
+\index{Load\-Dictionary\-Settings@{Load\-Dictionary\-Settings}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Load\-Dictionary\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Load\-Dictionary\-Settings (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Reader} \&}]{t\-Reader, }
+\item[{{\bf C\-Sph\-Dict\-Settings} \&}]{t\-Settings, }
+\item[{{\bf C\-Sph\-Embedded\-Files} \&}]{t\-Embedded\-Files, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Version, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a86d0536a6eb6e8edf0b7f2b4b233c384}
+\hypertarget{sphinxint_8h_a7c0caa7a9a00463c196adacad458fef1}{\index{sphinxint.\-h@{sphinxint.\-h}!Load\-Field\-Filter\-Settings@{Load\-Field\-Filter\-Settings}}
+\index{Load\-Field\-Filter\-Settings@{Load\-Field\-Filter\-Settings}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Load\-Field\-Filter\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Load\-Field\-Filter\-Settings (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Reader} \&}]{t\-Reader, }
+\item[{{\bf C\-Sph\-Field\-Filter\-Settings} \&}]{t\-Field\-Filter\-Settings}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a7c0caa7a9a00463c196adacad458fef1}
+\hypertarget{sphinxint_8h_a574c774c83e638debb7733190d545ef3}{\index{sphinxint.\-h@{sphinxint.\-h}!Load\-Index\-Settings@{Load\-Index\-Settings}}
+\index{Load\-Index\-Settings@{Load\-Index\-Settings}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Load\-Index\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Load\-Index\-Settings (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings, }
+\item[{{\bf C\-Sph\-Reader} \&}]{t\-Reader, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Version}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a574c774c83e638debb7733190d545ef3}
+\hypertarget{sphinxint_8h_a40925e6eb0b159583f260747f7b674de}{\index{sphinxint.\-h@{sphinxint.\-h}!Load\-Tokenizer\-Settings@{Load\-Tokenizer\-Settings}}
+\index{Load\-Tokenizer\-Settings@{Load\-Tokenizer\-Settings}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Load\-Tokenizer\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}bool Load\-Tokenizer\-Settings (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Reader} \&}]{t\-Reader, }
+\item[{{\bf C\-Sph\-Tokenizer\-Settings} \&}]{t\-Settings, }
+\item[{{\bf C\-Sph\-Embedded\-Files} \&}]{t\-Embedded\-Files, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Version, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a40925e6eb0b159583f260747f7b674de}
+\hypertarget{sphinxint_8h_a88bdecf4ea86bb1a94f33966045488ce}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-V\-A\-\_\-\-U\-P\-S\-I\-Z\-E@{M\-V\-A\-\_\-\-U\-P\-S\-I\-Z\-E}}
+\index{M\-V\-A\-\_\-\-U\-P\-S\-I\-Z\-E@{M\-V\-A\-\_\-\-U\-P\-S\-I\-Z\-E}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-V\-A\-\_\-\-U\-P\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} M\-V\-A\-\_\-\-U\-P\-S\-I\-Z\-E (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{p\-Mva}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a88bdecf4ea86bb1a94f33966045488ce}
+\hypertarget{sphinxint_8h_a836b66e0f1784aadd20f1f689a75e989}{\index{sphinxint.\-h@{sphinxint.\-h}!Read\-Schema@{Read\-Schema}}
+\index{Read\-Schema@{Read\-Schema}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Read\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}void Read\-Schema (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Reader} \&}]{rd\-Info, }
+\item[{{\bf C\-Sph\-Schema} \&}]{m\-\_\-t\-Schema, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Version, }
+\item[{bool}]{b\-Dynamic}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a836b66e0f1784aadd20f1f689a75e989}
+\hypertarget{sphinxint_8h_a893e782e366807f19a5080083e4e4661}{\index{sphinxint.\-h@{sphinxint.\-h}!Read\-Version@{Read\-Version}}
+\index{Read\-Version@{Read\-Version}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Read\-Version}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} Read\-Version (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Path, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a893e782e366807f19a5080083e4e4661}
+\hypertarget{sphinxint_8h_afd8d2c15c7eba184538191394270d11c}{\index{sphinxint.\-h@{sphinxint.\-h}!Rebalance\-Weights@{Rebalance\-Weights}}
+\index{Rebalance\-Weights@{Rebalance\-Weights}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Rebalance\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}void Rebalance\-Weights (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Fixed\-Vector}$<$ {\bf int64\-\_\-t} $>$ \&}]{d\-Timers, }
+\item[{{\bf W\-O\-R\-D} $\ast$}]{p\-Weights}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_afd8d2c15c7eba184538191394270d11c}
+\hypertarget{sphinxint_8h_a83627db03d852b2c94c098860824ceb9}{\index{sphinxint.\-h@{sphinxint.\-h}!Save\-Dictionary\-Settings@{Save\-Dictionary\-Settings}}
+\index{Save\-Dictionary\-Settings@{Save\-Dictionary\-Settings}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Save\-Dictionary\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Save\-Dictionary\-Settings (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{t\-Writer, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{bool}]{b\-Force\-Word\-Dict, }
+\item[{{\bf int}}]{i\-Embedded\-Limit}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a83627db03d852b2c94c098860824ceb9}
+gets called from and M\-U\-S\-T be in sync with \hyperlink{structRtIndex__t_adc6094b5ba89f1a5c577e32a4ae9544c}{Rt\-Index\-\_\-t\-::\-Save\-Disk\-Header()}! note that Save\-Disk\-Header() occasionaly uses some P\-R\-E\-V\-I\-O\-U\-S format version! \hypertarget{sphinxint_8h_ac4dc521c2475e99375f1db0549507e01}{\index{sphinxint.\-h@{sphinxint.\-h}!Save\-Field\-Filter\-Settings@{Save\-Field\-Filter\-Settings}}
+\index{Save\-Field\-Filter\-Settings@{Save\-Field\-Filter\-Settings}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Save\-Field\-Filter\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Save\-Field\-Filter\-Settings (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{t\-Writer, }
+\item[{{\bf I\-Sph\-Field\-Filter} $\ast$}]{p\-Field\-Filter}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_ac4dc521c2475e99375f1db0549507e01}
+\hypertarget{sphinxint_8h_af72a6dfeb355dad9b822959e17ac436d}{\index{sphinxint.\-h@{sphinxint.\-h}!Save\-Index\-Settings@{Save\-Index\-Settings}}
+\index{Save\-Index\-Settings@{Save\-Index\-Settings}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Save\-Index\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Save\-Index\-Settings (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{t\-Writer, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_af72a6dfeb355dad9b822959e17ac436d}
+\hypertarget{sphinxint_8h_a2a6db54302e11409b3f5b96c1c57aa36}{\index{sphinxint.\-h@{sphinxint.\-h}!Save\-Tokenizer\-Settings@{Save\-Tokenizer\-Settings}}
+\index{Save\-Tokenizer\-Settings@{Save\-Tokenizer\-Settings}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Save\-Tokenizer\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Save\-Tokenizer\-Settings (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{t\-Writer, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{{\bf int}}]{i\-Embedded\-Limit}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a2a6db54302e11409b3f5b96c1c57aa36}
+gets called from and M\-U\-S\-T be in sync with \hyperlink{structRtIndex__t_adc6094b5ba89f1a5c577e32a4ae9544c}{Rt\-Index\-\_\-t\-::\-Save\-Disk\-Header()}! note that Save\-Disk\-Header() occasionaly uses some P\-R\-E\-V\-I\-O\-U\-S format version! \hypertarget{sphinxint_8h_aacdb30f5e6be6d086120e738bf1fc968}{\index{sphinxint.\-h@{sphinxint.\-h}!Skip\-Quoted@{Skip\-Quoted}}
+\index{Skip\-Quoted@{Skip\-Quoted}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Skip\-Quoted}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E}$\ast$ Skip\-Quoted (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_aacdb30f5e6be6d086120e738bf1fc968}
+\hypertarget{sphinxint_8h_a4e303b146e6fb83843a230d5d625b9fe}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Arena\-Init@{sph\-Arena\-Init}}
+\index{sph\-Arena\-Init@{sph\-Arena\-Init}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Arena\-Init}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ sph\-Arena\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Max\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a4e303b146e6fb83843a230d5d625b9fe}
+
+
+startup mva updates arena 
+
+\hypertarget{sphinxint_8h_a4b359ad93067f9fb216b78bd6cf696f7}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Build\-N\-Grams@{sph\-Build\-N\-Grams}}
+\index{sph\-Build\-N\-Grams@{sph\-Build\-N\-Grams}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Build\-N\-Grams}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Build\-N\-Grams (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{char}]{c\-Delimiter, }
+\item[{{\bf C\-Sph\-Vector}$<$ char $>$ \&}]{d\-Ngrams}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a4b359ad93067f9fb216b78bd6cf696f7}
+\hypertarget{sphinxint_8h_af4e7ec2f3e013dce2d62d7dd5c134692}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Calc\-Expr\-Dep\-Hash@{sph\-Calc\-Expr\-Dep\-Hash}}
+\index{sph\-Calc\-Expr\-Dep\-Hash@{sph\-Calc\-Expr\-Dep\-Hash}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Calc\-Expr\-Dep\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} sph\-Calc\-Expr\-Dep\-Hash (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{sz\-Tag, }
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Expr, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Prev\-Hash, }
+\item[{bool \&}]{b\-Disable}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_af4e7ec2f3e013dce2d62d7dd5c134692}
+\hypertarget{sphinxint_8h_aa4d45eb527fc72331bf90ee2e37e2c95}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Calc\-Expr\-Dep\-Hash@{sph\-Calc\-Expr\-Dep\-Hash}}
+\index{sph\-Calc\-Expr\-Dep\-Hash@{sph\-Calc\-Expr\-Dep\-Hash}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Calc\-Expr\-Dep\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} sph\-Calc\-Expr\-Dep\-Hash (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Expr} $\ast$}]{p\-Expr, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Prev\-Hash, }
+\item[{bool \&}]{b\-Disable}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_aa4d45eb527fc72331bf90ee2e37e2c95}
+\hypertarget{sphinxint_8h_a8db394dbf4f84333b32c50a03dd6168b}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Calc\-Locator\-Hash@{sph\-Calc\-Locator\-Hash}}
+\index{sph\-Calc\-Locator\-Hash@{sph\-Calc\-Locator\-Hash}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Calc\-Locator\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} sph\-Calc\-Locator\-Hash (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Attr\-Locator} \&}]{t\-Loc, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Prev\-Hash}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a8db394dbf4f84333b32c50a03dd6168b}
+\hypertarget{sphinxint_8h_a2d27becd3d9c45b941ef520a2dc90e7c}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Checkpoint\-Cmp@{sph\-Checkpoint\-Cmp}}
+\index{sph\-Checkpoint\-Cmp@{sph\-Checkpoint\-Cmp}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Checkpoint\-Cmp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-P $>$ {\bf int} sph\-Checkpoint\-Cmp (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{i\-Word\-I\-D, }
+\item[{bool}]{b\-Word\-Dict, }
+\item[{const C\-P \&}]{t\-C\-P}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a2d27becd3d9c45b941ef520a2dc90e7c}
+\hypertarget{sphinxint_8h_a8c164bb9bbae521e5f78587b3e103445}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Checkpoint\-Cmp\-Strictly@{sph\-Checkpoint\-Cmp\-Strictly}}
+\index{sph\-Checkpoint\-Cmp\-Strictly@{sph\-Checkpoint\-Cmp\-Strictly}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Checkpoint\-Cmp\-Strictly}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-P $>$ {\bf int} sph\-Checkpoint\-Cmp\-Strictly (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Word, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{i\-Word\-I\-D, }
+\item[{bool}]{b\-Word\-Dict, }
+\item[{const C\-P \&}]{t\-C\-P}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a8c164bb9bbae521e5f78587b3e103445}
+\hypertarget{sphinxint_8h_a2e7a2e9bb92f0b631ca1b5f3759b08bc}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Check\-Query\-Height@{sph\-Check\-Query\-Height}}
+\index{sph\-Check\-Query\-Height@{sph\-Check\-Query\-Height}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Check\-Query\-Height}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Check\-Query\-Height (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Root, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a2e7a2e9bb92f0b631ca1b5f3759b08bc}
+\hypertarget{sphinxint_8h_a66f83973ed60482106aa77b8387b6bc0}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Collate\-Binary@{sph\-Collate\-Binary}}
+\index{sph\-Collate\-Binary@{sph\-Collate\-Binary}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Collate\-Binary}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Collate\-Binary (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str1, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str2, }
+\item[{bool}]{b\-Packed}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a66f83973ed60482106aa77b8387b6bc0}
+\hypertarget{sphinxint_8h_a48fe79b0d5d3c4871dd7e90b4d74b21f}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Collate\-Libc\-C\-I@{sph\-Collate\-Libc\-C\-I}}
+\index{sph\-Collate\-Libc\-C\-I@{sph\-Collate\-Libc\-C\-I}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Collate\-Libc\-C\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Collate\-Libc\-C\-I (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str1, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str2, }
+\item[{bool}]{b\-Packed}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a48fe79b0d5d3c4871dd7e90b4d74b21f}
+
+
+libc\-\_\-ci, wrapper for strcasecmp 
+
+\hypertarget{sphinxint_8h_a6106d5b56ac4ec38984b66f59f68b821}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Collate\-Libc\-C\-S@{sph\-Collate\-Libc\-C\-S}}
+\index{sph\-Collate\-Libc\-C\-S@{sph\-Collate\-Libc\-C\-S}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Collate\-Libc\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Collate\-Libc\-C\-S (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str1, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Str2, }
+\item[{bool}]{b\-Packed}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a6106d5b56ac4ec38984b66f59f68b821}
+
+
+libc\-\_\-cs, wrapper for strcoll 
+
+\hypertarget{sphinxint_8h_a057ea2218614fda23dfc1a69ae90b232}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Collate\-Utf8\-General\-C\-I@{sph\-Collate\-Utf8\-General\-C\-I}}
+\index{sph\-Collate\-Utf8\-General\-C\-I@{sph\-Collate\-Utf8\-General\-C\-I}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Collate\-Utf8\-General\-C\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Collate\-Utf8\-General\-C\-I (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Arg1, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Arg2, }
+\item[{bool}]{b\-Packed}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a057ea2218614fda23dfc1a69ae90b232}
+
+
+utf8\-\_\-general\-\_\-ci 
+
+\hypertarget{sphinxint_8h_ab9368907a74d142c3fbb303251d22fe6}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Column\-To\-Lowercase@{sph\-Column\-To\-Lowercase}}
+\index{sph\-Column\-To\-Lowercase@{sph\-Column\-To\-Lowercase}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Column\-To\-Lowercase}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Column\-To\-Lowercase (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s\-Val}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_ab9368907a74d142c3fbb303251d22fe6}
+
+
+make string lowercase but keep case of J\-S\-O\-N.\-field 
+
+\hypertarget{sphinxint_8h_a7d1ec162fd9afce08b7d9fecd8b31bd6}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Create\-Infix\-Builder@{sph\-Create\-Infix\-Builder}}
+\index{sph\-Create\-Infix\-Builder@{sph\-Create\-Infix\-Builder}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Create\-Infix\-Builder}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Infix\-Builder}$\ast$ sph\-Create\-Infix\-Builder (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Codepoint\-Bytes, }
+\item[{{\bf C\-Sph\-String} $\ast$}]{p\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a7d1ec162fd9afce08b7d9fecd8b31bd6}
+\hypertarget{sphinxint_8h_a7d9c434dd6d97b64515deb0e6cbb330e}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Create\-Rt\-Keywords\-Dictionary\-Wrapper@{sph\-Create\-Rt\-Keywords\-Dictionary\-Wrapper}}
+\index{sph\-Create\-Rt\-Keywords\-Dictionary\-Wrapper@{sph\-Create\-Rt\-Keywords\-Dictionary\-Wrapper}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Create\-Rt\-Keywords\-Dictionary\-Wrapper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Rt\-Dict\-Wraper}$\ast$ sph\-Create\-Rt\-Keywords\-Dictionary\-Wrapper (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Base}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a7d9c434dd6d97b64515deb0e6cbb330e}
+\hypertarget{sphinxint_8h_ac15cd5de78d333fe0d4a0daff4a708e2}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Create\-Source\-C\-S\-Vpipe@{sph\-Create\-Source\-C\-S\-Vpipe}}
+\index{sph\-Create\-Source\-C\-S\-Vpipe@{sph\-Create\-Source\-C\-S\-Vpipe}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Create\-Source\-C\-S\-Vpipe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Source}$\ast$ sph\-Create\-Source\-C\-S\-Vpipe (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} $\ast$}]{p\-Source, }
+\item[{F\-I\-L\-E $\ast$}]{p\-Pipe, }
+\item[{const char $\ast$}]{s\-Source\-Name, }
+\item[{bool}]{b\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_ac15cd5de78d333fe0d4a0daff4a708e2}
+\hypertarget{sphinxint_8h_a3e049ae70c9f47a2afba7e68b12a6607}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Create\-Source\-T\-S\-Vpipe@{sph\-Create\-Source\-T\-S\-Vpipe}}
+\index{sph\-Create\-Source\-T\-S\-Vpipe@{sph\-Create\-Source\-T\-S\-Vpipe}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Create\-Source\-T\-S\-Vpipe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Source}$\ast$ sph\-Create\-Source\-T\-S\-Vpipe (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Config\-Section} $\ast$}]{p\-Source, }
+\item[{F\-I\-L\-E $\ast$}]{p\-Pipe, }
+\item[{const char $\ast$}]{s\-Source\-Name, }
+\item[{bool}]{b\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a3e049ae70c9f47a2afba7e68b12a6607}
+\hypertarget{sphinxint_8h_aeb2d6359d3d15c12a9f5f2bc5dd7a62e}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Dict\-Cmp@{sph\-Dict\-Cmp}}
+\index{sph\-Dict\-Cmp@{sph\-Dict\-Cmp}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Dict\-Cmp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Dict\-Cmp (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Str1, }
+\item[{{\bf int}}]{i\-Len1, }
+\item[{const char $\ast$}]{p\-Str2, }
+\item[{{\bf int}}]{i\-Len2}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_aeb2d6359d3d15c12a9f5f2bc5dd7a62e}
+\hypertarget{sphinxint_8h_a28a6a3e90afdc964ecca1e18a206ae91}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Dict\-Cmp\-Strictly@{sph\-Dict\-Cmp\-Strictly}}
+\index{sph\-Dict\-Cmp\-Strictly@{sph\-Dict\-Cmp\-Strictly}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Dict\-Cmp\-Strictly}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Dict\-Cmp\-Strictly (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Str1, }
+\item[{{\bf int}}]{i\-Len1, }
+\item[{const char $\ast$}]{p\-Str2, }
+\item[{{\bf int}}]{i\-Len2}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a28a6a3e90afdc964ecca1e18a206ae91}
+\hypertarget{sphinxint_8h_ad1a188b21781bb5554835b5f0618c88a}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Doclist\-Hint\-Pack@{sph\-Doclist\-Hint\-Pack}}
+\index{sph\-Doclist\-Hint\-Pack@{sph\-Doclist\-Hint\-Pack}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Doclist\-Hint\-Pack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} sph\-Doclist\-Hint\-Pack (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Offset\-\_\-t}}]{i\-Docs, }
+\item[{{\bf Sph\-Offset\-\_\-t}}]{i\-Len}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_ad1a188b21781bb5554835b5f0618c88a}
+\hypertarget{sphinxint_8h_a42455f77db25355409133b33b8cc8af3}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Encode\-V\-L\-B8@{sph\-Encode\-V\-L\-B8}}
+\index{sph\-Encode\-V\-L\-B8@{sph\-Encode\-V\-L\-B8}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Encode\-V\-L\-B8}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Encode\-V\-L\-B8 (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{buf, }
+\item[{{\bf uint64\-\_\-t}}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a42455f77db25355409133b33b8cc8af3}
+\hypertarget{sphinxint_8h_a1b7c1ad7a8fec748bf3a7dedd4f85ac5}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Expand\-Get\-Words@{sph\-Expand\-Get\-Words}}
+\index{sph\-Expand\-Get\-Words@{sph\-Expand\-Get\-Words}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Expand\-Get\-Words}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Expand\-Get\-Words (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Word, }
+\item[{const {\bf Expansion\-Context\-\_\-t} \&}]{t\-Ctx, }
+\item[{{\bf I\-Sph\-Wordlist\-::\-Args\-\_\-t} \&}]{t\-Wordlist}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a1b7c1ad7a8fec748bf3a7dedd4f85ac5}
+\hypertarget{sphinxint_8h_a4fc605669f9b1cc548e6f2540e5b072e}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Expand\-X\-Q\-Node@{sph\-Expand\-X\-Q\-Node}}
+\index{sph\-Expand\-X\-Q\-Node@{sph\-Expand\-X\-Q\-Node}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Expand\-X\-Q\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\-Q\-Node\-\_\-t}$\ast$ sph\-Expand\-X\-Q\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{{\bf Expansion\-Context\-\_\-t} \&}]{t\-Ctx}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a4fc605669f9b1cc548e6f2540e5b072e}
+do wildcard expansion for keywords dictionary (including prefix and infix expansion) \hypertarget{sphinxint_8h_a302f0ce15ba9a67baba1b62f1bb37e60}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Get\-Current\-Index\-R\-T@{sph\-Get\-Current\-Index\-R\-T}}
+\index{sph\-Get\-Current\-Index\-R\-T@{sph\-Get\-Current\-Index\-R\-T}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Get\-Current\-Index\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Rt\-Index}$\ast$ sph\-Get\-Current\-Index\-R\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a302f0ce15ba9a67baba1b62f1bb37e60}
+
+
+Get current thread local index -\/ internal do not use. 
+
+\hypertarget{sphinxint_8h_a04ac24ba142f7916ff04222bb35f25a2}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Get\-Expansion\-Magic@{sph\-Get\-Expansion\-Magic}}
+\index{sph\-Get\-Expansion\-Magic@{sph\-Get\-Expansion\-Magic}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Get\-Expansion\-Magic}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Get\-Expansion\-Magic (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Docs, }
+\item[{{\bf int}}]{i\-Hits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a04ac24ba142f7916ff04222bb35f25a2}
+\hypertarget{sphinxint_8h_ac6734c530144fe841b96190bba5f0fa9}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Get\-Ext@{sph\-Get\-Ext}}
+\index{sph\-Get\-Ext@{sph\-Get\-Ext}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Get\-Ext}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ sph\-Get\-Ext (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Ext\-Type}}]{e\-Type, }
+\item[{{\bf E\-Sph\-Ext}}]{e\-Ext}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_ac6734c530144fe841b96190bba5f0fa9}
+\hypertarget{sphinxint_8h_a89037a4f8943592af0e01cf28e9b52bd}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Get\-Ext\-Count@{sph\-Get\-Ext\-Count}}
+\index{sph\-Get\-Ext\-Count@{sph\-Get\-Ext\-Count}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Get\-Ext\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Get\-Ext\-Count (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Version = {\ttfamily {\bf I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N}}}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a89037a4f8943592af0e01cf28e9b52bd}
+\hypertarget{sphinxint_8h_a0ae9f8a4e3cbb91f96075c35580a23ce}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Get\-Exts@{sph\-Get\-Exts}}
+\index{sph\-Get\-Exts@{sph\-Get\-Exts}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Get\-Exts}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ sph\-Get\-Exts (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Ext\-Type}}]{e\-Type, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Version = {\ttfamily {\bf I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N}}}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a0ae9f8a4e3cbb91f96075c35580a23ce}
+\hypertarget{sphinxint_8h_ae7d1963fe563b5193653e94cba99ee5b}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Get\-Infix\-Length@{sph\-Get\-Infix\-Length}}
+\index{sph\-Get\-Infix\-Length@{sph\-Get\-Infix\-Length}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Get\-Infix\-Length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Get\-Infix\-Length (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Infix, }
+\item[{{\bf int}}]{i\-Bytes, }
+\item[{{\bf int}}]{i\-Infix\-Codepoint\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_ae7d1963fe563b5193653e94cba99ee5b}
+\hypertarget{sphinxint_8h_afcb4bc0e314e7a9a22f0b4d0442d0d50}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Get\-Settings\-F\-N\-V@{sph\-Get\-Settings\-F\-N\-V}}
+\index{sph\-Get\-Settings\-F\-N\-V@{sph\-Get\-Settings\-F\-N\-V}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Get\-Settings\-F\-N\-V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} sph\-Get\-Settings\-F\-N\-V (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_afcb4bc0e314e7a9a22f0b4d0442d0d50}
+\hypertarget{sphinxint_8h_add9872a7f7b6542da149d6093d5c7ffe}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Get\-Suggest@{sph\-Get\-Suggest}}
+\index{sph\-Get\-Suggest@{sph\-Get\-Suggest}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Get\-Suggest}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Get\-Suggest (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Wordlist\-Suggest} $\ast$}]{p\-Wordlist, }
+\item[{{\bf int}}]{i\-Infix\-Codepoint\-Bytes, }
+\item[{const {\bf Suggest\-Args\-\_\-t} \&}]{t\-Args, }
+\item[{{\bf Suggest\-Result\-\_\-t} \&}]{t\-Res}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_add9872a7f7b6542da149d6093d5c7ffe}
+\hypertarget{sphinxint_8h_ae7512882cec20bd857a78affdcd2a2d9}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Has\-Expandable\-Wildcards@{sph\-Has\-Expandable\-Wildcards}}
+\index{sph\-Has\-Expandable\-Wildcards@{sph\-Has\-Expandable\-Wildcards}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Has\-Expandable\-Wildcards}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Has\-Expandable\-Wildcards (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Word}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_ae7512882cec20bd857a78affdcd2a2d9}
+\hypertarget{sphinxint_8h_a43defd9e393ff4ad0c394869f093bf42}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Is\-Expanded\-Payload@{sph\-Is\-Expanded\-Payload}}
+\index{sph\-Is\-Expanded\-Payload@{sph\-Is\-Expanded\-Payload}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Is\-Expanded\-Payload}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Is\-Expanded\-Payload (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Docs, }
+\item[{{\bf int}}]{i\-Hits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a43defd9e393ff4ad0c394869f093bf42}
+\hypertarget{sphinxint_8h_abec81568b949db53d7d3eaedfa94bca2}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Is\-Sort\-String\-Internal@{sph\-Is\-Sort\-String\-Internal}}
+\index{sph\-Is\-Sort\-String\-Internal@{sph\-Is\-Sort\-String\-Internal}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Is\-Sort\-String\-Internal}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Is\-Sort\-String\-Internal (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Column\-Name}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_abec81568b949db53d7d3eaedfa94bca2}
+\hypertarget{sphinxint_8h_ab7530a97618965ad1beae08f1e9eb076}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Is\-U\-T\-F8@{sph\-Is\-U\-T\-F8}}
+\index{sph\-Is\-U\-T\-F8@{sph\-Is\-U\-T\-F8}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Is\-U\-T\-F8}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Is\-U\-T\-F8 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_ab7530a97618965ad1beae08f1e9eb076}
+
+
+quick check for U\-T\-F-\/8 
+
+\hypertarget{sphinxint_8h_a50aeb4d473beae70467db7f82b37e80c}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Levenshtein@{sph\-Levenshtein}}
+\index{sph\-Levenshtein@{sph\-Levenshtein}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Levenshtein}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Levenshtein (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Word1, }
+\item[{{\bf int}}]{i\-Len1, }
+\item[{const char $\ast$}]{s\-Word2, }
+\item[{{\bf int}}]{i\-Len2}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a50aeb4d473beae70467db7f82b37e80c}
+\hypertarget{sphinxint_8h_abc161e85c761709d597a5c15e172f260}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Levenshtein@{sph\-Levenshtein}}
+\index{sph\-Levenshtein@{sph\-Levenshtein}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Levenshtein}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Levenshtein (
+\begin{DoxyParamCaption}
+\item[{const {\bf int} $\ast$}]{s\-Word1, }
+\item[{{\bf int}}]{i\-Len1, }
+\item[{const {\bf int} $\ast$}]{s\-Word2, }
+\item[{{\bf int}}]{i\-Len2}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_abc161e85c761709d597a5c15e172f260}
+\hypertarget{sphinxint_8h_a027ea572f2f26a58c751634e1e5cc9a6}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Lookup\-Infix\-Checkpoints@{sph\-Lookup\-Infix\-Checkpoints}}
+\index{sph\-Lookup\-Infix\-Checkpoints@{sph\-Lookup\-Infix\-Checkpoints}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Lookup\-Infix\-Checkpoints}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Lookup\-Infix\-Checkpoints (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Infix, }
+\item[{{\bf int}}]{i\-Bytes, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Infixes, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Infix\-Block\-\_\-t} $>$ \&}]{d\-Infix\-Blocks, }
+\item[{{\bf int}}]{i\-Infix\-Codepoint\-Bytes, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf D\-W\-O\-R\-D} $>$ \&}]{d\-Checkpoints}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a027ea572f2f26a58c751634e1e5cc9a6}
+$<$ wtf? $\ast$p\-Out (=s\-Key) is N\-O\-T initialized? \hypertarget{sphinxint_8h_ae80302782c9679860c091ff41b18d549}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Merge@{sph\-Merge}}
+\index{sph\-Merge@{sph\-Merge}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Merge}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Merge (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Index} $\ast$}]{p\-Dst, }
+\item[{const {\bf C\-Sph\-Index} $\ast$}]{p\-Src, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Doc\-I\-D\-\_\-t} $>$ \&}]{d\-Kill\-List, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf C\-Sph\-Index\-Progress} \&}]{t\-Progress, }
+\item[{{\bf Throttle\-State\-\_\-t} $\ast$}]{p\-Throttle, }
+\item[{volatile bool $\ast$}]{p\-Global\-Stop, }
+\item[{volatile bool $\ast$}]{p\-Local\-Stop}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_ae80302782c9679860c091ff41b18d549}
+\hypertarget{sphinxint_8h_acaa39e63695c500227e5dce461326edf}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Parse\-Morph\-Aot@{sph\-Parse\-Morph\-Aot}}
+\index{sph\-Parse\-Morph\-Aot@{sph\-Parse\-Morph\-Aot}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Parse\-Morph\-Aot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} sph\-Parse\-Morph\-Aot (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_acaa39e63695c500227e5dce461326edf}
+\hypertarget{sphinxint_8h_aaae7921a3e92e35299faa00eef7de42a}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Query\-Expand\-Keywords@{sph\-Query\-Expand\-Keywords}}
+\index{sph\-Query\-Expand\-Keywords@{sph\-Query\-Expand\-Keywords}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Query\-Expand\-Keywords}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\-Q\-Node\-\_\-t}$\ast$ sph\-Query\-Expand\-Keywords (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_aaae7921a3e92e35299faa00eef7de42a}
+\hypertarget{sphinxint_8h_adb1268c2c2a0f63a876beeb95087ebfc}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Reconstruct\-Node@{sph\-Reconstruct\-Node}}
+\index{sph\-Reconstruct\-Node@{sph\-Reconstruct\-Node}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Reconstruct\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} sph\-Reconstruct\-Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{const {\bf C\-Sph\-Schema} $\ast$}]{p\-Schema}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_adb1268c2c2a0f63a876beeb95087ebfc}
+\hypertarget{sphinxint_8h_a44e35201fb87de955655a7acf6f386b9}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Search\-Checkpoint@{sph\-Search\-Checkpoint}}
+\index{sph\-Search\-Checkpoint@{sph\-Search\-Checkpoint}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Search\-Checkpoint}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-P , typename P\-R\-E\-D $>$ const C\-P$\ast$ sph\-Search\-Checkpoint (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Word, }
+\item[{{\bf int}}]{i\-Word\-Len, }
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{i\-Word\-I\-D, }
+\item[{bool}]{b\-Star\-Mode, }
+\item[{bool}]{b\-Word\-Dict, }
+\item[{const C\-P $\ast$}]{p\-First\-C\-P, }
+\item[{const C\-P $\ast$}]{p\-Last\-C\-P, }
+\item[{const P\-R\-E\-D \&}]{t\-Pred}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a44e35201fb87de955655a7acf6f386b9}
+\hypertarget{sphinxint_8h_aaacad0501e3b19a05d9a5698e56045d7}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Search\-Checkpoint@{sph\-Search\-Checkpoint}}
+\index{sph\-Search\-Checkpoint@{sph\-Search\-Checkpoint}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Search\-Checkpoint}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-P $>$ const C\-P$\ast$ sph\-Search\-Checkpoint (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Word, }
+\item[{{\bf int}}]{i\-Word\-Len, }
+\item[{{\bf Sph\-Word\-I\-D\-\_\-t}}]{i\-Word\-I\-D, }
+\item[{bool}]{b\-Star\-Mode, }
+\item[{bool}]{b\-Word\-Dict, }
+\item[{const C\-P $\ast$}]{p\-First\-C\-P, }
+\item[{const C\-P $\ast$}]{p\-Last\-C\-P}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_aaacad0501e3b19a05d9a5698e56045d7}
+\hypertarget{sphinxint_8h_acd3d1cb65f53917dd98ad3eaddc60bd6}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Set\-Unlink\-Old@{sph\-Set\-Unlink\-Old}}
+\index{sph\-Set\-Unlink\-Old@{sph\-Set\-Unlink\-Old}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Set\-Unlink\-Old}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Set\-Unlink\-Old (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Unlink}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_acd3d1cb65f53917dd98ad3eaddc60bd6}
+\hypertarget{sphinxint_8h_a7af81ead1c04ec191065b9522d6c2467}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Sort\-Get\-String\-Remap@{sph\-Sort\-Get\-String\-Remap}}
+\index{sph\-Sort\-Get\-String\-Remap@{sph\-Sort\-Get\-String\-Remap}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Sort\-Get\-String\-Remap}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Sort\-Get\-String\-Remap (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Index\-Schema, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Sph\-String\-Sorter\-Remap\-\_\-t} $>$ \&}]{d\-Attrs}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a7af81ead1c04ec191065b9522d6c2467}
+\hypertarget{sphinxint_8h_af526a0be0edf86abcdccea7cda66dd31}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Transform\-Extended\-Query@{sph\-Transform\-Extended\-Query}}
+\index{sph\-Transform\-Extended\-Query@{sph\-Transform\-Extended\-Query}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Transform\-Extended\-Query}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Transform\-Extended\-Query (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$$\ast$}]{pp\-Node, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings, }
+\item[{bool}]{b\-Has\-Boolean\-Optimization, }
+\item[{const {\bf I\-Sph\-Keywords\-Stat} $\ast$}]{p\-Keywords}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_af526a0be0edf86abcdccea7cda66dd31}
+\hypertarget{sphinxint_8h_a8d06e4830dd01320a1c217afbc4ba2a0}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Type\-Directive@{sph\-Type\-Directive}}
+\index{sph\-Type\-Directive@{sph\-Type\-Directive}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Type\-Directive}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ sph\-Type\-Directive (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Attr}}]{e\-Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a8d06e4830dd01320a1c217afbc4ba2a0}
+\hypertarget{sphinxint_8h_ae561f586c65229f0a4ff581016cf5164}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Type\-Name@{sph\-Type\-Name}}
+\index{sph\-Type\-Name@{sph\-Type\-Name}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Type\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ sph\-Type\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Attr}}]{e\-Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_ae561f586c65229f0a4ff581016cf5164}
+\hypertarget{sphinxint_8h_aa8e960cbeff2edb4281ba947eaf61e4f}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Unlink\-Index@{sph\-Unlink\-Index}}
+\index{sph\-Unlink\-Index@{sph\-Unlink\-Index}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Unlink\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Unlink\-Index (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name, }
+\item[{bool}]{b\-Force}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_aa8e960cbeff2edb4281ba947eaf61e4f}
+\hypertarget{sphinxint_8h_a0847aee57c319b8d06dd0ddb715fd157}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-Utf8\-Char\-Bytes@{sph\-Utf8\-Char\-Bytes}}
+\index{sph\-Utf8\-Char\-Bytes@{sph\-Utf8\-Char\-Bytes}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-Utf8\-Char\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Utf8\-Char\-Bytes (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{u\-First}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a0847aee57c319b8d06dd0ddb715fd157}
+
+
+compute utf-\/8 character length in bytes from its first byte 
+
+\hypertarget{sphinxint_8h_a6938d543ea8cc9b8b7a0af0347c118ac}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-U\-T\-F8\-Decode@{sph\-U\-T\-F8\-Decode}}
+\index{sph\-U\-T\-F8\-Decode@{sph\-U\-T\-F8\-Decode}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-U\-T\-F8\-Decode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-U\-T\-F8\-Decode (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$\&}]{p\-Buf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a6938d543ea8cc9b8b7a0af0347c118ac}
+decode U\-T\-F-\/8 codepoint advances buffer ptr in all cases, including the end of buffer (ie. zero byte)! so eof M\-U\-S\-T be handled, otherwise, you get O\-O\-B
+
+returns -\/1 on failure returns 0 on end of buffer returns codepoint on success \hypertarget{sphinxint_8h_a3da48d6994f088de94f95c619f817b1c}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-U\-T\-F8\-Encode@{sph\-U\-T\-F8\-Encode}}
+\index{sph\-U\-T\-F8\-Encode@{sph\-U\-T\-F8\-Encode}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-U\-T\-F8\-Encode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-U\-T\-F8\-Encode (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{p\-Buf, }
+\item[{{\bf int}}]{i\-Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a3da48d6994f088de94f95c619f817b1c}
+encode U\-T\-F-\/8 codepoint to buffer returns number of bytes used \hypertarget{sphinxint_8h_af65dfa5032e9e7c46f2e5e4dfbdb7192}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-U\-T\-F8\-Len@{sph\-U\-T\-F8\-Len}}
+\index{sph\-U\-T\-F8\-Len@{sph\-U\-T\-F8\-Len}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-U\-T\-F8\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-U\-T\-F8\-Len (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_af65dfa5032e9e7c46f2e5e4dfbdb7192}
+
+
+compute U\-T\-F-\/8 string length in codepoints 
+
+\hypertarget{sphinxint_8h_a9e4457023a19fed52bf54ed617022320}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-U\-T\-F8\-Len@{sph\-U\-T\-F8\-Len}}
+\index{sph\-U\-T\-F8\-Len@{sph\-U\-T\-F8\-Len}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-U\-T\-F8\-Len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-U\-T\-F8\-Len (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Str, }
+\item[{{\bf int}}]{i\-Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a9e4457023a19fed52bf54ed617022320}
+
+
+compute U\-T\-F-\/8 string length in codepoints 
+
+\hypertarget{sphinxint_8h_aee0fdabd5575b24ec9295714fc3d25f5}{\index{sphinxint.\-h@{sphinxint.\-h}!sph\-U\-T\-F8\-To\-Wide\-Char@{sph\-U\-T\-F8\-To\-Wide\-Char}}
+\index{sph\-U\-T\-F8\-To\-Wide\-Char@{sph\-U\-T\-F8\-To\-Wide\-Char}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{sph\-U\-T\-F8\-To\-Wide\-Char}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-U\-T\-F8\-To\-Wide\-Char (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Src, }
+\item[{{\bf int} $\ast$}]{p\-Dst, }
+\item[{{\bf int}}]{i\-Max\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_aee0fdabd5575b24ec9295714fc3d25f5}
+
+
+convert U\-T\-F-\/8 to codepoints, return string length 
+
+\hypertarget{sphinxint_8h_aaecab9c81ac8808d5f580d3c8d14b918}{\index{sphinxint.\-h@{sphinxint.\-h}!spn\-Decode\-V\-L\-B8@{spn\-Decode\-V\-L\-B8}}
+\index{spn\-Decode\-V\-L\-B8@{spn\-Decode\-V\-L\-B8}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{spn\-Decode\-V\-L\-B8}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E}$\ast$ spn\-Decode\-V\-L\-B8 (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-In, }
+\item[{{\bf uint64\-\_\-t} \&}]{u\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_aaecab9c81ac8808d5f580d3c8d14b918}
+\hypertarget{sphinxint_8h_af4dc02ebf7cf6daa5e695a2008939afd}{\index{sphinxint.\-h@{sphinxint.\-h}!Sql\-Unescape@{Sql\-Unescape}}
+\index{Sql\-Unescape@{Sql\-Unescape}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Sql\-Unescape}]{\setlength{\rightskip}{0pt plus 5cm}void Sql\-Unescape (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Res, }
+\item[{const char $\ast$}]{s\-Escaped, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_af4dc02ebf7cf6daa5e695a2008939afd}
+\hypertarget{sphinxint_8h_ae3db867d5d10a9f3af5b6787269ba156}{\index{sphinxint.\-h@{sphinxint.\-h}!S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+\item[{S\-P\-H\-\_\-\-Q\-S\-T\-A\-T\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N}]{ = {\ttfamily =0}, }
+\item[{B\-A\-D\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-S\-T\-A\-T\-E\-\_\-\-E\-N\-U\-M\-\_\-\-B\-A\-S\-E}]{}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_ae3db867d5d10a9f3af5b6787269ba156}
+\hypertarget{sphinxint_8h_a34ced2e2673521e005d37567a1c3729e}{\index{sphinxint.\-h@{sphinxint.\-h}!Strip\-Path@{Strip\-Path}}
+\index{Strip\-Path@{Strip\-Path}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Strip\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void Strip\-Path (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxint_8h_a34ced2e2673521e005d37567a1c3729e}
+\hypertarget{sphinxint_8h_a697e4bc9dfbbc3eecf12fa818afba82c}{\index{sphinxint.\-h@{sphinxint.\-h}!Transform\-Aot\-Filter@{Transform\-Aot\-Filter}}
+\index{Transform\-Aot\-Filter@{Transform\-Aot\-Filter}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Transform\-Aot\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}void Transform\-Aot\-Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-Q\-Node\-\_\-t} $\ast$}]{p\-Node, }
+\item[{const {\bf C\-Sph\-Wordforms} $\ast$}]{p\-Wordforms, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a697e4bc9dfbbc3eecf12fa818afba82c}
+A\-O\-T morph guesses transform replaces tokens with their respective morph guesses subtrees used in lemmatize\-\_\-ru\-\_\-all morphology processing mode that can generate multiple guesses in other modes, there is always exactly one morph guess, and the dictionary handles it Called from the daemon side (searchd) \hypertarget{sphinxint_8h_a5fb482c689a6a1784cfa63501334cf2c}{\index{sphinxint.\-h@{sphinxint.\-h}!Write\-Schema@{Write\-Schema}}
+\index{Write\-Schema@{Write\-Schema}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{Write\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}void Write\-Schema (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{fd\-Info, }
+\item[{const {\bf C\-Sph\-Schema} \&}]{t\-Schema}
+\end{DoxyParamCaption}
+)}}\label{sphinxint_8h_a5fb482c689a6a1784cfa63501334cf2c}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxint_8h_afcd8f7f8ba79e2ce523b7d80dbd2da9f}{\index{sphinxint.\-h@{sphinxint.\-h}!F\-I\-E\-L\-D\-\_\-\-B\-I\-T\-S@{F\-I\-E\-L\-D\-\_\-\-B\-I\-T\-S}}
+\index{F\-I\-E\-L\-D\-\_\-\-B\-I\-T\-S@{F\-I\-E\-L\-D\-\_\-\-B\-I\-T\-S}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{F\-I\-E\-L\-D\-\_\-\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} F\-I\-E\-L\-D\-\_\-\-B\-I\-T\-S = 8\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxint_8h_afcd8f7f8ba79e2ce523b7d80dbd2da9f}
+\hypertarget{sphinxint_8h_a52cc7e4261b678a5f82fe85ed05d7ecf}{\index{sphinxint.\-h@{sphinxint.\-h}!g\-\_\-b\-Json\-Autoconv\-Numbers@{g\-\_\-b\-Json\-Autoconv\-Numbers}}
+\index{g\-\_\-b\-Json\-Autoconv\-Numbers@{g\-\_\-b\-Json\-Autoconv\-Numbers}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{g\-\_\-b\-Json\-Autoconv\-Numbers}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Json\-Autoconv\-Numbers}}\label{sphinxint_8h_a52cc7e4261b678a5f82fe85ed05d7ecf}
+\hypertarget{sphinxint_8h_aa239826e9874d835320f02ecbe375164}{\index{sphinxint.\-h@{sphinxint.\-h}!g\-\_\-b\-Json\-Keynames\-To\-Lowercase@{g\-\_\-b\-Json\-Keynames\-To\-Lowercase}}
+\index{g\-\_\-b\-Json\-Keynames\-To\-Lowercase@{g\-\_\-b\-Json\-Keynames\-To\-Lowercase}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{g\-\_\-b\-Json\-Keynames\-To\-Lowercase}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Json\-Keynames\-To\-Lowercase}}\label{sphinxint_8h_aa239826e9874d835320f02ecbe375164}
+\hypertarget{sphinxint_8h_ad40e35b4e18e9e87eab7330356fdf88f}{\index{sphinxint.\-h@{sphinxint.\-h}!g\-\_\-b\-Json\-Strict@{g\-\_\-b\-Json\-Strict}}
+\index{g\-\_\-b\-Json\-Strict@{g\-\_\-b\-Json\-Strict}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{g\-\_\-b\-Json\-Strict}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Json\-Strict}}\label{sphinxint_8h_ad40e35b4e18e9e87eab7330356fdf88f}
+\hypertarget{sphinxint_8h_abae0f830a619a51e61f213e335b5fa91}{\index{sphinxint.\-h@{sphinxint.\-h}!g\-\_\-i\-Predictor\-Cost\-Doc@{g\-\_\-i\-Predictor\-Cost\-Doc}}
+\index{g\-\_\-i\-Predictor\-Cost\-Doc@{g\-\_\-i\-Predictor\-Cost\-Doc}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{g\-\_\-i\-Predictor\-Cost\-Doc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Predictor\-Cost\-Doc}}\label{sphinxint_8h_abae0f830a619a51e61f213e335b5fa91}
+costs for max\-\_\-predicted\-\_\-time estimations, in nanoseconds Y\-M\-M\-V, defaults were estimated in a very specific environment, and then rounded off \hypertarget{sphinxint_8h_a698b0b2c61c7a7fcf266be53c3fa423f}{\index{sphinxint.\-h@{sphinxint.\-h}!g\-\_\-i\-Predictor\-Cost\-Hit@{g\-\_\-i\-Predictor\-Cost\-Hit}}
+\index{g\-\_\-i\-Predictor\-Cost\-Hit@{g\-\_\-i\-Predictor\-Cost\-Hit}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{g\-\_\-i\-Predictor\-Cost\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Predictor\-Cost\-Hit}}\label{sphinxint_8h_a698b0b2c61c7a7fcf266be53c3fa423f}
+\hypertarget{sphinxint_8h_a393b260536a3c366fa1e225333c3da71}{\index{sphinxint.\-h@{sphinxint.\-h}!g\-\_\-i\-Predictor\-Cost\-Match@{g\-\_\-i\-Predictor\-Cost\-Match}}
+\index{g\-\_\-i\-Predictor\-Cost\-Match@{g\-\_\-i\-Predictor\-Cost\-Match}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{g\-\_\-i\-Predictor\-Cost\-Match}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Predictor\-Cost\-Match}}\label{sphinxint_8h_a393b260536a3c366fa1e225333c3da71}
+\hypertarget{sphinxint_8h_a3e1b8bb8a713ed247fd4ea10619b270d}{\index{sphinxint.\-h@{sphinxint.\-h}!g\-\_\-i\-Predictor\-Cost\-Skip@{g\-\_\-i\-Predictor\-Cost\-Skip}}
+\index{g\-\_\-i\-Predictor\-Cost\-Skip@{g\-\_\-i\-Predictor\-Cost\-Skip}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{g\-\_\-i\-Predictor\-Cost\-Skip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Predictor\-Cost\-Skip}}\label{sphinxint_8h_a3e1b8bb8a713ed247fd4ea10619b270d}
+costs for max\-\_\-predicted\-\_\-time limits, defined in \hyperlink{sphinxsearch_8cpp}{sphinxsearch.\-cpp} measured in nanoseconds (that is, 1e-\/9) \hypertarget{sphinxint_8h_a1c89b7fc410020e32845e88d7d156fa4}{\index{sphinxint.\-h@{sphinxint.\-h}!g\-\_\-p\-Binlog@{g\-\_\-p\-Binlog}}
+\index{g\-\_\-p\-Binlog@{g\-\_\-p\-Binlog}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{g\-\_\-p\-Binlog}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf I\-Sph\-Binlog}$\ast$ g\-\_\-p\-Binlog}}\label{sphinxint_8h_a1c89b7fc410020e32845e88d7d156fa4}
+
+
+binlog, defined in \hyperlink{sphinxrt_8cpp}{sphinxrt.\-cpp} 
+
+\hypertarget{sphinxint_8h_a3b3d6360c14ea367557cbeb5af6a49e8}{\index{sphinxint.\-h@{sphinxint.\-h}!g\-\_\-p\-Uservars\-Hook@{g\-\_\-p\-Uservars\-Hook}}
+\index{g\-\_\-p\-Uservars\-Hook@{g\-\_\-p\-Uservars\-Hook}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{g\-\_\-p\-Uservars\-Hook}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uservar\-Int\-Set\-\_\-c}$\ast$( $\ast$ g\-\_\-p\-Uservars\-Hook)(const {\bf C\-Sph\-String} \&s\-Uservar)}}\label{sphinxint_8h_a3b3d6360c14ea367557cbeb5af6a49e8}
+\hypertarget{sphinxint_8h_a63fc57b712a99d4aa62df1140a75086d}{\index{sphinxint.\-h@{sphinxint.\-h}!I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N@{I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N@{I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D} I\-N\-D\-E\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N = 42}}\label{sphinxint_8h_a63fc57b712a99d4aa62df1140a75086d}
+
+
+my format version 
+
+\hypertarget{sphinxint_8h_a7c31a5d4e3e09df8810ec3c82264ea94}{\index{sphinxint.\-h@{sphinxint.\-h}!I\-N\-D\-E\-X\-\_\-\-M\-A\-G\-I\-C\-\_\-\-H\-E\-A\-D\-E\-R@{I\-N\-D\-E\-X\-\_\-\-M\-A\-G\-I\-C\-\_\-\-H\-E\-A\-D\-E\-R}}
+\index{I\-N\-D\-E\-X\-\_\-\-M\-A\-G\-I\-C\-\_\-\-H\-E\-A\-D\-E\-R@{I\-N\-D\-E\-X\-\_\-\-M\-A\-G\-I\-C\-\_\-\-H\-E\-A\-D\-E\-R}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{I\-N\-D\-E\-X\-\_\-\-M\-A\-G\-I\-C\-\_\-\-H\-E\-A\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\-W\-O\-R\-D} I\-N\-D\-E\-X\-\_\-\-M\-A\-G\-I\-C\-\_\-\-H\-E\-A\-D\-E\-R = 0x58485053}}\label{sphinxint_8h_a7c31a5d4e3e09df8810ec3c82264ea94}
+
+
+my magic 'S\-P\-H\-X' header 
+
+\hypertarget{sphinxint_8h_a5cfad3727e7f77dac50bb9bf43f48641}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H@{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}}
+\index{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H@{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}]{\setlength{\rightskip}{0pt plus 5cm}const char M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H = 3}}\label{sphinxint_8h_a5cfad3727e7f77dac50bb9bf43f48641}
+\hypertarget{sphinxint_8h_aab6757db05e350954f0a0821ff590029}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E@{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}}
+\index{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E@{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const char M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E = 2}}\label{sphinxint_8h_aab6757db05e350954f0a0821ff590029}
+\hypertarget{sphinxint_8h_a1dbc79502cbdd7e72ad6c40a4a3f455c}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-Z\-O\-N\-E@{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-Z\-O\-N\-E}}
+\index{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-Z\-O\-N\-E@{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-Z\-O\-N\-E}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-Z\-O\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}const char M\-A\-G\-I\-C\-\_\-\-C\-O\-D\-E\-\_\-\-Z\-O\-N\-E = 4}}\label{sphinxint_8h_a1dbc79502cbdd7e72ad6c40a4a3f455c}
+\hypertarget{sphinxint_8h_a9f361c2dfb5c648db55193694b4d3bcd}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-A\-G\-I\-C\-\_\-\-S\-Y\-N\-O\-N\-Y\-M\-\_\-\-W\-H\-I\-T\-E\-S\-P\-A\-C\-E@{M\-A\-G\-I\-C\-\_\-\-S\-Y\-N\-O\-N\-Y\-M\-\_\-\-W\-H\-I\-T\-E\-S\-P\-A\-C\-E}}
+\index{M\-A\-G\-I\-C\-\_\-\-S\-Y\-N\-O\-N\-Y\-M\-\_\-\-W\-H\-I\-T\-E\-S\-P\-A\-C\-E@{M\-A\-G\-I\-C\-\_\-\-S\-Y\-N\-O\-N\-Y\-M\-\_\-\-W\-H\-I\-T\-E\-S\-P\-A\-C\-E}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-A\-G\-I\-C\-\_\-\-S\-Y\-N\-O\-N\-Y\-M\-\_\-\-W\-H\-I\-T\-E\-S\-P\-A\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const char M\-A\-G\-I\-C\-\_\-\-S\-Y\-N\-O\-N\-Y\-M\-\_\-\-W\-H\-I\-T\-E\-S\-P\-A\-C\-E = 1}}\label{sphinxint_8h_a9f361c2dfb5c648db55193694b4d3bcd}
+\hypertarget{sphinxint_8h_a225d2d67be3bf6ce1bb2809d25acb894}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-B\-I\-G\-R\-A\-M@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-B\-I\-G\-R\-A\-M}}
+\index{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-B\-I\-G\-R\-A\-M@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-B\-I\-G\-R\-A\-M}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-B\-I\-G\-R\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}const char M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-B\-I\-G\-R\-A\-M = 3}}\label{sphinxint_8h_a225d2d67be3bf6ce1bb2809d25acb894}
+\hypertarget{sphinxint_8h_ad19ffe2d4983b0cce98d462580b62b2f}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D}}
+\index{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}const char M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D = 1}}\label{sphinxint_8h_ad19ffe2d4983b0cce98d462580b62b2f}
+\hypertarget{sphinxint_8h_a1da506dff5d9429bb4e9739a8f216b96}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D}}
+\index{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}const char M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-H\-E\-A\-D\-\_\-\-N\-O\-N\-S\-T\-E\-M\-M\-E\-D = 2}}\label{sphinxint_8h_a1da506dff5d9429bb4e9739a8f216b96}
+\hypertarget{sphinxint_8h_a51babfa062b585c1ce2ce833364c5c46}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}}
+\index{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}}\label{sphinxint_8h_a51babfa062b585c1ce2ce833364c5c46}
+
+
+value is \char`\"{}\textbackslash{}3paragraph\char`\"{} 
+
+\hypertarget{sphinxint_8h_a776db1606ce6aa0ad1e51093dc563087}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}}
+\index{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}}\label{sphinxint_8h_a776db1606ce6aa0ad1e51093dc563087}
+
+
+value is \char`\"{}\textbackslash{}3sentence\char`\"{} 
+
+\hypertarget{sphinxint_8h_a89e5b8253a6aae17573dceb2d0288626}{\index{sphinxint.\-h@{sphinxint.\-h}!M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-T\-A\-I\-L@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-T\-A\-I\-L}}
+\index{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-T\-A\-I\-L@{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-T\-A\-I\-L}!sphinxint.h@{sphinxint.\-h}}
+\subsubsection[{M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-T\-A\-I\-L}]{\setlength{\rightskip}{0pt plus 5cm}const char M\-A\-G\-I\-C\-\_\-\-W\-O\-R\-D\-\_\-\-T\-A\-I\-L = 1}}\label{sphinxint_8h_a89e5b8253a6aae17573dceb2d0288626}

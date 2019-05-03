@@ -1,0 +1,1356 @@
+\hypertarget{sphinxstd_8h}{\section{src/sphinxstd.h File Reference}
+\label{sphinxstd_8h}\index{src/sphinxstd.\-h@{src/sphinxstd.\-h}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$stdarg.\-h$>$}\\*
+{\ttfamily \#include $<$limits.\-h$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$sys/mman.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$pthread.\-h$>$}\\*
+{\ttfamily \#include $<$semaphore.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classISphNoncopyable}{I\-Sph\-Noncopyable}
+\begin{DoxyCompactList}\small\item\em prevent copy \end{DoxyCompactList}\item 
+struct \hyperlink{structSphLess__T}{Sph\-Less\-\_\-\-T$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em generic comparator \end{DoxyCompactList}\item 
+struct \hyperlink{structSphGreater__T}{Sph\-Greater\-\_\-\-T$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em generic comparator \end{DoxyCompactList}\item 
+struct \hyperlink{structSphMemberLess__T}{Sph\-Member\-Less\-\_\-\-T$<$ T, C $>$}
+\begin{DoxyCompactList}\small\item\em generic comparator \end{DoxyCompactList}\item 
+struct \hyperlink{structSphAccessor__T}{Sph\-Accessor\-\_\-\-T$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em generic accessor \end{DoxyCompactList}\item 
+struct \hyperlink{structSphMemberFunctor__T}{Sph\-Member\-Functor\-\_\-\-T$<$ T, C\-L\-A\-S\-S $>$}
+\begin{DoxyCompactList}\small\item\em member functor, wraps object member access \end{DoxyCompactList}\item 
+struct \hyperlink{structSphIdentityFunctor__T}{Sph\-Identity\-Functor\-\_\-\-T$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em identity functor \end{DoxyCompactList}\item 
+class \hyperlink{classCSphVectorPolicy}{C\-Sph\-Vector\-Policy$<$ T $>$}
+\item 
+class \hyperlink{classCSphVector}{C\-Sph\-Vector$<$ T, P\-O\-L\-I\-C\-Y $>$}
+\item 
+class \hyperlink{classCSphSwapVectorPolicy}{C\-Sph\-Swap\-Vector\-Policy$<$ T $>$}
+\item 
+class \hyperlink{classCSphTightVectorPolicy}{C\-Sph\-Tight\-Vector\-Policy$<$ T $>$}
+\item 
+class \hyperlink{classCSphSwapVector}{C\-Sph\-Swap\-Vector$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em swap-\/vector \end{DoxyCompactList}\item 
+class \hyperlink{classCSphTightVector}{C\-Sph\-Tight\-Vector$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em tight-\/vector \end{DoxyCompactList}\item 
+class \hyperlink{classCSphFixedVector}{C\-Sph\-Fixed\-Vector$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em dynamically allocated fixed-\/size vector \end{DoxyCompactList}\item 
+class \hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$}
+\item 
+struct \hyperlink{structCSphOrderedHash_1_1HashEntry__t}{C\-Sph\-Ordered\-Hash$<$ T, K\-E\-Y, H\-A\-S\-H\-F\-U\-N\-C, L\-E\-N\-G\-T\-H $>$\-::\-Hash\-Entry\-\_\-t}
+\item 
+struct \hyperlink{structIdentityHash__fn}{Identity\-Hash\-\_\-fn}
+\item 
+struct \hyperlink{structCSphString}{C\-Sph\-String}
+\begin{DoxyCompactList}\small\item\em immutable C string proxy \end{DoxyCompactList}\item 
+class \hyperlink{classSphStringBuilder__T}{Sph\-String\-Builder\-\_\-\-T$<$ T $>$}
+\item 
+struct \hyperlink{structEscapeQuotation__t}{Escape\-Quotation\-\_\-t}
+\item 
+struct \hyperlink{structCSphVariant}{C\-Sph\-Variant}
+\item 
+struct \hyperlink{structCSphNamedInt}{C\-Sph\-Named\-Int}
+\begin{DoxyCompactList}\small\item\em name+int pair \end{DoxyCompactList}\item 
+struct \hyperlink{structCSphStrHashFunc}{C\-Sph\-Str\-Hash\-Func}
+\begin{DoxyCompactList}\small\item\em string hash function \end{DoxyCompactList}\item 
+class \hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em small hash with string keys \end{DoxyCompactList}\item 
+class \hyperlink{classCSphScopedPtr}{C\-Sph\-Scoped\-Ptr$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em pointer with automatic safe deletion when going out of scope \end{DoxyCompactList}\item 
+struct \hyperlink{structISphRefcounted}{I\-Sph\-Refcounted}
+\item 
+class \hyperlink{classCSphRefcountedPtr}{C\-Sph\-Refcounted\-Ptr$<$ T $>$}
+\item 
+class \hyperlink{classCSphBufferTrait}{C\-Sph\-Buffer\-Trait$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em buffer trait that neither own buffer nor clean-\/up it on destroy \end{DoxyCompactList}\item 
+class \hyperlink{classCSphLargeBuffer}{C\-Sph\-Large\-Buffer$<$ T, S\-H\-A\-R\-E\-D $>$}
+\begin{DoxyCompactList}\small\item\em in-\/memory buffer shared between processes \end{DoxyCompactList}\item 
+class \hyperlink{classCSphMappedBuffer}{C\-Sph\-Mapped\-Buffer$<$ T $>$}
+\item 
+class \hyperlink{classCSphAutoEvent}{C\-Sph\-Auto\-Event}
+\item 
+class \hyperlink{classCSphSemaphore}{C\-Sph\-Semaphore}
+\item 
+class \hyperlink{classCSphScopedLock}{C\-Sph\-Scoped\-Lock$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em scoped mutex lock \end{DoxyCompactList}\item 
+class \hyperlink{classCSphScopedRLock}{C\-Sph\-Scoped\-R\-Lock}
+\begin{DoxyCompactList}\small\item\em scoped shared (read) lock \end{DoxyCompactList}\item 
+class \hyperlink{classCSphScopedWLock}{C\-Sph\-Scoped\-W\-Lock}
+\begin{DoxyCompactList}\small\item\em scoped shared (write) lock \end{DoxyCompactList}\item 
+class \hyperlink{classCSphBitvec}{C\-Sph\-Bitvec}
+\item 
+class \hyperlink{classCSphAtomic__T}{C\-Sph\-Atomic\-\_\-\-T$<$ T\-L\-O\-N\-G $>$}
+\item 
+struct \hyperlink{structISphRefcountedMT}{I\-Sph\-Refcounted\-M\-T}
+\begin{DoxyCompactList}\small\item\em M\-T-\/aware refcounted base (might be a mutex protected and slow) \end{DoxyCompactList}\item 
+struct \hyperlink{structISphJob}{I\-Sph\-Job}
+\item 
+struct \hyperlink{structISphThdPool}{I\-Sph\-Thd\-Pool}
+\item 
+class \hyperlink{classCSphHash}{C\-Sph\-Hash$<$ V\-A\-L\-U\-E $>$}
+\item 
+struct \hyperlink{structCSphHash_1_1Entry}{C\-Sph\-Hash$<$ V\-A\-L\-U\-E $>$\-::\-Entry}
+\item 
+class \hyperlink{classCSphQueue}{C\-Sph\-Queue$<$ T, C\-O\-M\-P $>$}
+\begin{DoxyCompactList}\small\item\em generic stateless priority queue \end{DoxyCompactList}\item 
+class \hyperlink{classCircularBuffer__T}{Circular\-Buffer\-\_\-\-T$<$ T $>$}
+\item 
+class \hyperlink{classTDigest__i}{T\-Digest\-\_\-i}
+\item 
+struct \hyperlink{structListNode__t}{List\-Node\-\_\-t}
+\item 
+class \hyperlink{classList__t}{List\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxstd_8h_a9d373a9b65ff25b2db84c07394e1c212}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}(x)
+\item 
+\#define \hyperlink{sphinxstd_8h_af7bfe23cf121eb52ceec41625bca196f}{U\-S\-E\-\_\-\-W\-I\-N\-D\-O\-W\-S}~0
+\item 
+\#define \hyperlink{sphinxstd_8h_adc51d956373b9d5ab3023af1b7e85957}{S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-U\-N\-U\-S\-E\-D}
+\item 
+\#define \hyperlink{sphinxstd_8h_acd543d04bb6ae19d46c362c6ed1f8393}{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}(\-\_\-cond, \-\_\-name)~typedef char S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-F\-A\-I\-L\-E\-D\-\_\- \#\# \-\_\-name \mbox{[} (\-\_\-cond) ? 1 \-: -\/1 \mbox{]} \hyperlink{sphinxstd_8h_adc51d956373b9d5ab3023af1b7e85957}{S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-U\-N\-U\-S\-E\-D}
+\item 
+\#define \hyperlink{sphinxstd_8h_aca6a9915ff4428071bea67693f611276}{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}(\-\_\-type, \-\_\-size)~\hyperlink{sphinxsearch_8cpp_a7c11621618eb228c6f2c3e7cf42ef9ba}{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T} ( sizeof(\-\_\-type)==\-\_\-size, \-\_\-type \#\# \-\_\-\-M\-U\-S\-T\-\_\-\-B\-E\-\_\- \#\# \-\_\-size \#\# \-\_\-\-B\-Y\-T\-E\-S )
+\item 
+\#define \hyperlink{sphinxstd_8h_a7893aa5b4bad6a4d6124b17188223018}{\-\_\-\-\_\-analysis\-\_\-assume}(\-\_\-arg)
+\item 
+\#define \hyperlink{sphinxstd_8h_aea24330ad33ca20415a6729b2e46ef2d}{D\-E\-B\-U\-G\-A\-R\-G}(\-\_\-arg)~\-\_\-arg
+\begin{DoxyCompactList}\small\item\em some function arguments only need to have a name in debug builds \end{DoxyCompactList}\item 
+\#define \hyperlink{sphinxstd_8h_aacd3c5c8d31b9feb66db4120d5a263a0}{U64\-C}(v)~v \#\# U\-L\-L
+\item 
+\#define \hyperlink{sphinxstd_8h_ade7f071102874cc8c5c38ec69eabd242}{I64\-C}(v)~v \#\# L\-L
+\item 
+\#define \hyperlink{sphinxstd_8h_ac582131d7a7c8ee57e73180d1714f9d5}{P\-R\-Iu64}~\char`\"{}llu\char`\"{}
+\item 
+\#define \hyperlink{sphinxstd_8h_ab8d0c29be4a0623c3de58011991e86e9}{P\-R\-Ii64}~\char`\"{}lld\char`\"{}
+\item 
+\#define \hyperlink{sphinxstd_8h_a21ef7c3a4e9f99f62cf64329f965d2ed}{U\-I\-N\-T64\-\_\-\-F\-M\-T}~\char`\"{}\%\char`\"{} \hyperlink{sphinxstd_8h_ac582131d7a7c8ee57e73180d1714f9d5}{P\-R\-Iu64}
+\item 
+\#define \hyperlink{sphinxstd_8h_a57e353d6ce48ab7d414d094961d5e474}{I\-N\-T64\-\_\-\-F\-M\-T}~\char`\"{}\%\char`\"{} \hyperlink{sphinxstd_8h_ab8d0c29be4a0623c3de58011991e86e9}{P\-R\-Ii64}
+\item 
+\#define \hyperlink{sphinxstd_8h_a30654b4b67d97c42ca3f9b6052dda916}{U\-I\-N\-T64\-\_\-\-M\-A\-X}~\hyperlink{sphinxstd_8h_aacd3c5c8d31b9feb66db4120d5a263a0}{U64\-C}(0xffffffffffffffff)
+\item 
+\#define \hyperlink{sphinxstd_8h_ab21f12f372f67b8ff0aa3432336ede67}{I\-N\-T64\-\_\-\-M\-I\-N}~\hyperlink{sphinxstd_8h_ade7f071102874cc8c5c38ec69eabd242}{I64\-C}(0x8000000000000000)
+\item 
+\#define \hyperlink{sphinxstd_8h_ad0d744f05898e32d01f73f8af3cd2071}{I\-N\-T64\-\_\-\-M\-A\-X}~\hyperlink{sphinxstd_8h_ade7f071102874cc8c5c38ec69eabd242}{I64\-C}(0x7fffffffffffffff)
+\item 
+\#define \hyperlink{sphinxstd_8h_a5f77b664efbf298b18601ab8c9314e82}{I\-N\-T64}(\-\_\-v)~((long long \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})(\-\_\-v))
+\item 
+\#define \hyperlink{sphinxstd_8h_afbe99077f641fae598305a79279ceca7}{U\-I\-N\-T64}(\-\_\-v)~((unsigned long long \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})(\-\_\-v))
+\item 
+\#define \hyperlink{sphinxstd_8h_ae84f7ac9e6dc43f8a8fc04c3095f4ddb}{S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-A\-K\-S}~0
+\item 
+\#define \hyperlink{sphinxstd_8h_a125a4459c13bc9894265edf21b6a0489}{S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-I\-L\-L}~0
+\item 
+\#define \hyperlink{sphinxstd_8h_a0a38f87dc45287a4041ebd2d1cec0fcc}{S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-S\-\_\-\-P\-R\-O\-F\-I\-L\-E\-R}~0
+\item 
+\#define \hyperlink{sphinxstd_8h_ab80fa587b637167cf8193a3e125aefb4}{S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-B\-A\-C\-K\-T\-R\-A\-C\-E\-S}~0
+\item 
+\#define \hyperlink{sphinxstd_8h_a86505f75dca8cc171f7220c8a703e3ea}{Verify}(\-\_\-expr)~assert(\-\_\-expr)
+\item 
+\#define \hyperlink{sphinxstd_8h_a9a629e52213beba32d52f7969df6ba95}{Safe\-Delete}(\-\_\-x)~\{ \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} (\-\_\-x) \{ delete (\-\_\-x); (\-\_\-x) = nullptr; \} \}
+\item 
+\#define \hyperlink{sphinxstd_8h_aaf67e1f1542248bb427ed1ef6daeb870}{Safe\-Delete\-Array}(\-\_\-x)~\{ \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} (\-\_\-x) \{ delete \mbox{[}$\,$\mbox{]} (\-\_\-x); (\-\_\-x) = nullptr; \} \}
+\item 
+\#define \hyperlink{sphinxstd_8h_aaa1bbfcc3631e1a0da0f906523f6fbde}{Safe\-Release}(\-\_\-x)~\{ \hyperlink{sphinxsort_8cpp_ac158031fa822cf4eec61a9d38d1afe23}{if} (\-\_\-x) \{ (\-\_\-x)-\/$>$Release(); (\-\_\-x) = nullptr; \} \}
+\item 
+\#define \hyperlink{sphinxstd_8h_a217c04e4ecb7dcce1192be8f06a1dbe5}{A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H}(\-\_\-index, \-\_\-array)~for ( \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \-\_\-index=0; \-\_\-index$<$\-\_\-array.\-Get\-Length(); \-\_\-index++ )
+\item 
+\#define \hyperlink{sphinxstd_8h_a6a52d3f6941f4599fa44bd605e897893}{A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H\-\_\-\-C\-O\-N\-D}(\-\_\-index, \-\_\-array, \-\_\-cond)~for ( \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \-\_\-index=0; \-\_\-index$<$\-\_\-array.\-Get\-Length() \&\& (\-\_\-cond); \-\_\-index++ )
+\item 
+\#define \hyperlink{sphinxstd_8h_ace1700b414e7beba46ccb3d46a6aee04}{A\-R\-R\-A\-Y\-\_\-\-A\-N\-Y}(\-\_\-res, \-\_\-array, \-\_\-cond)
+\item 
+\#define \hyperlink{sphinxstd_8h_ae3f447726ed5a2837f39d368e03e16ae}{A\-R\-R\-A\-Y\-\_\-\-A\-L\-L}(\-\_\-res, \-\_\-array, \-\_\-cond)
+\item 
+\#define \hyperlink{sphinxstd_8h_a46ab238c02eddbb716afa3f75f0c0e57}{M\-A\-D\-V\-\_\-\-D\-O\-N\-T\-F\-O\-R\-K}~M\-A\-D\-V\-\_\-\-N\-O\-R\-M\-A\-L
+\item 
+\#define \hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(x)
+\item 
+\#define \hyperlink{sphinxstd_8h_ac1ae149203e2d006d2a4739cbe22b048}{C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}(x)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(capability(x))
+\item 
+\#define \hyperlink{sphinxstd_8h_aaa22d969a29cc5260e8c65e42bcfc253}{S\-C\-O\-P\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(scoped\-\_\-lockable)
+\item 
+\#define \hyperlink{sphinxstd_8h_a4bc26ad7e8bc853ad3f58a8a343c952e}{G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}(x)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(guarded\-\_\-by(x))
+\item 
+\#define \hyperlink{sphinxstd_8h_ac50ea92afc792eaa17777dc6009e31c0}{P\-T\-\_\-\-G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}(x)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(pt\-\_\-guarded\-\_\-by(x))
+\item 
+\#define \hyperlink{sphinxstd_8h_aabfe9909811c29995cc731bd19a2d544}{A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-B\-E\-F\-O\-R\-E}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(acquired\-\_\-before(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_a34e7a4489fb62749ebbfd249ac6c5544}{A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-A\-F\-T\-E\-R}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(acquired\-\_\-after(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_a96848b74000220f6531e6f7ba197a296}{R\-E\-Q\-U\-I\-R\-E\-S}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(requires\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_ad8125cc8b9da0da1fc586ca0004d19da}{R\-E\-Q\-U\-I\-R\-E\-S\-\_\-\-S\-H\-A\-R\-E\-D}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(requires\-\_\-shared\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_aa826316eb51d0a47bf60521c39469bed}{A\-C\-Q\-U\-I\-R\-E}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(acquire\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_a03538b67a3c435c72dd463ab234b1913}{A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(acquire\-\_\-shared\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_a59a3415d4063936405dfca342973c2ea}{R\-E\-L\-E\-A\-S\-E}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(release\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_a7aadf538f5e00720d3d0aaed62d0e9ab}{R\-E\-L\-E\-A\-S\-E\-\_\-\-S\-H\-A\-R\-E\-D}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(release\-\_\-shared\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_afcd0980dda8acd3847986ab553f7c6d0}{T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(try\-\_\-acquire\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_ab4bd0ef1c042ed9adc35c045573c5431}{T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(try\-\_\-acquire\-\_\-shared\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_a2132e8ff6b6fd74f456ceb76bf7b7401}{E\-X\-C\-L\-U\-D\-E\-S}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(locks\-\_\-excluded(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_a0ac43e8fa9cb59a93dde7d27e77297e9}{A\-S\-S\-E\-R\-T\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}(x)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(assert\-\_\-capability(x))
+\item 
+\#define \hyperlink{sphinxstd_8h_a61cf67970496ed765bdbe7ff90cf94a6}{A\-S\-S\-E\-R\-T\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}(x)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(assert\-\_\-shared\-\_\-capability(x))
+\item 
+\#define \hyperlink{sphinxstd_8h_aa96911138a435675f82f670951e7ffce}{R\-E\-T\-U\-R\-N\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}(x)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(lock\-\_\-returned(x))
+\item 
+\#define \hyperlink{sphinxstd_8h_ab8ec653d80c013941ef73e4c80cd44cf}{N\-O\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-A\-N\-A\-L\-Y\-S\-I\-S}~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(no\-\_\-thread\-\_\-safety\-\_\-analysis)
+\item 
+\#define \hyperlink{sphinxstd_8h_abd56e19f9b4781b1a5212a46951cf5c3}{U\-N\-L\-O\-C\-K\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}(...)~\hyperlink{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(unlock\-\_\-function(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))
+\item 
+\#define \hyperlink{sphinxstd_8h_a092ed18ad48a78da31566f23f51014c9}{D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K}
+\item 
+\#define \hyperlink{sphinxstd_8h_a4632ccc94cb1b4e70e07ce1e95feb9f4}{E\-N\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K}
+\item 
+\#define \hyperlink{sphinxstd_8h_a84f2a1d0d7aec028ea363997e3ed59ff}{if\-\_\-const}(\-\_\-arg)
+\item 
+\#define \hyperlink{sphinxstd_8h_a9221933830131a2a911836b17028ab05}{N\-O\-\_\-\-A\-T\-O\-M\-I\-C}~1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D}
+\item 
+typedef unsigned short \hyperlink{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{W\-O\-R\-D}
+\item 
+typedef unsigned char \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E}
+\item 
+typedef long long \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t}
+\item 
+typedef unsigned long long \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t}
+\item 
+typedef bool($\ast$ \hyperlink{sphinxstd_8h_a266723c581b9191bdb94e53090552e42}{Sph\-Die\-Callback\-\_\-t} )(const char $\ast$)
+\item 
+typedef \hyperlink{classSphStringBuilder__T}{Sph\-String\-Builder\-\_\-\-T}\\*
+$<$ \hyperlink{structEscapeQuotation__t}{Escape\-Quotation\-\_\-t} $>$ \hyperlink{sphinxstd_8h_af544895cdc9dcfd4532460c3b08cda1b}{C\-Sph\-String\-Builder}
+\item 
+typedef pthread\-\_\-t \hyperlink{sphinxstd_8h_ad728334ec85e8a6b4db5bc1efd06447a}{Sph\-Thread\-\_\-t}
+\begin{DoxyCompactList}\small\item\em my thread handle and thread func magic \end{DoxyCompactList}\item 
+typedef pthread\-\_\-key\-\_\-t \hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t}
+\item 
+typedef \hyperlink{classCSphAtomic__T}{C\-Sph\-Atomic\-\_\-\-T}$<$ long $>$ \hyperlink{sphinxstd_8h_a9699401fcfba9f39dfa1838a3af04fe2}{C\-Sph\-Atomic}
+\item 
+typedef \hyperlink{classCSphAtomic__T}{C\-Sph\-Atomic\-\_\-\-T}$<$ \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $>$ \hyperlink{sphinxstd_8h_abb101665cf3059deb0e66850f83ed95e}{C\-Sph\-Atomic\-L}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a6f36bd3e5a406db036c332f4731e0d1c}{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T} (\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t}, 8)
+\item 
+\hyperlink{sphinxstd_8h_a5f906d1e63e598e66f7bac873ffb689c}{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T} (\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t}, 8)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8h_aa18627c943f281a6a101be8390567df1}{sph\-Bit\-Count} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} n)
+\item 
+void \hyperlink{sphinxstd_8h_a5b012800b8e82b013c0ef72cdb90f231}{sph\-Die} (const char $\ast$s\-Message,...) \hyperlink{sphinxstd_8h_a9d373a9b65ff25b2db84c07394e1c212}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((format(printf
+\begin{DoxyCompactList}\small\item\em crash with an error message, and do not have searchd watchdog attempt to resurrect \end{DoxyCompactList}\item 
+void void \hyperlink{sphinxstd_8h_a04441b285742504fa71826d75c93bad8}{sph\-Die\-Restart} (const char $\ast$s\-Message,...) \hyperlink{sphinxstd_8h_a9d373a9b65ff25b2db84c07394e1c212}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((format(printf
+\begin{DoxyCompactList}\small\item\em crash with an error message, but have searchd watchdog attempt to resurrect \end{DoxyCompactList}\item 
+void void void \hyperlink{sphinxstd_8h_aa89514c38a5072f0bf3606ad90ecf1c2}{sph\-Set\-Die\-Callback} (\hyperlink{sphinxstd_8h_a266723c581b9191bdb94e53090552e42}{Sph\-Die\-Callback\-\_\-t} pf\-Die\-Callback)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8h_a74bfe252d3c57603058f1a772b422742}{sph\-Log2} (\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxsort_8cpp_a7906295a5b0753053dbc737117036d06}{u\-Value})
+\begin{DoxyCompactList}\small\item\em how much bits do we need for given int \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxstd_8h_afe303f1e9080e238fc554d4be4eb27c5}{sph\-F2\-D\-W} (\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} f)
+\begin{DoxyCompactList}\small\item\em float vs dword conversion \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{sphinxstd_8h_ad8490bdcfff966753642d68da70cb74b}{sph\-D\-W2\-F} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} d)
+\begin{DoxyCompactList}\small\item\em dword vs float conversion \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxstd_8h_a30b2c642d23495817bd56cd67e5431b0}{sph\-D2\-Q\-W} (double f)
+\begin{DoxyCompactList}\small\item\em double to bigint conversion \end{DoxyCompactList}\item 
+double \hyperlink{sphinxstd_8h_af2539a78db29131d7db76efe0e542c34}{sph\-Q\-W2\-D} (\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} d)
+\begin{DoxyCompactList}\small\item\em bigint to double conversion \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{sphinxstd_8h_a3caa94cb69902b59e3b1d8d06cef1696}{sph\-Micro\-Timer} ()
+\begin{DoxyCompactList}\small\item\em microsecond precision timestamp \end{DoxyCompactList}\item 
+double \hyperlink{sphinxstd_8h_a73527f20206c906e9f333e0f233de13e}{sqr} (double v)
+\begin{DoxyCompactList}\small\item\em double argument squared \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{sphinxstd_8h_a9062f8eece6c98355b0a5ce0d95a172b}{fsqr} (\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} v)
+\begin{DoxyCompactList}\small\item\em float argument squared \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8h_a6aa7dbc659a4609b973802f00fec9031}{sph\-Srand} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Seed)
+\begin{DoxyCompactList}\small\item\em seed R\-N\-G \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8h_af684a2a652cd988bc9989714d25f97ef}{sph\-Auto\-Srand} ()
+\begin{DoxyCompactList}\small\item\em auto-\/seed R\-N\-G based on time and P\-I\-D \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{sphinxstd_8h_aee2283ca247e5759172c1a7132c93235}{sph\-Rand} ()
+\begin{DoxyCompactList}\small\item\em generate another random \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{sphinxstd_8h_a37fef14f8884fc4cbc1a6e4691860459}{Min} (T a, T b)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\T \hyperlink{sphinxstd_8h_a8672db62ea12ef64d843954f172b1e34}{Min} (T a, U b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{sphinxstd_8h_afcb5008af934d3b5dc0d5429c857f365}{Max} (T a, T b)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\T \hyperlink{sphinxstd_8h_a3066e99e851861080bfaed01b1104314}{Max} (T a, U b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{sphinxstd_8h_a3db855ce022586b581958591bd17c481}{Swap} (T \&v1, T \&v2)
+\begin{DoxyCompactList}\small\item\em swap \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename C $>$ }\\\hyperlink{structSphMemberLess__T}{Sph\-Member\-Less\-\_\-\-T}$<$ T, \hyperlink{sphinxstemru_8inl_adb9bc29996ff9b1fe0f69f11ef99444a}{C} $>$ \hyperlink{sphinxstd_8h_a884c67bbf9c0c5b66e36f5135057a146}{sph\-Member\-Less} (T C\-::$\ast$p\-Member)
+\item 
+{\footnotesize template$<$typename T , typename U , typename V $>$ }\\void \hyperlink{sphinxstd_8h_a17772ef6aff3b40d9e3249bd155cf266}{sph\-Sift\-Down} (T $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-End, U C\-O\-M\-P, V A\-C\-C)
+\begin{DoxyCompactList}\small\item\em heap sort helper \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename U , typename V $>$ }\\void \hyperlink{sphinxstd_8h_a885bf0cf4da6b1c68605a7efdc5adbb9}{sph\-Heap\-Sort} (T $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count, U C\-O\-M\-P, V A\-C\-C)
+\begin{DoxyCompactList}\small\item\em heap sort \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename U , typename V $>$ }\\void \hyperlink{sphinxstd_8h_a98fe6b6e8223c4259154e13dfffc8ffd}{sph\-Sort} (T $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count, U C\-O\-M\-P, V A\-C\-C)
+\begin{DoxyCompactList}\small\item\em generic sort \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\void \hyperlink{sphinxstd_8h_a345eb5a9556adc760983799f2c84460a}{sph\-Sort} (T $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count, U C\-O\-M\-P)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{sphinxstd_8h_a53b127ffe5d984f66c6535023910bbff}{sph\-Sort} (T $\ast$p\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Count)
+\item 
+{\footnotesize template$<$typename T , typename C\-L\-A\-S\-S $>$ }\\\hyperlink{structSphMemberFunctor__T}{Sph\-Member\-Functor\-\_\-\-T}$<$ T, C\-L\-A\-S\-S $>$ \hyperlink{sphinxstd_8h_a382e8cf9f14bb1665310ee79108aa7f2}{bind} (T C\-L\-A\-S\-S\-::$\ast$ptr)
+\item 
+{\footnotesize template$<$typename T , typename U , typename P\-R\-E\-D $>$ }\\T $\ast$ \hyperlink{sphinxstd_8h_a0445d0cd276b4c482a6f14473d916aed}{sph\-Binary\-Search} (T $\ast$p\-Start, T $\ast$p\-End, const P\-R\-E\-D \&t\-Pred, U t\-Ref)
+\begin{DoxyCompactList}\small\item\em generic binary search \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{sphinxstd_8h_a5f7a0b3fca35d1ad5e3711b42baf7a09}{sph\-Binary\-Search} (T $\ast$p\-Start, T $\ast$p\-End, T \&t\-Ref)
+\begin{DoxyCompactList}\small\item\em generic binary search \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename T\-\_\-\-C\-O\-U\-N\-T\-E\-R $>$ }\\T\-\_\-\-C\-O\-U\-N\-T\-E\-R \hyperlink{sphinxstd_8h_aa70cad7fcaec3a2faaed40d4e865d6ba}{sph\-Uniq} (T $\ast$p\-Data, T\-\_\-\-C\-O\-U\-N\-T\-E\-R i\-Count)
+\begin{DoxyCompactList}\small\item\em generic uniq \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8h_ac72a14161ade01addd03347952d95f30}{Swap} (\hyperlink{structCSphString}{C\-Sph\-String} \&v1, \hyperlink{structCSphString}{C\-Sph\-String} \&v2)
+\begin{DoxyCompactList}\small\item\em string swapper \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8h_a97ca93ddc3da2e10135558687d3e17c4}{Swap} (\hyperlink{structCSphNamedInt}{C\-Sph\-Named\-Int} \&a, \hyperlink{structCSphNamedInt}{C\-Sph\-Named\-Int} \&b)
+\item 
+void \hyperlink{sphinxstd_8h_a839fb1635556d6545ad3cc76b4cc3027}{sph\-Warn} (const char $\ast$,...) \hyperlink{sphinxstd_8h_a9d373a9b65ff25b2db84c07394e1c212}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((format(printf
+\item 
+void void \hyperlink{sphinxstd_8h_ac729cab154b5609c95d1bb311d39ce93}{Safe\-Close} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \&i\-F\-D)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8h_a37db8d9476c82488dedccba20f8948bd}{sph\-Open\-File} (const char $\ast$s\-File, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Write)
+\begin{DoxyCompactList}\small\item\em open file for reading \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{sphinxstd_8h_abf4752a11b908ba4b48ee0cfa08adfc8}{sph\-Get\-File\-Size} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-F\-D, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em return size of file descriptor \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{sphinxstd_8h_a92eb524e8ebba92bdde574a2460d1361}{sph\-Thread\-Init} (bool b\-Detached=false)
+\begin{DoxyCompactList}\small\item\em my threading initialize routine \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8h_aebcc10fc10a4ddb8cc6cc5fb68b80032}{sph\-Thread\-Done} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-F\-D)
+\begin{DoxyCompactList}\small\item\em my threading deinitialize routine \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxstd_8h_a7e5627000a462348fc7832d73d24c2b2}{sph\-Thread\-Create} (\hyperlink{sphinxstd_8h_ad728334ec85e8a6b4db5bc1efd06447a}{Sph\-Thread\-\_\-t} $\ast$p\-Thread, void($\ast$fn\-Thread)(void $\ast$), void $\ast$p\-Arg, bool b\-Detached=false)
+\begin{DoxyCompactList}\small\item\em my create thread wrapper \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxstd_8h_a16e7b256c1d908a0a46643b19416eb8a}{sph\-Thread\-Join} (\hyperlink{sphinxstd_8h_ad728334ec85e8a6b4db5bc1efd06447a}{Sph\-Thread\-\_\-t} $\ast$p\-Thread)
+\begin{DoxyCompactList}\small\item\em my join thread wrapper \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8h_a38869c3116553d088036f3080bc77dfa}{sph\-Thread\-On\-Exit} (void($\ast$fn\-Cleanup)(void $\ast$), void $\ast$p\-Arg)
+\begin{DoxyCompactList}\small\item\em add (cleanup) callback to run on thread exit \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxstd_8h_a5171a457237e55fc8e4fb6cd450e8497}{sph\-Thread\-Key\-Create} (\hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} $\ast$p\-Key)
+\begin{DoxyCompactList}\small\item\em alloc thread-\/local key \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8h_a2428df88751a24c24b222b5a8fd77b01}{sph\-Thread\-Key\-Delete} (\hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} t\-Key)
+\begin{DoxyCompactList}\small\item\em free thread-\/local key \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{sphinxstd_8h_aae86e1d659d04703aa8b02bedd2fdb8a}{sph\-Thread\-Get} (\hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} t\-Key)
+\begin{DoxyCompactList}\small\item\em get thread-\/local key value \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{sphinxstd_8h_a3ece2bc5d2d0b1f9ec317d0044390030}{sph\-My\-Stack} ()
+\begin{DoxyCompactList}\small\item\em get the pointer to my thread's stack \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{sphinxstd_8h_a8a71681ef329114bca741cff9916b426}{sph\-Get\-Stack\-Used} ()
+\begin{DoxyCompactList}\small\item\em get size of used stack \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8h_ad207625041ddca0c53e87bd5cce998f6}{sph\-Set\-My\-Stack\-Size} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Stack\-Size)
+\begin{DoxyCompactList}\small\item\em set the size of my thread's stack \end{DoxyCompactList}\item 
+void \hyperlink{sphinxstd_8h_a1ac7e63c29b62739c3db80dde8fd4f2d}{Memorize\-Stack} (void $\ast$P\-Stack)
+\begin{DoxyCompactList}\small\item\em store the address in the T\-L\-S \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxstd_8h_a108c8bfd8f6d89da0fa813866b51f6a5}{sph\-Thread\-Set} (\hyperlink{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{Sph\-Thread\-Key\-\_\-t} t\-Key, void $\ast$p\-Value)
+\begin{DoxyCompactList}\small\item\em set thread-\/local key value \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxstd_8h_aed1db7785967f19faf94eb7b2365ecf8}{sph\-Is\-Lt\-Lib} ()
+\begin{DoxyCompactList}\small\item\em what kind of threading lib do we have? The number of frames in the stack depends from it \end{DoxyCompactList}\item 
+class \hyperlink{sphinxstd_8h_a488c62e900b5b6d36ef2bf0c85c7a869}{C\-A\-P\-A\-B\-I\-L\-I\-T\-Y} (\char`\"{}mutex\char`\"{}) C\-Sph\-Mutex
+\begin{DoxyCompactList}\small\item\em mutex implementation \end{DoxyCompactList}\item 
+\hyperlink{structISphThdPool}{I\-Sph\-Thd\-Pool} $\ast$ \hyperlink{sphinxstd_8h_a0d36f8b4d7d911a461b3b97f373f5fb4}{sph\-Thread\-Pool\-Create} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Threads, const char $\ast$s\-Name=N\-U\-L\-L)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8h_a47f4cb90679403c7310c52fd5126bc13}{sph\-Cpu\-Threads\-Count} ()
+\item 
+\hyperlink{classTDigest__i}{T\-Digest\-\_\-i} $\ast$ \hyperlink{sphinxstd_8h_a923fbc68c6568df491250edf26692c14}{sph\-Create\-T\-Digest} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxstd_8h_a23b6a1b11aea720b9dd6665a32de96be}{g\-\_\-i\-Thread\-Stack\-Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxstd_8h_a7893aa5b4bad6a4d6124b17188223018}{\index{sphinxstd.\-h@{sphinxstd.\-h}!\-\_\-\-\_\-analysis\-\_\-assume@{\-\_\-\-\_\-analysis\-\_\-assume}}
+\index{\-\_\-\-\_\-analysis\-\_\-assume@{\-\_\-\-\_\-analysis\-\_\-assume}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{\-\_\-\-\_\-analysis\-\_\-assume}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-analysis\-\_\-assume(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a7893aa5b4bad6a4d6124b17188223018}
+\hypertarget{sphinxstd_8h_a9d373a9b65ff25b2db84c07394e1c212}{\index{sphinxstd.\-h@{sphinxstd.\-h}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-attribute\-\_\-\-\_\-(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a9d373a9b65ff25b2db84c07394e1c212}
+\hypertarget{sphinxstd_8h_aa826316eb51d0a47bf60521c39469bed}{\index{sphinxstd.\-h@{sphinxstd.\-h}!A\-C\-Q\-U\-I\-R\-E@{A\-C\-Q\-U\-I\-R\-E}}
+\index{A\-C\-Q\-U\-I\-R\-E@{A\-C\-Q\-U\-I\-R\-E}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{A\-C\-Q\-U\-I\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-Q\-U\-I\-R\-E(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(acquire\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_aa826316eb51d0a47bf60521c39469bed}
+\hypertarget{sphinxstd_8h_a03538b67a3c435c72dd463ab234b1913}{\index{sphinxstd.\-h@{sphinxstd.\-h}!A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D@{A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D}}
+\index{A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D@{A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(acquire\-\_\-shared\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_a03538b67a3c435c72dd463ab234b1913}
+\hypertarget{sphinxstd_8h_a34e7a4489fb62749ebbfd249ac6c5544}{\index{sphinxstd.\-h@{sphinxstd.\-h}!A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-A\-F\-T\-E\-R@{A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-A\-F\-T\-E\-R}}
+\index{A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-A\-F\-T\-E\-R@{A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-A\-F\-T\-E\-R}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-A\-F\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-A\-F\-T\-E\-R(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(acquired\-\_\-after(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_a34e7a4489fb62749ebbfd249ac6c5544}
+\hypertarget{sphinxstd_8h_aabfe9909811c29995cc731bd19a2d544}{\index{sphinxstd.\-h@{sphinxstd.\-h}!A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-B\-E\-F\-O\-R\-E@{A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-B\-E\-F\-O\-R\-E}}
+\index{A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-B\-E\-F\-O\-R\-E@{A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-B\-E\-F\-O\-R\-E}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-B\-E\-F\-O\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-Q\-U\-I\-R\-E\-D\-\_\-\-B\-E\-F\-O\-R\-E(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(acquired\-\_\-before(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_aabfe9909811c29995cc731bd19a2d544}
+\hypertarget{sphinxstd_8h_ae3f447726ed5a2837f39d368e03e16ae}{\index{sphinxstd.\-h@{sphinxstd.\-h}!A\-R\-R\-A\-Y\-\_\-\-A\-L\-L@{A\-R\-R\-A\-Y\-\_\-\-A\-L\-L}}
+\index{A\-R\-R\-A\-Y\-\_\-\-A\-L\-L@{A\-R\-R\-A\-Y\-\_\-\-A\-L\-L}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{A\-R\-R\-A\-Y\-\_\-\-A\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-R\-A\-Y\-\_\-\-A\-L\-L(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-res, }
+\item[{}]{\-\_\-array, }
+\item[{}]{\-\_\-cond}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_ae3f447726ed5a2837f39d368e03e16ae}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keyword}{true}; \(\backslash\)
+    for ( \textcolor{keywordtype}{int} \_all=0; \_all<\_array.GetLength() && \_res; \_all++ ) \(\backslash\)
+        \_res &= ( \_cond ); \(\backslash\)
+\end{DoxyCode}
+\hypertarget{sphinxstd_8h_ace1700b414e7beba46ccb3d46a6aee04}{\index{sphinxstd.\-h@{sphinxstd.\-h}!A\-R\-R\-A\-Y\-\_\-\-A\-N\-Y@{A\-R\-R\-A\-Y\-\_\-\-A\-N\-Y}}
+\index{A\-R\-R\-A\-Y\-\_\-\-A\-N\-Y@{A\-R\-R\-A\-Y\-\_\-\-A\-N\-Y}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{A\-R\-R\-A\-Y\-\_\-\-A\-N\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-R\-A\-Y\-\_\-\-A\-N\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-res, }
+\item[{}]{\-\_\-array, }
+\item[{}]{\-\_\-cond}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_ace1700b414e7beba46ccb3d46a6aee04}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keyword}{false}; \(\backslash\)
+    for ( \textcolor{keywordtype}{int} \_any=0; \_any<\_array.GetLength() && !\_res; \_any++ ) \(\backslash\)
+        \_res |= ( \_cond ); \(\backslash\)
+\end{DoxyCode}
+\hypertarget{sphinxstd_8h_a217c04e4ecb7dcce1192be8f06a1dbe5}{\index{sphinxstd.\-h@{sphinxstd.\-h}!A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H@{A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H}}
+\index{A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H@{A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-index, }
+\item[{}]{\-\_\-array}
+\end{DoxyParamCaption}
+)~for ( {\bf int} \-\_\-index=0; \-\_\-index$<$\-\_\-array.\-Get\-Length(); \-\_\-index++ )}}\label{sphinxstd_8h_a217c04e4ecb7dcce1192be8f06a1dbe5}
+\hypertarget{sphinxstd_8h_a6a52d3f6941f4599fa44bd605e897893}{\index{sphinxstd.\-h@{sphinxstd.\-h}!A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H\-\_\-\-C\-O\-N\-D@{A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H\-\_\-\-C\-O\-N\-D}}
+\index{A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H\-\_\-\-C\-O\-N\-D@{A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H\-\_\-\-C\-O\-N\-D}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H\-\_\-\-C\-O\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-R\-A\-Y\-\_\-\-F\-O\-R\-E\-A\-C\-H\-\_\-\-C\-O\-N\-D(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-index, }
+\item[{}]{\-\_\-array, }
+\item[{}]{\-\_\-cond}
+\end{DoxyParamCaption}
+)~for ( {\bf int} \-\_\-index=0; \-\_\-index$<$\-\_\-array.\-Get\-Length() \&\& (\-\_\-cond); \-\_\-index++ )}}\label{sphinxstd_8h_a6a52d3f6941f4599fa44bd605e897893}
+\hypertarget{sphinxstd_8h_a0ac43e8fa9cb59a93dde7d27e77297e9}{\index{sphinxstd.\-h@{sphinxstd.\-h}!A\-S\-S\-E\-R\-T\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{A\-S\-S\-E\-R\-T\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}}
+\index{A\-S\-S\-E\-R\-T\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{A\-S\-S\-E\-R\-T\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{A\-S\-S\-E\-R\-T\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-S\-S\-E\-R\-T\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(assert\-\_\-capability(x))}}\label{sphinxstd_8h_a0ac43e8fa9cb59a93dde7d27e77297e9}
+\hypertarget{sphinxstd_8h_a61cf67970496ed765bdbe7ff90cf94a6}{\index{sphinxstd.\-h@{sphinxstd.\-h}!A\-S\-S\-E\-R\-T\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{A\-S\-S\-E\-R\-T\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}}
+\index{A\-S\-S\-E\-R\-T\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{A\-S\-S\-E\-R\-T\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{A\-S\-S\-E\-R\-T\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-S\-S\-E\-R\-T\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(assert\-\_\-shared\-\_\-capability(x))}}\label{sphinxstd_8h_a61cf67970496ed765bdbe7ff90cf94a6}
+\hypertarget{sphinxstd_8h_ac1ae149203e2d006d2a4739cbe22b048}{\index{sphinxstd.\-h@{sphinxstd.\-h}!C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}}
+\index{C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-A\-P\-A\-B\-I\-L\-I\-T\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(capability(x))}}\label{sphinxstd_8h_ac1ae149203e2d006d2a4739cbe22b048}
+\hypertarget{sphinxstd_8h_aea24330ad33ca20415a6729b2e46ef2d}{\index{sphinxstd.\-h@{sphinxstd.\-h}!D\-E\-B\-U\-G\-A\-R\-G@{D\-E\-B\-U\-G\-A\-R\-G}}
+\index{D\-E\-B\-U\-G\-A\-R\-G@{D\-E\-B\-U\-G\-A\-R\-G}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{D\-E\-B\-U\-G\-A\-R\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-B\-U\-G\-A\-R\-G(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg}
+\end{DoxyParamCaption}
+)~\-\_\-arg}}\label{sphinxstd_8h_aea24330ad33ca20415a6729b2e46ef2d}
+
+
+some function arguments only need to have a name in debug builds 
+
+\hypertarget{sphinxstd_8h_a092ed18ad48a78da31566f23f51014c9}{\index{sphinxstd.\-h@{sphinxstd.\-h}!D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K@{D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K}}
+\index{D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K@{D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-S\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K}}\label{sphinxstd_8h_a092ed18ad48a78da31566f23f51014c9}
+\hypertarget{sphinxstd_8h_a4632ccc94cb1b4e70e07ce1e95feb9f4}{\index{sphinxstd.\-h@{sphinxstd.\-h}!E\-N\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K@{E\-N\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K}}
+\index{E\-N\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K@{E\-N\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{E\-N\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-N\-A\-B\-L\-E\-\_\-\-C\-O\-N\-S\-T\-\_\-\-C\-O\-N\-D\-\_\-\-C\-H\-E\-C\-K}}\label{sphinxstd_8h_a4632ccc94cb1b4e70e07ce1e95feb9f4}
+\hypertarget{sphinxstd_8h_a2132e8ff6b6fd74f456ceb76bf7b7401}{\index{sphinxstd.\-h@{sphinxstd.\-h}!E\-X\-C\-L\-U\-D\-E\-S@{E\-X\-C\-L\-U\-D\-E\-S}}
+\index{E\-X\-C\-L\-U\-D\-E\-S@{E\-X\-C\-L\-U\-D\-E\-S}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{E\-X\-C\-L\-U\-D\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-C\-L\-U\-D\-E\-S(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(locks\-\_\-excluded(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_a2132e8ff6b6fd74f456ceb76bf7b7401}
+\hypertarget{sphinxstd_8h_a4bc26ad7e8bc853ad3f58a8a343c952e}{\index{sphinxstd.\-h@{sphinxstd.\-h}!G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y@{G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}}
+\index{G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y@{G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(guarded\-\_\-by(x))}}\label{sphinxstd_8h_a4bc26ad7e8bc853ad3f58a8a343c952e}
+\hypertarget{sphinxstd_8h_ade7f071102874cc8c5c38ec69eabd242}{\index{sphinxstd.\-h@{sphinxstd.\-h}!I64\-C@{I64\-C}}
+\index{I64\-C@{I64\-C}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{I64\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define I64\-C(
+\begin{DoxyParamCaption}
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~v \#\# L\-L}}\label{sphinxstd_8h_ade7f071102874cc8c5c38ec69eabd242}
+\hypertarget{sphinxstd_8h_a84f2a1d0d7aec028ea363997e3ed59ff}{\index{sphinxstd.\-h@{sphinxstd.\-h}!if\-\_\-const@{if\-\_\-const}}
+\index{if\-\_\-const@{if\-\_\-const}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{if\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}\#define if\-\_\-const(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-arg}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a84f2a1d0d7aec028ea363997e3ed59ff}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\hyperlink{llsphinxjson_8c_a33e91cd0cef6786e9e3a27ac67707207}{DISABLE\_CONST\_COND\_CHECK \(\backslash\)}
+\hyperlink{llsphinxjson_8c_a33e91cd0cef6786e9e3a27ac67707207}{    if} ( \_arg ) \(\backslash\)
+    ENABLE\_CONST\_COND\_CHECK
+\end{DoxyCode}
+\hypertarget{sphinxstd_8h_a5f77b664efbf298b18601ab8c9314e82}{\index{sphinxstd.\-h@{sphinxstd.\-h}!I\-N\-T64@{I\-N\-T64}}
+\index{I\-N\-T64@{I\-N\-T64}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{I\-N\-T64}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T64(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-v}
+\end{DoxyParamCaption}
+)~((long long {\bf int})(\-\_\-v))}}\label{sphinxstd_8h_a5f77b664efbf298b18601ab8c9314e82}
+\hypertarget{sphinxstd_8h_a57e353d6ce48ab7d414d094961d5e474}{\index{sphinxstd.\-h@{sphinxstd.\-h}!I\-N\-T64\-\_\-\-F\-M\-T@{I\-N\-T64\-\_\-\-F\-M\-T}}
+\index{I\-N\-T64\-\_\-\-F\-M\-T@{I\-N\-T64\-\_\-\-F\-M\-T}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{I\-N\-T64\-\_\-\-F\-M\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T64\-\_\-\-F\-M\-T~\char`\"{}\%\char`\"{} {\bf P\-R\-Ii64}}}\label{sphinxstd_8h_a57e353d6ce48ab7d414d094961d5e474}
+\hypertarget{sphinxstd_8h_ad0d744f05898e32d01f73f8af3cd2071}{\index{sphinxstd.\-h@{sphinxstd.\-h}!I\-N\-T64\-\_\-\-M\-A\-X@{I\-N\-T64\-\_\-\-M\-A\-X}}
+\index{I\-N\-T64\-\_\-\-M\-A\-X@{I\-N\-T64\-\_\-\-M\-A\-X}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{I\-N\-T64\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T64\-\_\-\-M\-A\-X~{\bf I64\-C}(0x7fffffffffffffff)}}\label{sphinxstd_8h_ad0d744f05898e32d01f73f8af3cd2071}
+\hypertarget{sphinxstd_8h_ab21f12f372f67b8ff0aa3432336ede67}{\index{sphinxstd.\-h@{sphinxstd.\-h}!I\-N\-T64\-\_\-\-M\-I\-N@{I\-N\-T64\-\_\-\-M\-I\-N}}
+\index{I\-N\-T64\-\_\-\-M\-I\-N@{I\-N\-T64\-\_\-\-M\-I\-N}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{I\-N\-T64\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T64\-\_\-\-M\-I\-N~{\bf I64\-C}(0x8000000000000000)}}\label{sphinxstd_8h_ab21f12f372f67b8ff0aa3432336ede67}
+\hypertarget{sphinxstd_8h_a46ab238c02eddbb716afa3f75f0c0e57}{\index{sphinxstd.\-h@{sphinxstd.\-h}!M\-A\-D\-V\-\_\-\-D\-O\-N\-T\-F\-O\-R\-K@{M\-A\-D\-V\-\_\-\-D\-O\-N\-T\-F\-O\-R\-K}}
+\index{M\-A\-D\-V\-\_\-\-D\-O\-N\-T\-F\-O\-R\-K@{M\-A\-D\-V\-\_\-\-D\-O\-N\-T\-F\-O\-R\-K}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{M\-A\-D\-V\-\_\-\-D\-O\-N\-T\-F\-O\-R\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-D\-V\-\_\-\-D\-O\-N\-T\-F\-O\-R\-K~M\-A\-D\-V\-\_\-\-N\-O\-R\-M\-A\-L}}\label{sphinxstd_8h_a46ab238c02eddbb716afa3f75f0c0e57}
+\hypertarget{sphinxstd_8h_a9221933830131a2a911836b17028ab05}{\index{sphinxstd.\-h@{sphinxstd.\-h}!N\-O\-\_\-\-A\-T\-O\-M\-I\-C@{N\-O\-\_\-\-A\-T\-O\-M\-I\-C}}
+\index{N\-O\-\_\-\-A\-T\-O\-M\-I\-C@{N\-O\-\_\-\-A\-T\-O\-M\-I\-C}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{N\-O\-\_\-\-A\-T\-O\-M\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-A\-T\-O\-M\-I\-C~1}}\label{sphinxstd_8h_a9221933830131a2a911836b17028ab05}
+\hypertarget{sphinxstd_8h_ab8ec653d80c013941ef73e4c80cd44cf}{\index{sphinxstd.\-h@{sphinxstd.\-h}!N\-O\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-A\-N\-A\-L\-Y\-S\-I\-S@{N\-O\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-A\-N\-A\-L\-Y\-S\-I\-S}}
+\index{N\-O\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-A\-N\-A\-L\-Y\-S\-I\-S@{N\-O\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-A\-N\-A\-L\-Y\-S\-I\-S}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{N\-O\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-A\-N\-A\-L\-Y\-S\-I\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-A\-N\-A\-L\-Y\-S\-I\-S~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(no\-\_\-thread\-\_\-safety\-\_\-analysis)}}\label{sphinxstd_8h_ab8ec653d80c013941ef73e4c80cd44cf}
+\hypertarget{sphinxstd_8h_ab8d0c29be4a0623c3de58011991e86e9}{\index{sphinxstd.\-h@{sphinxstd.\-h}!P\-R\-Ii64@{P\-R\-Ii64}}
+\index{P\-R\-Ii64@{P\-R\-Ii64}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{P\-R\-Ii64}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-Ii64~\char`\"{}lld\char`\"{}}}\label{sphinxstd_8h_ab8d0c29be4a0623c3de58011991e86e9}
+\hypertarget{sphinxstd_8h_ac582131d7a7c8ee57e73180d1714f9d5}{\index{sphinxstd.\-h@{sphinxstd.\-h}!P\-R\-Iu64@{P\-R\-Iu64}}
+\index{P\-R\-Iu64@{P\-R\-Iu64}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{P\-R\-Iu64}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-Iu64~\char`\"{}llu\char`\"{}}}\label{sphinxstd_8h_ac582131d7a7c8ee57e73180d1714f9d5}
+\hypertarget{sphinxstd_8h_ac50ea92afc792eaa17777dc6009e31c0}{\index{sphinxstd.\-h@{sphinxstd.\-h}!P\-T\-\_\-\-G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y@{P\-T\-\_\-\-G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}}
+\index{P\-T\-\_\-\-G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y@{P\-T\-\_\-\-G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{P\-T\-\_\-\-G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-T\-\_\-\-G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(pt\-\_\-guarded\-\_\-by(x))}}\label{sphinxstd_8h_ac50ea92afc792eaa17777dc6009e31c0}
+\hypertarget{sphinxstd_8h_a59a3415d4063936405dfca342973c2ea}{\index{sphinxstd.\-h@{sphinxstd.\-h}!R\-E\-L\-E\-A\-S\-E@{R\-E\-L\-E\-A\-S\-E}}
+\index{R\-E\-L\-E\-A\-S\-E@{R\-E\-L\-E\-A\-S\-E}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{R\-E\-L\-E\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-L\-E\-A\-S\-E(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(release\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_a59a3415d4063936405dfca342973c2ea}
+\hypertarget{sphinxstd_8h_a7aadf538f5e00720d3d0aaed62d0e9ab}{\index{sphinxstd.\-h@{sphinxstd.\-h}!R\-E\-L\-E\-A\-S\-E\-\_\-\-S\-H\-A\-R\-E\-D@{R\-E\-L\-E\-A\-S\-E\-\_\-\-S\-H\-A\-R\-E\-D}}
+\index{R\-E\-L\-E\-A\-S\-E\-\_\-\-S\-H\-A\-R\-E\-D@{R\-E\-L\-E\-A\-S\-E\-\_\-\-S\-H\-A\-R\-E\-D}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{R\-E\-L\-E\-A\-S\-E\-\_\-\-S\-H\-A\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-L\-E\-A\-S\-E\-\_\-\-S\-H\-A\-R\-E\-D(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(release\-\_\-shared\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_a7aadf538f5e00720d3d0aaed62d0e9ab}
+\hypertarget{sphinxstd_8h_a96848b74000220f6531e6f7ba197a296}{\index{sphinxstd.\-h@{sphinxstd.\-h}!R\-E\-Q\-U\-I\-R\-E\-S@{R\-E\-Q\-U\-I\-R\-E\-S}}
+\index{R\-E\-Q\-U\-I\-R\-E\-S@{R\-E\-Q\-U\-I\-R\-E\-S}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{R\-E\-Q\-U\-I\-R\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-Q\-U\-I\-R\-E\-S(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(requires\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_a96848b74000220f6531e6f7ba197a296}
+\hypertarget{sphinxstd_8h_ad8125cc8b9da0da1fc586ca0004d19da}{\index{sphinxstd.\-h@{sphinxstd.\-h}!R\-E\-Q\-U\-I\-R\-E\-S\-\_\-\-S\-H\-A\-R\-E\-D@{R\-E\-Q\-U\-I\-R\-E\-S\-\_\-\-S\-H\-A\-R\-E\-D}}
+\index{R\-E\-Q\-U\-I\-R\-E\-S\-\_\-\-S\-H\-A\-R\-E\-D@{R\-E\-Q\-U\-I\-R\-E\-S\-\_\-\-S\-H\-A\-R\-E\-D}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{R\-E\-Q\-U\-I\-R\-E\-S\-\_\-\-S\-H\-A\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-Q\-U\-I\-R\-E\-S\-\_\-\-S\-H\-A\-R\-E\-D(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(requires\-\_\-shared\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_ad8125cc8b9da0da1fc586ca0004d19da}
+\hypertarget{sphinxstd_8h_aa96911138a435675f82f670951e7ffce}{\index{sphinxstd.\-h@{sphinxstd.\-h}!R\-E\-T\-U\-R\-N\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{R\-E\-T\-U\-R\-N\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}}
+\index{R\-E\-T\-U\-R\-N\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{R\-E\-T\-U\-R\-N\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{R\-E\-T\-U\-R\-N\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-T\-U\-R\-N\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(lock\-\_\-returned(x))}}\label{sphinxstd_8h_aa96911138a435675f82f670951e7ffce}
+\hypertarget{sphinxstd_8h_a9a629e52213beba32d52f7969df6ba95}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Safe\-Delete@{Safe\-Delete}}
+\index{Safe\-Delete@{Safe\-Delete}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Safe\-Delete}]{\setlength{\rightskip}{0pt plus 5cm}\#define Safe\-Delete(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-x}
+\end{DoxyParamCaption}
+)~\{ {\bf if} (\-\_\-x) \{ delete (\-\_\-x); (\-\_\-x) = nullptr; \} \}}}\label{sphinxstd_8h_a9a629e52213beba32d52f7969df6ba95}
+\hypertarget{sphinxstd_8h_aaf67e1f1542248bb427ed1ef6daeb870}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Safe\-Delete\-Array@{Safe\-Delete\-Array}}
+\index{Safe\-Delete\-Array@{Safe\-Delete\-Array}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Safe\-Delete\-Array}]{\setlength{\rightskip}{0pt plus 5cm}\#define Safe\-Delete\-Array(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-x}
+\end{DoxyParamCaption}
+)~\{ {\bf if} (\-\_\-x) \{ delete \mbox{[}$\,$\mbox{]} (\-\_\-x); (\-\_\-x) = nullptr; \} \}}}\label{sphinxstd_8h_aaf67e1f1542248bb427ed1ef6daeb870}
+\hypertarget{sphinxstd_8h_aaa1bbfcc3631e1a0da0f906523f6fbde}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Safe\-Release@{Safe\-Release}}
+\index{Safe\-Release@{Safe\-Release}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Safe\-Release}]{\setlength{\rightskip}{0pt plus 5cm}\#define Safe\-Release(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-x}
+\end{DoxyParamCaption}
+)~\{ {\bf if} (\-\_\-x) \{ (\-\_\-x)-\/$>$Release(); (\-\_\-x) = nullptr; \} \}}}\label{sphinxstd_8h_aaa1bbfcc3631e1a0da0f906523f6fbde}
+\hypertarget{sphinxstd_8h_aaa22d969a29cc5260e8c65e42bcfc253}{\index{sphinxstd.\-h@{sphinxstd.\-h}!S\-C\-O\-P\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{S\-C\-O\-P\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}}
+\index{S\-C\-O\-P\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{S\-C\-O\-P\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{S\-C\-O\-P\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-O\-P\-E\-D\-\_\-\-C\-A\-P\-A\-B\-I\-L\-I\-T\-Y~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(scoped\-\_\-lockable)}}\label{sphinxstd_8h_aaa22d969a29cc5260e8c65e42bcfc253}
+\hypertarget{sphinxstd_8h_a125a4459c13bc9894265edf21b6a0489}{\index{sphinxstd.\-h@{sphinxstd.\-h}!S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-I\-L\-L@{S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-I\-L\-L}}
+\index{S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-I\-L\-L@{S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-I\-L\-L}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-I\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-I\-L\-L~0}}\label{sphinxstd_8h_a125a4459c13bc9894265edf21b6a0489}
+\hypertarget{sphinxstd_8h_a0a38f87dc45287a4041ebd2d1cec0fcc}{\index{sphinxstd.\-h@{sphinxstd.\-h}!S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-S\-\_\-\-P\-R\-O\-F\-I\-L\-E\-R@{S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-S\-\_\-\-P\-R\-O\-F\-I\-L\-E\-R}}
+\index{S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-S\-\_\-\-P\-R\-O\-F\-I\-L\-E\-R@{S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-S\-\_\-\-P\-R\-O\-F\-I\-L\-E\-R}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-S\-\_\-\-P\-R\-O\-F\-I\-L\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-A\-L\-L\-O\-C\-S\-\_\-\-P\-R\-O\-F\-I\-L\-E\-R~0}}\label{sphinxstd_8h_a0a38f87dc45287a4041ebd2d1cec0fcc}
+\hypertarget{sphinxstd_8h_adc51d956373b9d5ab3023af1b7e85957}{\index{sphinxstd.\-h@{sphinxstd.\-h}!S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-U\-N\-U\-S\-E\-D@{S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-U\-N\-U\-S\-E\-D}}
+\index{S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-U\-N\-U\-S\-E\-D@{S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-U\-N\-U\-S\-E\-D}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-U\-N\-U\-S\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-U\-N\-U\-S\-E\-D}}\label{sphinxstd_8h_adc51d956373b9d5ab3023af1b7e85957}
+\hypertarget{sphinxstd_8h_ab80fa587b637167cf8193a3e125aefb4}{\index{sphinxstd.\-h@{sphinxstd.\-h}!S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-B\-A\-C\-K\-T\-R\-A\-C\-E\-S@{S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-B\-A\-C\-K\-T\-R\-A\-C\-E\-S}}
+\index{S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-B\-A\-C\-K\-T\-R\-A\-C\-E\-S@{S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-B\-A\-C\-K\-T\-R\-A\-C\-E\-S}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-B\-A\-C\-K\-T\-R\-A\-C\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-B\-A\-C\-K\-T\-R\-A\-C\-E\-S~0}}\label{sphinxstd_8h_ab80fa587b637167cf8193a3e125aefb4}
+\hypertarget{sphinxstd_8h_ae84f7ac9e6dc43f8a8fc04c3095f4ddb}{\index{sphinxstd.\-h@{sphinxstd.\-h}!S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-A\-K\-S@{S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-A\-K\-S}}
+\index{S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-A\-K\-S@{S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-A\-K\-S}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-A\-K\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-P\-H\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-A\-K\-S~0}}\label{sphinxstd_8h_ae84f7ac9e6dc43f8a8fc04c3095f4ddb}
+\hypertarget{sphinxstd_8h_acd543d04bb6ae19d46c362c6ed1f8393}{\index{sphinxstd.\-h@{sphinxstd.\-h}!S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-cond, }
+\item[{}]{\-\_\-name}
+\end{DoxyParamCaption}
+)~typedef char S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-F\-A\-I\-L\-E\-D\-\_\- \#\# \-\_\-name \mbox{[} (\-\_\-cond) ? 1 \-: -\/1 \mbox{]} {\bf S\-P\-H\-\_\-\-A\-T\-T\-R\-\_\-\-U\-N\-U\-S\-E\-D}}}\label{sphinxstd_8h_acd543d04bb6ae19d46c362c6ed1f8393}
+\hypertarget{sphinxstd_8h_aca6a9915ff4428071bea67693f611276}{\index{sphinxstd.\-h@{sphinxstd.\-h}!S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-type, }
+\item[{}]{\-\_\-size}
+\end{DoxyParamCaption}
+)~{\bf S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T} ( sizeof(\-\_\-type)==\-\_\-size, \-\_\-type \#\# \-\_\-\-M\-U\-S\-T\-\_\-\-B\-E\-\_\- \#\# \-\_\-size \#\# \-\_\-\-B\-Y\-T\-E\-S )}}\label{sphinxstd_8h_aca6a9915ff4428071bea67693f611276}
+\hypertarget{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}{\index{sphinxstd.\-h@{sphinxstd.\-h}!T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-@{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}}
+\index{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-@{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a19418637cb3d49d320fcd59e73cc1eb2}
+\hypertarget{sphinxstd_8h_afcd0980dda8acd3847986ab553f7c6d0}{\index{sphinxstd.\-h@{sphinxstd.\-h}!T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E@{T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E}}
+\index{T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E@{T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(try\-\_\-acquire\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_afcd0980dda8acd3847986ab553f7c6d0}
+\hypertarget{sphinxstd_8h_ab4bd0ef1c042ed9adc35c045573c5431}{\index{sphinxstd.\-h@{sphinxstd.\-h}!T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D@{T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D}}
+\index{T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D@{T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-Y\-\_\-\-A\-C\-Q\-U\-I\-R\-E\-\_\-\-S\-H\-A\-R\-E\-D(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(try\-\_\-acquire\-\_\-shared\-\_\-capability(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_ab4bd0ef1c042ed9adc35c045573c5431}
+\hypertarget{sphinxstd_8h_aacd3c5c8d31b9feb66db4120d5a263a0}{\index{sphinxstd.\-h@{sphinxstd.\-h}!U64\-C@{U64\-C}}
+\index{U64\-C@{U64\-C}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{U64\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define U64\-C(
+\begin{DoxyParamCaption}
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~v \#\# U\-L\-L}}\label{sphinxstd_8h_aacd3c5c8d31b9feb66db4120d5a263a0}
+\hypertarget{sphinxstd_8h_afbe99077f641fae598305a79279ceca7}{\index{sphinxstd.\-h@{sphinxstd.\-h}!U\-I\-N\-T64@{U\-I\-N\-T64}}
+\index{U\-I\-N\-T64@{U\-I\-N\-T64}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{U\-I\-N\-T64}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T64(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-v}
+\end{DoxyParamCaption}
+)~((unsigned long long {\bf int})(\-\_\-v))}}\label{sphinxstd_8h_afbe99077f641fae598305a79279ceca7}
+\hypertarget{sphinxstd_8h_a21ef7c3a4e9f99f62cf64329f965d2ed}{\index{sphinxstd.\-h@{sphinxstd.\-h}!U\-I\-N\-T64\-\_\-\-F\-M\-T@{U\-I\-N\-T64\-\_\-\-F\-M\-T}}
+\index{U\-I\-N\-T64\-\_\-\-F\-M\-T@{U\-I\-N\-T64\-\_\-\-F\-M\-T}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{U\-I\-N\-T64\-\_\-\-F\-M\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T64\-\_\-\-F\-M\-T~\char`\"{}\%\char`\"{} {\bf P\-R\-Iu64}}}\label{sphinxstd_8h_a21ef7c3a4e9f99f62cf64329f965d2ed}
+\hypertarget{sphinxstd_8h_a30654b4b67d97c42ca3f9b6052dda916}{\index{sphinxstd.\-h@{sphinxstd.\-h}!U\-I\-N\-T64\-\_\-\-M\-A\-X@{U\-I\-N\-T64\-\_\-\-M\-A\-X}}
+\index{U\-I\-N\-T64\-\_\-\-M\-A\-X@{U\-I\-N\-T64\-\_\-\-M\-A\-X}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{U\-I\-N\-T64\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T64\-\_\-\-M\-A\-X~{\bf U64\-C}(0xffffffffffffffff)}}\label{sphinxstd_8h_a30654b4b67d97c42ca3f9b6052dda916}
+\hypertarget{sphinxstd_8h_abd56e19f9b4781b1a5212a46951cf5c3}{\index{sphinxstd.\-h@{sphinxstd.\-h}!U\-N\-L\-O\-C\-K\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N@{U\-N\-L\-O\-C\-K\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}}
+\index{U\-N\-L\-O\-C\-K\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N@{U\-N\-L\-O\-C\-K\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{U\-N\-L\-O\-C\-K\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-L\-O\-C\-K\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf T\-H\-R\-E\-A\-D\-\_\-\-A\-N\-N\-O\-T\-A\-T\-I\-O\-N\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-\_\-}(unlock\-\_\-function(\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-))}}\label{sphinxstd_8h_abd56e19f9b4781b1a5212a46951cf5c3}
+\hypertarget{sphinxstd_8h_af7bfe23cf121eb52ceec41625bca196f}{\index{sphinxstd.\-h@{sphinxstd.\-h}!U\-S\-E\-\_\-\-W\-I\-N\-D\-O\-W\-S@{U\-S\-E\-\_\-\-W\-I\-N\-D\-O\-W\-S}}
+\index{U\-S\-E\-\_\-\-W\-I\-N\-D\-O\-W\-S@{U\-S\-E\-\_\-\-W\-I\-N\-D\-O\-W\-S}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{U\-S\-E\-\_\-\-W\-I\-N\-D\-O\-W\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-S\-E\-\_\-\-W\-I\-N\-D\-O\-W\-S~0}}\label{sphinxstd_8h_af7bfe23cf121eb52ceec41625bca196f}
+\hypertarget{sphinxstd_8h_a86505f75dca8cc171f7220c8a703e3ea}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Verify@{Verify}}
+\index{Verify@{Verify}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Verify}]{\setlength{\rightskip}{0pt plus 5cm}\#define Verify(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-expr}
+\end{DoxyParamCaption}
+)~assert(\-\_\-expr)}}\label{sphinxstd_8h_a86505f75dca8cc171f7220c8a703e3ea}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{\index{sphinxstd.\-h@{sphinxstd.\-h}!B\-Y\-T\-E@{B\-Y\-T\-E}}
+\index{B\-Y\-T\-E@{B\-Y\-T\-E}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{B\-Y\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf B\-Y\-T\-E}}}\label{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}
+\hypertarget{sphinxstd_8h_a9699401fcfba9f39dfa1838a3af04fe2}{\index{sphinxstd.\-h@{sphinxstd.\-h}!C\-Sph\-Atomic@{C\-Sph\-Atomic}}
+\index{C\-Sph\-Atomic@{C\-Sph\-Atomic}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{C\-Sph\-Atomic}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf C\-Sph\-Atomic\-\_\-\-T}$<$long$>$ {\bf C\-Sph\-Atomic}}}\label{sphinxstd_8h_a9699401fcfba9f39dfa1838a3af04fe2}
+\hypertarget{sphinxstd_8h_abb101665cf3059deb0e66850f83ed95e}{\index{sphinxstd.\-h@{sphinxstd.\-h}!C\-Sph\-Atomic\-L@{C\-Sph\-Atomic\-L}}
+\index{C\-Sph\-Atomic\-L@{C\-Sph\-Atomic\-L}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{C\-Sph\-Atomic\-L}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf C\-Sph\-Atomic\-\_\-\-T}$<${\bf int64\-\_\-t}$>$ {\bf C\-Sph\-Atomic\-L}}}\label{sphinxstd_8h_abb101665cf3059deb0e66850f83ed95e}
+\hypertarget{sphinxstd_8h_af544895cdc9dcfd4532460c3b08cda1b}{\index{sphinxstd.\-h@{sphinxstd.\-h}!C\-Sph\-String\-Builder@{C\-Sph\-String\-Builder}}
+\index{C\-Sph\-String\-Builder@{C\-Sph\-String\-Builder}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{C\-Sph\-String\-Builder}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Sph\-String\-Builder\-\_\-\-T}$<${\bf Escape\-Quotation\-\_\-t}$>$ {\bf C\-Sph\-String\-Builder}}}\label{sphinxstd_8h_af544895cdc9dcfd4532460c3b08cda1b}
+\hypertarget{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{\index{sphinxstd.\-h@{sphinxstd.\-h}!D\-W\-O\-R\-D@{D\-W\-O\-R\-D}}
+\index{D\-W\-O\-R\-D@{D\-W\-O\-R\-D}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{D\-W\-O\-R\-D}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned {\bf int} {\bf D\-W\-O\-R\-D}}}\label{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}
+\hypertarget{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{\index{sphinxstd.\-h@{sphinxstd.\-h}!int64\-\_\-t@{int64\-\_\-t}}
+\index{int64\-\_\-t@{int64\-\_\-t}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{int64\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef long long {\bf int64\-\_\-t}}}\label{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}
+\hypertarget{sphinxstd_8h_a266723c581b9191bdb94e53090552e42}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Sph\-Die\-Callback\-\_\-t@{Sph\-Die\-Callback\-\_\-t}}
+\index{Sph\-Die\-Callback\-\_\-t@{Sph\-Die\-Callback\-\_\-t}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Sph\-Die\-Callback\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef bool( $\ast$ Sph\-Die\-Callback\-\_\-t)(const char $\ast$)}}\label{sphinxstd_8h_a266723c581b9191bdb94e53090552e42}
+\hypertarget{sphinxstd_8h_ad728334ec85e8a6b4db5bc1efd06447a}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Sph\-Thread\-\_\-t@{Sph\-Thread\-\_\-t}}
+\index{Sph\-Thread\-\_\-t@{Sph\-Thread\-\_\-t}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Sph\-Thread\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef pthread\-\_\-t {\bf Sph\-Thread\-\_\-t}}}\label{sphinxstd_8h_ad728334ec85e8a6b4db5bc1efd06447a}
+
+
+my thread handle and thread func magic 
+
+\hypertarget{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Sph\-Thread\-Key\-\_\-t@{Sph\-Thread\-Key\-\_\-t}}
+\index{Sph\-Thread\-Key\-\_\-t@{Sph\-Thread\-Key\-\_\-t}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Sph\-Thread\-Key\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef pthread\-\_\-key\-\_\-t {\bf Sph\-Thread\-Key\-\_\-t}}}\label{sphinxstd_8h_a6744090f5672b9fbfeee5dd86555e00a}
+\hypertarget{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{\index{sphinxstd.\-h@{sphinxstd.\-h}!uint64\-\_\-t@{uint64\-\_\-t}}
+\index{uint64\-\_\-t@{uint64\-\_\-t}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{uint64\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long long {\bf uint64\-\_\-t}}}\label{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}
+\hypertarget{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}{\index{sphinxstd.\-h@{sphinxstd.\-h}!W\-O\-R\-D@{W\-O\-R\-D}}
+\index{W\-O\-R\-D@{W\-O\-R\-D}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{W\-O\-R\-D}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned short {\bf W\-O\-R\-D}}}\label{sphinxstd_8h_a197942eefa7db30960ae396d68339b97}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxstd_8h_a382e8cf9f14bb1665310ee79108aa7f2}{\index{sphinxstd.\-h@{sphinxstd.\-h}!bind@{bind}}
+\index{bind@{bind}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-L\-A\-S\-S $>$ {\bf Sph\-Member\-Functor\-\_\-\-T}$<$ T, C\-L\-A\-S\-S $>$ bind (
+\begin{DoxyParamCaption}
+\item[{T C\-L\-A\-S\-S\-::$\ast$}]{ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_a382e8cf9f14bb1665310ee79108aa7f2}
+handy member functor generator this sugar allows you to write like this d\-Arr.\-Sort ( bind ( \&C\-Sph\-Type\-::m\-\_\-i\-Member ) ); d\-Arr.\-Binary\-Search ( bind ( \&C\-Sph\-Type\-::m\-\_\-i\-Member ), i\-Value ); \hypertarget{sphinxstd_8h_a488c62e900b5b6d36ef2bf0c85c7a869}{\index{sphinxstd.\-h@{sphinxstd.\-h}!C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}}
+\index{C\-A\-P\-A\-B\-I\-L\-I\-T\-Y@{C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{C\-A\-P\-A\-B\-I\-L\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}class C\-A\-P\-A\-B\-I\-L\-I\-T\-Y (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}mutex\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a488c62e900b5b6d36ef2bf0c85c7a869}
+
+
+mutex implementation 
+
+rwlock implementation \hypertarget{sphinxstd_8h_a9062f8eece6c98355b0a5ce0d95a172b}{\index{sphinxstd.\-h@{sphinxstd.\-h}!fsqr@{fsqr}}
+\index{fsqr@{fsqr}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{fsqr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} fsqr (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_a9062f8eece6c98355b0a5ce0d95a172b}
+
+
+float argument squared 
+
+\hypertarget{sphinxstd_8h_afcb5008af934d3b5dc0d5429c857f365}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Max@{Max}}
+\index{Max@{Max}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Max (
+\begin{DoxyParamCaption}
+\item[{T}]{a, }
+\item[{T}]{b}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_afcb5008af934d3b5dc0d5429c857f365}
+\hypertarget{sphinxstd_8h_a3066e99e851861080bfaed01b1104314}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Max@{Max}}
+\index{Max@{Max}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U $>$ T Max (
+\begin{DoxyParamCaption}
+\item[{T}]{a, }
+\item[{U}]{b}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a3066e99e851861080bfaed01b1104314}
+\hypertarget{sphinxstd_8h_a1ac7e63c29b62739c3db80dde8fd4f2d}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Memorize\-Stack@{Memorize\-Stack}}
+\index{Memorize\-Stack@{Memorize\-Stack}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Memorize\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void Memorize\-Stack (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{P\-Stack}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a1ac7e63c29b62739c3db80dde8fd4f2d}
+
+
+store the address in the T\-L\-S 
+
+\hypertarget{sphinxstd_8h_a37fef14f8884fc4cbc1a6e4691860459}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Min@{Min}}
+\index{Min@{Min}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Min (
+\begin{DoxyParamCaption}
+\item[{T}]{a, }
+\item[{T}]{b}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a37fef14f8884fc4cbc1a6e4691860459}
+\hypertarget{sphinxstd_8h_a8672db62ea12ef64d843954f172b1e34}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Min@{Min}}
+\index{Min@{Min}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U $>$ T Min (
+\begin{DoxyParamCaption}
+\item[{T}]{a, }
+\item[{U}]{b}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a8672db62ea12ef64d843954f172b1e34}
+\hypertarget{sphinxstd_8h_ac729cab154b5609c95d1bb311d39ce93}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Safe\-Close@{Safe\-Close}}
+\index{Safe\-Close@{Safe\-Close}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Safe\-Close}]{\setlength{\rightskip}{0pt plus 5cm}void void Safe\-Close (
+\begin{DoxyParamCaption}
+\item[{{\bf int} \&}]{i\-F\-D}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_ac729cab154b5609c95d1bb311d39ce93}
+\hypertarget{sphinxstd_8h_af684a2a652cd988bc9989714d25f97ef}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Auto\-Srand@{sph\-Auto\-Srand}}
+\index{sph\-Auto\-Srand@{sph\-Auto\-Srand}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Auto\-Srand}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Auto\-Srand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_af684a2a652cd988bc9989714d25f97ef}
+
+
+auto-\/seed R\-N\-G based on time and P\-I\-D 
+
+\hypertarget{sphinxstd_8h_a0445d0cd276b4c482a6f14473d916aed}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Binary\-Search@{sph\-Binary\-Search}}
+\index{sph\-Binary\-Search@{sph\-Binary\-Search}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Binary\-Search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U , typename P\-R\-E\-D $>$ T$\ast$ sph\-Binary\-Search (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Start, }
+\item[{T $\ast$}]{p\-End, }
+\item[{const P\-R\-E\-D \&}]{t\-Pred, }
+\item[{U}]{t\-Ref}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a0445d0cd276b4c482a6f14473d916aed}
+
+
+generic binary search 
+
+\hypertarget{sphinxstd_8h_a5f7a0b3fca35d1ad5e3711b42baf7a09}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Binary\-Search@{sph\-Binary\-Search}}
+\index{sph\-Binary\-Search@{sph\-Binary\-Search}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Binary\-Search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$ sph\-Binary\-Search (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Start, }
+\item[{T $\ast$}]{p\-End, }
+\item[{T \&}]{t\-Ref}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a5f7a0b3fca35d1ad5e3711b42baf7a09}
+
+
+generic binary search 
+
+\hypertarget{sphinxstd_8h_aa18627c943f281a6a101be8390567df1}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Bit\-Count@{sph\-Bit\-Count}}
+\index{sph\-Bit\-Count@{sph\-Bit\-Count}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Bit\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Bit\-Count (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_aa18627c943f281a6a101be8390567df1}
+\hypertarget{sphinxstd_8h_a47f4cb90679403c7310c52fd5126bc13}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Cpu\-Threads\-Count@{sph\-Cpu\-Threads\-Count}}
+\index{sph\-Cpu\-Threads\-Count@{sph\-Cpu\-Threads\-Count}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Cpu\-Threads\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Cpu\-Threads\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a47f4cb90679403c7310c52fd5126bc13}
+\hypertarget{sphinxstd_8h_a923fbc68c6568df491250edf26692c14}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Create\-T\-Digest@{sph\-Create\-T\-Digest}}
+\index{sph\-Create\-T\-Digest@{sph\-Create\-T\-Digest}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Create\-T\-Digest}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\-Digest\-\_\-i}$\ast$ sph\-Create\-T\-Digest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a923fbc68c6568df491250edf26692c14}
+\hypertarget{sphinxstd_8h_a30b2c642d23495817bd56cd67e5431b0}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-D2\-Q\-W@{sph\-D2\-Q\-W}}
+\index{sph\-D2\-Q\-W@{sph\-D2\-Q\-W}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-D2\-Q\-W}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} sph\-D2\-Q\-W (
+\begin{DoxyParamCaption}
+\item[{double}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_a30b2c642d23495817bd56cd67e5431b0}
+
+
+double to bigint conversion 
+
+\hypertarget{sphinxstd_8h_a5b012800b8e82b013c0ef72cdb90f231}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Die@{sph\-Die}}
+\index{sph\-Die@{sph\-Die}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Die}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Die (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Message, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a5b012800b8e82b013c0ef72cdb90f231}
+
+
+crash with an error message, and do not have searchd watchdog attempt to resurrect 
+
+\hypertarget{sphinxstd_8h_a04441b285742504fa71826d75c93bad8}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Die\-Restart@{sph\-Die\-Restart}}
+\index{sph\-Die\-Restart@{sph\-Die\-Restart}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Die\-Restart}]{\setlength{\rightskip}{0pt plus 5cm}void void sph\-Die\-Restart (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Message, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a04441b285742504fa71826d75c93bad8}
+
+
+crash with an error message, but have searchd watchdog attempt to resurrect 
+
+\hypertarget{sphinxstd_8h_ad8490bdcfff966753642d68da70cb74b}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-D\-W2\-F@{sph\-D\-W2\-F}}
+\index{sph\-D\-W2\-F@{sph\-D\-W2\-F}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-D\-W2\-F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} sph\-D\-W2\-F (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_ad8490bdcfff966753642d68da70cb74b}
+
+
+dword vs float conversion 
+
+\hypertarget{sphinxstd_8h_afe303f1e9080e238fc554d4be4eb27c5}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-F2\-D\-W@{sph\-F2\-D\-W}}
+\index{sph\-F2\-D\-W@{sph\-F2\-D\-W}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-F2\-D\-W}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} sph\-F2\-D\-W (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_afe303f1e9080e238fc554d4be4eb27c5}
+
+
+float vs dword conversion 
+
+\hypertarget{sphinxstd_8h_abf4752a11b908ba4b48ee0cfa08adfc8}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Get\-File\-Size@{sph\-Get\-File\-Size}}
+\index{sph\-Get\-File\-Size@{sph\-Get\-File\-Size}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Get\-File\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} sph\-Get\-File\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-F\-D, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_abf4752a11b908ba4b48ee0cfa08adfc8}
+
+
+return size of file descriptor 
+
+\hypertarget{sphinxstd_8h_a8a71681ef329114bca741cff9916b426}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Get\-Stack\-Used@{sph\-Get\-Stack\-Used}}
+\index{sph\-Get\-Stack\-Used@{sph\-Get\-Stack\-Used}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Get\-Stack\-Used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} sph\-Get\-Stack\-Used (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a8a71681ef329114bca741cff9916b426}
+
+
+get size of used stack 
+
+\hypertarget{sphinxstd_8h_a885bf0cf4da6b1c68605a7efdc5adbb9}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Heap\-Sort@{sph\-Heap\-Sort}}
+\index{sph\-Heap\-Sort@{sph\-Heap\-Sort}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Heap\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U , typename V $>$ void sph\-Heap\-Sort (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count, }
+\item[{U}]{C\-O\-M\-P, }
+\item[{V}]{A\-C\-C}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a885bf0cf4da6b1c68605a7efdc5adbb9}
+
+
+heap sort 
+
+\hypertarget{sphinxstd_8h_aed1db7785967f19faf94eb7b2365ecf8}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Is\-Lt\-Lib@{sph\-Is\-Lt\-Lib}}
+\index{sph\-Is\-Lt\-Lib@{sph\-Is\-Lt\-Lib}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Is\-Lt\-Lib}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Is\-Lt\-Lib (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_aed1db7785967f19faf94eb7b2365ecf8}
+
+
+what kind of threading lib do we have? The number of frames in the stack depends from it 
+
+\hypertarget{sphinxstd_8h_a74bfe252d3c57603058f1a772b422742}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Log2@{sph\-Log2}}
+\index{sph\-Log2@{sph\-Log2}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Log2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Log2 (
+\begin{DoxyParamCaption}
+\item[{{\bf uint64\-\_\-t}}]{u\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_a74bfe252d3c57603058f1a772b422742}
+
+
+how much bits do we need for given int 
+
+\hypertarget{sphinxstd_8h_a884c67bbf9c0c5b66e36f5135057a146}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Member\-Less@{sph\-Member\-Less}}
+\index{sph\-Member\-Less@{sph\-Member\-Less}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Member\-Less}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C $>$ {\bf Sph\-Member\-Less\-\_\-\-T}$<$T,{\bf C}$>$ sph\-Member\-Less (
+\begin{DoxyParamCaption}
+\item[{T C\-::$\ast$}]{p\-Member}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_a884c67bbf9c0c5b66e36f5135057a146}
+\hypertarget{sphinxstd_8h_a3caa94cb69902b59e3b1d8d06cef1696}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Micro\-Timer@{sph\-Micro\-Timer}}
+\index{sph\-Micro\-Timer@{sph\-Micro\-Timer}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Micro\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} sph\-Micro\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a3caa94cb69902b59e3b1d8d06cef1696}
+
+
+microsecond precision timestamp 
+
+microsecond precision timestamp current U\-N\-I\-X timestamp in seconds multiplied by 1000000, plus microseconds since the beginning of current second \hypertarget{sphinxstd_8h_a3ece2bc5d2d0b1f9ec317d0044390030}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-My\-Stack@{sph\-My\-Stack}}
+\index{sph\-My\-Stack@{sph\-My\-Stack}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-My\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sph\-My\-Stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a3ece2bc5d2d0b1f9ec317d0044390030}
+
+
+get the pointer to my thread's stack 
+
+\hypertarget{sphinxstd_8h_a37db8d9476c82488dedccba20f8948bd}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Open\-File@{sph\-Open\-File}}
+\index{sph\-Open\-File@{sph\-Open\-File}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Open\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} sph\-Open\-File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-File, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Write}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a37db8d9476c82488dedccba20f8948bd}
+
+
+open file for reading 
+
+\hypertarget{sphinxstd_8h_af2539a78db29131d7db76efe0e542c34}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Q\-W2\-D@{sph\-Q\-W2\-D}}
+\index{sph\-Q\-W2\-D@{sph\-Q\-W2\-D}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Q\-W2\-D}]{\setlength{\rightskip}{0pt plus 5cm}double sph\-Q\-W2\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf uint64\-\_\-t}}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_af2539a78db29131d7db76efe0e542c34}
+
+
+bigint to double conversion 
+
+\hypertarget{sphinxstd_8h_aee2283ca247e5759172c1a7132c93235}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Rand@{sph\-Rand}}
+\index{sph\-Rand@{sph\-Rand}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Rand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} sph\-Rand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_aee2283ca247e5759172c1a7132c93235}
+
+
+generate another random 
+
+\hypertarget{sphinxstd_8h_aa89514c38a5072f0bf3606ad90ecf1c2}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Set\-Die\-Callback@{sph\-Set\-Die\-Callback}}
+\index{sph\-Set\-Die\-Callback@{sph\-Set\-Die\-Callback}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Set\-Die\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void void void sph\-Set\-Die\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Die\-Callback\-\_\-t}}]{pf\-Die\-Callback}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_aa89514c38a5072f0bf3606ad90ecf1c2}
+setup a callback function to call from \hyperlink{sphinxstd_8cpp_a670a004a2eee1b6d8a18c1769e0e83cd}{sph\-Die()} before exit if callback returns false, \hyperlink{sphinxstd_8cpp_a670a004a2eee1b6d8a18c1769e0e83cd}{sph\-Die()} will not log to stdout \hypertarget{sphinxstd_8h_ad207625041ddca0c53e87bd5cce998f6}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Set\-My\-Stack\-Size@{sph\-Set\-My\-Stack\-Size}}
+\index{sph\-Set\-My\-Stack\-Size@{sph\-Set\-My\-Stack\-Size}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Set\-My\-Stack\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Set\-My\-Stack\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Stack\-Size}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_ad207625041ddca0c53e87bd5cce998f6}
+
+
+set the size of my thread's stack 
+
+\hypertarget{sphinxstd_8h_a17772ef6aff3b40d9e3249bd155cf266}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Sift\-Down@{sph\-Sift\-Down}}
+\index{sph\-Sift\-Down@{sph\-Sift\-Down}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Sift\-Down}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U , typename V $>$ void sph\-Sift\-Down (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-End, }
+\item[{U}]{C\-O\-M\-P, }
+\item[{V}]{A\-C\-C}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a17772ef6aff3b40d9e3249bd155cf266}
+
+
+heap sort helper 
+
+\hypertarget{sphinxstd_8h_a98fe6b6e8223c4259154e13dfffc8ffd}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Sort@{sph\-Sort}}
+\index{sph\-Sort@{sph\-Sort}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U , typename V $>$ void sph\-Sort (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count, }
+\item[{U}]{C\-O\-M\-P, }
+\item[{V}]{A\-C\-C}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a98fe6b6e8223c4259154e13dfffc8ffd}
+
+
+generic sort 
+
+\hypertarget{sphinxstd_8h_a345eb5a9556adc760983799f2c84460a}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Sort@{sph\-Sort}}
+\index{sph\-Sort@{sph\-Sort}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U $>$ void sph\-Sort (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count, }
+\item[{U}]{C\-O\-M\-P}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a345eb5a9556adc760983799f2c84460a}
+\hypertarget{sphinxstd_8h_a53b127ffe5d984f66c6535023910bbff}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Sort@{sph\-Sort}}
+\index{sph\-Sort@{sph\-Sort}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void sph\-Sort (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Data, }
+\item[{{\bf int}}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a53b127ffe5d984f66c6535023910bbff}
+\hypertarget{sphinxstd_8h_a6aa7dbc659a4609b973802f00fec9031}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Srand@{sph\-Srand}}
+\index{sph\-Srand@{sph\-Srand}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Srand}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Srand (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Seed}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a6aa7dbc659a4609b973802f00fec9031}
+
+
+seed R\-N\-G 
+
+\hypertarget{sphinxstd_8h_a7e5627000a462348fc7832d73d24c2b2}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Thread\-Create@{sph\-Thread\-Create}}
+\index{sph\-Thread\-Create@{sph\-Thread\-Create}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Thread\-Create}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Thread\-Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-\_\-t} $\ast$}]{p\-Thread, }
+\item[{void($\ast$)(void $\ast$)}]{fn\-Thread, }
+\item[{void $\ast$}]{p\-Arg, }
+\item[{bool}]{b\-Detached = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a7e5627000a462348fc7832d73d24c2b2}
+
+
+my create thread wrapper 
+
+\hypertarget{sphinxstd_8h_aebcc10fc10a4ddb8cc6cc5fb68b80032}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Thread\-Done@{sph\-Thread\-Done}}
+\index{sph\-Thread\-Done@{sph\-Thread\-Done}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Thread\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Thread\-Done (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-F\-D}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_aebcc10fc10a4ddb8cc6cc5fb68b80032}
+
+
+my threading deinitialize routine 
+
+\hypertarget{sphinxstd_8h_aae86e1d659d04703aa8b02bedd2fdb8a}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Thread\-Get@{sph\-Thread\-Get}}
+\index{sph\-Thread\-Get@{sph\-Thread\-Get}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Thread\-Get}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sph\-Thread\-Get (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-Key\-\_\-t}}]{t\-Key}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_aae86e1d659d04703aa8b02bedd2fdb8a}
+
+
+get thread-\/local key value 
+
+\hypertarget{sphinxstd_8h_a92eb524e8ebba92bdde574a2460d1361}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Thread\-Init@{sph\-Thread\-Init}}
+\index{sph\-Thread\-Init@{sph\-Thread\-Init}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Thread\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sph\-Thread\-Init (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Detached = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a92eb524e8ebba92bdde574a2460d1361}
+
+
+my threading initialize routine 
+
+\hypertarget{sphinxstd_8h_a16e7b256c1d908a0a46643b19416eb8a}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Thread\-Join@{sph\-Thread\-Join}}
+\index{sph\-Thread\-Join@{sph\-Thread\-Join}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Thread\-Join}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Thread\-Join (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-\_\-t} $\ast$}]{p\-Thread}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a16e7b256c1d908a0a46643b19416eb8a}
+
+
+my join thread wrapper 
+
+\hypertarget{sphinxstd_8h_a5171a457237e55fc8e4fb6cd450e8497}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Thread\-Key\-Create@{sph\-Thread\-Key\-Create}}
+\index{sph\-Thread\-Key\-Create@{sph\-Thread\-Key\-Create}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Thread\-Key\-Create}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Thread\-Key\-Create (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-Key\-\_\-t} $\ast$}]{p\-Key}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a5171a457237e55fc8e4fb6cd450e8497}
+
+
+alloc thread-\/local key 
+
+\hypertarget{sphinxstd_8h_a2428df88751a24c24b222b5a8fd77b01}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Thread\-Key\-Delete@{sph\-Thread\-Key\-Delete}}
+\index{sph\-Thread\-Key\-Delete@{sph\-Thread\-Key\-Delete}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Thread\-Key\-Delete}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Thread\-Key\-Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-Key\-\_\-t}}]{t\-Key}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a2428df88751a24c24b222b5a8fd77b01}
+
+
+free thread-\/local key 
+
+\hypertarget{sphinxstd_8h_a38869c3116553d088036f3080bc77dfa}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Thread\-On\-Exit@{sph\-Thread\-On\-Exit}}
+\index{sph\-Thread\-On\-Exit@{sph\-Thread\-On\-Exit}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Thread\-On\-Exit}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Thread\-On\-Exit (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(void $\ast$)}]{fn\-Cleanup, }
+\item[{void $\ast$}]{p\-Arg}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a38869c3116553d088036f3080bc77dfa}
+
+
+add (cleanup) callback to run on thread exit 
+
+\hypertarget{sphinxstd_8h_a0d36f8b4d7d911a461b3b97f373f5fb4}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Thread\-Pool\-Create@{sph\-Thread\-Pool\-Create}}
+\index{sph\-Thread\-Pool\-Create@{sph\-Thread\-Pool\-Create}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Thread\-Pool\-Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Thd\-Pool}$\ast$ sph\-Thread\-Pool\-Create (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Threads, }
+\item[{const char $\ast$}]{s\-Name = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a0d36f8b4d7d911a461b3b97f373f5fb4}
+\hypertarget{sphinxstd_8h_a108c8bfd8f6d89da0fa813866b51f6a5}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Thread\-Set@{sph\-Thread\-Set}}
+\index{sph\-Thread\-Set@{sph\-Thread\-Set}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Thread\-Set}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Thread\-Set (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Thread\-Key\-\_\-t}}]{t\-Key, }
+\item[{void $\ast$}]{p\-Value}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a108c8bfd8f6d89da0fa813866b51f6a5}
+
+
+set thread-\/local key value 
+
+\hypertarget{sphinxstd_8h_aa70cad7fcaec3a2faaed40d4e865d6ba}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Uniq@{sph\-Uniq}}
+\index{sph\-Uniq@{sph\-Uniq}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Uniq}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename T\-\_\-\-C\-O\-U\-N\-T\-E\-R $>$ T\-\_\-\-C\-O\-U\-N\-T\-E\-R sph\-Uniq (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-Data, }
+\item[{T\-\_\-\-C\-O\-U\-N\-T\-E\-R}]{i\-Count}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_aa70cad7fcaec3a2faaed40d4e865d6ba}
+
+
+generic uniq 
+
+\hypertarget{sphinxstd_8h_a839fb1635556d6545ad3cc76b4cc3027}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sph\-Warn@{sph\-Warn}}
+\index{sph\-Warn@{sph\-Warn}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sph\-Warn}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Warn (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a839fb1635556d6545ad3cc76b4cc3027}
+\hypertarget{sphinxstd_8h_a73527f20206c906e9f333e0f233de13e}{\index{sphinxstd.\-h@{sphinxstd.\-h}!sqr@{sqr}}
+\index{sqr@{sqr}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{sqr}]{\setlength{\rightskip}{0pt plus 5cm}double sqr (
+\begin{DoxyParamCaption}
+\item[{double}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_a73527f20206c906e9f333e0f233de13e}
+
+
+double argument squared 
+
+\hypertarget{sphinxstd_8h_a6f36bd3e5a406db036c332f4731e0d1c}{\index{sphinxstd.\-h@{sphinxstd.\-h}!S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf uint64\-\_\-t}}]{, }
+\item[{8}]{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a6f36bd3e5a406db036c332f4731e0d1c}
+\hypertarget{sphinxstd_8h_a5f906d1e63e598e66f7bac873ffb689c}{\index{sphinxstd.\-h@{sphinxstd.\-h}!S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf int64\-\_\-t}}]{, }
+\item[{8}]{}
+\end{DoxyParamCaption}
+)}}\label{sphinxstd_8h_a5f906d1e63e598e66f7bac873ffb689c}
+\hypertarget{sphinxstd_8h_a3db855ce022586b581958591bd17c481}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Swap@{Swap}}
+\index{Swap@{Swap}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Swap (
+\begin{DoxyParamCaption}
+\item[{T \&}]{v1, }
+\item[{T \&}]{v2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_a3db855ce022586b581958591bd17c481}
+
+
+swap 
+
+\hypertarget{sphinxstd_8h_ac72a14161ade01addd03347952d95f30}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Swap@{Swap}}
+\index{Swap@{Swap}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Swap}]{\setlength{\rightskip}{0pt plus 5cm}void Swap (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{v1, }
+\item[{{\bf C\-Sph\-String} \&}]{v2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_ac72a14161ade01addd03347952d95f30}
+
+
+string swapper 
+
+\hypertarget{sphinxstd_8h_a97ca93ddc3da2e10135558687d3e17c4}{\index{sphinxstd.\-h@{sphinxstd.\-h}!Swap@{Swap}}
+\index{Swap@{Swap}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{Swap}]{\setlength{\rightskip}{0pt plus 5cm}void Swap (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Named\-Int} \&}]{a, }
+\item[{{\bf C\-Sph\-Named\-Int} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxstd_8h_a97ca93ddc3da2e10135558687d3e17c4}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxstd_8h_a23b6a1b11aea720b9dd6665a32de96be}{\index{sphinxstd.\-h@{sphinxstd.\-h}!g\-\_\-i\-Thread\-Stack\-Size@{g\-\_\-i\-Thread\-Stack\-Size}}
+\index{g\-\_\-i\-Thread\-Stack\-Size@{g\-\_\-i\-Thread\-Stack\-Size}!sphinxstd.h@{sphinxstd.\-h}}
+\subsubsection[{g\-\_\-i\-Thread\-Stack\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} g\-\_\-i\-Thread\-Stack\-Size}}\label{sphinxstd_8h_a23b6a1b11aea720b9dd6665a32de96be}

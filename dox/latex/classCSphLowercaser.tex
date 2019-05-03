@@ -1,0 +1,208 @@
+\hypertarget{classCSphLowercaser}{\section{C\-Sph\-Lowercaser Class Reference}
+\label{classCSphLowercaser}\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}}
+}
+
+
+lowercaser  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphLowercaser_a3e7c6a94d47481dbe143fa259e27bd0b}{C\-Sph\-Lowercaser} ()
+\item 
+\hyperlink{classCSphLowercaser_a4d9a8ac307caeadce0e3c79973c82daa}{$\sim$\-C\-Sph\-Lowercaser} ()
+\item 
+void \hyperlink{classCSphLowercaser_a84162b7a7c5b13d33feb851fbef02d2e}{Reset} ()
+\item 
+void \hyperlink{classCSphLowercaser_a904e4275e421f99aa27bf4244d7d1daf}{Set\-Remap} (const \hyperlink{classCSphLowercaser}{C\-Sph\-Lowercaser} $\ast$p\-L\-C)
+\item 
+void \hyperlink{classCSphLowercaser_aa69cba8739e0f434bafe1353b39b6738}{Add\-Remaps} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphRemapRange}{C\-Sph\-Remap\-Range} $>$ \&d\-Remaps, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Flags)
+\item 
+void \hyperlink{classCSphLowercaser_a740faf5f56aa360b8f44a95f0de9200f}{Add\-Specials} (const char $\ast$s\-Specials)
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classCSphLowercaser_ae3534fe2019df3f3345b08f6bd611192}{Get\-F\-N\-V} () const 
+\item 
+const \hyperlink{classCSphLowercaser}{C\-Sph\-Lowercaser} \& \hyperlink{classCSphLowercaser_a244f83e7ea5fa47b4012682763500733}{operator=} (const \hyperlink{classCSphLowercaser}{C\-Sph\-Lowercaser} \&rhs)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphLowercaser_ad8cadae7f74e796971cc932a87267243}{To\-Lower} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Code) const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphLowercaser_ad2428e48d39fe892b6eadff5ccb441b4}{Get\-Max\-Codepoint\-Length} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphLowercaser_a7d538ec8b5bb2220faa56d9b6a1032a0}{m\-\_\-i\-Chunks}
+\begin{DoxyCompactList}\small\item\em how much chunks are actually allocated \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$ \hyperlink{classCSphLowercaser_a0534fc1680554432be7358d8fe374dc2}{m\-\_\-p\-Data}
+\begin{DoxyCompactList}\small\item\em chunks themselves \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$ \hyperlink{classCSphLowercaser_adead3a3167621d8d6f10b5d2bd14ea9e}{m\-\_\-p\-Chunk} \mbox{[}\hyperlink{classCSphLowercaser_add46c69c33b10aa129e666946b329cb7}{C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T}\mbox{]}
+\begin{DoxyCompactList}\small\item\em pointers to non-\/empty chunks \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphLowercaser_add46c69c33b10aa129e666946b329cb7}{C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T} = 0x300
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphLowercaser_aaa2c3f2701c7b2aaddc3235a63e1895e}{C\-H\-U\-N\-K\-\_\-\-B\-I\-T\-S} = 8
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphLowercaser_ae1d932fca473265a6dc9d48836cdb4ec}{C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E} = 1 $<$$<$ \hyperlink{classCSphLowercaser_aaa2c3f2701c7b2aaddc3235a63e1895e}{C\-H\-U\-N\-K\-\_\-\-B\-I\-T\-S}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphLowercaser_a48f851f5191a4bd4e6f9bba6bd1d90f7}{C\-H\-U\-N\-K\-\_\-\-M\-A\-S\-K} = \hyperlink{classCSphLowercaser_ae1d932fca473265a6dc9d48836cdb4ec}{C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E} -\/ 1
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphLowercaser_ae93306949e3408ffa9f31be79c42f1be}{M\-A\-X\-\_\-\-C\-O\-D\-E} = \hyperlink{classCSphLowercaser_add46c69c33b10aa129e666946b329cb7}{C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T} $\ast$ \hyperlink{classCSphLowercaser_ae1d932fca473265a6dc9d48836cdb4ec}{C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCSphLowercaser_a9b192dca98863220d642b0348a68dbbe}{I\-Sph\-Tokenizer}
+\item 
+class \hyperlink{classCSphLowercaser_ab25cd87ad27c96e57f4c9bf16e624e5a}{C\-Sph\-Tokenizer\-Base}
+\item 
+class \hyperlink{classCSphLowercaser_a0c0953143f8285f6ad7c38dcd39c67db}{C\-Sph\-Tokenizer\-\_\-\-U\-T\-F8\-\_\-\-Base}
+\item 
+class \hyperlink{classCSphLowercaser_a31be57a45852be61715d8373da104250}{C\-Sph\-Tokenizer\-Base2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lowercaser 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphLowercaser_a3e7c6a94d47481dbe143fa259e27bd0b}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}}
+\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{C\-Sph\-Lowercaser}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Lowercaser\-::\-C\-Sph\-Lowercaser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphLowercaser_a3e7c6a94d47481dbe143fa259e27bd0b}
+\hypertarget{classCSphLowercaser_a4d9a8ac307caeadce0e3c79973c82daa}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!$\sim$\-C\-Sph\-Lowercaser@{$\sim$\-C\-Sph\-Lowercaser}}
+\index{$\sim$\-C\-Sph\-Lowercaser@{$\sim$\-C\-Sph\-Lowercaser}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{$\sim$\-C\-Sph\-Lowercaser}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Lowercaser\-::$\sim$\-C\-Sph\-Lowercaser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphLowercaser_a4d9a8ac307caeadce0e3c79973c82daa}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphLowercaser_aa69cba8739e0f434bafe1353b39b6738}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!Add\-Remaps@{Add\-Remaps}}
+\index{Add\-Remaps@{Add\-Remaps}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{Add\-Remaps}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Lowercaser\-::\-Add\-Remaps (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-Remap\-Range} $>$ \&}]{d\-Remaps, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Flags}
+\end{DoxyParamCaption}
+)}}\label{classCSphLowercaser_aa69cba8739e0f434bafe1353b39b6738}
+\hypertarget{classCSphLowercaser_a740faf5f56aa360b8f44a95f0de9200f}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!Add\-Specials@{Add\-Specials}}
+\index{Add\-Specials@{Add\-Specials}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{Add\-Specials}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Lowercaser\-::\-Add\-Specials (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Specials}
+\end{DoxyParamCaption}
+)}}\label{classCSphLowercaser_a740faf5f56aa360b8f44a95f0de9200f}
+\hypertarget{classCSphLowercaser_ae3534fe2019df3f3345b08f6bd611192}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!Get\-F\-N\-V@{Get\-F\-N\-V}}
+\index{Get\-F\-N\-V@{Get\-F\-N\-V}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{Get\-F\-N\-V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} C\-Sph\-Lowercaser\-::\-Get\-F\-N\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCSphLowercaser_ae3534fe2019df3f3345b08f6bd611192}
+\hypertarget{classCSphLowercaser_ad2428e48d39fe892b6eadff5ccb441b4}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!Get\-Max\-Codepoint\-Length@{Get\-Max\-Codepoint\-Length}}
+\index{Get\-Max\-Codepoint\-Length@{Get\-Max\-Codepoint\-Length}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{Get\-Max\-Codepoint\-Length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Lowercaser\-::\-Get\-Max\-Codepoint\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCSphLowercaser_ad2428e48d39fe892b6eadff5ccb441b4}
+\hypertarget{classCSphLowercaser_a244f83e7ea5fa47b4012682763500733}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!operator=@{operator=}}
+\index{operator=@{operator=}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Lowercaser} \& C\-Sph\-Lowercaser\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Lowercaser} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classCSphLowercaser_a244f83e7ea5fa47b4012682763500733}
+\hypertarget{classCSphLowercaser_a84162b7a7c5b13d33feb851fbef02d2e}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!Reset@{Reset}}
+\index{Reset@{Reset}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Lowercaser\-::\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphLowercaser_a84162b7a7c5b13d33feb851fbef02d2e}
+\hypertarget{classCSphLowercaser_a904e4275e421f99aa27bf4244d7d1daf}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!Set\-Remap@{Set\-Remap}}
+\index{Set\-Remap@{Set\-Remap}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{Set\-Remap}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Lowercaser\-::\-Set\-Remap (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Lowercaser} $\ast$}]{p\-L\-C}
+\end{DoxyParamCaption}
+)}}\label{classCSphLowercaser_a904e4275e421f99aa27bf4244d7d1daf}
+\hypertarget{classCSphLowercaser_ad8cadae7f74e796971cc932a87267243}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!To\-Lower@{To\-Lower}}
+\index{To\-Lower@{To\-Lower}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{To\-Lower}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Lowercaser\-::\-To\-Lower (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Code}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphLowercaser_ad8cadae7f74e796971cc932a87267243}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCSphLowercaser_a0c0953143f8285f6ad7c38dcd39c67db}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!C\-Sph\-Tokenizer\-\_\-\-U\-T\-F8\-\_\-\-Base@{C\-Sph\-Tokenizer\-\_\-\-U\-T\-F8\-\_\-\-Base}}
+\index{C\-Sph\-Tokenizer\-\_\-\-U\-T\-F8\-\_\-\-Base@{C\-Sph\-Tokenizer\-\_\-\-U\-T\-F8\-\_\-\-Base}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{C\-Sph\-Tokenizer\-\_\-\-U\-T\-F8\-\_\-\-Base}]{\setlength{\rightskip}{0pt plus 5cm}friend class C\-Sph\-Tokenizer\-\_\-\-U\-T\-F8\-\_\-\-Base\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphLowercaser_a0c0953143f8285f6ad7c38dcd39c67db}
+\hypertarget{classCSphLowercaser_ab25cd87ad27c96e57f4c9bf16e624e5a}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!C\-Sph\-Tokenizer\-Base@{C\-Sph\-Tokenizer\-Base}}
+\index{C\-Sph\-Tokenizer\-Base@{C\-Sph\-Tokenizer\-Base}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{C\-Sph\-Tokenizer\-Base}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf C\-Sph\-Tokenizer\-Base}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphLowercaser_ab25cd87ad27c96e57f4c9bf16e624e5a}
+\hypertarget{classCSphLowercaser_a31be57a45852be61715d8373da104250}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!C\-Sph\-Tokenizer\-Base2@{C\-Sph\-Tokenizer\-Base2}}
+\index{C\-Sph\-Tokenizer\-Base2@{C\-Sph\-Tokenizer\-Base2}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{C\-Sph\-Tokenizer\-Base2}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf C\-Sph\-Tokenizer\-Base2}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphLowercaser_a31be57a45852be61715d8373da104250}
+\hypertarget{classCSphLowercaser_a9b192dca98863220d642b0348a68dbbe}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!I\-Sph\-Tokenizer@{I\-Sph\-Tokenizer}}
+\index{I\-Sph\-Tokenizer@{I\-Sph\-Tokenizer}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{I\-Sph\-Tokenizer}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf I\-Sph\-Tokenizer}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSphLowercaser_a9b192dca98863220d642b0348a68dbbe}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphLowercaser_aaa2c3f2701c7b2aaddc3235a63e1895e}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!C\-H\-U\-N\-K\-\_\-\-B\-I\-T\-S@{C\-H\-U\-N\-K\-\_\-\-B\-I\-T\-S}}
+\index{C\-H\-U\-N\-K\-\_\-\-B\-I\-T\-S@{C\-H\-U\-N\-K\-\_\-\-B\-I\-T\-S}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{C\-H\-U\-N\-K\-\_\-\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Lowercaser\-::\-C\-H\-U\-N\-K\-\_\-\-B\-I\-T\-S = 8\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphLowercaser_aaa2c3f2701c7b2aaddc3235a63e1895e}
+\hypertarget{classCSphLowercaser_add46c69c33b10aa129e666946b329cb7}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T@{C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T}}
+\index{C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T@{C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Lowercaser\-::\-C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T = 0x300\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphLowercaser_add46c69c33b10aa129e666946b329cb7}
+\hypertarget{classCSphLowercaser_a48f851f5191a4bd4e6f9bba6bd1d90f7}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!C\-H\-U\-N\-K\-\_\-\-M\-A\-S\-K@{C\-H\-U\-N\-K\-\_\-\-M\-A\-S\-K}}
+\index{C\-H\-U\-N\-K\-\_\-\-M\-A\-S\-K@{C\-H\-U\-N\-K\-\_\-\-M\-A\-S\-K}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{C\-H\-U\-N\-K\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Lowercaser\-::\-C\-H\-U\-N\-K\-\_\-\-M\-A\-S\-K = {\bf C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E} -\/ 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphLowercaser_a48f851f5191a4bd4e6f9bba6bd1d90f7}
+\hypertarget{classCSphLowercaser_ae1d932fca473265a6dc9d48836cdb4ec}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E@{C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E}}
+\index{C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E@{C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Lowercaser\-::\-C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E = 1 $<$$<$ {\bf C\-H\-U\-N\-K\-\_\-\-B\-I\-T\-S}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphLowercaser_ae1d932fca473265a6dc9d48836cdb4ec}
+\hypertarget{classCSphLowercaser_a7d538ec8b5bb2220faa56d9b6a1032a0}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!m\-\_\-i\-Chunks@{m\-\_\-i\-Chunks}}
+\index{m\-\_\-i\-Chunks@{m\-\_\-i\-Chunks}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{m\-\_\-i\-Chunks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Lowercaser\-::m\-\_\-i\-Chunks\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphLowercaser_a7d538ec8b5bb2220faa56d9b6a1032a0}
+
+
+how much chunks are actually allocated 
+
+\hypertarget{classCSphLowercaser_adead3a3167621d8d6f10b5d2bd14ea9e}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!m\-\_\-p\-Chunk@{m\-\_\-p\-Chunk}}
+\index{m\-\_\-p\-Chunk@{m\-\_\-p\-Chunk}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{m\-\_\-p\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int}$\ast$ C\-Sph\-Lowercaser\-::m\-\_\-p\-Chunk\mbox{[}{\bf C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphLowercaser_adead3a3167621d8d6f10b5d2bd14ea9e}
+
+
+pointers to non-\/empty chunks 
+
+\hypertarget{classCSphLowercaser_a0534fc1680554432be7358d8fe374dc2}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!m\-\_\-p\-Data@{m\-\_\-p\-Data}}
+\index{m\-\_\-p\-Data@{m\-\_\-p\-Data}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{m\-\_\-p\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int}$\ast$ C\-Sph\-Lowercaser\-::m\-\_\-p\-Data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphLowercaser_a0534fc1680554432be7358d8fe374dc2}
+
+
+chunks themselves 
+
+\hypertarget{classCSphLowercaser_ae93306949e3408ffa9f31be79c42f1be}{\index{C\-Sph\-Lowercaser@{C\-Sph\-Lowercaser}!M\-A\-X\-\_\-\-C\-O\-D\-E@{M\-A\-X\-\_\-\-C\-O\-D\-E}}
+\index{M\-A\-X\-\_\-\-C\-O\-D\-E@{M\-A\-X\-\_\-\-C\-O\-D\-E}!CSphLowercaser@{C\-Sph\-Lowercaser}}
+\subsubsection[{M\-A\-X\-\_\-\-C\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Lowercaser\-::\-M\-A\-X\-\_\-\-C\-O\-D\-E = {\bf C\-H\-U\-N\-K\-\_\-\-C\-O\-U\-N\-T} $\ast$ {\bf C\-H\-U\-N\-K\-\_\-\-S\-I\-Z\-E}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphLowercaser_ae93306949e3408ffa9f31be79c42f1be}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

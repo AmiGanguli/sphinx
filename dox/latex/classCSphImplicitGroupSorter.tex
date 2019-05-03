@@ -1,0 +1,323 @@
+\hypertarget{classCSphImplicitGroupSorter}{\section{C\-Sph\-Implicit\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$ Class Template Reference}
+\label{classCSphImplicitGroupSorter}\index{C\-Sph\-Implicit\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$@{C\-Sph\-Implicit\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}}
+}
+
+
+implicit group-\/by sorter  
+
+
+Inheritance diagram for C\-Sph\-Implicit\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.864197cm]{classCSphImplicitGroupSorter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphImplicitGroupSorter_a58255ca4e8724f2d629e35c295098e72}{C\-Sph\-Implicit\-Group\-Sorter} (const \hyperlink{structISphMatchComparator}{I\-Sph\-Match\-Comparator} $\ast$\hyperlink{sphinxstd_8h_aea24330ad33ca20415a6729b2e46ef2d}{D\-E\-B\-U\-G\-A\-R\-G}(p\-Comp), const \hyperlink{classCSphQuery}{C\-Sph\-Query} $\ast$, const \hyperlink{structCSphGroupSorterSettings}{C\-Sph\-Group\-Sorter\-Settings} \&t\-Settings)
+\begin{DoxyCompactList}\small\item\em ctor \end{DoxyCompactList}\item 
+\hyperlink{classCSphImplicitGroupSorter_a0777f1760f29bdea61ab722793456d02}{$\sim$\-C\-Sph\-Implicit\-Group\-Sorter} ()
+\begin{DoxyCompactList}\small\item\em dtor \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCSphImplicitGroupSorter_a16c496aefc8969c081b6b5df3e766a18}{Set\-Schema} (\hyperlink{classCSphRsetSchema}{C\-Sph\-Rset\-Schema} \&t\-Schema)
+\begin{DoxyCompactList}\small\item\em schema setup \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphImplicitGroupSorter_a4fd98d154a62d860fe57936500c1d31a}{Get\-Data\-Length} () const 
+\begin{DoxyCompactList}\small\item\em get internal buffer length \end{DoxyCompactList}\item 
+bool \hyperlink{classCSphImplicitGroupSorter_a7a122b393ee3f83749dfa9d9c658081e}{Uses\-Attrs} () const 
+\begin{DoxyCompactList}\small\item\em check if this sorter needs attr values \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphImplicitGroupSorter_a8ad408447b5a55d1bb55233f84d0ef45}{Is\-Groupby} () const 
+\begin{DoxyCompactList}\small\item\em check if this sorter does groupby \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphImplicitGroupSorter_ab0db83793cb05a1da3968026c646ae05}{Can\-Multi} () const 
+\item 
+void \hyperlink{classCSphImplicitGroupSorter_a95669fbfbe8fdc1090d00510c9fa15c9}{Set\-String\-Pool} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-String\-Base)
+\begin{DoxyCompactList}\small\item\em set string pool pointer (for string+groupby sorters) \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphImplicitGroupSorter_aca294d2d2d52efbefe8bc4d3c9a53e20}{Push} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Entry)
+\begin{DoxyCompactList}\small\item\em add entry to the queue \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCSphImplicitGroupSorter_a919aba3d5bc9cddc43686933e80f2636}{Push\-Grouped} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Entry, bool)
+\begin{DoxyCompactList}\small\item\em add grouped entry to the queue. b\-New\-Set indicates the beginning of resultset returned by an agent. \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphImplicitGroupSorter_a9aa145528cefba610499c2e6cbf89533}{Flatten} (\hyperlink{classCSphMatch}{C\-Sph\-Match} $\ast$p\-To, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Tag)
+\begin{DoxyCompactList}\small\item\em store all entries into specified location in sorted order, and remove them from queue \end{DoxyCompactList}\item 
+void \hyperlink{classCSphImplicitGroupSorter_a2d3c9a2bc785df8239a040ab7825840a}{Finalize} (\hyperlink{structISphMatchProcessor}{I\-Sph\-Match\-Processor} \&t\-Processor, bool)
+\begin{DoxyCompactList}\small\item\em finalize, perform final sort/cut as needed \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphImplicitGroupSorter_a68e334fde7c495fed2cd9b436e50d4ae}{Get\-Length} () const 
+\begin{DoxyCompactList}\small\item\em get entries count \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCSphImplicitGroupSorter_ac61c1c4f60645dc23486b2da0ec3a0e2}{Push\-Ex} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Entry, bool b\-Grouped)
+\begin{DoxyCompactList}\small\item\em add entry to the queue \end{DoxyCompactList}\item 
+void \hyperlink{classCSphImplicitGroupSorter_ac5f5701aa1688b2682202deed38567f7}{Count\-Distinct} ()
+\begin{DoxyCompactList}\small\item\em count distinct values if necessary \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphMatch}{C\-Sph\-Match} \hyperlink{classCSphImplicitGroupSorter_aefb0a158f4108e85763c58290536305a}{m\-\_\-t\-Data}
+\item 
+bool \hyperlink{classCSphImplicitGroupSorter_aae070f7e16ffe91b39d706da20c249f8}{m\-\_\-b\-Data\-Initialized}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structSphUngroupedValue__t}{Sph\-Ungrouped\-Value\-\_\-t} $>$ \hyperlink{classCSphImplicitGroupSorter_a432280b67b6af6981ec97812b1b62650}{m\-\_\-d\-Uniq}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{classIAggrFunc}{I\-Aggr\-Func} $\ast$ $>$ \hyperlink{classCSphImplicitGroupSorter_a9970bd32bde8634e4ad0839796422838}{m\-\_\-d\-Aggregates}
+\item 
+const \hyperlink{structISphFilter}{I\-Sph\-Filter} $\ast$ \hyperlink{classCSphImplicitGroupSorter_a0c09e454baa15f8a7f514b9a60e9fdac}{m\-\_\-p\-Aggr\-Filter}
+\begin{DoxyCompactList}\small\item\em aggregate filter for matches on flatten \end{DoxyCompactList}\item 
+\hyperlink{structMatchCloner__t}{Match\-Cloner\-\_\-t} \hyperlink{classCSphImplicitGroupSorter_ac201dd39488fb2367b54bf390f495085}{m\-\_\-t\-Pregroup}
+\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphImplicitGroupSorter_a496d3aad55066ee694ec4dd17508e608}{m\-\_\-p\-String\-Base}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P, bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$class C\-Sph\-Implicit\-Group\-Sorter$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$}
+
+implicit group-\/by sorter 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphImplicitGroupSorter_a58255ca4e8724f2d629e35c295098e72}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{C\-Sph\-Implicit\-Group\-Sorter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::{\bf C\-Sph\-Implicit\-Group\-Sorter} (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Match\-Comparator} $\ast$}]{D\-E\-B\-U\-G\-A\-R\-Gp\-Comp, }
+\item[{const {\bf C\-Sph\-Query} $\ast$}]{, }
+\item[{const {\bf C\-Sph\-Group\-Sorter\-Settings} \&}]{t\-Settings}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphImplicitGroupSorter_a58255ca4e8724f2d629e35c295098e72}
+
+
+ctor 
+
+\hypertarget{classCSphImplicitGroupSorter_a0777f1760f29bdea61ab722793456d02}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!$\sim$\-C\-Sph\-Implicit\-Group\-Sorter@{$\sim$\-C\-Sph\-Implicit\-Group\-Sorter}}
+\index{$\sim$\-C\-Sph\-Implicit\-Group\-Sorter@{$\sim$\-C\-Sph\-Implicit\-Group\-Sorter}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{$\sim$\-C\-Sph\-Implicit\-Group\-Sorter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::$\sim${\bf C\-Sph\-Implicit\-Group\-Sorter} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphImplicitGroupSorter_a0777f1760f29bdea61ab722793456d02}
+
+
+dtor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphImplicitGroupSorter_ab0db83793cb05a1da3968026c646ae05}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Can\-Multi@{Can\-Multi}}
+\index{Can\-Multi@{Can\-Multi}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Can\-Multi}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Can\-Multi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_ab0db83793cb05a1da3968026c646ae05}
+
+
+Implements \hyperlink{classISphMatchSorter_a5135a59708021dfa6893d7e600877f94}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphImplicitGroupSorter_ac5f5701aa1688b2682202deed38567f7}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Count\-Distinct@{Count\-Distinct}}
+\index{Count\-Distinct@{Count\-Distinct}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Count\-Distinct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ void {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Count\-Distinct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCSphImplicitGroupSorter_ac5f5701aa1688b2682202deed38567f7}
+
+
+count distinct values if necessary 
+
+\hypertarget{classCSphImplicitGroupSorter_a2d3c9a2bc785df8239a040ab7825840a}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Finalize@{Finalize}}
+\index{Finalize@{Finalize}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Finalize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ void {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Finalize (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Sph\-Match\-Processor} \&}]{t\-Processor, }
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_a2d3c9a2bc785df8239a040ab7825840a}
+
+
+finalize, perform final sort/cut as needed 
+
+
+
+Implements \hyperlink{classISphMatchSorter_acdeae07ed32a5497c3fd814ba57314fb}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphImplicitGroupSorter_a9aa145528cefba610499c2e6cbf89533}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Flatten@{Flatten}}
+\index{Flatten@{Flatten}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Flatten}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual {\bf int} {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Flatten (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Match} $\ast$}]{p\-To, }
+\item[{{\bf int}}]{i\-Tag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_a9aa145528cefba610499c2e6cbf89533}
+
+
+store all entries into specified location in sorted order, and remove them from queue 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a28951c480b6b221de739f2cbe98c1572}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphImplicitGroupSorter_a4fd98d154a62d860fe57936500c1d31a}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Get\-Data\-Length@{Get\-Data\-Length}}
+\index{Get\-Data\-Length@{Get\-Data\-Length}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Get\-Data\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf int} {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Get\-Data\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_a4fd98d154a62d860fe57936500c1d31a}
+
+
+get internal buffer length 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a9e43da1f0e20a96132a8fb6746c97e1d}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphImplicitGroupSorter_a68e334fde7c495fed2cd9b436e50d4ae}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Get\-Length@{Get\-Length}}
+\index{Get\-Length@{Get\-Length}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Get\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf int} {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Get\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_a68e334fde7c495fed2cd9b436e50d4ae}
+
+
+get entries count 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a8873597f6c8bb7eaeb7ece3d0144fc8c}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphImplicitGroupSorter_a8ad408447b5a55d1bb55233f84d0ef45}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Is\-Groupby@{Is\-Groupby}}
+\index{Is\-Groupby@{Is\-Groupby}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Is\-Groupby}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Is\-Groupby (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_a8ad408447b5a55d1bb55233f84d0ef45}
+
+
+check if this sorter does groupby 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a4597c0e4843dfa1ad2a4b1408fae6b38}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphImplicitGroupSorter_aca294d2d2d52efbefe8bc4d3c9a53e20}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Push@{Push}}
+\index{Push@{Push}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Push (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_aca294d2d2d52efbefe8bc4d3c9a53e20}
+
+
+add entry to the queue 
+
+
+
+Implements \hyperlink{classISphMatchSorter_a2b3e3dfad4c9da1c4d014dcbab585760}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphImplicitGroupSorter_ac61c1c4f60645dc23486b2da0ec3a0e2}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Push\-Ex@{Push\-Ex}}
+\index{Push\-Ex@{Push\-Ex}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Push\-Ex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ bool {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Push\-Ex (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Entry, }
+\item[{bool}]{b\-Grouped}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCSphImplicitGroupSorter_ac61c1c4f60645dc23486b2da0ec3a0e2}
+
+
+add entry to the queue 
+
+\hypertarget{classCSphImplicitGroupSorter_a919aba3d5bc9cddc43686933e80f2636}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Push\-Grouped@{Push\-Grouped}}
+\index{Push\-Grouped@{Push\-Grouped}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Push\-Grouped}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual bool {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Push\-Grouped (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Entry, }
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_a919aba3d5bc9cddc43686933e80f2636}
+
+
+add grouped entry to the queue. b\-New\-Set indicates the beginning of resultset returned by an agent. 
+
+
+
+Implements \hyperlink{classISphMatchSorter_aefd6f5b67faf49cc6d7d52bba8679fe0}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphImplicitGroupSorter_a16c496aefc8969c081b6b5df3e766a18}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Set\-Schema@{Set\-Schema}}
+\index{Set\-Schema@{Set\-Schema}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Set\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ virtual void {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Set\-Schema (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Rset\-Schema} \&}]{t\-Schema}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_a16c496aefc8969c081b6b5df3e766a18}
+
+
+schema setup 
+
+
+
+Reimplemented from \hyperlink{classISphMatchSorter_acc9b914ceca1e4fc8d254aeeb528766f}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphImplicitGroupSorter_a95669fbfbe8fdc1090d00510c9fa15c9}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Set\-String\-Pool@{Set\-String\-Pool}}
+\index{Set\-String\-Pool@{Set\-String\-Pool}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Set\-String\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ void {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Set\-String\-Pool (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-String\-Base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_a95669fbfbe8fdc1090d00510c9fa15c9}
+
+
+set string pool pointer (for string+groupby sorters) 
+
+
+
+Reimplemented from \hyperlink{classISphMatchSorter_ad972247fb04fafe4f95b8206661f64b2}{I\-Sph\-Match\-Sorter}.
+
+\hypertarget{classCSphImplicitGroupSorter_a7a122b393ee3f83749dfa9d9c658081e}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!Uses\-Attrs@{Uses\-Attrs}}
+\index{Uses\-Attrs@{Uses\-Attrs}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{Uses\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ bool {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::Uses\-Attrs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCSphImplicitGroupSorter_a7a122b393ee3f83749dfa9d9c658081e}
+
+
+check if this sorter needs attr values 
+
+
+
+Implements \hyperlink{classISphMatchSorter_ae44238460e92263e6dda7de35e24d32c}{I\-Sph\-Match\-Sorter}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphImplicitGroupSorter_aae070f7e16ffe91b39d706da20c249f8}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!m\-\_\-b\-Data\-Initialized@{m\-\_\-b\-Data\-Initialized}}
+\index{m\-\_\-b\-Data\-Initialized@{m\-\_\-b\-Data\-Initialized}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{m\-\_\-b\-Data\-Initialized}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ bool {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-b\-Data\-Initialized\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphImplicitGroupSorter_aae070f7e16ffe91b39d706da20c249f8}
+\hypertarget{classCSphImplicitGroupSorter_a9970bd32bde8634e4ad0839796422838}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!m\-\_\-d\-Aggregates@{m\-\_\-d\-Aggregates}}
+\index{m\-\_\-d\-Aggregates@{m\-\_\-d\-Aggregates}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{m\-\_\-d\-Aggregates}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf C\-Sph\-Vector}$<${\bf I\-Aggr\-Func} $\ast$$>$ {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-d\-Aggregates\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphImplicitGroupSorter_a9970bd32bde8634e4ad0839796422838}
+\hypertarget{classCSphImplicitGroupSorter_a432280b67b6af6981ec97812b1b62650}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!m\-\_\-d\-Uniq@{m\-\_\-d\-Uniq}}
+\index{m\-\_\-d\-Uniq@{m\-\_\-d\-Uniq}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{m\-\_\-d\-Uniq}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf C\-Sph\-Vector}$<${\bf Sph\-Ungrouped\-Value\-\_\-t}$>$ {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-d\-Uniq\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphImplicitGroupSorter_a432280b67b6af6981ec97812b1b62650}
+\hypertarget{classCSphImplicitGroupSorter_a0c09e454baa15f8a7f514b9a60e9fdac}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!m\-\_\-p\-Aggr\-Filter@{m\-\_\-p\-Aggr\-Filter}}
+\index{m\-\_\-p\-Aggr\-Filter@{m\-\_\-p\-Aggr\-Filter}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{m\-\_\-p\-Aggr\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ const {\bf I\-Sph\-Filter}$\ast$ {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-p\-Aggr\-Filter\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphImplicitGroupSorter_a0c09e454baa15f8a7f514b9a60e9fdac}
+
+
+aggregate filter for matches on flatten 
+
+\hypertarget{classCSphImplicitGroupSorter_a496d3aad55066ee694ec4dd17508e608}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!m\-\_\-p\-String\-Base@{m\-\_\-p\-String\-Base}}
+\index{m\-\_\-p\-String\-Base@{m\-\_\-p\-String\-Base}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{m\-\_\-p\-String\-Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ const {\bf B\-Y\-T\-E}$\ast$ {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-p\-String\-Base\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphImplicitGroupSorter_a496d3aad55066ee694ec4dd17508e608}
+\hypertarget{classCSphImplicitGroupSorter_aefb0a158f4108e85763c58290536305a}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!m\-\_\-t\-Data@{m\-\_\-t\-Data}}
+\index{m\-\_\-t\-Data@{m\-\_\-t\-Data}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{m\-\_\-t\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf C\-Sph\-Match} {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-t\-Data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphImplicitGroupSorter_aefb0a158f4108e85763c58290536305a}
+\hypertarget{classCSphImplicitGroupSorter_ac201dd39488fb2367b54bf390f495085}{\index{C\-Sph\-Implicit\-Group\-Sorter@{C\-Sph\-Implicit\-Group\-Sorter}!m\-\_\-t\-Pregroup@{m\-\_\-t\-Pregroup}}
+\index{m\-\_\-t\-Pregroup@{m\-\_\-t\-Pregroup}!CSphImplicitGroupSorter@{C\-Sph\-Implicit\-Group\-Sorter}}
+\subsubsection[{m\-\_\-t\-Pregroup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C\-O\-M\-P\-G\-R\-O\-U\-P , bool D\-I\-S\-T\-I\-N\-C\-T, bool N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S$>$ {\bf Match\-Cloner\-\_\-t} {\bf C\-Sph\-Implicit\-Group\-Sorter}$<$ C\-O\-M\-P\-G\-R\-O\-U\-P, D\-I\-S\-T\-I\-N\-C\-T, N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-S $>$\-::m\-\_\-t\-Pregroup\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphImplicitGroupSorter_ac201dd39488fb2367b54bf390f495085}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsort_8cpp}{sphinxsort.\-cpp}\end{DoxyCompactItemize}

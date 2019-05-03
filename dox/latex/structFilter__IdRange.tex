@@ -1,0 +1,74 @@
+\hypertarget{structFilter__IdRange}{\section{Filter\-\_\-\-Id\-Range$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L $>$ Struct Template Reference}
+\label{structFilter__IdRange}\index{Filter\-\_\-\-Id\-Range$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L $>$@{Filter\-\_\-\-Id\-Range$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L $>$}}
+}
+Inheritance diagram for Filter\-\_\-\-Id\-Range$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structFilter__IdRange}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{structFilter__IdRange_aeddb39a401e2eb938de4bfcaacb5b7e9}{Set\-Range} (\hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} t\-Min, \hyperlink{sphinx_8h_a7c122d91b0b52a0214ba176636bb1561}{Sph\-Attr\-\_\-t} t\-Max)
+\item 
+virtual bool \hyperlink{structFilter__IdRange_a448ac56b9b25f234858fe75c64951edb}{Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\item 
+virtual bool \hyperlink{structFilter__IdRange_a876316a2a8690b8f0c57537bc8fe2eaf}{Eval\-Block} (const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Min\-Docinfo, const \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} $\ast$p\-Max\-Docinfo) const 
+\item 
+\hyperlink{structFilter__IdRange_aebc10fa20c8411f76d75cec3e564dc1e}{Filter\-\_\-\-Id\-Range} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structFilter__IdRange_aebc10fa20c8411f76d75cec3e564dc1e}{\index{Filter\-\_\-\-Id\-Range@{Filter\-\_\-\-Id\-Range}!Filter\-\_\-\-Id\-Range@{Filter\-\_\-\-Id\-Range}}
+\index{Filter\-\_\-\-Id\-Range@{Filter\-\_\-\-Id\-Range}!Filter_IdRange@{Filter\-\_\-\-Id\-Range}}
+\subsubsection[{Filter\-\_\-\-Id\-Range}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool H\-A\-S\-\_\-\-E\-Q\-U\-A\-L$>$ {\bf Filter\-\_\-\-Id\-Range}$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L $>$\-::{\bf Filter\-\_\-\-Id\-Range} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFilter__IdRange_aebc10fa20c8411f76d75cec3e564dc1e}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structFilter__IdRange_a448ac56b9b25f234858fe75c64951edb}{\index{Filter\-\_\-\-Id\-Range@{Filter\-\_\-\-Id\-Range}!Eval@{Eval}}
+\index{Eval@{Eval}!Filter_IdRange@{Filter\-\_\-\-Id\-Range}}
+\subsubsection[{Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool H\-A\-S\-\_\-\-E\-Q\-U\-A\-L$>$ virtual bool {\bf Filter\-\_\-\-Id\-Range}$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L $>$\-::Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structFilter__IdRange_a448ac56b9b25f234858fe75c64951edb}
+evaluate filter for a given match returns true if match satisfies the filter critertia (i.\-e. in range, found in values list etc) 
+
+Implements \hyperlink{structISphFilter_a6f3cedb0fa449a85d6010220a635bc74}{I\-Sph\-Filter}.
+
+\hypertarget{structFilter__IdRange_a876316a2a8690b8f0c57537bc8fe2eaf}{\index{Filter\-\_\-\-Id\-Range@{Filter\-\_\-\-Id\-Range}!Eval\-Block@{Eval\-Block}}
+\index{Eval\-Block@{Eval\-Block}!Filter_IdRange@{Filter\-\_\-\-Id\-Range}}
+\subsubsection[{Eval\-Block}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool H\-A\-S\-\_\-\-E\-Q\-U\-A\-L$>$ virtual bool {\bf Filter\-\_\-\-Id\-Range}$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L $>$\-::Eval\-Block (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{, }
+\item[{const {\bf D\-W\-O\-R\-D} $\ast$}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structFilter__IdRange_a876316a2a8690b8f0c57537bc8fe2eaf}
+evaluate filter for a given block args are p\-Min\-Docinfo and p\-Max\-Docinfo returns false if no document in block can possibly pass through the filter 
+
+Reimplemented from \hyperlink{structISphFilter_afcf90a09873d705368712286bff19c10}{I\-Sph\-Filter}.
+
+\hypertarget{structFilter__IdRange_aeddb39a401e2eb938de4bfcaacb5b7e9}{\index{Filter\-\_\-\-Id\-Range@{Filter\-\_\-\-Id\-Range}!Set\-Range@{Set\-Range}}
+\index{Set\-Range@{Set\-Range}!Filter_IdRange@{Filter\-\_\-\-Id\-Range}}
+\subsubsection[{Set\-Range}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool H\-A\-S\-\_\-\-E\-Q\-U\-A\-L$>$ virtual void {\bf Filter\-\_\-\-Id\-Range}$<$ H\-A\-S\-\_\-\-E\-Q\-U\-A\-L $>$\-::Set\-Range (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Attr\-\_\-t}}]{t\-Min, }
+\item[{{\bf Sph\-Attr\-\_\-t}}]{t\-Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structFilter__IdRange_aeddb39a401e2eb938de4bfcaacb5b7e9}
+
+
+Reimplemented from \hyperlink{structIFilter__Range_ae6e0b50a2151743ee3839f520245399d}{I\-Filter\-\_\-\-Range}.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxfilter_8cpp}{sphinxfilter.\-cpp}\end{DoxyCompactItemize}

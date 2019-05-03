@@ -1,0 +1,120 @@
+\hypertarget{classDocStartHighlighter__c}{\section{Doc\-Start\-Highlighter\-\_\-c Class Reference}
+\label{classDocStartHighlighter__c}\index{Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}}
+}
+
+
+functor that highlights the start of the document  
+
+
+Inheritance diagram for Doc\-Start\-Highlighter\-\_\-c\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classDocStartHighlighter__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDocStartHighlighter__c_afd69871156aa9081fd29bc9ee93b48de}{Doc\-Start\-Highlighter\-\_\-c} (\hyperlink{classSnippetsDocIndex__c}{Snippets\-Doc\-Index\-\_\-c} \&t\-Container, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, const \hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t} \&t\-Query, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Settings\-Index, const char $\ast$s\-Doc, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Doc\-Len)
+\item 
+bool \hyperlink{classDocStartHighlighter__c_a8fddb562026ed564c52f80acd4ce40c6}{On\-Token} (const \hyperlink{structTokenInfo__t}{Token\-Info\-\_\-t} \&t\-Tok, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} $>$ \&, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ $\ast$)
+\item 
+bool \hyperlink{classDocStartHighlighter__c_ae60e3b937a707c59ee72501edb7a75b6}{On\-Overlap} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\item 
+void \hyperlink{classDocStartHighlighter__c_a0b69de94a9cd60274db8ba69a2fcbf22}{On\-Tail} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\item 
+void \hyperlink{classDocStartHighlighter__c_a8fd3c19a2ace0a2685e794f250456b98}{On\-Skip\-Html} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int}, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\item 
+void \hyperlink{classDocStartHighlighter__c_a28233931c0afbc819a1b3dee2e32726f}{On\-S\-P\-Z} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E}, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D}, const char $\ast$, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int})
+\item 
+void \hyperlink{classDocStartHighlighter__c_a1db75b85f5bafe580cc843e265441392}{On\-Finish} ()
+\item 
+const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ $\ast$ \hyperlink{classDocStartHighlighter__c_ad331c85339a49eeb8074c6e5bcb9e36d}{Get\-Hitlist} (const \hyperlink{structXQKeyword__t}{X\-Q\-Keyword\-\_\-t} \&) const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+functor that highlights the start of the document 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDocStartHighlighter__c_afd69871156aa9081fd29bc9ee93b48de}{\index{Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}!Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}}
+\index{Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}!DocStartHighlighter_c@{Doc\-Start\-Highlighter\-\_\-c}}
+\subsubsection[{Doc\-Start\-Highlighter\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Doc\-Start\-Highlighter\-\_\-c\-::\-Doc\-Start\-Highlighter\-\_\-c (
+\begin{DoxyParamCaption}
+\item[{{\bf Snippets\-Doc\-Index\-\_\-c} \&}]{t\-Container, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{const {\bf Excerpt\-Query\-\_\-t} \&}]{t\-Query, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Settings\-Index, }
+\item[{const char $\ast$}]{s\-Doc, }
+\item[{{\bf int}}]{i\-Doc\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDocStartHighlighter__c_afd69871156aa9081fd29bc9ee93b48de}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDocStartHighlighter__c_ad331c85339a49eeb8074c6e5bcb9e36d}{\index{Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}!Get\-Hitlist@{Get\-Hitlist}}
+\index{Get\-Hitlist@{Get\-Hitlist}!DocStartHighlighter_c@{Doc\-Start\-Highlighter\-\_\-c}}
+\subsubsection[{Get\-Hitlist}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sph\-Vector}$<${\bf int}$>$$\ast$ Doc\-Start\-Highlighter\-\_\-c\-::\-Get\-Hitlist (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\-Q\-Keyword\-\_\-t} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDocStartHighlighter__c_ad331c85339a49eeb8074c6e5bcb9e36d}
+\hypertarget{classDocStartHighlighter__c_a1db75b85f5bafe580cc843e265441392}{\index{Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}!On\-Finish@{On\-Finish}}
+\index{On\-Finish@{On\-Finish}!DocStartHighlighter_c@{Doc\-Start\-Highlighter\-\_\-c}}
+\subsubsection[{On\-Finish}]{\setlength{\rightskip}{0pt plus 5cm}void Doc\-Start\-Highlighter\-\_\-c\-::\-On\-Finish (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDocStartHighlighter__c_a1db75b85f5bafe580cc843e265441392}
+\hypertarget{classDocStartHighlighter__c_ae60e3b937a707c59ee72501edb7a75b6}{\index{Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}!On\-Overlap@{On\-Overlap}}
+\index{On\-Overlap@{On\-Overlap}!DocStartHighlighter_c@{Doc\-Start\-Highlighter\-\_\-c}}
+\subsubsection[{On\-Overlap}]{\setlength{\rightskip}{0pt plus 5cm}bool Doc\-Start\-Highlighter\-\_\-c\-::\-On\-Overlap (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf int}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDocStartHighlighter__c_ae60e3b937a707c59ee72501edb7a75b6}
+\hypertarget{classDocStartHighlighter__c_a8fd3c19a2ace0a2685e794f250456b98}{\index{Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}!On\-Skip\-Html@{On\-Skip\-Html}}
+\index{On\-Skip\-Html@{On\-Skip\-Html}!DocStartHighlighter_c@{Doc\-Start\-Highlighter\-\_\-c}}
+\subsubsection[{On\-Skip\-Html}]{\setlength{\rightskip}{0pt plus 5cm}void Doc\-Start\-Highlighter\-\_\-c\-::\-On\-Skip\-Html (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{, }
+\item[{{\bf int}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDocStartHighlighter__c_a8fd3c19a2ace0a2685e794f250456b98}
+\hypertarget{classDocStartHighlighter__c_a28233931c0afbc819a1b3dee2e32726f}{\index{Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}!On\-S\-P\-Z@{On\-S\-P\-Z}}
+\index{On\-S\-P\-Z@{On\-S\-P\-Z}!DocStartHighlighter_c@{Doc\-Start\-Highlighter\-\_\-c}}
+\subsubsection[{On\-S\-P\-Z}]{\setlength{\rightskip}{0pt plus 5cm}void Doc\-Start\-Highlighter\-\_\-c\-::\-On\-S\-P\-Z (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{, }
+\item[{{\bf D\-W\-O\-R\-D}}]{, }
+\item[{const char $\ast$}]{, }
+\item[{{\bf int}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDocStartHighlighter__c_a28233931c0afbc819a1b3dee2e32726f}
+\hypertarget{classDocStartHighlighter__c_a0b69de94a9cd60274db8ba69a2fcbf22}{\index{Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}!On\-Tail@{On\-Tail}}
+\index{On\-Tail@{On\-Tail}!DocStartHighlighter_c@{Doc\-Start\-Highlighter\-\_\-c}}
+\subsubsection[{On\-Tail}]{\setlength{\rightskip}{0pt plus 5cm}void Doc\-Start\-Highlighter\-\_\-c\-::\-On\-Tail (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf int}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDocStartHighlighter__c_a0b69de94a9cd60274db8ba69a2fcbf22}
+\hypertarget{classDocStartHighlighter__c_a8fddb562026ed564c52f80acd4ce40c6}{\index{Doc\-Start\-Highlighter\-\_\-c@{Doc\-Start\-Highlighter\-\_\-c}!On\-Token@{On\-Token}}
+\index{On\-Token@{On\-Token}!DocStartHighlighter_c@{Doc\-Start\-Highlighter\-\_\-c}}
+\subsubsection[{On\-Token}]{\setlength{\rightskip}{0pt plus 5cm}bool Doc\-Start\-Highlighter\-\_\-c\-::\-On\-Token (
+\begin{DoxyParamCaption}
+\item[{const {\bf Token\-Info\-\_\-t} \&}]{t\-Tok, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Word\-I\-D\-\_\-t} $>$ \&}]{, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf int} $>$ $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDocStartHighlighter__c_a8fddb562026ed564c52f80acd4ce40c6}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexcerpt_8cpp}{sphinxexcerpt.\-cpp}\end{DoxyCompactItemize}

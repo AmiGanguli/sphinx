@@ -1,0 +1,108 @@
+\hypertarget{classExpr__Interval__c}{\section{Expr\-\_\-\-Interval\-\_\-c$<$ T $>$ Class Template Reference}
+\label{classExpr__Interval__c}\index{Expr\-\_\-\-Interval\-\_\-c$<$ T $>$@{Expr\-\_\-\-Interval\-\_\-c$<$ T $>$}}
+}
+
+
+generic I\-N\-T\-E\-R\-V\-A\-L() evaluator  
+
+
+Inheritance diagram for Expr\-\_\-\-Interval\-\_\-c$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classExpr__Interval__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExpr__Interval__c_afdd2a879a0163df7c08b3c7de47c9c3a}{Expr\-\_\-\-Interval\-\_\-c} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ $>$ \&d\-Args)
+\begin{DoxyCompactList}\small\item\em take ownership of arg and turn points \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExpr__Interval__c_a27b92e95e340908a74d5d5ab641bb331}{Int\-Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\begin{DoxyCompactList}\small\item\em evaluate arg, return interval id \end{DoxyCompactList}\item 
+virtual void \hyperlink{classExpr__Interval__c_a84ded4e897c046d2ea7caa08c5b411ca}{Command} (\hyperlink{sphinxexpr_8h_a30be184fb07bd80c271360fc6094c818}{E\-Sph\-Expr\-Command} e\-Cmd, void $\ast$p\-Arg)
+\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classExpr__Interval__c_ad45d2ec2a0ff4e7a82657592deee2ac1}{Get\-Hash} (const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Prev\-Hash, bool \&b\-Disable)
+\begin{DoxyCompactList}\small\item\em get expression hash (for query cache) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ $>$ \hyperlink{classExpr__Interval__c_a8cf3e04bb243699df03f713697f1b7e1}{m\-\_\-d\-Turn\-Points}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Expr\-\_\-\-Interval\-\_\-c$<$ T $>$}
+
+generic I\-N\-T\-E\-R\-V\-A\-L() evaluator 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExpr__Interval__c_afdd2a879a0163df7c08b3c7de47c9c3a}{\index{Expr\-\_\-\-Interval\-\_\-c@{Expr\-\_\-\-Interval\-\_\-c}!Expr\-\_\-\-Interval\-\_\-c@{Expr\-\_\-\-Interval\-\_\-c}}
+\index{Expr\-\_\-\-Interval\-\_\-c@{Expr\-\_\-\-Interval\-\_\-c}!Expr_Interval_c@{Expr\-\_\-\-Interval\-\_\-c}}
+\subsubsection[{Expr\-\_\-\-Interval\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Expr\-\_\-\-Interval\-\_\-c}$<$ T $>$\-::{\bf Expr\-\_\-\-Interval\-\_\-c} (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf I\-Sph\-Expr} $\ast$ $>$ \&}]{d\-Args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classExpr__Interval__c_afdd2a879a0163df7c08b3c7de47c9c3a}
+
+
+take ownership of arg and turn points 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExpr__Interval__c_a84ded4e897c046d2ea7caa08c5b411ca}{\index{Expr\-\_\-\-Interval\-\_\-c@{Expr\-\_\-\-Interval\-\_\-c}!Command@{Command}}
+\index{Command@{Command}!Expr_Interval_c@{Expr\-\_\-\-Interval\-\_\-c}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual void {\bf Expr\-\_\-\-Interval\-\_\-c}$<$ T $>$\-::Command (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Expr\-Command}}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__Interval__c_a84ded4e897c046d2ea7caa08c5b411ca}
+run a tree wide action (1st arg is an action, 2nd is its parameter) usually sets something into \hyperlink{structISphExpr}{I\-Sph\-Expr} like string pool or gets something from it like dependent columns 
+
+Reimplemented from \hyperlink{classExpr__ArgVsSet__c_a0791a9c7034cadf422380864e1c1b8ab}{Expr\-\_\-\-Arg\-Vs\-Set\-\_\-c$<$ T $>$}.
+
+\hypertarget{classExpr__Interval__c_ad45d2ec2a0ff4e7a82657592deee2ac1}{\index{Expr\-\_\-\-Interval\-\_\-c@{Expr\-\_\-\-Interval\-\_\-c}!Get\-Hash@{Get\-Hash}}
+\index{Get\-Hash@{Get\-Hash}!Expr_Interval_c@{Expr\-\_\-\-Interval\-\_\-c}}
+\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf uint64\-\_\-t} {\bf Expr\-\_\-\-Interval\-\_\-c}$<$ T $>$\-::Get\-Hash (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Prev\-Hash, }
+\item[{bool \&}]{b\-Disable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__Interval__c_ad45d2ec2a0ff4e7a82657592deee2ac1}
+
+
+get expression hash (for query cache) 
+
+
+
+Implements \hyperlink{structISphExpr_aabc4c95ac6f190f6ebb15fabd7e54b08}{I\-Sph\-Expr}.
+
+\hypertarget{classExpr__Interval__c_a27b92e95e340908a74d5d5ab641bb331}{\index{Expr\-\_\-\-Interval\-\_\-c@{Expr\-\_\-\-Interval\-\_\-c}!Int\-Eval@{Int\-Eval}}
+\index{Int\-Eval@{Int\-Eval}!Expr_Interval_c@{Expr\-\_\-\-Interval\-\_\-c}}
+\subsubsection[{Int\-Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf int} {\bf Expr\-\_\-\-Interval\-\_\-c}$<$ T $>$\-::Int\-Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__Interval__c_a27b92e95e340908a74d5d5ab641bb331}
+
+
+evaluate arg, return interval id 
+
+
+
+Implements \hyperlink{classExpr__ArgVsSet__c_a2b37f6f558473937dff6330f7cff7897}{Expr\-\_\-\-Arg\-Vs\-Set\-\_\-c$<$ T $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExpr__Interval__c_a8cf3e04bb243699df03f713697f1b7e1}{\index{Expr\-\_\-\-Interval\-\_\-c@{Expr\-\_\-\-Interval\-\_\-c}!m\-\_\-d\-Turn\-Points@{m\-\_\-d\-Turn\-Points}}
+\index{m\-\_\-d\-Turn\-Points@{m\-\_\-d\-Turn\-Points}!Expr_Interval_c@{Expr\-\_\-\-Interval\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Turn\-Points}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf C\-Sph\-Vector}$<${\bf I\-Sph\-Expr} $\ast$$>$ {\bf Expr\-\_\-\-Interval\-\_\-c}$<$ T $>$\-::m\-\_\-d\-Turn\-Points\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExpr__Interval__c_a8cf3e04bb243699df03f713697f1b7e1}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexpr_8cpp}{sphinxexpr.\-cpp}\end{DoxyCompactItemize}

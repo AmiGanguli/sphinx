@@ -1,0 +1,152 @@
+\hypertarget{classExpr__Bitdot__c}{\section{Expr\-\_\-\-Bitdot\-\_\-c$<$ T $>$ Class Template Reference}
+\label{classExpr__Bitdot__c}\index{Expr\-\_\-\-Bitdot\-\_\-c$<$ T $>$@{Expr\-\_\-\-Bitdot\-\_\-c$<$ T $>$}}
+}
+Inheritance diagram for Expr\-\_\-\-Bitdot\-\_\-c$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classExpr__Bitdot__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExpr__Bitdot__c_a9d6e538a4237b0f0a7f2a38529f149b2}{Expr\-\_\-\-Bitdot\-\_\-c} (const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ $>$ \&d\-Args)
+\begin{DoxyCompactList}\small\item\em take ownership of arg and turn points \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classExpr__Bitdot__c_acb3ba1eb4982b7fc9169c3b25f1a8939}{Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\begin{DoxyCompactList}\small\item\em evaluate this expression for that match \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classExpr__Bitdot__c_ad2c965e369c5bd7e3d27a2b5a399f8b8}{Int\-Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\begin{DoxyCompactList}\small\item\em evaluate this expression for that match, using int math \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classExpr__Bitdot__c_a0e902529926cba4c0a7f1ff6b7a67308}{Int64\-Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\begin{DoxyCompactList}\small\item\em evaluate this expression for that match, using int64 math \end{DoxyCompactList}\item 
+virtual void \hyperlink{classExpr__Bitdot__c_a87ca4168447a76d7bd41edaf599bae49}{Command} (\hyperlink{sphinxexpr_8h_a30be184fb07bd80c271360fc6094c818}{E\-Sph\-Expr\-Command} e\-Cmd, void $\ast$p\-Arg)
+\item 
+virtual \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{classExpr__Bitdot__c_a2f0d69c447cd9c5fe5980af9c4f9940c}{Get\-Hash} (const \hyperlink{classISphSchema}{I\-Sph\-Schema} \&t\-Sorter\-Schema, \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} u\-Prev\-Hash, bool \&b\-Disable)
+\begin{DoxyCompactList}\small\item\em get expression hash (for query cache) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual T \hyperlink{classExpr__Bitdot__c_aed576cbb46e0aab9001c349d18a1eb39}{Do\-Eval} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&t\-Match) const 
+\begin{DoxyCompactList}\small\item\em generic evaluate \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ $>$ \hyperlink{classExpr__Bitdot__c_a6064486a5ceb303e762cf34c5d5a2abb}{m\-\_\-d\-Bit\-Weights}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Expr\-\_\-\-Bitdot\-\_\-c$<$ T $>$}
+
+generic B\-I\-T\-D\-O\-T() evaluator first argument is a bit mask and the rest ones are bit weights function returns sum of bits multiplied by their weights B\-I\-T\-D\-O\-T(5, 11, 33, 55) =$>$ 1$\ast$11 + 0$\ast$33 + 1$\ast$55 = 66 B\-I\-T\-D\-O\-T(4, 11, 33, 55) =$>$ 0$\ast$11 + 0$\ast$33 + 1$\ast$55 = 55 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExpr__Bitdot__c_a9d6e538a4237b0f0a7f2a38529f149b2}{\index{Expr\-\_\-\-Bitdot\-\_\-c@{Expr\-\_\-\-Bitdot\-\_\-c}!Expr\-\_\-\-Bitdot\-\_\-c@{Expr\-\_\-\-Bitdot\-\_\-c}}
+\index{Expr\-\_\-\-Bitdot\-\_\-c@{Expr\-\_\-\-Bitdot\-\_\-c}!Expr_Bitdot_c@{Expr\-\_\-\-Bitdot\-\_\-c}}
+\subsubsection[{Expr\-\_\-\-Bitdot\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Expr\-\_\-\-Bitdot\-\_\-c}$<$ T $>$\-::{\bf Expr\-\_\-\-Bitdot\-\_\-c} (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf I\-Sph\-Expr} $\ast$ $>$ \&}]{d\-Args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classExpr__Bitdot__c_a9d6e538a4237b0f0a7f2a38529f149b2}
+
+
+take ownership of arg and turn points 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExpr__Bitdot__c_a87ca4168447a76d7bd41edaf599bae49}{\index{Expr\-\_\-\-Bitdot\-\_\-c@{Expr\-\_\-\-Bitdot\-\_\-c}!Command@{Command}}
+\index{Command@{Command}!Expr_Bitdot_c@{Expr\-\_\-\-Bitdot\-\_\-c}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual void {\bf Expr\-\_\-\-Bitdot\-\_\-c}$<$ T $>$\-::Command (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Expr\-Command}}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__Bitdot__c_a87ca4168447a76d7bd41edaf599bae49}
+run a tree wide action (1st arg is an action, 2nd is its parameter) usually sets something into \hyperlink{structISphExpr}{I\-Sph\-Expr} like string pool or gets something from it like dependent columns 
+
+Reimplemented from \hyperlink{classExpr__ArgVsSet__c_a0791a9c7034cadf422380864e1c1b8ab}{Expr\-\_\-\-Arg\-Vs\-Set\-\_\-c$<$ T $>$}.
+
+\hypertarget{classExpr__Bitdot__c_aed576cbb46e0aab9001c349d18a1eb39}{\index{Expr\-\_\-\-Bitdot\-\_\-c@{Expr\-\_\-\-Bitdot\-\_\-c}!Do\-Eval@{Do\-Eval}}
+\index{Do\-Eval@{Do\-Eval}!Expr_Bitdot_c@{Expr\-\_\-\-Bitdot\-\_\-c}}
+\subsubsection[{Do\-Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual T {\bf Expr\-\_\-\-Bitdot\-\_\-c}$<$ T $>$\-::Do\-Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classExpr__Bitdot__c_aed576cbb46e0aab9001c349d18a1eb39}
+
+
+generic evaluate 
+
+\hypertarget{classExpr__Bitdot__c_acb3ba1eb4982b7fc9169c3b25f1a8939}{\index{Expr\-\_\-\-Bitdot\-\_\-c@{Expr\-\_\-\-Bitdot\-\_\-c}!Eval@{Eval}}
+\index{Eval@{Eval}!Expr_Bitdot_c@{Expr\-\_\-\-Bitdot\-\_\-c}}
+\subsubsection[{Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf float} {\bf Expr\-\_\-\-Bitdot\-\_\-c}$<$ T $>$\-::Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__Bitdot__c_acb3ba1eb4982b7fc9169c3b25f1a8939}
+
+
+evaluate this expression for that match 
+
+
+
+Reimplemented from \hyperlink{classExpr__ArgVsSet__c_a070a899449a4b8b4e95e5c229fe7576f}{Expr\-\_\-\-Arg\-Vs\-Set\-\_\-c$<$ T $>$}.
+
+\hypertarget{classExpr__Bitdot__c_a2f0d69c447cd9c5fe5980af9c4f9940c}{\index{Expr\-\_\-\-Bitdot\-\_\-c@{Expr\-\_\-\-Bitdot\-\_\-c}!Get\-Hash@{Get\-Hash}}
+\index{Get\-Hash@{Get\-Hash}!Expr_Bitdot_c@{Expr\-\_\-\-Bitdot\-\_\-c}}
+\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf uint64\-\_\-t} {\bf Expr\-\_\-\-Bitdot\-\_\-c}$<$ T $>$\-::Get\-Hash (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-Sph\-Schema} \&}]{t\-Sorter\-Schema, }
+\item[{{\bf uint64\-\_\-t}}]{u\-Prev\-Hash, }
+\item[{bool \&}]{b\-Disable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__Bitdot__c_a2f0d69c447cd9c5fe5980af9c4f9940c}
+
+
+get expression hash (for query cache) 
+
+
+
+Implements \hyperlink{structISphExpr_aabc4c95ac6f190f6ebb15fabd7e54b08}{I\-Sph\-Expr}.
+
+\hypertarget{classExpr__Bitdot__c_a0e902529926cba4c0a7f1ff6b7a67308}{\index{Expr\-\_\-\-Bitdot\-\_\-c@{Expr\-\_\-\-Bitdot\-\_\-c}!Int64\-Eval@{Int64\-Eval}}
+\index{Int64\-Eval@{Int64\-Eval}!Expr_Bitdot_c@{Expr\-\_\-\-Bitdot\-\_\-c}}
+\subsubsection[{Int64\-Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf int64\-\_\-t} {\bf Expr\-\_\-\-Bitdot\-\_\-c}$<$ T $>$\-::Int64\-Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__Bitdot__c_a0e902529926cba4c0a7f1ff6b7a67308}
+
+
+evaluate this expression for that match, using int64 math 
+
+
+
+Reimplemented from \hyperlink{classExpr__ArgVsSet__c_a0163c31015aadea5403a4c5b01e229e7}{Expr\-\_\-\-Arg\-Vs\-Set\-\_\-c$<$ T $>$}.
+
+\hypertarget{classExpr__Bitdot__c_ad2c965e369c5bd7e3d27a2b5a399f8b8}{\index{Expr\-\_\-\-Bitdot\-\_\-c@{Expr\-\_\-\-Bitdot\-\_\-c}!Int\-Eval@{Int\-Eval}}
+\index{Int\-Eval@{Int\-Eval}!Expr_Bitdot_c@{Expr\-\_\-\-Bitdot\-\_\-c}}
+\subsubsection[{Int\-Eval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf int} {\bf Expr\-\_\-\-Bitdot\-\_\-c}$<$ T $>$\-::Int\-Eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{t\-Match}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classExpr__Bitdot__c_ad2c965e369c5bd7e3d27a2b5a399f8b8}
+
+
+evaluate this expression for that match, using int math 
+
+
+
+Implements \hyperlink{classExpr__ArgVsSet__c_a2b37f6f558473937dff6330f7cff7897}{Expr\-\_\-\-Arg\-Vs\-Set\-\_\-c$<$ T $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExpr__Bitdot__c_a6064486a5ceb303e762cf34c5d5a2abb}{\index{Expr\-\_\-\-Bitdot\-\_\-c@{Expr\-\_\-\-Bitdot\-\_\-c}!m\-\_\-d\-Bit\-Weights@{m\-\_\-d\-Bit\-Weights}}
+\index{m\-\_\-d\-Bit\-Weights@{m\-\_\-d\-Bit\-Weights}!Expr_Bitdot_c@{Expr\-\_\-\-Bitdot\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Bit\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf C\-Sph\-Vector}$<${\bf I\-Sph\-Expr} $\ast$$>$ {\bf Expr\-\_\-\-Bitdot\-\_\-c}$<$ T $>$\-::m\-\_\-d\-Bit\-Weights\hspace{0.3cm}{\ttfamily [protected]}}}\label{classExpr__Bitdot__c_a6064486a5ceb303e762cf34c5d5a2abb}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxexpr_8cpp}{sphinxexpr.\-cpp}\end{DoxyCompactItemize}

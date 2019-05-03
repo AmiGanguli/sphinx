@@ -1,0 +1,103 @@
+\hypertarget{classCSphSemaphore}{\section{C\-Sph\-Semaphore Class Reference}
+\label{classCSphSemaphore}\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}}
+}
+
+
+{\ttfamily \#include $<$sphinxstd.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Semaphore\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCSphSemaphore}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphSemaphore_ae4a697d569766c707760d04249a275e3}{C\-Sph\-Semaphore} ()
+\item 
+\hyperlink{classCSphSemaphore_a9f371c9147e4eecf165def527e37c36b}{$\sim$\-C\-Sph\-Semaphore} ()
+\item 
+bool \hyperlink{classCSphSemaphore_a6d521424fd4a9944d4c6596d429edae0}{Init} (const char $\ast$s\-Name=N\-U\-L\-L)
+\item 
+bool \hyperlink{classCSphSemaphore_aade3a4d0f9ac76774749d7a5b2215075}{Done} ()
+\item 
+void \hyperlink{classCSphSemaphore_ae95fc54cc280e6c65dd70e217fb2adf2}{Post} ()
+\item 
+bool \hyperlink{classCSphSemaphore_a3a8d977bf51848e2fc790f80a3bf404c}{Wait} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCSphSemaphore_ac11c8343b8e40ad79df4ee44fa16a457}{m\-\_\-b\-Initialized}
+\item 
+sem\-\_\-t $\ast$ \hyperlink{classCSphSemaphore_a98492f0e838ab3d069ae81de77cb1e3c}{m\-\_\-p\-Sem}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{classCSphSemaphore_ac52319af197003fba722956df74f0ab9}{m\-\_\-s\-Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphSemaphore_ae4a697d569766c707760d04249a275e3}{\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}!C\-Sph\-Semaphore@{C\-Sph\-Semaphore}}
+\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}!CSphSemaphore@{C\-Sph\-Semaphore}}
+\subsubsection[{C\-Sph\-Semaphore}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Semaphore\-::\-C\-Sph\-Semaphore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphSemaphore_ae4a697d569766c707760d04249a275e3}
+\hypertarget{classCSphSemaphore_a9f371c9147e4eecf165def527e37c36b}{\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}!$\sim$\-C\-Sph\-Semaphore@{$\sim$\-C\-Sph\-Semaphore}}
+\index{$\sim$\-C\-Sph\-Semaphore@{$\sim$\-C\-Sph\-Semaphore}!CSphSemaphore@{C\-Sph\-Semaphore}}
+\subsubsection[{$\sim$\-C\-Sph\-Semaphore}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Semaphore\-::$\sim$\-C\-Sph\-Semaphore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphSemaphore_a9f371c9147e4eecf165def527e37c36b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphSemaphore_aade3a4d0f9ac76774749d7a5b2215075}{\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}!Done@{Done}}
+\index{Done@{Done}!CSphSemaphore@{C\-Sph\-Semaphore}}
+\subsubsection[{Done}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Semaphore\-::\-Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphSemaphore_aade3a4d0f9ac76774749d7a5b2215075}
+\hypertarget{classCSphSemaphore_a6d521424fd4a9944d4c6596d429edae0}{\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}!Init@{Init}}
+\index{Init@{Init}!CSphSemaphore@{C\-Sph\-Semaphore}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Semaphore\-::\-Init (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classCSphSemaphore_a6d521424fd4a9944d4c6596d429edae0}
+\hypertarget{classCSphSemaphore_ae95fc54cc280e6c65dd70e217fb2adf2}{\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}!Post@{Post}}
+\index{Post@{Post}!CSphSemaphore@{C\-Sph\-Semaphore}}
+\subsubsection[{Post}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Semaphore\-::\-Post (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphSemaphore_ae95fc54cc280e6c65dd70e217fb2adf2}
+\hypertarget{classCSphSemaphore_a3a8d977bf51848e2fc790f80a3bf404c}{\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}!Wait@{Wait}}
+\index{Wait@{Wait}!CSphSemaphore@{C\-Sph\-Semaphore}}
+\subsubsection[{Wait}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Semaphore\-::\-Wait (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphSemaphore_a3a8d977bf51848e2fc790f80a3bf404c}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphSemaphore_ac11c8343b8e40ad79df4ee44fa16a457}{\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}!m\-\_\-b\-Initialized@{m\-\_\-b\-Initialized}}
+\index{m\-\_\-b\-Initialized@{m\-\_\-b\-Initialized}!CSphSemaphore@{C\-Sph\-Semaphore}}
+\subsubsection[{m\-\_\-b\-Initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Semaphore\-::m\-\_\-b\-Initialized\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSemaphore_ac11c8343b8e40ad79df4ee44fa16a457}
+\hypertarget{classCSphSemaphore_a98492f0e838ab3d069ae81de77cb1e3c}{\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}!m\-\_\-p\-Sem@{m\-\_\-p\-Sem}}
+\index{m\-\_\-p\-Sem@{m\-\_\-p\-Sem}!CSphSemaphore@{C\-Sph\-Semaphore}}
+\subsubsection[{m\-\_\-p\-Sem}]{\setlength{\rightskip}{0pt plus 5cm}sem\-\_\-t$\ast$ C\-Sph\-Semaphore\-::m\-\_\-p\-Sem\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSemaphore_a98492f0e838ab3d069ae81de77cb1e3c}
+\hypertarget{classCSphSemaphore_ac52319af197003fba722956df74f0ab9}{\index{C\-Sph\-Semaphore@{C\-Sph\-Semaphore}!m\-\_\-s\-Name@{m\-\_\-s\-Name}}
+\index{m\-\_\-s\-Name@{m\-\_\-s\-Name}!CSphSemaphore@{C\-Sph\-Semaphore}}
+\subsubsection[{m\-\_\-s\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Semaphore\-::m\-\_\-s\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphSemaphore_ac52319af197003fba722956df74f0ab9}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxstd_8h}{sphinxstd.\-h}\item 
+src/\hyperlink{sphinxstd_8cpp}{sphinxstd.\-cpp}\end{DoxyCompactItemize}

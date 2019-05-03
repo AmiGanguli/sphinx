@@ -1,0 +1,382 @@
+\hypertarget{sphinxexcerpt_8cpp}{\section{src/sphinxexcerpt.cpp File Reference}
+\label{sphinxexcerpt_8cpp}\index{src/sphinxexcerpt.\-cpp@{src/sphinxexcerpt.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxexcerpt.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxsearch.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxquery.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDocQueryZonePair__t}{Doc\-Query\-Zone\-Pair\-\_\-t}
+\item 
+class \hyperlink{classSnippetZoneChecker__c}{Snippet\-Zone\-Checker\-\_\-c}
+\begin{DoxyCompactList}\small\item\em hit-\/in-\/zone check implementation for the matching engine \end{DoxyCompactList}\item 
+struct \hyperlink{structSnippetZoneChecker__c_1_1ZoneHits__t}{Snippet\-Zone\-Checker\-\_\-c\-::\-Zone\-Hits\-\_\-t}
+\item 
+class \hyperlink{classSnippetsDocIndex__c}{Snippets\-Doc\-Index\-\_\-c}
+\item 
+struct \hyperlink{structSnippetsDocIndex__c_1_1Keyword__t}{Snippets\-Doc\-Index\-\_\-c\-::\-Keyword\-\_\-t}
+\item 
+struct \hyperlink{structSnippetsDocIndex__c_1_1Term__t}{Snippets\-Doc\-Index\-\_\-c\-::\-Term\-\_\-t}
+\item 
+struct \hyperlink{structSnippetsDocIndex__c_1_1KeywordCmp__t}{Snippets\-Doc\-Index\-\_\-c\-::\-Keyword\-Cmp\-\_\-t}
+\item 
+struct \hyperlink{structSnippetsDocIndex__c_1_1TermCmp__t}{Snippets\-Doc\-Index\-\_\-c\-::\-Term\-Cmp\-\_\-t}
+\item 
+struct \hyperlink{structFunctorZoneInfo__t}{Functor\-Zone\-Info\-\_\-t}
+\item 
+class \hyperlink{classTokenFunctorTraits__c}{Token\-Functor\-Traits\-\_\-c}
+\begin{DoxyCompactList}\small\item\em document token processor functor traits \end{DoxyCompactList}\item 
+struct \hyperlink{structTokenInfo__t}{Token\-Info\-\_\-t}
+\item 
+class \hyperlink{classCacheStreamer__c}{Cache\-Streamer\-\_\-c}
+\begin{DoxyCompactList}\small\item\em functor that maps collected tokens into a stream \end{DoxyCompactList}\item 
+class \hyperlink{classHitCollector__c}{Hit\-Collector\-\_\-c}
+\begin{DoxyCompactList}\small\item\em functor that processes tokens and collects matching keyword hits into mini-\/index \end{DoxyCompactList}\item 
+class \hyperlink{classHighlightPlain__c}{Highlight\-Plain\-\_\-c}
+\begin{DoxyCompactList}\small\item\em functor that matches tokens against query words from mini-\/index and highlights them \end{DoxyCompactList}\item 
+class \hyperlink{classHighlightQuery__c}{Highlight\-Query\-\_\-c}
+\begin{DoxyCompactList}\small\item\em functor that matches tokens against hit positions from mini-\/index and highlights them \end{DoxyCompactList}\item 
+struct \hyperlink{structStoredExcerptToken__t}{Stored\-Excerpt\-Token\-\_\-t}
+\item 
+struct \hyperlink{structPassage__t}{Passage\-\_\-t}
+\item 
+struct \hyperlink{structPassagePositionOrder__fn}{Passage\-Position\-Order\-\_\-fn}
+\item 
+struct \hyperlink{structSpanToken__t}{Span\-Token\-\_\-t}
+\item 
+struct \hyperlink{structSpace__t}{Space\-\_\-t}
+\item 
+struct \hyperlink{structTokenSpan__t}{Token\-Span\-\_\-t}
+\item 
+class \hyperlink{classPassageCollectorTraits__c}{Passage\-Collector\-Traits\-\_\-c}
+\item 
+class \hyperlink{classDocStartHighlighter__c}{Doc\-Start\-Highlighter\-\_\-c}
+\begin{DoxyCompactList}\small\item\em functor that highlights the start of the document \end{DoxyCompactList}\item 
+class \hyperlink{classExtractExcerpts__c}{Extract\-Excerpts\-\_\-c}
+\begin{DoxyCompactList}\small\item\em functor that extracts passages for further highlighting \end{DoxyCompactList}\item 
+class \hyperlink{classHighlightPassages__c}{Highlight\-Passages\-\_\-c}
+\begin{DoxyCompactList}\small\item\em functor that highlights selected passages \end{DoxyCompactList}\item 
+class \hyperlink{classSnippetsFastQword__c}{Snippets\-Fast\-Qword\-\_\-c}
+\begin{DoxyCompactList}\small\item\em snippets query words for different cases \end{DoxyCompactList}\item 
+class \hyperlink{classSnippetsFastQwordSetup__c}{Snippets\-Fast\-Qword\-Setup\-\_\-c}
+\begin{DoxyCompactList}\small\item\em snippets query word setup \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxexcerpt_8cpp_a0fdfb6667cf3931d16d6fdd15b91e461}{U\-I\-N\-T32\-\_\-\-M\-A\-S\-K}~0xffffffff\-U\-L
+\item 
+\#define \hyperlink{sphinxexcerpt_8cpp_a57fcfe6a1244b44fdc1bbf264ab5ee18}{U\-I\-N\-T16\-\_\-\-M\-A\-S\-K}~0xffff
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxexcerpt_8cpp_aa02768706afc56c620560b51576bdb68}{Zone\-Packed\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxexcerpt_8cpp_a360a29566234f0ab59a31f077feadebf}{Find\-Tag\-End} (const char $\ast$s\-Data)
+\item 
+\hyperlink{sphinxstd_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\-\_\-t} \hyperlink{sphinxexcerpt_8cpp_aa98844eea9e2ed7a4c1b586badf44873}{sph\-Pack\-Zone} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Position, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Sibling\-Index, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Zone\-Type)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxexcerpt_8cpp_ab6f8e46623eb901930be913376a6547e}{Find\-Add\-Zone} (const char $\ast$s\-Zone\-Name, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Zone\-Name\-Len, \hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \&h\-Zones)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxexcerpt_8cpp_a098edf5fb1bcda24c2e65096058b3a79}{Get\-Words\-Limit} (const \hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t} \&q, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Qwords)
+\item 
+static bool \hyperlink{sphinxexcerpt_8cpp_ae628eee63e7d6d1d39482726a91a4964}{Has\-Wildcards} (const char $\ast$s\-Word)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{sphinxexcerpt_8cpp_a943186272508c813fcf0da98c4b3ea1b}{Term\-Shift\-Down\-Qpos} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T $>$ \&d\-Terms, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \&d\-Removed\-Q\-Pos)
+\item 
+{\footnotesize template$<$typename T , typename C\-M\-P $>$ }\\void \hyperlink{sphinxexcerpt_8cpp_acda2968bfd80674e9f42fa985c7a65b9}{Term\-Remove\-Dup} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ T $>$ \&d\-Terms, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \&d\-Removed\-Q\-Pos, const C\-M\-P \&t\-Cmp)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxexcerpt_8cpp_a34a763ee43b3a56e4709759ab9d08e92}{Estimate\-Result} (const \hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t} \&q, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Doc\-Len)
+\item 
+static bool \hyperlink{sphinxexcerpt_8cpp_a8bb253b65d0f62002bcaf179aa9dd895}{Is\-Token\-Hit} (const \hyperlink{structTokenInfo__t}{Token\-Info\-\_\-t} \&t\-Tok, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Hit\-Pos, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Hit\-Span)
+\item 
+bool \hyperlink{sphinxexcerpt_8cpp_a4be1c693a243791b8c74ebaaf63b9ad4}{operator$<$} (const \hyperlink{structPassage__t}{Passage\-\_\-t} \&a, const \hyperlink{structPassage__t}{Passage\-\_\-t} \&b)
+\item 
+static void \hyperlink{sphinxexcerpt_8cpp_af353e5a234390ea1797f1daa36fc243b}{Split\-Space\-Into\-Tokens} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structSpace__t}{Space\-\_\-t} $>$ \&d\-Spaces, const char $\ast$p\-Doc, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Start, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Boundary=-\/1)
+\item 
+static void \hyperlink{sphinxexcerpt_8cpp_ae042bb8c1410633e5a3dfc7ae3da109a}{Copy\-Zone\-Name} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ char $>$ \&d\-Name, const char $\ast$s\-Zone, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+static \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxexcerpt_8cpp_ad0b92cbbcd873407321bb0e2baff2b93}{Add\-Zone} (const char $\ast$p\-Start, const char $\ast$p\-End, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} u\-Position, \hyperlink{classTokenFunctorTraits__c}{Token\-Functor\-Traits\-\_\-c} \&t\-Functor, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \&d\-Zone\-Stack, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ char $>$ \&d\-Zone\-Name, const char $\ast$p\-Buf)
+\item 
+static void \hyperlink{sphinxexcerpt_8cpp_a9494761c07da025c51003ee6ee7a62fd}{Copy\-String} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Dst, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Src, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \hyperlink{sphinxexcerpt_8cpp_a52ef40de518aaa1064b353c33ed6c437}{Tokenize\-Document} (T \&t\-Functor, const \hyperlink{classCSphHTMLStripper}{C\-Sph\-H\-T\-M\-L\-Stripper} $\ast$p\-Stripper, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} i\-S\-P\-Z)
+\begin{DoxyCompactList}\small\item\em tokenize document using a given functor \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxexcerpt_8cpp_a8bb60f4f5d3f01599201ed2cc7e6087c}{operator$<$} (const \hyperlink{structSphHitMark__t}{Sph\-Hit\-Mark\-\_\-t} \&a, const \hyperlink{structSphHitMark__t}{Sph\-Hit\-Mark\-\_\-t} \&b)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxexcerpt_8cpp_a01095fc66aa64eb50fcfe9aca58c3438}{Convert\-S\-P\-Z} (\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} e\-S\-P\-Z)
+\item 
+static void \hyperlink{sphinxexcerpt_8cpp_a9bffddcf9d1126926296ac6eb28f468d}{Emit\-Passages\-Ordered} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Result, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Passage\-Text, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $>$ \&d\-Passage\-Heads, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structPassage__t}{Passage\-\_\-t} $>$ \&d\-Passages, const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Chunk\-Separator)
+\item 
+static void \hyperlink{sphinxexcerpt_8cpp_afb58964ac8f37272d3e867679453e8b8}{Highlight\-Passages} (\hyperlink{classCacheStreamer__c}{Cache\-Streamer\-\_\-c} \&t\-Streamer, \hyperlink{classExtractExcerpts__c}{Extract\-Excerpts\-\_\-c} \&t\-Extractor, \hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t} \&t\-Fixed\-Settings, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Index\-Settings, \hyperlink{classSnippetsDocIndex__c}{Snippets\-Doc\-Index\-\_\-c} \&t\-Container, const char $\ast$s\-Doc, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Doc\-Len, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, const \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structSphHitMark__t}{Sph\-Hit\-Mark\-\_\-t} $>$ $\ast$d\-Marked, \hyperlink{structFunctorZoneInfo__t}{Functor\-Zone\-Info\-\_\-t} $\ast$p\-Zone\-Info, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Res)
+\item 
+static void \hyperlink{sphinxexcerpt_8cpp_a7a130c65ecc1fc5eb4093f5567a8f6f3}{Fixup\-Query\-Limits} (const \hyperlink{classSnippetsDocIndex__c}{Snippets\-Doc\-Index\-\_\-c} \&t\-Container, const \hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t} \&t\-Query\-Settings, \hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t} \&t\-Fixed\-Settings, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} u\-Found\-Terms=0)
+\item 
+static void \hyperlink{sphinxexcerpt_8cpp_ac9c29348958689b49f0501e07c596bfb}{Do\-Highlighting} (const \hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t} \&t\-Query\-Settings, const \hyperlink{structCSphIndexSettings}{C\-Sph\-Index\-Settings} \&t\-Index\-Settings, const \hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} \&t\-Ext\-Query, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} e\-Ext\-Query\-S\-P\-Z, const char $\ast$s\-Doc, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Doc\-Len, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Tokenizer, const \hyperlink{classCSphHTMLStripper}{C\-Sph\-H\-T\-M\-L\-Stripper} $\ast$p\-Stripper, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Query\-Tokenizer, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Res)
+\item 
+void \hyperlink{sphinxexcerpt_8cpp_a6ea0d9f196669235bfd4d358c79e39a9}{sph\-Build\-Excerpt} (\hyperlink{structExcerptQuery__t}{Excerpt\-Query\-\_\-t} \&t\-Options, const \hyperlink{classCSphIndex}{C\-Sph\-Index} $\ast$p\-Index, const \hyperlink{classCSphHTMLStripper}{C\-Sph\-H\-T\-M\-L\-Stripper} $\ast$p\-Stripper, const \hyperlink{structXQQuery__t}{X\-Q\-Query\-\_\-t} \&t\-Ext\-Query, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} e\-Ext\-Query\-S\-P\-Z, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Warning, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{classCSphDict}{C\-Sph\-Dict} $\ast$p\-Dict, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Doc\-Tokenizer, \hyperlink{classISphTokenizer}{I\-Sph\-Tokenizer} $\ast$p\-Query\-Tokenizer)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{sphinxexcerpt_8cpp_a35f8f9f8a32a535bdd589b40fefbf835}{M\-A\-X\-\_\-\-H\-I\-G\-H\-L\-I\-G\-H\-T\-\_\-\-W\-O\-R\-D\-S} = 256
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxexcerpt_8cpp_a57fcfe6a1244b44fdc1bbf264ab5ee18}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!U\-I\-N\-T16\-\_\-\-M\-A\-S\-K@{U\-I\-N\-T16\-\_\-\-M\-A\-S\-K}}
+\index{U\-I\-N\-T16\-\_\-\-M\-A\-S\-K@{U\-I\-N\-T16\-\_\-\-M\-A\-S\-K}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{U\-I\-N\-T16\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T16\-\_\-\-M\-A\-S\-K~0xffff}}\label{sphinxexcerpt_8cpp_a57fcfe6a1244b44fdc1bbf264ab5ee18}
+\hypertarget{sphinxexcerpt_8cpp_a0fdfb6667cf3931d16d6fdd15b91e461}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!U\-I\-N\-T32\-\_\-\-M\-A\-S\-K@{U\-I\-N\-T32\-\_\-\-M\-A\-S\-K}}
+\index{U\-I\-N\-T32\-\_\-\-M\-A\-S\-K@{U\-I\-N\-T32\-\_\-\-M\-A\-S\-K}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{U\-I\-N\-T32\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-I\-N\-T32\-\_\-\-M\-A\-S\-K~0xffffffff\-U\-L}}\label{sphinxexcerpt_8cpp_a0fdfb6667cf3931d16d6fdd15b91e461}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sphinxexcerpt_8cpp_aa02768706afc56c620560b51576bdb68}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Zone\-Packed\-\_\-t@{Zone\-Packed\-\_\-t}}
+\index{Zone\-Packed\-\_\-t@{Zone\-Packed\-\_\-t}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Zone\-Packed\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf uint64\-\_\-t} {\bf Zone\-Packed\-\_\-t}}}\label{sphinxexcerpt_8cpp_aa02768706afc56c620560b51576bdb68}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxexcerpt_8cpp_ad0b92cbbcd873407321bb0e2baff2b93}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Add\-Zone@{Add\-Zone}}
+\index{Add\-Zone@{Add\-Zone}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Add\-Zone}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Add\-Zone (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\-Start, }
+\item[{const char $\ast$}]{p\-End, }
+\item[{{\bf int}}]{u\-Position, }
+\item[{{\bf Token\-Functor\-Traits\-\_\-c} \&}]{t\-Functor, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf int} $>$ \&}]{d\-Zone\-Stack, }
+\item[{{\bf C\-Sph\-Vector}$<$ char $>$ \&}]{d\-Zone\-Name, }
+\item[{const char $\ast$}]{p\-Buf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_ad0b92cbbcd873407321bb0e2baff2b93}
+\hypertarget{sphinxexcerpt_8cpp_a01095fc66aa64eb50fcfe9aca58c3438}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Convert\-S\-P\-Z@{Convert\-S\-P\-Z}}
+\index{Convert\-S\-P\-Z@{Convert\-S\-P\-Z}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Convert\-S\-P\-Z}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Convert\-S\-P\-Z (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{e\-S\-P\-Z}
+\end{DoxyParamCaption}
+)}}\label{sphinxexcerpt_8cpp_a01095fc66aa64eb50fcfe9aca58c3438}
+\hypertarget{sphinxexcerpt_8cpp_a9494761c07da025c51003ee6ee7a62fd}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Copy\-String@{Copy\-String}}
+\index{Copy\-String@{Copy\-String}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Copy\-String}]{\setlength{\rightskip}{0pt plus 5cm}static void Copy\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Dst, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-Src, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_a9494761c07da025c51003ee6ee7a62fd}
+\hypertarget{sphinxexcerpt_8cpp_ae042bb8c1410633e5a3dfc7ae3da109a}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Copy\-Zone\-Name@{Copy\-Zone\-Name}}
+\index{Copy\-Zone\-Name@{Copy\-Zone\-Name}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Copy\-Zone\-Name}]{\setlength{\rightskip}{0pt plus 5cm}static void Copy\-Zone\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ char $>$ \&}]{d\-Name, }
+\item[{const char $\ast$}]{s\-Zone, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_ae042bb8c1410633e5a3dfc7ae3da109a}
+\hypertarget{sphinxexcerpt_8cpp_ac9c29348958689b49f0501e07c596bfb}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Do\-Highlighting@{Do\-Highlighting}}
+\index{Do\-Highlighting@{Do\-Highlighting}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Do\-Highlighting}]{\setlength{\rightskip}{0pt plus 5cm}static void Do\-Highlighting (
+\begin{DoxyParamCaption}
+\item[{const {\bf Excerpt\-Query\-\_\-t} \&}]{t\-Query\-Settings, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Index\-Settings, }
+\item[{const {\bf X\-Q\-Query\-\_\-t} \&}]{t\-Ext\-Query, }
+\item[{{\bf D\-W\-O\-R\-D}}]{e\-Ext\-Query\-S\-P\-Z, }
+\item[{const char $\ast$}]{s\-Doc, }
+\item[{{\bf int}}]{i\-Doc\-Len, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{const {\bf C\-Sph\-H\-T\-M\-L\-Stripper} $\ast$}]{p\-Stripper, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Query\-Tokenizer, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Res}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_ac9c29348958689b49f0501e07c596bfb}
+\hypertarget{sphinxexcerpt_8cpp_a9bffddcf9d1126926296ac6eb28f468d}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Emit\-Passages\-Ordered@{Emit\-Passages\-Ordered}}
+\index{Emit\-Passages\-Ordered@{Emit\-Passages\-Ordered}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Emit\-Passages\-Ordered}]{\setlength{\rightskip}{0pt plus 5cm}static void Emit\-Passages\-Ordered (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Result, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Passage\-Text, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf int} $>$ \&}]{d\-Passage\-Heads, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Passage\-\_\-t} $>$ \&}]{d\-Passages, }
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Chunk\-Separator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_a9bffddcf9d1126926296ac6eb28f468d}
+\hypertarget{sphinxexcerpt_8cpp_a34a763ee43b3a56e4709759ab9d08e92}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Estimate\-Result@{Estimate\-Result}}
+\index{Estimate\-Result@{Estimate\-Result}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Estimate\-Result}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Estimate\-Result (
+\begin{DoxyParamCaption}
+\item[{const {\bf Excerpt\-Query\-\_\-t} \&}]{q, }
+\item[{{\bf int}}]{i\-Doc\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_a34a763ee43b3a56e4709759ab9d08e92}
+\hypertarget{sphinxexcerpt_8cpp_ab6f8e46623eb901930be913376a6547e}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Find\-Add\-Zone@{Find\-Add\-Zone}}
+\index{Find\-Add\-Zone@{Find\-Add\-Zone}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Find\-Add\-Zone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Find\-Add\-Zone (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Zone\-Name, }
+\item[{{\bf int}}]{i\-Zone\-Name\-Len, }
+\item[{{\bf Small\-String\-Hash\-\_\-\-T}$<$ {\bf int} $>$ \&}]{h\-Zones}
+\end{DoxyParamCaption}
+)}}\label{sphinxexcerpt_8cpp_ab6f8e46623eb901930be913376a6547e}
+\hypertarget{sphinxexcerpt_8cpp_a360a29566234f0ab59a31f077feadebf}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Find\-Tag\-End@{Find\-Tag\-End}}
+\index{Find\-Tag\-End@{Find\-Tag\-End}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Find\-Tag\-End}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Find\-Tag\-End (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_a360a29566234f0ab59a31f077feadebf}
+\hypertarget{sphinxexcerpt_8cpp_a7a130c65ecc1fc5eb4093f5567a8f6f3}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Fixup\-Query\-Limits@{Fixup\-Query\-Limits}}
+\index{Fixup\-Query\-Limits@{Fixup\-Query\-Limits}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Fixup\-Query\-Limits}]{\setlength{\rightskip}{0pt plus 5cm}static void Fixup\-Query\-Limits (
+\begin{DoxyParamCaption}
+\item[{const {\bf Snippets\-Doc\-Index\-\_\-c} \&}]{t\-Container, }
+\item[{const {\bf Excerpt\-Query\-\_\-t} \&}]{t\-Query\-Settings, }
+\item[{{\bf Excerpt\-Query\-\_\-t} \&}]{t\-Fixed\-Settings, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning, }
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Found\-Terms = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_a7a130c65ecc1fc5eb4093f5567a8f6f3}
+\hypertarget{sphinxexcerpt_8cpp_a098edf5fb1bcda24c2e65096058b3a79}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Get\-Words\-Limit@{Get\-Words\-Limit}}
+\index{Get\-Words\-Limit@{Get\-Words\-Limit}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Get\-Words\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf int} Get\-Words\-Limit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Excerpt\-Query\-\_\-t} \&}]{q, }
+\item[{{\bf int}}]{i\-Qwords}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_a098edf5fb1bcda24c2e65096058b3a79}
+\hypertarget{sphinxexcerpt_8cpp_ae628eee63e7d6d1d39482726a91a4964}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Has\-Wildcards@{Has\-Wildcards}}
+\index{Has\-Wildcards@{Has\-Wildcards}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Has\-Wildcards}]{\setlength{\rightskip}{0pt plus 5cm}static bool Has\-Wildcards (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_ae628eee63e7d6d1d39482726a91a4964}
+\hypertarget{sphinxexcerpt_8cpp_afb58964ac8f37272d3e867679453e8b8}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Highlight\-Passages@{Highlight\-Passages}}
+\index{Highlight\-Passages@{Highlight\-Passages}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Highlight\-Passages}]{\setlength{\rightskip}{0pt plus 5cm}static void Highlight\-Passages (
+\begin{DoxyParamCaption}
+\item[{{\bf Cache\-Streamer\-\_\-c} \&}]{t\-Streamer, }
+\item[{{\bf Extract\-Excerpts\-\_\-c} \&}]{t\-Extractor, }
+\item[{{\bf Excerpt\-Query\-\_\-t} \&}]{t\-Fixed\-Settings, }
+\item[{const {\bf C\-Sph\-Index\-Settings} \&}]{t\-Index\-Settings, }
+\item[{{\bf Snippets\-Doc\-Index\-\_\-c} \&}]{t\-Container, }
+\item[{const char $\ast$}]{s\-Doc, }
+\item[{{\bf int}}]{i\-Doc\-Len, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Tokenizer, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf Sph\-Hit\-Mark\-\_\-t} $>$ $\ast$}]{d\-Marked, }
+\item[{{\bf Functor\-Zone\-Info\-\_\-t} $\ast$}]{p\-Zone\-Info, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Res}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_afb58964ac8f37272d3e867679453e8b8}
+\hypertarget{sphinxexcerpt_8cpp_a8bb253b65d0f62002bcaf179aa9dd895}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Is\-Token\-Hit@{Is\-Token\-Hit}}
+\index{Is\-Token\-Hit@{Is\-Token\-Hit}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Is\-Token\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}static bool Is\-Token\-Hit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Token\-Info\-\_\-t} \&}]{t\-Tok, }
+\item[{{\bf int}}]{i\-Hit\-Pos, }
+\item[{{\bf int}}]{i\-Hit\-Span}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_a8bb253b65d0f62002bcaf179aa9dd895}
+\hypertarget{sphinxexcerpt_8cpp_a4be1c693a243791b8c74ebaaf63b9ad4}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Passage\-\_\-t} \&}]{a, }
+\item[{const {\bf Passage\-\_\-t} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxexcerpt_8cpp_a4be1c693a243791b8c74ebaaf63b9ad4}
+\hypertarget{sphinxexcerpt_8cpp_a8bb60f4f5d3f01599201ed2cc7e6087c}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sph\-Hit\-Mark\-\_\-t} \&}]{a, }
+\item[{const {\bf Sph\-Hit\-Mark\-\_\-t} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sphinxexcerpt_8cpp_a8bb60f4f5d3f01599201ed2cc7e6087c}
+\hypertarget{sphinxexcerpt_8cpp_a6ea0d9f196669235bfd4d358c79e39a9}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!sph\-Build\-Excerpt@{sph\-Build\-Excerpt}}
+\index{sph\-Build\-Excerpt@{sph\-Build\-Excerpt}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{sph\-Build\-Excerpt}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Build\-Excerpt (
+\begin{DoxyParamCaption}
+\item[{{\bf Excerpt\-Query\-\_\-t} \&}]{t\-Options, }
+\item[{const {\bf C\-Sph\-Index} $\ast$}]{p\-Index, }
+\item[{const {\bf C\-Sph\-H\-T\-M\-L\-Stripper} $\ast$}]{p\-Stripper, }
+\item[{const {\bf X\-Q\-Query\-\_\-t} \&}]{t\-Ext\-Query, }
+\item[{{\bf D\-W\-O\-R\-D}}]{e\-Ext\-Query\-S\-P\-Z, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Warning, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf C\-Sph\-Dict} $\ast$}]{p\-Dict, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Doc\-Tokenizer, }
+\item[{{\bf I\-Sph\-Tokenizer} $\ast$}]{p\-Query\-Tokenizer}
+\end{DoxyParamCaption}
+)}}\label{sphinxexcerpt_8cpp_a6ea0d9f196669235bfd4d358c79e39a9}
+an excerpt generator returns a newly allocated string in encoding specified by tokenizer on success returns N\-U\-L\-L on failure \hypertarget{sphinxexcerpt_8cpp_aa98844eea9e2ed7a4c1b586badf44873}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!sph\-Pack\-Zone@{sph\-Pack\-Zone}}
+\index{sph\-Pack\-Zone@{sph\-Pack\-Zone}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{sph\-Pack\-Zone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint64\-\_\-t} sph\-Pack\-Zone (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-W\-O\-R\-D}}]{u\-Position, }
+\item[{{\bf int}}]{i\-Sibling\-Index, }
+\item[{{\bf int}}]{i\-Zone\-Type}
+\end{DoxyParamCaption}
+)}}\label{sphinxexcerpt_8cpp_aa98844eea9e2ed7a4c1b586badf44873}
+\hypertarget{sphinxexcerpt_8cpp_af353e5a234390ea1797f1daa36fc243b}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Split\-Space\-Into\-Tokens@{Split\-Space\-Into\-Tokens}}
+\index{Split\-Space\-Into\-Tokens@{Split\-Space\-Into\-Tokens}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Split\-Space\-Into\-Tokens}]{\setlength{\rightskip}{0pt plus 5cm}static void Split\-Space\-Into\-Tokens (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Space\-\_\-t} $>$ \&}]{d\-Spaces, }
+\item[{const char $\ast$}]{p\-Doc, }
+\item[{{\bf int}}]{i\-Start, }
+\item[{{\bf int}}]{i\-Len, }
+\item[{{\bf int}}]{i\-Boundary = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_af353e5a234390ea1797f1daa36fc243b}
+\hypertarget{sphinxexcerpt_8cpp_acda2968bfd80674e9f42fa985c7a65b9}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Term\-Remove\-Dup@{Term\-Remove\-Dup}}
+\index{Term\-Remove\-Dup@{Term\-Remove\-Dup}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Term\-Remove\-Dup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename C\-M\-P $>$ void Term\-Remove\-Dup (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ T $>$ \&}]{d\-Terms, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf int} $>$ \&}]{d\-Removed\-Q\-Pos, }
+\item[{const C\-M\-P \&}]{t\-Cmp}
+\end{DoxyParamCaption}
+)}}\label{sphinxexcerpt_8cpp_acda2968bfd80674e9f42fa985c7a65b9}
+\hypertarget{sphinxexcerpt_8cpp_a943186272508c813fcf0da98c4b3ea1b}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Term\-Shift\-Down\-Qpos@{Term\-Shift\-Down\-Qpos}}
+\index{Term\-Shift\-Down\-Qpos@{Term\-Shift\-Down\-Qpos}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Term\-Shift\-Down\-Qpos}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Term\-Shift\-Down\-Qpos (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ T $>$ \&}]{d\-Terms, }
+\item[{const {\bf C\-Sph\-Vector}$<$ {\bf int} $>$ \&}]{d\-Removed\-Q\-Pos}
+\end{DoxyParamCaption}
+)}}\label{sphinxexcerpt_8cpp_a943186272508c813fcf0da98c4b3ea1b}
+\hypertarget{sphinxexcerpt_8cpp_a52ef40de518aaa1064b353c33ed6c437}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!Tokenize\-Document@{Tokenize\-Document}}
+\index{Tokenize\-Document@{Tokenize\-Document}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{Tokenize\-Document}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static void Tokenize\-Document (
+\begin{DoxyParamCaption}
+\item[{T \&}]{t\-Functor, }
+\item[{const {\bf C\-Sph\-H\-T\-M\-L\-Stripper} $\ast$}]{p\-Stripper, }
+\item[{{\bf D\-W\-O\-R\-D}}]{i\-S\-P\-Z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_a52ef40de518aaa1064b353c33ed6c437}
+
+
+tokenize document using a given functor 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxexcerpt_8cpp_a35f8f9f8a32a535bdd589b40fefbf835}{\index{sphinxexcerpt.\-cpp@{sphinxexcerpt.\-cpp}!M\-A\-X\-\_\-\-H\-I\-G\-H\-L\-I\-G\-H\-T\-\_\-\-W\-O\-R\-D\-S@{M\-A\-X\-\_\-\-H\-I\-G\-H\-L\-I\-G\-H\-T\-\_\-\-W\-O\-R\-D\-S}}
+\index{M\-A\-X\-\_\-\-H\-I\-G\-H\-L\-I\-G\-H\-T\-\_\-\-W\-O\-R\-D\-S@{M\-A\-X\-\_\-\-H\-I\-G\-H\-L\-I\-G\-H\-T\-\_\-\-W\-O\-R\-D\-S}!sphinxexcerpt.cpp@{sphinxexcerpt.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-H\-I\-G\-H\-L\-I\-G\-H\-T\-\_\-\-W\-O\-R\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} M\-A\-X\-\_\-\-H\-I\-G\-H\-L\-I\-G\-H\-T\-\_\-\-W\-O\-R\-D\-S = 256\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxexcerpt_8cpp_a35f8f9f8a32a535bdd589b40fefbf835}

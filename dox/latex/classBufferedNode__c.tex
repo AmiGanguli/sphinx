@@ -1,0 +1,149 @@
+\hypertarget{classBufferedNode__c}{\section{Buffered\-Node\-\_\-c Class Reference}
+\label{classBufferedNode__c}\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}}
+}
+Inheritance diagram for Buffered\-Node\-\_\-c\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.493333cm]{classBufferedNode__c}
+\end{center}
+\end{figure}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4eba8cb4b9bb47a5b7fa340bf81ce085233c}{C\-O\-P\-Y\-\_\-\-F\-I\-L\-T\-E\-R\-E\-D}, 
+\hyperlink{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4ebaf076efcdcc4831afa6620eba4174e9c0}{C\-O\-P\-Y\-\_\-\-T\-R\-A\-I\-L\-I\-N\-G}, 
+\hyperlink{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4eba3f22afbf0e47d6f648385c82411b671a}{C\-O\-P\-Y\-\_\-\-D\-O\-N\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBufferedNode__c_a185d78e7a5aa4c217d8a1034aa9e2a9c}{Buffered\-Node\-\_\-c} ()
+\item 
+void \hyperlink{classBufferedNode__c_aaf8cede24abd22de730118a2f3f90401}{Reset} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$ \hyperlink{classBufferedNode__c_a2a393307926ac4c2449e7946e5bf74b1}{m\-\_\-p\-Raw\-Docs}
+\begin{DoxyCompactList}\small\item\em chunk start as returned by raw Get\-Docs\-Chunk() (need to store it for raw Get\-Hits\-Chunk() calls) \end{DoxyCompactList}\item 
+const \hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} $\ast$ \hyperlink{classBufferedNode__c_a2baee654bcd29bcaa8da922a239a81b6}{m\-\_\-p\-Raw\-Doc}
+\begin{DoxyCompactList}\small\item\em current position in raw docs chunk \end{DoxyCompactList}\item 
+const \hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} $\ast$ \hyperlink{classBufferedNode__c_a53f77e1199cfb9312c5f9e6263dd7b59}{m\-\_\-p\-Raw\-Hit}
+\begin{DoxyCompactList}\small\item\em current position in raw hits chunk \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classBufferedNode__c_a84663ba9ff8f1319552c5bfe3b8a89f8}{m\-\_\-u\-Last\-I\-D}
+\item 
+enum Buffered\-Node\-\_\-c\-:: \{ ... \}  \hyperlink{classBufferedNode__c_a4d1a75942ed1b4c2e292910761b548b4}{m\-\_\-e\-State}
+\begin{DoxyCompactList}\small\item\em internal Get\-Hits\-Chunk() state (are we copying from my hits, or passing trailing raw hits, or done) \end{DoxyCompactList}\item 
+\hyperlink{structExtDoc__t}{Ext\-Doc\-\_\-t} \hyperlink{classBufferedNode__c_aea81fcd03e7cc64767006f41510d9496}{m\-\_\-d\-My\-Docs} \mbox{[}\hyperlink{classExtNode__i_afe46dd6ff6757d7a0bf3318fd1462bf9}{Ext\-Node\-\_\-i\-::\-M\-A\-X\-\_\-\-D\-O\-C\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em all documents within the required pos range \end{DoxyCompactList}\item 
+\hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} \hyperlink{classBufferedNode__c_a0c0a18060fd9ffb4e0845bc8200925df}{m\-\_\-d\-My\-Hits} \mbox{[}\hyperlink{classExtNode__i_a79b81cba51253fdbe56fd3595fac9ab4}{Ext\-Node\-\_\-i\-::\-M\-A\-X\-\_\-\-H\-I\-T\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em all hits within the required pos range \end{DoxyCompactList}\item 
+\hyperlink{structExtHit__t}{Ext\-Hit\-\_\-t} \hyperlink{classBufferedNode__c_a2044ff03a792afd4ace628fafa063487}{m\-\_\-d\-Filtered\-Hits} \mbox{[}\hyperlink{classExtNode__i_a79b81cba51253fdbe56fd3595fac9ab4}{Ext\-Node\-\_\-i\-::\-M\-A\-X\-\_\-\-H\-I\-T\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em hits from requested subset of the documents (for Get\-Hits\-Chunk()) \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classBufferedNode__c_af91cf22314ed5848b6b5c4fdec87ebcb}{m\-\_\-u\-Done\-For}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{classBufferedNode__c_ae0287f95dec23839698f1a8e54799142}{m\-\_\-u\-Hit\-Start\-Docid}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4eb}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4eb}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{C\-O\-P\-Y\-\_\-\-F\-I\-L\-T\-E\-R\-E\-D@{C\-O\-P\-Y\-\_\-\-F\-I\-L\-T\-E\-R\-E\-D}!Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}}\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!C\-O\-P\-Y\-\_\-\-F\-I\-L\-T\-E\-R\-E\-D@{C\-O\-P\-Y\-\_\-\-F\-I\-L\-T\-E\-R\-E\-D}}\item[{\em 
+\hypertarget{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4eba8cb4b9bb47a5b7fa340bf81ce085233c}{C\-O\-P\-Y\-\_\-\-F\-I\-L\-T\-E\-R\-E\-D}\label{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4eba8cb4b9bb47a5b7fa340bf81ce085233c}
+}]\index{C\-O\-P\-Y\-\_\-\-T\-R\-A\-I\-L\-I\-N\-G@{C\-O\-P\-Y\-\_\-\-T\-R\-A\-I\-L\-I\-N\-G}!Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}}\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!C\-O\-P\-Y\-\_\-\-T\-R\-A\-I\-L\-I\-N\-G@{C\-O\-P\-Y\-\_\-\-T\-R\-A\-I\-L\-I\-N\-G}}\item[{\em 
+\hypertarget{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4ebaf076efcdcc4831afa6620eba4174e9c0}{C\-O\-P\-Y\-\_\-\-T\-R\-A\-I\-L\-I\-N\-G}\label{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4ebaf076efcdcc4831afa6620eba4174e9c0}
+}]\index{C\-O\-P\-Y\-\_\-\-D\-O\-N\-E@{C\-O\-P\-Y\-\_\-\-D\-O\-N\-E}!Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}}\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!C\-O\-P\-Y\-\_\-\-D\-O\-N\-E@{C\-O\-P\-Y\-\_\-\-D\-O\-N\-E}}\item[{\em 
+\hypertarget{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4eba3f22afbf0e47d6f648385c82411b671a}{C\-O\-P\-Y\-\_\-\-D\-O\-N\-E}\label{classBufferedNode__c_a793684ae096dcc1517b56f7470bde4eba3f22afbf0e47d6f648385c82411b671a}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBufferedNode__c_a185d78e7a5aa4c217d8a1034aa9e2a9c}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}}
+\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{Buffered\-Node\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Buffered\-Node\-\_\-c\-::\-Buffered\-Node\-\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classBufferedNode__c_a185d78e7a5aa4c217d8a1034aa9e2a9c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBufferedNode__c_aaf8cede24abd22de730118a2f3f90401}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!Reset@{Reset}}
+\index{Reset@{Reset}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void Buffered\-Node\-\_\-c\-::\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classBufferedNode__c_aaf8cede24abd22de730118a2f3f90401}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBufferedNode__c_a2044ff03a792afd4ace628fafa063487}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!m\-\_\-d\-Filtered\-Hits@{m\-\_\-d\-Filtered\-Hits}}
+\index{m\-\_\-d\-Filtered\-Hits@{m\-\_\-d\-Filtered\-Hits}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-d\-Filtered\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ext\-Hit\-\_\-t} Buffered\-Node\-\_\-c\-::m\-\_\-d\-Filtered\-Hits\mbox{[}{\bf Ext\-Node\-\_\-i\-::\-M\-A\-X\-\_\-\-H\-I\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_a2044ff03a792afd4ace628fafa063487}
+
+
+hits from requested subset of the documents (for Get\-Hits\-Chunk()) 
+
+\hypertarget{classBufferedNode__c_aea81fcd03e7cc64767006f41510d9496}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!m\-\_\-d\-My\-Docs@{m\-\_\-d\-My\-Docs}}
+\index{m\-\_\-d\-My\-Docs@{m\-\_\-d\-My\-Docs}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-d\-My\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ext\-Doc\-\_\-t} Buffered\-Node\-\_\-c\-::m\-\_\-d\-My\-Docs\mbox{[}{\bf Ext\-Node\-\_\-i\-::\-M\-A\-X\-\_\-\-D\-O\-C\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_aea81fcd03e7cc64767006f41510d9496}
+
+
+all documents within the required pos range 
+
+\hypertarget{classBufferedNode__c_a0c0a18060fd9ffb4e0845bc8200925df}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!m\-\_\-d\-My\-Hits@{m\-\_\-d\-My\-Hits}}
+\index{m\-\_\-d\-My\-Hits@{m\-\_\-d\-My\-Hits}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-d\-My\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ext\-Hit\-\_\-t} Buffered\-Node\-\_\-c\-::m\-\_\-d\-My\-Hits\mbox{[}{\bf Ext\-Node\-\_\-i\-::\-M\-A\-X\-\_\-\-H\-I\-T\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_a0c0a18060fd9ffb4e0845bc8200925df}
+
+
+all hits within the required pos range 
+
+\hypertarget{classBufferedNode__c_a4d1a75942ed1b4c2e292910761b548b4}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!m\-\_\-e\-State@{m\-\_\-e\-State}}
+\index{m\-\_\-e\-State@{m\-\_\-e\-State}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-e\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum \{ ... \} 							 Buffered\-Node\-\_\-c\-::m\-\_\-e\-State\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_a4d1a75942ed1b4c2e292910761b548b4}
+
+
+internal Get\-Hits\-Chunk() state (are we copying from my hits, or passing trailing raw hits, or done) 
+
+\hypertarget{classBufferedNode__c_a2baee654bcd29bcaa8da922a239a81b6}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!m\-\_\-p\-Raw\-Doc@{m\-\_\-p\-Raw\-Doc}}
+\index{m\-\_\-p\-Raw\-Doc@{m\-\_\-p\-Raw\-Doc}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-p\-Raw\-Doc}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Doc\-\_\-t}$\ast$ Buffered\-Node\-\_\-c\-::m\-\_\-p\-Raw\-Doc\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_a2baee654bcd29bcaa8da922a239a81b6}
+
+
+current position in raw docs chunk 
+
+\hypertarget{classBufferedNode__c_a2a393307926ac4c2449e7946e5bf74b1}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!m\-\_\-p\-Raw\-Docs@{m\-\_\-p\-Raw\-Docs}}
+\index{m\-\_\-p\-Raw\-Docs@{m\-\_\-p\-Raw\-Docs}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-p\-Raw\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Doc\-\_\-t}$\ast$ Buffered\-Node\-\_\-c\-::m\-\_\-p\-Raw\-Docs\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_a2a393307926ac4c2449e7946e5bf74b1}
+
+
+chunk start as returned by raw Get\-Docs\-Chunk() (need to store it for raw Get\-Hits\-Chunk() calls) 
+
+\hypertarget{classBufferedNode__c_a53f77e1199cfb9312c5f9e6263dd7b59}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!m\-\_\-p\-Raw\-Hit@{m\-\_\-p\-Raw\-Hit}}
+\index{m\-\_\-p\-Raw\-Hit@{m\-\_\-p\-Raw\-Hit}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-p\-Raw\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ext\-Hit\-\_\-t}$\ast$ Buffered\-Node\-\_\-c\-::m\-\_\-p\-Raw\-Hit\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_a53f77e1199cfb9312c5f9e6263dd7b59}
+
+
+current position in raw hits chunk 
+
+\hypertarget{classBufferedNode__c_af91cf22314ed5848b6b5c4fdec87ebcb}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!m\-\_\-u\-Done\-For@{m\-\_\-u\-Done\-For}}
+\index{m\-\_\-u\-Done\-For@{m\-\_\-u\-Done\-For}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-u\-Done\-For}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} Buffered\-Node\-\_\-c\-::m\-\_\-u\-Done\-For\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_af91cf22314ed5848b6b5c4fdec87ebcb}
+\hypertarget{classBufferedNode__c_ae0287f95dec23839698f1a8e54799142}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!m\-\_\-u\-Hit\-Start\-Docid@{m\-\_\-u\-Hit\-Start\-Docid}}
+\index{m\-\_\-u\-Hit\-Start\-Docid@{m\-\_\-u\-Hit\-Start\-Docid}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-u\-Hit\-Start\-Docid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} Buffered\-Node\-\_\-c\-::m\-\_\-u\-Hit\-Start\-Docid\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_ae0287f95dec23839698f1a8e54799142}
+\hypertarget{classBufferedNode__c_a84663ba9ff8f1319552c5bfe3b8a89f8}{\index{Buffered\-Node\-\_\-c@{Buffered\-Node\-\_\-c}!m\-\_\-u\-Last\-I\-D@{m\-\_\-u\-Last\-I\-D}}
+\index{m\-\_\-u\-Last\-I\-D@{m\-\_\-u\-Last\-I\-D}!BufferedNode_c@{Buffered\-Node\-\_\-c}}
+\subsubsection[{m\-\_\-u\-Last\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} Buffered\-Node\-\_\-c\-::m\-\_\-u\-Last\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBufferedNode__c_a84663ba9ff8f1319552c5bfe3b8a89f8}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxsearch_8cpp}{sphinxsearch.\-cpp}\end{DoxyCompactItemize}

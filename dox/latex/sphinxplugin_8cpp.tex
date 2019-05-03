@@ -1,0 +1,367 @@
+\hypertarget{sphinxplugin_8cpp}{\section{src/sphinxplugin.cpp File Reference}
+\label{sphinxplugin_8cpp}\index{src/sphinxplugin.\-cpp@{src/sphinxplugin.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxplugin.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPluginLib__c}{Plugin\-Lib\-\_\-c}
+\begin{DoxyCompactList}\small\item\em loaded plugin library \end{DoxyCompactList}\item 
+struct \hyperlink{structPluginKey__t}{Plugin\-Key\-\_\-t}
+\begin{DoxyCompactList}\small\item\em plugin key \end{DoxyCompactList}\item 
+struct \hyperlink{structSymbolDesc__t}{Symbol\-Desc\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sphinxplugin_8cpp_a28ae52457b250847336f8d0a7c15dcd3}{dlerror}()~\char`\"{}\char`\"{}
+\item 
+\#define \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(T, M)~(reinterpret\-\_\-cast$<$char$\ast$$>$(\&(((T$\ast$)1000)-\/$>$M)) -\/ reinterpret\-\_\-cast$<$char$\ast$$>$(1000))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sphinxplugin_8cpp_ad4beacf76a226585fdfe4cc306f3a09e}{sph\-Plugin\-Init} (const char $\ast$s\-Dir)
+\begin{DoxyCompactList}\small\item\em initialize plugin manager \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxplugin_8cpp_a8fbfaea18e8b6b47503ee6fa9b679428}{sph\-Plugin\-Parse\-Spec} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Params, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&d\-Params, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em splits and checks plugin spec string in \char`\"{}mylib.\-dll\-:plugname\mbox{[}\-:options\mbox{]}\char`\"{} format \end{DoxyCompactList}\item 
+static bool \hyperlink{sphinxplugin_8cpp_a79f86835847783abab91302560e8d6ea}{Plugin\-Load\-Symbols} (void $\ast$p\-Desc, const \hyperlink{structSymbolDesc__t}{Symbol\-Desc\-\_\-t} $\ast$p\-Symbol, void $\ast$p\-Handle, const char $\ast$s\-Name, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+static \hyperlink{classPluginLib__c}{Plugin\-Lib\-\_\-c} $\ast$ \hyperlink{sphinxplugin_8cpp_a94a4fe62d6d405c37745dc9d965bbc8b}{Load\-Plugin\-Library} (const char $\ast$s\-Lib\-Name, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, bool b\-Linux\-Reload=false)
+\item 
+bool \hyperlink{sphinxplugin_8cpp_aa27a7af24d3b415df2ba1a3760643bcb}{sph\-Plugin\-Create} (const char $\ast$sz\-Lib, \hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} e\-Type, const char $\ast$s\-Name, \hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-U\-D\-F\-Ret\-Type, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+bool \hyperlink{sphinxplugin_8cpp_a1f71712ab6ff62ebe6639d9cc533e185}{sph\-Plugin\-Drop} (\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} e\-Type, const char $\ast$s\-Name, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em drop plugin by name \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxplugin_8cpp_a89c608af2c593dc1c69aff4ce956a01e}{sph\-Plugin\-Reload} (const char $\ast$s\-Name, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em reload all plugins from a given library \end{DoxyCompactList}\item 
+\hyperlink{classPluginDesc__c}{Plugin\-Desc\-\_\-c} $\ast$ \hyperlink{sphinxplugin_8cpp_a85c885d4c42dd78c1e89fbe7fcb5cc7b}{sph\-Plugin\-Acquire} (const char $\ast$sz\-Lib, \hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} e\-Type, const char $\ast$sz\-Name, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+static const char $\ast$ \hyperlink{sphinxplugin_8cpp_ae5da6476db9fa9e2fa326c9ffd3fe8ea}{Udf\-Return\-Type} (\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} e\-Type)
+\item 
+void \hyperlink{sphinxplugin_8cpp_a1c9940def926a5bae05b273a5d25646c}{sph\-Plugin\-Save\-State} (\hyperlink{classCSphWriter}{C\-Sph\-Writer} \&t\-Writer)
+\begin{DoxyCompactList}\small\item\em save Sphinx\-Q\-L state (ie. all active functions) \end{DoxyCompactList}\item 
+\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} \hyperlink{sphinxplugin_8cpp_a95de595b904545d93f61f6c0e9adcddb}{sph\-Plugin\-Get\-Type} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s)
+\begin{DoxyCompactList}\small\item\em convert plugin type string to enum \end{DoxyCompactList}\item 
+bool \hyperlink{sphinxplugin_8cpp_afac7f135b48b9768694d810ca80624a9}{sph\-Plugin\-Exists} (\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} e\-Type, const char $\ast$s\-Name)
+\begin{DoxyCompactList}\small\item\em check if plugin exists (but do not acquire an instance) \end{DoxyCompactList}\item 
+\hyperlink{classPluginDesc__c}{Plugin\-Desc\-\_\-c} $\ast$ \hyperlink{sphinxplugin_8cpp_a20bc543b09aad40088ba36c1cd3e8242}{sph\-Plugin\-Get} (\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20}{Plugin\-Type\-\_\-e} e\-Type, const char $\ast$s\-Name)
+\item 
+void \hyperlink{sphinxplugin_8cpp_a77e330b99b8b9d4358892aeec3c12d36}{sph\-Plugin\-List} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structPluginInfo__t}{Plugin\-Info\-\_\-t} $>$ \&d\-Result)
+\begin{DoxyCompactList}\small\item\em list all plugins (basically for S\-H\-O\-W P\-L\-U\-G\-I\-N\-S) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{sphinxplugin_8cpp_afd0a7c65ce59bc61d049387ea5aff2c3}{g\-\_\-d\-Plugin\-Types} \mbox{[}\hyperlink{sphinxplugin_8h_ae950c93fcfa03be8cbc0723199c9be20aeabfd79ac26b4f27f994747c384b8de6}{P\-L\-U\-G\-I\-N\-\_\-\-T\-O\-T\-A\-L}\mbox{]} = \{ \char`\"{}udf\char`\"{}, \char`\"{}ranker\char`\"{}, \char`\"{}index\-\_\-token\-\_\-filter\char`\"{}, \char`\"{}query\-\_\-token\-\_\-filter\char`\"{} \}
+\begin{DoxyCompactList}\small\item\em plugin type to human readable name \end{DoxyCompactList}\item 
+static bool \hyperlink{sphinxplugin_8cpp_ae83a6777f75063b872938a011d0627f6}{g\-\_\-b\-Plugins\-Enabled} = false
+\begin{DoxyCompactList}\small\item\em is there any plugin support at all? \end{DoxyCompactList}\item 
+static \hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{sphinxplugin_8cpp_a6263b4c89952c3abf29352c1bd7dcdbd}{g\-\_\-s\-Plugin\-Dir}
+\item 
+static C\-Sph\-Mutex \hyperlink{sphinxplugin_8cpp_adabfdfeeafd417415a28ca27c5fea9e8}{g\-\_\-t\-Plugin\-Mutex}
+\begin{DoxyCompactList}\small\item\em common plugin mutex (access to lib, func and ranker hashes) \end{DoxyCompactList}\item 
+static \hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T}\\*
+$<$ \hyperlink{classPluginLib__c}{Plugin\-Lib\-\_\-c} $\ast$ $>$ \hyperlink{sphinxplugin_8cpp_ad13ce6a9de0c3c88b2ef2ac1eded3371}{g\-\_\-h\-Plugin\-Libs}
+\begin{DoxyCompactList}\small\item\em key is the filename (no path) \end{DoxyCompactList}\item 
+static \hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}\\*
+$<$ \hyperlink{classPluginDesc__c}{Plugin\-Desc\-\_\-c} $\ast$, \hyperlink{structPluginKey__t}{Plugin\-Key\-\_\-t}, \\*
+\hyperlink{structPluginKey__t}{Plugin\-Key\-\_\-t}, 256 $>$ \hyperlink{sphinxplugin_8cpp_abfbed9224ae1db054449fe57f004cd58}{g\-\_\-h\-Plugins}
+\item 
+static \hyperlink{structSymbolDesc__t}{Symbol\-Desc\-\_\-t} \hyperlink{sphinxplugin_8cpp_a92fbe20bdda5d0c73ed46f8e74fec908}{g\-\_\-d\-Symbols\-U\-D\-F} \mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structSymbolDesc__t}{Symbol\-Desc\-\_\-t} \hyperlink{sphinxplugin_8cpp_a40b4f5251684d1e18c4ca15c54f6bb84}{g\-\_\-d\-Symbols\-Ranker} \mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structSymbolDesc__t}{Symbol\-Desc\-\_\-t} \hyperlink{sphinxplugin_8cpp_ab825308640d9efc6d30e2befc0ebd90b}{g\-\_\-d\-Symbols\-Token\-Filter} \mbox{[}$\,$\mbox{]}
+\item 
+static \hyperlink{structSymbolDesc__t}{Symbol\-Desc\-\_\-t} \hyperlink{sphinxplugin_8cpp_a242dcd860c8fb06fb0af73f14558199b}{g\-\_\-d\-Symbols\-Query\-Token\-Filter} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sphinxplugin_8cpp_a28ae52457b250847336f8d0a7c15dcd3}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!dlerror@{dlerror}}
+\index{dlerror@{dlerror}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{dlerror}]{\setlength{\rightskip}{0pt plus 5cm}\#define dlerror(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\char`\"{}\char`\"{}}}\label{sphinxplugin_8cpp_a28ae52457b250847336f8d0a7c15dcd3}
+\hypertarget{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!offsetof@{offsetof}}
+\index{offsetof@{offsetof}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{offsetof}]{\setlength{\rightskip}{0pt plus 5cm}\#define offsetof(
+\begin{DoxyParamCaption}
+\item[{}]{T, }
+\item[{}]{M}
+\end{DoxyParamCaption}
+)~(reinterpret\-\_\-cast$<$char$\ast$$>$(\&(((T$\ast$)1000)-\/$>$M)) -\/ reinterpret\-\_\-cast$<$char$\ast$$>$(1000))}}\label{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}
+
+
+\subsection{Function Documentation}
+\hypertarget{sphinxplugin_8cpp_a94a4fe62d6d405c37745dc9d965bbc8b}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!Load\-Plugin\-Library@{Load\-Plugin\-Library}}
+\index{Load\-Plugin\-Library@{Load\-Plugin\-Library}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{Load\-Plugin\-Library}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Plugin\-Lib\-\_\-c}$\ast$ Load\-Plugin\-Library (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Lib\-Name, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{bool}]{b\-Linux\-Reload = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_a94a4fe62d6d405c37745dc9d965bbc8b}
+\hypertarget{sphinxplugin_8cpp_a79f86835847783abab91302560e8d6ea}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!Plugin\-Load\-Symbols@{Plugin\-Load\-Symbols}}
+\index{Plugin\-Load\-Symbols@{Plugin\-Load\-Symbols}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{Plugin\-Load\-Symbols}]{\setlength{\rightskip}{0pt plus 5cm}static bool Plugin\-Load\-Symbols (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p\-Desc, }
+\item[{const {\bf Symbol\-Desc\-\_\-t} $\ast$}]{p\-Symbol, }
+\item[{void $\ast$}]{p\-Handle, }
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_a79f86835847783abab91302560e8d6ea}
+\hypertarget{sphinxplugin_8cpp_a85c885d4c42dd78c1e89fbe7fcb5cc7b}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-Acquire@{sph\-Plugin\-Acquire}}
+\index{sph\-Plugin\-Acquire@{sph\-Plugin\-Acquire}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-Acquire}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plugin\-Desc\-\_\-c}$\ast$ sph\-Plugin\-Acquire (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Lib, }
+\item[{{\bf Plugin\-Type\-\_\-e}}]{e\-Type, }
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_a85c885d4c42dd78c1e89fbe7fcb5cc7b}
+acquire plugin instance; get-\/or-\/create-\/and-\/get essentially W\-A\-R\-N\-I\-N\-G, increments users count, so non-\/\-N\-U\-L\-L pointers you get back need to be Release()d \hypertarget{sphinxplugin_8cpp_aa27a7af24d3b415df2ba1a3760643bcb}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-Create@{sph\-Plugin\-Create}}
+\index{sph\-Plugin\-Create@{sph\-Plugin\-Create}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-Create}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Plugin\-Create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Lib, }
+\item[{{\bf Plugin\-Type\-\_\-e}}]{e\-Type, }
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf E\-Sph\-Attr}}]{e\-U\-D\-F\-Ret\-Type, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_aa27a7af24d3b415df2ba1a3760643bcb}
+create plugin that is, load the library if not yet loaded, import the symbols, register the plugin internally e\-Ret\-Type is only used for U\-D\-F type; might wanna change it to (void$\ast$) and pass a generic argument instead \hypertarget{sphinxplugin_8cpp_a1f71712ab6ff62ebe6639d9cc533e185}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-Drop@{sph\-Plugin\-Drop}}
+\index{sph\-Plugin\-Drop@{sph\-Plugin\-Drop}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-Drop}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Plugin\-Drop (
+\begin{DoxyParamCaption}
+\item[{{\bf Plugin\-Type\-\_\-e}}]{e\-Type, }
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_a1f71712ab6ff62ebe6639d9cc533e185}
+
+
+drop plugin by name 
+
+\hypertarget{sphinxplugin_8cpp_afac7f135b48b9768694d810ca80624a9}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-Exists@{sph\-Plugin\-Exists}}
+\index{sph\-Plugin\-Exists@{sph\-Plugin\-Exists}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Plugin\-Exists (
+\begin{DoxyParamCaption}
+\item[{{\bf Plugin\-Type\-\_\-e}}]{e\-Type, }
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_afac7f135b48b9768694d810ca80624a9}
+
+
+check if plugin exists (but do not acquire an instance) 
+
+\hypertarget{sphinxplugin_8cpp_a20bc543b09aad40088ba36c1cd3e8242}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-Get@{sph\-Plugin\-Get}}
+\index{sph\-Plugin\-Get@{sph\-Plugin\-Get}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-Get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plugin\-Desc\-\_\-c}$\ast$ sph\-Plugin\-Get (
+\begin{DoxyParamCaption}
+\item[{{\bf Plugin\-Type\-\_\-e}}]{e\-Type, }
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_a20bc543b09aad40088ba36c1cd3e8242}
+get plugin instance descriptor by name W\-A\-R\-N\-I\-N\-G, increments users count, so non-\/\-N\-U\-L\-L pointers you get back need to be Release()d \hypertarget{sphinxplugin_8cpp_a95de595b904545d93f61f6c0e9adcddb}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-Get\-Type@{sph\-Plugin\-Get\-Type}}
+\index{sph\-Plugin\-Get\-Type@{sph\-Plugin\-Get\-Type}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-Get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plugin\-Type\-\_\-e} sph\-Plugin\-Get\-Type (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_a95de595b904545d93f61f6c0e9adcddb}
+
+
+convert plugin type string to enum 
+
+\hypertarget{sphinxplugin_8cpp_ad4beacf76a226585fdfe4cc306f3a09e}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-Init@{sph\-Plugin\-Init}}
+\index{sph\-Plugin\-Init@{sph\-Plugin\-Init}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Plugin\-Init (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Dir}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_ad4beacf76a226585fdfe4cc306f3a09e}
+
+
+initialize plugin manager 
+
+\hypertarget{sphinxplugin_8cpp_a77e330b99b8b9d4358892aeec3c12d36}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-List@{sph\-Plugin\-List}}
+\index{sph\-Plugin\-List@{sph\-Plugin\-List}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-List}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Plugin\-List (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Plugin\-Info\-\_\-t} $>$ \&}]{d\-Result}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_a77e330b99b8b9d4358892aeec3c12d36}
+
+
+list all plugins (basically for S\-H\-O\-W P\-L\-U\-G\-I\-N\-S) 
+
+\hypertarget{sphinxplugin_8cpp_a8fbfaea18e8b6b47503ee6fa9b679428}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-Parse\-Spec@{sph\-Plugin\-Parse\-Spec}}
+\index{sph\-Plugin\-Parse\-Spec@{sph\-Plugin\-Parse\-Spec}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-Parse\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Plugin\-Parse\-Spec (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Params, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf C\-Sph\-String} $>$ \&}]{d\-Params, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_a8fbfaea18e8b6b47503ee6fa9b679428}
+
+
+splits and checks plugin spec string in \char`\"{}mylib.\-dll\-:plugname\mbox{[}\-:options\mbox{]}\char`\"{} format 
+
+\hypertarget{sphinxplugin_8cpp_a89c608af2c593dc1c69aff4ce956a01e}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-Reload@{sph\-Plugin\-Reload}}
+\index{sph\-Plugin\-Reload@{sph\-Plugin\-Reload}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-Reload}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Plugin\-Reload (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_a89c608af2c593dc1c69aff4ce956a01e}
+
+
+reload all plugins from a given library 
+
+\hypertarget{sphinxplugin_8cpp_a1c9940def926a5bae05b273a5d25646c}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!sph\-Plugin\-Save\-State@{sph\-Plugin\-Save\-State}}
+\index{sph\-Plugin\-Save\-State@{sph\-Plugin\-Save\-State}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{sph\-Plugin\-Save\-State}]{\setlength{\rightskip}{0pt plus 5cm}void sph\-Plugin\-Save\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Writer} \&}]{t\-Writer}
+\end{DoxyParamCaption}
+)}}\label{sphinxplugin_8cpp_a1c9940def926a5bae05b273a5d25646c}
+
+
+save Sphinx\-Q\-L state (ie. all active functions) 
+
+\hypertarget{sphinxplugin_8cpp_ae5da6476db9fa9e2fa326c9ffd3fe8ea}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!Udf\-Return\-Type@{Udf\-Return\-Type}}
+\index{Udf\-Return\-Type@{Udf\-Return\-Type}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{Udf\-Return\-Type}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ Udf\-Return\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-Sph\-Attr}}]{e\-Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_ae5da6476db9fa9e2fa326c9ffd3fe8ea}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sphinxplugin_8cpp_ae83a6777f75063b872938a011d0627f6}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!g\-\_\-b\-Plugins\-Enabled@{g\-\_\-b\-Plugins\-Enabled}}
+\index{g\-\_\-b\-Plugins\-Enabled@{g\-\_\-b\-Plugins\-Enabled}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{g\-\_\-b\-Plugins\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool g\-\_\-b\-Plugins\-Enabled = false\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_ae83a6777f75063b872938a011d0627f6}
+
+
+is there any plugin support at all? 
+
+\hypertarget{sphinxplugin_8cpp_afd0a7c65ce59bc61d049387ea5aff2c3}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!g\-\_\-d\-Plugin\-Types@{g\-\_\-d\-Plugin\-Types}}
+\index{g\-\_\-d\-Plugin\-Types@{g\-\_\-d\-Plugin\-Types}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{g\-\_\-d\-Plugin\-Types}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ g\-\_\-d\-Plugin\-Types\mbox{[}{\bf P\-L\-U\-G\-I\-N\-\_\-\-T\-O\-T\-A\-L}\mbox{]} = \{ \char`\"{}udf\char`\"{}, \char`\"{}ranker\char`\"{}, \char`\"{}index\-\_\-token\-\_\-filter\char`\"{}, \char`\"{}query\-\_\-token\-\_\-filter\char`\"{} \}}}\label{sphinxplugin_8cpp_afd0a7c65ce59bc61d049387ea5aff2c3}
+
+
+plugin type to human readable name 
+
+\hypertarget{sphinxplugin_8cpp_a242dcd860c8fb06fb0af73f14558199b}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!g\-\_\-d\-Symbols\-Query\-Token\-Filter@{g\-\_\-d\-Symbols\-Query\-Token\-Filter}}
+\index{g\-\_\-d\-Symbols\-Query\-Token\-Filter@{g\-\_\-d\-Symbols\-Query\-Token\-Filter}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{g\-\_\-d\-Symbols\-Query\-Token\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Symbol\-Desc\-\_\-t} g\-\_\-d\-Symbols\-Query\-Token\-Filter\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_a242dcd860c8fb06fb0af73f14558199b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginQueryTokenFilter__c}{PluginQueryTokenFilter\_c}
+      , m\_fnInit)),            \textcolor{stringliteral}{"init"},         \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginQueryTokenFilter__c}{PluginQueryTokenFilter\_c}
+      , m\_fnPreMorph)),        \textcolor{stringliteral}{"pre\_morph"},    \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginQueryTokenFilter__c}{PluginQueryTokenFilter\_c}
+      , m\_fnPostMorph)),   \textcolor{stringliteral}{"post\_morph"},   \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginQueryTokenFilter__c}{PluginQueryTokenFilter\_c}
+      , m\_fnPushToken)),   \textcolor{stringliteral}{"push\_token"},   \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginQueryTokenFilter__c}{PluginQueryTokenFilter\_c}
+      , m\_fnDeinit)),      \textcolor{stringliteral}{"deinit"},       \textcolor{keyword}{false} \},
+    \{ -1, 0, 0 \}
+\}
+\end{DoxyCode}
+\hypertarget{sphinxplugin_8cpp_a40b4f5251684d1e18c4ca15c54f6bb84}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!g\-\_\-d\-Symbols\-Ranker@{g\-\_\-d\-Symbols\-Ranker}}
+\index{g\-\_\-d\-Symbols\-Ranker@{g\-\_\-d\-Symbols\-Ranker}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{g\-\_\-d\-Symbols\-Ranker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Symbol\-Desc\-\_\-t} g\-\_\-d\-Symbols\-Ranker\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_a40b4f5251684d1e18c4ca15c54f6bb84}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginRanker__c}{PluginRanker\_c}, m\_fnInit
+      )),      \textcolor{stringliteral}{"init"},     \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginRanker__c}{PluginRanker\_c}, 
+      m\_fnUpdate)),        \textcolor{stringliteral}{"update"},   \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginRanker__c}{PluginRanker\_c}, 
+      m\_fnFinalize)),  \textcolor{stringliteral}{"finalize"}, \textcolor{keyword}{true} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginRanker__c}{PluginRanker\_c}, 
+      m\_fnDeinit)),        \textcolor{stringliteral}{"deinit"},   \textcolor{keyword}{false} \},
+    \{ -1, 0, 0 \}
+\}
+\end{DoxyCode}
+\hypertarget{sphinxplugin_8cpp_ab825308640d9efc6d30e2befc0ebd90b}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!g\-\_\-d\-Symbols\-Token\-Filter@{g\-\_\-d\-Symbols\-Token\-Filter}}
+\index{g\-\_\-d\-Symbols\-Token\-Filter@{g\-\_\-d\-Symbols\-Token\-Filter}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{g\-\_\-d\-Symbols\-Token\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Symbol\-Desc\-\_\-t} g\-\_\-d\-Symbols\-Token\-Filter\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_ab825308640d9efc6d30e2befc0ebd90b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginTokenFilter__c}{PluginTokenFilter\_c}
+      , m\_fnInit)),            \textcolor{stringliteral}{"init"},             \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginTokenFilter__c}{PluginTokenFilter\_c}
+      , m\_fnBeginDocument)),   \textcolor{stringliteral}{"begin\_document"},   \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginTokenFilter__c}{PluginTokenFilter\_c}
+      , m\_fnBeginField)),  \textcolor{stringliteral}{"begin\_field"},      \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginTokenFilter__c}{PluginTokenFilter\_c}
+      , m\_fnPushToken)),       \textcolor{stringliteral}{"push\_token"},       \textcolor{keyword}{true} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginTokenFilter__c}{PluginTokenFilter\_c}
+      , m\_fnGetExtraToken)),   \textcolor{stringliteral}{"get\_extra\_token"},  \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginTokenFilter__c}{PluginTokenFilter\_c}
+      , m\_fnEndField)),        \textcolor{stringliteral}{"end\_field"},        \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginTokenFilter__c}{PluginTokenFilter\_c}
+      , m\_fnDeinit)),      \textcolor{stringliteral}{"deinit"},           \textcolor{keyword}{false} \},
+    \{ -1, 0, 0 \}
+\}
+\end{DoxyCode}
+\hypertarget{sphinxplugin_8cpp_a92fbe20bdda5d0c73ed46f8e74fec908}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!g\-\_\-d\-Symbols\-U\-D\-F@{g\-\_\-d\-Symbols\-U\-D\-F}}
+\index{g\-\_\-d\-Symbols\-U\-D\-F@{g\-\_\-d\-Symbols\-U\-D\-F}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{g\-\_\-d\-Symbols\-U\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Symbol\-Desc\-\_\-t} g\-\_\-d\-Symbols\-U\-D\-F\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_a92fbe20bdda5d0c73ed46f8e74fec908}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginUDF__c}{PluginUDF\_c}, m\_fnInit)),        \textcolor{stringliteral}{
+      "init"},      \textcolor{keyword}{false} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginUDF__c}{PluginUDF\_c}, m\_fnFunc)),        \textcolor{stringliteral}{
+      ""},          \textcolor{keyword}{true} \},
+    \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}( \hyperlink{sphinxplugin_8cpp_ada33f26bd30c5e1aeef86486c1e17b80}{offsetof}(\hyperlink{classPluginUDF__c}{PluginUDF\_c}, m\_fnDeinit)),  \textcolor{stringliteral}{
+      "deinit"},    \textcolor{keyword}{false} \},
+    \{ -1, 0, 0 \}
+\}
+\end{DoxyCode}
+\hypertarget{sphinxplugin_8cpp_ad13ce6a9de0c3c88b2ef2ac1eded3371}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!g\-\_\-h\-Plugin\-Libs@{g\-\_\-h\-Plugin\-Libs}}
+\index{g\-\_\-h\-Plugin\-Libs@{g\-\_\-h\-Plugin\-Libs}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{g\-\_\-h\-Plugin\-Libs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Small\-String\-Hash\-\_\-\-T}$<${\bf Plugin\-Lib\-\_\-c}$\ast$$>$ g\-\_\-h\-Plugin\-Libs\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_ad13ce6a9de0c3c88b2ef2ac1eded3371}
+
+
+key is the filename (no path) 
+
+\hypertarget{sphinxplugin_8cpp_abfbed9224ae1db054449fe57f004cd58}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!g\-\_\-h\-Plugins@{g\-\_\-h\-Plugins}}
+\index{g\-\_\-h\-Plugins@{g\-\_\-h\-Plugins}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{g\-\_\-h\-Plugins}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Ordered\-Hash}$<${\bf Plugin\-Desc\-\_\-c}$\ast$, {\bf Plugin\-Key\-\_\-t}, {\bf Plugin\-Key\-\_\-t}, 256$>$ g\-\_\-h\-Plugins\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_abfbed9224ae1db054449fe57f004cd58}
+\hypertarget{sphinxplugin_8cpp_a6263b4c89952c3abf29352c1bd7dcdbd}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!g\-\_\-s\-Plugin\-Dir@{g\-\_\-s\-Plugin\-Dir}}
+\index{g\-\_\-s\-Plugin\-Dir@{g\-\_\-s\-Plugin\-Dir}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{g\-\_\-s\-Plugin\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} g\-\_\-s\-Plugin\-Dir\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_a6263b4c89952c3abf29352c1bd7dcdbd}
+\hypertarget{sphinxplugin_8cpp_adabfdfeeafd417415a28ca27c5fea9e8}{\index{sphinxplugin.\-cpp@{sphinxplugin.\-cpp}!g\-\_\-t\-Plugin\-Mutex@{g\-\_\-t\-Plugin\-Mutex}}
+\index{g\-\_\-t\-Plugin\-Mutex@{g\-\_\-t\-Plugin\-Mutex}!sphinxplugin.cpp@{sphinxplugin.\-cpp}}
+\subsubsection[{g\-\_\-t\-Plugin\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Mutex g\-\_\-t\-Plugin\-Mutex\hspace{0.3cm}{\ttfamily [static]}}}\label{sphinxplugin_8cpp_adabfdfeeafd417415a28ca27c5fea9e8}
+
+
+common plugin mutex (access to lib, func and ranker hashes) 
+

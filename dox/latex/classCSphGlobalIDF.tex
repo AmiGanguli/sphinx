@@ -1,0 +1,130 @@
+\hypertarget{classCSphGlobalIDF}{\section{C\-Sph\-Global\-I\-D\-F Class Reference}
+\label{classCSphGlobalIDF}\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}}
+}
+
+
+global I\-D\-F  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCSphGlobalIDF_1_1IDFWord__t}{I\-D\-F\-Word\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphGlobalIDF_a270cfe60e3805e3f12412b9f467b703e}{C\-Sph\-Global\-I\-D\-F} ()
+\item 
+bool \hyperlink{classCSphGlobalIDF_a8177f4f96fef06af4bb7ce7c85673d83}{Touch} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Filename)
+\item 
+bool \hyperlink{classCSphGlobalIDF_a83b078913cfdf875528e89529eef7e13}{Preread} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Filename, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classCSphGlobalIDF_aa9df2bc312161eceb048349fcaa3dbbb}{Get\-Docs} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Word) const 
+\item 
+\hyperlink{sphinxexpr_8cpp_a0e0d0739f7035f18f949c2db2c6759ec}{float} \hyperlink{classCSphGlobalIDF_a7dc2122d1cd7a503fc3ec26955f1299b}{Get\-I\-D\-F} (const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Word, \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} i\-Docs\-Local, bool b\-Plain\-I\-D\-F)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphGlobalIDF_a46c03d0a6358b07c5061b610ef080fa0}{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T} (\hyperlink{structCSphGlobalIDF_1_1IDFWord__t}{I\-D\-F\-Word\-\_\-t}, 12)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphGlobalIDF_a4e2c491cfd8f5fb511050ad67b153e45}{m\-\_\-i\-Total\-Documents}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classCSphGlobalIDF_ab580759ecbff60fdb05e9c321d72a50a}{m\-\_\-i\-Total\-Words}
+\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{classCSphGlobalIDF_a7c40a38a9cf3c45f4b36c425544c5cc2}{m\-\_\-u\-M\-Time}
+\item 
+\hyperlink{classCSphLargeBuffer}{C\-Sph\-Large\-Buffer}$<$ \hyperlink{structCSphGlobalIDF_1_1IDFWord__t}{I\-D\-F\-Word\-\_\-t} $>$ \hyperlink{classCSphGlobalIDF_aaf1d6ddda9624572339cfe2ad63b4dee}{m\-\_\-p\-Words}
+\item 
+\hyperlink{classCSphLargeBuffer}{C\-Sph\-Large\-Buffer}$<$ \hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} $>$ \hyperlink{classCSphGlobalIDF_a5fe872e48d7691579e1d644a71eb5eea}{m\-\_\-p\-Hash}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphGlobalIDF_a2be32ad7189c084316e8ef271a568ca9}{H\-A\-S\-H\-\_\-\-B\-I\-T\-S} = 16
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+global I\-D\-F 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphGlobalIDF_a270cfe60e3805e3f12412b9f467b703e}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}}
+\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{C\-Sph\-Global\-I\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Global\-I\-D\-F\-::\-C\-Sph\-Global\-I\-D\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCSphGlobalIDF_a270cfe60e3805e3f12412b9f467b703e}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphGlobalIDF_aa9df2bc312161eceb048349fcaa3dbbb}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!Get\-Docs@{Get\-Docs}}
+\index{Get\-Docs@{Get\-Docs}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{Get\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Global\-I\-D\-F\-::\-Get\-Docs (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Word}
+\end{DoxyParamCaption}
+) const}}\label{classCSphGlobalIDF_aa9df2bc312161eceb048349fcaa3dbbb}
+\hypertarget{classCSphGlobalIDF_a7dc2122d1cd7a503fc3ec26955f1299b}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!Get\-I\-D\-F@{Get\-I\-D\-F}}
+\index{Get\-I\-D\-F@{Get\-I\-D\-F}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{Get\-I\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} C\-Sph\-Global\-I\-D\-F\-::\-Get\-I\-D\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Word, }
+\item[{{\bf int64\-\_\-t}}]{i\-Docs\-Local, }
+\item[{bool}]{b\-Plain\-I\-D\-F}
+\end{DoxyParamCaption}
+)}}\label{classCSphGlobalIDF_a7dc2122d1cd7a503fc3ec26955f1299b}
+\hypertarget{classCSphGlobalIDF_a83b078913cfdf875528e89529eef7e13}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!Preread@{Preread}}
+\index{Preread@{Preread}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{Preread}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Global\-I\-D\-F\-::\-Preread (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Filename, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphGlobalIDF_a83b078913cfdf875528e89529eef7e13}
+\hypertarget{classCSphGlobalIDF_a46c03d0a6358b07c5061b610ef080fa0}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Global\-I\-D\-F\-::\-S\-T\-A\-T\-I\-C\-\_\-\-S\-I\-Z\-E\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-D\-F\-Word\-\_\-t}}]{, }
+\item[{12}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphGlobalIDF_a46c03d0a6358b07c5061b610ef080fa0}
+\hypertarget{classCSphGlobalIDF_a8177f4f96fef06af4bb7ce7c85673d83}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!Touch@{Touch}}
+\index{Touch@{Touch}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{Touch}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Global\-I\-D\-F\-::\-Touch (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Filename}
+\end{DoxyParamCaption}
+)}}\label{classCSphGlobalIDF_a8177f4f96fef06af4bb7ce7c85673d83}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphGlobalIDF_a2be32ad7189c084316e8ef271a568ca9}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!H\-A\-S\-H\-\_\-\-B\-I\-T\-S@{H\-A\-S\-H\-\_\-\-B\-I\-T\-S}}
+\index{H\-A\-S\-H\-\_\-\-B\-I\-T\-S@{H\-A\-S\-H\-\_\-\-B\-I\-T\-S}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{H\-A\-S\-H\-\_\-\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Global\-I\-D\-F\-::\-H\-A\-S\-H\-\_\-\-B\-I\-T\-S = 16\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphGlobalIDF_a2be32ad7189c084316e8ef271a568ca9}
+\hypertarget{classCSphGlobalIDF_a4e2c491cfd8f5fb511050ad67b153e45}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!m\-\_\-i\-Total\-Documents@{m\-\_\-i\-Total\-Documents}}
+\index{m\-\_\-i\-Total\-Documents@{m\-\_\-i\-Total\-Documents}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{m\-\_\-i\-Total\-Documents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Global\-I\-D\-F\-::m\-\_\-i\-Total\-Documents\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphGlobalIDF_a4e2c491cfd8f5fb511050ad67b153e45}
+\hypertarget{classCSphGlobalIDF_ab580759ecbff60fdb05e9c321d72a50a}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!m\-\_\-i\-Total\-Words@{m\-\_\-i\-Total\-Words}}
+\index{m\-\_\-i\-Total\-Words@{m\-\_\-i\-Total\-Words}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{m\-\_\-i\-Total\-Words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} C\-Sph\-Global\-I\-D\-F\-::m\-\_\-i\-Total\-Words\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphGlobalIDF_ab580759ecbff60fdb05e9c321d72a50a}
+\hypertarget{classCSphGlobalIDF_a5fe872e48d7691579e1d644a71eb5eea}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!m\-\_\-p\-Hash@{m\-\_\-p\-Hash}}
+\index{m\-\_\-p\-Hash@{m\-\_\-p\-Hash}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{m\-\_\-p\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Large\-Buffer}$<${\bf int64\-\_\-t}$>$ C\-Sph\-Global\-I\-D\-F\-::m\-\_\-p\-Hash\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphGlobalIDF_a5fe872e48d7691579e1d644a71eb5eea}
+\hypertarget{classCSphGlobalIDF_aaf1d6ddda9624572339cfe2ad63b4dee}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!m\-\_\-p\-Words@{m\-\_\-p\-Words}}
+\index{m\-\_\-p\-Words@{m\-\_\-p\-Words}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{m\-\_\-p\-Words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Large\-Buffer}$<${\bf I\-D\-F\-Word\-\_\-t}$>$ C\-Sph\-Global\-I\-D\-F\-::m\-\_\-p\-Words\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphGlobalIDF_aaf1d6ddda9624572339cfe2ad63b4dee}
+\hypertarget{classCSphGlobalIDF_a7c40a38a9cf3c45f4b36c425544c5cc2}{\index{C\-Sph\-Global\-I\-D\-F@{C\-Sph\-Global\-I\-D\-F}!m\-\_\-u\-M\-Time@{m\-\_\-u\-M\-Time}}
+\index{m\-\_\-u\-M\-Time@{m\-\_\-u\-M\-Time}!CSphGlobalIDF@{C\-Sph\-Global\-I\-D\-F}}
+\subsubsection[{m\-\_\-u\-M\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Global\-I\-D\-F\-::m\-\_\-u\-M\-Time\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphGlobalIDF_a7c40a38a9cf3c45f4b36c425544c5cc2}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,187 @@
+\hypertarget{classCSphHTMLStripper}{\section{C\-Sph\-H\-T\-M\-L\-Stripper Class Reference}
+\label{classCSphHTMLStripper}\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+}
+
+
+H\-T\-M\-L stripper.  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCSphHTMLStripper_1_1StripperTag__t}{Stripper\-Tag\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphHTMLStripper_aeff08556dfba636d3feceffed62c1fda}{C\-Sph\-H\-T\-M\-L\-Stripper} (bool b\-Default\-Tags)
+\item 
+bool \hyperlink{classCSphHTMLStripper_a70bb7afa55d1ed77383b70da394c2284}{Set\-Indexed\-Attrs} (const char $\ast$s\-Config, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+bool \hyperlink{classCSphHTMLStripper_a90a0e8e38534fa7af80914e3821c868c}{Set\-Removed\-Elements} (const char $\ast$s\-Config, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+bool \hyperlink{classCSphHTMLStripper_abfd041410a93e042c134206340029e1e}{Set\-Zones} (const char $\ast$s\-Zones, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+void \hyperlink{classCSphHTMLStripper_aa8a48477e9d9ff1b332421b23359771b}{Enable\-Paragraphs} ()
+\item 
+void \hyperlink{classCSphHTMLStripper_ace1b60171cecba7e171526a2a0c529bd}{Strip} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Data) const 
+\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphHTMLStripper_aa5770a5cb543b96f6a61e2f6b874ca3d}{Find\-Tag} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$s\-Src, const \hyperlink{structCSphHTMLStripper_1_1StripperTag__t}{Stripper\-Tag\-\_\-t} $\ast$$\ast$pp\-Tag, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$$\ast$pp\-Zone\-Name, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$p\-Zone\-Name\-Len) const 
+\item 
+bool \hyperlink{classCSphHTMLStripper_a8d90b329a2af2693d708c8038263fd47}{Is\-Valid\-Tag\-Start} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Ch) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphHTMLStripper_a2f92681fa28b7f76095b1b98192fb1bc}{Get\-Char\-Index} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Ch) const 
+\begin{DoxyCompactList}\small\item\em calcs index by raw char \end{DoxyCompactList}\item 
+void \hyperlink{classCSphHTMLStripper_a66f37d6ef201ef02f509df01e9806c28}{Update\-Tags} ()
+\begin{DoxyCompactList}\small\item\em sorts tags, updates internal helpers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structCSphHTMLStripper_1_1StripperTag__t}{Stripper\-Tag\-\_\-t} $>$ \hyperlink{classCSphHTMLStripper_a49a2ccd3e42cbc5799cb3026448813ab}{m\-\_\-d\-Tags}
+\begin{DoxyCompactList}\small\item\em known tags to index attrs and/or to remove contents \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphHTMLStripper_a2022427fa6d9f73889a1444f59da8428}{m\-\_\-d\-Start} \mbox{[}\hyperlink{classCSphHTMLStripper_acb1842ca8b483ff8df6ea3648fbca5ff}{M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X}\mbox{]}
+\begin{DoxyCompactList}\small\item\em maps index of the first tag name char to start offset in m\-\_\-d\-Tags \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphHTMLStripper_af3293a9a7026540726a7ef9cce2a3c15}{m\-\_\-d\-End} \mbox{[}\hyperlink{classCSphHTMLStripper_acb1842ca8b483ff8df6ea3648fbca5ff}{M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X}\mbox{]}
+\begin{DoxyCompactList}\small\item\em maps index of the first tag name char to end offset in m\-\_\-d\-Tags \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphHTMLStripper_acb1842ca8b483ff8df6ea3648fbca5ff}{M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X} = 28
+\begin{DoxyCompactList}\small\item\em max valid char index (a-\/z, underscore, colon) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+H\-T\-M\-L stripper. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSphHTMLStripper_aeff08556dfba636d3feceffed62c1fda}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{C\-Sph\-H\-T\-M\-L\-Stripper}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-H\-T\-M\-L\-Stripper\-::\-C\-Sph\-H\-T\-M\-L\-Stripper (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Default\-Tags}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCSphHTMLStripper_aeff08556dfba636d3feceffed62c1fda}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphHTMLStripper_aa8a48477e9d9ff1b332421b23359771b}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!Enable\-Paragraphs@{Enable\-Paragraphs}}
+\index{Enable\-Paragraphs@{Enable\-Paragraphs}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{Enable\-Paragraphs}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-H\-T\-M\-L\-Stripper\-::\-Enable\-Paragraphs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCSphHTMLStripper_aa8a48477e9d9ff1b332421b23359771b}
+\hypertarget{classCSphHTMLStripper_aa5770a5cb543b96f6a61e2f6b874ca3d}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!Find\-Tag@{Find\-Tag}}
+\index{Find\-Tag@{Find\-Tag}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{Find\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E} $\ast$ C\-Sph\-H\-T\-M\-L\-Stripper\-::\-Find\-Tag (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{s\-Src, }
+\item[{const {\bf Stripper\-Tag\-\_\-t} $\ast$$\ast$}]{pp\-Tag, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$$\ast$}]{pp\-Zone\-Name, }
+\item[{{\bf int} $\ast$}]{p\-Zone\-Name\-Len}
+\end{DoxyParamCaption}
+) const}}\label{classCSphHTMLStripper_aa5770a5cb543b96f6a61e2f6b874ca3d}
+finds appropriate tag and zone name ( tags zone name could be prefix only ) advances source to the end of the tag \hypertarget{classCSphHTMLStripper_a2f92681fa28b7f76095b1b98192fb1bc}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!Get\-Char\-Index@{Get\-Char\-Index}}
+\index{Get\-Char\-Index@{Get\-Char\-Index}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{Get\-Char\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-H\-T\-M\-L\-Stripper\-::\-Get\-Char\-Index (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Ch}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphHTMLStripper_a2f92681fa28b7f76095b1b98192fb1bc}
+
+
+calcs index by raw char 
+
+\hypertarget{classCSphHTMLStripper_a8d90b329a2af2693d708c8038263fd47}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!Is\-Valid\-Tag\-Start@{Is\-Valid\-Tag\-Start}}
+\index{Is\-Valid\-Tag\-Start@{Is\-Valid\-Tag\-Start}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{Is\-Valid\-Tag\-Start}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-H\-T\-M\-L\-Stripper\-::\-Is\-Valid\-Tag\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Ch}
+\end{DoxyParamCaption}
+) const}}\label{classCSphHTMLStripper_a8d90b329a2af2693d708c8038263fd47}
+\hypertarget{classCSphHTMLStripper_a70bb7afa55d1ed77383b70da394c2284}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!Set\-Indexed\-Attrs@{Set\-Indexed\-Attrs}}
+\index{Set\-Indexed\-Attrs@{Set\-Indexed\-Attrs}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{Set\-Indexed\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-H\-T\-M\-L\-Stripper\-::\-Set\-Indexed\-Attrs (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Config, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphHTMLStripper_a70bb7afa55d1ed77383b70da394c2284}
+\hypertarget{classCSphHTMLStripper_a90a0e8e38534fa7af80914e3821c868c}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!Set\-Removed\-Elements@{Set\-Removed\-Elements}}
+\index{Set\-Removed\-Elements@{Set\-Removed\-Elements}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{Set\-Removed\-Elements}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-H\-T\-M\-L\-Stripper\-::\-Set\-Removed\-Elements (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Config, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphHTMLStripper_a90a0e8e38534fa7af80914e3821c868c}
+\hypertarget{classCSphHTMLStripper_abfd041410a93e042c134206340029e1e}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!Set\-Zones@{Set\-Zones}}
+\index{Set\-Zones@{Set\-Zones}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{Set\-Zones}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-H\-T\-M\-L\-Stripper\-::\-Set\-Zones (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Zones, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)}}\label{classCSphHTMLStripper_abfd041410a93e042c134206340029e1e}
+\hypertarget{classCSphHTMLStripper_ace1b60171cecba7e171526a2a0c529bd}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!Strip@{Strip}}
+\index{Strip@{Strip}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{Strip}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-H\-T\-M\-L\-Stripper\-::\-Strip (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{s\-Data}
+\end{DoxyParamCaption}
+) const}}\label{classCSphHTMLStripper_ace1b60171cecba7e171526a2a0c529bd}
+\hypertarget{classCSphHTMLStripper_a66f37d6ef201ef02f509df01e9806c28}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!Update\-Tags@{Update\-Tags}}
+\index{Update\-Tags@{Update\-Tags}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{Update\-Tags}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-H\-T\-M\-L\-Stripper\-::\-Update\-Tags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphHTMLStripper_a66f37d6ef201ef02f509df01e9806c28}
+
+
+sorts tags, updates internal helpers 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCSphHTMLStripper_af3293a9a7026540726a7ef9cce2a3c15}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!m\-\_\-d\-End@{m\-\_\-d\-End}}
+\index{m\-\_\-d\-End@{m\-\_\-d\-End}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{m\-\_\-d\-End}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-H\-T\-M\-L\-Stripper\-::m\-\_\-d\-End\mbox{[}{\bf M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphHTMLStripper_af3293a9a7026540726a7ef9cce2a3c15}
+
+
+maps index of the first tag name char to end offset in m\-\_\-d\-Tags 
+
+\hypertarget{classCSphHTMLStripper_a2022427fa6d9f73889a1444f59da8428}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!m\-\_\-d\-Start@{m\-\_\-d\-Start}}
+\index{m\-\_\-d\-Start@{m\-\_\-d\-Start}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{m\-\_\-d\-Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-H\-T\-M\-L\-Stripper\-::m\-\_\-d\-Start\mbox{[}{\bf M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphHTMLStripper_a2022427fa6d9f73889a1444f59da8428}
+
+
+maps index of the first tag name char to start offset in m\-\_\-d\-Tags 
+
+\hypertarget{classCSphHTMLStripper_a49a2ccd3e42cbc5799cb3026448813ab}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!m\-\_\-d\-Tags@{m\-\_\-d\-Tags}}
+\index{m\-\_\-d\-Tags@{m\-\_\-d\-Tags}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{m\-\_\-d\-Tags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<${\bf Stripper\-Tag\-\_\-t}$>$ C\-Sph\-H\-T\-M\-L\-Stripper\-::m\-\_\-d\-Tags\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphHTMLStripper_a49a2ccd3e42cbc5799cb3026448813ab}
+
+
+known tags to index attrs and/or to remove contents 
+
+\hypertarget{classCSphHTMLStripper_acb1842ca8b483ff8df6ea3648fbca5ff}{\index{C\-Sph\-H\-T\-M\-L\-Stripper@{C\-Sph\-H\-T\-M\-L\-Stripper}!M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X@{M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X}}
+\index{M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X@{M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X}!CSphHTMLStripper@{C\-Sph\-H\-T\-M\-L\-Stripper}}
+\subsubsection[{M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-H\-T\-M\-L\-Stripper\-::\-M\-A\-X\-\_\-\-C\-H\-A\-R\-\_\-\-I\-N\-D\-E\-X = 28\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classCSphHTMLStripper_acb1842ca8b483ff8df6ea3648fbca5ff}
+
+
+max valid char index (a-\/z, underscore, colon) 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

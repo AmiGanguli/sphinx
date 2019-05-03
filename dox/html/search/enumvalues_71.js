@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['qflag_5fglobal_5fidf',['QFLAG_GLOBAL_IDF',['../searchd_8cpp.html#adf764cbdea00d65edcd07bb9953ad2b7a5e7ddb1c149804f9252ac33ab99b763c',1,'searchd.cpp']]],
+  ['qflag_5flocal_5fdf',['QFLAG_LOCAL_DF',['../searchd_8cpp.html#adf764cbdea00d65edcd07bb9953ad2b7aecdb4d5db06fb8500a16ab9f92b020b5',1,'searchd.cpp']]],
+  ['qflag_5flow_5fpriority',['QFLAG_LOW_PRIORITY',['../searchd_8cpp.html#adf764cbdea00d65edcd07bb9953ad2b7a598144008d38dbb42bbafab48be558f6',1,'searchd.cpp']]],
+  ['qflag_5fmax_5fpredicted_5ftime',['QFLAG_MAX_PREDICTED_TIME',['../searchd_8cpp.html#adf764cbdea00d65edcd07bb9953ad2b7a11a6306afdf29b6e6a9f48e55cbe25ef',1,'searchd.cpp']]],
+  ['qflag_5fnormalized_5ftf',['QFLAG_NORMALIZED_TF',['../searchd_8cpp.html#adf764cbdea00d65edcd07bb9953ad2b7a2d70f9a1f940d5231ec17f33f98880c3',1,'searchd.cpp']]],
+  ['qflag_5fplain_5fidf',['QFLAG_PLAIN_IDF',['../searchd_8cpp.html#adf764cbdea00d65edcd07bb9953ad2b7ae1b427281c2facebd1f4105932737b2f',1,'searchd.cpp']]],
+  ['qflag_5freverse_5fscan',['QFLAG_REVERSE_SCAN',['../searchd_8cpp.html#adf764cbdea00d65edcd07bb9953ad2b7a6e1134565400556173522a85218d537f',1,'searchd.cpp']]],
+  ['qflag_5fsimplify',['QFLAG_SIMPLIFY',['../searchd_8cpp.html#adf764cbdea00d65edcd07bb9953ad2b7aaa42b71587bd2f67db0983e0d7d3b350',1,'searchd.cpp']]],
+  ['qflag_5fsort_5fkbuffer',['QFLAG_SORT_KBUFFER',['../searchd_8cpp.html#adf764cbdea00d65edcd07bb9953ad2b7a7336d2f23587698f8a1ff9a537d134f7',1,'searchd.cpp']]],
+  ['query_5fdebug_5fno_5fpayload',['QUERY_DEBUG_NO_PAYLOAD',['../sphinxint_8h.html#a8ea364ae7c15b16cd4a3fdcf15de8dbfaf09f2f6b0cc196664745e442a7cc552a',1,'sphinxint.h']]],
+  ['query_5fstats_5finterval_5f15min',['QUERY_STATS_INTERVAL_15MIN',['../searchdaemon_8h.html#a726ca809ffd3d67ab4b8476646f26635a3860e9a22f257e06710d8048cfc9bbdd',1,'searchdaemon.h']]],
+  ['query_5fstats_5finterval_5f1min',['QUERY_STATS_INTERVAL_1MIN',['../searchdaemon_8h.html#a726ca809ffd3d67ab4b8476646f26635a5fee4c5ea0d98d3e65aa5709425b7db5',1,'searchdaemon.h']]],
+  ['query_5fstats_5finterval_5f5min',['QUERY_STATS_INTERVAL_5MIN',['../searchdaemon_8h.html#a726ca809ffd3d67ab4b8476646f26635a48476eff27cd7e14f06171e10cfda716',1,'searchdaemon.h']]],
+  ['query_5fstats_5finterval_5falltime',['QUERY_STATS_INTERVAL_ALLTIME',['../searchdaemon_8h.html#a726ca809ffd3d67ab4b8476646f26635a660743d6fb87bc152acb78eccc06efd0',1,'searchdaemon.h']]],
+  ['query_5fstats_5finterval_5ftotal',['QUERY_STATS_INTERVAL_TOTAL',['../searchdaemon_8h.html#a726ca809ffd3d67ab4b8476646f26635a71cbdf7b8698b075e0af728d4919ac23',1,'searchdaemon.h']]],
+  ['query_5fstats_5ftype_5f95',['QUERY_STATS_TYPE_95',['../searchdaemon_8h.html#a0411cd49bb5b71852cecd93bcbf0ca2da3665c7cd9c54e4825d7355a559e88777',1,'searchdaemon.h']]],
+  ['query_5fstats_5ftype_5f99',['QUERY_STATS_TYPE_99',['../searchdaemon_8h.html#a0411cd49bb5b71852cecd93bcbf0ca2da989cbb4511100220254085204eb2c46d',1,'searchdaemon.h']]],
+  ['query_5fstats_5ftype_5favg',['QUERY_STATS_TYPE_AVG',['../searchdaemon_8h.html#a0411cd49bb5b71852cecd93bcbf0ca2da2696030ed7777d41cff6c43179b429ba',1,'searchdaemon.h']]],
+  ['query_5fstats_5ftype_5fmax',['QUERY_STATS_TYPE_MAX',['../searchdaemon_8h.html#a0411cd49bb5b71852cecd93bcbf0ca2da176eca0d422d2b81adcacba59d00cd59',1,'searchdaemon.h']]],
+  ['query_5fstats_5ftype_5fmin',['QUERY_STATS_TYPE_MIN',['../searchdaemon_8h.html#a0411cd49bb5b71852cecd93bcbf0ca2da43f7baed8875de72523ce9f3aafcd4d2',1,'searchdaemon.h']]],
+  ['query_5fstats_5ftype_5ftotal',['QUERY_STATS_TYPE_TOTAL',['../searchdaemon_8h.html#a0411cd49bb5b71852cecd93bcbf0ca2daf8cc0729aae2570d1a575ae97da3b74a',1,'searchdaemon.h']]]
+];

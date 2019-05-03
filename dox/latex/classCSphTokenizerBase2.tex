@@ -1,0 +1,104 @@
+\hypertarget{classCSphTokenizerBase2}{\section{C\-Sph\-Tokenizer\-Base2 Class Reference}
+\label{classCSphTokenizerBase2}\index{C\-Sph\-Tokenizer\-Base2@{C\-Sph\-Tokenizer\-Base2}}
+}
+Inheritance diagram for C\-Sph\-Tokenizer\-Base2\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classCSphTokenizerBase2}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphTokenizerBase2_ae46629836aa461387098ce561283a7bc}{Skip\-Blended} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classCSphTokenizerBase2_ad80210c40774eac7e6586088f2266fbf}{Get\-Codepoint} ()
+\begin{DoxyCompactList}\small\item\em get codepoint \end{DoxyCompactList}\item 
+void \hyperlink{classCSphTokenizerBase2_a2d77cc595982b3c263c13bc9138f5196}{Accum\-Codepoint} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Code)
+\begin{DoxyCompactList}\small\item\em accum codepoint \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphTokenizerBase2_a3a1f6fdeb8ad52fa3b3f7c322c1d0491}{Get\-Blended\-Variant} ()
+\item 
+bool \hyperlink{classCSphTokenizerBase2_a3008015e81c1e248f9adbf67116e8749}{Check\-Exception} (const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Start, const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$p\-Cur, bool b\-Query\-Mode)
+\item 
+{\footnotesize template$<$bool I\-S\-\_\-\-Q\-U\-E\-R\-Y, bool I\-S\-\_\-\-B\-L\-E\-N\-D$>$ }\\\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{classCSphTokenizerBase2_afefb3fb4f17bf824d8af2adf04655a6b}{Do\-Get\-Token} ()
+\item 
+void \hyperlink{classCSphTokenizerBase2_af1b563c021558966d2fb2e66a4c4531a}{Flush\-Accum} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+methods that get specialized with regards to charset type aka \hyperlink{classCSphTokenizerBase2_ad80210c40774eac7e6586088f2266fbf}{Get\-Codepoint()} decoder and everything that depends on it 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSphTokenizerBase2_a2d77cc595982b3c263c13bc9138f5196}{\index{C\-Sph\-Tokenizer\-Base2@{C\-Sph\-Tokenizer\-Base2}!Accum\-Codepoint@{Accum\-Codepoint}}
+\index{Accum\-Codepoint@{Accum\-Codepoint}!CSphTokenizerBase2@{C\-Sph\-Tokenizer\-Base2}}
+\subsubsection[{Accum\-Codepoint}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Tokenizer\-Base2\-::\-Accum\-Codepoint (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCSphTokenizerBase2_a2d77cc595982b3c263c13bc9138f5196}
+
+
+accum codepoint 
+
+\hypertarget{classCSphTokenizerBase2_a3008015e81c1e248f9adbf67116e8749}{\index{C\-Sph\-Tokenizer\-Base2@{C\-Sph\-Tokenizer\-Base2}!Check\-Exception@{Check\-Exception}}
+\index{Check\-Exception@{Check\-Exception}!CSphTokenizerBase2@{C\-Sph\-Tokenizer\-Base2}}
+\subsubsection[{Check\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Tokenizer\-Base2\-::\-Check\-Exception (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Start, }
+\item[{const {\bf B\-Y\-T\-E} $\ast$}]{p\-Cur, }
+\item[{bool}]{b\-Query\-Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphTokenizerBase2_a3008015e81c1e248f9adbf67116e8749}
+\hypertarget{classCSphTokenizerBase2_afefb3fb4f17bf824d8af2adf04655a6b}{\index{C\-Sph\-Tokenizer\-Base2@{C\-Sph\-Tokenizer\-Base2}!Do\-Get\-Token@{Do\-Get\-Token}}
+\index{Do\-Get\-Token@{Do\-Get\-Token}!CSphTokenizerBase2@{C\-Sph\-Tokenizer\-Base2}}
+\subsubsection[{Do\-Get\-Token}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool I\-S\-\_\-\-Q\-U\-E\-R\-Y, bool I\-S\-\_\-\-B\-L\-E\-N\-D$>$ {\bf B\-Y\-T\-E} $\ast$ C\-Sph\-Tokenizer\-Base2\-::\-Do\-Get\-Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphTokenizerBase2_afefb3fb4f17bf824d8af2adf04655a6b}
+\hypertarget{classCSphTokenizerBase2_af1b563c021558966d2fb2e66a4c4531a}{\index{C\-Sph\-Tokenizer\-Base2@{C\-Sph\-Tokenizer\-Base2}!Flush\-Accum@{Flush\-Accum}}
+\index{Flush\-Accum@{Flush\-Accum}!CSphTokenizerBase2@{C\-Sph\-Tokenizer\-Base2}}
+\subsubsection[{Flush\-Accum}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Tokenizer\-Base2\-::\-Flush\-Accum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphTokenizerBase2_af1b563c021558966d2fb2e66a4c4531a}
+\hypertarget{classCSphTokenizerBase2_a3a1f6fdeb8ad52fa3b3f7c322c1d0491}{\index{C\-Sph\-Tokenizer\-Base2@{C\-Sph\-Tokenizer\-Base2}!Get\-Blended\-Variant@{Get\-Blended\-Variant}}
+\index{Get\-Blended\-Variant@{Get\-Blended\-Variant}!CSphTokenizerBase2@{C\-Sph\-Tokenizer\-Base2}}
+\subsubsection[{Get\-Blended\-Variant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} $\ast$ C\-Sph\-Tokenizer\-Base2\-::\-Get\-Blended\-Variant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCSphTokenizerBase2_a3a1f6fdeb8ad52fa3b3f7c322c1d0491}
+\hypertarget{classCSphTokenizerBase2_ad80210c40774eac7e6586088f2266fbf}{\index{C\-Sph\-Tokenizer\-Base2@{C\-Sph\-Tokenizer\-Base2}!Get\-Codepoint@{Get\-Codepoint}}
+\index{Get\-Codepoint@{Get\-Codepoint}!CSphTokenizerBase2@{C\-Sph\-Tokenizer\-Base2}}
+\subsubsection[{Get\-Codepoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Tokenizer\-Base2\-::\-Get\-Codepoint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classCSphTokenizerBase2_ad80210c40774eac7e6586088f2266fbf}
+
+
+get codepoint 
+
+\hypertarget{classCSphTokenizerBase2_ae46629836aa461387098ce561283a7bc}{\index{C\-Sph\-Tokenizer\-Base2@{C\-Sph\-Tokenizer\-Base2}!Skip\-Blended@{Skip\-Blended}}
+\index{Skip\-Blended@{Skip\-Blended}!CSphTokenizerBase2@{C\-Sph\-Tokenizer\-Base2}}
+\subsubsection[{Skip\-Blended}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Tokenizer\-Base2\-::\-Skip\-Blended (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSphTokenizerBase2_ae46629836aa461387098ce561283a7bc}
+
+
+Reimplemented from \hyperlink{classISphTokenizer_ada473c9be43cd98ab67077a18f8c5eeb}{I\-Sph\-Tokenizer}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

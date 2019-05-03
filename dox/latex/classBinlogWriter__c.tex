@@ -1,0 +1,155 @@
+\hypertarget{classBinlogWriter__c}{\section{Binlog\-Writer\-\_\-c Class Reference}
+\label{classBinlogWriter__c}\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}}
+}
+Inheritance diagram for Binlog\-Writer\-\_\-c\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classBinlogWriter__c}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBinlogWriter__c_a8a67c21cbed27a874931599a60d853c1}{Binlog\-Writer\-\_\-c} ()
+\item 
+virtual \hyperlink{classBinlogWriter__c_aec0069660c8ba9352bce4039824a0212}{$\sim$\-Binlog\-Writer\-\_\-c} ()
+\item 
+virtual void \hyperlink{classBinlogWriter__c_ac1a668069eb0155b3b9f77bbe0e69d7c}{Flush} ()
+\item 
+void \hyperlink{classBinlogWriter__c_a8becf80d513b60a3e1f393b1bad8a36f}{Write} ()
+\item 
+void \hyperlink{classBinlogWriter__c_a396f3838cc7e535d21ab2533cf6d4040}{Fsync} ()
+\item 
+bool \hyperlink{classBinlogWriter__c_a518beb80e643750c67c8b4632b12ec0b}{Has\-Unwritten\-Data} () const 
+\item 
+bool \hyperlink{classBinlogWriter__c_a83d14a189759f79c94bd82ccd9588b19}{Has\-Unsynced\-Data} () const 
+\item 
+void \hyperlink{classBinlogWriter__c_a5bf4c76d82945791b4dfa8db26295551}{Reset\-Crc} ()
+\begin{DoxyCompactList}\small\item\em restart checksumming \end{DoxyCompactList}\item 
+void \hyperlink{classBinlogWriter__c_a275e0934bb96d4103eb47a0597cf7b95}{Write\-Crc} ()
+\begin{DoxyCompactList}\small\item\em finalize and write current checksum to output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classBinlogWriter__c_a2da170298d3fa4bfb21b4d48386a8a4c}{Hash\-Collected} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classBinlogWriter__c_a53b7d792d027b67edaeeaf56b505d3cf}{m\-\_\-i\-Last\-Write\-Pos}
+\item 
+\hyperlink{sphinxstd_8h_a996e72f71b11a5bb8b3b7b6936b1516d}{int64\-\_\-t} \hyperlink{classBinlogWriter__c_a75189762b43b11c78642317aee026ee5}{m\-\_\-i\-Last\-Fsync\-Pos}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{classBinlogWriter__c_a687fff645ffca4229438a9ea6c95eeae}{m\-\_\-i\-Last\-Crc\-Pos}
+\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{classBinlogWriter__c_a3ec5ac39e5834fcc146241a22d8474d4}{m\-\_\-u\-C\-R\-C}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBinlogWriter__c_a8a67c21cbed27a874931599a60d853c1}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}}
+\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{Binlog\-Writer\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}Binlog\-Writer\-\_\-c\-::\-Binlog\-Writer\-\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBinlogWriter__c_a8a67c21cbed27a874931599a60d853c1}
+\hypertarget{classBinlogWriter__c_aec0069660c8ba9352bce4039824a0212}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!$\sim$\-Binlog\-Writer\-\_\-c@{$\sim$\-Binlog\-Writer\-\_\-c}}
+\index{$\sim$\-Binlog\-Writer\-\_\-c@{$\sim$\-Binlog\-Writer\-\_\-c}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{$\sim$\-Binlog\-Writer\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}virtual Binlog\-Writer\-\_\-c\-::$\sim$\-Binlog\-Writer\-\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classBinlogWriter__c_aec0069660c8ba9352bce4039824a0212}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBinlogWriter__c_ac1a668069eb0155b3b9f77bbe0e69d7c}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!Flush@{Flush}}
+\index{Flush@{Flush}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{Flush}]{\setlength{\rightskip}{0pt plus 5cm}void Binlog\-Writer\-\_\-c\-::\-Flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBinlogWriter__c_ac1a668069eb0155b3b9f77bbe0e69d7c}
+
+
+Reimplemented from \hyperlink{classCSphWriter_a1a2e6bfe521039f4eb5453725b5a4162}{C\-Sph\-Writer}.
+
+\hypertarget{classBinlogWriter__c_a396f3838cc7e535d21ab2533cf6d4040}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!Fsync@{Fsync}}
+\index{Fsync@{Fsync}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{Fsync}]{\setlength{\rightskip}{0pt plus 5cm}void Binlog\-Writer\-\_\-c\-::\-Fsync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBinlogWriter__c_a396f3838cc7e535d21ab2533cf6d4040}
+\hypertarget{classBinlogWriter__c_a2da170298d3fa4bfb21b4d48386a8a4c}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!Hash\-Collected@{Hash\-Collected}}
+\index{Hash\-Collected@{Hash\-Collected}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{Hash\-Collected}]{\setlength{\rightskip}{0pt plus 5cm}void Binlog\-Writer\-\_\-c\-::\-Hash\-Collected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classBinlogWriter__c_a2da170298d3fa4bfb21b4d48386a8a4c}
+\hypertarget{classBinlogWriter__c_a83d14a189759f79c94bd82ccd9588b19}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!Has\-Unsynced\-Data@{Has\-Unsynced\-Data}}
+\index{Has\-Unsynced\-Data@{Has\-Unsynced\-Data}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{Has\-Unsynced\-Data}]{\setlength{\rightskip}{0pt plus 5cm}bool Binlog\-Writer\-\_\-c\-::\-Has\-Unsynced\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBinlogWriter__c_a83d14a189759f79c94bd82ccd9588b19}
+\hypertarget{classBinlogWriter__c_a518beb80e643750c67c8b4632b12ec0b}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!Has\-Unwritten\-Data@{Has\-Unwritten\-Data}}
+\index{Has\-Unwritten\-Data@{Has\-Unwritten\-Data}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{Has\-Unwritten\-Data}]{\setlength{\rightskip}{0pt plus 5cm}bool Binlog\-Writer\-\_\-c\-::\-Has\-Unwritten\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBinlogWriter__c_a518beb80e643750c67c8b4632b12ec0b}
+\hypertarget{classBinlogWriter__c_a5bf4c76d82945791b4dfa8db26295551}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!Reset\-Crc@{Reset\-Crc}}
+\index{Reset\-Crc@{Reset\-Crc}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{Reset\-Crc}]{\setlength{\rightskip}{0pt plus 5cm}void Binlog\-Writer\-\_\-c\-::\-Reset\-Crc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBinlogWriter__c_a5bf4c76d82945791b4dfa8db26295551}
+
+
+restart checksumming 
+
+\hypertarget{classBinlogWriter__c_a8becf80d513b60a3e1f393b1bad8a36f}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!Write@{Write}}
+\index{Write@{Write}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{Write}]{\setlength{\rightskip}{0pt plus 5cm}void Binlog\-Writer\-\_\-c\-::\-Write (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBinlogWriter__c_a8becf80d513b60a3e1f393b1bad8a36f}
+\hypertarget{classBinlogWriter__c_a275e0934bb96d4103eb47a0597cf7b95}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!Write\-Crc@{Write\-Crc}}
+\index{Write\-Crc@{Write\-Crc}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{Write\-Crc}]{\setlength{\rightskip}{0pt plus 5cm}void Binlog\-Writer\-\_\-c\-::\-Write\-Crc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBinlogWriter__c_a275e0934bb96d4103eb47a0597cf7b95}
+
+
+finalize and write current checksum to output stream 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBinlogWriter__c_a687fff645ffca4229438a9ea6c95eeae}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!m\-\_\-i\-Last\-Crc\-Pos@{m\-\_\-i\-Last\-Crc\-Pos}}
+\index{m\-\_\-i\-Last\-Crc\-Pos@{m\-\_\-i\-Last\-Crc\-Pos}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Last\-Crc\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} Binlog\-Writer\-\_\-c\-::m\-\_\-i\-Last\-Crc\-Pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classBinlogWriter__c_a687fff645ffca4229438a9ea6c95eeae}
+\hypertarget{classBinlogWriter__c_a75189762b43b11c78642317aee026ee5}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!m\-\_\-i\-Last\-Fsync\-Pos@{m\-\_\-i\-Last\-Fsync\-Pos}}
+\index{m\-\_\-i\-Last\-Fsync\-Pos@{m\-\_\-i\-Last\-Fsync\-Pos}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Last\-Fsync\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Binlog\-Writer\-\_\-c\-::m\-\_\-i\-Last\-Fsync\-Pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classBinlogWriter__c_a75189762b43b11c78642317aee026ee5}
+\hypertarget{classBinlogWriter__c_a53b7d792d027b67edaeeaf56b505d3cf}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!m\-\_\-i\-Last\-Write\-Pos@{m\-\_\-i\-Last\-Write\-Pos}}
+\index{m\-\_\-i\-Last\-Write\-Pos@{m\-\_\-i\-Last\-Write\-Pos}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{m\-\_\-i\-Last\-Write\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int64\-\_\-t} Binlog\-Writer\-\_\-c\-::m\-\_\-i\-Last\-Write\-Pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classBinlogWriter__c_a53b7d792d027b67edaeeaf56b505d3cf}
+\hypertarget{classBinlogWriter__c_a3ec5ac39e5834fcc146241a22d8474d4}{\index{Binlog\-Writer\-\_\-c@{Binlog\-Writer\-\_\-c}!m\-\_\-u\-C\-R\-C@{m\-\_\-u\-C\-R\-C}}
+\index{m\-\_\-u\-C\-R\-C@{m\-\_\-u\-C\-R\-C}!BinlogWriter_c@{Binlog\-Writer\-\_\-c}}
+\subsubsection[{m\-\_\-u\-C\-R\-C}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} Binlog\-Writer\-\_\-c\-::m\-\_\-u\-C\-R\-C\hspace{0.3cm}{\ttfamily [private]}}}\label{classBinlogWriter__c_a3ec5ac39e5834fcc146241a22d8474d4}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinxrt_8cpp}{sphinxrt.\-cpp}\end{DoxyCompactItemize}

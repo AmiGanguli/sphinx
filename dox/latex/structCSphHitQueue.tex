@@ -1,0 +1,99 @@
+\hypertarget{structCSphHitQueue}{\section{C\-Sph\-Hit\-Queue Struct Reference}
+\label{structCSphHitQueue}\index{C\-Sph\-Hit\-Queue@{C\-Sph\-Hit\-Queue}}
+}
+
+
+hit priority queue  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphHitQueue_a33aafae702b89218e959b63b75f440bf}{C\-Sph\-Hit\-Queue} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Size)
+\begin{DoxyCompactList}\small\item\em create queue \end{DoxyCompactList}\item 
+\hyperlink{structCSphHitQueue_adf6718c5738a8dca0876fa4b8634308d}{$\sim$\-C\-Sph\-Hit\-Queue} ()
+\begin{DoxyCompactList}\small\item\em destroy queue \end{DoxyCompactList}\item 
+void \hyperlink{structCSphHitQueue_a16419a41e5d0a4efbceac172540b13a3}{Push} (\hyperlink{structCSphAggregateHit}{C\-Sph\-Aggregate\-Hit} \&t\-Hit, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Bin)
+\begin{DoxyCompactList}\small\item\em add entry to the queue \end{DoxyCompactList}\item 
+void \hyperlink{structCSphHitQueue_a5de745ea26364e7f794a87a9b1c257e3}{Pop} ()
+\begin{DoxyCompactList}\small\item\em remove root (ie. top priority) entry \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphHitQueueEntry}{C\-Sph\-Hit\-Queue\-Entry} $\ast$ \hyperlink{structCSphHitQueue_a1319eff0345e7d228ed3312575c57c67}{m\-\_\-p\-Data}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphHitQueue_a09f9607b8c1793ec0c00dd7fb072cb8a}{m\-\_\-i\-Size}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphHitQueue_a04f2e4d13de5ca8766eff04cb1db9b09}{m\-\_\-i\-Used}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+hit priority queue 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphHitQueue_a33aafae702b89218e959b63b75f440bf}{\index{C\-Sph\-Hit\-Queue@{C\-Sph\-Hit\-Queue}!C\-Sph\-Hit\-Queue@{C\-Sph\-Hit\-Queue}}
+\index{C\-Sph\-Hit\-Queue@{C\-Sph\-Hit\-Queue}!CSphHitQueue@{C\-Sph\-Hit\-Queue}}
+\subsubsection[{C\-Sph\-Hit\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Hit\-Queue\-::\-C\-Sph\-Hit\-Queue (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structCSphHitQueue_a33aafae702b89218e959b63b75f440bf}
+
+
+create queue 
+
+\hypertarget{structCSphHitQueue_adf6718c5738a8dca0876fa4b8634308d}{\index{C\-Sph\-Hit\-Queue@{C\-Sph\-Hit\-Queue}!$\sim$\-C\-Sph\-Hit\-Queue@{$\sim$\-C\-Sph\-Hit\-Queue}}
+\index{$\sim$\-C\-Sph\-Hit\-Queue@{$\sim$\-C\-Sph\-Hit\-Queue}!CSphHitQueue@{C\-Sph\-Hit\-Queue}}
+\subsubsection[{$\sim$\-C\-Sph\-Hit\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Hit\-Queue\-::$\sim$\-C\-Sph\-Hit\-Queue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphHitQueue_adf6718c5738a8dca0876fa4b8634308d}
+
+
+destroy queue 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphHitQueue_a5de745ea26364e7f794a87a9b1c257e3}{\index{C\-Sph\-Hit\-Queue@{C\-Sph\-Hit\-Queue}!Pop@{Pop}}
+\index{Pop@{Pop}!CSphHitQueue@{C\-Sph\-Hit\-Queue}}
+\subsubsection[{Pop}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Queue\-::\-Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphHitQueue_a5de745ea26364e7f794a87a9b1c257e3}
+
+
+remove root (ie. top priority) entry 
+
+\hypertarget{structCSphHitQueue_a16419a41e5d0a4efbceac172540b13a3}{\index{C\-Sph\-Hit\-Queue@{C\-Sph\-Hit\-Queue}!Push@{Push}}
+\index{Push@{Push}!CSphHitQueue@{C\-Sph\-Hit\-Queue}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Hit\-Queue\-::\-Push (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Aggregate\-Hit} \&}]{t\-Hit, }
+\item[{{\bf int}}]{i\-Bin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphHitQueue_a16419a41e5d0a4efbceac172540b13a3}
+
+
+add entry to the queue 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphHitQueue_a09f9607b8c1793ec0c00dd7fb072cb8a}{\index{C\-Sph\-Hit\-Queue@{C\-Sph\-Hit\-Queue}!m\-\_\-i\-Size@{m\-\_\-i\-Size}}
+\index{m\-\_\-i\-Size@{m\-\_\-i\-Size}!CSphHitQueue@{C\-Sph\-Hit\-Queue}}
+\subsubsection[{m\-\_\-i\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Hit\-Queue\-::m\-\_\-i\-Size}}\label{structCSphHitQueue_a09f9607b8c1793ec0c00dd7fb072cb8a}
+\hypertarget{structCSphHitQueue_a04f2e4d13de5ca8766eff04cb1db9b09}{\index{C\-Sph\-Hit\-Queue@{C\-Sph\-Hit\-Queue}!m\-\_\-i\-Used@{m\-\_\-i\-Used}}
+\index{m\-\_\-i\-Used@{m\-\_\-i\-Used}!CSphHitQueue@{C\-Sph\-Hit\-Queue}}
+\subsubsection[{m\-\_\-i\-Used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Hit\-Queue\-::m\-\_\-i\-Used}}\label{structCSphHitQueue_a04f2e4d13de5ca8766eff04cb1db9b09}
+\hypertarget{structCSphHitQueue_a1319eff0345e7d228ed3312575c57c67}{\index{C\-Sph\-Hit\-Queue@{C\-Sph\-Hit\-Queue}!m\-\_\-p\-Data@{m\-\_\-p\-Data}}
+\index{m\-\_\-p\-Data@{m\-\_\-p\-Data}!CSphHitQueue@{C\-Sph\-Hit\-Queue}}
+\subsubsection[{m\-\_\-p\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Hit\-Queue\-Entry}$\ast$ C\-Sph\-Hit\-Queue\-::m\-\_\-p\-Data}}\label{structCSphHitQueue_a1319eff0345e7d228ed3312575c57c67}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

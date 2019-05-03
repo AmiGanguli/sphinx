@@ -1,0 +1,585 @@
+\hypertarget{structCSphSource__SQL}{\section{C\-Sph\-Source\-\_\-\-S\-Q\-L Struct Reference}
+\label{structCSphSource__SQL}\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+}
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Source\-\_\-\-S\-Q\-L\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{structCSphSource__SQL}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphSource__SQL_a8fabd91a3a49a0eff01eebc9f2f3a529}{C\-Sph\-Source\-\_\-\-S\-Q\-L} (const char $\ast$s\-Name)
+\item 
+virtual \hyperlink{structCSphSource__SQL_a440f2c37067d7ee37c1c4ce5b6098777}{$\sim$\-C\-Sph\-Source\-\_\-\-S\-Q\-L} ()
+\item 
+bool \hyperlink{structCSphSource__SQL_a6ef468427ca6b7d3d66f2079fb06ac16}{Setup} (const \hyperlink{structCSphSourceParams__SQL}{C\-Sph\-Source\-Params\-\_\-\-S\-Q\-L} \&p\-Params)
+\item 
+virtual bool \hyperlink{structCSphSource__SQL_a2c19c1d1ddab42d9eed3d6d3b3bf4c0a}{Connect} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em connect to S\-Q\-L server \end{DoxyCompactList}\item 
+virtual void \hyperlink{structCSphSource__SQL_a652ad7d017010cbeb85731060213a39c}{Disconnect} ()
+\begin{DoxyCompactList}\small\item\em disconnect from the source \end{DoxyCompactList}\item 
+virtual bool \hyperlink{structCSphSource__SQL_a5806ed4a14570cb3383431d165cceb66}{Iterate\-Start} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em issue main rows fetch query \end{DoxyCompactList}\item 
+virtual \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$$\ast$ \hyperlink{structCSphSource__SQL_a6ab08757e849aefa6260c583d1d9101c}{Next\-Document} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+virtual const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} $\ast$ \hyperlink{structCSphSource__SQL_ad9a8d2d28e870a3ba25ef4ef7988c4d6}{Get\-Field\-Lengths} () const 
+\item 
+virtual void \hyperlink{structCSphSource__SQL_a458e30ee09ccca767273609741a7311b}{Post\-Index} ()
+\item 
+virtual bool \hyperlink{structCSphSource__SQL_a0824aeedcde3bd86f3e4776fbae06702}{Has\-Attrs\-Configured} ()
+\item 
+virtual \hyperlink{classISphHits}{I\-Sph\-Hits} $\ast$ \hyperlink{structCSphSource__SQL_a6a5582bcb8f7270e2b12b76a43080b3b}{Iterate\-Joined\-Hits} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+virtual bool \hyperlink{structCSphSource__SQL_aa0786fc1487fef5693d9b82748ce6b98}{Iterate\-Multivalued\-Start} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Attr, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+virtual bool \hyperlink{structCSphSource__SQL_a4405f6a4ce3496fe69a79847aed0d940}{Iterate\-Multivalued\-Next} ()
+\begin{DoxyCompactList}\small\item\em get next multi-\/valued (id,attr-\/value) or (id, offset) for mva64 tuple to m\-\_\-t\-Doc\-Info \end{DoxyCompactList}\item 
+virtual bool \hyperlink{structCSphSource__SQL_af57f75dc40263a881e4ca37d70fb42e6}{Iterate\-Kill\-List\-Start} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\begin{DoxyCompactList}\small\item\em begin iterating kill list \end{DoxyCompactList}\item 
+virtual bool \hyperlink{structCSphSource__SQL_a3b544950510e7b7d988fbf27d8d2fb40}{Iterate\-Kill\-List\-Next} (\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \&t\-Doc\-Id)
+\begin{DoxyCompactList}\small\item\em get next kill list doc id \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccf}{E\-Ranges\-Reason} \{ \hyperlink{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccfa0b0ee81eea20a17dde364534aaf045ae}{S\-R\-E\-\_\-\-D\-O\-C\-S}, 
+\hyperlink{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccfa0305c68fdfe981d434dc9f5cdbe041de}{S\-R\-E\-\_\-\-M\-V\-A}, 
+\hyperlink{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccfad7cd7fcaf1061a4f422f9988a87ad110}{S\-R\-E\-\_\-\-J\-O\-I\-N\-E\-D\-H\-I\-T\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em by what reason the internal Setup\-Ranges called \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structCSphSource__SQL_a1ac9ba01e6f2ac183c6362bf80b8ae51}{Setup\-Ranges} (const char $\ast$s\-Range\-Query, const char $\ast$s\-Query, const char $\ast$s\-Prefix, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error, \hyperlink{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccf}{E\-Ranges\-Reason} i\-Reason)
+\begin{DoxyCompactList}\small\item\em setup them ranges (called both for document range-\/queries and M\-V\-A range-\/queries) \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphSource__SQL_a4acbfd270a0dd4ac01e209fd05790e9c}{Run\-Query\-Step} (const char $\ast$s\-Query, \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Error)
+\item 
+virtual void \hyperlink{structCSphSource__SQL_a92b1c42170c994dc119845a36c6bd353}{Sql\-Dismiss\-Result} ()=0
+\item 
+virtual bool \hyperlink{structCSphSource__SQL_a391ddc43bfef201721bea7be396da8bc}{Sql\-Query} (const char $\ast$s\-Query)=0
+\item 
+virtual bool \hyperlink{structCSphSource__SQL_a4917bc69c39dd20f81272e1706369aca}{Sql\-Is\-Error} ()=0
+\item 
+virtual const char $\ast$ \hyperlink{structCSphSource__SQL_a2db14a17dac262d1012a471cc78d655c}{Sql\-Error} ()=0
+\item 
+virtual bool \hyperlink{structCSphSource__SQL_af4bced57ef46a44e380ea44c85d43951}{Sql\-Connect} ()=0
+\item 
+virtual void \hyperlink{structCSphSource__SQL_afca96f63f3fb9dcf38769ec42d3f01d2}{Sql\-Disconnect} ()=0
+\item 
+virtual \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSource__SQL_ac4612ee310ab8c6f26e4a6cf21e26d34}{Sql\-Num\-Fields} ()=0
+\item 
+virtual bool \hyperlink{structCSphSource__SQL_a264f8e887c87298f671ddc26513625b7}{Sql\-Fetch\-Row} ()=0
+\item 
+virtual \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structCSphSource__SQL_a421fea4866eaec977a77fb71bc4bb52d}{Sql\-Column\-Length} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)=0
+\item 
+virtual const char $\ast$ \hyperlink{structCSphSource__SQL_a0ad45b702705e693aad933d45259c175}{Sql\-Column} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)=0
+\item 
+virtual const char $\ast$ \hyperlink{structCSphSource__SQL_a2a18e609e30f415dbd6b5f6114e04dda}{Sql\-Field\-Name} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index)=0
+\item 
+const char $\ast$ \hyperlink{structCSphSource__SQL_a7fcc9c4625c221ba1319de68c0b7e842}{Sql\-Unpack\-Column} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index, \hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \&u\-Unpacked\-Len, \hyperlink{sphinx_8h_a4d4996a14f2199e251e4f55ac3d302f0}{E\-Sph\-Unpack\-Format} e\-Format)
+\item 
+void \hyperlink{structCSphSource__SQL_a4b9eaf50aa904eebff7cd984d058d6db}{Report\-Unpack\-Error} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Index, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Error)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphString}{C\-Sph\-String} \hyperlink{structCSphSource__SQL_ae7deb5d2c5c32eae4c21d530e3cc029d}{m\-\_\-s\-Sql\-D\-S\-N}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{structCSphSource__SQL_aa3bf67db9fa45af54e16d67253217b58}{m\-\_\-d\-Fields} \mbox{[}\hyperlink{sphinx_8h_ad5336c1a92b4f76b012a1a868a85b874}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-S}\mbox{]}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSource__SQL_a31d8514d21d2d93c4feace87ba9b7b94}{m\-\_\-d\-Field\-Lengths} \mbox{[}\hyperlink{sphinx_8h_ad5336c1a92b4f76b012a1a868a85b874}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-S}\mbox{]}
+\item 
+\hyperlink{sphinx_8h_a4d4996a14f2199e251e4f55ac3d302f0}{E\-Sph\-Unpack\-Format} \hyperlink{structCSphSource__SQL_a48f68e7168dca54a98a9b519c6007246}{m\-\_\-d\-Unpack} \mbox{[}\hyperlink{sphinx_8h_ad5336c1a92b4f76b012a1a868a85b874}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-S}\mbox{]}
+\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{structCSphSource__SQL_a778a60151f224ab5cc7b3fb8cf1e36cc}{m\-\_\-u\-Min\-I\-D}
+\begin{DoxyCompactList}\small\item\em grand min I\-D \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{structCSphSource__SQL_aaeb3be54144f531d7606abd46719b657}{m\-\_\-u\-Max\-I\-D}
+\begin{DoxyCompactList}\small\item\em grand max I\-D \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{structCSphSource__SQL_aa02c355166552c4c0645daf68f3e566d}{m\-\_\-u\-Current\-I\-D}
+\begin{DoxyCompactList}\small\item\em current min I\-D \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{structCSphSource__SQL_a7ed6450b19c762fe5911c6d13bcb1398}{m\-\_\-u\-Max\-Fetched\-I\-D}
+\begin{DoxyCompactList}\small\item\em max actually fetched I\-D \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSource__SQL_a5ac61b46c7c45963bc415966f25c413d}{m\-\_\-i\-Multi\-Attr}
+\begin{DoxyCompactList}\small\item\em multi-\/valued attr being currently fetched \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSource__SQL_aa9a5b3f39074872fcd92a73b3f2abb9a}{m\-\_\-i\-Sql\-Fields}
+\begin{DoxyCompactList}\small\item\em field count (for row dumper) \end{DoxyCompactList}\item 
+\hyperlink{structCSphSourceParams__SQL}{C\-Sph\-Source\-Params\-\_\-\-S\-Q\-L} \hyperlink{structCSphSource__SQL_a2974c9329104af25bd20950d951f25ec}{m\-\_\-t\-Params}
+\item 
+bool \hyperlink{structCSphSource__SQL_a84e0d1afeedf2ae246724fd59e5cf8b1}{m\-\_\-b\-Can\-Unpack}
+\item 
+bool \hyperlink{structCSphSource__SQL_a95c8c8eff2e6ce507dc5d63f3f74eea8}{m\-\_\-b\-Unpack\-Failed}
+\item 
+bool \hyperlink{structCSphSource__SQL_ae0150574c72c11d0f630c9efd139a659}{m\-\_\-b\-Unpack\-Overflow}
+\item 
+\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ char $>$ \hyperlink{structCSphSource__SQL_aa2cbb5ff03e0afa3821facb61533f3d5}{m\-\_\-d\-Unpack\-Buffers} \mbox{[}\hyperlink{sphinx_8h_ad5336c1a92b4f76b012a1a868a85b874}{S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-S}\mbox{]}
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSource__SQL_a89c1ec7e37fab24e70f55ac3b3da4c07}{m\-\_\-i\-Joined\-Hit\-Field}
+\begin{DoxyCompactList}\small\item\em currently pulling joined hits from this field (index into schema; -\/1 if not pulling) \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a3176771631c12a9e4897272003e6b447}{Sph\-Doc\-I\-D\-\_\-t} \hyperlink{structCSphSource__SQL_afb30bba746655166c6dc190a73224de0}{m\-\_\-i\-Joined\-Hit\-I\-D}
+\begin{DoxyCompactList}\small\item\em last document id \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSource__SQL_a5dc993ad2a0d01254d0da80600f7ef9a}{m\-\_\-i\-Joined\-Hit\-Pos}
+\begin{DoxyCompactList}\small\item\em last hit position \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphSource__SQL_a6c0988492c5ee4c7eed91719640f9cbd}{M\-A\-C\-R\-O\-\_\-\-C\-O\-U\-N\-T} = 2
+\item 
+static const char $\ast$const \hyperlink{structCSphSource__SQL_a59789aa6096ddbf99c4b570123b470ac}{M\-A\-C\-R\-O\-\_\-\-V\-A\-L\-U\-E\-S} \mbox{[}\hyperlink{structCSphSource__SQL_a6c0988492c5ee4c7eed91719640f9cbd}{M\-A\-C\-R\-O\-\_\-\-C\-O\-U\-N\-T}\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structCSphSource__SQL_a1c63f7d16d59dee9fafd3b4203c1a61f}{m\-\_\-b\-Sql\-Connected}
+\begin{DoxyCompactList}\small\item\em am i connected? \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+generic S\-Q\-L source multi-\/field plain-\/text documents fetched from given query 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccf}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!E\-Ranges\-Reason@{E\-Ranges\-Reason}}
+\index{E\-Ranges\-Reason@{E\-Ranges\-Reason}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{E\-Ranges\-Reason}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-E\-Ranges\-Reason}\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccf}
+
+
+by what reason the internal Setup\-Ranges called 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-R\-E\-\_\-\-D\-O\-C\-S@{S\-R\-E\-\_\-\-D\-O\-C\-S}!C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!S\-R\-E\-\_\-\-D\-O\-C\-S@{S\-R\-E\-\_\-\-D\-O\-C\-S}}\item[{\em 
+\hypertarget{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccfa0b0ee81eea20a17dde364534aaf045ae}{S\-R\-E\-\_\-\-D\-O\-C\-S}\label{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccfa0b0ee81eea20a17dde364534aaf045ae}
+}]\index{S\-R\-E\-\_\-\-M\-V\-A@{S\-R\-E\-\_\-\-M\-V\-A}!C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!S\-R\-E\-\_\-\-M\-V\-A@{S\-R\-E\-\_\-\-M\-V\-A}}\item[{\em 
+\hypertarget{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccfa0305c68fdfe981d434dc9f5cdbe041de}{S\-R\-E\-\_\-\-M\-V\-A}\label{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccfa0305c68fdfe981d434dc9f5cdbe041de}
+}]\index{S\-R\-E\-\_\-\-J\-O\-I\-N\-E\-D\-H\-I\-T\-S@{S\-R\-E\-\_\-\-J\-O\-I\-N\-E\-D\-H\-I\-T\-S}!C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!S\-R\-E\-\_\-\-J\-O\-I\-N\-E\-D\-H\-I\-T\-S@{S\-R\-E\-\_\-\-J\-O\-I\-N\-E\-D\-H\-I\-T\-S}}\item[{\em 
+\hypertarget{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccfad7cd7fcaf1061a4f422f9988a87ad110}{S\-R\-E\-\_\-\-J\-O\-I\-N\-E\-D\-H\-I\-T\-S}\label{structCSphSource__SQL_adb285a8a9637c5528a46366089fdaccfad7cd7fcaf1061a4f422f9988a87ad110}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphSource__SQL_a8fabd91a3a49a0eff01eebc9f2f3a529}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{C\-Sph\-Source\-\_\-\-S\-Q\-L}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-C\-Sph\-Source\-\_\-\-S\-Q\-L (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{structCSphSource__SQL_a8fabd91a3a49a0eff01eebc9f2f3a529}
+\hypertarget{structCSphSource__SQL_a440f2c37067d7ee37c1c4ce5b6098777}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!$\sim$\-C\-Sph\-Source\-\_\-\-S\-Q\-L@{$\sim$\-C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\index{$\sim$\-C\-Sph\-Source\-\_\-\-S\-Q\-L@{$\sim$\-C\-Sph\-Source\-\_\-\-S\-Q\-L}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{$\sim$\-C\-Sph\-Source\-\_\-\-S\-Q\-L}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\-Sph\-Source\-\_\-\-S\-Q\-L\-::$\sim$\-C\-Sph\-Source\-\_\-\-S\-Q\-L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structCSphSource__SQL_a440f2c37067d7ee37c1c4ce5b6098777}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphSource__SQL_a2c19c1d1ddab42d9eed3d6d3b3bf4c0a}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Connect@{Connect}}
+\index{Connect@{Connect}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Connect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_a2c19c1d1ddab42d9eed3d6d3b3bf4c0a}
+
+
+connect to S\-Q\-L server 
+
+
+
+Implements \hyperlink{classCSphSource_a50f73194db9b7580d03b877fad183d1d}{C\-Sph\-Source}.
+
+\hypertarget{structCSphSource__SQL_a652ad7d017010cbeb85731060213a39c}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Disconnect@{Disconnect}}
+\index{Disconnect@{Disconnect}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_a652ad7d017010cbeb85731060213a39c}
+
+
+disconnect from the source 
+
+
+
+Implements \hyperlink{classCSphSource_ae8fb8afc3854b68c2b9f69421e2ba759}{C\-Sph\-Source}.
+
+\hypertarget{structCSphSource__SQL_ad9a8d2d28e870a3ba25ef4ef7988c4d6}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Get\-Field\-Lengths@{Get\-Field\-Lengths}}
+\index{Get\-Field\-Lengths@{Get\-Field\-Lengths}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Get\-Field\-Lengths}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} $\ast$ C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Get\-Field\-Lengths (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_ad9a8d2d28e870a3ba25ef4ef7988c4d6}
+
+
+Implements \hyperlink{classCSphSource__Document_a0cd72b8587d98e306ff2f2e3d07503bb}{C\-Sph\-Source\-\_\-\-Document}.
+
+\hypertarget{structCSphSource__SQL_a0824aeedcde3bd86f3e4776fbae06702}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Has\-Attrs\-Configured@{Has\-Attrs\-Configured}}
+\index{Has\-Attrs\-Configured@{Has\-Attrs\-Configured}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Has\-Attrs\-Configured}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Has\-Attrs\-Configured (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structCSphSource__SQL_a0824aeedcde3bd86f3e4776fbae06702}
+check if there are any attributes configured note that there might be N\-O actual attributes in the case if configured ones do not match those actually returned by the source 
+
+Implements \hyperlink{classCSphSource_a18a23aba5b933c8ed3c84d3fa360ac3b}{C\-Sph\-Source}.
+
+\hypertarget{structCSphSource__SQL_a6a5582bcb8f7270e2b12b76a43080b3b}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Iterate\-Joined\-Hits@{Iterate\-Joined\-Hits}}
+\index{Iterate\-Joined\-Hits@{Iterate\-Joined\-Hits}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Iterate\-Joined\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Hits} $\ast$ C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Iterate\-Joined\-Hits (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_a6a5582bcb8f7270e2b12b76a43080b3b}
+get joined hits from joined fields (w/o attached docinfos) returns false and fills out-\/string with error message on failure returns true and sets m\-\_\-t\-Doc\-Info.\-m\-\_\-u\-Doc\-I\-D to 0 on eof returns true and sets m\-\_\-t\-Doc\-Info.\-m\-\_\-u\-Doc\-I\-D to non-\/0 on success 
+
+Reimplemented from \hyperlink{classCSphSource_a59e3058af78b877c3fd864e99b9a23e0}{C\-Sph\-Source}.
+
+\hypertarget{structCSphSource__SQL_a3b544950510e7b7d988fbf27d8d2fb40}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Iterate\-Kill\-List\-Next@{Iterate\-Kill\-List\-Next}}
+\index{Iterate\-Kill\-List\-Next@{Iterate\-Kill\-List\-Next}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Iterate\-Kill\-List\-Next}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Iterate\-Kill\-List\-Next (
+\begin{DoxyParamCaption}
+\item[{{\bf Sph\-Doc\-I\-D\-\_\-t} \&}]{u\-Doc\-Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_a3b544950510e7b7d988fbf27d8d2fb40}
+
+
+get next kill list doc id 
+
+
+
+Implements \hyperlink{classCSphSource_a612f192dcf6b2705895fe1ca478cf224}{C\-Sph\-Source}.
+
+\hypertarget{structCSphSource__SQL_af57f75dc40263a881e4ca37d70fb42e6}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Iterate\-Kill\-List\-Start@{Iterate\-Kill\-List\-Start}}
+\index{Iterate\-Kill\-List\-Start@{Iterate\-Kill\-List\-Start}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Iterate\-Kill\-List\-Start}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Iterate\-Kill\-List\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_af57f75dc40263a881e4ca37d70fb42e6}
+
+
+begin iterating kill list 
+
+
+
+Implements \hyperlink{classCSphSource_a03c3bdd36535b2ef9e3dca04efbfdee2}{C\-Sph\-Source}.
+
+\hypertarget{structCSphSource__SQL_a4405f6a4ce3496fe69a79847aed0d940}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Iterate\-Multivalued\-Next@{Iterate\-Multivalued\-Next}}
+\index{Iterate\-Multivalued\-Next@{Iterate\-Multivalued\-Next}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Iterate\-Multivalued\-Next}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Iterate\-Multivalued\-Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_a4405f6a4ce3496fe69a79847aed0d940}
+
+
+get next multi-\/valued (id,attr-\/value) or (id, offset) for mva64 tuple to m\-\_\-t\-Doc\-Info 
+
+
+
+Implements \hyperlink{classCSphSource_a96b70f84184221299e21078ba7c45405}{C\-Sph\-Source}.
+
+\hypertarget{structCSphSource__SQL_aa0786fc1487fef5693d9b82748ce6b98}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Iterate\-Multivalued\-Start@{Iterate\-Multivalued\-Start}}
+\index{Iterate\-Multivalued\-Start@{Iterate\-Multivalued\-Start}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Iterate\-Multivalued\-Start}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Iterate\-Multivalued\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Attr, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_aa0786fc1487fef5693d9b82748ce6b98}
+begin iterating values of out-\/of-\/document multi-\/valued attribute i\-Attr will fail if i\-Attr is out of range, or is not multi-\/valued can also fail if configured settings are invalid (eg. S\-Q\-L query can not be executed) 
+
+Implements \hyperlink{classCSphSource_a9c153cf946c203bf8a8b29d1c10787bf}{C\-Sph\-Source}.
+
+\hypertarget{structCSphSource__SQL_a5806ed4a14570cb3383431d165cceb66}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Iterate\-Start@{Iterate\-Start}}
+\index{Iterate\-Start@{Iterate\-Start}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Iterate\-Start}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Iterate\-Start (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_a5806ed4a14570cb3383431d165cceb66}
+
+
+issue main rows fetch query 
+
+
+
+Implements \hyperlink{classCSphSource_a290f2ae8fbc60b2def57305ee08b0d3f}{C\-Sph\-Source}.
+
+\hypertarget{structCSphSource__SQL_a6ab08757e849aefa6260c583d1d9101c}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Next\-Document@{Next\-Document}}
+\index{Next\-Document@{Next\-Document}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Next\-Document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} $\ast$$\ast$ C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Next\-Document (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_a6ab08757e849aefa6260c583d1d9101c}
+field data getter to be implemented by descendants 
+
+Implements \hyperlink{classCSphSource__Document_a09f4bb163daef06a29a72387e0796d5a}{C\-Sph\-Source\-\_\-\-Document}.
+
+\hypertarget{structCSphSource__SQL_a458e30ee09ccca767273609741a7311b}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Post\-Index@{Post\-Index}}
+\index{Post\-Index@{Post\-Index}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Post\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Post\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{structCSphSource__SQL_a458e30ee09ccca767273609741a7311b}
+post-\/index callback gets called when the indexing is succesfully (!) over 
+
+Reimplemented from \hyperlink{classCSphSource_ab769d6c93df8cd8097f9836df6e5843a}{C\-Sph\-Source}.
+
+\hypertarget{structCSphSource__SQL_a4b9eaf50aa904eebff7cd984d058d6db}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Report\-Unpack\-Error@{Report\-Unpack\-Error}}
+\index{Report\-Unpack\-Error@{Report\-Unpack\-Error}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Report\-Unpack\-Error}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Report\-Unpack\-Error (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index, }
+\item[{{\bf int}}]{i\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a4b9eaf50aa904eebff7cd984d058d6db}
+\hypertarget{structCSphSource__SQL_a4acbfd270a0dd4ac01e209fd05790e9c}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Run\-Query\-Step@{Run\-Query\-Step}}
+\index{Run\-Query\-Step@{Run\-Query\-Step}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Run\-Query\-Step}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Run\-Query\-Step (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Query, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a4acbfd270a0dd4ac01e209fd05790e9c}
+\hypertarget{structCSphSource__SQL_a6ef468427ca6b7d3d66f2079fb06ac16}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Setup@{Setup}}
+\index{Setup@{Setup}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Setup (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Source\-Params\-\_\-\-S\-Q\-L} \&}]{p\-Params}
+\end{DoxyParamCaption}
+)}}\label{structCSphSource__SQL_a6ef468427ca6b7d3d66f2079fb06ac16}
+\hypertarget{structCSphSource__SQL_a1ac9ba01e6f2ac183c6362bf80b8ae51}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Setup\-Ranges@{Setup\-Ranges}}
+\index{Setup\-Ranges@{Setup\-Ranges}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Setup\-Ranges}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Setup\-Ranges (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Range\-Query, }
+\item[{const char $\ast$}]{s\-Query, }
+\item[{const char $\ast$}]{s\-Prefix, }
+\item[{{\bf C\-Sph\-String} \&}]{s\-Error, }
+\item[{{\bf E\-Ranges\-Reason}}]{i\-Reason}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a1ac9ba01e6f2ac183c6362bf80b8ae51}
+
+
+setup them ranges (called both for document range-\/queries and M\-V\-A range-\/queries) 
+
+\hypertarget{structCSphSource__SQL_a0ad45b702705e693aad933d45259c175}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Column@{Sql\-Column}}
+\index{Sql\-Column@{Sql\-Column}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Column}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Column (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_a0ad45b702705e693aad933d45259c175}
+\hypertarget{structCSphSource__SQL_a421fea4866eaec977a77fb71bc4bb52d}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Column\-Length@{Sql\-Column\-Length}}
+\index{Sql\-Column\-Length@{Sql\-Column\-Length}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Column\-Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf D\-W\-O\-R\-D} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Column\-Length (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_a421fea4866eaec977a77fb71bc4bb52d}
+\hypertarget{structCSphSource__SQL_af4bced57ef46a44e380ea44c85d43951}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Connect@{Sql\-Connect}}
+\index{Sql\-Connect@{Sql\-Connect}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_af4bced57ef46a44e380ea44c85d43951}
+\hypertarget{structCSphSource__SQL_afca96f63f3fb9dcf38769ec42d3f01d2}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Disconnect@{Sql\-Disconnect}}
+\index{Sql\-Disconnect@{Sql\-Disconnect}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_afca96f63f3fb9dcf38769ec42d3f01d2}
+\hypertarget{structCSphSource__SQL_a92b1c42170c994dc119845a36c6bd353}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Dismiss\-Result@{Sql\-Dismiss\-Result}}
+\index{Sql\-Dismiss\-Result@{Sql\-Dismiss\-Result}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Dismiss\-Result}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Dismiss\-Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_a92b1c42170c994dc119845a36c6bd353}
+\hypertarget{structCSphSource__SQL_a2db14a17dac262d1012a471cc78d655c}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Error@{Sql\-Error}}
+\index{Sql\-Error@{Sql\-Error}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Error}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_a2db14a17dac262d1012a471cc78d655c}
+\hypertarget{structCSphSource__SQL_a264f8e887c87298f671ddc26513625b7}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Fetch\-Row@{Sql\-Fetch\-Row}}
+\index{Sql\-Fetch\-Row@{Sql\-Fetch\-Row}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Fetch\-Row}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Fetch\-Row (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_a264f8e887c87298f671ddc26513625b7}
+\hypertarget{structCSphSource__SQL_a2a18e609e30f415dbd6b5f6114e04dda}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Field\-Name@{Sql\-Field\-Name}}
+\index{Sql\-Field\-Name@{Sql\-Field\-Name}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Field\-Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Field\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_a2a18e609e30f415dbd6b5f6114e04dda}
+\hypertarget{structCSphSource__SQL_a4917bc69c39dd20f81272e1706369aca}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Is\-Error@{Sql\-Is\-Error}}
+\index{Sql\-Is\-Error@{Sql\-Is\-Error}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Is\-Error}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Is\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_a4917bc69c39dd20f81272e1706369aca}
+\hypertarget{structCSphSource__SQL_ac4612ee310ab8c6f26e4a6cf21e26d34}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Num\-Fields@{Sql\-Num\-Fields}}
+\index{Sql\-Num\-Fields@{Sql\-Num\-Fields}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Num\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf int} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Num\-Fields (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_ac4612ee310ab8c6f26e4a6cf21e26d34}
+\hypertarget{structCSphSource__SQL_a391ddc43bfef201721bea7be396da8bc}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Query@{Sql\-Query}}
+\index{Sql\-Query@{Sql\-Query}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Query}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Query (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Query}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{structCSphSource__SQL_a391ddc43bfef201721bea7be396da8bc}
+\hypertarget{structCSphSource__SQL_a7fcc9c4625c221ba1319de68c0b7e842}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!Sql\-Unpack\-Column@{Sql\-Unpack\-Column}}
+\index{Sql\-Unpack\-Column@{Sql\-Unpack\-Column}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{Sql\-Unpack\-Column}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-Sql\-Unpack\-Column (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Index, }
+\item[{{\bf D\-W\-O\-R\-D} \&}]{u\-Unpacked\-Len, }
+\item[{{\bf E\-Sph\-Unpack\-Format}}]{e\-Format}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a7fcc9c4625c221ba1319de68c0b7e842}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphSource__SQL_a84e0d1afeedf2ae246724fd59e5cf8b1}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-b\-Can\-Unpack@{m\-\_\-b\-Can\-Unpack}}
+\index{m\-\_\-b\-Can\-Unpack@{m\-\_\-b\-Can\-Unpack}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-b\-Can\-Unpack}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-b\-Can\-Unpack\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a84e0d1afeedf2ae246724fd59e5cf8b1}
+\hypertarget{structCSphSource__SQL_a1c63f7d16d59dee9fafd3b4203c1a61f}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-b\-Sql\-Connected@{m\-\_\-b\-Sql\-Connected}}
+\index{m\-\_\-b\-Sql\-Connected@{m\-\_\-b\-Sql\-Connected}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-b\-Sql\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-b\-Sql\-Connected\hspace{0.3cm}{\ttfamily [private]}}}\label{structCSphSource__SQL_a1c63f7d16d59dee9fafd3b4203c1a61f}
+
+
+am i connected? 
+
+\hypertarget{structCSphSource__SQL_a95c8c8eff2e6ce507dc5d63f3f74eea8}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-b\-Unpack\-Failed@{m\-\_\-b\-Unpack\-Failed}}
+\index{m\-\_\-b\-Unpack\-Failed@{m\-\_\-b\-Unpack\-Failed}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-b\-Unpack\-Failed}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-b\-Unpack\-Failed\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a95c8c8eff2e6ce507dc5d63f3f74eea8}
+\hypertarget{structCSphSource__SQL_ae0150574c72c11d0f630c9efd139a659}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-b\-Unpack\-Overflow@{m\-\_\-b\-Unpack\-Overflow}}
+\index{m\-\_\-b\-Unpack\-Overflow@{m\-\_\-b\-Unpack\-Overflow}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-b\-Unpack\-Overflow}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-b\-Unpack\-Overflow\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_ae0150574c72c11d0f630c9efd139a659}
+\hypertarget{structCSphSource__SQL_a31d8514d21d2d93c4feace87ba9b7b94}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-d\-Field\-Lengths@{m\-\_\-d\-Field\-Lengths}}
+\index{m\-\_\-d\-Field\-Lengths@{m\-\_\-d\-Field\-Lengths}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-d\-Field\-Lengths}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-d\-Field\-Lengths\mbox{[}{\bf S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a31d8514d21d2d93c4feace87ba9b7b94}
+\hypertarget{structCSphSource__SQL_aa3bf67db9fa45af54e16d67253217b58}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-d\-Fields@{m\-\_\-d\-Fields}}
+\index{m\-\_\-d\-Fields@{m\-\_\-d\-Fields}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-d\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-d\-Fields\mbox{[}{\bf S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_aa3bf67db9fa45af54e16d67253217b58}
+\hypertarget{structCSphSource__SQL_a48f68e7168dca54a98a9b519c6007246}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-d\-Unpack@{m\-\_\-d\-Unpack}}
+\index{m\-\_\-d\-Unpack@{m\-\_\-d\-Unpack}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-d\-Unpack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Unpack\-Format} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-d\-Unpack\mbox{[}{\bf S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a48f68e7168dca54a98a9b519c6007246}
+\hypertarget{structCSphSource__SQL_aa2cbb5ff03e0afa3821facb61533f3d5}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-d\-Unpack\-Buffers@{m\-\_\-d\-Unpack\-Buffers}}
+\index{m\-\_\-d\-Unpack\-Buffers@{m\-\_\-d\-Unpack\-Buffers}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-d\-Unpack\-Buffers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Vector}$<$char$>$ C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-d\-Unpack\-Buffers\mbox{[}{\bf S\-P\-H\-\_\-\-M\-A\-X\-\_\-\-F\-I\-E\-L\-D\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_aa2cbb5ff03e0afa3821facb61533f3d5}
+\hypertarget{structCSphSource__SQL_a89c1ec7e37fab24e70f55ac3b3da4c07}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-i\-Joined\-Hit\-Field@{m\-\_\-i\-Joined\-Hit\-Field}}
+\index{m\-\_\-i\-Joined\-Hit\-Field@{m\-\_\-i\-Joined\-Hit\-Field}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-i\-Joined\-Hit\-Field}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-i\-Joined\-Hit\-Field\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a89c1ec7e37fab24e70f55ac3b3da4c07}
+
+
+currently pulling joined hits from this field (index into schema; -\/1 if not pulling) 
+
+\hypertarget{structCSphSource__SQL_afb30bba746655166c6dc190a73224de0}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-i\-Joined\-Hit\-I\-D@{m\-\_\-i\-Joined\-Hit\-I\-D}}
+\index{m\-\_\-i\-Joined\-Hit\-I\-D@{m\-\_\-i\-Joined\-Hit\-I\-D}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-i\-Joined\-Hit\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-i\-Joined\-Hit\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_afb30bba746655166c6dc190a73224de0}
+
+
+last document id 
+
+\hypertarget{structCSphSource__SQL_a5dc993ad2a0d01254d0da80600f7ef9a}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-i\-Joined\-Hit\-Pos@{m\-\_\-i\-Joined\-Hit\-Pos}}
+\index{m\-\_\-i\-Joined\-Hit\-Pos@{m\-\_\-i\-Joined\-Hit\-Pos}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-i\-Joined\-Hit\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-i\-Joined\-Hit\-Pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a5dc993ad2a0d01254d0da80600f7ef9a}
+
+
+last hit position 
+
+\hypertarget{structCSphSource__SQL_a5ac61b46c7c45963bc415966f25c413d}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-i\-Multi\-Attr@{m\-\_\-i\-Multi\-Attr}}
+\index{m\-\_\-i\-Multi\-Attr@{m\-\_\-i\-Multi\-Attr}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-i\-Multi\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-i\-Multi\-Attr\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a5ac61b46c7c45963bc415966f25c413d}
+
+
+multi-\/valued attr being currently fetched 
+
+\hypertarget{structCSphSource__SQL_aa9a5b3f39074872fcd92a73b3f2abb9a}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-i\-Sql\-Fields@{m\-\_\-i\-Sql\-Fields}}
+\index{m\-\_\-i\-Sql\-Fields@{m\-\_\-i\-Sql\-Fields}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-i\-Sql\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-i\-Sql\-Fields\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_aa9a5b3f39074872fcd92a73b3f2abb9a}
+
+
+field count (for row dumper) 
+
+\hypertarget{structCSphSource__SQL_ae7deb5d2c5c32eae4c21d530e3cc029d}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-s\-Sql\-D\-S\-N@{m\-\_\-s\-Sql\-D\-S\-N}}
+\index{m\-\_\-s\-Sql\-D\-S\-N@{m\-\_\-s\-Sql\-D\-S\-N}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-s\-Sql\-D\-S\-N}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-String} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-s\-Sql\-D\-S\-N\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_ae7deb5d2c5c32eae4c21d530e3cc029d}
+\hypertarget{structCSphSource__SQL_a2974c9329104af25bd20950d951f25ec}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-t\-Params@{m\-\_\-t\-Params}}
+\index{m\-\_\-t\-Params@{m\-\_\-t\-Params}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-t\-Params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Source\-Params\-\_\-\-S\-Q\-L} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-t\-Params\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a2974c9329104af25bd20950d951f25ec}
+\hypertarget{structCSphSource__SQL_aa02c355166552c4c0645daf68f3e566d}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-u\-Current\-I\-D@{m\-\_\-u\-Current\-I\-D}}
+\index{m\-\_\-u\-Current\-I\-D@{m\-\_\-u\-Current\-I\-D}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-u\-Current\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-u\-Current\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_aa02c355166552c4c0645daf68f3e566d}
+
+
+current min I\-D 
+
+\hypertarget{structCSphSource__SQL_a7ed6450b19c762fe5911c6d13bcb1398}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-u\-Max\-Fetched\-I\-D@{m\-\_\-u\-Max\-Fetched\-I\-D}}
+\index{m\-\_\-u\-Max\-Fetched\-I\-D@{m\-\_\-u\-Max\-Fetched\-I\-D}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-u\-Max\-Fetched\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-u\-Max\-Fetched\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a7ed6450b19c762fe5911c6d13bcb1398}
+
+
+max actually fetched I\-D 
+
+\hypertarget{structCSphSource__SQL_aaeb3be54144f531d7606abd46719b657}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-u\-Max\-I\-D@{m\-\_\-u\-Max\-I\-D}}
+\index{m\-\_\-u\-Max\-I\-D@{m\-\_\-u\-Max\-I\-D}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-u\-Max\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-u\-Max\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_aaeb3be54144f531d7606abd46719b657}
+
+
+grand max I\-D 
+
+\hypertarget{structCSphSource__SQL_a778a60151f224ab5cc7b3fb8cf1e36cc}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!m\-\_\-u\-Min\-I\-D@{m\-\_\-u\-Min\-I\-D}}
+\index{m\-\_\-u\-Min\-I\-D@{m\-\_\-u\-Min\-I\-D}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{m\-\_\-u\-Min\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Doc\-I\-D\-\_\-t} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::m\-\_\-u\-Min\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{structCSphSource__SQL_a778a60151f224ab5cc7b3fb8cf1e36cc}
+
+
+grand min I\-D 
+
+\hypertarget{structCSphSource__SQL_a6c0988492c5ee4c7eed91719640f9cbd}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!M\-A\-C\-R\-O\-\_\-\-C\-O\-U\-N\-T@{M\-A\-C\-R\-O\-\_\-\-C\-O\-U\-N\-T}}
+\index{M\-A\-C\-R\-O\-\_\-\-C\-O\-U\-N\-T@{M\-A\-C\-R\-O\-\_\-\-C\-O\-U\-N\-T}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{M\-A\-C\-R\-O\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-M\-A\-C\-R\-O\-\_\-\-C\-O\-U\-N\-T = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{structCSphSource__SQL_a6c0988492c5ee4c7eed91719640f9cbd}
+\hypertarget{structCSphSource__SQL_a59789aa6096ddbf99c4b570123b470ac}{\index{C\-Sph\-Source\-\_\-\-S\-Q\-L@{C\-Sph\-Source\-\_\-\-S\-Q\-L}!M\-A\-C\-R\-O\-\_\-\-V\-A\-L\-U\-E\-S@{M\-A\-C\-R\-O\-\_\-\-V\-A\-L\-U\-E\-S}}
+\index{M\-A\-C\-R\-O\-\_\-\-V\-A\-L\-U\-E\-S@{M\-A\-C\-R\-O\-\_\-\-V\-A\-L\-U\-E\-S}!CSphSource_SQL@{C\-Sph\-Source\-\_\-\-S\-Q\-L}}
+\subsubsection[{M\-A\-C\-R\-O\-\_\-\-V\-A\-L\-U\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$const C\-Sph\-Source\-\_\-\-S\-Q\-L\-::\-M\-A\-C\-R\-O\-\_\-\-V\-A\-L\-U\-E\-S\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{structCSphSource__SQL_a59789aa6096ddbf99c4b570123b470ac}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"$start"},
+    \textcolor{stringliteral}{"$end"}
+\}
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\item 
+src/\hyperlink{sphinx_8cpp}{sphinx.\-cpp}\end{DoxyCompactItemize}

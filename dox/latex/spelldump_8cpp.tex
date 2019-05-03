@@ -1,0 +1,205 @@
+\hypertarget{spelldump_8cpp}{\section{src/spelldump.cpp File Reference}
+\label{spelldump_8cpp}\index{src/spelldump.\-cpp@{src/spelldump.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxutils.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$locale.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCISpellDict}{C\-I\-Spell\-Dict}
+\item 
+struct \hyperlink{structCISpellDict_1_1CISpellDictWord}{C\-I\-Spell\-Dict\-::\-C\-I\-Spell\-Dict\-Word}
+\item 
+class \hyperlink{classCISpellAffixRule}{C\-I\-Spell\-Affix\-Rule}
+\item 
+class \hyperlink{classCISpellAffix}{C\-I\-Spell\-Affix}
+\item 
+struct \hyperlink{structMapInfo__t}{Map\-Info\-\_\-t}
+\item 
+struct \hyperlink{structWordLess}{Word\-Less}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classCSphOrderedHash}{C\-Sph\-Ordered\-Hash}\\*
+$<$ \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structMapInfo__t}{Map\-Info\-\_\-t} $>$\\*
+, \hyperlink{structCSphString}{C\-Sph\-String}, \hyperlink{structCSphStrHashFunc}{C\-Sph\-Str\-Hash\-Func}, 100000 $>$ \hyperlink{spelldump_8cpp_a16072b18322ce6a1384bbafd48e5cddf}{Word\-Map\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1c}{Rule\-Type\-\_\-e} \{ \hyperlink{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1ca592187f3a6746679fc32286eefb524dc}{R\-U\-L\-E\-\_\-\-N\-O\-N\-E}, 
+\hyperlink{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1ca1fb706df7d286b3407bc9b1e4b87f5bb}{R\-U\-L\-E\-\_\-\-P\-R\-E\-F\-I\-X\-E\-S}, 
+\hyperlink{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1ca67fd90a659f5747fc7e9c1e8e37b5168}{R\-U\-L\-E\-\_\-\-S\-U\-F\-F\-I\-X\-E\-S}
+ \}
+\item 
+enum \hyperlink{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfa}{Affix\-Format\-\_\-e} \{ \hyperlink{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfaaee152d38fe35b97c9905e9e575725889}{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-I\-S\-P\-E\-L\-L} = 0, 
+\hyperlink{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfaa20d0d00aa44b0e1075a5b6e52fe6a5ec}{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-M\-Y\-S\-P\-E\-L\-L} = 1, 
+\hyperlink{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfaa475fe29e28f6e79d79eeb3fa1f64720e}{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N}
+ \}
+\item 
+enum \hyperlink{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8e}{Output\-Mode\-\_\-e} \{ \\*
+\hyperlink{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8eac91f17cd7cc6dcc6c84a9512f9993f6a}{M\-\_\-\-D\-E\-B\-U\-G}, 
+\hyperlink{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8ea81209fb520f0705e29b9a4bb6aa2fa77}{M\-\_\-\-D\-U\-P\-L\-I\-C\-A\-T\-E\-S}, 
+\hyperlink{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8eafcac412ba0518a8a11ebf5035cc11c3a}{M\-\_\-\-L\-A\-S\-T}, 
+\hyperlink{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8ea1166b5b3b08581d58b75fae9e5c6960c}{M\-\_\-\-E\-X\-A\-C\-T\-\_\-\-O\-R\-\_\-\-L\-O\-N\-G\-E\-S\-T}, 
+\\*
+\hyperlink{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8ea460fd7672d13fe3440e494c4fb96cddd}{M\-\_\-\-D\-E\-F\-A\-U\-L\-T} = M\-\_\-\-E\-X\-A\-C\-T\-\_\-\-O\-R\-\_\-\-L\-O\-N\-G\-E\-S\-T
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{spelldump_8cpp_a5319cdaeb61706ba99b628a5e6b80bd1}{Get\-Wordchar} (const char $\ast$\&sz\-Set)
+\item 
+bool \hyperlink{spelldump_8cpp_a703fce0fc018ce2edb2988ee281492d1}{Is\-In\-Set} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} u\-Letter, const char $\ast$sz\-Set)
+\item 
+bool \hyperlink{spelldump_8cpp_a68127f6950792291f48eec10e2f49095}{Get\-Set\-Min\-Max} (const char $\ast$sz\-Set, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \&u\-Min, \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \&u\-Max)
+\item 
+static void \hyperlink{spelldump_8cpp_aed4cc37c7e81cfc3ec12ab85c78c6a97}{Emit\-Result} (\hyperlink{spelldump_8cpp_a16072b18322ce6a1384bbafd48e5cddf}{Word\-Map\-\_\-t} \&t\-Map, const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-From, const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-To, char c\-Rule\-A=0, char c\-Rule\-B=0)
+\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{spelldump_8cpp_a68190722ec056dafbbc5389970f4a1c0}{main} (\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Args, char $\ast$$\ast$d\-Args)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{spelldump_8cpp_a18e535a2abfc48eccb00a71a2e818b84}{M\-A\-X\-\_\-\-S\-T\-R\-\_\-\-L\-E\-N\-G\-T\-H} = 512
+\item 
+const char $\ast$ \hyperlink{spelldump_8cpp_a16a40a2ee60d73288f8ffc19cd654d4f}{Affix\-Format\-Name} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{spelldump_8cpp_a70b4174cbad90359294e748cb8de123f}{d\-Mode\-Name} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{spelldump_8cpp_a16072b18322ce6a1384bbafd48e5cddf}{\index{spelldump.\-cpp@{spelldump.\-cpp}!Word\-Map\-\_\-t@{Word\-Map\-\_\-t}}
+\index{Word\-Map\-\_\-t@{Word\-Map\-\_\-t}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{Word\-Map\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf C\-Sph\-Ordered\-Hash}$<$ {\bf C\-Sph\-Vector}$<${\bf Map\-Info\-\_\-t}$>$, {\bf C\-Sph\-String}, {\bf C\-Sph\-Str\-Hash\-Func}, 100000 $>$ {\bf Word\-Map\-\_\-t}}}\label{spelldump_8cpp_a16072b18322ce6a1384bbafd48e5cddf}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfa}{\index{spelldump.\-cpp@{spelldump.\-cpp}!Affix\-Format\-\_\-e@{Affix\-Format\-\_\-e}}
+\index{Affix\-Format\-\_\-e@{Affix\-Format\-\_\-e}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{Affix\-Format\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Affix\-Format\-\_\-e}}}\label{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfa}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-I\-S\-P\-E\-L\-L@{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-I\-S\-P\-E\-L\-L}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-I\-S\-P\-E\-L\-L@{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-I\-S\-P\-E\-L\-L}}\item[{\em 
+\hypertarget{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfaaee152d38fe35b97c9905e9e575725889}{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-I\-S\-P\-E\-L\-L}\label{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfaaee152d38fe35b97c9905e9e575725889}
+}]\index{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-M\-Y\-S\-P\-E\-L\-L@{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-M\-Y\-S\-P\-E\-L\-L}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-M\-Y\-S\-P\-E\-L\-L@{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-M\-Y\-S\-P\-E\-L\-L}}\item[{\em 
+\hypertarget{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfaa20d0d00aa44b0e1075a5b6e52fe6a5ec}{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-M\-Y\-S\-P\-E\-L\-L}\label{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfaa20d0d00aa44b0e1075a5b6e52fe6a5ec}
+}]\index{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N@{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N@{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N}}\item[{\em 
+\hypertarget{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfaa475fe29e28f6e79d79eeb3fa1f64720e}{A\-F\-F\-I\-X\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N}\label{spelldump_8cpp_a074110dc5a5bc2df6c6c74743f41adfaa475fe29e28f6e79d79eeb3fa1f64720e}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8e}{\index{spelldump.\-cpp@{spelldump.\-cpp}!Output\-Mode\-\_\-e@{Output\-Mode\-\_\-e}}
+\index{Output\-Mode\-\_\-e@{Output\-Mode\-\_\-e}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{Output\-Mode\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Output\-Mode\-\_\-e}}}\label{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8e}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{M\-\_\-\-D\-E\-B\-U\-G@{M\-\_\-\-D\-E\-B\-U\-G}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!M\-\_\-\-D\-E\-B\-U\-G@{M\-\_\-\-D\-E\-B\-U\-G}}\item[{\em 
+\hypertarget{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8eac91f17cd7cc6dcc6c84a9512f9993f6a}{M\-\_\-\-D\-E\-B\-U\-G}\label{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8eac91f17cd7cc6dcc6c84a9512f9993f6a}
+}]\index{M\-\_\-\-D\-U\-P\-L\-I\-C\-A\-T\-E\-S@{M\-\_\-\-D\-U\-P\-L\-I\-C\-A\-T\-E\-S}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!M\-\_\-\-D\-U\-P\-L\-I\-C\-A\-T\-E\-S@{M\-\_\-\-D\-U\-P\-L\-I\-C\-A\-T\-E\-S}}\item[{\em 
+\hypertarget{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8ea81209fb520f0705e29b9a4bb6aa2fa77}{M\-\_\-\-D\-U\-P\-L\-I\-C\-A\-T\-E\-S}\label{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8ea81209fb520f0705e29b9a4bb6aa2fa77}
+}]\index{M\-\_\-\-L\-A\-S\-T@{M\-\_\-\-L\-A\-S\-T}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!M\-\_\-\-L\-A\-S\-T@{M\-\_\-\-L\-A\-S\-T}}\item[{\em 
+\hypertarget{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8eafcac412ba0518a8a11ebf5035cc11c3a}{M\-\_\-\-L\-A\-S\-T}\label{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8eafcac412ba0518a8a11ebf5035cc11c3a}
+}]\index{M\-\_\-\-E\-X\-A\-C\-T\-\_\-\-O\-R\-\_\-\-L\-O\-N\-G\-E\-S\-T@{M\-\_\-\-E\-X\-A\-C\-T\-\_\-\-O\-R\-\_\-\-L\-O\-N\-G\-E\-S\-T}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!M\-\_\-\-E\-X\-A\-C\-T\-\_\-\-O\-R\-\_\-\-L\-O\-N\-G\-E\-S\-T@{M\-\_\-\-E\-X\-A\-C\-T\-\_\-\-O\-R\-\_\-\-L\-O\-N\-G\-E\-S\-T}}\item[{\em 
+\hypertarget{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8ea1166b5b3b08581d58b75fae9e5c6960c}{M\-\_\-\-E\-X\-A\-C\-T\-\_\-\-O\-R\-\_\-\-L\-O\-N\-G\-E\-S\-T}\label{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8ea1166b5b3b08581d58b75fae9e5c6960c}
+}]\index{M\-\_\-\-D\-E\-F\-A\-U\-L\-T@{M\-\_\-\-D\-E\-F\-A\-U\-L\-T}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!M\-\_\-\-D\-E\-F\-A\-U\-L\-T@{M\-\_\-\-D\-E\-F\-A\-U\-L\-T}}\item[{\em 
+\hypertarget{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8ea460fd7672d13fe3440e494c4fb96cddd}{M\-\_\-\-D\-E\-F\-A\-U\-L\-T}\label{spelldump_8cpp_a84310e5252bbed8de5d4dbe219be7b8ea460fd7672d13fe3440e494c4fb96cddd}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1c}{\index{spelldump.\-cpp@{spelldump.\-cpp}!Rule\-Type\-\_\-e@{Rule\-Type\-\_\-e}}
+\index{Rule\-Type\-\_\-e@{Rule\-Type\-\_\-e}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{Rule\-Type\-\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Rule\-Type\-\_\-e}}}\label{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1c}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{R\-U\-L\-E\-\_\-\-N\-O\-N\-E@{R\-U\-L\-E\-\_\-\-N\-O\-N\-E}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!R\-U\-L\-E\-\_\-\-N\-O\-N\-E@{R\-U\-L\-E\-\_\-\-N\-O\-N\-E}}\item[{\em 
+\hypertarget{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1ca592187f3a6746679fc32286eefb524dc}{R\-U\-L\-E\-\_\-\-N\-O\-N\-E}\label{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1ca592187f3a6746679fc32286eefb524dc}
+}]\index{R\-U\-L\-E\-\_\-\-P\-R\-E\-F\-I\-X\-E\-S@{R\-U\-L\-E\-\_\-\-P\-R\-E\-F\-I\-X\-E\-S}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!R\-U\-L\-E\-\_\-\-P\-R\-E\-F\-I\-X\-E\-S@{R\-U\-L\-E\-\_\-\-P\-R\-E\-F\-I\-X\-E\-S}}\item[{\em 
+\hypertarget{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1ca1fb706df7d286b3407bc9b1e4b87f5bb}{R\-U\-L\-E\-\_\-\-P\-R\-E\-F\-I\-X\-E\-S}\label{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1ca1fb706df7d286b3407bc9b1e4b87f5bb}
+}]\index{R\-U\-L\-E\-\_\-\-S\-U\-F\-F\-I\-X\-E\-S@{R\-U\-L\-E\-\_\-\-S\-U\-F\-F\-I\-X\-E\-S}!spelldump.\-cpp@{spelldump.\-cpp}}\index{spelldump.\-cpp@{spelldump.\-cpp}!R\-U\-L\-E\-\_\-\-S\-U\-F\-F\-I\-X\-E\-S@{R\-U\-L\-E\-\_\-\-S\-U\-F\-F\-I\-X\-E\-S}}\item[{\em 
+\hypertarget{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1ca67fd90a659f5747fc7e9c1e8e37b5168}{R\-U\-L\-E\-\_\-\-S\-U\-F\-F\-I\-X\-E\-S}\label{spelldump_8cpp_a64a5bdd2a31b6b4ea79d491b81ea0a1ca67fd90a659f5747fc7e9c1e8e37b5168}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{spelldump_8cpp_aed4cc37c7e81cfc3ec12ab85c78c6a97}{\index{spelldump.\-cpp@{spelldump.\-cpp}!Emit\-Result@{Emit\-Result}}
+\index{Emit\-Result@{Emit\-Result}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{Emit\-Result}]{\setlength{\rightskip}{0pt plus 5cm}static void Emit\-Result (
+\begin{DoxyParamCaption}
+\item[{{\bf Word\-Map\-\_\-t} \&}]{t\-Map, }
+\item[{const {\bf C\-Sph\-String} \&}]{s\-From, }
+\item[{const {\bf C\-Sph\-String} \&}]{s\-To, }
+\item[{char}]{c\-Rule\-A = {\ttfamily 0}, }
+\item[{char}]{c\-Rule\-B = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{spelldump_8cpp_aed4cc37c7e81cfc3ec12ab85c78c6a97}
+\hypertarget{spelldump_8cpp_a68127f6950792291f48eec10e2f49095}{\index{spelldump.\-cpp@{spelldump.\-cpp}!Get\-Set\-Min\-Max@{Get\-Set\-Min\-Max}}
+\index{Get\-Set\-Min\-Max@{Get\-Set\-Min\-Max}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{Get\-Set\-Min\-Max}]{\setlength{\rightskip}{0pt plus 5cm}bool Get\-Set\-Min\-Max (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{sz\-Set, }
+\item[{{\bf B\-Y\-T\-E} \&}]{u\-Min, }
+\item[{{\bf B\-Y\-T\-E} \&}]{u\-Max}
+\end{DoxyParamCaption}
+)}}\label{spelldump_8cpp_a68127f6950792291f48eec10e2f49095}
+\hypertarget{spelldump_8cpp_a5319cdaeb61706ba99b628a5e6b80bd1}{\index{spelldump.\-cpp@{spelldump.\-cpp}!Get\-Wordchar@{Get\-Wordchar}}
+\index{Get\-Wordchar@{Get\-Wordchar}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{Get\-Wordchar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-Y\-T\-E} Get\-Wordchar (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$\&}]{sz\-Set}
+\end{DoxyParamCaption}
+)}}\label{spelldump_8cpp_a5319cdaeb61706ba99b628a5e6b80bd1}
+\hypertarget{spelldump_8cpp_a703fce0fc018ce2edb2988ee281492d1}{\index{spelldump.\-cpp@{spelldump.\-cpp}!Is\-In\-Set@{Is\-In\-Set}}
+\index{Is\-In\-Set@{Is\-In\-Set}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{Is\-In\-Set}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\-In\-Set (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{u\-Letter, }
+\item[{const char $\ast$}]{sz\-Set}
+\end{DoxyParamCaption}
+)}}\label{spelldump_8cpp_a703fce0fc018ce2edb2988ee281492d1}
+\hypertarget{spelldump_8cpp_a68190722ec056dafbbc5389970f4a1c0}{\index{spelldump.\-cpp@{spelldump.\-cpp}!main@{main}}
+\index{main@{main}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} main (
+\begin{DoxyParamCaption}
+\item[{{\bf int}}]{i\-Args, }
+\item[{char $\ast$$\ast$}]{d\-Args}
+\end{DoxyParamCaption}
+)}}\label{spelldump_8cpp_a68190722ec056dafbbc5389970f4a1c0}
+
+
+\subsection{Variable Documentation}
+\hypertarget{spelldump_8cpp_a16a40a2ee60d73288f8ffc19cd654d4f}{\index{spelldump.\-cpp@{spelldump.\-cpp}!Affix\-Format\-Name@{Affix\-Format\-Name}}
+\index{Affix\-Format\-Name@{Affix\-Format\-Name}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{Affix\-Format\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Affix\-Format\-Name\mbox{[}$\,$\mbox{]}}}\label{spelldump_8cpp_a16a40a2ee60d73288f8ffc19cd654d4f}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"ISpell"},
+    \textcolor{stringliteral}{"MySpell"}
+\}
+\end{DoxyCode}
+\hypertarget{spelldump_8cpp_a70b4174cbad90359294e748cb8de123f}{\index{spelldump.\-cpp@{spelldump.\-cpp}!d\-Mode\-Name@{d\-Mode\-Name}}
+\index{d\-Mode\-Name@{d\-Mode\-Name}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{d\-Mode\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ d\-Mode\-Name\mbox{[}$\,$\mbox{]}}}\label{spelldump_8cpp_a70b4174cbad90359294e748cb8de123f}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"debug"},
+    \textcolor{stringliteral}{"duplicates"},
+    \textcolor{stringliteral}{"last"}
+\}
+\end{DoxyCode}
+\hypertarget{spelldump_8cpp_a18e535a2abfc48eccb00a71a2e818b84}{\index{spelldump.\-cpp@{spelldump.\-cpp}!M\-A\-X\-\_\-\-S\-T\-R\-\_\-\-L\-E\-N\-G\-T\-H@{M\-A\-X\-\_\-\-S\-T\-R\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{M\-A\-X\-\_\-\-S\-T\-R\-\_\-\-L\-E\-N\-G\-T\-H@{M\-A\-X\-\_\-\-S\-T\-R\-\_\-\-L\-E\-N\-G\-T\-H}!spelldump.cpp@{spelldump.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-T\-R\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} M\-A\-X\-\_\-\-S\-T\-R\-\_\-\-L\-E\-N\-G\-T\-H = 512}}\label{spelldump_8cpp_a18e535a2abfc48eccb00a71a2e818b84}

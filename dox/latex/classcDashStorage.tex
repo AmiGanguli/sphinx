@@ -1,0 +1,125 @@
+\hypertarget{classcDashStorage}{\section{c\-Dash\-Storage Class Reference}
+\label{classcDashStorage}\index{c\-Dash\-Storage@{c\-Dash\-Storage}}
+}
+
+
+{\ttfamily \#include $<$searchdha.\-h$>$}
+
+Inheritance diagram for c\-Dash\-Storage\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcDashStorage}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcDashStorage_a9162c8077d4095520bc79effb60956d8}{Add\-Agent} (\hyperlink{classAgentDesc__c}{Agent\-Desc\-\_\-c} $\ast$p\-Agent)
+\item 
+\hyperlink{structHostDashboard__t}{Host\-Dashboard\-\_\-t} $\ast$ \hyperlink{classcDashStorage_a5a17b608f9b3f6b4d3edde2877a24689}{Find\-Agent} (const char $\ast$s\-Agent) const 
+\item 
+void \hyperlink{classcDashStorage_a60f8645081859d7e69c951cf5f7f26e0}{Get\-Active\-Dashes} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structHostDashboard__t}{Host\-Dashboard\-\_\-t} $\ast$ $>$ \&d\-Agents) const 
+\item 
+\hyperlink{classcDashStorage_a01a2432ecd7e971eb12bf0f6794c7798}{c\-Dash\-Storage} ()
+\item 
+\hyperlink{classcDashStorage_a25ce045d3e6debdd7362d7db7f627245}{$\sim$c\-Dash\-Storage} ()
+\item 
+void \hyperlink{classcDashStorage_ab7ec5b18064009a6a5e1d6490c420d74}{Lock} ()
+\item 
+void \hyperlink{classcDashStorage_a3d2e57c694e525b2746a09486b29c9e9}{Unlock} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classcDashStorage_ad27c7347a9f17da9d1c9b83f854a956e}{c\-Vector} = \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{structHostDashboard__t}{Host\-Dashboard\-\_\-t} $\ast$ $>$
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcDashStorage_ad27c7347a9f17da9d1c9b83f854a956e}{c\-Vector} m\-\_\-d\-Dashes \hyperlink{classcDashStorage_a969df354d533c79a111b3eb7fdc9fe4e}{G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y} (\hyperlink{classcDashStorage_a6d5edb496c579d6b07951f76040a146c}{m\-\_\-t\-Lock})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+C\-Sph\-Rwlock \hyperlink{classcDashStorage_a6d5edb496c579d6b07951f76040a146c}{m\-\_\-t\-Lock}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcDashStorage_ad27c7347a9f17da9d1c9b83f854a956e}{\index{c\-Dash\-Storage@{c\-Dash\-Storage}!c\-Vector@{c\-Vector}}
+\index{c\-Vector@{c\-Vector}!cDashStorage@{c\-Dash\-Storage}}
+\subsubsection[{c\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf c\-Dash\-Storage\-::c\-Vector} =  {\bf C\-Sph\-Vector}$<${\bf Host\-Dashboard\-\_\-t}$\ast$$>$\hspace{0.3cm}{\ttfamily [private]}}}\label{classcDashStorage_ad27c7347a9f17da9d1c9b83f854a956e}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcDashStorage_a01a2432ecd7e971eb12bf0f6794c7798}{\index{c\-Dash\-Storage@{c\-Dash\-Storage}!c\-Dash\-Storage@{c\-Dash\-Storage}}
+\index{c\-Dash\-Storage@{c\-Dash\-Storage}!cDashStorage@{c\-Dash\-Storage}}
+\subsubsection[{c\-Dash\-Storage}]{\setlength{\rightskip}{0pt plus 5cm}c\-Dash\-Storage\-::c\-Dash\-Storage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcDashStorage_a01a2432ecd7e971eb12bf0f6794c7798}
+\hypertarget{classcDashStorage_a25ce045d3e6debdd7362d7db7f627245}{\index{c\-Dash\-Storage@{c\-Dash\-Storage}!$\sim$c\-Dash\-Storage@{$\sim$c\-Dash\-Storage}}
+\index{$\sim$c\-Dash\-Storage@{$\sim$c\-Dash\-Storage}!cDashStorage@{c\-Dash\-Storage}}
+\subsubsection[{$\sim$c\-Dash\-Storage}]{\setlength{\rightskip}{0pt plus 5cm}c\-Dash\-Storage\-::$\sim$c\-Dash\-Storage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcDashStorage_a25ce045d3e6debdd7362d7db7f627245}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcDashStorage_a9162c8077d4095520bc79effb60956d8}{\index{c\-Dash\-Storage@{c\-Dash\-Storage}!Add\-Agent@{Add\-Agent}}
+\index{Add\-Agent@{Add\-Agent}!cDashStorage@{c\-Dash\-Storage}}
+\subsubsection[{Add\-Agent}]{\setlength{\rightskip}{0pt plus 5cm}void c\-Dash\-Storage\-::\-Add\-Agent (
+\begin{DoxyParamCaption}
+\item[{{\bf Agent\-Desc\-\_\-c} $\ast$}]{p\-Agent}
+\end{DoxyParamCaption}
+)}}\label{classcDashStorage_a9162c8077d4095520bc79effb60956d8}
+\hypertarget{classcDashStorage_a5a17b608f9b3f6b4d3edde2877a24689}{\index{c\-Dash\-Storage@{c\-Dash\-Storage}!Find\-Agent@{Find\-Agent}}
+\index{Find\-Agent@{Find\-Agent}!cDashStorage@{c\-Dash\-Storage}}
+\subsubsection[{Find\-Agent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Host\-Dashboard\-\_\-t} $\ast$ c\-Dash\-Storage\-::\-Find\-Agent (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Agent}
+\end{DoxyParamCaption}
+) const}}\label{classcDashStorage_a5a17b608f9b3f6b4d3edde2877a24689}
+\hypertarget{classcDashStorage_a60f8645081859d7e69c951cf5f7f26e0}{\index{c\-Dash\-Storage@{c\-Dash\-Storage}!Get\-Active\-Dashes@{Get\-Active\-Dashes}}
+\index{Get\-Active\-Dashes@{Get\-Active\-Dashes}!cDashStorage@{c\-Dash\-Storage}}
+\subsubsection[{Get\-Active\-Dashes}]{\setlength{\rightskip}{0pt plus 5cm}void c\-Dash\-Storage\-::\-Get\-Active\-Dashes (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf Host\-Dashboard\-\_\-t} $\ast$ $>$ \&}]{d\-Agents}
+\end{DoxyParamCaption}
+) const}}\label{classcDashStorage_a60f8645081859d7e69c951cf5f7f26e0}
+\hypertarget{classcDashStorage_a969df354d533c79a111b3eb7fdc9fe4e}{\index{c\-Dash\-Storage@{c\-Dash\-Storage}!G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y@{G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}}
+\index{G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y@{G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}!cDashStorage@{c\-Dash\-Storage}}
+\subsubsection[{G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf c\-Vector} m\-\_\-d\-Dashes c\-Dash\-Storage\-::\-G\-U\-A\-R\-D\-E\-D\-\_\-\-B\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf m\-\_\-t\-Lock}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classcDashStorage_a969df354d533c79a111b3eb7fdc9fe4e}
+\hypertarget{classcDashStorage_ab7ec5b18064009a6a5e1d6490c420d74}{\index{c\-Dash\-Storage@{c\-Dash\-Storage}!Lock@{Lock}}
+\index{Lock@{Lock}!cDashStorage@{c\-Dash\-Storage}}
+\subsubsection[{Lock}]{\setlength{\rightskip}{0pt plus 5cm}void c\-Dash\-Storage\-::\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcDashStorage_ab7ec5b18064009a6a5e1d6490c420d74}
+\hypertarget{classcDashStorage_a3d2e57c694e525b2746a09486b29c9e9}{\index{c\-Dash\-Storage@{c\-Dash\-Storage}!Unlock@{Unlock}}
+\index{Unlock@{Unlock}!cDashStorage@{c\-Dash\-Storage}}
+\subsubsection[{Unlock}]{\setlength{\rightskip}{0pt plus 5cm}void c\-Dash\-Storage\-::\-Unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcDashStorage_a3d2e57c694e525b2746a09486b29c9e9}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcDashStorage_a6d5edb496c579d6b07951f76040a146c}{\index{c\-Dash\-Storage@{c\-Dash\-Storage}!m\-\_\-t\-Lock@{m\-\_\-t\-Lock}}
+\index{m\-\_\-t\-Lock@{m\-\_\-t\-Lock}!cDashStorage@{c\-Dash\-Storage}}
+\subsubsection[{m\-\_\-t\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Rwlock c\-Dash\-Storage\-::m\-\_\-t\-Lock\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}}\label{classcDashStorage_a6d5edb496c579d6b07951f76040a146c}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{searchdha_8h}{searchdha.\-h}\item 
+src/\hyperlink{searchdha_8cpp}{searchdha.\-cpp}\end{DoxyCompactItemize}

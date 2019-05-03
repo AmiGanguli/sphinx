@@ -1,0 +1,283 @@
+\hypertarget{searchdhttp_8cpp}{\section{src/searchdhttp.cpp File Reference}
+\label{searchdhttp_8cpp}\index{src/searchdhttp.\-cpp@{src/searchdhttp.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}sphinx.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxint.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sphinxjson.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}http/http\-\_\-parser.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}searchdaemon.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structEscapeJsonString__t}{Escape\-Json\-String\-\_\-t}
+\item 
+struct \hyperlink{structHttpRequestParser__t}{Http\-Request\-Parser\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classSphStringBuilder__T}{Sph\-String\-Builder\-\_\-\-T}\\*
+$<$ \hyperlink{structEscapeJsonString__t}{Escape\-Json\-String\-\_\-t} $>$ \hyperlink{searchdhttp_8cpp_a18717abfc69a6c1cbefd7b63f15dece1}{C\-Sph\-String\-Builder\-Json}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605}{E\-Sph\-Http\-Status} \{ \\*
+\hyperlink{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605add20ef1133e130422de279ccc148907e}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-200}, 
+\hyperlink{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a77b403a680b6e27359ab88d7a0aa122a}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-206}, 
+\hyperlink{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a48f9fefb5ce276b0b17b147a4f10da5d}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-400}, 
+\hyperlink{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a4e157c359bd28198158cb27a7a6cc4e6}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-500}, 
+\\*
+\hyperlink{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605aea678eed936f3a68ef9676f3a9fdb3d6}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-501}, 
+\hyperlink{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a0dd7bf72fead0357aae8f8df77fabf71}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-T\-O\-T\-A\-L}
+ \}
+\item 
+enum \hyperlink{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779}{E\-Sph\-Http\-Endpoint} \{ \\*
+\hyperlink{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a687230614a7e1ae634ca9befd8980775}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-I\-N\-D\-E\-X}, 
+\hyperlink{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a2560087ff626733d672c6fa507710368}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-E\-A\-R\-C\-H}, 
+\hyperlink{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a616bd4320334d2080402433bdb4e680b}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-Q\-L}, 
+\hyperlink{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a6807d6d8f03ecc0f2567c25c6dc0df14}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-T\-O\-T\-A\-L}, 
+\\*
+\hyperlink{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779ad9bce045e7064b7ae763736131a3323b}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-M\-I\-S\-S\-E\-D}, 
+\hyperlink{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a0d4df901139359f47168d43462b57d09}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T} = S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-M\-I\-S\-S\-E\-D
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{searchdhttp_8cpp_add51995a7a760c0e1eba6c1823e6a850}{Append\-Json\-Key} (const char $\ast$s\-Name, \hyperlink{searchdhttp_8cpp_a18717abfc69a6c1cbefd7b63f15dece1}{C\-Sph\-String\-Builder\-Json} \&t\-Out)
+\item 
+static void \hyperlink{searchdhttp_8cpp_a25fb8d9508f981fa38f9447a7c974d2a}{Encode\-Result\-Json} (const \hyperlink{structAggrResult__t}{Aggr\-Result\-\_\-t} \&t\-Res, \hyperlink{searchdhttp_8cpp_a18717abfc69a6c1cbefd7b63f15dece1}{C\-Sph\-String\-Builder\-Json} \&t\-Out)
+\item 
+\hyperlink{searchdhttp_8cpp_a2be35a4ad6ec4a457eefc857e86b914a}{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T} (sizeof(\hyperlink{searchdhttp_8cpp_a1bb7541c2fa7f6f9f04f3a5e32844320}{g\-\_\-d\-Http\-Status})/sizeof(\hyperlink{searchdhttp_8cpp_a1bb7541c2fa7f6f9f04f3a5e32844320}{g\-\_\-d\-Http\-Status}\mbox{[}0\mbox{]})==\hyperlink{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a0dd7bf72fead0357aae8f8df77fabf71}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-T\-O\-T\-A\-L}, S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-H\-O\-U\-L\-D\-\_\-\-B\-E\-\_\-\-S\-A\-M\-E\-\_\-\-A\-S\-\_\-\-S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-T\-O\-T\-A\-L)
+\item 
+static void \hyperlink{searchdhttp_8cpp_a3d09d18647ab85be59d23c155935bd59}{Http\-Build\-Reply} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Data, \hyperlink{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605}{E\-Sph\-Http\-Status} e\-Code, const char $\ast$s\-Body, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Body\-Len, bool b\-Html)
+\item 
+static void \hyperlink{searchdhttp_8cpp_a8b1da6336630b34189c83578e6579352}{Http\-Error\-Reply} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Data, \hyperlink{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605}{E\-Sph\-Http\-Status} e\-Code, const char $\ast$s\-Template,...)
+\item 
+\hyperlink{searchdhttp_8cpp_aab3990ded50a79e558592591e1651f07}{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T} (sizeof(\hyperlink{searchdhttp_8cpp_a6c577adc95c4eee5b61109b55c885cbc}{g\-\_\-s\-Endpoints})/sizeof(\hyperlink{searchdhttp_8cpp_a6c577adc95c4eee5b61109b55c885cbc}{g\-\_\-s\-Endpoints}\mbox{[}0\mbox{]})==\hyperlink{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a6807d6d8f03ecc0f2567c25c6dc0df14}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-T\-O\-T\-A\-L}, S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-H\-O\-U\-L\-D\-\_\-\-B\-E\-\_\-\-S\-A\-M\-E\-\_\-\-A\-S\-\_\-\-S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-T\-O\-T\-A\-L)
+\item 
+static \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} \hyperlink{searchdhttp_8cpp_abcf4f8519e830a98c06a3b53a02406e2}{Char2\-Hex} (\hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} u\-Char)
+\item 
+static void \hyperlink{searchdhttp_8cpp_a7a454d581c7fc862759fd9828c1e887d}{Uri\-Percent\-Replace} (\hyperlink{structCSphString}{C\-Sph\-String} \&s\-Entity)
+\item 
+static \hyperlink{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779}{E\-Sph\-Http\-Endpoint} \hyperlink{searchdhttp_8cpp_a516ad008ca4c13dad1fb23e32db75870}{Parse\-Endpoint\-Path} (const char $\ast$s\-Path, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Len)
+\item 
+static const \hyperlink{structCSphString}{C\-Sph\-String} $\ast$ \hyperlink{searchdhttp_8cpp_a794f6ed3c07f350cf2ddb3c8b11ffe5f}{Get\-Any\-Value} (const \hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&h\-Options, const char $\ast$s\-Key1, const char $\ast$s\-Key2)
+\item 
+static void \hyperlink{searchdhttp_8cpp_ada3258facbe01762e71519579667d840}{Parse\-Search\-Options} (const \hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&h\-Options, \hyperlink{classCSphQuery}{C\-Sph\-Query} \&t\-Query)
+\item 
+static void \hyperlink{searchdhttp_8cpp_ae8dbdb512691747d81ba640b795154d4}{Http\-Handler\-Page} (bool b\-Page, const \hyperlink{structCSphString}{C\-Sph\-String} \&s\-Invalid\-Endpoint, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Data)
+\item 
+static void \hyperlink{searchdhttp_8cpp_a6f550c1697728870d1f1d80877b5d58a}{Http\-Handler\-Search} (bool b\-Q\-L, const \hyperlink{classSmallStringHash__T}{Small\-String\-Hash\-\_\-\-T}$<$ \hyperlink{structCSphString}{C\-Sph\-String} $>$ \&h\-Options, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-C\-I\-D, \hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Data)
+\item 
+bool \hyperlink{searchdhttp_8cpp_aa077b125a24f1a865bab7121f60b44fc}{sph\-Loop\-Client\-Http} (\hyperlink{classCSphVector}{C\-Sph\-Vector}$<$ \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $>$ \&d\-Data, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-C\-I\-D)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{searchdhttp_8cpp_a1bb7541c2fa7f6f9f04f3a5e32844320}{g\-\_\-d\-Http\-Status} \mbox{[}$\,$\mbox{]} = \{ \char`\"{}200 O\-K\char`\"{}, \char`\"{}206 Partial Content\char`\"{}, \char`\"{}400 Bad Request\char`\"{}, \char`\"{}500 Internal Server Error\char`\"{}, \char`\"{}501 Not Implemented\char`\"{} \}
+\item 
+const char $\ast$ \hyperlink{searchdhttp_8cpp_a6c577adc95c4eee5b61109b55c885cbc}{g\-\_\-s\-Endpoints} \mbox{[}$\,$\mbox{]} = \{ \char`\"{}index.\-html\char`\"{}, \char`\"{}search\char`\"{}, \char`\"{}sql\char`\"{} \}
+\item 
+static const char $\ast$ \hyperlink{searchdhttp_8cpp_ad5de814d90a915e75c00b41441b777be}{g\-\_\-s\-Index\-Page}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{searchdhttp_8cpp_a18717abfc69a6c1cbefd7b63f15dece1}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!C\-Sph\-String\-Builder\-Json@{C\-Sph\-String\-Builder\-Json}}
+\index{C\-Sph\-String\-Builder\-Json@{C\-Sph\-String\-Builder\-Json}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{C\-Sph\-String\-Builder\-Json}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Sph\-String\-Builder\-\_\-\-T}$<${\bf Escape\-Json\-String\-\_\-t}$>$ {\bf C\-Sph\-String\-Builder\-Json}}}\label{searchdhttp_8cpp_a18717abfc69a6c1cbefd7b63f15dece1}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!E\-Sph\-Http\-Endpoint@{E\-Sph\-Http\-Endpoint}}
+\index{E\-Sph\-Http\-Endpoint@{E\-Sph\-Http\-Endpoint}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{E\-Sph\-Http\-Endpoint}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf E\-Sph\-Http\-Endpoint}}}\label{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-I\-N\-D\-E\-X@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-I\-N\-D\-E\-X}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-I\-N\-D\-E\-X@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-I\-N\-D\-E\-X}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a687230614a7e1ae634ca9befd8980775}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-I\-N\-D\-E\-X}\label{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a687230614a7e1ae634ca9befd8980775}
+}]\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-E\-A\-R\-C\-H@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-E\-A\-R\-C\-H}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-E\-A\-R\-C\-H@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-E\-A\-R\-C\-H}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a2560087ff626733d672c6fa507710368}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-E\-A\-R\-C\-H}\label{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a2560087ff626733d672c6fa507710368}
+}]\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-Q\-L@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-Q\-L}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-Q\-L@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-Q\-L}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a616bd4320334d2080402433bdb4e680b}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-Q\-L}\label{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a616bd4320334d2080402433bdb4e680b}
+}]\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-T\-O\-T\-A\-L@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-T\-O\-T\-A\-L}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-T\-O\-T\-A\-L@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-T\-O\-T\-A\-L}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a6807d6d8f03ecc0f2567c25c6dc0df14}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-T\-O\-T\-A\-L}\label{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a6807d6d8f03ecc0f2567c25c6dc0df14}
+}]\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-M\-I\-S\-S\-E\-D@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-M\-I\-S\-S\-E\-D}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-M\-I\-S\-S\-E\-D@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-M\-I\-S\-S\-E\-D}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779ad9bce045e7064b7ae763736131a3323b}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-M\-I\-S\-S\-E\-D}\label{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779ad9bce045e7064b7ae763736131a3323b}
+}]\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a0d4df901139359f47168d43462b57d09}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T}\label{searchdhttp_8cpp_a78324f8afa31665f01974db37e9ac779a0d4df901139359f47168d43462b57d09}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!E\-Sph\-Http\-Status@{E\-Sph\-Http\-Status}}
+\index{E\-Sph\-Http\-Status@{E\-Sph\-Http\-Status}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{E\-Sph\-Http\-Status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf E\-Sph\-Http\-Status}}}\label{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-200@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-200}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-200@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-200}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605add20ef1133e130422de279ccc148907e}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-200}\label{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605add20ef1133e130422de279ccc148907e}
+}]\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-206@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-206}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-206@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-206}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a77b403a680b6e27359ab88d7a0aa122a}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-206}\label{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a77b403a680b6e27359ab88d7a0aa122a}
+}]\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-400@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-400}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-400@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-400}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a48f9fefb5ce276b0b17b147a4f10da5d}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-400}\label{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a48f9fefb5ce276b0b17b147a4f10da5d}
+}]\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-500@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-500}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-500@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-500}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a4e157c359bd28198158cb27a7a6cc4e6}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-500}\label{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a4e157c359bd28198158cb27a7a6cc4e6}
+}]\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-501@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-501}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-501@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-501}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605aea678eed936f3a68ef9676f3a9fdb3d6}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-501}\label{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605aea678eed936f3a68ef9676f3a9fdb3d6}
+}]\index{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-T\-O\-T\-A\-L@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-T\-O\-T\-A\-L}!searchdhttp.\-cpp@{searchdhttp.\-cpp}}\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-T\-O\-T\-A\-L@{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-T\-O\-T\-A\-L}}\item[{\em 
+\hypertarget{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a0dd7bf72fead0357aae8f8df77fabf71}{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-T\-O\-T\-A\-L}\label{searchdhttp_8cpp_afee957950f5ca8591ceee2a18ec4c605a0dd7bf72fead0357aae8f8df77fabf71}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{searchdhttp_8cpp_add51995a7a760c0e1eba6c1823e6a850}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Append\-Json\-Key@{Append\-Json\-Key}}
+\index{Append\-Json\-Key@{Append\-Json\-Key}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Append\-Json\-Key}]{\setlength{\rightskip}{0pt plus 5cm}static void Append\-Json\-Key (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Name, }
+\item[{{\bf C\-Sph\-String\-Builder\-Json} \&}]{t\-Out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_add51995a7a760c0e1eba6c1823e6a850}
+\hypertarget{searchdhttp_8cpp_abcf4f8519e830a98c06a3b53a02406e2}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Char2\-Hex@{Char2\-Hex}}
+\index{Char2\-Hex@{Char2\-Hex}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Char2\-Hex}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf B\-Y\-T\-E} Char2\-Hex (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Y\-T\-E}}]{u\-Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_abcf4f8519e830a98c06a3b53a02406e2}
+\hypertarget{searchdhttp_8cpp_a25fb8d9508f981fa38f9447a7c974d2a}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Encode\-Result\-Json@{Encode\-Result\-Json}}
+\index{Encode\-Result\-Json@{Encode\-Result\-Json}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Encode\-Result\-Json}]{\setlength{\rightskip}{0pt plus 5cm}static void Encode\-Result\-Json (
+\begin{DoxyParamCaption}
+\item[{const {\bf Aggr\-Result\-\_\-t} \&}]{t\-Res, }
+\item[{{\bf C\-Sph\-String\-Builder\-Json} \&}]{t\-Out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_a25fb8d9508f981fa38f9447a7c974d2a}
+\hypertarget{searchdhttp_8cpp_a794f6ed3c07f350cf2ddb3c8b11ffe5f}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Get\-Any\-Value@{Get\-Any\-Value}}
+\index{Get\-Any\-Value@{Get\-Any\-Value}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Get\-Any\-Value}]{\setlength{\rightskip}{0pt plus 5cm}static const {\bf C\-Sph\-String}$\ast$ Get\-Any\-Value (
+\begin{DoxyParamCaption}
+\item[{const {\bf Small\-String\-Hash\-\_\-\-T}$<$ {\bf C\-Sph\-String} $>$ \&}]{h\-Options, }
+\item[{const char $\ast$}]{s\-Key1, }
+\item[{const char $\ast$}]{s\-Key2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_a794f6ed3c07f350cf2ddb3c8b11ffe5f}
+\hypertarget{searchdhttp_8cpp_a3d09d18647ab85be59d23c155935bd59}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Http\-Build\-Reply@{Http\-Build\-Reply}}
+\index{Http\-Build\-Reply@{Http\-Build\-Reply}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Http\-Build\-Reply}]{\setlength{\rightskip}{0pt plus 5cm}static void Http\-Build\-Reply (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Data, }
+\item[{{\bf E\-Sph\-Http\-Status}}]{e\-Code, }
+\item[{const char $\ast$}]{s\-Body, }
+\item[{{\bf int}}]{i\-Body\-Len, }
+\item[{bool}]{b\-Html}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_a3d09d18647ab85be59d23c155935bd59}
+\hypertarget{searchdhttp_8cpp_a8b1da6336630b34189c83578e6579352}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Http\-Error\-Reply@{Http\-Error\-Reply}}
+\index{Http\-Error\-Reply@{Http\-Error\-Reply}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Http\-Error\-Reply}]{\setlength{\rightskip}{0pt plus 5cm}static void Http\-Error\-Reply (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Data, }
+\item[{{\bf E\-Sph\-Http\-Status}}]{e\-Code, }
+\item[{const char $\ast$}]{s\-Template, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_a8b1da6336630b34189c83578e6579352}
+\hypertarget{searchdhttp_8cpp_ae8dbdb512691747d81ba640b795154d4}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Http\-Handler\-Page@{Http\-Handler\-Page}}
+\index{Http\-Handler\-Page@{Http\-Handler\-Page}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Http\-Handler\-Page}]{\setlength{\rightskip}{0pt plus 5cm}static void Http\-Handler\-Page (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Page, }
+\item[{const {\bf C\-Sph\-String} \&}]{s\-Invalid\-Endpoint, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_ae8dbdb512691747d81ba640b795154d4}
+\hypertarget{searchdhttp_8cpp_a6f550c1697728870d1f1d80877b5d58a}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Http\-Handler\-Search@{Http\-Handler\-Search}}
+\index{Http\-Handler\-Search@{Http\-Handler\-Search}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Http\-Handler\-Search}]{\setlength{\rightskip}{0pt plus 5cm}static void Http\-Handler\-Search (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Q\-L, }
+\item[{const {\bf Small\-String\-Hash\-\_\-\-T}$<$ {\bf C\-Sph\-String} $>$ \&}]{h\-Options, }
+\item[{{\bf int}}]{i\-C\-I\-D, }
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_a6f550c1697728870d1f1d80877b5d58a}
+\hypertarget{searchdhttp_8cpp_a516ad008ca4c13dad1fb23e32db75870}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Parse\-Endpoint\-Path@{Parse\-Endpoint\-Path}}
+\index{Parse\-Endpoint\-Path@{Parse\-Endpoint\-Path}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Parse\-Endpoint\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf E\-Sph\-Http\-Endpoint} Parse\-Endpoint\-Path (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s\-Path, }
+\item[{{\bf int}}]{i\-Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_a516ad008ca4c13dad1fb23e32db75870}
+\hypertarget{searchdhttp_8cpp_ada3258facbe01762e71519579667d840}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Parse\-Search\-Options@{Parse\-Search\-Options}}
+\index{Parse\-Search\-Options@{Parse\-Search\-Options}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Parse\-Search\-Options}]{\setlength{\rightskip}{0pt plus 5cm}static void Parse\-Search\-Options (
+\begin{DoxyParamCaption}
+\item[{const {\bf Small\-String\-Hash\-\_\-\-T}$<$ {\bf C\-Sph\-String} $>$ \&}]{h\-Options, }
+\item[{{\bf C\-Sph\-Query} \&}]{t\-Query}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_ada3258facbe01762e71519579667d840}
+\hypertarget{searchdhttp_8cpp_aa077b125a24f1a865bab7121f60b44fc}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!sph\-Loop\-Client\-Http@{sph\-Loop\-Client\-Http}}
+\index{sph\-Loop\-Client\-Http@{sph\-Loop\-Client\-Http}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{sph\-Loop\-Client\-Http}]{\setlength{\rightskip}{0pt plus 5cm}bool sph\-Loop\-Client\-Http (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-Vector}$<$ {\bf B\-Y\-T\-E} $>$ \&}]{d\-Data, }
+\item[{{\bf int}}]{i\-C\-I\-D}
+\end{DoxyParamCaption}
+)}}\label{searchdhttp_8cpp_aa077b125a24f1a865bab7121f60b44fc}
+\hypertarget{searchdhttp_8cpp_a2be35a4ad6ec4a457eefc857e86b914a}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+\item[{sizeof({\bf g\-\_\-d\-Http\-Status})/sizeof({\bf g\-\_\-d\-Http\-Status}\mbox{[}0\mbox{]})}]{ = {\ttfamily ={\bf S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-T\-O\-T\-A\-L}}, }
+\item[{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-H\-O\-U\-L\-D\-\_\-\-B\-E\-\_\-\-S\-A\-M\-E\-\_\-\-A\-S\-\_\-\-S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-T\-O\-T\-A\-L}]{}
+\end{DoxyParamCaption}
+)}}\label{searchdhttp_8cpp_a2be35a4ad6ec4a457eefc857e86b914a}
+\hypertarget{searchdhttp_8cpp_aab3990ded50a79e558592591e1651f07}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+\item[{sizeof({\bf g\-\_\-s\-Endpoints})/sizeof({\bf g\-\_\-s\-Endpoints}\mbox{[}0\mbox{]})}]{ = {\ttfamily ={\bf S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-T\-O\-T\-A\-L}}, }
+\item[{S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-S\-H\-O\-U\-L\-D\-\_\-\-B\-E\-\_\-\-S\-A\-M\-E\-\_\-\-A\-S\-\_\-\-S\-P\-H\-\_\-\-H\-T\-T\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-T\-O\-T\-A\-L}]{}
+\end{DoxyParamCaption}
+)}}\label{searchdhttp_8cpp_aab3990ded50a79e558592591e1651f07}
+\hypertarget{searchdhttp_8cpp_a7a454d581c7fc862759fd9828c1e887d}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!Uri\-Percent\-Replace@{Uri\-Percent\-Replace}}
+\index{Uri\-Percent\-Replace@{Uri\-Percent\-Replace}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{Uri\-Percent\-Replace}]{\setlength{\rightskip}{0pt plus 5cm}static void Uri\-Percent\-Replace (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Sph\-String} \&}]{s\-Entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_a7a454d581c7fc862759fd9828c1e887d}
+
+
+\subsection{Variable Documentation}
+\hypertarget{searchdhttp_8cpp_a1bb7541c2fa7f6f9f04f3a5e32844320}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!g\-\_\-d\-Http\-Status@{g\-\_\-d\-Http\-Status}}
+\index{g\-\_\-d\-Http\-Status@{g\-\_\-d\-Http\-Status}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{g\-\_\-d\-Http\-Status}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ g\-\_\-d\-Http\-Status\mbox{[}$\,$\mbox{]} = \{ \char`\"{}200 O\-K\char`\"{}, \char`\"{}206 Partial Content\char`\"{}, \char`\"{}400 Bad Request\char`\"{}, \char`\"{}500 Internal Server Error\char`\"{}, \char`\"{}501 Not Implemented\char`\"{} \}}}\label{searchdhttp_8cpp_a1bb7541c2fa7f6f9f04f3a5e32844320}
+\hypertarget{searchdhttp_8cpp_a6c577adc95c4eee5b61109b55c885cbc}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!g\-\_\-s\-Endpoints@{g\-\_\-s\-Endpoints}}
+\index{g\-\_\-s\-Endpoints@{g\-\_\-s\-Endpoints}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{g\-\_\-s\-Endpoints}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ g\-\_\-s\-Endpoints\mbox{[}$\,$\mbox{]} = \{ \char`\"{}index.\-html\char`\"{}, \char`\"{}search\char`\"{}, \char`\"{}sql\char`\"{} \}}}\label{searchdhttp_8cpp_a6c577adc95c4eee5b61109b55c885cbc}
+\hypertarget{searchdhttp_8cpp_ad5de814d90a915e75c00b41441b777be}{\index{searchdhttp.\-cpp@{searchdhttp.\-cpp}!g\-\_\-s\-Index\-Page@{g\-\_\-s\-Index\-Page}}
+\index{g\-\_\-s\-Index\-Page@{g\-\_\-s\-Index\-Page}!searchdhttp.cpp@{searchdhttp.\-cpp}}
+\subsubsection[{g\-\_\-s\-Index\-Page}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ g\-\_\-s\-Index\-Page\hspace{0.3cm}{\ttfamily [static]}}}\label{searchdhttp_8cpp_ad5de814d90a915e75c00b41441b777be}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\textcolor{stringliteral}{"<!DOCTYPE html>"}
+\textcolor{stringliteral}{"<html>"}
+\textcolor{stringliteral}{"<head>"}
+\textcolor{stringliteral}{"<title>Sphinx</title>"}
+\textcolor{stringliteral}{"</head>"}
+\textcolor{stringliteral}{"<body>"}
+\textcolor{stringliteral}{"<h1>Sphinx daemon</h1>"}
+\textcolor{stringliteral}{"<p>%s</p>"}
+\textcolor{stringliteral}{"</body>"}
+\textcolor{stringliteral}{"</html>"}
+\end{DoxyCode}

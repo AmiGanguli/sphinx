@@ -1,0 +1,99 @@
+\hypertarget{structCSphDictEntry}{\section{C\-Sph\-Dict\-Entry Struct Reference}
+\label{structCSphDictEntry}\index{C\-Sph\-Dict\-Entry@{C\-Sph\-Dict\-Entry}}
+}
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Dict\-Entry\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structCSphDictEntry}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_a80a94d5984fdf9214a98f3e5e65df963}{Sph\-Word\-I\-D\-\_\-t} \hyperlink{structCSphDictEntry_af0ae47ee68f60ba0965b7b9271d2c2c2}{m\-\_\-u\-Word\-I\-D}
+\begin{DoxyCompactList}\small\item\em keyword id (for dict=crc) \end{DoxyCompactList}\item 
+const \hyperlink{sphinxstd_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$ \hyperlink{structCSphDictEntry_a58f6fbd5ffd37a518e7e792030ed276e}{m\-\_\-s\-Keyword}
+\begin{DoxyCompactList}\small\item\em keyword text (for dict=keywords) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphDictEntry_a8a8f91e5c3644e336be6ea3354fac8f8}{m\-\_\-i\-Docs}
+\begin{DoxyCompactList}\small\item\em number of matching documents \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphDictEntry_a628b204b5451e9c5126068154f3fe6b9}{m\-\_\-i\-Hits}
+\begin{DoxyCompactList}\small\item\em number of occurrences \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{structCSphDictEntry_a3115d67c4bf83b750e7d84be6f919a10}{m\-\_\-i\-Doclist\-Offset}
+\begin{DoxyCompactList}\small\item\em absolute document list offset (into .spd) \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{structCSphDictEntry_ae6fd52be73564ec837615af17d29c0ac}{m\-\_\-i\-Doclist\-Length}
+\begin{DoxyCompactList}\small\item\em document list length in bytes \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a0fb3b64afebef33c61367714754eaa90}{Sph\-Offset\-\_\-t} \hyperlink{structCSphDictEntry_abfb6b23a4b17ee0d0b8a4c923f1a575a}{m\-\_\-i\-Skiplist\-Offset}
+\begin{DoxyCompactList}\small\item\em absolute skiplist offset (into .spe) \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphDictEntry_a2f1681aba263bb17ccdcc90fb53c5801}{m\-\_\-i\-Doclist\-Hint}
+\begin{DoxyCompactList}\small\item\em raw document list length hint value (0..255 range, 1 byte) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+dictionary entry some of the fields might be unused depending on specific dictionary type 
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphDictEntry_a2f1681aba263bb17ccdcc90fb53c5801}{\index{C\-Sph\-Dict\-Entry@{C\-Sph\-Dict\-Entry}!m\-\_\-i\-Doclist\-Hint@{m\-\_\-i\-Doclist\-Hint}}
+\index{m\-\_\-i\-Doclist\-Hint@{m\-\_\-i\-Doclist\-Hint}!CSphDictEntry@{C\-Sph\-Dict\-Entry}}
+\subsubsection[{m\-\_\-i\-Doclist\-Hint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Entry\-::m\-\_\-i\-Doclist\-Hint}}\label{structCSphDictEntry_a2f1681aba263bb17ccdcc90fb53c5801}
+
+
+raw document list length hint value (0..255 range, 1 byte) 
+
+\hypertarget{structCSphDictEntry_ae6fd52be73564ec837615af17d29c0ac}{\index{C\-Sph\-Dict\-Entry@{C\-Sph\-Dict\-Entry}!m\-\_\-i\-Doclist\-Length@{m\-\_\-i\-Doclist\-Length}}
+\index{m\-\_\-i\-Doclist\-Length@{m\-\_\-i\-Doclist\-Length}!CSphDictEntry@{C\-Sph\-Dict\-Entry}}
+\subsubsection[{m\-\_\-i\-Doclist\-Length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Dict\-Entry\-::m\-\_\-i\-Doclist\-Length}}\label{structCSphDictEntry_ae6fd52be73564ec837615af17d29c0ac}
+
+
+document list length in bytes 
+
+\hypertarget{structCSphDictEntry_a3115d67c4bf83b750e7d84be6f919a10}{\index{C\-Sph\-Dict\-Entry@{C\-Sph\-Dict\-Entry}!m\-\_\-i\-Doclist\-Offset@{m\-\_\-i\-Doclist\-Offset}}
+\index{m\-\_\-i\-Doclist\-Offset@{m\-\_\-i\-Doclist\-Offset}!CSphDictEntry@{C\-Sph\-Dict\-Entry}}
+\subsubsection[{m\-\_\-i\-Doclist\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Dict\-Entry\-::m\-\_\-i\-Doclist\-Offset}}\label{structCSphDictEntry_a3115d67c4bf83b750e7d84be6f919a10}
+
+
+absolute document list offset (into .spd) 
+
+\hypertarget{structCSphDictEntry_a8a8f91e5c3644e336be6ea3354fac8f8}{\index{C\-Sph\-Dict\-Entry@{C\-Sph\-Dict\-Entry}!m\-\_\-i\-Docs@{m\-\_\-i\-Docs}}
+\index{m\-\_\-i\-Docs@{m\-\_\-i\-Docs}!CSphDictEntry@{C\-Sph\-Dict\-Entry}}
+\subsubsection[{m\-\_\-i\-Docs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Entry\-::m\-\_\-i\-Docs}}\label{structCSphDictEntry_a8a8f91e5c3644e336be6ea3354fac8f8}
+
+
+number of matching documents 
+
+\hypertarget{structCSphDictEntry_a628b204b5451e9c5126068154f3fe6b9}{\index{C\-Sph\-Dict\-Entry@{C\-Sph\-Dict\-Entry}!m\-\_\-i\-Hits@{m\-\_\-i\-Hits}}
+\index{m\-\_\-i\-Hits@{m\-\_\-i\-Hits}!CSphDictEntry@{C\-Sph\-Dict\-Entry}}
+\subsubsection[{m\-\_\-i\-Hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Dict\-Entry\-::m\-\_\-i\-Hits}}\label{structCSphDictEntry_a628b204b5451e9c5126068154f3fe6b9}
+
+
+number of occurrences 
+
+\hypertarget{structCSphDictEntry_abfb6b23a4b17ee0d0b8a4c923f1a575a}{\index{C\-Sph\-Dict\-Entry@{C\-Sph\-Dict\-Entry}!m\-\_\-i\-Skiplist\-Offset@{m\-\_\-i\-Skiplist\-Offset}}
+\index{m\-\_\-i\-Skiplist\-Offset@{m\-\_\-i\-Skiplist\-Offset}!CSphDictEntry@{C\-Sph\-Dict\-Entry}}
+\subsubsection[{m\-\_\-i\-Skiplist\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Offset\-\_\-t} C\-Sph\-Dict\-Entry\-::m\-\_\-i\-Skiplist\-Offset}}\label{structCSphDictEntry_abfb6b23a4b17ee0d0b8a4c923f1a575a}
+
+
+absolute skiplist offset (into .spe) 
+
+\hypertarget{structCSphDictEntry_a58f6fbd5ffd37a518e7e792030ed276e}{\index{C\-Sph\-Dict\-Entry@{C\-Sph\-Dict\-Entry}!m\-\_\-s\-Keyword@{m\-\_\-s\-Keyword}}
+\index{m\-\_\-s\-Keyword@{m\-\_\-s\-Keyword}!CSphDictEntry@{C\-Sph\-Dict\-Entry}}
+\subsubsection[{m\-\_\-s\-Keyword}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf B\-Y\-T\-E}$\ast$ C\-Sph\-Dict\-Entry\-::m\-\_\-s\-Keyword}}\label{structCSphDictEntry_a58f6fbd5ffd37a518e7e792030ed276e}
+
+
+keyword text (for dict=keywords) 
+
+\hypertarget{structCSphDictEntry_af0ae47ee68f60ba0965b7b9271d2c2c2}{\index{C\-Sph\-Dict\-Entry@{C\-Sph\-Dict\-Entry}!m\-\_\-u\-Word\-I\-D@{m\-\_\-u\-Word\-I\-D}}
+\index{m\-\_\-u\-Word\-I\-D@{m\-\_\-u\-Word\-I\-D}!CSphDictEntry@{C\-Sph\-Dict\-Entry}}
+\subsubsection[{m\-\_\-u\-Word\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-Word\-I\-D\-\_\-t} C\-Sph\-Dict\-Entry\-::m\-\_\-u\-Word\-I\-D}}\label{structCSphDictEntry_af0ae47ee68f60ba0965b7b9271d2c2c2}
+
+
+keyword id (for dict=crc) 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\end{DoxyCompactItemize}

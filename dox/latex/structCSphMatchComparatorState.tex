@@ -1,0 +1,167 @@
+\hypertarget{structCSphMatchComparatorState}{\section{C\-Sph\-Match\-Comparator\-State Struct Reference}
+\label{structCSphMatchComparatorState}\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}}
+}
+
+
+match comparator state  
+
+
+
+
+{\ttfamily \#include $<$sphinx.\-h$>$}
+
+Inheritance diagram for C\-Sph\-Match\-Comparator\-State\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structCSphMatchComparatorState}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCSphMatchComparatorState_aefac769bade74c4c3e761afaa6c52de8}{C\-Sph\-Match\-Comparator\-State} ()
+\begin{DoxyCompactList}\small\item\em create default empty state \end{DoxyCompactList}\item 
+bool \hyperlink{structCSphMatchComparatorState_a33e5177d7ec8f3f321550a5a33d9d16e}{Uses\-Bitfields} ()
+\begin{DoxyCompactList}\small\item\em check if any of my attrs are bitfields \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphMatchComparatorState_ab8a31139ad219c858ebadffeb91476a0}{Cmp\-Strings} (const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&a, const \hyperlink{classCSphMatch}{C\-Sph\-Match} \&b, \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} i\-Attr) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sphinx_8h_aac27c366506093037ef354974cf5d0a0}{E\-Sph\-Sort\-Key\-Part} \hyperlink{structCSphMatchComparatorState_a0e0ab7b86cc6dcf782f0c44dba949495}{m\-\_\-e\-Keypart} \mbox{[}\hyperlink{structCSphMatchComparatorState_a2537521712fc482d4d5a06cb24e27995}{M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em sort-\/by key part type \end{DoxyCompactList}\item 
+\hyperlink{structCSphAttrLocator}{C\-Sph\-Attr\-Locator} \hyperlink{structCSphMatchComparatorState_a08841e269f9cfc9e6d8aa698dc8ad9fc}{m\-\_\-t\-Locator} \mbox{[}\hyperlink{structCSphMatchComparatorState_a2537521712fc482d4d5a06cb24e27995}{M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em sort-\/by attr locator \end{DoxyCompactList}\item 
+\hyperlink{structJsonKey__t}{Json\-Key\-\_\-t} \hyperlink{structCSphMatchComparatorState_a76a5f5712b5cb523d0072a50c5ee0866}{m\-\_\-t\-Sub\-Keys} \mbox{[}\hyperlink{structCSphMatchComparatorState_a2537521712fc482d4d5a06cb24e27995}{M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em sort-\/by attr sub-\/locator \end{DoxyCompactList}\item 
+\hyperlink{structISphExpr}{I\-Sph\-Expr} $\ast$ \hyperlink{structCSphMatchComparatorState_a0a3dca4e697aafc3619015e613e2259a}{m\-\_\-t\-Sub\-Expr} \mbox{[}\hyperlink{structCSphMatchComparatorState_a2537521712fc482d4d5a06cb24e27995}{M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em sort-\/by attr expression \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8h_aa883df0db2e4468a107fdd2d2ae625a3}{E\-Sph\-Attr} \hyperlink{structCSphMatchComparatorState_ace03d56e87da138c809986ea6bfa77f6}{m\-\_\-t\-Sub\-Type} \mbox{[}\hyperlink{structCSphMatchComparatorState_a2537521712fc482d4d5a06cb24e27995}{M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em sort-\/by expression type \end{DoxyCompactList}\item 
+\hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphMatchComparatorState_a8e6ddbb77c93545f458d72a03f0d139c}{m\-\_\-d\-Attrs} \mbox{[}\hyperlink{structCSphMatchComparatorState_a2537521712fc482d4d5a06cb24e27995}{M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em sort-\/by attr index \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structCSphMatchComparatorState_a018723ab4c662b84dd54155a71a529b9}{m\-\_\-u\-Attr\-Desc}
+\begin{DoxyCompactList}\small\item\em sort order mask (if i-\/th bit is set, i-\/th attr order is D\-E\-S\-C) \end{DoxyCompactList}\item 
+\hyperlink{sphinxstd_8h_a798af1e30bc65f319c1a246cecf59e39}{D\-W\-O\-R\-D} \hyperlink{structCSphMatchComparatorState_af698740294b9f825f6042c0feca4b54a}{m\-\_\-i\-Now}
+\begin{DoxyCompactList}\small\item\em timestamp (for timesegments sorting mode) \end{DoxyCompactList}\item 
+\hyperlink{sphinx_8h_a564bff07e446e0e31a63004937e8347b}{Sph\-String\-Cmp\-\_\-fn} \hyperlink{structCSphMatchComparatorState_a3b25365c56f4cba770d2e70be01a2a03}{m\-\_\-fn\-Str\-Cmp}
+\begin{DoxyCompactList}\small\item\em string comparator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{sphinxexpr_8cpp_a4a26e8f9cb8b736e0c4cbf4d16de985e}{int} \hyperlink{structCSphMatchComparatorState_a2537521712fc482d4d5a06cb24e27995}{M\-A\-X\-\_\-\-A\-T\-T\-R\-S} = 5
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+match comparator state 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structCSphMatchComparatorState_aefac769bade74c4c3e761afaa6c52de8}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}}
+\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{C\-Sph\-Match\-Comparator\-State}]{\setlength{\rightskip}{0pt plus 5cm}C\-Sph\-Match\-Comparator\-State\-::\-C\-Sph\-Match\-Comparator\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphMatchComparatorState_aefac769bade74c4c3e761afaa6c52de8}
+
+
+create default empty state 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structCSphMatchComparatorState_ab8a31139ad219c858ebadffeb91476a0}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!Cmp\-Strings@{Cmp\-Strings}}
+\index{Cmp\-Strings@{Cmp\-Strings}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{Cmp\-Strings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Match\-Comparator\-State\-::\-Cmp\-Strings (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sph\-Match} \&}]{a, }
+\item[{const {\bf C\-Sph\-Match} \&}]{b, }
+\item[{{\bf int}}]{i\-Attr}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphMatchComparatorState_ab8a31139ad219c858ebadffeb91476a0}
+\hypertarget{structCSphMatchComparatorState_a33e5177d7ec8f3f321550a5a33d9d16e}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!Uses\-Bitfields@{Uses\-Bitfields}}
+\index{Uses\-Bitfields@{Uses\-Bitfields}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{Uses\-Bitfields}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Sph\-Match\-Comparator\-State\-::\-Uses\-Bitfields (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structCSphMatchComparatorState_a33e5177d7ec8f3f321550a5a33d9d16e}
+
+
+check if any of my attrs are bitfields 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structCSphMatchComparatorState_a8e6ddbb77c93545f458d72a03f0d139c}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!m\-\_\-d\-Attrs@{m\-\_\-d\-Attrs}}
+\index{m\-\_\-d\-Attrs@{m\-\_\-d\-Attrs}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{m\-\_\-d\-Attrs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int} C\-Sph\-Match\-Comparator\-State\-::m\-\_\-d\-Attrs\mbox{[}{\bf M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}}}\label{structCSphMatchComparatorState_a8e6ddbb77c93545f458d72a03f0d139c}
+
+
+sort-\/by attr index 
+
+\hypertarget{structCSphMatchComparatorState_a0e0ab7b86cc6dcf782f0c44dba949495}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!m\-\_\-e\-Keypart@{m\-\_\-e\-Keypart}}
+\index{m\-\_\-e\-Keypart@{m\-\_\-e\-Keypart}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{m\-\_\-e\-Keypart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Sort\-Key\-Part} C\-Sph\-Match\-Comparator\-State\-::m\-\_\-e\-Keypart\mbox{[}{\bf M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}}}\label{structCSphMatchComparatorState_a0e0ab7b86cc6dcf782f0c44dba949495}
+
+
+sort-\/by key part type 
+
+\hypertarget{structCSphMatchComparatorState_a3b25365c56f4cba770d2e70be01a2a03}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!m\-\_\-fn\-Str\-Cmp@{m\-\_\-fn\-Str\-Cmp}}
+\index{m\-\_\-fn\-Str\-Cmp@{m\-\_\-fn\-Str\-Cmp}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{m\-\_\-fn\-Str\-Cmp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sph\-String\-Cmp\-\_\-fn} C\-Sph\-Match\-Comparator\-State\-::m\-\_\-fn\-Str\-Cmp}}\label{structCSphMatchComparatorState_a3b25365c56f4cba770d2e70be01a2a03}
+
+
+string comparator 
+
+\hypertarget{structCSphMatchComparatorState_af698740294b9f825f6042c0feca4b54a}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!m\-\_\-i\-Now@{m\-\_\-i\-Now}}
+\index{m\-\_\-i\-Now@{m\-\_\-i\-Now}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{m\-\_\-i\-Now}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Match\-Comparator\-State\-::m\-\_\-i\-Now}}\label{structCSphMatchComparatorState_af698740294b9f825f6042c0feca4b54a}
+
+
+timestamp (for timesegments sorting mode) 
+
+\hypertarget{structCSphMatchComparatorState_a08841e269f9cfc9e6d8aa698dc8ad9fc}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!m\-\_\-t\-Locator@{m\-\_\-t\-Locator}}
+\index{m\-\_\-t\-Locator@{m\-\_\-t\-Locator}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{m\-\_\-t\-Locator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sph\-Attr\-Locator} C\-Sph\-Match\-Comparator\-State\-::m\-\_\-t\-Locator\mbox{[}{\bf M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}}}\label{structCSphMatchComparatorState_a08841e269f9cfc9e6d8aa698dc8ad9fc}
+
+
+sort-\/by attr locator 
+
+\hypertarget{structCSphMatchComparatorState_a0a3dca4e697aafc3619015e613e2259a}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!m\-\_\-t\-Sub\-Expr@{m\-\_\-t\-Sub\-Expr}}
+\index{m\-\_\-t\-Sub\-Expr@{m\-\_\-t\-Sub\-Expr}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{m\-\_\-t\-Sub\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Sph\-Expr}$\ast$ C\-Sph\-Match\-Comparator\-State\-::m\-\_\-t\-Sub\-Expr\mbox{[}{\bf M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}}}\label{structCSphMatchComparatorState_a0a3dca4e697aafc3619015e613e2259a}
+
+
+sort-\/by attr expression 
+
+\hypertarget{structCSphMatchComparatorState_a76a5f5712b5cb523d0072a50c5ee0866}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!m\-\_\-t\-Sub\-Keys@{m\-\_\-t\-Sub\-Keys}}
+\index{m\-\_\-t\-Sub\-Keys@{m\-\_\-t\-Sub\-Keys}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{m\-\_\-t\-Sub\-Keys}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Json\-Key\-\_\-t} C\-Sph\-Match\-Comparator\-State\-::m\-\_\-t\-Sub\-Keys\mbox{[}{\bf M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}}}\label{structCSphMatchComparatorState_a76a5f5712b5cb523d0072a50c5ee0866}
+
+
+sort-\/by attr sub-\/locator 
+
+\hypertarget{structCSphMatchComparatorState_ace03d56e87da138c809986ea6bfa77f6}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!m\-\_\-t\-Sub\-Type@{m\-\_\-t\-Sub\-Type}}
+\index{m\-\_\-t\-Sub\-Type@{m\-\_\-t\-Sub\-Type}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{m\-\_\-t\-Sub\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-Sph\-Attr} C\-Sph\-Match\-Comparator\-State\-::m\-\_\-t\-Sub\-Type\mbox{[}{\bf M\-A\-X\-\_\-\-A\-T\-T\-R\-S}\mbox{]}}}\label{structCSphMatchComparatorState_ace03d56e87da138c809986ea6bfa77f6}
+
+
+sort-\/by expression type 
+
+\hypertarget{structCSphMatchComparatorState_a018723ab4c662b84dd54155a71a529b9}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!m\-\_\-u\-Attr\-Desc@{m\-\_\-u\-Attr\-Desc}}
+\index{m\-\_\-u\-Attr\-Desc@{m\-\_\-u\-Attr\-Desc}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{m\-\_\-u\-Attr\-Desc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-W\-O\-R\-D} C\-Sph\-Match\-Comparator\-State\-::m\-\_\-u\-Attr\-Desc}}\label{structCSphMatchComparatorState_a018723ab4c662b84dd54155a71a529b9}
+
+
+sort order mask (if i-\/th bit is set, i-\/th attr order is D\-E\-S\-C) 
+
+\hypertarget{structCSphMatchComparatorState_a2537521712fc482d4d5a06cb24e27995}{\index{C\-Sph\-Match\-Comparator\-State@{C\-Sph\-Match\-Comparator\-State}!M\-A\-X\-\_\-\-A\-T\-T\-R\-S@{M\-A\-X\-\_\-\-A\-T\-T\-R\-S}}
+\index{M\-A\-X\-\_\-\-A\-T\-T\-R\-S@{M\-A\-X\-\_\-\-A\-T\-T\-R\-S}!CSphMatchComparatorState@{C\-Sph\-Match\-Comparator\-State}}
+\subsubsection[{M\-A\-X\-\_\-\-A\-T\-T\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf int} C\-Sph\-Match\-Comparator\-State\-::\-M\-A\-X\-\_\-\-A\-T\-T\-R\-S = 5\hspace{0.3cm}{\ttfamily [static]}}}\label{structCSphMatchComparatorState_a2537521712fc482d4d5a06cb24e27995}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{sphinx_8h}{sphinx.\-h}\end{DoxyCompactItemize}
