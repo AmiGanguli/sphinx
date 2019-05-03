@@ -235,10 +235,8 @@ if (WITH_EXPAT)
 	option (WITH_PGSQL "compile with PostgreSQL support" OFF)
 
 	if (WITH_PGSQL)
-		set(PostgreSQL_ADDITIONAL_VERSIONS "9.6" "9.6.11")
 		find_package (PostgreSQL)
 
-message("x ${PostgreSQL_VERSION_STRING} z")
 		if (WITH_PGSQL_INCLUDES)
 			set (PostgreSQL_INCLUDE_DIR ${WITH_PGSQL_INCLUDES})
 		endif (WITH_PGSQL_INCLUDES)
