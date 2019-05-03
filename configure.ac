@@ -62,9 +62,9 @@ fi
 dnl set flags for C++ compiler if there are no user overrides
 dnl inject required defines if there are
 if test x$ac_env_CXXFLAGS_set != xset; then
-	CXXFLAGS="$SPHINX_CFLAGS -fno-rtti -std=c++11"
+	CXXFLAGS="$SPHINX_CFLAGS -fno-rtti -std=c++17"
 else
-	CXXFLAGS="$CXXFLAGS $SPHINX_INJECT_FLAGS -fno-rtti -std=c++11"
+	CXXFLAGS="$CXXFLAGS $SPHINX_INJECT_FLAGS -fno-rtti -std=c++17"
 fi
 
 AC_PROG_CC

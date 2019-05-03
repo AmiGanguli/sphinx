@@ -431,7 +431,7 @@ public:
 	{
 		if ( iCode<0 || iCode>=MAX_CODE )
 			return iCode;
-		register int * pChunk = m_pChunk [ iCode >> CHUNK_BITS ];
+		int * pChunk = m_pChunk [ iCode >> CHUNK_BITS ];
 		if ( pChunk )
 			return pChunk [ iCode & CHUNK_MASK ];
 		return 0;

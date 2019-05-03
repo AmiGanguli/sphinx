@@ -1091,13 +1091,13 @@ void TestQueryParser ()
 	// NEAR with NOT operator argument
 	{
 		XQQuery_t tQuery;
-		bool bOK = sphParseExtendedQuery ( tQuery, "me -test NEAR/2 off", NULL, pTokenizer.Ptr (), &tSchema, pDict.Ptr (), tTmpSettings );
+		[[maybe_unused]] bool bOK = sphParseExtendedQuery ( tQuery, "me -test NEAR/2 off", NULL, pTokenizer.Ptr (), &tSchema, pDict.Ptr (), tTmpSettings );
 		assert ( !bOK && !tQuery.m_pRoot );
 	}
 
 	// soft whitespace
 	{
-		bool bOK = false;
+		[[maybe_unused]] bool bOK = false;
 		{
 			XQQuery_t tQuery;
 			bOK = sphParseExtendedQuery ( tQuery, "me [ off", NULL, pTokenizer.Ptr (), &tSchema, pDict.Ptr (), tTmpSettings );

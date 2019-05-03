@@ -11,6 +11,7 @@
 /*.sdf
 /*.opensdf
 /.hg
+*.swp
 
 # /api/libsphinxclient/
 /api/libsphinxclient/*.ncb

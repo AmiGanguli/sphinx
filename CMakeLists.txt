@@ -137,7 +137,7 @@ else (WIN32)
 			set (CLANGFLAGS "-Wthread-safety" )
 		endif ()
 		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CFLAGS}")
-		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CFLAGS} -fno-rtti -std=c++11")
+		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CFLAGS} -fno-rtti -std=c++17")
 
 		# eliminate also some too noisy warnings from CLang
 		if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
