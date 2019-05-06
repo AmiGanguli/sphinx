@@ -59,7 +59,7 @@
 // CHARACTER SET TESTS
 //////////////////////////////////////////////////////////////////////////
 
-typedef WORD ar_char;
+typedef uint16_t ar_char;
 
 // AR_HAMZA_SET (U+0621, U+0624, U+0626)
 #define AR_HAMZA_SET	( c==0xA1D8U || c==0xA4D8U || c==0xA6D8U )
@@ -90,7 +90,7 @@ typedef WORD ar_char;
 
 
 /// remove length chars starting from start, null-terminating to new length
-static inline void ar_remove ( BYTE * word, int start, int length )
+static inline void ar_remove ( uint8_t * word, int start, int length )
 {
 	int remain = ((AR_WORD_LENGTH - length - start) * sizeof(ar_char));
 	ar_char *s = (ar_char*) &word[(start * sizeof(ar_char))];
@@ -350,7 +350,7 @@ static struct ar_form_t form_6_4[] =
 
 
 /// attempt to match the given word against one of the given affix rules
-static int ar_match_affix ( BYTE * word, struct ar_affix_t * affixes, int length, int reverse )
+static int ar_match_affix ( uint8_t * word, struct ar_affix_t * affixes, int length, int reverse )
 {
 	int match = -1, ai = 0;
 	while ( affixes[ai].chars[0] && match<0 )
@@ -377,7 +377,7 @@ static int ar_match_affix ( BYTE * word, struct ar_affix_t * affixes, int length
 
 /// attempt to match the given word against one of the given form
 /// rules, and if found, extract the stem
-static int ar_match_form ( BYTE * word, struct ar_form_t * forms )
+static int ar_match_form ( uint8_t * word, struct ar_form_t * forms )
 {
 	int match = -1, fi = 0;
 	while ( forms[fi].entry[0].at!=0xFF && match < 0 )
@@ -418,7 +418,7 @@ static int ar_match_form ( BYTE * word, struct ar_form_t * forms )
 }
 
 
-static void ar_word_4 ( BYTE * word )
+static void ar_word_4 ( uint8_t * word )
 {
 	if ( ar_match_form ( word, form_4_3 )>=0 )
 		return;
@@ -428,7 +428,7 @@ static void ar_word_4 ( BYTE * word )
 }
 
 
-static void ar_word_5 ( BYTE * word )
+static void ar_word_5 ( uint8_t * word )
 {
 	if ( ar_match_form ( word, form_5_3 )>=0 )
 		return;
@@ -446,7 +446,7 @@ static void ar_word_5 ( BYTE * word )
 }
 
 
-static void ar_word_6 ( BYTE * word )
+static void ar_word_6 ( uint8_t * word )
 {
 	if ( ar_match_form ( word, form_6_3 )>=0 )
 		return;
@@ -464,7 +464,7 @@ static void ar_word_6 ( BYTE * word )
 }
 
 
-void stem_ar_utf8 ( BYTE * word )
+void stem_ar_utf8 ( uint8_t * word )
 {
 	AR_STRIP ( AR_DIACRITIC );
 	AR_STRIP ( AR_KASHIDA ); // extension

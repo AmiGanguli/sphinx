@@ -24,8 +24,8 @@ struct ISphFilter
 	virtual void SetRange ( SphAttr_t, SphAttr_t ) {}
 	virtual void SetRangeFloat ( float, float ) {}
 	virtual void SetValues ( const SphAttr_t *, int ) {}
-	virtual void SetMVAStorage ( const DWORD *, bool ) {}
-	virtual void SetStringStorage ( const BYTE * ) {}
+	virtual void SetMVAStorage ( const uint32_t *, bool ) {}
+	virtual void SetStringStorage ( const uint8_t * ) {}
 	virtual void SetRefString ( const CSphString * , int ) {}
 
 	virtual ~ISphFilter () {}
@@ -39,7 +39,7 @@ struct ISphFilter
 	/// evaluate filter for a given block
 	/// args are pMinDocinfo and pMaxDocinfo
 	/// returns false if no document in block can possibly pass through the filter
-	virtual bool EvalBlock ( const DWORD *, const DWORD * ) const
+	virtual bool EvalBlock ( const uint32_t *, const uint32_t * ) const
 	{
 		// if filter does not implement block-level evaluation we assume the block will pass
 		return true;
@@ -55,7 +55,7 @@ protected:
 	bool m_bUsesAttrs;
 };
 
-ISphFilter * sphCreateFilter ( const CSphFilterSettings & tSettings, const ISphSchema & tSchema, const DWORD * pMvaPool, const BYTE * pStrings, CSphString & sError, CSphString & sWarning, ESphCollation eCollation, bool bArenaProhibit );
+ISphFilter * sphCreateFilter ( const CSphFilterSettings & tSettings, const ISphSchema & tSchema, const uint32_t * pMvaPool, const uint8_t * pStrings, CSphString & sError, CSphString & sWarning, ESphCollation eCollation, bool bArenaProhibit );
 ISphFilter * sphCreateAggrFilter ( const CSphFilterSettings * pSettings, const CSphString & sAttrName, const ISphSchema & tSchema, CSphString & sError );
 ISphFilter * sphCreateFilter ( const KillListVector & dKillList );
 ISphFilter * sphJoinFilters ( ISphFilter *, ISphFilter * );

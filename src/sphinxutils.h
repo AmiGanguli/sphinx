@@ -243,7 +243,7 @@ void sphConfigureCommon ( const CSphConfig & hConf );
 bool sphIsChineseCode ( int iCode );
 
 /// detect chinese chars in a buffer
-bool sphDetectChinese ( const BYTE * szBuffer, int iLength );
+bool sphDetectChinese ( const uint8_t * szBuffer, int iLength );
 
 /// returns ranker name as string
 const char * sphGetRankerName ( ESphRankMode eRanker );

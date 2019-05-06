@@ -106,44 +106,6 @@ typedef int __declspec("SAL_nokernel") __declspec("SAL_nodriver") __prefast_flag
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
-// PORTABILITY
-/////////////////////////////////////////////////////////////////////////////
-
-#if _WIN32
-
-#define WIN32_LEAN_AND_MEAN
-#define NOMINMAX
-#include <windows.h>
-
-#include <intrin.h> // for bsr
-#pragma intrinsic(_BitScanReverse)
-
-#define strcasecmp			strcmpi
-#define strncasecmp			_strnicmp
-#define snprintf			_snprintf
-#define strtoll				_strtoi64
-#define strtoull			_strtoui64
-
-#else
-
-#if USE_ODBC
-// UnixODBC compatible DWORD
-#if defined(__alpha) || defined(__sparcv9) || defined(__LP64__) || (defined(__HOS_AIX__) && defined(_LP64)) || defined(__APPLE__)
-typedef unsigned int		DWORD;
-#else
-typedef unsigned long		DWORD;
-#endif
-#else
-// default DWORD
-typedef unsigned int		DWORD;
-#endif // USE_ODBC
-
-typedef unsigned short		WORD;
-typedef unsigned char		BYTE;
-
-#endif // _WIN32
-
-/////////////////////////////////////////////////////////////////////////////
 // 64-BIT INTEGER TYPES AND MACROS
 /////////////////////////////////////////////////////////////////////////////
 
@@ -269,12 +231,12 @@ void			operator delete [] ( void * pPtr );
 // HELPERS
 /////////////////////////////////////////////////////////////////////////////
 
-inline int sphBitCount ( DWORD n )
+inline int sphBitCount ( uint32_t n )
 {
 	// MIT HACKMEM count
 	// works for 32-bit numbers only
 	// fix last line for 64-bit numbers
-	DWORD tmp;
+	uint32_t tmp;
 	tmp = n - ((n >> 1) & 033333333333) - ((n >> 2) & 011111111111);
 	return ( (tmp + (tmp >> 3) ) & 030707070707) % 63;
 }
@@ -295,10 +257,10 @@ void			sphSetDieCallback ( SphDieCallback_t pfDieCallback );
 inline int sphLog2 ( uint64_t uValue )
 {
 #if USE_WINDOWS
-	DWORD uRes;
-	if ( BitScanReverse ( &uRes, (DWORD)( uValue>>32 ) ) )
+	uint32_t uRes;
+	if ( BitScanReverse ( &uRes, (uint32_t)( uValue>>32 ) ) )
 		return 33+uRes;
-	BitScanReverse ( &uRes, DWORD(uValue) );
+	BitScanReverse ( &uRes, uint32_t(uValue) );
 	return 1+uRes;
 #elif __GNUC__ || __clang__
 	if ( !uValue )
@@ -316,10 +278,10 @@ inline int sphLog2 ( uint64_t uValue )
 }
 
 /// float vs dword conversion
-inline DWORD sphF2DW ( float f )	{ union { float f; DWORD d; } u; u.f = f; return u.d; }
+inline uint32_t sphF2DW ( float f )	{ union { float f; uint32_t d; } u; u.f = f; return u.d; }
 
 /// dword vs float conversion
-inline float sphDW2F ( DWORD d )	{ union { float f; DWORD d; } u; u.d = d; return u.f; }
+inline float sphDW2F ( uint32_t d )	{ union { float f; uint32_t d; } u; u.d = d; return u.f; }
 
 /// double to bigint conversion
 inline uint64_t sphD2QW ( double f )	{ union { double f; uint64_t d; } u; u.f = f; return u.d; }
@@ -342,13 +304,13 @@ inline float fsqr ( float v ) { return v*v; }
 //////////////////////////////////////////////////////////////////////////
 
 /// seed RNG
-void		sphSrand ( DWORD uSeed );
+void		sphSrand ( uint32_t uSeed );
 
 /// auto-seed RNG based on time and PID
 void		sphAutoSrand ();
 
 /// generate another random
-DWORD		sphRand ();
+uint32_t		sphRand ();
 
 /////////////////////////////////////////////////////////////////////////////
 // DEBUGGING
@@ -2718,7 +2680,7 @@ public:
 		if ( bWrite )
 			iAccessMode |= GENERIC_WRITE;
 
-		DWORD uShare = FILE_SHARE_READ | FILE_SHARE_DELETE;
+		uint32_t uShare = FILE_SHARE_READ | FILE_SHARE_DELETE;
 		if ( bWrite )
 			uShare |= FILE_SHARE_WRITE; // wo this flag indexer and indextool unable to open attribute file that was opened by daemon
 
@@ -2840,7 +2802,7 @@ extern int g_iThreadStackSize;
 /// my thread handle and thread func magic
 #if USE_WINDOWS
 typedef HANDLE SphThread_t;
-typedef DWORD SphThreadKey_t;
+typedef uint32_t SphThreadKey_t;
 #else
 typedef pthread_t SphThread_t;
 typedef pthread_key_t SphThreadKey_t;
@@ -3131,8 +3093,8 @@ protected:
 class CSphBitvec
 {
 protected:
-	DWORD *		m_pData;
-	DWORD		m_uStatic[4];
+	uint32_t *		m_pData;
+	uint32_t		m_uStatic[4];
 	int			m_iElements;
 
 public:
@@ -3179,7 +3141,7 @@ public:
 		if ( iElements > int(sizeof(m_uStatic)*8) )
 		{
 			int iSize = GetSize();
-			m_pData = new DWORD [ iSize ];
+			m_pData = new uint32_t [ iSize ];
 		} else
 		{
 			m_pData = m_uStatic;
@@ -3190,7 +3152,7 @@ public:
 	void Clear ()
 	{
 		int iSize = GetSize();
-		memset ( m_pData, 0, sizeof(DWORD)*iSize );
+		memset ( m_pData, 0, sizeof(uint32_t)*iSize );
 	}
 
 	bool BitGet ( int iIndex ) const
@@ -3215,12 +3177,12 @@ public:
 		m_pData [ iIndex>>5 ] &= ~( 1UL<<( iIndex&31 ) ); // NOLINT
 	}
 
-	const DWORD * Begin () const
+	const uint32_t * Begin () const
 	{
 		return m_pData;
 	}
 
-	DWORD * Begin ()
+	uint32_t * Begin ()
 	{
 		return m_pData;
 	}
@@ -3564,16 +3526,16 @@ public:
 	}
 
 	/// hash me the key, quick!
-	static inline DWORD GetHash ( KEY k )
+	static inline uint32_t GetHash ( KEY k )
 	{
-		return ( DWORD(k) * 0x607cbb77UL ) ^ ( k>>32 );
+		return ( uint32_t(k) * 0x607cbb77UL ) ^ ( k>>32 );
 	}
 
 	/// acquire value by key (ie. get existing hashed value, or add a new default value)
 	VALUE & Acquire ( KEY k )
 	{
 		assert ( k!=NO_ENTRY && k!=DEAD_ENTRY );
-		DWORD uHash = GetHash(k);
+		uint32_t uHash = GetHash(k);
 		int iIndex = uHash & ( m_iSize-1 );
 		int iDead = -1;
 		for ( ;; )
@@ -3709,7 +3671,7 @@ protected:
 	inline Entry * FindEntry ( KEY k ) const
 	{
 		assert ( k!=NO_ENTRY && k!=DEAD_ENTRY );
-		DWORD uHash = GetHash(k);
+		uint32_t uHash = GetHash(k);
 		int iIndex = uHash & ( m_iSize-1 );
 		for ( ;; )
 		{
@@ -3725,7 +3687,7 @@ protected:
 
 
 template<> inline CSphHash<int>::Entry::Entry() : m_Key ( NO_ENTRY ), m_Value ( 0 ) {}
-template<> inline CSphHash<DWORD>::Entry::Entry() : m_Key ( NO_ENTRY ), m_Value ( 0 ) {}
+template<> inline CSphHash<uint32_t>::Entry::Entry() : m_Key ( NO_ENTRY ), m_Value ( 0 ) {}
 template<> inline CSphHash<float>::Entry::Entry() : m_Key ( NO_ENTRY ), m_Value ( 0.0f ) {}
 template<> inline CSphHash<int64_t>::Entry::Entry() : m_Key ( NO_ENTRY ), m_Value ( 0 ) {}
 template<> inline CSphHash<uint64_t>::Entry::Entry() : m_Key ( NO_ENTRY ), m_Value ( 0 ) {}

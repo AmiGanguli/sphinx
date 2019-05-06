@@ -169,7 +169,7 @@ struct Expr_GetFloat_c : public Expr_WithLocator_c
 
 struct Expr_GetString_c : public Expr_WithLocator_c
 {
-	const BYTE * m_pStrings;
+	const uint8_t * m_pStrings;
 
 	Expr_GetString_c ( const CSphAttrLocator & tLocator, int iLocator ) : Expr_WithLocator_c ( tLocator, iLocator ) {}
 	virtual float Eval ( const CSphMatch & ) const { assert ( 0 ); return 0; }
@@ -178,10 +178,10 @@ struct Expr_GetString_c : public Expr_WithLocator_c
 		Expr_WithLocator_c::Command ( eCmd, pArg );
 
 		if ( eCmd==SPH_EXPR_SET_STRING_POOL )
-			m_pStrings = (const BYTE*)pArg;
+			m_pStrings = (const uint8_t*)pArg;
 	}
 
-	virtual int StringEval ( const CSphMatch & tMatch, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch & tMatch, const uint8_t ** ppStr ) const
 	{
 		SphAttr_t iOff = tMatch.GetAttr ( m_tLocator );
 		if ( iOff>0 )
@@ -201,7 +201,7 @@ struct Expr_GetString_c : public Expr_WithLocator_c
 
 struct Expr_GetMva_c : public Expr_WithLocator_c
 {
-	const DWORD * m_pMva;
+	const uint32_t * m_pMva;
 	bool m_bArenaProhibit;
 
 	Expr_GetMva_c ( const CSphAttrLocator & tLocator, int iLocator ) : Expr_WithLocator_c ( tLocator, iLocator ), m_pMva ( NULL ), m_bArenaProhibit ( false ) {}
@@ -219,7 +219,7 @@ struct Expr_GetMva_c : public Expr_WithLocator_c
 		}
 	}
 	virtual int IntEval ( const CSphMatch & tMatch ) const { return (int)tMatch.GetAttr ( m_tLocator ); }
-	virtual const DWORD * MvaEval ( const CSphMatch & tMatch ) const { return tMatch.GetAttrMVA ( m_tLocator, m_pMva, m_bArenaProhibit ); }
+	virtual const uint32_t * MvaEval ( const CSphMatch & tMatch ) const { return tMatch.GetAttrMVA ( m_tLocator, m_pMva, m_bArenaProhibit ); }
 
 	virtual uint64_t GetHash ( const ISphSchema & tSorterSchema, uint64_t uPrevHash, bool & bDisable )
 	{
@@ -234,7 +234,7 @@ struct Expr_GetFactorsAttr_c : public Expr_WithLocator_c
 {
 	Expr_GetFactorsAttr_c ( const CSphAttrLocator & tLocator, int iLocator ) : Expr_WithLocator_c ( tLocator, iLocator ) {}
 	virtual float Eval ( const CSphMatch & ) const { assert ( 0 ); return 0; }
-	virtual const DWORD * FactorEval ( const CSphMatch & tMatch ) const { return (DWORD *)tMatch.GetAttr ( m_tLocator ); }
+	virtual const uint32_t * FactorEval ( const CSphMatch & tMatch ) const { return (uint32_t *)tMatch.GetAttr ( m_tLocator ); }
 	virtual uint64_t GetHash ( const ISphSchema & tSorterSchema, uint64_t uPrevHash, bool & bDisable )
 	{
 		EXPR_CLASS_NAME("Expr_GetFactorsAttr_c");
@@ -314,9 +314,9 @@ struct Expr_GetStrConst_c : public ISphStringExpr
 		m_iLen = m_sVal.Length();
 	}
 
-	virtual int StringEval ( const CSphMatch &, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch &, const uint8_t ** ppStr ) const
 	{
-		*ppStr = (const BYTE*) m_sVal.cstr();
+		*ppStr = (const uint8_t*) m_sVal.cstr();
 		return m_iLen;
 	}
 
@@ -343,7 +343,7 @@ public:
 
 	virtual int IntEval ( const CSphMatch & tMatch ) const
 	{
-		const BYTE * pStr;		
+		const uint8_t * pStr;		
 		return m_pArg->StringEval ( tMatch, &pStr );
 	}
 
@@ -376,7 +376,7 @@ struct Expr_GetZonespanlist_c : public ISphStringExpr
 		: m_pData ( NULL )
 	{}
 
-	virtual int StringEval ( const CSphMatch & tMatch, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch & tMatch, const uint8_t ** ppStr ) const
 	{
 		assert ( ppStr );
 		if ( !m_pData || !m_pData->GetLength() )
@@ -390,7 +390,7 @@ struct Expr_GetZonespanlist_c : public ISphStringExpr
 		int iEnd = iStart + dSpans [ tMatch.m_iTag ]; // [start,end) now covers all data indexes
 		for ( int i=iStart; i<iEnd; i+=2 )
 			m_sBuilder.Appendf ( " %d:%d", 1+dSpans[i], 1+dSpans[i+1] ); // convert our 0-based span numbers to human 1-based ones
-		*ppStr = (const BYTE *) CSphString ( m_sBuilder.cstr() ).Leak();
+		*ppStr = (const uint8_t *) CSphString ( m_sBuilder.cstr() ).Leak();
 		return m_sBuilder.Length();
 	}
 
@@ -422,7 +422,7 @@ struct Expr_GetRankFactors_c : public ISphStringExpr
 		: m_pFactors ( NULL )
 	{}
 
-	virtual int StringEval ( const CSphMatch & tMatch, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch & tMatch, const uint8_t ** ppStr ) const
 	{
 		assert ( ppStr );
 		if ( !m_pFactors )
@@ -438,7 +438,7 @@ struct Expr_GetRankFactors_c : public ISphStringExpr
 			return 0;
 		}
 		int iLen = sVal->Length();
-		*ppStr = (const BYTE*)sVal->Leak();
+		*ppStr = (const uint8_t*)sVal->Leak();
 		m_pFactors->Delete ( tMatch.m_uDocID );
 		return iLen;
 	}
@@ -470,7 +470,7 @@ struct Expr_GetPackedFactors_c : public ISphStringExpr
 		: m_pHash ( NULL )
 	{}
 
-	virtual const DWORD * FactorEval ( const CSphMatch & tMatch ) const
+	virtual const uint32_t * FactorEval ( const CSphMatch & tMatch ) const
 	{
 		if ( !m_pHash || !m_pHash->GetLength() )
 			return NULL;
@@ -484,12 +484,12 @@ struct Expr_GetPackedFactors_c : public ISphStringExpr
 		if ( !pEntry )
 			return NULL;
 
-		DWORD uDataLen = (BYTE *)pEntry - (BYTE *)pEntry->m_pData;
+		uint32_t uDataLen = (uint8_t *)pEntry - (uint8_t *)pEntry->m_pData;
 
-		BYTE * pData = new BYTE[uDataLen];
+		uint8_t * pData = new uint8_t[uDataLen];
 		memcpy ( pData, pEntry->m_pData, uDataLen );
 
-		return (DWORD *)pData;
+		return (uint32_t *)pData;
 	}
 
 	virtual void Command ( ESphExprCommand eCmd, void * pArg )
@@ -808,14 +808,14 @@ struct Expr_Crc32_c : public Expr_Unary_c
 	virtual float Eval ( const CSphMatch & tMatch ) const { return (float)IntEval ( tMatch ); }
 	virtual int IntEval ( const CSphMatch & tMatch ) const
 	{
-		const BYTE * pStr;
+		const uint8_t * pStr;
 		int iLen = m_pFirst->StringEval ( tMatch, &pStr );
-		DWORD uCrc = sphCRC32 ( pStr, iLen );
+		uint32_t uCrc = sphCRC32 ( pStr, iLen );
 		if ( m_pFirst->IsStringPtr() )
 			SafeDeleteArray ( pStr );
 		return uCrc;
 	}
-	virtual int64_t Int64Eval ( const CSphMatch & tMatch ) const { return (int64_t)(DWORD)IntEval ( tMatch ); }
+	virtual int64_t Int64Eval ( const CSphMatch & tMatch ) const { return (int64_t)(uint32_t)IntEval ( tMatch ); }
 };
 
 
@@ -850,7 +850,7 @@ struct Expr_ToString_c : public Expr_Unary_c
 protected:
 	ESphAttr	m_eArg;
 	mutable CSphStringBuilder m_sBuilder;
-	const BYTE * m_pStrings;
+	const uint8_t * m_pStrings;
 
 public:
 	Expr_ToString_c ( ISphExpr * pArg, ESphAttr eArg )
@@ -865,12 +865,12 @@ public:
 		return 0.0f;
 	}
 
-	virtual int StringEval ( const CSphMatch & tMatch, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch & tMatch, const uint8_t ** ppStr ) const
 	{
 		m_sBuilder.Clear();
 		int64_t iPacked = 0;
 		ESphJsonType eJson = JSON_NULL;
-		DWORD uOff = 0;
+		uint32_t uOff = 0;
 		int iLen = 0;
 
 		switch ( m_eArg )
@@ -881,11 +881,11 @@ public:
 			case SPH_ATTR_UINT32SET:
 			case SPH_ATTR_INT64SET:
 				{
-					const DWORD * pValues = m_pFirst->MvaEval ( tMatch );
+					const uint32_t * pValues = m_pFirst->MvaEval ( tMatch );
 					if ( !pValues || !*pValues )
 						break;
 
-					DWORD nValues = *pValues++;
+					uint32_t nValues = *pValues++;
 					assert (!( m_eArg==SPH_ATTR_INT64SET && ( nValues & 1 ) ));
 
 					// OPTIMIZE? minibuffer on stack, less allocs, manual formatting vs printf, etc
@@ -914,14 +914,14 @@ public:
 			case SPH_ATTR_JSON_FIELD:
 				iPacked = m_pFirst->Int64Eval ( tMatch );
 				eJson = ESphJsonType ( iPacked>>32 );
-				uOff = (DWORD)iPacked;
+				uOff = (uint32_t)iPacked;
 				if ( !uOff || eJson==JSON_NULL )
 				{
 					*ppStr = NULL;
 					iLen = 0;
 				} else
 				{
-					CSphVector<BYTE> dTmp;
+					CSphVector<uint8_t> dTmp;
 					sphJsonFieldFormat ( dTmp, m_pStrings+uOff, eJson, false );
 					if ( dTmp.GetLength() )
 						dTmp.Add ( '\0' );
@@ -939,7 +939,7 @@ public:
 			*ppStr = NULL;
 			return 0;
 		}
-		*ppStr = (const BYTE *) CSphString ( m_sBuilder.cstr() ).Leak();
+		*ppStr = (const uint8_t *) CSphString ( m_sBuilder.cstr() ).Leak();
 		return m_sBuilder.Length();
 	}
 
@@ -951,7 +951,7 @@ public:
 	virtual void Command ( ESphExprCommand eCmd, void * pArg )
 	{
 		if ( eCmd==SPH_EXPR_SET_STRING_POOL )
-			m_pStrings = (const BYTE*)pArg;
+			m_pStrings = (const uint8_t*)pArg;
 
 		m_pFirst->Command ( eCmd, pArg );
 	}
@@ -966,7 +966,7 @@ public:
 struct Expr_JsonField_c : public Expr_WithLocator_c
 {
 protected:
-	const BYTE *			m_pStrings;
+	const uint8_t *			m_pStrings;
 	CSphVector<ISphExpr *>	m_dArgs;
 	CSphVector<ESphAttr>	m_dRetTypes;
 
@@ -992,7 +992,7 @@ public:
 		Expr_WithLocator_c::Command ( eCmd, pArg );
 
 		if ( eCmd==SPH_EXPR_SET_STRING_POOL )
-			m_pStrings = (const BYTE*)pArg;
+			m_pStrings = (const uint8_t*)pArg;
 		else if ( eCmd==SPH_EXPR_GET_DEPENDENT_COLS && m_iLocator!=-1 )
 			static_cast < CSphVector<int>* > ( pArg )->Add ( m_iLocator );
 		ARRAY_FOREACH ( i, m_dArgs )
@@ -1006,10 +1006,10 @@ public:
 		return 0;
 	}
 
-	virtual int64_t DoEval ( ESphJsonType eJson, const BYTE * pVal, const CSphMatch & tMatch ) const
+	virtual int64_t DoEval ( ESphJsonType eJson, const uint8_t * pVal, const CSphMatch & tMatch ) const
 	{
 		int iLen;
-		const BYTE * pStr;
+		const uint8_t * pStr;
 
 		ARRAY_FOREACH ( i, m_dRetTypes )
 		{
@@ -1029,7 +1029,7 @@ public:
 			case SPH_ATTR_JSON_FIELD: // handle cases like "json.a [ json.b ]"
 				{
 					uint64_t uValue = m_dArgs[i]->Int64Eval ( tMatch );
-					const BYTE * p = m_pStrings + ( uValue & 0xffffffff );
+					const uint8_t * p = m_pStrings + ( uValue & 0xffffffff );
 					ESphJsonType eType = (ESphJsonType)( uValue >> 32 );
 
 					switch ( eType )
@@ -1071,12 +1071,12 @@ public:
 		if ( m_tLocator.m_bDynamic )
 		{
 			// extends precalculated (aliased) field
-			const BYTE * pVal = m_pStrings + ( uOffset & 0xffffffff );
+			const uint8_t * pVal = m_pStrings + ( uOffset & 0xffffffff );
 			ESphJsonType eJson = (ESphJsonType)( uOffset >> 32 );
 			return DoEval ( eJson, pVal, tMatch );
 		}
 
-		const BYTE * pVal = NULL;
+		const uint8_t * pVal = NULL;
 		sphUnpackStr ( m_pStrings + uOffset, &pVal );
 		if ( !pVal )
 			return 0;
@@ -1099,10 +1099,10 @@ public:
 struct Expr_JsonFastKey_c : public Expr_WithLocator_c
 {
 protected:
-	const BYTE *	m_pStrings;
+	const uint8_t *	m_pStrings;
 	CSphString		m_sKey;
 	int				m_iKeyLen;
-	DWORD			m_uKeyBloom;
+	uint32_t			m_uKeyBloom;
 
 public:
 	/// takes over the expressions
@@ -1125,7 +1125,7 @@ public:
 		Expr_WithLocator_c::Command ( eCmd, pArg );
 
 		if ( eCmd==SPH_EXPR_SET_STRING_POOL )
-			m_pStrings = (const BYTE*)pArg;
+			m_pStrings = (const uint8_t*)pArg;
 	}
 
 	virtual float Eval ( const CSphMatch & ) const
@@ -1138,12 +1138,12 @@ public:
 	{
 		// get pointer to JSON blob data
 		assert ( m_pStrings );
-		DWORD uOffset = m_tLocator.m_bDynamic
+		uint32_t uOffset = m_tLocator.m_bDynamic
 			? tMatch.m_pDynamic [ m_tLocator.m_iBitOffset >> ROWITEM_SHIFT ]
 			: tMatch.m_pStatic [ m_tLocator.m_iBitOffset >> ROWITEM_SHIFT ];
 		if ( !uOffset )
 			return 0;
-		const BYTE * pJson;
+		const uint8_t * pJson;
 		sphUnpackStr ( m_pStrings + uOffset, &pJson );
 
 		// all root objects start with a Bloom mask; quickly check it
@@ -1172,7 +1172,7 @@ public:
 struct Expr_JsonFieldConv_c : public ISphExpr
 {
 protected:
-	const BYTE *	m_pStrings;
+	const uint8_t *	m_pStrings;
 	ISphExpr *		m_pArg;
 
 public:
@@ -1189,13 +1189,13 @@ public:
 	virtual void Command ( ESphExprCommand eCmd, void * pArg )
 	{
 		if ( eCmd==SPH_EXPR_SET_STRING_POOL )
-			m_pStrings = (const BYTE*)pArg;
+			m_pStrings = (const uint8_t*)pArg;
 		if ( m_pArg )
 			m_pArg->Command ( eCmd, pArg );
 	}
 
 protected:
-	virtual ESphJsonType GetKey ( const BYTE ** ppKey, const CSphMatch & tMatch ) const
+	virtual ESphJsonType GetKey ( const uint8_t ** ppKey, const CSphMatch & tMatch ) const
 	{
 		assert ( ppKey );
 		if ( !m_pStrings || !m_pArg )
@@ -1209,7 +1209,7 @@ protected:
 	template < typename T >
 	T DoEval ( const CSphMatch & tMatch ) const
 	{
-		const BYTE * pVal = NULL;
+		const uint8_t * pVal = NULL;
 		ESphJsonType eJson = GetKey ( &pVal, tMatch );
 		switch ( eJson )
 		{
@@ -1240,9 +1240,9 @@ protected:
 	}
 
 public:
-	virtual int StringEval ( const CSphMatch & tMatch, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch & tMatch, const uint8_t ** ppStr ) const
 	{
-		const BYTE * pVal = NULL;
+		const uint8_t * pVal = NULL;
 		ESphJsonType eJson = GetKey ( &pVal, tMatch );
 		return ( eJson==JSON_STRING ) ? sphUnpackStr ( pVal, ppStr ) : 0;
 	}
@@ -1271,7 +1271,7 @@ public:
 
 	virtual int IntEval ( const CSphMatch & tMatch ) const
 	{
-		const BYTE * pVal = NULL;
+		const uint8_t * pVal = NULL;
 		ESphJsonType eJson = GetKey ( &pVal, tMatch );
 		switch ( eJson )
 		{
@@ -1298,17 +1298,17 @@ public:
 		}
 	}
 
-	virtual int StringEval ( const CSphMatch & tMatch, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch & tMatch, const uint8_t ** ppStr ) const
 	{
 		CSphString sBuf;
 		*ppStr = NULL;
-		const BYTE * pVal = NULL;
+		const uint8_t * pVal = NULL;
 		ESphJsonType eJson = GetKey ( &pVal, tMatch );
 		switch ( eJson )
 		{
 		case JSON_INT32_VECTOR:
 			sBuf.SetSprintf ( "%u", IntEval ( tMatch ) );
-			*ppStr = (const BYTE *) sBuf.Leak();
+			*ppStr = (const uint8_t *) sBuf.Leak();
 			return strlen ( (const char*) *ppStr );
 
 		case JSON_STRING_VECTOR:
@@ -1347,7 +1347,7 @@ public:
 						}
 
 						sBuf.SetBinary ( pRes, iResLen );
-						*ppStr = (const BYTE *) sBuf.Leak();
+						*ppStr = (const uint8_t *) sBuf.Leak();
 						return iResLen;
 					}
 				default:
@@ -1381,7 +1381,7 @@ public:
 
 	virtual int IntEval ( const CSphMatch & tMatch ) const
 	{
-		const BYTE * pVal = NULL;
+		const uint8_t * pVal = NULL;
 		ESphJsonType eJson = GetKey ( &pVal, tMatch );
 		return sphJsonFieldLength ( eJson, pVal );
 	}
@@ -1440,7 +1440,7 @@ struct Expr_Time_c : public ISphExpr
 		return (int) mktime ( &s );
 	}
 
-	virtual int StringEval ( const CSphMatch &, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch &, const uint8_t ** ppStr ) const
 	{
 		CSphString sVal;
 		struct tm s;
@@ -1455,7 +1455,7 @@ struct Expr_Time_c : public ISphExpr
 			sVal.SetSprintf ( "%02d:%02d:%02d", s.tm_hour, s.tm_min, s.tm_sec );
 
 		int iLength = sVal.Length();
-		*ppStr = (const BYTE*) sVal.Leak();
+		*ppStr = (const uint8_t*) sVal.Leak();
 		return iLength;
 	}
 
@@ -1493,14 +1493,14 @@ struct Expr_TimeDiff_c : public ISphExpr
 		return m_pFirst->IntEval ( tMatch )-m_pSecond->IntEval ( tMatch );
 	}
 
-	virtual int StringEval ( const CSphMatch & tMatch, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch & tMatch, const uint8_t ** ppStr ) const
 	{
 		int iVal = IntEval ( tMatch );
 		CSphString sVal;
 		int t = iVal<0 ? -iVal : iVal;
 		sVal.SetSprintf ( "%s%02d:%02d:%02d", iVal<0 ? "-" : "", t/60/60, (t/60)%60, t%60 );
 		int iLength = sVal.Length();
-		*ppStr = (const BYTE*) sVal.Leak();
+		*ppStr = (const uint8_t*) sVal.Leak();
 		return iLength;
 	}
 
@@ -1536,7 +1536,7 @@ struct Expr_Iterator_c : Expr_JsonField_c
 	virtual int64_t Int64Eval ( const CSphMatch & tMatch ) const
 	{
 		uint64_t uValue = m_pData ? *m_pData : 0;
-		const BYTE * p = m_pStrings + ( uValue & 0xffffffff );
+		const uint8_t * p = m_pStrings + ( uValue & 0xffffffff );
 		ESphJsonType eType = (ESphJsonType)( uValue >> 32 );
 		return DoEval ( eType, p, tMatch );
 	}
@@ -1579,7 +1579,7 @@ struct Expr_ForIn_c : public Expr_JsonFieldConv_c
 			m_pExpr->Command ( eCmd, pArg );
 	}
 
-	bool ExprEval ( int * pResult, const CSphMatch & tMatch, int iIndex, ESphJsonType eType, const BYTE * pVal ) const
+	bool ExprEval ( int * pResult, const CSphMatch & tMatch, int iIndex, ESphJsonType eType, const uint8_t * pVal ) const
 	{
 		m_uData = ( ( (int64_t)( pVal-m_pStrings ) ) | ( ( (int64_t)eType )<<32 ) );
 		bool bMatch = m_pExpr->Eval ( tMatch )!=0;
@@ -1594,7 +1594,7 @@ struct Expr_ForIn_c : public Expr_JsonFieldConv_c
 		if ( !m_pExpr )
 			return iResult;
 
-		const BYTE * p = NULL;
+		const uint8_t * p = NULL;
 		ESphJsonType eJson = GetKey ( &p, tMatch );
 
 		switch ( eJson )
@@ -1699,15 +1699,15 @@ struct Expr_StrEq_c : public ISphExpr
 
 	virtual int IntEval ( const CSphMatch & tMatch ) const
 	{
-		const BYTE * pLeft;
-		const BYTE * pRight;
+		const uint8_t * pLeft;
+		const uint8_t * pRight;
 		int iLeft = m_pLeft->StringEval ( tMatch, &pLeft );
 		int iRight = m_pRight->StringEval ( tMatch, &pRight );
 
 		CSphString sStr1 ( iLeft ? (const char*)pLeft : "", iLeft );
 		CSphString sStr2 ( iRight ? (const char*)pRight : "", iRight );
 
-		bool bEq = m_fnStrCmp ( (const BYTE*)sStr1.cstr(), (const BYTE*)sStr2.cstr(), false )==0;
+		bool bEq = m_fnStrCmp ( (const uint8_t*)sStr1.cstr(), (const uint8_t*)sStr2.cstr(), false )==0;
 
 		if ( m_pLeft->IsStringPtr() )	SafeDeleteArray ( pLeft );
 		if ( m_pRight->IsStringPtr() )	SafeDeleteArray ( pRight );
@@ -1739,7 +1739,7 @@ struct Expr_JsonFieldIsNull_c : public Expr_JsonFieldConv_c
 
 	virtual int IntEval ( const CSphMatch & tMatch ) const
 	{
-		const BYTE * pVal = NULL;
+		const uint8_t * pVal = NULL;
 		ESphJsonType eJson = GetKey ( &pVal, tMatch );
 		return m_bEquals ^ ( eJson!=JSON_EOF && eJson!=JSON_NULL );
 	}
@@ -1983,9 +1983,9 @@ DECLARE_END()
 #define IFFLT(_expr)	( (_expr) ? 1.0f : 0.0f )
 #define IFINT(_expr)	( (_expr) ? 1 : 0 )
 
-DECLARE_BINARY_INT ( Expr_Add_c,	FIRST + SECOND,						(DWORD)INTFIRST + (DWORD)INTSECOND,				(uint64_t)INT64FIRST + (uint64_t)INT64SECOND )
-DECLARE_BINARY_INT ( Expr_Sub_c,	FIRST - SECOND,						(DWORD)INTFIRST - (DWORD)INTSECOND,				(uint64_t)INT64FIRST - (uint64_t)INT64SECOND )
-DECLARE_BINARY_INT ( Expr_Mul_c,	FIRST * SECOND,						(DWORD)INTFIRST * (DWORD)INTSECOND,				(uint64_t)INT64FIRST * (uint64_t)INT64SECOND )
+DECLARE_BINARY_INT ( Expr_Add_c,	FIRST + SECOND,						(uint32_t)INTFIRST + (uint32_t)INTSECOND,				(uint64_t)INT64FIRST + (uint64_t)INT64SECOND )
+DECLARE_BINARY_INT ( Expr_Sub_c,	FIRST - SECOND,						(uint32_t)INTFIRST - (uint32_t)INTSECOND,				(uint64_t)INT64FIRST - (uint64_t)INT64SECOND )
+DECLARE_BINARY_INT ( Expr_Mul_c,	FIRST * SECOND,						(uint32_t)INTFIRST * (uint32_t)INTSECOND,				(uint64_t)INT64FIRST * (uint64_t)INT64SECOND )
 DECLARE_BINARY_INT ( Expr_BitAnd_c,	(float)(int(FIRST)&int(SECOND)),	INTFIRST & INTSECOND,				INT64FIRST & INT64SECOND )
 DECLARE_BINARY_INT ( Expr_BitOr_c,	(float)(int(FIRST)|int(SECOND)),	INTFIRST | INTSECOND,				INT64FIRST | INT64SECOND )
 DECLARE_BINARY_INT ( Expr_Mod_c,	(float)(int(FIRST)%int(SECOND)),	INTFIRST % INTSECOND,				INT64FIRST % INT64SECOND )
@@ -2125,7 +2125,7 @@ DECLARE_TIMESTAMP ( Expr_Second_c, s.tm_sec )
 
 void * UdfMalloc ( int iLen )
 {
-	return new BYTE [ iLen ];
+	return new uint8_t [ iLen ];
 }
 
 /// UDF call site
@@ -2366,7 +2366,7 @@ static int G_HASHGEN = HashGen();
 
 
 // FIXME? can remove this by preprocessing the assoc table
-static inline BYTE FuncHashLower ( BYTE u )
+static inline uint8_t FuncHashLower ( uint8_t u )
 {
 	return ( u>='A' && u<='Z' ) ? ( u | 0x20 ) : u;
 }
@@ -2376,7 +2376,7 @@ static int FuncHashLookup ( const char * sKey )
 {
 	assert ( sKey && sKey[0] );
 
-	static BYTE dAsso[] =
+	static uint8_t dAsso[] =
 	{
 		109, 109, 109, 109, 109, 109, 109, 109, 109, 109,
 		109, 109, 109, 109, 109, 109, 109, 109, 109, 109,
@@ -2406,7 +2406,7 @@ static int FuncHashLookup ( const char * sKey )
 		109, 109, 109, 109, 109, 109
 	};
 
-	const BYTE * s = (const BYTE*) sKey;
+	const uint8_t * s = (const uint8_t*) sKey;
 	int iHash = strlen ( sKey );
 	switch ( iHash )
 	{
@@ -2657,7 +2657,7 @@ private:
 
 public:
 	bool					m_bHasZonespanlist;
-	DWORD					m_uPackedFactorFlags;
+	uint32_t					m_uPackedFactorFlags;
 	ESphEvalStage			m_eEvalStage;
 	ESphCollation			m_eCollation;
 
@@ -3442,7 +3442,7 @@ protected:
 	mutable CSphVector<int64_t>		m_dArgvals;
 	mutable char					m_bError;
 	CSphQueryProfile *				m_pProfiler;
-	const BYTE *					m_pStrings;						
+	const uint8_t *					m_pStrings;						
 
 public:
 	explicit Expr_Udf_c ( UdfCall_t * pCall, CSphQueryProfile * pProfiler )
@@ -3477,8 +3477,8 @@ public:
 	{
 		int64_t iPacked = 0;
 		ESphJsonType eJson = JSON_NULL;
-		DWORD uOff = 0;
-		CSphVector<BYTE> dTmp;
+		uint32_t uOff = 0;
+		CSphVector<uint8_t> dTmp;
 
 		// FIXME? a cleaner way to reinterpret?
 		SPH_UDF_ARGS & tArgs = m_pCall->m_tArgs;
@@ -3486,10 +3486,10 @@ public:
 		{
 			switch ( tArgs.arg_types[i] )
 			{
-				case SPH_UDF_TYPE_UINT32:		*(DWORD*)&m_dArgvals[i] = m_dArgs[i]->IntEval ( tMatch ); break;
+				case SPH_UDF_TYPE_UINT32:		*(uint32_t*)&m_dArgvals[i] = m_dArgs[i]->IntEval ( tMatch ); break;
 				case SPH_UDF_TYPE_INT64:		m_dArgvals[i] = m_dArgs[i]->Int64Eval ( tMatch ); break;
 				case SPH_UDF_TYPE_FLOAT:		*(float*)&m_dArgvals[i] = m_dArgs[i]->Eval ( tMatch ); break;
-				case SPH_UDF_TYPE_STRING:		tArgs.str_lengths[i] = m_dArgs[i]->StringEval ( tMatch, (const BYTE**)&tArgs.arg_values[i] ); break;
+				case SPH_UDF_TYPE_STRING:		tArgs.str_lengths[i] = m_dArgs[i]->StringEval ( tMatch, (const uint8_t**)&tArgs.arg_values[i] ); break;
 				case SPH_UDF_TYPE_UINT32SET:	tArgs.arg_values[i] = (char*) m_dArgs[i]->MvaEval ( tMatch ); break;
 				case SPH_UDF_TYPE_UINT64SET:	tArgs.arg_values[i] = (char*) m_dArgs[i]->MvaEval ( tMatch ); break;
 				case SPH_UDF_TYPE_FACTORS:		tArgs.arg_values[i] = (char*) m_dArgs[i]->FactorEval ( tMatch ); break;
@@ -3497,7 +3497,7 @@ public:
 				case SPH_UDF_TYPE_JSON:
 					iPacked = m_dArgs[i]->Int64Eval ( tMatch );
 					eJson = ESphJsonType ( iPacked>>32 );
-					uOff = (DWORD)iPacked;
+					uOff = (uint32_t)iPacked;
 					if ( !uOff || eJson==JSON_NULL )
 					{
 						tArgs.arg_values[i] = NULL;
@@ -3532,7 +3532,7 @@ public:
 			return;
 		}
 		if ( eCmd==SPH_EXPR_SET_STRING_POOL )
-			m_pStrings = (const BYTE*)pArg;
+			m_pStrings = (const uint8_t*)pArg;
 		ARRAY_FOREACH ( i, m_dArgs )
 			m_dArgs[i]->Command ( eCmd, pArg );
 	}
@@ -3626,7 +3626,7 @@ public:
 		return 0;
 	}
 
-	virtual int StringEval ( const CSphMatch & tMatch, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch & tMatch, const uint8_t ** ppStr ) const
 	{
 		if ( m_bError )
 		{
@@ -3638,7 +3638,7 @@ public:
 		FillArgs ( tMatch );
 		UdfCharptr_fn pFn = (UdfCharptr_fn) m_pCall->m_pUdf->m_fnFunc;
 		char * pRes = pFn ( &m_pCall->m_tInit, &m_pCall->m_tArgs, &m_bError ); // owned now!
-		*ppStr = (const BYTE*) pRes;
+		*ppStr = (const uint8_t*) pRes;
 		int iLen = ( pRes ? strlen(pRes) : 0 );
 		FreeArgs();
 		return iLen;
@@ -4208,7 +4208,7 @@ public:
 	{
 		const char * pStr;
 		assert ( !m_pStr->IsStringPtr() ); // aware of mem leaks caused by some StringEval implementations
-		int iLen = m_pStr->StringEval ( tMatch, (const BYTE **)&pStr );
+		int iLen = m_pStr->StringEval ( tMatch, (const uint8_t **)&pStr );
 
 		CSphVector<float> dPoly;
 		ParsePoly ( pStr, iLen, dPoly );
@@ -4734,9 +4734,9 @@ template<> int Expr_ArgVsSet_c<int>::ExprEval ( ISphExpr * pArg, const CSphMatch
 	return pArg->IntEval ( tMatch );
 }
 
-template<> DWORD Expr_ArgVsSet_c<DWORD>::ExprEval ( ISphExpr * pArg, const CSphMatch & tMatch ) const
+template<> uint32_t Expr_ArgVsSet_c<uint32_t>::ExprEval ( ISphExpr * pArg, const CSphMatch & tMatch ) const
 {
-	return (DWORD)pArg->IntEval ( tMatch );
+	return (uint32_t)pArg->IntEval ( tMatch );
 }
 
 template<> float Expr_ArgVsSet_c<float>::ExprEval ( ISphExpr * pArg, const CSphMatch & tMatch ) const
@@ -4978,14 +4978,14 @@ public:
 		SafeRelease ( m_pUservar );
 	}
 
-	int MvaEval ( const DWORD * pMva ) const;
+	int MvaEval ( const uint32_t * pMva ) const;
 
-	virtual const DWORD * MvaEval ( const CSphMatch & ) const { assert ( 0 && "not implemented" ); return NULL; }
+	virtual const uint32_t * MvaEval ( const CSphMatch & ) const { assert ( 0 && "not implemented" ); return NULL; }
 
 	/// evaluate arg, check if any values are within set
 	virtual int IntEval ( const CSphMatch & tMatch ) const
 	{
-		const DWORD * pMva = tMatch.GetAttrMVA ( m_tLocator, m_pMvaPool, m_bArenaProhibit );
+		const uint32_t * pMva = tMatch.GetAttrMVA ( m_tLocator, m_pMvaPool, m_bArenaProhibit );
 		if ( !pMva )
 			return 0;
 
@@ -5014,29 +5014,29 @@ public:
 	}
 
 protected:
-	const DWORD *		m_pMvaPool;
+	const uint32_t *		m_pMvaPool;
 	UservarIntSet_c *	m_pUservar;
 	bool				m_bArenaProhibit;
 };
 
 
 template<>
-int Expr_MVAIn_c<false>::MvaEval ( const DWORD * pMva ) const
+int Expr_MVAIn_c<false>::MvaEval ( const uint32_t * pMva ) const
 {
 	// OPTIMIZE! FIXME! factor out a common function with Filter_MVAValues::Eval()
-	DWORD uLen = *pMva++;
-	const DWORD * pMvaMax = pMva+uLen;
+	uint32_t uLen = *pMva++;
+	const uint32_t * pMvaMax = pMva+uLen;
 
 	const int64_t * pFilter = m_pUservar ? m_pUservar->Begin() : m_dValues.Begin();
 	const int64_t * pFilterMax = pFilter + ( m_pUservar ? m_pUservar->GetLength() : m_dValues.GetLength() );
 
-	const DWORD * L = pMva;
-	const DWORD * R = pMvaMax - 1;
+	const uint32_t * L = pMva;
+	const uint32_t * R = pMvaMax - 1;
 	for ( ; pFilter < pFilterMax; pFilter++ )
 	{
 		while ( L<=R )
 		{
-			const DWORD * m = L + (R - L) / 2;
+			const uint32_t * m = L + (R - L) / 2;
 
 			if ( *pFilter > *m )
 				L = m + 1;
@@ -5052,12 +5052,12 @@ int Expr_MVAIn_c<false>::MvaEval ( const DWORD * pMva ) const
 
 
 template<>
-int Expr_MVAIn_c<true>::MvaEval ( const DWORD * pMva ) const
+int Expr_MVAIn_c<true>::MvaEval ( const uint32_t * pMva ) const
 {
 	// OPTIMIZE! FIXME! factor out a common function with Filter_MVAValues::Eval()
-	DWORD uLen = *pMva++;
+	uint32_t uLen = *pMva++;
 	assert ( ( uLen%2 )==0 );
-	const DWORD * pMvaMax = pMva+uLen;
+	const uint32_t * pMvaMax = pMva+uLen;
 
 	const int64_t * pFilter = m_pUservar ? m_pUservar->Begin() : m_dValues.Begin();
 	const int64_t * pFilterMax = pFilter + ( m_pUservar ? m_pUservar->GetLength() : m_dValues.GetLength() );
@@ -5069,7 +5069,7 @@ int Expr_MVAIn_c<true>::MvaEval ( const DWORD * pMva ) const
 		while ( L<=R )
 		{
 			const int64_t * pVal = L + (R - L) / 2;
-			int64_t iMva = MVA_UPSIZE ( (const DWORD *)pVal );
+			int64_t iMva = MVA_UPSIZE ( (const uint32_t *)pVal );
 
 			if ( *pFilter > iMva )
 				L = pVal + 1;
@@ -5098,7 +5098,7 @@ public:
 
 	virtual int IntEval ( const CSphMatch & tMatch ) const
 	{
-		const DWORD * pMva = tMatch.GetAttrMVA ( m_tLocator, m_pMvaPool, m_bArenaProhibit );
+		const uint32_t * pMva = tMatch.GetAttrMVA ( m_tLocator, m_pMvaPool, m_bArenaProhibit );
 		if ( !pMva )
 			return 0;
 		return (int)( m_b64 ? *pMva/2 : *pMva );
@@ -5129,7 +5129,7 @@ public:
 
 protected:
 	bool				m_b64;
-	const DWORD *		m_pMvaPool;
+	const uint32_t *		m_pMvaPool;
 	bool				m_bArenaProhibit;
 };
 
@@ -5148,11 +5148,11 @@ public:
 		assert ( tLoc.m_iBitOffset>=0 && tLoc.m_iBitCount>0 );
 	}
 
-	int64_t MvaAggr ( const DWORD * pMva, ESphAggrFunc eFunc ) const;
+	int64_t MvaAggr ( const uint32_t * pMva, ESphAggrFunc eFunc ) const;
 
 	virtual int64_t Int64Eval ( const CSphMatch & tMatch ) const
 	{
-		const DWORD * pMva = tMatch.GetAttrMVA ( m_tLocator, m_pMvaPool, m_bArenaProhibit );
+		const uint32_t * pMva = tMatch.GetAttrMVA ( m_tLocator, m_pMvaPool, m_bArenaProhibit );
 		if ( !pMva )
 			return 0;
 		return MvaAggr ( pMva, m_eFunc );
@@ -5183,19 +5183,19 @@ public:
 	}
 
 protected:
-	const DWORD *		m_pMvaPool;
+	const uint32_t *		m_pMvaPool;
 	bool				m_bArenaProhibit;
 	ESphAggrFunc		m_eFunc;
 };
 
 
 template <>
-int64_t Expr_MVAAggr_c<false>::MvaAggr ( const DWORD * pMva, ESphAggrFunc eFunc ) const
+int64_t Expr_MVAAggr_c<false>::MvaAggr ( const uint32_t * pMva, ESphAggrFunc eFunc ) const
 {
-	DWORD uLen = *pMva++;
-	const DWORD * pMvaMax = pMva+uLen;
-	const DWORD * L = pMva;
-	const DWORD * R = pMvaMax - 1;
+	uint32_t uLen = *pMva++;
+	const uint32_t * pMvaMax = pMva+uLen;
+	const uint32_t * L = pMva;
+	const uint32_t * R = pMvaMax - 1;
 
 	switch ( eFunc )
 	{
@@ -5207,11 +5207,11 @@ int64_t Expr_MVAAggr_c<false>::MvaAggr ( const DWORD * pMva, ESphAggrFunc eFunc 
 
 
 template <>
-int64_t Expr_MVAAggr_c<true>::MvaAggr ( const DWORD * pMva, ESphAggrFunc eFunc ) const
+int64_t Expr_MVAAggr_c<true>::MvaAggr ( const uint32_t * pMva, ESphAggrFunc eFunc ) const
 {
-	DWORD uLen = *pMva++;
+	uint32_t uLen = *pMva++;
 	assert ( ( uLen%2 )==0 );
-	const DWORD * pMvaMax = pMva+uLen;
+	const uint32_t * pMvaMax = pMva+uLen;
 	const int64_t * L = (const int64_t *)pMva;
 	const int64_t * R = (const int64_t *)( pMvaMax - 2 );
 
@@ -5271,13 +5271,13 @@ public:
 		Expr_ArgVsConstSet_c<int64_t>::Command ( eCmd, pArg );
 
 		if ( eCmd==SPH_EXPR_SET_STRING_POOL )
-			m_pStrings = (const BYTE*)pArg;
+			m_pStrings = (const uint8_t*)pArg;
 	}
 
 	/// evaluate arg, check if any values are within set
 	virtual int IntEval ( const CSphMatch & tMatch ) const
 	{
-		const BYTE * pVal = NULL;
+		const uint8_t * pVal = NULL;
 		ESphJsonType eJson = GetKey ( &pVal, tMatch );
 		switch ( eJson )
 		{
@@ -5289,7 +5289,7 @@ public:
 			case JSON_INT64:			return ValueEval ( sphJsonLoadBigint ( &pVal ) );
 			case JSON_MIXED_VECTOR:
 				{
-					const BYTE * p = pVal;
+					const uint8_t * p = pVal;
 					sphJsonUnpackInt ( &p ); // skip node length
 					int iLen = sphJsonUnpackInt ( &p );
 					for ( int i=0; i<iLen; i++ )
@@ -5323,10 +5323,10 @@ public:
 
 protected:
 	UservarIntSet_c *	m_pUservar;
-	const BYTE *		m_pStrings;
+	const uint8_t *		m_pStrings;
 	CSphVector<int64_t>	m_dHashes;
 
-	ESphJsonType GetKey ( const BYTE ** ppKey, const CSphMatch & tMatch ) const
+	ESphJsonType GetKey ( const uint8_t ** ppKey, const CSphMatch & tMatch ) const
 	{
 		assert ( ppKey );
 		if ( !m_pStrings )
@@ -5348,7 +5348,7 @@ protected:
 
 	// cannot apply MvaEval() on unordered JSON arrays, using linear search
 	template <typename T>
-	int ArrayEval ( const BYTE * pVal ) const
+	int ArrayEval ( const uint8_t * pVal ) const
 	{
 		const int64_t * pFilter = m_pUservar ? m_pUservar->Begin() : m_dValues.Begin();
 		const int64_t * pFilterMax = pFilter + ( m_pUservar ? m_pUservar->GetLength() : m_dValues.GetLength() );
@@ -5366,7 +5366,7 @@ protected:
 		return 0;
 	}
 
-	int StringArrayEval ( const BYTE * pVal, bool bValueEval ) const
+	int StringArrayEval ( const uint8_t * pVal, bool bValueEval ) const
 	{
 		if ( !bValueEval )
 			sphJsonUnpackInt ( &pVal );
@@ -5387,7 +5387,7 @@ protected:
 class Expr_StrIn_c : public Expr_ArgVsConstSet_c<int64_t>, public ExprLocatorTraits_t
 {
 protected:
-	const BYTE *			m_pStrings;
+	const uint8_t *			m_pStrings;
 	UservarIntSet_c *		m_pUservar;
 	CSphVector<CSphString>  m_dStringValues;
 	SphStringCmp_fn			m_fnStrCmp;
@@ -5435,17 +5435,17 @@ public:
 
 	virtual int IntEval ( const CSphMatch & tMatch ) const
 	{
-		const BYTE * pVal;
+		const uint8_t * pVal;
 		SphAttr_t iOfs = tMatch.GetAttr ( m_tLocator );
 		if ( iOfs<=0 )
 			return 0;
 		int iLen = sphUnpackStr ( m_pStrings + iOfs, &pVal );
 
 		CSphString sValue ( (const char*)pVal, iLen );
-		const BYTE * pStr = (const BYTE*)sValue.cstr();
+		const uint8_t * pStr = (const uint8_t*)sValue.cstr();
 
 		ARRAY_FOREACH ( i, m_dStringValues )
-			if ( m_fnStrCmp ( pStr, (const BYTE*)m_dStringValues[i].cstr(), false )==0 )
+			if ( m_fnStrCmp ( pStr, (const uint8_t*)m_dStringValues[i].cstr(), false )==0 )
 				return 1;
 
 		return 0;
@@ -5457,7 +5457,7 @@ public:
 		ExprLocatorTraits_t::HandleCommand ( eCmd, pArg );
 
 		if ( eCmd==SPH_EXPR_SET_STRING_POOL )
-			m_pStrings = (const BYTE*)pArg;
+			m_pStrings = (const uint8_t*)pArg;
 	}
 
 	virtual uint64_t GetHash ( const ISphSchema & tSorterSchema, uint64_t uPrevHash, bool & bDisable )
@@ -6074,7 +6074,7 @@ ISphExpr * ExprParser_t::CreatePFNode ( int iArg )
 {
 	m_eEvalStage = SPH_EVAL_FINAL;
 
-	DWORD uNodeFactorFlags = SPH_FACTOR_ENABLE | SPH_FACTOR_CALC_ATC;
+	uint32_t uNodeFactorFlags = SPH_FACTOR_ENABLE | SPH_FACTOR_CALC_ATC;
 
 	CSphVector<int> dArgs;
 	GatherArgNodes ( iArg, dArgs );
@@ -6712,7 +6712,7 @@ int ExprParser_t::AddNodeUdf ( int iCall, int iArg )
 	if ( iArg>=0 )
 	{
 		// gather arg types
-		CSphVector<DWORD> dArgTypes;
+		CSphVector<uint32_t> dArgTypes;
 
 		int iCur = iArg;
 		while ( iCur>=0 )
@@ -7191,7 +7191,7 @@ ISphExpr * ExprParser_t::Parse ( const char * sExpr, const ISphSchema & tSchema,
 
 /// parser entry point
 ISphExpr * sphExprParse ( const char * sExpr, const ISphSchema & tSchema, ESphAttr * pAttrType, bool * pUsesWeight,
-	CSphString & sError, CSphQueryProfile * pProfiler, ESphCollation eCollation, ISphExprHook * pHook, bool * pZonespanlist, DWORD * pPackedFactorsFlags, ESphEvalStage * pEvalStage )
+	CSphString & sError, CSphQueryProfile * pProfiler, ESphCollation eCollation, ISphExprHook * pHook, bool * pZonespanlist, uint32_t * pPackedFactorsFlags, ESphEvalStage * pEvalStage )
 {
 	// parse into opcodes
 	ExprParser_t tParser ( pHook, pProfiler, eCollation );

@@ -19,19 +19,19 @@
 
 struct CurrentWord_t
 {
-	BYTE *	pWord;
+	uint8_t *	pWord;
 	int		iLength;
 	int		iLengthPadded;
 };
 
 
-static bool IsVowel ( BYTE c )
+static bool IsVowel ( uint8_t c )
 {
 	return c=='A' || c=='E' || c=='I' || c=='O' || c=='U' || c=='Y';
 }
 
 
-static bool SlavoGermanic ( BYTE * pString )
+static bool SlavoGermanic ( uint8_t * pString )
 {
 	// OPTIMIZE!
 	char * szWord = (char *) pString;
@@ -106,7 +106,7 @@ static bool StrAt ( const CurrentWord_t & Word, int iStart, int iLength, const c
 
 
 
-static void MetaphAdd ( BYTE * pPrimary, BYTE * pSecondary, const char * szAddPrimary, const char * szAddSecondary )
+static void MetaphAdd ( uint8_t * pPrimary, uint8_t * pSecondary, const char * szAddPrimary, const char * szAddSecondary )
 {
 	strcat ( (char*)pPrimary, szAddPrimary ); // NOLINT
 	strcat ( (char*)pSecondary, szAddSecondary ); // NOLINT
@@ -121,9 +121,9 @@ static void MetaphAdd ( BYTE * pPrimary, BYTE * pSecondary, const char * szAddPr
 #define ADD(prim,sec)\
 	MetaphAdd ( sPrimary, sSecondary, prim, sec )
 
-static int ProcessCode ( int iCode, int iCur, CurrentWord_t & Word, BYTE * sPrimary, BYTE * sSecondary )
+static int ProcessCode ( int iCode, int iCur, CurrentWord_t & Word, uint8_t * sPrimary, uint8_t * sSecondary )
 {
-	BYTE * pWord = Word.pWord;
+	uint8_t * pWord = Word.pWord;
 
 	// codepoints, not bytes
 	int iAdvance = 1;
@@ -587,22 +587,22 @@ static int ProcessCode ( int iCode, int iCur, CurrentWord_t & Word, BYTE * sPrim
 }
 
 
-void stem_dmetaphone ( BYTE * pWord )
+void stem_dmetaphone ( uint8_t * pWord )
 {
 	const int EXTRA_RESERVE = 16;
-	BYTE	sOriginal [3*SPH_MAX_WORD_LEN+3+EXTRA_RESERVE];
-	BYTE	sPrimary [3*SPH_MAX_WORD_LEN+3];
-	BYTE	sSecondary [ 3*SPH_MAX_WORD_LEN+3 ];
+	uint8_t	sOriginal [3*SPH_MAX_WORD_LEN+3+EXTRA_RESERVE];
+	uint8_t	sPrimary [3*SPH_MAX_WORD_LEN+3];
+	uint8_t	sSecondary [ 3*SPH_MAX_WORD_LEN+3 ];
 	int		iLength = strlen ( (const char *)pWord );
 	memcpy ( sOriginal, pWord, iLength + 1 );
 	sPrimary[0] = '\0';
 	sSecondary[0] = '\0';
 
-	BYTE * pStart = sOriginal;
+	uint8_t * pStart = sOriginal;
 	while ( *pStart )
 	{
 		if ( *pStart>='a' && *pStart<='z' )
-			*pStart = (BYTE) toupper ( *pStart );
+			*pStart = (uint8_t) toupper ( *pStart );
 
 		++pStart;
 	}
@@ -627,8 +627,8 @@ void stem_dmetaphone ( BYTE * pWord )
 		iAdvance = 1;
 	}
 
-	const BYTE * pPtr = sOriginal;
-	const BYTE * pLastPtr = sOriginal;
+	const uint8_t * pPtr = sOriginal;
+	const uint8_t * pLastPtr = sOriginal;
 	int iCode = -1;
 
 	iCode = sphUTF8Decode ( pPtr );

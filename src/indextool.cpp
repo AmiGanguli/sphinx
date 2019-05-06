@@ -35,7 +35,7 @@ void StripStdin ( const char * sIndexAttrs, const char * sRemoveElements )
 		|| !tStripper.SetRemovedElements ( sRemoveElements, sError ) )
 			sphDie ( "failed to configure stripper: %s", sError.cstr() );
 
-	CSphVector<BYTE> dBuffer;
+	CSphVector<uint8_t> dBuffer;
 	while ( !feof(stdin) )
 	{
 		char sBuffer[1024];
@@ -56,7 +56,7 @@ void StripStdin ( const char * sIndexAttrs, const char * sRemoveElements )
 
 void ApplyMorphology ( CSphIndex * pIndex )
 {
-	CSphVector<BYTE> dInBuffer, dOutBuffer;
+	CSphVector<uint8_t> dInBuffer, dOutBuffer;
 	const int READ_BUFFER_SIZE = 1024;
 	dInBuffer.Reserve ( READ_BUFFER_SIZE );
 	char sBuffer[READ_BUFFER_SIZE];
@@ -75,11 +75,11 @@ void ApplyMorphology ( CSphIndex * pIndex )
 
 	CSphScopedPtr<ISphTokenizer> pTokenizer ( pIndex->GetTokenizer()->Clone ( SPH_CLONE_INDEX ) );
 	CSphDict * pDict = pIndex->GetDictionary();
-	BYTE * sBufferToDump = &dInBuffer[0];
+	uint8_t * sBufferToDump = &dInBuffer[0];
 	if ( pTokenizer.Ptr() )
 	{
 		pTokenizer->SetBuffer ( &dInBuffer[0], dInBuffer.GetLength() );
-		while ( BYTE * sToken = pTokenizer->GetToken() )
+		while ( uint8_t * sToken = pTokenizer->GetToken() )
 		{
 			if ( pDict )
 				pDict->ApplyStemmers ( sToken );
@@ -105,8 +105,8 @@ void ApplyMorphology ( CSphIndex * pIndex )
 
 void CharsetFold ( CSphIndex * pIndex, FILE * fp )
 {
-	CSphVector<BYTE> sBuf1 ( 16384 );
-	CSphVector<BYTE> sBuf2 ( 16384 );
+	CSphVector<uint8_t> sBuf1 ( 16384 );
+	CSphVector<uint8_t> sBuf2 ( 16384 );
 
 	CSphLowercaser tLC = pIndex->GetTokenizer()->GetLowercaser();
 
@@ -127,8 +127,8 @@ void CharsetFold ( CSphIndex * pIndex, FILE * fp )
 					break;
 
 
-		const BYTE * pIn = sBuf1.Begin();
-		const BYTE * pInMax = pIn + iBuf1 + iGot;
+		const uint8_t * pIn = sBuf1.Begin();
+		const uint8_t * pInMax = pIn + iBuf1 + iGot;
 
 		if ( pIn==pInMax && feof(fp) )
 			break;
@@ -140,8 +140,8 @@ void CharsetFold ( CSphIndex * pIndex, FILE * fp )
 			pInMax -= 16;
 
 		// do folding
-		BYTE * pOut = sBuf2.Begin();
-		BYTE * pOutMax = pOut + sBuf2.GetLength() - 16;
+		uint8_t * pOut = sBuf2.Begin();
+		uint8_t * pOutMax = pOut + sBuf2.GetLength() - 16;
 		while ( pIn < pInMax )
 		{
 			int iCode = sphUTF8Decode ( pIn );
@@ -166,7 +166,7 @@ void CharsetFold ( CSphIndex * pIndex, FILE * fp )
 		fwrite ( sBuf2.Begin(), 1, pOut-sBuf2.Begin(), stdout );
 
 		// now move around leftovers
-		BYTE * pRealEnd = sBuf1.Begin() + iBuf1 + iGot;
+		uint8_t * pRealEnd = sBuf1.Begin() + iBuf1 + iGot;
 		if ( pIn < pRealEnd )
 		{
 			iBuf1 = pRealEnd - pIn;
@@ -187,14 +187,14 @@ bool FixupFiles ( const CSphVector<CSphString> & dFiles, CSphString & sError )
 		sKlistNew.SetSprintf ( "%s.new.spk", sPath.cstr() );
 		sHeader.SetSprintf ( "%s.sph", sPath.cstr() );
 
-		DWORD iCount = 0;
+		uint32_t iCount = 0;
 		{
 			CSphAutoreader rdHeader, rdKlistNew, rdKlistOld;
 			if ( !rdHeader.Open ( sHeader, sError ) || !rdKlistNew.Open ( sKlistNew, sError ) || !rdKlistOld.Open ( sKlistOld, sError ) )
 				return false;
 
 			const SphOffset_t iSize = rdKlistNew.GetFilesize();
-			iCount = (DWORD)( iSize / sizeof(SphAttr_t) );
+			iCount = (uint32_t)( iSize / sizeof(SphAttr_t) );
 		}
 
 		if ( ::unlink ( sKlistOld.cstr() )!=0 )
@@ -353,7 +353,7 @@ bool DoKlistsOptimization ( int iRowSize, const char * sPath, int iChunkCount, C
 struct IDFWord_t
 {
 	uint64_t	m_uWordID;
-	DWORD		m_iDocs;
+	uint32_t		m_iDocs;
 };
 #pragma pack(pop)
 STATIC_SIZE_ASSERT	( IDFWord_t, 12 );
@@ -397,7 +397,7 @@ bool BuildIDF ( const CSphString & sFilename, const CSphVector<CSphString> & dFi
 
 	// current entry
 	StringBuffer_t sWord = {0};
-	DWORD iDocs = 0;
+	uint32_t iDocs = 0;
 
 	// output vector, preallocate 10M
 	CSphTightVector<IDFWord_t> dEntries;
@@ -538,7 +538,7 @@ bool MergeIDF ( const CSphString & sFilename, const CSphVector<CSphString> & dFi
 	CSphVector<IDFWord_t> dWords ( iFiles );
 	CSphVector<int64_t> dRead ( iFiles );
 	CSphVector<int64_t> dSize ( iFiles );
-	CSphVector<BYTE*> dBuffers ( iFiles );
+	CSphVector<uint8_t*> dBuffers ( iFiles );
 	CSphVector<bool> dFinished ( iFiles );
 	dFinished.Fill ( false );
 	bool bPreread = false;
@@ -549,7 +549,7 @@ bool MergeIDF ( const CSphString & sFilename, const CSphVector<CSphString> & dFi
 	tWord.m_iDocs = 0;
 
 	// preread buffer
-	const int iEntrySize = sizeof(int64_t)+sizeof(DWORD);
+	const int iEntrySize = sizeof(int64_t)+sizeof(uint32_t);
 	const int iBufferSize = iEntrySize*256;
 
 	// initialize vectors
@@ -560,7 +560,7 @@ bool MergeIDF ( const CSphString & sFilename, const CSphVector<CSphString> & dFi
 		iTotalDocuments += dReaders[i].GetOffset ();
 		dRead[i] = 0;
 		dSize[i] = dReaders[i].GetFilesize() - sizeof( SphOffset_t );
-		dBuffers[i] = new BYTE [ iBufferSize ];
+		dBuffers[i] = new uint8_t [ iBufferSize ];
 		iTotalBytes += dSize[i];
 	}
 
@@ -589,7 +589,7 @@ bool MergeIDF ( const CSphString & sFilename, const CSphVector<CSphString> & dFi
 				dReaders[i].GetBytes ( dBuffers[i], ( dSize[i]-dRead[i] )<iBufferSize ? (int)( dSize[i]-dRead[i] ) : iBufferSize );
 
 			dWords[i].m_uWordID = *(uint64_t*)( dBuffers[i]+iOffset );
-			dWords[i].m_iDocs = *(DWORD*)( dBuffers[i]+iOffset+sizeof(uint64_t) );
+			dWords[i].m_iDocs = *(uint32_t*)( dBuffers[i]+iOffset+sizeof(uint64_t) );
 
 			dRead[i] += iEntrySize;
 			iReadWords++;

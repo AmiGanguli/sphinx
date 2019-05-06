@@ -36,7 +36,7 @@ public:
 
 	/// insert/update document in current txn
 	/// fails in case of two open txns to different indexes
-	virtual bool AddDocument ( ISphTokenizer * pTokenizer, int iFields, const char ** ppFields, const CSphMatch & tDoc, bool bReplace, const CSphString & sTokenFilterOptions, const char ** ppStr, const CSphVector<DWORD> & dMvas, CSphString & sError, CSphString & sWarning, ISphRtAccum * pAccExt ) = 0;
+	virtual bool AddDocument ( ISphTokenizer * pTokenizer, int iFields, const char ** ppFields, const CSphMatch & tDoc, bool bReplace, const CSphString & sTokenFilterOptions, const char ** ppStr, const CSphVector<uint32_t> & dMvas, CSphString & sError, CSphString & sWarning, ISphRtAccum * pAccExt ) = 0;
 
 	/// delete document in current txn
 	/// fails in case of two open txns to different indexes
@@ -116,7 +116,7 @@ enum ESphBinlogReplayFlags
 };
 
 /// replay stored binlog
-void sphReplayBinlog ( const SmallStringHash_T<CSphIndex*> & hIndexes, DWORD uReplayFlags, ProgressCallbackSimple_t * pfnProgressCallback=NULL );
+void sphReplayBinlog ( const SmallStringHash_T<CSphIndex*> & hIndexes, uint32_t uReplayFlags, ProgressCallbackSimple_t * pfnProgressCallback=NULL );
 
 #endif // _sphinxrt_
 

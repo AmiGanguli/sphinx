@@ -107,7 +107,7 @@ public:
 	/// OPTIMIZE: should pass T not by reference for simple types
 	T & Add ( const char * sKey, int iKeyLen, T & tValue )
 	{
-		DWORD uHash = HASHFUNC::Hash ( sKey ) % SIZE;
+		uint32_t uHash = HASHFUNC::Hash ( sKey ) % SIZE;
 
 		// find matching entry
 		CSphMTFHashEntry<T> * pEntry = m_pData [ uHash ];
@@ -198,8 +198,8 @@ public:
 	void				Save ( const char * sOutput, int iTop, bool bFreqs );
 
 public:
-	virtual SphWordID_t	GetWordID ( BYTE * pWord );
-	virtual SphWordID_t	GetWordID ( const BYTE * pWord, int iLen, bool );
+	virtual SphWordID_t	GetWordID ( uint8_t * pWord );
+	virtual SphWordID_t	GetWordID ( const uint8_t * pWord, int iLen, bool );
 
 	virtual void		LoadStopwords ( const char *, const ISphTokenizer * ) {}
 	virtual void		LoadStopwords ( const CSphVector<SphWordID_t> & ) {}
@@ -215,12 +215,12 @@ public:
 	virtual const CSphMultiformContainer * GetMultiWordforms () const { return NULL; }
 	virtual uint64_t		GetSettingsFNV () const { return 0; }
 
-	virtual bool IsStopWord ( const BYTE * ) const { return false; }
+	virtual bool IsStopWord ( const uint8_t * ) const { return false; }
 
 protected:
 	struct HashFunc_t
 	{
-		static inline DWORD Hash ( const char * sKey )
+		static inline uint32_t Hash ( const char * sKey )
 		{
 			return sphCRC32 ( sKey );
 		}
@@ -270,7 +270,7 @@ void CSphStopwordBuilderDict::Save ( const char * sOutput, int iTop, bool bFreqs
 }
 
 
-SphWordID_t CSphStopwordBuilderDict::GetWordID ( BYTE * pWord )
+SphWordID_t CSphStopwordBuilderDict::GetWordID ( uint8_t * pWord )
 {
 	int iZero = 0;
 	m_hWords.Add ( (const char *)pWord, 0, iZero )++;
@@ -278,7 +278,7 @@ SphWordID_t CSphStopwordBuilderDict::GetWordID ( BYTE * pWord )
 }
 
 
-SphWordID_t CSphStopwordBuilderDict::GetWordID ( const BYTE * pWord, int iLen, bool )
+SphWordID_t CSphStopwordBuilderDict::GetWordID ( const uint8_t * pWord, int iLen, bool )
 {
 	int iZero = 0;
 	m_hWords.Add ( (const char *)pWord, iLen, iZero )++;
@@ -1527,8 +1527,8 @@ bool SendRotate ( const CSphConfig & hConf, bool bForce )
 
 	if ( hPipe!=INVALID_HANDLE_VALUE )
 	{
-		DWORD uWritten = 0;
-		BYTE uWrite = 0;
+		uint32_t uWritten = 0;
+		uint8_t uWrite = 0;
 		BOOL bResult = WriteFile ( hPipe, &uWrite, 1, &uWritten, NULL );
 		if ( bResult )
 			fprintf ( stdout, "rotating indices: successfully sent SIGHUP to searchd (pid=%d).\n", iPID );

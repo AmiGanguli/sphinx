@@ -4511,8 +4511,8 @@ yyreduce:
 
     {
 			// it is performance-critical to forcibly inline this
-			pParser->m_pStmt->m_tUpdate.m_dPool.Add ( (DWORD)(yyvsp[0]).m_iValue );
-			DWORD uHi = (DWORD)( (yyvsp[0]).m_iValue>>32 );
+			pParser->m_pStmt->m_tUpdate.m_dPool.Add ( (uint32_t)(yyvsp[0]).m_iValue );
+			uint32_t uHi = (uint32_t)( (yyvsp[0]).m_iValue>>32 );
 			if ( uHi )
 			{
 				pParser->m_pStmt->m_tUpdate.m_dPool.Add ( uHi );
@@ -4556,8 +4556,8 @@ yyreduce:
 
     {
 			// it is performance-critical to forcibly inline this
-			pParser->m_pStmt->m_tUpdate.m_dPool.Add ( (DWORD)(yyvsp[0]).m_iValue );
-			DWORD uHi = (DWORD)( (yyvsp[0]).m_iValue>>32 );
+			pParser->m_pStmt->m_tUpdate.m_dPool.Add ( (uint32_t)(yyvsp[0]).m_iValue );
+			uint32_t uHi = (uint32_t)( (yyvsp[0]).m_iValue>>32 );
 			if ( uHi )
 			{
 				pParser->m_pStmt->m_tUpdate.m_dPool.Add ( uHi );

@@ -126,7 +126,7 @@ int dlclose ( void * lib )
 const char * dlerror()
 {
 	static char sError[256];
-	DWORD uError = GetLastError();
+	uint32_t uError = GetLastError();
 	FormatMessage ( FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, NULL,
 		uError, LANG_SYSTEM_DEFAULT, (LPTSTR)sError, sizeof(sError), NULL );
 	return sError;
@@ -224,7 +224,7 @@ static bool PluginLoadSymbols ( void * pDesc, const SymbolDesc_t * pSymbol, void
 	while ( pSymbol->m_iOffsetOf>=0 )
 	{
 		s.SetSprintf ( pSymbol->m_sPostfix[0] ? "%s_%s" : "%s%s", sName, pSymbol->m_sPostfix );
-		void ** ppFunc = (void**)((BYTE*)pDesc + pSymbol->m_iOffsetOf);
+		void ** ppFunc = (void**)((uint8_t*)pDesc + pSymbol->m_iOffsetOf);
 		*ppFunc = dlsym ( pHandle, s.cstr() );
 		if ( !*ppFunc && pSymbol->m_bRequired )
 		{

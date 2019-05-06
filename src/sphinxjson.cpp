@@ -49,7 +49,7 @@ class JsonParser_c : ISphNoncopyable
 public:
 	void *				m_pScanner;
 	const char *		m_pLastToken;
-	CSphVector<BYTE> &	m_dBuffer;
+	CSphVector<uint8_t> &	m_dBuffer;
 	CSphString &		m_sError;
 	bool				m_bAutoconv;
 	bool				m_bToLowercase;
@@ -58,7 +58,7 @@ public:
 	CSphVector<JsonNode_t>					m_dEmpty;
 
 public:
-	JsonParser_c ( CSphVector<BYTE> & dBuffer, bool bAutoconv, bool bToLowercase, CSphString & sError )
+	JsonParser_c ( CSphVector<uint8_t> & dBuffer, bool bAutoconv, bool bToLowercase, CSphString & sError )
 		: m_pScanner ( NULL )
 		, m_pLastToken ( NULL )
 		, m_dBuffer ( dBuffer )
@@ -71,7 +71,7 @@ public:
 	}
 
 protected:
-	BYTE * BufAlloc ( int iLen )
+	uint8_t * BufAlloc ( int iLen )
 	{
 		int iPos = m_dBuffer.GetLength();
 		m_dBuffer.Resize ( m_dBuffer.GetLength()+iLen );
@@ -80,20 +80,20 @@ protected:
 
 	void StoreInt ( int v )
 	{
-		BYTE * p = BufAlloc ( 4 );
-		*p++ = BYTE(DWORD(v));
-		*p++ = BYTE(DWORD(v) >> 8);
-		*p++ = BYTE(DWORD(v) >> 16);
-		*p++ = BYTE(DWORD(v) >> 24);
+		uint8_t * p = BufAlloc ( 4 );
+		*p++ = uint8_t(uint32_t(v));
+		*p++ = uint8_t(uint32_t(v) >> 8);
+		*p++ = uint8_t(uint32_t(v) >> 16);
+		*p++ = uint8_t(uint32_t(v) >> 24);
 	}
 
 	void StoreBigint ( int64_t v )
 	{
-		StoreInt ( (DWORD)( v & 0xffffffffUL ) );
+		StoreInt ( (uint32_t)( v & 0xffffffffUL ) );
 		StoreInt ( (int)( v>>32 ) );
 	}
 
-	int PackLen ( DWORD v )
+	int PackLen ( uint32_t v )
 	{
 		if ( v<=251 )
 			return 1;
@@ -105,23 +105,23 @@ protected:
 			return 5;
 	}
 
-	void PackInt ( DWORD v )
+	void PackInt ( uint32_t v )
 	{
 		assert ( v<16777216 ); // strings over 16M bytes and arrays over 16M entries are not supported
 		if ( v<252 )
 		{
-			m_dBuffer.Add ( BYTE(v) );
+			m_dBuffer.Add ( uint8_t(v) );
 		} else if ( v<65536 )
 		{
 			m_dBuffer.Add ( 252 );
-			m_dBuffer.Add ( BYTE ( v & 255 ) );
-			m_dBuffer.Add ( BYTE ( v>>8 ) );
+			m_dBuffer.Add ( uint8_t ( v & 255 ) );
+			m_dBuffer.Add ( uint8_t ( v>>8 ) );
 		} else
 		{
 			m_dBuffer.Add ( 253 );
-			m_dBuffer.Add ( BYTE ( v & 255 ) );
-			m_dBuffer.Add ( BYTE ( ( v>>8 ) & 255 ) );
-			m_dBuffer.Add ( BYTE ( v>>16 ) );
+			m_dBuffer.Add ( uint8_t ( v & 255 ) );
+			m_dBuffer.Add ( uint8_t ( ( v>>8 ) & 255 ) );
+			m_dBuffer.Add ( uint8_t ( v>>16 ) );
 		}
 	}
 
@@ -131,7 +131,7 @@ protected:
 		PackInt ( iLen );
 		if ( iLen )
 		{
-			BYTE * p = BufAlloc ( iLen );
+			uint8_t * p = BufAlloc ( iLen );
 			memcpy ( p, s, iLen );
 		}
 	}
@@ -169,7 +169,7 @@ protected:
 					if ( s+6<=sMax && isxdigit ( s[2] ) && isxdigit ( s[3] ) && isxdigit ( s[4] ) && isxdigit ( s[5] ) )
 					{
 						memcpy ( sBuf, s+2, 4 );
-						d += sphUTF8Encode ( (BYTE*)d, (int)strtol ( sBuf, NULL, 16 ) );
+						d += sphUTF8Encode ( (uint8_t*)d, (int)strtol ( sBuf, NULL, 16 ) );
 						s += 4;
 					} else
 						*d++ = s[1];
@@ -205,11 +205,11 @@ protected:
 		return iLen;
 	}
 
-	void StoreMask ( int iOfs, DWORD uMask )
+	void StoreMask ( int iOfs, uint32_t uMask )
 	{
 		for ( int i=0; i<4; i++ )
 		{
-			m_dBuffer[iOfs+i] = BYTE ( uMask & 0xff );
+			m_dBuffer[iOfs+i] = uint8_t ( uMask & 0xff );
 			uMask >>= 8;
 		}
 	}
@@ -301,7 +301,7 @@ public:
 
 		// write node type
 		if ( eType!=JSON_ROOT )
-			m_dBuffer.Add ( (BYTE)eType );
+			m_dBuffer.Add ( (uint8_t)eType );
 
 		// write key if given
 		if ( sKey )
@@ -326,7 +326,7 @@ public:
 		case JSON_ROOT:
 		case JSON_OBJECT:
 			{
-				DWORD uMask = 0;
+				uint32_t uMask = 0;
 				int iOfs = 0;
 
 				if ( eType==JSON_OBJECT )
@@ -405,11 +405,11 @@ public:
 			printf ( "    " );
 	}
 
-	void DebugDump ( ESphJsonType eType, const BYTE ** ppData, int iLevel )
+	void DebugDump ( ESphJsonType eType, const uint8_t ** ppData, int iLevel )
 	{
 		DebugIndent ( iLevel );
 
-		const BYTE * p = *ppData;
+		const uint8_t * p = *ppData;
 
 		switch ( eType )
 		{
@@ -438,7 +438,7 @@ public:
 				if ( eType==JSON_OBJECT )
 					sphJsonUnpackInt ( &p );
 
-				DWORD uMask = sphGetDword(p);
+				uint32_t uMask = sphGetDword(p);
 				printf ( "%s (bloom mask: 0x%08x)\n", eType==JSON_OBJECT ? "JSON_OBJECT" : "JSON_ROOT", uMask );
 				p += 4; // skip bloom table
 				for ( ;; )
@@ -518,9 +518,9 @@ public:
 		*ppData = p;
 	}
 
-	void DebugDump ( const BYTE * p )
+	void DebugDump ( const uint8_t * p )
 	{
-		CSphVector<BYTE> dOut;
+		CSphVector<uint8_t> dOut;
 		sphJsonFormat ( dOut, m_dBuffer.Begin() );
 		dOut.Add ( '\0' );
 		printf ( "sphJsonFormat: %s\n", (char*)dOut.Begin() );
@@ -559,7 +559,7 @@ static int yylex ( YYSTYPE * lvalp, JsonParser_c * pParser )
 	#include "yysphinxjson.c"
 #endif
 
-bool sphJsonParse ( CSphVector<BYTE> & dData, char * sData, bool bAutoconv, bool bToLowercase, CSphString & sError )
+bool sphJsonParse ( CSphVector<uint8_t> & dData, char * sData, bool bAutoconv, bool bToLowercase, CSphString & sError )
 {
 	int iLen = strlen ( sData );
 	if ( sData[iLen+1]!=0 )
@@ -600,9 +600,9 @@ bool sphJsonParse ( CSphVector<BYTE> & dData, char * sData, bool bAutoconv, bool
 
 //////////////////////////////////////////////////////////////////////////
 
-DWORD sphJsonKeyMask ( const char * sKey, int iLen )
+uint32_t sphJsonKeyMask ( const char * sKey, int iLen )
 {
-	DWORD uCrc = sphCRC32 ( sKey, iLen );
+	uint32_t uCrc = sphCRC32 ( sKey, iLen );
 	return
 		( 1UL<<( uCrc & 31 ) ) +
 		( 1UL<<( ( uCrc>>8 ) & 31 ) );
@@ -610,10 +610,10 @@ DWORD sphJsonKeyMask ( const char * sKey, int iLen )
 
 
 // returns -1 if size is unreachable (for remote agents)
-int sphJsonNodeSize ( ESphJsonType eType, const BYTE *pData )
+int sphJsonNodeSize ( ESphJsonType eType, const uint8_t *pData )
 {
 	int iLen;
-	const BYTE * p = pData;
+	const uint8_t * p = pData;
 	switch ( eType )
 	{
 	case JSON_INT32:
@@ -661,16 +661,16 @@ int sphJsonNodeSize ( ESphJsonType eType, const BYTE *pData )
 }
 
 
-void sphJsonSkipNode ( ESphJsonType eType, const BYTE ** ppData )
+void sphJsonSkipNode ( ESphJsonType eType, const uint8_t ** ppData )
 {
 	int iSize = sphJsonNodeSize ( eType, *ppData );
 	*ppData += iSize;
 }
 
 
-int sphJsonFieldLength ( ESphJsonType eType, const BYTE * pData )
+int sphJsonFieldLength ( ESphJsonType eType, const uint8_t * pData )
 {
-	const BYTE * p = pData;
+	const uint8_t * p = pData;
 	int iCount = 0;
 	switch ( eType )
 	{
@@ -708,7 +708,7 @@ int sphJsonFieldLength ( ESphJsonType eType, const BYTE * pData )
 }
 
 
-ESphJsonType sphJsonFindFirst ( const BYTE ** ppData )
+ESphJsonType sphJsonFindFirst ( const uint8_t ** ppData )
 {
 	// non-zero bloom mask? that is JSON_ROOT (basically a JSON_OBJECT without node header)
 	if ( sphGetDword(*ppData) )
@@ -721,12 +721,12 @@ ESphJsonType sphJsonFindFirst ( const BYTE ** ppData )
 }
 
 
-ESphJsonType sphJsonFindByKey ( ESphJsonType eType, const BYTE ** ppValue, const void * pKey, int iLen, DWORD uMask )
+ESphJsonType sphJsonFindByKey ( ESphJsonType eType, const uint8_t ** ppValue, const void * pKey, int iLen, uint32_t uMask )
 {
 	if ( eType!=JSON_OBJECT && eType!=JSON_ROOT )
 		return JSON_EOF;
 
-	const BYTE * p = *ppValue;
+	const uint8_t * p = *ppValue;
 	if ( eType==JSON_OBJECT )
 		sphJsonUnpackInt ( &p );
 
@@ -753,12 +753,12 @@ ESphJsonType sphJsonFindByKey ( ESphJsonType eType, const BYTE ** ppValue, const
 }
 
 
-ESphJsonType sphJsonFindByIndex ( ESphJsonType eType, const BYTE ** ppValue, int iIndex )
+ESphJsonType sphJsonFindByIndex ( ESphJsonType eType, const uint8_t ** ppValue, int iIndex )
 {
 	if ( iIndex<0 )
 		return JSON_EOF;
 
-	const BYTE * p = *ppValue;
+	const uint8_t * p = *ppValue;
 	switch ( eType )
 	{
 	case JSON_INT32_VECTOR:
@@ -811,7 +811,7 @@ ESphJsonType sphJsonFindByIndex ( ESphJsonType eType, const BYTE ** ppValue, int
 
 //////////////////////////////////////////////////////////////////////////
 
-static const BYTE * JsonFormatStr ( CSphVector<BYTE> & dOut, const BYTE * p, bool bQuote=true )
+static const uint8_t * JsonFormatStr ( CSphVector<uint8_t> & dOut, const uint8_t * p, bool bQuote=true )
 {
 	int iLen = sphJsonUnpackInt ( &p );
 	dOut.Reserve ( dOut.GetLength()+iLen );
@@ -843,14 +843,14 @@ static const BYTE * JsonFormatStr ( CSphVector<BYTE> & dOut, const BYTE * p, boo
 }
 
 
-void JsonAddStr ( CSphVector<BYTE> & dOut, const char * pStr )
+void JsonAddStr ( CSphVector<uint8_t> & dOut, const char * pStr )
 {
 	while ( *pStr )
 		dOut.Add ( *pStr++ );
 }
 
 
-void sphJsonFormat ( CSphVector<BYTE> & dOut, const BYTE * pData )
+void sphJsonFormat ( CSphVector<uint8_t> & dOut, const uint8_t * pData )
 {
 	if ( !pData )
 		return;
@@ -867,9 +867,9 @@ void sphJsonFormat ( CSphVector<BYTE> & dOut, const BYTE * pData )
 }
 
 
-const BYTE * sphJsonFieldFormat ( CSphVector<BYTE> & dOut, const BYTE * pData, ESphJsonType eType, bool bQuoteString )
+const uint8_t * sphJsonFieldFormat ( CSphVector<uint8_t> & dOut, const uint8_t * pData, ESphJsonType eType, bool bQuoteString )
 {
-	const BYTE * p = pData;
+	const uint8_t * p = pData;
 
 	// format value
 	switch ( eType )
@@ -1036,23 +1036,23 @@ JsonKey_t::JsonKey_t ( const char * sKey, int iLen )
 }
 
 
-void JsonStoreInt ( BYTE * p, int v )
+void JsonStoreInt ( uint8_t * p, int v )
 {
-	*p++ = BYTE(DWORD(v));
-	*p++ = BYTE(DWORD(v) >> 8);
-	*p++ = BYTE(DWORD(v) >> 16);
-	*p++ = BYTE(DWORD(v) >> 24);
+	*p++ = uint8_t(uint32_t(v));
+	*p++ = uint8_t(uint32_t(v) >> 8);
+	*p++ = uint8_t(uint32_t(v) >> 16);
+	*p++ = uint8_t(uint32_t(v) >> 24);
 }
 
 
-void JsonStoreBigint ( BYTE * p, int64_t v )
+void JsonStoreBigint ( uint8_t * p, int64_t v )
 {
-	JsonStoreInt ( p, (DWORD)( v & 0xffffffffUL ) );
+	JsonStoreInt ( p, (uint32_t)( v & 0xffffffffUL ) );
 	JsonStoreInt ( p+4, (int)( v>>32 ) );
 }
 
 
-bool sphJsonInplaceUpdate ( ESphJsonType eValueType, int64_t iValue, ISphExpr * pExpr, BYTE * pStrings, const CSphRowitem * pRow, bool bUpdate )
+bool sphJsonInplaceUpdate ( ESphJsonType eValueType, int64_t iValue, ISphExpr * pExpr, uint8_t * pStrings, const CSphRowitem * pRow, bool bUpdate )
 {
 	if ( !pExpr || !pStrings )
 		return false;
@@ -1063,7 +1063,7 @@ bool sphJsonInplaceUpdate ( ESphJsonType eValueType, int64_t iValue, ISphExpr * 
 	tMatch.m_pStatic = pRow;
 
 	uint64_t uPacked = pExpr->Int64Eval ( tMatch );
-	BYTE * pData = pStrings + ( uPacked & 0xffffffff );
+	uint8_t * pData = pStrings + ( uPacked & 0xffffffff );
 	ESphJsonType eType = (ESphJsonType)( uPacked >> 32 );
 
 	switch ( eType )

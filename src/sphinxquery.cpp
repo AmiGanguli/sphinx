@@ -111,7 +111,7 @@ public:
 
 	XQQuery_t *				m_pParsed;
 
-	BYTE *					m_sQuery;
+	uint8_t *					m_sQuery;
 	int						m_iQueryLen;
 	const char *			m_pErrorAt;
 
@@ -739,7 +739,7 @@ bool XQParser_t::GetNumber ( const char * p, const char * sRestart )
 	int iDots = 0;
 	const char * sToken = p;
 	const char * sEnd = m_pTokenizer->GetBufferEnd ();
-	while ( p<sEnd && ( isdigit ( *(BYTE*)p ) || *p=='.' ) )
+	while ( p<sEnd && ( isdigit ( *(uint8_t*)p ) || *p=='.' ) )
 	{
 		iDots += ( *p=='.' );
 		p++;
@@ -784,7 +784,7 @@ bool XQParser_t::GetNumber ( const char * p, const char * sRestart )
 				m_tPendingToken.tInt.iValue = atoi ( sNumberBuf );
 
 			// check if it can be used as a keyword too
-			m_pTokenizer->SetBuffer ( (BYTE*)sNumberBuf, iNumberLen );
+			m_pTokenizer->SetBuffer ( (uint8_t*)sNumberBuf, iNumberLen );
 			sToken = (const char*) m_pTokenizer->GetToken();
 			m_pTokenizer->SetBuffer ( m_sQuery, m_iQueryLen );
 			m_pTokenizer->SetBufferPtr ( p );
@@ -793,7 +793,7 @@ bool XQParser_t::GetNumber ( const char * p, const char * sRestart )
 			if ( sToken )
 			{
 				m_dIntTokens.Add ( sToken );
-				if ( m_pDict->GetWordID ( (BYTE*)sToken ) )
+				if ( m_pDict->GetWordID ( (uint8_t*)sToken ) )
 					m_tPendingToken.tInt.iStrIndex = m_dIntTokens.GetLength()-1;
 				else
 					m_dIntTokens.Pop();
@@ -842,7 +842,7 @@ int XQParser_t::GetToken ( YYSTYPE * lvalp )
 		m_pErrorAt = pTokenStart;
 
 		const char * p = pTokenStart;
-		while ( p<sEnd && isspace ( *(BYTE*)p ) ) p++; // to avoid CRT assertions on Windows
+		while ( p<sEnd && isspace ( *(uint8_t*)p ) ) p++; // to avoid CRT assertions on Windows
 
 		if ( m_bCheckNumber )
 		{
@@ -1091,7 +1091,7 @@ int XQParser_t::GetToken ( YYSTYPE * lvalp )
 
 		// check for stopword, and create that node
 		// temp buffer is required, because GetWordID() might expand (!) the keyword in-place
-		BYTE sTmp [ MAX_TOKEN_BYTES ];
+		uint8_t sTmp [ MAX_TOKEN_BYTES ];
 
 		strncpy ( (char*)sTmp, sToken, MAX_TOKEN_BYTES );
 		sTmp[MAX_TOKEN_BYTES-1] = '\0';
@@ -1734,7 +1734,7 @@ bool XQParser_t::Parse ( XQQuery_t & tParsed, const char * sQuery, const CSphQue
 
 	// setup parser
 	m_pParsed = &tParsed;
-	m_sQuery = (BYTE*) sQuery;
+	m_sQuery = (uint8_t*) sQuery;
 	m_iQueryLen = sQuery ? strlen(sQuery) : 0;
 	m_pTokenizer = pMyTokenizer.Ptr();
 	m_pSchema = pSchema;
@@ -1995,7 +1995,7 @@ static bool IsAppropriate ( XQNode_t * pTree )
 	return !( pTree->m_dWords.GetLength()==1 && pTree->GetOp()!=SPH_QUERY_NOT );
 }
 
-typedef CSphOrderedHash < DWORD, uint64_t, IdentityHash_fn, 128 > CDwordHash;
+typedef CSphOrderedHash < uint32_t, uint64_t, IdentityHash_fn, 128 > CDwordHash;
 
 // stores the pair of a tree, and the bitmask of common nodes
 // which contains the tree.
@@ -3369,7 +3369,7 @@ static int sphBigramAddNode ( XQNode_t * pNode, int64_t uHash, BigramHash_t & hB
 	}
 }
 
-static const BYTE g_sPhraseDelimiter[] = { 1 };
+static const uint8_t g_sPhraseDelimiter[] = { 1 };
 
 static uint64_t sphHashPhrase ( const XQNode_t * pNode )
 {

@@ -106,7 +106,7 @@ int sphSockPeekErrno ();
 int sphSetSockNB ( int );
 void sphFDSet ( int fd, fd_set * fdset );
 void sphFDClr ( int fd, fd_set * fdset );
-DWORD sphGetAddress ( const char * sHost, bool bFatal=false );
+uint32_t sphGetAddress ( const char * sHost, bool bFatal=false );
 
 /////////////////////////////////////////////////////////////////////////////
 // MISC GLOBALS
@@ -172,7 +172,7 @@ extern ESphLogLevel		g_eLogLevel;
 /////////////////////////////////////////////////////////////////////////////
 
 template < typename T >
-void sphBufferAddT ( CSphVector<BYTE> & dBuf, T tValue )
+void sphBufferAddT ( CSphVector<uint8_t> & dBuf, T tValue )
 {
 	int iOff = dBuf.GetLength();
 	dBuf.Resize ( iOff + sizeof(T) );
@@ -190,32 +190,32 @@ class ISphOutputBuffer : public ISphNoncopyable
 {
 public:
 	ISphOutputBuffer ();
-	explicit ISphOutputBuffer ( CSphVector<BYTE> & dBuf );
+	explicit ISphOutputBuffer ( CSphVector<uint8_t> & dBuf );
 	virtual ~ISphOutputBuffer() {}
 
 	void		SendInt ( int iValue )			{ SendT<int> ( htonl ( iValue ) ); }
 	void		SendAsDword ( int64_t iValue ) ///< sends the 32bit MAX_UINT if the value is greater than it.
 	{
 		iValue = Min ( Max ( iValue, 0 ), UINT_MAX );
-		SendDword ( DWORD(iValue) );
+		SendDword ( uint32_t(iValue) );
 	}
-	void		SendDword ( DWORD iValue )		{ SendT<DWORD> ( htonl ( iValue ) ); }
-	void		SendWord ( WORD iValue )		{ SendT<WORD> ( htons ( iValue ) ); }
-	void		SendFloat ( float fValue )		{ SendT<DWORD> ( htonl ( sphF2DW ( fValue ) ) ); }
-	void		SendByte ( BYTE uValue )		{ SendT<BYTE> ( uValue ); }
+	void		SendDword ( uint32_t iValue )		{ SendT<uint32_t> ( htonl ( iValue ) ); }
+	void		SendWord ( uint16_t iValue )		{ SendT<uint16_t> ( htons ( iValue ) ); }
+	void		SendFloat ( float fValue )		{ SendT<uint32_t> ( htonl ( sphF2DW ( fValue ) ) ); }
+	void		SendByte ( uint8_t uValue )		{ SendT<uint8_t> ( uValue ); }
 
-	void SendLSBDword ( DWORD v )
+	void SendLSBDword ( uint32_t v )
 	{
-		SendByte ( (BYTE)( v & 0xff ) );
-		SendByte ( (BYTE)( (v>>8) & 0xff ) );
-		SendByte ( (BYTE)( (v>>16) & 0xff ) );
-		SendByte ( (BYTE)( (v>>24) & 0xff) );
+		SendByte ( (uint8_t)( v & 0xff ) );
+		SendByte ( (uint8_t)( (v>>8) & 0xff ) );
+		SendByte ( (uint8_t)( (v>>16) & 0xff ) );
+		SendByte ( (uint8_t)( (v>>24) & 0xff) );
 	}
 
 	void SendUint64 ( uint64_t iValue )
 	{
-		SendT<DWORD> ( htonl ( (DWORD)(iValue>>32) ) );
-		SendT<DWORD> ( htonl ( (DWORD)(iValue & 0xffffffffUL) ) );
+		SendT<uint32_t> ( htonl ( (uint32_t)(iValue>>32) ) );
+		SendT<uint32_t> ( htonl ( (uint32_t)(iValue & 0xffffffffUL) ) );
 	}
 
 #if USE_64BIT
@@ -230,7 +230,7 @@ public:
 	void		SendMysqlString ( const char * sStr );
 	void		SendBytes ( const void * pBuf, int iLen );	///< (was) protected to avoid network-vs-host order bugs
 	void		SendOutput ( const ISphOutputBuffer & tOut );
-	void		SwapData ( CSphVector<BYTE> & rhs ) { m_dBuf.SwapData ( rhs ); }
+	void		SwapData ( CSphVector<uint8_t> & rhs ) { m_dBuf.SwapData ( rhs ); }
 
 	virtual void	Flush () {}
 	virtual bool	GetError () const { return false; }
@@ -238,7 +238,7 @@ public:
 	virtual void	SetProfiler ( CSphQueryProfile * ) {}
 
 protected:
-	CSphVector<BYTE>	m_dBuf;
+	CSphVector<uint8_t>	m_dBuf;
 
 private:
 	template < typename T > void	SendT ( T tValue )							///< (was) protected to avoid network-vs-host order bugs
@@ -274,29 +274,29 @@ private:
 class InputBuffer_c
 {
 public:
-	InputBuffer_c ( const BYTE * pBuf, int iLen );
+	InputBuffer_c ( const uint8_t * pBuf, int iLen );
 	virtual			~InputBuffer_c () {}
 
 	int				GetInt () { return ntohl ( GetT<int> () ); }
-	WORD			GetWord () { return ntohs ( GetT<WORD> () ); }
-	DWORD			GetDword () { return ntohl ( GetT<DWORD> () ); }
-	DWORD			GetLSBDword () { return GetByte() + ( GetByte()<<8 ) + ( GetByte()<<16 ) + ( GetByte()<<24 ); }
+	uint16_t			GetWord () { return ntohs ( GetT<uint16_t> () ); }
+	uint32_t			GetDword () { return ntohl ( GetT<uint32_t> () ); }
+	uint32_t			GetLSBDword () { return GetByte() + ( GetByte()<<8 ) + ( GetByte()<<16 ) + ( GetByte()<<24 ); }
 	uint64_t		GetUint64() { uint64_t uRes = GetDword(); return (uRes<<32)+GetDword(); }
-	BYTE			GetByte () { return GetT<BYTE> (); }
-	float			GetFloat () { return sphDW2F ( ntohl ( GetT<DWORD> () ) ); }
+	uint8_t			GetByte () { return GetT<uint8_t> (); }
+	float			GetFloat () { return sphDW2F ( ntohl ( GetT<uint32_t> () ) ); }
 	CSphString		GetString ();
 	CSphString		GetRawString ( int iLen );
-	bool			GetString ( CSphVector<BYTE> & dBuffer );
+	bool			GetString ( CSphVector<uint8_t> & dBuffer );
 	bool			GetError () { return m_bError; }
 	bool			GetBytes ( void * pBuf, int iLen );
-	const BYTE *	GetBufferPtr () const { return m_pBuf; }
+	const uint8_t *	GetBufferPtr () const { return m_pBuf; }
 
 	template < typename T > bool	GetDwords ( CSphVector<T> & dBuffer, int & iGot, int iMax );
 	template < typename T > bool	GetQwords ( CSphVector<T> & dBuffer, int & iGot, int iMax );
 
 protected:
-	const BYTE *	m_pBuf;
-	const BYTE *	m_pCur;
+	const uint8_t *	m_pBuf;
+	const uint8_t *	m_pCur;
 	bool			m_bError;
 	int				m_iLen;
 
@@ -323,7 +323,7 @@ template < typename T > T InputBuffer_c::GetT ()
 class MemInputBuffer_c : public InputBuffer_c
 {
 public:
-	MemInputBuffer_c ( const BYTE * pBuf, int iLen ) : InputBuffer_c ( pBuf, iLen ) {}
+	MemInputBuffer_c ( const uint8_t * pBuf, int iLen ) : InputBuffer_c ( pBuf, iLen ) {}
 };
 
 
@@ -345,9 +345,9 @@ protected:
 	int					m_iSock;
 	bool				m_bIntr;
 
-	BYTE				m_dMinibufer[NET_MINIBUFFER_SIZE];
+	uint8_t				m_dMinibufer[NET_MINIBUFFER_SIZE];
 	int					m_iMaxibuffer;
-	BYTE *				m_pMaxibuffer;
+	uint8_t *				m_pMaxibuffer;
 };
 
 bool IsPortInRange ( int iPort );
@@ -355,10 +355,10 @@ int sphSockRead ( int iSock, void * buf, int iLen, int iReadTimeout, bool bIntr 
 
 struct CrashQuery_t
 {
-	const BYTE *			m_pQuery;	// last query
+	const uint8_t *			m_pQuery;	// last query
 	int						m_iSize;	// last query size
-	WORD					m_uCMD;		// last command (header)
-	WORD					m_uVer;		// last command's version (header)
+	uint16_t					m_uCMD;		// last command (header)
+	uint16_t					m_uVer;		// last command's version (header)
 	bool					m_bMySQL;	// is query from MySQL or API
 
 	CrashQuery_t ()
@@ -848,8 +848,8 @@ public:
 
 bool CheckCommandVersion ( int iVer, int iDaemonVersion, ISphOutputBuffer & tOut );
 ISphSearchHandler * sphCreateSearchHandler ( int iQueries, bool bSphinxql, bool bMaster, int iCID );
-void sphFormatFactors ( CSphVector<BYTE> & dOut, const unsigned int * pFactors, bool bJson );
-bool sphLoopClientHttp ( CSphVector<BYTE> & dData, int iCID );
+void sphFormatFactors ( CSphVector<uint8_t> & dOut, const unsigned int * pFactors, bool bJson );
+bool sphLoopClientHttp ( CSphVector<uint8_t> & dData, int iCID );
 bool sphParseSqlQuery ( const char * sQuery, int iLen, CSphVector<SqlStmt_t> & dStmt, CSphString & sError, ESphCollation eCollation );
 
 

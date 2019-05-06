@@ -15,12 +15,12 @@
 
 #include "sphinx.h"
 
-void stem_soundex ( BYTE * pWord )
+void stem_soundex ( uint8_t * pWord )
 {
-	static BYTE dLetter2Code[27] = "01230120022455012623010202";
+	static uint8_t dLetter2Code[27] = "01230120022455012623010202";
 
 	// check if the word only contains lowercase English letters
-	BYTE * p = pWord;
+	uint8_t * p = pWord;
 	while ( *p>='a' && *p<='z' )
 		p++;
 	if ( *p )
@@ -28,10 +28,10 @@ void stem_soundex ( BYTE * pWord )
 
 	// do soundex
 	p = pWord+1;
-	BYTE * pOut = pWord+1;
+	uint8_t * pOut = pWord+1;
 	while ( *p )
 	{
-		BYTE c = dLetter2Code [ (*p)-'a' ];
+		uint8_t c = dLetter2Code [ (*p)-'a' ];
 		if ( c!='0' && pOut[-1]!=c )
 			*pOut++ = c;
 		p++;

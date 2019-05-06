@@ -196,7 +196,7 @@ public:
 	}
 
 	/// get my cache order
-	DWORD GetOrder () const
+	uint32_t GetOrder () const
 	{
 		return m_iOrder;
 	}

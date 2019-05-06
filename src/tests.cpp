@@ -74,11 +74,11 @@ bool CreateSynonymsFile ( const char * sMagic )
 }
 
 
-const DWORD TOK_EXCEPTIONS		= 1;
-const DWORD TOK_NO_DASH			= 2;
-const DWORD TOK_NO_SHORT		= 4;
+const uint32_t TOK_EXCEPTIONS		= 1;
+const uint32_t TOK_NO_DASH			= 2;
+const uint32_t TOK_NO_SHORT		= 4;
 
-ISphTokenizer * CreateTestTokenizer ( DWORD uMode )
+ISphTokenizer * CreateTestTokenizer ( uint32_t uMode )
 {
 	CSphString sError;
 	CSphTokenizerSettings tSettings;
@@ -160,10 +160,10 @@ void TestTokenizer()
 		for ( int iCur=0; dTests[iCur]; )
 		{
 			printf ( "%s, exceptions, line=%s\n", sPrefix, dTests[iCur] );
-			pTokenizer->SetBuffer ( (BYTE*)dTests[iCur], strlen ( dTests[iCur] ) );
+			pTokenizer->SetBuffer ( (uint8_t*)dTests[iCur], strlen ( dTests[iCur] ) );
 			iCur++;
 
-			for ( BYTE * pToken=pTokenizer->GetToken(); pToken; pToken=pTokenizer->GetToken() )
+			for ( uint8_t * pToken=pTokenizer->GetToken(); pToken; pToken=pTokenizer->GetToken() )
 			{
 				assert ( dTests[iCur] && strcmp ( (const char*)pToken, dTests[iCur] )==0 );
 				iCur++;
@@ -176,11 +176,11 @@ void TestTokenizer()
 		// query mode tokenizer tests
 		ISphTokenizer * pQtok = pTokenizer->Clone ( SPH_CLONE_QUERY_LIGHTWEIGHT );
 
-		pQtok->SetBuffer ( (BYTE*)"life:)", 7 );
+		pQtok->SetBuffer ( (uint8_t*)"life:)", 7 );
 		assert ( strcmp ( (char*)pQtok->GetToken(), "life:)" )==0 );
 		assert ( pQtok->GetToken()==NULL );
 
-		pQtok->SetBuffer ( (BYTE*)"life:\\)", 8 );
+		pQtok->SetBuffer ( (uint8_t*)"life:\\)", 8 );
 		assert ( strcmp ( (char*)pQtok->GetToken(), "life:)" )==0 );
 		assert ( pQtok->GetToken()==NULL );
 	}
@@ -246,10 +246,10 @@ void TestTokenizer()
 		for ( int iCur=0; dTests[iCur] && atoi ( dTests[iCur++] )<=iRun; )
 		{
 			printf ( "%s, run=%d, line=%s\n", sPrefix, iRun, dTests[iCur] );
-			pTokenizer->SetBuffer ( (BYTE*)dTests[iCur], strlen ( dTests[iCur] ) );
+			pTokenizer->SetBuffer ( (uint8_t*)dTests[iCur], strlen ( dTests[iCur] ) );
 			iCur++;
 
-			for ( BYTE * pToken=pTokenizer->GetToken(); pToken; pToken=pTokenizer->GetToken() )
+			for ( uint8_t * pToken=pTokenizer->GetToken(); pToken; pToken=pTokenizer->GetToken() )
 			{
 				assert ( dTests[iCur] && strcmp ( (const char*)pToken, dTests[iCur] )==0 );
 				iCur++;
@@ -269,10 +269,10 @@ void TestTokenizer()
 		for ( int iCur=0; dTests2[iCur]; )
 		{
 			printf ( "%s, run=%d, line=%s\n", sPrefix, iRun, dTests2[iCur] );
-			pTokenizer->SetBuffer ( (BYTE*)dTests2[iCur], strlen ( dTests2[iCur] ) );
+			pTokenizer->SetBuffer ( (uint8_t*)dTests2[iCur], strlen ( dTests2[iCur] ) );
 			iCur++;
 
-			for ( BYTE * pToken=pTokenizer->GetToken(); pToken; pToken=pTokenizer->GetToken() )
+			for ( uint8_t * pToken=pTokenizer->GetToken(); pToken; pToken=pTokenizer->GetToken() )
 			{
 				assert ( dTests2[iCur] && strcmp ( (const char*)pToken, dTests2[iCur] )==0 );
 				iCur++;
@@ -287,7 +287,7 @@ void TestTokenizer()
 		printf ( "%s for proper UTF-8 error handling\n", sPrefix );
 		const char * sLine3 = "hi\xd0\xffh";
 
-		pTokenizer->SetBuffer ( (BYTE*)sLine3, 4 );
+		pTokenizer->SetBuffer ( (uint8_t*)sLine3, 4 );
 		assert ( !strcmp ( (char*)pTokenizer->GetToken(), "hi" ) );
 
 		// test uberlong tokens
@@ -302,7 +302,7 @@ void TestTokenizer()
 		memset ( sTok4, 'a', SPH_MAX_WORD_LEN );
 		sTok4[SPH_MAX_WORD_LEN] = '\0';
 
-		pTokenizer->SetBuffer ( (BYTE*)sLine4, strlen(sLine4) );
+		pTokenizer->SetBuffer ( (uint8_t*)sLine4, strlen(sLine4) );
 		assert ( !strcmp ( (char*)pTokenizer->GetToken(), sTok4 ) );
 		assert ( pTokenizer->GetToken()==NULL );
 
@@ -326,9 +326,9 @@ void TestTokenizer()
 
 		for ( int iCur=0; dTestsShort[iCur]; )
 		{
-			pShortTokenizer->SetBuffer ( (BYTE*)(dTestsShort [iCur]), strlen ( (const char*)dTestsShort [iCur] ) );
+			pShortTokenizer->SetBuffer ( (uint8_t*)(dTestsShort [iCur]), strlen ( (const char*)dTestsShort [iCur] ) );
 			iCur++;
-			for ( BYTE * pToken=pShortTokenizer->GetToken(); pToken; pToken=pShortTokenizer->GetToken() )
+			for ( uint8_t * pToken=pShortTokenizer->GetToken(); pToken; pToken=pShortTokenizer->GetToken() )
 			{
 				assert ( dTestsShort[iCur] && strcmp ( (const char*)pToken, dTestsShort[iCur] )==0 );
 				iCur++;
@@ -348,7 +348,7 @@ void TestTokenizer()
 			memset ( sLine4, '/', UBERLONG );
 			sLine4[UBERLONG] = '\0';
 
-			pTokenizer->SetBuffer ( (BYTE*)sLine4, strlen(sLine4) );
+			pTokenizer->SetBuffer ( (uint8_t*)sLine4, strlen(sLine4) );
 			assert ( pTokenizer->GetToken()==NULL );
 
 			printf ( "%s for uberlong synonym token handling\n", sPrefix );
@@ -361,7 +361,7 @@ void TestTokenizer()
 				sLine4[i+3] = '\0';
 			}
 
-			pTokenizer->SetBuffer ( (BYTE*)sLine4, strlen(sLine4) );
+			pTokenizer->SetBuffer ( (uint8_t*)sLine4, strlen(sLine4) );
 			for ( int i=0; i<UBERLONG-3; i+=3 )
 				assert ( !strcmp ( (char*)pTokenizer->GetToken(), "aa" ) );
 			assert ( pTokenizer->GetToken()==NULL );
@@ -376,7 +376,7 @@ void TestTokenizer()
 		assert ( pTokenizer->SetBoundary ( "?", sError ) );
 
 		char sLine5[] = "hello world? testing boundaries?";
-		pTokenizer->SetBuffer ( (BYTE*)sLine5, strlen(sLine5) );
+		pTokenizer->SetBuffer ( (uint8_t*)sLine5, strlen(sLine5) );
 
 		assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "hello" ) ); assert ( !pTokenizer->GetBoundary() );
 		assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "world" ) ); assert ( !pTokenizer->GetBoundary() );
@@ -387,7 +387,7 @@ void TestTokenizer()
 		printf ( "%s vs specials vs token start/end ptrs\n", sPrefix );
 
 		char sLine6[] = "abc!def";
-		pTokenizer->SetBuffer ( (BYTE*)sLine6, strlen(sLine6) );
+		pTokenizer->SetBuffer ( (uint8_t*)sLine6, strlen(sLine6) );
 
 		assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "abc" ) );
 		assert ( *pTokenizer->GetTokenStart()=='a' );
@@ -405,7 +405,7 @@ void TestTokenizer()
 		printf ( "%s vs embedded zeroes\n", sPrefix );
 
 		char sLine7[] = "abc\0\0\0defgh";
-		pTokenizer->SetBuffer ( (BYTE*)sLine7, 9 );
+		pTokenizer->SetBuffer ( (uint8_t*)sLine7, 9 );
 
 		assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "abc" ) );
 		assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "def" ) );
@@ -426,7 +426,7 @@ void TestTokenizer()
 	pTokenizer->AddSpecials ( "()!-\"@" );
 
 	char sTest1[] = "(texas.\\\")";
-	pTokenizer->SetBuffer ( (BYTE*)sTest1, strlen(sTest1) );
+	pTokenizer->SetBuffer ( (uint8_t*)sTest1, strlen(sTest1) );
 
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "(" ) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "texas." ) );
@@ -437,7 +437,7 @@ void TestTokenizer()
 
 	char sTest2[] = "\"series 2003\\-\\\"\"";
 	printf ( "test %s\n", sTest2 );
-	pTokenizer->SetBuffer ( (BYTE*)sTest2, strlen(sTest2) );
+	pTokenizer->SetBuffer ( (uint8_t*)sTest2, strlen(sTest2) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "\"" ) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "series" ) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "2003-" ) );
@@ -446,7 +446,7 @@ void TestTokenizer()
 
 	char sTest3[] = "aa lock.up bb";
 	printf ( "test %s\n", sTest3 );
-	pTokenizer->SetBuffer ( (BYTE*)sTest3, strlen(sTest3) );
+	pTokenizer->SetBuffer ( (uint8_t*)sTest3, strlen(sTest3) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "aa" ) );
 	assert ( !pTokenizer->TokenIsBlended() );
 	assert ( !pTokenizer->TokenIsBlendedPart() );
@@ -464,7 +464,7 @@ void TestTokenizer()
 
 	char sTest4[] = "3.rd text";
 	printf ( "test %s\n", sTest4 );
-	pTokenizer->SetBuffer ( (BYTE*)sTest4, strlen(sTest4) );
+	pTokenizer->SetBuffer ( (uint8_t*)sTest4, strlen(sTest4) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "3.rd" ) );
 	assert ( pTokenizer->TokenIsBlended() );
 	assert ( pTokenizer->SkipBlended()==1 );
@@ -474,7 +474,7 @@ void TestTokenizer()
 
 	char sTest5[] = "123\\@rd text";
 	printf ( "test %s\n", sTest5 );
-	pTokenizer->SetBuffer ( (BYTE*)sTest5, strlen(sTest5) );
+	pTokenizer->SetBuffer ( (uint8_t*)sTest5, strlen(sTest5) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "123@rd" ) );
 	assert ( pTokenizer->TokenIsBlended() );
 	assert ( pTokenizer->SkipBlended()==2 );
@@ -484,7 +484,7 @@ void TestTokenizer()
 
 	char sTest6[] = "at.ta\\.c.da\\.bl.ok yo pest";
 	printf ( "test %s\n", sTest6 );
-	pTokenizer->SetBuffer ( (BYTE*)sTest6, strlen(sTest6) );
+	pTokenizer->SetBuffer ( (uint8_t*)sTest6, strlen(sTest6) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "at.ta.c.da.bl.ok" ) );
 	assert ( pTokenizer->TokenIsBlended() );
 	assert ( pTokenizer->SkipBlended()==5 );
@@ -494,7 +494,7 @@ void TestTokenizer()
 
 	char sTest7[] = "3\\@rd text";
 	printf ( "test %s\n", sTest7 );
-	pTokenizer->SetBuffer ( (BYTE*)sTest7, strlen(sTest7) );
+	pTokenizer->SetBuffer ( (uint8_t*)sTest7, strlen(sTest7) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "3@rd" ) );
 	assert ( pTokenizer->TokenIsBlended() );
 	assert ( pTokenizer->SkipBlended()==1 ); // because 3 is overshort!
@@ -512,7 +512,7 @@ void TestTokenizer()
 
 	char sTest10[] = "hello =- =world";
 	printf ( "test %s\n", sTest10 );
-	pTokenizer->SetBuffer ( (BYTE*)sTest10, strlen(sTest10) );
+	pTokenizer->SetBuffer ( (uint8_t*)sTest10, strlen(sTest10) );
 
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "hello" ) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "=world" ) );
@@ -529,23 +529,23 @@ void TestTokenizer()
 	pTokenizer = sphCreateUTF8Tokenizer();
 	assert ( pTokenizer->SetCaseFolding ( "U+410..U+42F->U+430..U+44F, U+430..U+44F, U+401->U+451, U+451", sError ) );
 	char sTest20[] = "abc \xD0\xBE\xD0\xBF\xD0\xB0\x58\xD1\x87\xD0\xB0 def";
-	pTokenizer->SetBuffer ( (BYTE*)sTest20, strlen(sTest20) );
+	pTokenizer->SetBuffer ( (uint8_t*)sTest20, strlen(sTest20) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "\xD0\xBE\xD0\xBF\xD0\xB0" ) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "\xD1\x87\xD0\xB0" ) );
 	assert ( !pTokenizer->GetToken() );
 	SafeDelete ( pTokenizer );
 	printf ( "test utf8 4-bytes codepoint\n" );
-	BYTE sTest21[] = "\xF4\x80\x80\x80\x32\x34\x20";
-	BYTE sTest22[] = "\xEC\x97\xB0";
-	BYTE sRes21[SPH_MAX_WORD_LEN];
+	uint8_t sTest21[] = "\xF4\x80\x80\x80\x32\x34\x20";
+	uint8_t sTest22[] = "\xEC\x97\xB0";
+	uint8_t sRes21[SPH_MAX_WORD_LEN];
 
 	memset ( sRes21, 0, sizeof(sRes21) );
-	const BYTE * pTest21 = sTest21;
+	const uint8_t * pTest21 = sTest21;
 	int iCode21 = sphUTF8Decode ( pTest21 );
 	assert ( sphUTF8Encode ( sRes21, iCode21 )==4 );
 	assert ( sTest21[0]==sRes21[0] && sTest21[1]==sRes21[1] && sTest21[2]==sRes21[2] && sTest21[3]==sRes21[3] );
 	memset ( sRes21, 0, sizeof(sRes21) );
-	BYTE * pRes21 = sRes21;
+	uint8_t * pRes21 = sRes21;
 	SPH_UTF8_ENCODE ( pRes21, iCode21 );
 	assert ( sTest21[0]==sRes21[0] && sTest21[1]==sRes21[1] && sTest21[2]==sRes21[2] && sTest21[3]==sRes21[3] );
 
@@ -561,7 +561,7 @@ void TestTokenizer()
 	assert ( memcmp ( sTest22, sRes21, sizeof(sTest22) )==0 );
 
 	pTokenizer = sphCreateUTF8Tokenizer();
-	pTokenizer->SetBuffer ( (BYTE*)sTest21, sizeof(sTest21) );
+	pTokenizer->SetBuffer ( (uint8_t*)sTest21, sizeof(sTest21) );
 	assert ( !strcmp ( (const char*)pTokenizer->GetToken(), "\xF4\x80\x80\x80\x32\x34" ) );
 	delete pTokenizer;
 
@@ -599,7 +599,7 @@ char * LoadFile ( const char * sName, int * pLen, bool bReportErrors )
 }
 
 
-void BenchTokenizer ( ISphTokenizer * pTokenizer, BYTE * sData, int iBytes )
+void BenchTokenizer ( ISphTokenizer * pTokenizer, uint8_t * sData, int iBytes )
 {
 	const int iPasses = 1000;
 	int iTokens = 0;
@@ -654,7 +654,7 @@ void BenchTokenizer ()
 		pTokenizer->AddSpecials ( "!-" );
 
 		printf ( "run %d: ", iRun );
-		BenchTokenizer ( pTokenizer, (BYTE*)sData, iBytes );
+		BenchTokenizer ( pTokenizer, (uint8_t*)sData, iBytes );
 		SafeDeleteArray ( sData );
 		SafeDelete ( pTokenizer );
 	}
@@ -664,7 +664,7 @@ void BenchTokenizer ()
 	{
 		ISphTokenizer * pTokenizer = sphCreateUTF8Tokenizer ();
 		printf ( "run 3: " );
-		BenchTokenizer ( pTokenizer, (BYTE*)sData, iBytes );
+		BenchTokenizer ( pTokenizer, (uint8_t*)sData, iBytes );
 		SafeDelete ( pTokenizer );
 	}
 	SafeDeleteArray ( sData );
@@ -731,7 +731,7 @@ void TestStripper ()
 		assert ( tStripper.SetRemovedElements ( sTests[iTest][2], sError ) );
 
 		CSphString sBuf ( sTests[iTest][0] );
-		tStripper.Strip ( (BYTE*)sBuf.cstr() );
+		tStripper.Strip ( (uint8_t*)sBuf.cstr() );
 		assert ( strcmp ( sBuf.cstr(), sTests[iTest][3] )==0 );
 
 		printf ( "ok\n" );
@@ -769,7 +769,7 @@ void BenchStripper ()
 		int64_t tmTime = -sphMicroTimer();
 		for ( int iPass=0; iPass<iPasses; iPass++ )
 		{
-			tStripper.Strip ( (BYTE*)sBuf );
+			tStripper.Strip ( (uint8_t*)sBuf );
 			memcpy ( sBuf, sRef, iLen+1 );
 		}
 		tmTime += sphMicroTimer();
@@ -1157,7 +1157,7 @@ public:
 	virtual bool				FillKeywords ( CSphVector <CSphKeywordInfo> & dKeywords ) const;
 	virtual int					UpdateAttributes ( const CSphAttrUpdate & , int , CSphString &, CSphString & ) { return -1; }
 	virtual bool				SaveAttributes ( CSphString & ) const { return false; }
-	virtual DWORD				GetAttributeStatus () const { return 0; }
+	virtual uint32_t				GetAttributeStatus () const { return 0; }
 	virtual bool				CreateModifiedFiles ( bool, const CSphString &, ESphAttr, int, CSphString & ) { return true; }
 	virtual bool				AddRemoveAttribute ( bool, const CSphString &, ESphAttr, CSphString & ) { return true; }
 	virtual void				DebugDumpHeader ( FILE *, const char *, bool ) {}
@@ -1573,16 +1573,16 @@ void TestQueryTransforms ()
 #ifndef NDEBUG
 void TestMisc ()
 {
-	BYTE dBuffer [ 128 ];
+	uint8_t dBuffer [ 128 ];
 	int dValues[] = { 16383, 0, 1, 127, 128, 129, 256, 4095, 4096, 4097, 8192, 16383, 16384, 16385, 123456, 4194303, -1 };
 
 	printf ( "testing string attr length packer/unpacker... " );
 
-	BYTE * pRow = dBuffer;
+	uint8_t * pRow = dBuffer;
 	for ( int i=0; dValues[i]>=0; i++ )
 		pRow += sphPackStrlen ( pRow, dValues[i] );
 
-	const BYTE * pUnp = dBuffer;
+	const uint8_t * pUnp = dBuffer;
 	for ( int i=0; dValues[i]>=0; i++ )
 	{
 		int iUnp = sphUnpackStr ( pUnp, &pUnp );
@@ -1799,27 +1799,27 @@ void BenchThreads ()
 
 //////////////////////////////////////////////////////////////////////////
 
-void SortDataRepeat1245 ( DWORD * pData, int iCount )
+void SortDataRepeat1245 ( uint32_t * pData, int iCount )
 {
 	const int dFill[4] = { 1, 2, 4, 5 };
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = dFill[i%4];
 }
 
-void SortDataEnd0 ( DWORD * pData, int iCount )
+void SortDataEnd0 ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = i+1;
 	pData[iCount-1] = 0;
 }
 
-void SortDataIdentical ( DWORD * pData, int iCount )
+void SortDataIdentical ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = 123;
 }
 
-void SortDataMed3Killer ( DWORD * pData, int iCount )
+void SortDataMed3Killer ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount/2; i++ )
 		pData[i] = 1 + i + ( i & 1 )*(iCount/2-1);
@@ -1827,20 +1827,20 @@ void SortDataMed3Killer ( DWORD * pData, int iCount )
 		pData[i] = 2*(i-iCount/2+1);
 }
 
-void SortDataMidKiller ( DWORD * pData, int iCount )
+void SortDataMidKiller ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<2; i++ )
 		for ( int j=0; j<iCount/2; j++ )
 			*pData++ = j*2+i;
 }
 
-void SortDataRandDupes ( DWORD * pData, int iCount )
+void SortDataRandDupes ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = sphRand() % ( iCount/10 );
 }
 
-void SortDataRandUniq ( DWORD * pData, int iCount )
+void SortDataRandUniq ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = i;
@@ -1848,7 +1848,7 @@ void SortDataRandUniq ( DWORD * pData, int iCount )
 		Swap ( pData[i], pData[sphRand()%iCount] );
 }
 
-void SortDataRandSteps ( DWORD * pData, int iCount )
+void SortDataRandSteps ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i+=100 )
 	{
@@ -1861,14 +1861,14 @@ void SortDataRandSteps ( DWORD * pData, int iCount )
 	}
 }
 
-void SortDataRevEnds ( DWORD * pData, int iCount )
+void SortDataRevEnds ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = i;
 	Swap ( pData[0], pData[iCount-1] );
 }
 
-void SortDataRevPartial ( DWORD * pData, int iCount )
+void SortDataRevPartial ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = iCount-i;
@@ -1876,7 +1876,7 @@ void SortDataRevPartial ( DWORD * pData, int iCount )
 		Swap ( pData[sphRand()%iCount], pData[sphRand()%iCount] );
 }
 
-void SortDataRevSaw ( DWORD * pData, int iCount )
+void SortDataRevSaw ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i+=100 )
 	{
@@ -1887,20 +1887,20 @@ void SortDataRevSaw ( DWORD * pData, int iCount )
 	}
 }
 
-void SortDataReverse ( DWORD * pData, int iCount )
+void SortDataReverse ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = iCount-i;
 }
 
-void SortDataStart1000 ( DWORD * pData, int iCount )
+void SortDataStart1000 ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = 1+i;
 	pData[0] = 1000;
 }
 
-void SortDataSeqPartial ( DWORD * pData, int iCount )
+void SortDataSeqPartial ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = 1+i;
@@ -1908,7 +1908,7 @@ void SortDataSeqPartial ( DWORD * pData, int iCount )
 		Swap ( pData[sphRand()%iCount], pData[sphRand()%iCount] );
 }
 
-void SortDataSeqSaw ( DWORD * pData, int iCount )
+void SortDataSeqSaw ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i+=100 )
 	{
@@ -1919,13 +1919,13 @@ void SortDataSeqSaw ( DWORD * pData, int iCount )
 	}
 }
 
-void SortDataSeq ( DWORD * pData, int iCount )
+void SortDataSeq ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = 1+i;
 }
 
-void SortDataAscDesc ( DWORD * pData, int iCount )
+void SortDataAscDesc ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount/2; i++ )
 		pData[i] = 1+i;
@@ -1933,7 +1933,7 @@ void SortDataAscDesc ( DWORD * pData, int iCount )
 		pData[i] = iCount-i;
 }
 
-void SortDataDescAsc ( DWORD * pData, int iCount )
+void SortDataDescAsc ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount/2; i++ )
 		pData[i] = iCount/2-i;
@@ -1941,13 +1941,13 @@ void SortDataDescAsc ( DWORD * pData, int iCount )
 		pData[i] = i-iCount/2+1;
 }
 
-void SortDataRand01 ( DWORD * pData, int iCount )
+void SortDataRand01 ( uint32_t * pData, int iCount )
 {
 	for ( int i=0; i<iCount; i++ )
 		pData[i] = ( sphRand()>>3 ) & 1;
 }
 
-typedef void (*SortDataGen_fn)( DWORD *, int );
+typedef void (*SortDataGen_fn)( uint32_t *, int );
 
 struct SortDataGenDesc_t
 {
@@ -1980,8 +1980,8 @@ static SortDataGenDesc_t g_dSortDataGens[] =
 
 struct SortPayload_t
 {
-	DWORD m_uKey;
-	DWORD m_uPayload[3];
+	uint32_t m_uKey;
+	uint32_t m_uPayload[3];
 
 	bool operator < ( const SortPayload_t & rhs ) const
 	{
@@ -2028,7 +2028,7 @@ void BenchSort ()
 	fprintf ( fpRes, "test-name;runs-by-size;total-time\n" );
 
 	// bench synthetic payloads
-	DWORD * pKeys = new DWORD [ MAXSIZE ];
+	uint32_t * pKeys = new uint32_t [ MAXSIZE ];
 	SortPayload_t * pValues = new SortPayload_t [ MAXSIZE ];
 
 	for ( int iGen=0; iGen<(int)(sizeof(g_dSortDataGens)/sizeof(g_dSortDataGens[0])); iGen++ )
@@ -2094,8 +2094,8 @@ void BenchSort ()
 
 struct TestAccCmp_fn
 {
-	typedef DWORD MEDIAN_TYPE;
-	typedef DWORD * PTR_TYPE;
+	typedef uint32_t MEDIAN_TYPE;
+	typedef uint32_t * PTR_TYPE;
 
 	int m_iStride;
 
@@ -2103,45 +2103,45 @@ struct TestAccCmp_fn
 		: m_iStride ( iStride )
 	{}
 
-	DWORD Key ( DWORD * pData ) const
+	uint32_t Key ( uint32_t * pData ) const
 	{
 		return *pData;
 	}
 
-	void CopyKey ( DWORD * pMed, DWORD * pVal ) const
+	void CopyKey ( uint32_t * pMed, uint32_t * pVal ) const
 	{
 		*pMed = Key ( pVal );
 	}
 
-	bool IsLess ( DWORD a, DWORD b ) const
+	bool IsLess ( uint32_t a, uint32_t b ) const
 	{
 		return a < b;
 	}
 
-	void Swap ( DWORD * a, DWORD * b ) const
+	void Swap ( uint32_t * a, uint32_t * b ) const
 	{
 		for ( int i=0; i<m_iStride; i++ )
 			::Swap ( a[i], b[i] );
 	}
 
-	DWORD * Add ( DWORD * p, int i ) const
+	uint32_t * Add ( uint32_t * p, int i ) const
 	{
 		return p+i*m_iStride;
 	}
 
-	int Sub ( DWORD * b, DWORD * a ) const
+	int Sub ( uint32_t * b, uint32_t * a ) const
 	{
 		return (int)((b-a)/m_iStride);
 	}
 
-	bool IsKeyDataSynced ( const DWORD * pData ) const
+	bool IsKeyDataSynced ( const uint32_t * pData ) const
 	{
-		DWORD uKey = *pData;
-		DWORD uHash = GenerateKey ( pData );
+		uint32_t uKey = *pData;
+		uint32_t uHash = GenerateKey ( pData );
 		return uKey==uHash;
 	}
 
-	DWORD GenerateKey ( const DWORD * pData ) const
+	uint32_t GenerateKey ( const uint32_t * pData ) const
 	{
 		return m_iStride > 1 ? sphCRC32 ( pData+1, ( m_iStride-1 )*4 ) : ( *pData );
 	}
@@ -2149,12 +2149,12 @@ struct TestAccCmp_fn
 
 
 #ifndef NDEBUG
-static bool IsSorted ( DWORD * pData, int iCount, const TestAccCmp_fn & fn )
+static bool IsSorted ( uint32_t * pData, int iCount, const TestAccCmp_fn & fn )
 {
 	if ( iCount<1 )
 		return true;
 
-	const DWORD * pPrev = pData;
+	const uint32_t * pPrev = pData;
 	if ( !fn.IsKeyDataSynced ( pPrev ) )
 		return false;
 
@@ -2163,7 +2163,7 @@ static bool IsSorted ( DWORD * pData, int iCount, const TestAccCmp_fn & fn )
 
 	for ( int i = 1; i < iCount; ++i )
 	{
-		const DWORD * pCurr = fn.Add ( pData, i );
+		const uint32_t * pCurr = fn.Add ( pData, i );
 
 		if ( fn.IsLess ( *pCurr , *pPrev ) || !fn.IsKeyDataSynced ( pCurr ) )
 			return false;
@@ -2176,15 +2176,15 @@ static bool IsSorted ( DWORD * pData, int iCount, const TestAccCmp_fn & fn )
 #endif
 
 
-void RandomFill ( DWORD * pData, int iCount, const TestAccCmp_fn & fn, bool bChainsaw )
+void RandomFill ( uint32_t * pData, int iCount, const TestAccCmp_fn & fn, bool bChainsaw )
 {
 	for ( int i = 0; i < iCount; ++i )
 	{
-		DWORD * pCurr = fn.Add ( pData, i );
-		const DWORD * pNext = fn.Add ( pData, i + 1 );
+		uint32_t * pCurr = fn.Add ( pData, i );
+		const uint32_t * pNext = fn.Add ( pData, i + 1 );
 
-		DWORD * pElem = pCurr;
-		DWORD * pChainHill = bChainsaw && ( i % 2 ) ? fn.Add ( pData, i -1 ) : NULL;
+		uint32_t * pElem = pCurr;
+		uint32_t * pChainHill = bChainsaw && ( i % 2 ) ? fn.Add ( pData, i -1 ) : NULL;
 		do
 		{
 			*pElem = pChainHill ? *pChainHill / 2 : sphRand();
@@ -2202,17 +2202,17 @@ void TestStridedSortPass ( int iStride, int iCount )
 
 	assert ( iStride && iCount );
 
-	DWORD * pData = new DWORD [ iCount * iStride ];
+	uint32_t * pData = new uint32_t [ iCount * iStride ];
 	assert ( pData );
 
 	// checked elements are random
-	memset ( pData, 0, sizeof ( DWORD ) * iCount * iStride );
+	memset ( pData, 0, sizeof ( uint32_t ) * iCount * iStride );
 	TestAccCmp_fn fnSort ( iStride );
 	RandomFill ( pData, iCount, fnSort, false );
 
 	// crash on sort of mini-arrays
 	TestAccCmp_fn fnSortDummy ( 1 );
-	DWORD dMini[1] = { 1 };
+	uint32_t dMini[1] = { 1 };
 	sphSort ( dMini, 1, fnSortDummy, fnSortDummy );
 	sphSort ( dMini, 0, fnSortDummy, fnSortDummy );
 	assert ( IsSorted ( dMini, 1, fnSortDummy ) );
@@ -2269,12 +2269,12 @@ void TestStridedSort ()
 	}
 
 	// regression of uniq vs empty array
-	DWORD dUniq[] = { 1, 1, 3, 1 };
+	uint32_t dUniq[] = { 1, 1, 3, 1 };
 	int iCount = sizeof(dUniq)/sizeof(dUniq[0]);
 	assert ( sphUniq ( dUniq, 0 )==0 );
 	sphSort ( dUniq, iCount );
 	assert ( sphUniq ( dUniq, iCount )==2 && dUniq[0]==1 && dUniq[1]==3 );
-	CSphVector<DWORD> dUniq1;
+	CSphVector<uint32_t> dUniq1;
 	dUniq1.Uniq();
 	assert ( dUniq1.GetLength()==0 );
 	dUniq1.Add ( 1 );
@@ -2290,7 +2290,7 @@ void TestStridedSort ()
 class SphTestDoc_c : public CSphSource_Document
 {
 public:
-	explicit SphTestDoc_c ( const CSphSchema & tSchema, BYTE ** ppDocs, int iDocs, int iFields )
+	explicit SphTestDoc_c ( const CSphSchema & tSchema, uint8_t ** ppDocs, int iDocs, int iFields )
 		: CSphSource_Document ( "test_doc" )
 	{
 		m_tSchema = tSchema;
@@ -2300,7 +2300,7 @@ public:
 		m_dFieldLengths.Resize ( m_iFields );
 	}
 
-	virtual BYTE ** NextDocument ( CSphString & )
+	virtual uint8_t ** NextDocument ( CSphString & )
 	{
 		if ( m_tDocInfo.m_uDocID>=(SphDocID_t)m_iDocCount )
 		{
@@ -2336,7 +2336,7 @@ public:
 private:
 	int m_iDocCount;
 	int m_iFields;
-	BYTE ** m_ppDocs;
+	uint8_t ** m_ppDocs;
 	CSphVector<int> m_dFieldLengths;
 };
 
@@ -2422,7 +2422,7 @@ void TestRTWeightBoundary ()
 
 
 		const char * dFields[] = { "If I were a cat...", "We are the greatest cat" };
-		SphTestDoc_c * pSrc = new SphTestDoc_c ( tSrcSchema, (BYTE **)dFields, 1, 2 );
+		SphTestDoc_c * pSrc = new SphTestDoc_c ( tSrcSchema, (uint8_t **)dFields, 1, 2 );
 
 		pSrc->SetTokenizer ( pTok );
 		pSrc->SetDict ( pDict );
@@ -2451,7 +2451,7 @@ void TestRTWeightBoundary ()
 		pIndex->PostSetup();
 		Verify ( pIndex->Prealloc ( false ) );
 
-		CSphVector<DWORD> dMvas;
+		CSphVector<uint32_t> dMvas;
 		CSphString sFilter;
 		for ( ;; )
 		{
@@ -2501,7 +2501,7 @@ void TestWriter()
 	CSphString sErr;
 
 #define WRITE_OUT_DATA_SIZE 0x40000
-	BYTE * pData = new BYTE[WRITE_OUT_DATA_SIZE];
+	uint8_t * pData = new uint8_t[WRITE_OUT_DATA_SIZE];
 	memset ( pData, 0xfe, WRITE_OUT_DATA_SIZE );
 
 	{
@@ -2527,17 +2527,17 @@ class SphDocRandomizer_c : public CSphSource_Document
 	static const int m_iMaxFields = 2;
 	static const int m_iMaxFieldLen = 512;
 	char m_dFields[m_iMaxFields][m_iMaxFieldLen];
-	BYTE * m_ppFields[m_iMaxFields];
+	uint8_t * m_ppFields[m_iMaxFields];
 	int m_dFieldLengths[m_iMaxFields];
 public:
 	explicit SphDocRandomizer_c ( const CSphSchema & tSchema ) : CSphSource_Document ( "test_doc" )
 	{
 		m_tSchema = tSchema;
 		for ( int i=0; i<m_iMaxFields; i++ )
-			m_ppFields[i] = (BYTE *)&m_dFields[i];
+			m_ppFields[i] = (uint8_t *)&m_dFields[i];
 	}
 
-	virtual BYTE ** NextDocument ( CSphString & )
+	virtual uint8_t ** NextDocument ( CSphString & )
 	{
 		if ( m_tDocInfo.m_uDocID>800 )
 		{
@@ -2645,7 +2645,7 @@ void TestRTSendVsMerge ()
 	assert ( pSorter );
 
 	CSphString sFilter;
-	CSphVector<DWORD> dMvas;
+	CSphVector<uint32_t> dMvas;
 	for ( ;; )
 	{
 		Verify ( pSrc->IterateDocument ( sError ) );
@@ -2732,7 +2732,7 @@ void TestRankerFactors ()
 	tCol.m_eAttrType = SPH_ATTR_INTEGER;
 	tSrcSchema.AddAttr ( tCol, true );
 
-	SphTestDoc_c * pSrc = new SphTestDoc_c ( tSrcSchema, (BYTE **)dFields, sizeof(dFields)/sizeof(dFields[0])/2, 2 );
+	SphTestDoc_c * pSrc = new SphTestDoc_c ( tSrcSchema, (uint8_t **)dFields, sizeof(dFields)/sizeof(dFields[0])/2, 2 );
 
 	pSrc->SetTokenizer ( pTok );
 	pSrc->SetDict ( pDict );
@@ -2756,7 +2756,7 @@ void TestRankerFactors ()
 	Verify ( pIndex->Prealloc ( false ) );
 
 	CSphString sFilter;
-	CSphVector<DWORD> dMvas;
+	CSphVector<uint32_t> dMvas;
 	for ( ;; )
 	{
 		Verify ( pSrc->IterateDocument ( sError ) );
@@ -2910,10 +2910,10 @@ void TestSentenceTokenizer()
 	int i = 0;
 	while ( sTest[i] )
 	{
-		pTok->SetBuffer ( (BYTE*)sTest[i], strlen ( sTest[i] ) );
+		pTok->SetBuffer ( (uint8_t*)sTest[i], strlen ( sTest[i] ) );
 		i++;
 
-		BYTE * sTok;
+		uint8_t * sTok;
 		while ( ( sTok = pTok->GetToken() )!=NULL )
 		{
 			assert ( !strcmp ( (char*)sTok, sTest[i] ) );
@@ -2956,17 +2956,17 @@ void TestSpanSearch()
 
 //////////////////////////////////////////////////////////////////////////
 
-static void TestRebalance_fn ( DWORD * pData, int iLen, int iStride, int iWeights )
+static void TestRebalance_fn ( uint32_t * pData, int iLen, int iStride, int iWeights )
 {
 	assert ( ( iLen%iStride )==0 );
 	iLen /= iStride;
 	CSphFixedVector<int64_t> dTimers ( iWeights );
-	CSphFixedVector<WORD> dWeights ( iWeights );
+	CSphFixedVector<uint16_t> dWeights ( iWeights );
 	for ( int i=0; i<iLen; i++ )
 	{
 		for ( int j=0; j<iWeights; j++ )
 		{
-			dWeights[j] = (WORD)pData[ i * iStride + j ];
+			dWeights[j] = (uint16_t)pData[ i * iStride + j ];
 			dTimers[j] = pData[ i * iStride + iWeights + j ];
 		}
 
@@ -2986,7 +2986,7 @@ void TestRebalance()
 
 	/* reference captured on live box, ie how it was
 	//					old weights,	timers,				new weights
-	DWORD dData[] = {	32395, 33139,	228828, 186751,		29082, 36452,
+	uint32_t dData[] = {	32395, 33139,	228828, 186751,		29082, 36452,
 						29082, 36452,	218537, 207608,		28255, 37279,
 						28255, 37279,	194305, 214800,		29877, 35657,
 						29877, 35657,	190062, 207614,		31318, 34216,
@@ -3003,7 +3003,7 @@ void TestRebalance()
 						59963, 5571,	202851, 412733,		62140, 3394,
 	}; */
 	//					old weights,	timers,				new weights
-	DWORD dData1[] = {	32395, 33139,	228828, 186751,		29449, 36085,
+	uint32_t dData1[] = {	32395, 33139,	228828, 186751,		29449, 36085,
 						29082, 36452,	218537, 207608,		31927, 33607,
 						28255, 37279,	194305, 214800,		34409, 31125,
 						29877, 35657,	190062, 207614,		34213, 31321,
@@ -3021,13 +3021,13 @@ void TestRebalance()
 	};
 	TestRebalance_fn ( dData1, sizeof(dData1) / sizeof(dData1[0]), 6, 2 );
 
-	DWORD dData2[] ={ 0, 1,				0, 18469,			6553, 58981 };
+	uint32_t dData2[] ={ 0, 1,				0, 18469,			6553, 58981 };
 	TestRebalance_fn ( dData2, sizeof(dData2) / sizeof(dData2[0]), 6, 2 );
 
-	DWORD dData3[] ={ 0, 1, 2, 3,		0, 0, 0, 18469,		2184, 2184, 2184, 58981 };
+	uint32_t dData3[] ={ 0, 1, 2, 3,		0, 0, 0, 18469,		2184, 2184, 2184, 58981 };
 	TestRebalance_fn ( dData3, sizeof ( dData3 ) / sizeof ( dData3[0] ), 12, 4 );
 
-	DWORD dData4[] ={ 0, 1, 2,			7100, 0, 18469,		42603, 6553, 16377 };
+	uint32_t dData4[] ={ 0, 1, 2,			7100, 0, 18469,		42603, 6553, 16377 };
 	TestRebalance_fn ( dData4, sizeof ( dData4 ) / sizeof ( dData4[0] ), 9, 3 );
 
 	printf ( "ok\n" );
@@ -3050,7 +3050,7 @@ void BenchStemmer ()
 	SN_set_current ( pSnow, strlen(test), (const symbol *)test );
 	pSnow->p [ pSnow->l ] = 0;
 	english_ISO_8859_1_stem ( pSnow );
-	stem_en ( (BYTE*)test, strlen(test) );
+	stem_en ( (uint8_t*)test, strlen(test) );
 #endif
 #endif
 
@@ -3058,7 +3058,7 @@ void BenchStemmer ()
 	struct stemmer * z = create_stemmer();
 #endif
 
-	BYTE * pRaw = new BYTE [ POOLSIZE ];
+	uint8_t * pRaw = new uint8_t [ POOLSIZE ];
 	FILE * fp = fopen ( CORPUS, "rb" );
 	if ( !fp )
 		sphDie ( "fopen %s failed", CORPUS );
@@ -3073,18 +3073,18 @@ void BenchStemmer ()
 
 	pTok->SetBuffer ( pRaw, iLen );
 
-	BYTE * pTokens = new BYTE [ POOLSIZE ];
-	BYTE * p = pTokens;
-	BYTE * sTok;
+	uint8_t * pTokens = new uint8_t [ POOLSIZE ];
+	uint8_t * p = pTokens;
+	uint8_t * sTok;
 	int iToks = 0;
 	int iBytes = 0;
 	int iStemmed = 0;
 	while ( ( sTok = pTok->GetToken() )!=NULL )
 	{
-		BYTE * pStart = p++; // 1 byte for length
+		uint8_t * pStart = p++; // 1 byte for length
 		while ( *sTok )
 			*p++ = *sTok++;
-		*pStart = (BYTE)( p-pStart-1 ); // store length
+		*pStart = (uint8_t)( p-pStart-1 ); // store length
 		for ( int i=0; i<GAP; i++ )
 			*p++ = '\0'; // trailing zero and a safety gap
 		if ( p>=pTokens+POOLSIZE )
@@ -3098,7 +3098,7 @@ void BenchStemmer ()
 #if 0
 	int dCharStats[256];
 	memset ( dCharStats, 0, sizeof(dCharStats) );
-	for ( BYTE * t = pTokens; t<pTokens+iBytes; t++ )
+	for ( uint8_t * t = pTokens; t<pTokens+iBytes; t++ )
 		dCharStats[*t]++;
 
 	const char * sDump = "aeiouywxY";
@@ -3163,7 +3163,7 @@ void BenchStemmer ()
 	uint64_t uHash = sphFNV64 ( pTokens, iBytes );
 	printf ( "stemmed %d tokens (%d bytes) in %d msec, hash %08x %08x\n",
 		iToks, iBytes, (int)(tmStem/1000),
-		(DWORD)( uHash>>32 ), (DWORD)( uHash & 0xffffffffUL ) );
+		(uint32_t)( uHash>>32 ), (uint32_t)( uHash & 0xffffffffUL ) );
 	if ( uHash!=U64C ( 0x54ef4f21994b67db ) )
 		printf ( "ERROR, HASH MISMATCH\n" );
 
@@ -3464,20 +3464,20 @@ void TestArabicStemmer()
 	{
 		char sBuf[64];
 		snprintf ( sBuf, sizeof(sBuf), "%s", dTests[i] );
-		stem_ar_utf8 ( (BYTE*)sBuf );
+		stem_ar_utf8 ( (uint8_t*)sBuf );
 		assert ( strcmp ( sBuf, dTests[i+1] )==0 );
 	}
 
 	char sTest1[16] = "\xD9\x80\xD9\x80\xD9\x80\xD9\x80\0abcdef";
 	char sRef1[16] = "\0\0\0\0\0\0\0\0\0abcdef";
 
-	stem_ar_utf8 ( (BYTE*)sTest1 );
+	stem_ar_utf8 ( (uint8_t*)sTest1 );
 	assert ( memcmp ( sTest1, sRef1, sizeof(sTest1) )==0 );
 
 
 	char sTest2[] = "\xd8\xa7\xd9\x84\xd8\xb7\xd8\xa7\xd9\x84\xd8\xa8\xd8\xa9\0";
 	char sRef2[] = "\xd8\xb7\xd9\x84\xd8\xa8\0";
-	CSphTightVector<BYTE> dTest22;
+	CSphTightVector<uint8_t> dTest22;
 	dTest22.Resize ( sizeof(sTest2) );
 	for ( int i=0; i<10; i++ )
 	{
@@ -3910,7 +3910,7 @@ void TestSource ()
 	// check parsed fields
 	for ( int iTest=1; ; )
 	{
-		BYTE ** pFields = pCSV->NextDocument ( sError );
+		uint8_t ** pFields = pCSV->NextDocument ( sError );
 		assert ( pFields || pCSV->m_tDocInfo.m_uDocID==0 );
 		if ( pCSV->m_tDocInfo.m_uDocID==0 )
 			break;

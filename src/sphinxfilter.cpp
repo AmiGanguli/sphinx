@@ -138,7 +138,7 @@ struct Filter_Values: public IFilter_Attr, IFilter_Values
 		return EvalValues ( tMatch.GetAttr ( m_tLocator ) );
 	}
 
-	virtual bool EvalBlock ( const DWORD * pMinDocinfo, const DWORD * pMaxDocinfo ) const
+	virtual bool EvalBlock ( const uint32_t * pMinDocinfo, const uint32_t * pMaxDocinfo ) const
 	{
 		if ( m_tLocator.m_bDynamic )
 			return true; // ignore computed attributes
@@ -171,7 +171,7 @@ struct Filter_SingleValue : public IFilter_Attr
 		return tMatch.GetAttr ( m_tLocator )==m_RefValue;
 	}
 
-	virtual bool EvalBlock ( const DWORD * pMinDocinfo, const DWORD * pMaxDocinfo ) const
+	virtual bool EvalBlock ( const uint32_t * pMinDocinfo, const uint32_t * pMaxDocinfo ) const
 	{
 		if ( m_tLocator.m_bDynamic )
 			return true; // ignore computed attributes
@@ -211,7 +211,7 @@ struct Filter_Range: public IFilter_Attr, IFilter_Range
 		return EvalRange<HAS_EQUAL> ( tMatch.GetAttr ( m_tLocator ), m_iMinValue, m_iMaxValue );
 	}
 
-	virtual bool EvalBlock ( const DWORD * pMinDocinfo, const DWORD * pMaxDocinfo ) const
+	virtual bool EvalBlock ( const uint32_t * pMinDocinfo, const uint32_t * pMaxDocinfo ) const
 	{
 		if ( m_tLocator.m_bDynamic )
 			return true; // ignore computed attributes
@@ -249,13 +249,13 @@ struct Filter_FloatRange : public IFilter_Attr
 			return fValue>m_fMinValue && fValue<m_fMaxValue;
 	}
 
-	virtual bool EvalBlock ( const DWORD * pMinDocinfo, const DWORD * pMaxDocinfo ) const
+	virtual bool EvalBlock ( const uint32_t * pMinDocinfo, const uint32_t * pMaxDocinfo ) const
 	{
 		if ( m_tLocator.m_bDynamic )
 			return true; // ignore computed attributes
 
-		float fBlockMin = sphDW2F ( (DWORD)sphGetRowAttr ( DOCINFO2ATTRS ( pMinDocinfo ), m_tLocator ) );
-		float fBlockMax = sphDW2F ( (DWORD)sphGetRowAttr ( DOCINFO2ATTRS ( pMaxDocinfo ), m_tLocator ) );
+		float fBlockMin = sphDW2F ( (uint32_t)sphGetRowAttr ( DOCINFO2ATTRS ( pMinDocinfo ), m_tLocator ) );
+		float fBlockMax = sphDW2F ( (uint32_t)sphGetRowAttr ( DOCINFO2ATTRS ( pMaxDocinfo ), m_tLocator ) );
 		// not-reject
 		if_const ( HAS_EQUAL )
 			return ( m_fMaxValue>=fBlockMin && m_fMinValue<=fBlockMax );
@@ -282,7 +282,7 @@ struct Filter_IdValues: public IFilter_Values
 		return false;
 	}
 
-	virtual bool EvalBlock ( const DWORD * pMinDocinfo, const DWORD * pMaxDocinfo ) const
+	virtual bool EvalBlock ( const uint32_t * pMinDocinfo, const uint32_t * pMaxDocinfo ) const
 	{
 		const SphAttr_t uBlockMin = DOCINFO2ID ( pMinDocinfo );
 		const SphAttr_t uBlockMax = DOCINFO2ID ( pMaxDocinfo );
@@ -314,7 +314,7 @@ struct Filter_IdRange: public IFilter_Range
 			return uID>(SphDocID_t)m_iMinValue && uID<(SphDocID_t)m_iMaxValue;
 	}
 
-	virtual bool EvalBlock ( const DWORD * pMinDocinfo, const DWORD * pMaxDocinfo ) const
+	virtual bool EvalBlock ( const uint32_t * pMinDocinfo, const uint32_t * pMaxDocinfo ) const
 	{
 		const SphDocID_t uBlockMin = DOCINFO2ID ( pMinDocinfo );
 		const SphDocID_t uBlockMax = DOCINFO2ID ( pMaxDocinfo );
@@ -365,7 +365,7 @@ struct Filter_WeightRange: public IFilter_Range
 
 struct IFilter_MVA: virtual IFilter_Attr
 {
-	const DWORD *	m_pMvaStorage;
+	const uint32_t *	m_pMvaStorage;
 	bool			m_bArenaProhibit;
 
 	IFilter_MVA ()
@@ -373,13 +373,13 @@ struct IFilter_MVA: virtual IFilter_Attr
 		, m_bArenaProhibit ( false )
 	{}
 
-	virtual void SetMVAStorage ( const DWORD * pMva, bool bArenaProhibit )
+	virtual void SetMVAStorage ( const uint32_t * pMva, bool bArenaProhibit )
 	{
 		m_pMvaStorage = pMva;
 		m_bArenaProhibit = bArenaProhibit;
 	}
 
-	inline bool LoadMVA ( const CSphMatch & tMatch, const DWORD ** pMva, const DWORD ** pMvaMax ) const
+	inline bool LoadMVA ( const CSphMatch & tMatch, const uint32_t ** pMva, const uint32_t ** pMvaMax ) const
 	{
 		assert ( m_pMvaStorage );
 
@@ -399,14 +399,14 @@ struct Filter_MVAValues_Any : public IFilter_MVA, IFilter_Values
 {
 	virtual bool Eval ( const CSphMatch & tMatch ) const
 	{
-		const DWORD * pMva, * pMvaMax;
+		const uint32_t * pMva, * pMvaMax;
 		if ( !LoadMVA ( tMatch, &pMva, &pMvaMax ) )
 			return false;
 
 		return MvaEval ( pMva, pMvaMax );
 	}
 
-	bool MvaEval ( const DWORD * pMva, const DWORD * pMvaMax ) const
+	bool MvaEval ( const uint32_t * pMva, const uint32_t * pMvaMax ) const
 	{
 		const SphAttr_t * pFilter = m_pValues;
 		const SphAttr_t * pFilterMax = pFilter + m_iValueCount;
@@ -439,14 +439,14 @@ struct Filter_MVAValues_All : public IFilter_MVA, IFilter_Values
 {
 	virtual bool Eval ( const CSphMatch & tMatch ) const
 	{
-		const DWORD * pMva, * pMvaMax;
+		const uint32_t * pMva, * pMvaMax;
 		if ( !LoadMVA ( tMatch, &pMva, &pMvaMax ) )
 			return false;
 
 		return MvaEval ( pMva, pMvaMax );
 	}
 
-	bool MvaEval ( const DWORD * pMva, const DWORD * pMvaMax ) const
+	bool MvaEval ( const uint32_t * pMva, const uint32_t * pMvaMax ) const
 	{
 		const T * L = (const T *)pMva;
 		const T * R = (const T *)pMvaMax;
@@ -462,14 +462,14 @@ struct Filter_MVAValues_All : public IFilter_MVA, IFilter_Values
 };
 
 
-static DWORD GetMvaValue ( const DWORD * pVal )
+static uint32_t GetMvaValue ( const uint32_t * pVal )
 {
 	return *pVal;
 }
 
 static int64_t GetMvaValue ( const int64_t * pVal )
 {
-	return MVA_UPSIZE ( (const DWORD *)pVal );
+	return MVA_UPSIZE ( (const uint32_t *)pVal );
 }
 
 template < typename T, bool HAS_EQUAL >
@@ -477,14 +477,14 @@ struct Filter_MVARange_Any : public IFilter_MVA, IFilter_Range
 {
 	virtual bool Eval ( const CSphMatch & tMatch ) const
 	{
-		const DWORD * pMva, * pMvaMax;
+		const uint32_t * pMva, * pMvaMax;
 		if ( !LoadMVA ( tMatch, &pMva, &pMvaMax ) )
 			return false;
 
 		return MvaEval ( pMva, pMvaMax );
 	}
 
-	bool MvaEval ( const DWORD * pMva, const DWORD * pMvaMax ) const
+	bool MvaEval ( const uint32_t * pMva, const uint32_t * pMvaMax ) const
 	{
 		const T * pEnd = (const T *)pMvaMax;
 		const T * L = (const T *)pMva;
@@ -519,14 +519,14 @@ struct Filter_MVARange_All : public IFilter_MVA, IFilter_Range
 {
 	virtual bool Eval ( const CSphMatch & tMatch ) const
 	{
-		const DWORD * pMva, * pMvaMax;
+		const uint32_t * pMva, * pMvaMax;
 		if ( !LoadMVA ( tMatch, &pMva, &pMvaMax ) )
 			return false;
 
 		return MvaEval ( pMva, pMvaMax );
 	}
 
-	bool MvaEval ( const DWORD * pMva, const DWORD * pMvaMax ) const
+	bool MvaEval ( const uint32_t * pMva, const uint32_t * pMvaMax ) const
 	{
 		const T * L = (const T *)pMva;
 		const T * pEnd = (const T *)pMvaMax;
@@ -555,12 +555,12 @@ SphStringCmp_fn CmpFn ( ESphCollation eCollation )
 class FilterString_c : public IFilter_Attr
 {
 private:
-	CSphFixedVector<BYTE>	m_dVal;
+	CSphFixedVector<uint8_t>	m_dVal;
 	bool					m_bEq;
 
 protected:
 	SphStringCmp_fn			m_fnStrCmp;
-	const BYTE *			m_pStringBase;
+	const uint8_t *			m_pStringBase;
 	bool					m_bPacked;
 
 public:
@@ -590,7 +590,7 @@ public:
 		}
 	}
 
-	virtual void SetStringStorage ( const BYTE * pStrings )
+	virtual void SetStringStorage ( const uint8_t * pStrings )
 	{
 		m_pStringBase = pStrings;
 	}
@@ -602,13 +602,13 @@ public:
 
 		SphAttr_t uVal = tMatch.GetAttr ( m_tLocator );
 
-		const BYTE * pStr;
+		const uint8_t * pStr;
 		if ( !uVal )
-			pStr = (const BYTE*)"\0"; // 2 bytes, for packed strings
+			pStr = (const uint8_t*)"\0"; // 2 bytes, for packed strings
 		else if ( m_bPacked )
 			pStr = m_pStringBase + uVal;
 		else
-			pStr = (const BYTE *)uVal;
+			pStr = (const uint8_t *)uVal;
 
 		bool bEq = ( m_fnStrCmp ( pStr, m_dVal.Begin(), m_bPacked )==0 );
 		return ( m_bEq==bEq );
@@ -618,7 +618,7 @@ public:
 
 struct Filter_StringValues_c: FilterString_c
 {
-	CSphVector<BYTE>		m_dVal;
+	CSphVector<uint8_t>		m_dVal;
 	CSphVector<int>			m_dOfs;
 
 	Filter_StringValues_c ( ESphCollation eCollation, ESphAttr eType )
@@ -657,13 +657,13 @@ struct Filter_StringValues_c: FilterString_c
 	{
 		SphAttr_t uVal = tMatch.GetAttr ( m_tLocator );
 
-		const BYTE * pStr;
+		const uint8_t * pStr;
 		if ( !uVal )
-			pStr = (const BYTE*)"\0";
+			pStr = (const uint8_t*)"\0";
 		else if ( m_bPacked )
 			pStr = m_pStringBase + uVal;
 		else
-			pStr = (const BYTE *)uVal;
+			pStr = (const uint8_t *)uVal;
 
 		ARRAY_FOREACH ( i, m_dOfs )
 			if ( m_fnStrCmp ( pStr, m_dVal.Begin() + m_dOfs[i], m_bPacked )==0 )
@@ -697,7 +697,7 @@ struct Filter_And2 : public ISphFilter
 		return m_pArg1->Eval ( tMatch ) && m_pArg2->Eval ( tMatch );
 	}
 
-	virtual bool EvalBlock ( const DWORD * pMin, const DWORD * pMax ) const
+	virtual bool EvalBlock ( const uint32_t * pMin, const uint32_t * pMax ) const
 	{
 		return m_pArg1->EvalBlock ( pMin, pMax ) && m_pArg2->EvalBlock ( pMin, pMax );
 	}
@@ -709,13 +709,13 @@ struct Filter_And2 : public ISphFilter
 		return this;
 	}
 
-	virtual void SetMVAStorage ( const DWORD * pMva, bool bArenaProhibit )
+	virtual void SetMVAStorage ( const uint32_t * pMva, bool bArenaProhibit )
 	{
 		m_pArg1->SetMVAStorage ( pMva, bArenaProhibit );
 		m_pArg2->SetMVAStorage ( pMva, bArenaProhibit );
 	}
 
-	virtual void SetStringStorage ( const BYTE * pStrings )
+	virtual void SetStringStorage ( const uint8_t * pStrings )
 	{
 		m_pArg1->SetStringStorage ( pStrings );
 		m_pArg2->SetStringStorage ( pStrings );
@@ -749,7 +749,7 @@ struct Filter_And3 : public ISphFilter
 		return m_pArg1->Eval ( tMatch ) && m_pArg2->Eval ( tMatch ) && m_pArg3->Eval ( tMatch );
 	}
 
-	virtual bool EvalBlock ( const DWORD * pMin, const DWORD * pMax ) const
+	virtual bool EvalBlock ( const uint32_t * pMin, const uint32_t * pMax ) const
 	{
 		return m_pArg1->EvalBlock ( pMin, pMax ) && m_pArg2->EvalBlock ( pMin, pMax ) && m_pArg3->EvalBlock ( pMin, pMax );
 	}
@@ -761,14 +761,14 @@ struct Filter_And3 : public ISphFilter
 		return this;
 	}
 
-	virtual void SetMVAStorage ( const DWORD * pMva, bool bArenaProhibit )
+	virtual void SetMVAStorage ( const uint32_t * pMva, bool bArenaProhibit )
 	{
 		m_pArg1->SetMVAStorage ( pMva, bArenaProhibit );
 		m_pArg2->SetMVAStorage ( pMva, bArenaProhibit );
 		m_pArg3->SetMVAStorage ( pMva, bArenaProhibit );
 	}
 
-	virtual void SetStringStorage ( const BYTE * pStrings )
+	virtual void SetStringStorage ( const uint8_t * pStrings )
 	{
 		m_pArg1->SetStringStorage ( pStrings );
 		m_pArg2->SetStringStorage ( pStrings );
@@ -801,7 +801,7 @@ struct Filter_And: public ISphFilter
 		return true;
 	}
 
-	virtual bool EvalBlock ( const DWORD * pMinDocinfo, const DWORD * pMaxDocinfo ) const
+	virtual bool EvalBlock ( const uint32_t * pMinDocinfo, const uint32_t * pMaxDocinfo ) const
 	{
 		ARRAY_FOREACH ( i, m_dFilters )
 			if ( !m_dFilters[i]->EvalBlock ( pMinDocinfo, pMaxDocinfo ) )
@@ -821,13 +821,13 @@ struct Filter_And: public ISphFilter
 	}
 
 
-	virtual void SetMVAStorage ( const DWORD * pMva, bool bArenaProhibit )
+	virtual void SetMVAStorage ( const uint32_t * pMva, bool bArenaProhibit )
 	{
 		ARRAY_FOREACH ( i, m_dFilters )
 			m_dFilters[i]->SetMVAStorage ( pMva, bArenaProhibit );
 	}
 
-	virtual void SetStringStorage ( const BYTE * pStrings )
+	virtual void SetStringStorage ( const uint8_t * pStrings )
 	{
 		ARRAY_FOREACH ( i, m_dFilters )
 			m_dFilters[i]->SetStringStorage ( pStrings );
@@ -876,19 +876,19 @@ struct Filter_Not: public ISphFilter
 		return !m_pFilter->Eval ( tMatch );
 	}
 
-	virtual bool EvalBlock ( const DWORD *, const DWORD * ) const
+	virtual bool EvalBlock ( const uint32_t *, const uint32_t * ) const
 	{
 		// if block passes through the filter we can't just negate the
 		// result since it's imprecise at this point
 		return true;
 	}
 
-	virtual void SetMVAStorage ( const DWORD * pMva, bool bArenaProhibit )
+	virtual void SetMVAStorage ( const uint32_t * pMva, bool bArenaProhibit )
 	{
 		m_pFilter->SetMVAStorage ( pMva, bArenaProhibit );
 	}
 
-	virtual void SetStringStorage ( const BYTE * pStrings )
+	virtual void SetStringStorage ( const uint8_t * pStrings )
 	{
 		m_pFilter->SetStringStorage ( pStrings );
 	}
@@ -979,15 +979,15 @@ static ISphFilter * CreateFilter ( ESphAttr eAttrType, ESphFilter eFilterType, E
 
 		switch ( iIndex )
 		{
-			case 0:		return new Filter_MVAValues_Any<DWORD>();
-			case 1:		return new Filter_MVAValues_Any<DWORD>();
-			case 2:		return new Filter_MVAValues_All<DWORD>();
-			case 3:		return new Filter_MVAValues_All<DWORD>();
+			case 0:		return new Filter_MVAValues_Any<uint32_t>();
+			case 1:		return new Filter_MVAValues_Any<uint32_t>();
+			case 2:		return new Filter_MVAValues_All<uint32_t>();
+			case 3:		return new Filter_MVAValues_All<uint32_t>();
 
-			case 4:		return new Filter_MVARange_Any<DWORD, false>();
-			case 5:		return new Filter_MVARange_Any<DWORD, true>();
-			case 6:		return new Filter_MVARange_All<DWORD, false>();
-			case 7:		return new Filter_MVARange_All<DWORD, true>();
+			case 4:		return new Filter_MVARange_Any<uint32_t, false>();
+			case 5:		return new Filter_MVARange_Any<uint32_t, true>();
+			case 6:		return new Filter_MVARange_All<uint32_t, false>();
+			case 7:		return new Filter_MVARange_All<uint32_t, true>();
 
 			case 8:		return new Filter_MVAValues_Any<int64_t>();
 			case 9:		return new Filter_MVAValues_Any<int64_t>();
@@ -1054,7 +1054,7 @@ template<typename BASE>
 class ExprFilter_c : public BASE
 {
 protected:
-	const BYTE *				m_pStrings;
+	const uint8_t *				m_pStrings;
 	CSphRefcountedPtr<ISphExpr>	m_pExpr;
 
 public:
@@ -1063,7 +1063,7 @@ public:
 		, m_pExpr ( pExpr )
 	{}
 
-	virtual void SetStringStorage ( const BYTE * pStrings )
+	virtual void SetStringStorage ( const uint8_t * pStrings )
 	{
 		m_pStrings = pStrings;
 		if ( m_pExpr.Ptr() )
@@ -1134,7 +1134,7 @@ public:
 class ExprFilterString_c : public ExprFilter_c<ISphFilter>
 {
 protected:
-	CSphFixedVector<BYTE>	m_dVal;
+	CSphFixedVector<uint8_t>	m_dVal;
 	SphStringCmp_fn			m_fnStrCmp;
 	bool					m_bEq;
 
@@ -1158,10 +1158,10 @@ public:
 
 	virtual bool Eval ( const CSphMatch & tMatch ) const
 	{
-		const BYTE * pVal;
+		const uint8_t * pVal;
 		int iLen = m_pExpr->StringEval ( tMatch, &pVal );
 		int iPacked = iLen==0 ? 0 : iLen < 0x80 ? 1 : iLen < 0x4000 ? 2 : 3;
-		pVal = iLen ? pVal : (const BYTE*)"\0";
+		pVal = iLen ? pVal : (const uint8_t*)"\0";
 		bool bEq = ( m_fnStrCmp ( pVal-iPacked, m_dVal.Begin(), true )==0 );
 		return ( m_bEq==bEq );
 	}
@@ -1185,7 +1185,7 @@ public:
 		m_tLoc = tLocator;
 	}
 
-	virtual ESphJsonType GetKey ( const BYTE ** ppKey, const CSphMatch & tMatch ) const
+	virtual ESphJsonType GetKey ( const uint8_t ** ppKey, const CSphMatch & tMatch ) const
 	{
 		assert ( ppKey );
 		if ( !m_pStrings || !m_pExpr )
@@ -1193,7 +1193,7 @@ public:
 		uint64_t uValue = m_pExpr->Int64Eval ( tMatch );
 		if ( uValue==0 ) // either no data or invalid path
 			return JSON_NULL;
-		const BYTE * pValue = m_pStrings + ( uValue & 0xffffffff );
+		const uint8_t * pValue = m_pStrings + ( uValue & 0xffffffff );
 		ESphJsonType eRes = (ESphJsonType)( uValue >> 32 );
 		*ppKey = pValue;
 		return eRes;
@@ -1205,15 +1205,15 @@ public:
 
 		if ( !m_pExpr ) // regular attribute? return true if blob size is null
 		{
-			const BYTE * pStr = NULL;
-			DWORD uOffset = (DWORD) tMatch.GetAttr ( m_tLoc );
+			const uint8_t * pStr = NULL;
+			uint32_t uOffset = (uint32_t) tMatch.GetAttr ( m_tLoc );
 			if ( uOffset )
 				sphUnpackStr ( m_pStrings+uOffset, &pStr );
 			return m_bEquals ^ ( pStr!=NULL );
 		}
 
 		// possibly json
-		const BYTE * pValue;
+		const uint8_t * pValue;
 		int64_t iRes = GetKey ( &pValue, tMatch );
 		return m_bEquals ^ ( iRes!=JSON_NULL );
 	}
@@ -1315,7 +1315,7 @@ struct Filter_KillList : public ISphFilter
 // PUBLIC FACING INTERFACE
 //////////////////////////////////////////////////////////////////////////
 
-static ISphFilter * CreateFilter ( const CSphFilterSettings & tSettings, const CSphString & sAttrName, const ISphSchema & tSchema, const DWORD * pMvaPool, const BYTE * pStrings,
+static ISphFilter * CreateFilter ( const CSphFilterSettings & tSettings, const CSphString & sAttrName, const ISphSchema & tSchema, const uint32_t * pMvaPool, const uint8_t * pStrings,
 	CSphString & sError, CSphString & sWarning, bool bHaving, ESphCollation eCollation, bool bArenaProhibit )
 {
 	ISphFilter * pFilter = NULL;
@@ -1424,7 +1424,7 @@ static ISphFilter * CreateFilter ( const CSphFilterSettings & tSettings, const C
 }
 
 
-ISphFilter * sphCreateFilter ( const CSphFilterSettings & tSettings, const ISphSchema & tSchema, const DWORD * pMvaPool, const BYTE * pStrings, CSphString & sError, CSphString & sWarning, ESphCollation eCollation, bool bArenaProhibit )
+ISphFilter * sphCreateFilter ( const CSphFilterSettings & tSettings, const ISphSchema & tSchema, const uint32_t * pMvaPool, const uint8_t * pStrings, CSphString & sError, CSphString & sWarning, ESphCollation eCollation, bool bArenaProhibit )
 {
 	return CreateFilter ( tSettings, tSettings.m_sAttrName, tSchema, pMvaPool, pStrings, sError, sWarning, false, eCollation, bArenaProhibit );
 }

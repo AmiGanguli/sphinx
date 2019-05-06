@@ -25,7 +25,7 @@
 
 
 int				g_iPingInterval		= 0;		// by default ping HA agents every 1 second
-DWORD			g_uHAPeriodKarma	= 60;		// by default use the last 1 minute statistic to determine the best HA agent
+uint32_t			g_uHAPeriodKarma	= 60;		// by default use the last 1 minute statistic to determine the best HA agent
 
 int				g_iPersistentPoolSize	= 0;
 
@@ -62,16 +62,16 @@ bool HostDashboard_t::IsOlder ( int64_t iTime ) const
 	return ( (iTime-m_iLastAnswerTime)>g_iPingInterval*1000 );
 }
 
-DWORD HostDashboard_t::GetCurSeconds()
+uint32_t HostDashboard_t::GetCurSeconds()
 {
 	int64_t iNow = sphMicroTimer()/1000000;
-	return DWORD ( iNow & 0xFFFFFFFF );
+	return uint32_t ( iNow & 0xFFFFFFFF );
 }
 
-bool HostDashboard_t::IsHalfPeriodChanged ( DWORD * pLast )
+bool HostDashboard_t::IsHalfPeriodChanged ( uint32_t * pLast )
 {
 	assert ( pLast );
-	DWORD uSeconds = GetCurSeconds();
+	uint32_t uSeconds = GetCurSeconds();
 	if ( ( uSeconds - *pLast )>( g_uHAPeriodKarma / 2 ) )
 	{
 		*pLast = uSeconds;
@@ -82,7 +82,7 @@ bool HostDashboard_t::IsHalfPeriodChanged ( DWORD * pLast )
 
 AgentDash_t*	HostDashboard_t::GetCurrentStat()
 {
-	DWORD uTime = GetCurSeconds()/g_uHAPeriodKarma;
+	uint32_t uTime = GetCurSeconds()/g_uHAPeriodKarma;
 	int iIdx = uTime % STATS_DASH_TIME;
 	AgentDash_t & dStats = m_dStats[iIdx];
 	if ( dStats.m_uTimestamp!=uTime ) // we have new or reused stat
@@ -96,13 +96,13 @@ void HostDashboard_t::GetCollectedStat ( HostStatSnapshot_t& dResult, int iPerio
 	AgentDash_t tAccum;
 	tAccum.Reset ();
 
-	DWORD uSeconds = GetCurSeconds();
+	uint32_t uSeconds = GetCurSeconds();
 	if ( (uSeconds % g_uHAPeriodKarma) < (g_uHAPeriodKarma/2) )
 		++iPeriods;
 
 	iPeriods = Min ( iPeriods, STATS_DASH_TIME );
 
-	DWORD uTime = uSeconds/g_uHAPeriodKarma;
+	uint32_t uTime = uSeconds/g_uHAPeriodKarma;
 	int iIdx = uTime % STATS_DASH_TIME;
 
 	CSphScopedRLock tRguard ( m_dDataLock );
@@ -246,9 +246,9 @@ void MultiAgentDesc_t::FinalizeInitialization ()
 {
 	if ( IsHA () )
 	{
-		WORD uFrac = WORD ( 0xFFFF / GetLength () );
+		uint16_t uFrac = uint16_t ( 0xFFFF / GetLength () );
 		m_dWeights.Reset ( GetLength () );
-		for ( WORD& uWeight : m_dWeights )
+		for ( uint16_t& uWeight : m_dWeights )
 			uWeight = uFrac;
 	}
 }
@@ -292,11 +292,11 @@ void MultiAgentDesc_t::ChooseWeightedRandAgent ( int * pBestAgent, CSphVector<in
 	assert ( pBestAgent );
 	CSphScopedRLock tLock ( m_dWeightLock );
 	assert ( IsInitFinished () );
-	DWORD uBound = m_dWeights[*pBestAgent];
-	DWORD uLimit = uBound;
+	uint32_t uBound = m_dWeights[*pBestAgent];
+	uint32_t uLimit = uBound;
 	for ( auto j : dCandidates )
 		uLimit += m_dWeights[j];
-	DWORD uChance = sphRand() % uLimit;
+	uint32_t uChance = sphRand() % uLimit;
 
 	if ( uChance<=uBound )
 		return;
@@ -310,7 +310,7 @@ void MultiAgentDesc_t::ChooseWeightedRandAgent ( int * pBestAgent, CSphVector<in
 	}
 }
 
-static void LogAgentWeights ( const WORD * pOldWeights, const WORD * pCurWeights, const int64_t * pTimers, const CSphVector<AgentDesc_c> & dAgents )
+static void LogAgentWeights ( const uint16_t * pOldWeights, const uint16_t * pCurWeights, const int64_t * pTimers, const CSphVector<AgentDesc_c> & dAgents )
 {
 	if ( g_eLogLevel<SPH_LOG_DEBUG )
 		return;
@@ -408,7 +408,7 @@ void MultiAgentDesc_t::CheckRecalculateWeights ( const CSphFixedVector<int64_t> 
 	CSphScopedWLock tWguard ( m_dWeightLock );
 	if ( IsInitFinished() && dTimers.GetLength () && HostDashboard_t::IsHalfPeriodChanged ( &m_uTimestamp ) )
 	{
-		CSphFixedVector<WORD> dWeights ( GetLength () );
+		CSphFixedVector<uint16_t> dWeights ( GetLength () );
 		// since we'll update values anyway, aquire w-lock.
 		memcpy ( dWeights.Begin (), m_dWeights.Begin (), sizeof ( dWeights[0] ) * dWeights.GetLength () );
 		RebalanceWeights ( dTimers, dWeights.Begin () );
@@ -568,7 +568,7 @@ MultiAgentDesc_t & MultiAgentDesc_t::operator= ( const MultiAgentDesc_t & rhs )
 	if ( rhs.IsInitFinished () )
 	{
 		m_dWeights.Reset ( rhs.GetLength () );
-		memcpy ( m_dWeights.Begin (), rhs.m_dWeights.Begin (), rhs.GetLength () * sizeof ( WORD ) );
+		memcpy ( m_dWeights.Begin (), rhs.m_dWeights.Begin (), rhs.GetLength () * sizeof ( uint16_t ) );
 	} else if ( IsInitFinished() )
 		m_dWeights.Reset ( 0 );
 	return *this;
@@ -1247,10 +1247,10 @@ void RemoteConnectToAgent ( AgentConn_t & tAgent )
 
 	if ( ss.ss_family==AF_INET )
 	{
-		DWORD uAddr = tAgent.m_uAddr;
+		uint32_t uAddr = tAgent.m_uAddr;
 		if ( g_bHostnameLookup && !tAgent.m_sHost.IsEmpty() )
 		{
-			DWORD uRenew = sphGetAddress ( tAgent.m_sHost.cstr(), false );
+			uint32_t uRenew = sphGetAddress ( tAgent.m_sHost.cstr(), false );
 			if ( uRenew )
 				uAddr = uRenew;
 		}
@@ -1629,8 +1629,8 @@ int RemoteWaitForAgents ( CSphVector<AgentConn_t> & dAgents, int iTimeout, IRepl
 					// try to read
 					struct
 					{
-						WORD	m_iStatus;
-						WORD	m_iVer;
+						uint16_t	m_iStatus;
+						uint16_t	m_iVer;
 						int		m_iLength;
 					} tReplyHeader;
 					STATIC_SIZE_ASSERT ( tReplyHeader, 8 );
@@ -1658,7 +1658,7 @@ int RemoteWaitForAgents ( CSphVector<AgentConn_t> & dAgents, int iTimeout, IRepl
 					// header received, switch the status
 					assert ( tAgent.m_pReplyBuf==NULL );
 					tAgent.m_eState = AGENT_REPLY;
-					tAgent.m_pReplyBuf = new BYTE [ tReplyHeader.m_iLength ];
+					tAgent.m_pReplyBuf = new uint8_t [ tReplyHeader.m_iLength ];
 					tAgent.m_iReplySize = tReplyHeader.m_iLength;
 					tAgent.m_iReplyRead = 0;
 					tAgent.m_iReplyStatus = tReplyHeader.m_iStatus;
@@ -1940,7 +1940,7 @@ void ThdWorkPool_c::PoolThreadFunc ( void * pArg )
 	ThdWorkPool_c * pPool = (ThdWorkPool_c *)pArg;
 	assert (pPool);
 	++pPool->m_iActiveThreads;
-	sphLogDebugv ("Thread func started for %p, now %d threads active", pArg, (DWORD)pPool->m_iActiveThreads);
+	sphLogDebugv ("Thread func started for %p, now %d threads active", pArg, (uint32_t)pPool->m_iActiveThreads);
 	SphCrashLogger_c::SetLastQuery ( pPool->m_tCrashQuery );
 
 	int iSpinCount = 0;
@@ -1992,7 +1992,7 @@ void ThdWorkPool_c::PoolThreadFunc ( void * pArg )
 
 	}
 	--pPool->m_iActiveThreads;
-	sphLogDebugv ( "Thread func finished for %p, now %d threads active", pArg, (DWORD)pPool->m_iActiveThreads );
+	sphLogDebugv ( "Thread func finished for %p, now %d threads active", pArg, (uint32_t)pPool->m_iActiveThreads );
 }
 
 void ThdWorkParallel ( AgentWorkContext_t * );

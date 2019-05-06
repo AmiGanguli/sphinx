@@ -36,7 +36,7 @@
 extern int				g_iReadTimeout; // defined in searchd.cpp
 
 extern int				g_iPingInterval;		// by default ping HA agents every 1 second
-extern DWORD			g_uHAPeriodKarma;		// by default use the last 1 minute statistic to determine the best HA agent
+extern uint32_t			g_uHAPeriodKarma;		// by default use the last 1 minute statistic to determine the best HA agent
 extern int				g_iPersistentPoolSize;
 
 extern int				g_iAgentConnectTimeout;
@@ -179,7 +179,7 @@ class AgentDesc_c : public HostUrl_c
 public:
 	CSphString		m_sIndexes;		///< remote index names to query
 	bool			m_bBlackhole;	///< blackhole agent flag
-	DWORD			m_uAddr;		///< IP address
+	uint32_t			m_uAddr;		///< IP address
 	mutable AgentDash_t*	m_pStats;		/// global agent stats
 	mutable HostDashboard_t* m_pDash;		/// ha dashboard of the host
 	bool			m_bPersistent;	///< whether to keep the persistent connection to the agent.
@@ -217,7 +217,7 @@ struct AgentConn_t : public AgentDesc_c
 	int				m_iReplyRead;	///< how many reply bytes are alredy received
 	int 			m_iRetries;		///< count from 0 to m_iRetryLimit
 	int 			m_iRetryLimit;	///< how many times retry (m.b. with another mirror)
-	BYTE *			m_pReplyBuf;	///< reply buffer
+	uint8_t *			m_pReplyBuf;	///< reply buffer
 
 	CSphVector<CSphQueryResult>		m_dResults;		///< multi-query results
 
@@ -249,7 +249,7 @@ extern const char * sAgentStatsNames[eMaxAgentStat + ehMaxStat];
 struct AgentDash_t : AgentStats_t
 {
 	uint64_t		m_dHostStats[ehMaxStat];
-	DWORD			m_uTimestamp;	///< adds the minutes timestamp to AgentStats_t
+	uint32_t			m_uTimestamp;	///< adds the minutes timestamp to AgentStats_t
 
 	AgentDash_t()
 		: m_uTimestamp ( 0 )
@@ -303,8 +303,8 @@ public:
 	explicit HostDashboard_t ( const HostUrl_c * pAgent );
 	~HostDashboard_t ();
 	bool IsOlder ( int64_t iTime ) const REQUIRES_SHARED ( m_dDataLock );
-	static DWORD GetCurSeconds();
-	static bool IsHalfPeriodChanged ( DWORD * pLast );
+	static uint32_t GetCurSeconds();
+	static bool IsHalfPeriodChanged ( uint32_t * pLast );
 	AgentDash_t*	GetCurrentStat() REQUIRES ( m_dDataLock );
 	void GetCollectedStat ( HostStatSnapshot_t& dResult, int iPeriods=1 ) const EXCLUDES ( m_dDataLock );
 };
@@ -324,9 +324,9 @@ private:
 	CSphVector<AgentDesc_c> m_dHosts;
 	CSphAtomic				m_iRRCounter;	/// round-robin counter
 	mutable CSphRwlock		m_dWeightLock;	/// manages access to m_pWeights
-	CSphFixedVector<WORD>	m_dWeights		/// the weights of the hosts
+	CSphFixedVector<uint16_t>	m_dWeights		/// the weights of the hosts
 			GUARDED_BY (m_dWeightLock);
-	DWORD					m_uTimestamp;	/// timestamp of last weight's actualization
+	uint32_t					m_uTimestamp;	/// timestamp of last weight's actualization
 	HAStrategies_e			m_eStrategy;
 
 public:
@@ -381,10 +381,10 @@ public:
 		return m_dHosts;
 	}
 
-	CSphFixedVector<WORD> GetWeights () const EXCLUDES (m_dWeightLock)
+	CSphFixedVector<uint16_t> GetWeights () const EXCLUDES (m_dWeightLock)
 	{
 		CSphScopedRLock tRguard ( m_dWeightLock );
-		CSphFixedVector<WORD> dResult ( m_dWeights.GetLength () );
+		CSphFixedVector<uint16_t> dResult ( m_dWeights.GetLength () );
 		memcpy ( dResult.Begin (), m_dWeights.Begin (), m_dWeights.GetSizeBytes () );
 		return dResult;
 	}
@@ -404,7 +404,7 @@ private:
 
 struct SearchdStats_t
 {
-	DWORD		m_uStarted;
+	uint32_t		m_uStarted;
 	CSphAtomicL		m_iConnections;
 	CSphAtomicL		m_iMaxedOut;
 	CSphAtomicL		m_iCommandCount[SEARCHD_COMMAND_TOTAL];
@@ -566,7 +566,7 @@ struct NetEventsIterator_t
 	const void * 		m_pData;
 	bool 				m_bReadable;
 	bool 				m_bWritable;
-	DWORD				m_uEvents;
+	uint32_t				m_uEvents;
 	void Reset()
 	{
 		m_pData = nullptr;

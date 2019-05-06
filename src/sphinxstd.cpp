@@ -64,15 +64,15 @@ void sphAssert ( const char * sExpr, const char * sFile, int iLine )
 #undef new
 #define SPH_DEBUG_DOFREE 1 // 0 will not actually free returned blocks; helps to catch double deletes etc
 
-const DWORD MEMORY_MAGIC_PLAIN		= 0xbbbbbbbbUL;
-const DWORD MEMORY_MAGIC_ARRAY		= 0xaaaaaaaaUL;
-const DWORD MEMORY_MAGIC_END		= 0xeeeeeeeeUL;
-const DWORD MEMORY_MAGIC_DELETED	= 0xdedededeUL;
+const uint32_t MEMORY_MAGIC_PLAIN		= 0xbbbbbbbbUL;
+const uint32_t MEMORY_MAGIC_ARRAY		= 0xaaaaaaaaUL;
+const uint32_t MEMORY_MAGIC_END		= 0xeeeeeeeeUL;
+const uint32_t MEMORY_MAGIC_DELETED	= 0xdedededeUL;
 
 
 struct CSphMemHeader
 {
-	DWORD			m_uMagic;
+	uint32_t			m_uMagic;
 	const char *	m_sFile;
 #if SPH_DEBUG_BACKTRACES
 	const char *	m_sBacktrace;
@@ -80,7 +80,7 @@ struct CSphMemHeader
 	int				m_iLine;
 	size_t			m_iSize;
 	int				m_iAllocId;
-	BYTE *			m_pPointer;
+	uint8_t *			m_pPointer;
 	CSphMemHeader *	m_pNext;
 	CSphMemHeader *	m_pPrev;
 };
@@ -100,11 +100,11 @@ static bool				g_bFirstRandomAlloc = true;
 
 void * sphDebugNew ( size_t iSize, const char * sFile, int iLine, bool bArray )
 {
-	BYTE * pBlock = (BYTE*) ::malloc ( iSize+sizeof(CSphMemHeader)+sizeof(DWORD) );
+	uint8_t * pBlock = (uint8_t*) ::malloc ( iSize+sizeof(CSphMemHeader)+sizeof(uint32_t) );
 	if ( !pBlock )
 		sphDie ( "out of memory (unable to allocate " UINT64_FMT " bytes)", (uint64_t)iSize ); // FIXME! this may fail with malloc error too
 
-	*(DWORD*)( pBlock+iSize+sizeof(CSphMemHeader) ) = MEMORY_MAGIC_END;
+	*(uint32_t*)( pBlock+iSize+sizeof(CSphMemHeader) ) = MEMORY_MAGIC_END;
 	g_tAllocsMutex.Lock();
 
 	CSphMemHeader * pHeader = (CSphMemHeader*) pBlock;
@@ -117,9 +117,9 @@ void * sphDebugNew ( size_t iSize, const char * sFile, int iLine, bool bArray )
 		g_bFirstRandomAlloc = false;
 	}
 
-	BYTE * pBlockPtr = (BYTE*)(pHeader+1);
+	uint8_t * pBlockPtr = (uint8_t*)(pHeader+1);
 	for ( size_t i = 0; i < iSize; i++ )
-		*pBlockPtr++ = BYTE(sphRand () & 0xFF);
+		*pBlockPtr++ = uint8_t(sphRand () & 0xFF);
 #endif
 #if SPH_DEBUG_BACKTRACES
 	const char * sTrace = DoBacktrace ( 0, 3 );
@@ -187,8 +187,8 @@ void sphDebugDelete ( void * pPtr, bool bArray )
 			return;
 	}
 
-	BYTE * pBlock = (BYTE*) pHeader;
-	if ( *(DWORD*)( pBlock+pHeader->m_iSize+sizeof(CSphMemHeader) )!=MEMORY_MAGIC_END )
+	uint8_t * pBlock = (uint8_t*) pHeader;
+	if ( *(uint32_t*)( pBlock+pHeader->m_iSize+sizeof(CSphMemHeader) )!=MEMORY_MAGIC_END )
 		sphDie ( "out-of-bounds write beyond block %d allocated at %s(%d)",
 			pHeader->m_iAllocId, pHeader->m_sFile, pHeader->m_iLine );
 
@@ -290,13 +290,13 @@ void sphAllocsCheck ()
 	g_tAllocsMutex.Lock();
 	for ( CSphMemHeader * pHeader=g_pAllocs; pHeader; pHeader=pHeader->m_pNext )
 	{
-		BYTE * pBlock = (BYTE*) pHeader;
+		uint8_t * pBlock = (uint8_t*) pHeader;
 
 		if (!( pHeader->m_uMagic==MEMORY_MAGIC_ARRAY || pHeader->m_uMagic==MEMORY_MAGIC_PLAIN ))
 			sphDie ( "corrupted header in block %d allocated at %s(%d)",
 				pHeader->m_iAllocId, pHeader->m_sFile, pHeader->m_iLine );
 
-		if ( *(DWORD*)( pBlock+pHeader->m_iSize+sizeof(CSphMemHeader) )!=MEMORY_MAGIC_END )
+		if ( *(uint32_t*)( pBlock+pHeader->m_iSize+sizeof(CSphMemHeader) )!=MEMORY_MAGIC_END )
 			sphDie ( "out-of-bounds write beyond block %d allocated at %s(%d)",
 				pHeader->m_iAllocId, pHeader->m_sFile, pHeader->m_iLine );
 	}
@@ -373,7 +373,7 @@ static MemCategorized_t g_dMemCategoryStat [ MEM_TOTAL ];
 
 void * sphDebugNew ( size_t iSize )
 {
-	BYTE * pBlock = (BYTE*) ::malloc ( iSize+sizeof(size_t)*2 );
+	uint8_t * pBlock = (uint8_t*) ::malloc ( iSize+sizeof(size_t)*2 );
 	if ( !pBlock )
 		sphDie ( "out of memory (unable to allocate %" PRIu64i " bytes)", (uint64_t)iSize ); // FIXME! this may fail with malloc error too
 
@@ -459,7 +459,7 @@ STATIC_ASSERT ( MEM_TOTAL<255, TOO_MANY_MEMORY_CATEGORIES );
 class MemCategoryStack_t // NOLINT
 {
 #define MEM_STACK_MAX 1024
-	BYTE m_dStack[MEM_STACK_MAX];
+	uint8_t m_dStack[MEM_STACK_MAX];
 	int m_iDepth;
 
 public:
@@ -475,7 +475,7 @@ public:
 	{
 		assert ( eCategory>=0 && eCategory<MEM_TOTAL );
 		assert ( m_iDepth+1<MEM_STACK_MAX );
-		m_dStack[++m_iDepth] = (BYTE)eCategory;
+		m_dStack[++m_iDepth] = (uint8_t)eCategory;
 	}
 
 #ifndef NDEBUG
@@ -724,11 +724,11 @@ void sphDieRestart ( const char * sTemplate, ... )
 //////////////////////////////////////////////////////////////////////////
 
 /// MWC (Multiply-With-Carry) RNG, invented by George Marsaglia
-static DWORD g_dRngState[5] = { 0x95d3474bUL, 0x035cf1f7UL, 0xfd43995fUL, 0x5dfc55fbUL, 0x334a9229UL };
+static uint32_t g_dRngState[5] = { 0x95d3474bUL, 0x035cf1f7UL, 0xfd43995fUL, 0x5dfc55fbUL, 0x334a9229UL };
 
 
 /// seed
-void sphSrand ( DWORD uSeed )
+void sphSrand ( uint32_t uSeed )
 {
 	for ( int i=0; i<5; i++ )
 	{
@@ -753,7 +753,7 @@ void sphAutoSrand ()
 	struct
 	{
 		time_t	tv_sec;
-		DWORD	tv_usec;
+		uint32_t	tv_usec;
 	} tv;
 
 	FILETIME ft;
@@ -761,17 +761,17 @@ void sphAutoSrand ()
 
 	uint64_t ts = ( uint64_t(ft.dwHighDateTime)<<32 ) + uint64_t(ft.dwLowDateTime) - 116444736000000000ULL; // Jan 1, 1970 magic
 	ts /= 10; // to microseconds
-	tv.tv_sec = (DWORD)(ts/1000000);
-	tv.tv_usec = (DWORD)(ts%1000000);
+	tv.tv_sec = (uint32_t)(ts/1000000);
+	tv.tv_usec = (uint32_t)(ts%1000000);
 #endif
 
 	// twist and shout
-	sphSrand ( sphRand() ^ DWORD(tv.tv_sec) ^ (DWORD(tv.tv_usec) + DWORD(getpid())) );
+	sphSrand ( sphRand() ^ uint32_t(tv.tv_sec) ^ (uint32_t(tv.tv_usec) + uint32_t(getpid())) );
 }
 
 
 /// generate another dword
-DWORD sphRand ()
+uint32_t sphRand ()
 {
 	uint64_t uSum;
 	uSum =
@@ -783,8 +783,8 @@ DWORD sphRand ()
 	g_dRngState[3] = g_dRngState[2];
 	g_dRngState[2] = g_dRngState[1];
 	g_dRngState[1] = g_dRngState[0];
-	g_dRngState[4] = (DWORD)( uSum>>32 );
-	g_dRngState[0] = (DWORD)uSum;
+	g_dRngState[4] = (uint32_t)( uSum>>32 );
+	g_dRngState[0] = (uint32_t)uSum;
 	return g_dRngState[0];
 }
 
@@ -815,7 +815,7 @@ static SphThreadKey_t g_tMyThreadStack;
 
 
 #if USE_WINDOWS
-#define SPH_THDFUNC DWORD __stdcall
+#define SPH_THDFUNC uint32_t __stdcall
 #else
 #define SPH_THDFUNC void *
 #endif
@@ -981,7 +981,7 @@ bool sphThreadCreate ( SphThread_t * pThread, void (*fnThread)(void*), void * pA
 bool sphThreadJoin ( SphThread_t * pThread )
 {
 #if USE_WINDOWS
-	DWORD uWait = WaitForSingleObject ( *pThread, INFINITE );
+	uint32_t uWait = WaitForSingleObject ( *pThread, INFINITE );
 	CloseHandle ( *pThread );
 	*pThread = NULL;
 	return ( uWait==WAIT_OBJECT_0 || uWait==WAIT_ABANDONED );
@@ -1042,8 +1042,8 @@ void * sphMyStack ()
 
 int64_t sphGetStackUsed()
 {
-	BYTE cStack;
-	BYTE * pStackTop = (BYTE*)sphMyStack();
+	uint8_t cStack;
+	uint8_t * pStackTop = (uint8_t*)sphMyStack();
 	if ( !pStackTop )
 		return 0;
 	int64_t iHeight = pStackTop - &cStack;
@@ -1111,13 +1111,13 @@ CSphMutex::~CSphMutex ()
 
 bool CSphMutex::Lock ()
 {
-	DWORD uWait = WaitForSingleObject ( m_hMutex, INFINITE );
+	uint32_t uWait = WaitForSingleObject ( m_hMutex, INFINITE );
 	return ( uWait!=WAIT_FAILED && uWait!=WAIT_TIMEOUT );
 }
 
 bool CSphMutex::TimedLock ( int iMsec )
 {
-	DWORD uWait = WaitForSingleObject ( m_hMutex, iMsec );
+	uint32_t uWait = WaitForSingleObject ( m_hMutex, iMsec );
 	return ( uWait!=WAIT_FAILED && uWait!=WAIT_TIMEOUT );
 }
 
@@ -1156,7 +1156,7 @@ bool CSphAutoEvent::WaitEvent()
 		m_bSent = false;
 		return true;
 	}
-	DWORD uWait = WaitForSingleObject ( m_hEvent, INFINITE );
+	uint32_t uWait = WaitForSingleObject ( m_hEvent, INFINITE );
 	return !( uWait==WAIT_FAILED || uWait==WAIT_TIMEOUT );
 }
 
@@ -1196,7 +1196,7 @@ void CSphSemaphore::Post()
 bool CSphSemaphore::Wait()
 {
 	assert ( m_bInitialized );
-	DWORD uWait = WaitForSingleObject ( m_hSem, INFINITE );
+	uint32_t uWait = WaitForSingleObject ( m_hSem, INFINITE );
 	return !( uWait==WAIT_FAILED || uWait==WAIT_TIMEOUT );
 }
 
@@ -1411,7 +1411,7 @@ bool CSphRwlock::ReadLock ()
 {
 	assert ( m_bInitialized );
 
-	DWORD uWait = WaitForSingleObject ( m_hWriteMutex, INFINITE );
+	uint32_t uWait = WaitForSingleObject ( m_hWriteMutex, INFINITE );
 	if ( uWait==WAIT_FAILED || uWait==WAIT_TIMEOUT )
 		return false;
 
@@ -1434,7 +1434,7 @@ bool CSphRwlock::WriteLock ()
 	assert ( m_bInitialized );
 
 	// try to acquire writer mutex
-	DWORD uWait = WaitForSingleObject ( m_hWriteMutex, INFINITE );
+	uint32_t uWait = WaitForSingleObject ( m_hWriteMutex, INFINITE );
 	if ( uWait==WAIT_FAILED || uWait==WAIT_TIMEOUT )
 		return false;
 
@@ -1608,7 +1608,7 @@ int CSphStrHashFunc::Hash ( const CSphString & sKey )
 
 //////////////////////////////////////////////////////////////////////////
 
-DWORD g_dSphinxCRC32 [ 256 ] =
+uint32_t g_dSphinxCRC32 [ 256 ] =
 {
 	0x00000000, 0x77073096, 0xee0e612c, 0x990951ba,
 	0x076dc419, 0x706af48f, 0xe963a535, 0x9e6495a3,
@@ -1677,32 +1677,32 @@ DWORD g_dSphinxCRC32 [ 256 ] =
 };
 
 
-DWORD sphCRC32 ( const void * s )
+uint32_t sphCRC32 ( const void * s )
 {
 	// calc CRC
-	DWORD crc = ~((DWORD)0);
-	for ( const BYTE * p=(const BYTE*)s; *p; p++ )
+	uint32_t crc = ~((uint32_t)0);
+	for ( const uint8_t * p=(const uint8_t*)s; *p; p++ )
 		crc = (crc >> 8) ^ g_dSphinxCRC32 [ (crc ^ (*p)) & 0xff ];
 	return ~crc;
 }
 
-DWORD sphCRC32 ( const void * s, int iLen )
+uint32_t sphCRC32 ( const void * s, int iLen )
 {
 	// calc CRC
-	DWORD crc = ~((DWORD)0);
-	const BYTE * p = (const BYTE*)s;
-	const BYTE * pMax = p + iLen;
+	uint32_t crc = ~((uint32_t)0);
+	const uint8_t * p = (const uint8_t*)s;
+	const uint8_t * pMax = p + iLen;
 	while ( p<pMax )
 		crc = (crc >> 8) ^ g_dSphinxCRC32 [ (crc ^ *p++) & 0xff ];
 	return ~crc;
 }
 
-DWORD sphCRC32 ( const void * s, int iLen, DWORD uPrevCRC )
+uint32_t sphCRC32 ( const void * s, int iLen, uint32_t uPrevCRC )
 {
 	// calc CRC
-	DWORD crc = ~((DWORD)uPrevCRC);
-	const BYTE * p = (const BYTE*)s;
-	const BYTE * pMax = p + iLen;
+	uint32_t crc = ~((uint32_t)uPrevCRC);
+	const uint8_t * p = (const uint8_t*)s;
+	const uint8_t * pMax = p + iLen;
 	while ( p<pMax )
 		crc = (crc >> 8) ^ g_dSphinxCRC32 [ (crc ^ *p++) & 0xff ];
 	return ~crc;
@@ -2120,7 +2120,7 @@ public:
 
 		m_iCount += iWeight;
 
-		const DWORD K=20;
+		const uint32_t K=20;
 		if ( m_dMap.size() > K * COMPRESSION )
 			Compress();
 	}

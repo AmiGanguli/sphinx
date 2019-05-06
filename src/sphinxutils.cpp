@@ -1891,7 +1891,7 @@ static void UItoA ( char** ppOutput, Uint uVal, int iBase=10, int iWidth=0, int 
 		return;
 	}
 
-	const BYTE uMaxIndex = 31; // 20 digits for MAX_INT64 in decimal; let it be 31 (32 digits max).
+	const uint8_t uMaxIndex = 31; // 20 digits for MAX_INT64 in decimal; let it be 31 (32 digits max).
 	char CBuf[uMaxIndex+1];
 	char *pRes = &CBuf[uMaxIndex];
 	char *& pOutput = *ppOutput;
@@ -1902,7 +1902,7 @@ static void UItoA ( char** ppOutput, Uint uVal, int iBase=10, int iWidth=0, int 
 		uVal /= iBase;
 	}
 
-	BYTE uLen = (BYTE)( uMaxIndex - (pRes-CBuf) );
+	uint8_t uLen = (uint8_t)( uMaxIndex - (pRes-CBuf) );
 
 	if ( iWidth )
 		while ( uLen < iWidth )
@@ -2036,7 +2036,7 @@ static int sphVSprintf ( char * pOutput, const char * sFmt, va_list ap )
 		case 'x': // hex integer
 		case 'd': // decimal integer
 			{
-				DWORD uValue = va_arg ( ap, DWORD );
+				uint32_t uValue = va_arg ( ap, uint32_t );
 				UItoA ( &pOutput, uValue, ( c=='x' ) ? 16 : 10, iWidth, iPrec, cFill );
 				state = SNORMAL;
 				break;
@@ -2165,7 +2165,7 @@ void sphBacktrace ( int iFD, bool bSafe )
 	while ( pMyStack && !bSafe )
 	{
 		sphSafeInfo ( iFD, "Trying manual backtrace:" );
-		BYTE ** pFramePointer = NULL;
+		uint8_t ** pFramePointer = NULL;
 
 		int iFrameCount = 0;
 		int iReturnFrameCount = sphIsLtLib() ? 2 : 1;
@@ -2190,13 +2190,13 @@ void sphBacktrace ( int iFD, bool bSafe )
 			break;
 		}
 
-		if ( !pMyStack || (BYTE*) pMyStack > (BYTE*) &pFramePointer )
+		if ( !pMyStack || (uint8_t*) pMyStack > (uint8_t*) &pFramePointer )
 		{
 			int iRound = Min ( 65536, iStackSize );
 			pMyStack = (void *) ( ( (size_t) &pFramePointer + iRound ) & ~(size_t)65535 );
 			sphSafeInfo ( iFD, "Something wrong with thread stack, manual backtrace may be incorrect (fp=0x%p)", pFramePointer );
 
-			if ( pFramePointer > (BYTE**) pMyStack || pFramePointer < (BYTE**) pMyStack - iStackSize )
+			if ( pFramePointer > (uint8_t**) pMyStack || pFramePointer < (uint8_t**) pMyStack - iStackSize )
 			{
 				sphSafeInfo ( iFD, "Wrong stack limit or frame pointer, manual backtrace failed (fp=0x%p, stack=0x%p, stacksize=0x%x)",
 					pFramePointer, pMyStack, iStackSize );
@@ -2206,10 +2206,10 @@ void sphBacktrace ( int iFD, bool bSafe )
 
 		sphSafeInfo ( iFD, "Stack looks OK, attempting backtrace." );
 
-		BYTE** pNewFP = NULL;
-		while ( pFramePointer < (BYTE**) pMyStack )
+		uint8_t** pNewFP = NULL;
+		while ( pFramePointer < (uint8_t**) pMyStack )
 		{
-			pNewFP = (BYTE**) *pFramePointer;
+			pNewFP = (uint8_t**) *pFramePointer;
 			sphSafeInfo ( iFD, "0x%p", iFrameCount==iReturnFrameCount ? *(pFramePointer + SIGRETURN_FRAME_OFFSET) : *(pFramePointer + 1) );
 
 			bOk = pNewFP > pFramePointer;
@@ -2480,12 +2480,12 @@ bool sphIsChineseCode ( int iCode )
 		( iCode>=0x20000 && iCode<=0x2FA1D ) );	// CJK Ideograph Extensions B/C/D, and compatibility ideographs
 }
 
-bool sphDetectChinese ( const BYTE * szBuffer, int iLength )
+bool sphDetectChinese ( const uint8_t * szBuffer, int iLength )
 {
 	if ( !szBuffer || !iLength )
 		return false;
 
-	const BYTE * pBuffer = szBuffer;
+	const uint8_t * pBuffer = szBuffer;
 	while ( pBuffer<szBuffer+iLength )
 	{
 		int iCode = sphUTF8Decode ( pBuffer );
@@ -2570,7 +2570,7 @@ bool CSphDynamicLibrary::LoadSymbols ( const char **, void ***, int ) { return f
 #endif
 
 
-void RebalanceWeights ( const CSphFixedVector<int64_t> & dTimers, WORD * pWeights )
+void RebalanceWeights ( const CSphFixedVector<int64_t> & dTimers, uint16_t * pWeights )
 {
 	assert ( dTimers.GetLength () );
 	float fSum = 0.0;
@@ -2613,7 +2613,7 @@ void RebalanceWeights ( const CSphFixedVector<int64_t> & dTimers, WORD * pWeight
 
 		int iWeight = int ( fWeight * 65535.0f );
 		assert ( iWeight>=0 && iWeight<=65535 );
-		pWeights[i] = (WORD)iWeight;
+		pWeights[i] = (uint16_t)iWeight;
 		iCheck += pWeights[i];
 	}
 	assert ( iCheck<=65535 );

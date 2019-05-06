@@ -65,7 +65,7 @@ public:
 
 	// iterator state
 	FieldMask_t m_dQwordFields;	///< current match fields
-	DWORD			m_uMatchHits;	///< current match hits count
+	uint32_t			m_uMatchHits;	///< current match hits count
 	SphOffset_t		m_iHitlistPos;	///< current position in hitlist, from doclist
 
 protected:
@@ -91,7 +91,7 @@ public:
 	virtual ~ISphQword () {}
 
 	virtual void				HintDocid ( SphDocID_t ) {}
-	virtual const CSphMatch &	GetNextDoc ( DWORD * pInlineDocinfo ) = 0;
+	virtual const CSphMatch &	GetNextDoc ( uint32_t * pInlineDocinfo ) = 0;
 	virtual void				SeekHitlist ( SphOffset_t uOff ) = 0;
 	virtual Hitpos_t			GetNextHit () = 0;
 	virtual void				CollectHitMask ();
@@ -172,8 +172,8 @@ ISphRanker * sphCreateRanker ( const XQQuery_t & tXQ, const CSphQuery * pQuery, 
 /// hit mark, used for snippets generation
 struct SphHitMark_t
 {
-	DWORD	m_uPosition;
-	DWORD	m_uSpan;
+	uint32_t	m_uPosition;
+	uint32_t	m_uSpan;
 
 	bool operator == ( const SphHitMark_t & rhs ) const
 	{

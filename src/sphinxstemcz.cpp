@@ -20,7 +20,7 @@
 struct ClampRule_t
 {
 	int		m_iMinLength;
-	BYTE	m_szSuffix[10];
+	uint8_t	m_szSuffix[10];
 	int		m_iCheckLength;
 	int		m_nRemove;
 	bool	m_bPalatalize;
@@ -91,9 +91,9 @@ static ClampRule_t g_dPosessiveRules [] =
 
 struct ReplaceRule_t
 {
-	BYTE	m_szSuffix[4];
+	uint8_t	m_szSuffix[4];
 	int		m_iRemoveLength;
-	BYTE	m_szAppend[4];
+	uint8_t	m_szAppend[4];
 };
 
 
@@ -116,7 +116,7 @@ static ReplaceRule_t g_dPalatalizeRules [] =
 };
 
 
-static void Palatalize ( BYTE * word )
+static void Palatalize ( uint8_t * word )
 {
 	if ( !word )
 		return;
@@ -141,7 +141,7 @@ static void Palatalize ( BYTE * word )
 }
 
 
-static void ApplyRules ( BYTE * word, const ClampRule_t * pRules, int nRules )
+static void ApplyRules ( uint8_t * word, const ClampRule_t * pRules, int nRules )
 {
 	if ( !word || !pRules )
 		return;
@@ -199,7 +199,7 @@ void stem_cz_init ()
 }
 
 
-void stem_cz ( BYTE * word )
+void stem_cz ( uint8_t * word )
 {
 	ApplyRules ( word, g_dCaseRules, sizeof ( g_dCaseRules ) / sizeof ( g_dCaseRules[0] ) );
 	ApplyRules ( word, g_dPosessiveRules, sizeof ( g_dPosessiveRules ) / sizeof ( g_dPosessiveRules[0] ) );

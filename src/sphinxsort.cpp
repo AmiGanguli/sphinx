@@ -32,7 +32,7 @@
 void ISphMatchSorter::SetState ( const CSphMatchComparatorState & tState )
 {
 	m_tState = tState;
-	m_tState.m_iNow = (DWORD) time ( NULL );
+	m_tState.m_iNow = (uint32_t) time ( NULL );
 }
 
 
@@ -49,7 +49,7 @@ public:
 	virtual SphGroupKey_t	KeyFromMatch ( const CSphMatch & tMatch ) const = 0;
 	virtual void			GetLocator ( CSphAttrLocator & tOut ) const = 0;
 	virtual ESphAttr		GetResultType () const = 0;
-	virtual void			SetStringPool ( const BYTE * ) {}
+	virtual void			SetStringPool ( const uint8_t * ) {}
 	virtual bool			CanMulti () const { return true; }
 };
 
@@ -92,7 +92,7 @@ public:
 		m_pData = new CSphMatch [ m_iDataLength ];
 		assert ( m_pData );
 
-		m_tState.m_iNow = (DWORD) time ( NULL );
+		m_tState.m_iNow = (uint32_t) time ( NULL );
 		m_iMatchCapacity = m_iDataLength;
 	}
 
@@ -669,7 +669,7 @@ static bool IsGroupbyMagic ( const CSphString & s )
 	public: \
 		explicit _name ( const CSphAttrLocator & tLoc ) : m_tLocator ( tLoc ) {} \
 		virtual void GetLocator ( CSphAttrLocator & tOut ) const { tOut = m_tLocator; } \
-		virtual ESphAttr GetResultType () const { return m_tLocator.m_iBitCount>8*(int)sizeof(DWORD) ? SPH_ATTR_BIGINT : SPH_ATTR_INTEGER; } \
+		virtual ESphAttr GetResultType () const { return m_tLocator.m_iBitCount>8*(int)sizeof(uint32_t) ? SPH_ATTR_BIGINT : SPH_ATTR_INTEGER; } \
 		virtual SphGroupKey_t KeyFromMatch ( const CSphMatch & tMatch ) const { return KeyFromValue ( tMatch.GetAttr ( m_tLocator ) ); } \
 		virtual SphGroupKey_t KeyFromValue ( SphAttr_t uValue ) const \
 		{
@@ -727,7 +727,7 @@ template <class PRED>
 class CSphGrouperString : public CSphGrouperAttr, public PRED
 {
 protected:
-	const BYTE * m_pStringBase;
+	const uint8_t * m_pStringBase;
 
 public:
 
@@ -747,7 +747,7 @@ public:
 		if ( !m_pStringBase || !uValue )
 			return 0;
 
-		const BYTE * pStr = NULL;
+		const uint8_t * pStr = NULL;
 		int iLen = sphUnpackStr ( m_pStringBase+uValue, &pStr );
 
 		if ( !pStr || !iLen )
@@ -756,7 +756,7 @@ public:
 		return PRED::Hash ( pStr, iLen );
 	}
 
-	virtual void SetStringPool ( const BYTE * pStrings )
+	virtual void SetStringPool ( const uint8_t * pStrings )
 	{
 		m_pStringBase = pStrings;
 	}
@@ -768,7 +768,7 @@ public:
 class BinaryHash_fn
 {
 public:
-	uint64_t Hash ( const BYTE * pStr, int iLen, uint64_t uPrev=SPH_FNV64_SEED ) const
+	uint64_t Hash ( const uint8_t * pStr, int iLen, uint64_t uPrev=SPH_FNV64_SEED ) const
 	{
 		assert ( pStr && iLen );
 		return sphFNV64 ( pStr, iLen, uPrev );
@@ -809,7 +809,7 @@ protected:
 
 public:
 	ISphExpr * m_pExpr;
-	const BYTE * m_pStrings;
+	const uint8_t * m_pStrings;
 
 	explicit CSphGrouperJsonField ( const CSphAttrLocator & tLoc, ISphExpr * pExpr )
 		: m_tLocator ( tLoc )
@@ -822,7 +822,7 @@ public:
 		SafeRelease ( m_pExpr );
 	}
 
-	virtual void SetStringPool ( const BYTE * pStrings )
+	virtual void SetStringPool ( const uint8_t * pStrings )
 	{
 		m_pStrings = pStrings;
 		if ( m_pExpr )
@@ -880,7 +880,7 @@ public:
 			{
 				assert ( m_pStringBase );
 
-				const BYTE * pStr = NULL;
+				const uint8_t * pStr = NULL;
 				int iLen = sphUnpackStr ( m_pStringBase+tAttr, &pStr );
 
 				if ( !pStr || !iLen )
@@ -892,14 +892,14 @@ public:
 			{
 				assert ( m_pStringBase );
 
-				const BYTE * pStr = NULL;
+				const uint8_t * pStr = NULL;
 				int iLen = sphUnpackStr ( m_pStringBase+tAttr, &pStr );
 
 				if ( !pStr || !iLen )
 					continue;
 
 				uint64_t uValue = m_dJsonKeys[i]->Int64Eval ( tMatch );
-				const BYTE * pValue = m_pStringBase + ( uValue & 0xffffffff );
+				const uint8_t * pValue = m_pStringBase + ( uValue & 0xffffffff );
 				ESphJsonType eRes = (ESphJsonType)( uValue >> 32 );
 
 				int i32Val;
@@ -934,7 +934,7 @@ public:
 		return tKey;
 	}
 
-	virtual void SetStringPool ( const BYTE * pStrings )
+	virtual void SetStringPool ( const uint8_t * pStrings )
 	{
 		m_pStringBase = pStrings;
 
@@ -953,7 +953,7 @@ public:
 private:
 	CSphVector<CSphAttrLocator>	m_dLocators;
 	CSphVector<ESphAttr>		m_dAttrTypes;
-	const BYTE *				m_pStringBase;
+	const uint8_t *				m_pStringBase;
 	CSphVector<ISphExpr *>		m_dJsonKeys;
 };
 
@@ -1019,7 +1019,7 @@ public:
 		assert ( m_iFree>0 && "hash overflow" );
 
 		// check if it's already hashed
-		DWORD uHash = DWORD ( HASHFUNC::Hash ( tKey ) ) & ( m_dHash.GetLength()-1 );
+		uint32_t uHash = uint32_t ( HASHFUNC::Hash ( tKey ) ) & ( m_dHash.GetLength()-1 );
 		int iPrev = -1, iEntry;
 
 		for ( iEntry=m_dHash[uHash]; iEntry>=0; iPrev=iEntry, iEntry=m_dEntries[iEntry].m_iNext )
@@ -1057,7 +1057,7 @@ public:
 	void Remove ( const KEY & tKey )
 	{
 		// check if it's already hashed
-		DWORD uHash = DWORD ( HASHFUNC::Hash ( tKey ) ) & ( m_dHash.GetLength()-1 );
+		uint32_t uHash = uint32_t ( HASHFUNC::Hash ( tKey ) ) & ( m_dHash.GetLength()-1 );
 		int iPrev = -1, iEntry;
 
 		for ( iEntry=m_dHash[uHash]; iEntry>=0; iPrev=iEntry, iEntry=m_dEntries[iEntry].m_iNext )
@@ -1083,7 +1083,7 @@ public:
 	/// get value pointer by key
 	T * operator () ( const KEY & tKey ) const
 	{
-		DWORD uHash = DWORD ( HASHFUNC::Hash ( tKey ) ) & ( m_dHash.GetLength()-1 );
+		uint32_t uHash = uint32_t ( HASHFUNC::Hash ( tKey ) ) & ( m_dHash.GetLength()-1 );
 		int iEntry;
 
 		for ( iEntry=m_dHash[uHash]; iEntry>=0; iEntry=m_dEntries[iEntry].m_iNext )
@@ -1330,13 +1330,13 @@ protected:
 };
 
 template<>
-DWORD IAggrFuncTraits<DWORD>::GetValue ( const CSphMatch * pRow )
+uint32_t IAggrFuncTraits<uint32_t>::GetValue ( const CSphMatch * pRow )
 {
-	return (DWORD)pRow->GetAttr ( m_tLocator );
+	return (uint32_t)pRow->GetAttr ( m_tLocator );
 }
 
 template<>
-void IAggrFuncTraits<DWORD>::SetValue ( CSphMatch * pRow, DWORD val )
+void IAggrFuncTraits<uint32_t>::SetValue ( CSphMatch * pRow, uint32_t val )
 {
 	pRow->SetAttr ( m_tLocator, val );
 }
@@ -1585,7 +1585,7 @@ static void ExtractAggregates ( const CSphRsetSchema & tSchema, const CSphAttrLo
 		case SPH_AGGR_SUM:
 			switch ( tAttr.m_eAttrType )
 			{
-			case SPH_ATTR_INTEGER:	dAggregates.Add ( new AggrSum_t<DWORD> ( tAttr.m_tLocator ) ); break;
+			case SPH_ATTR_INTEGER:	dAggregates.Add ( new AggrSum_t<uint32_t> ( tAttr.m_tLocator ) ); break;
 			case SPH_ATTR_BIGINT:	dAggregates.Add ( new AggrSum_t<int64_t> ( tAttr.m_tLocator ) ); break;
 			case SPH_ATTR_FLOAT:	dAggregates.Add ( new AggrSum_t<float> ( tAttr.m_tLocator ) ); break;
 			default:				assert ( 0 && "internal error: unhandled aggregate type" ); break;
@@ -1595,7 +1595,7 @@ static void ExtractAggregates ( const CSphRsetSchema & tSchema, const CSphAttrLo
 		case SPH_AGGR_AVG:
 			switch ( tAttr.m_eAttrType )
 			{
-			case SPH_ATTR_INTEGER:	dAggregates.Add ( new AggrAvg_t<DWORD> ( tAttr.m_tLocator, tLocCount ) ); break;
+			case SPH_ATTR_INTEGER:	dAggregates.Add ( new AggrAvg_t<uint32_t> ( tAttr.m_tLocator, tLocCount ) ); break;
 			case SPH_ATTR_BIGINT:	dAggregates.Add ( new AggrAvg_t<int64_t> ( tAttr.m_tLocator, tLocCount ) ); break;
 			case SPH_ATTR_FLOAT:	dAggregates.Add ( new AggrAvg_t<float> ( tAttr.m_tLocator, tLocCount ) ); break;
 			default:				assert ( 0 && "internal error: unhandled aggregate type" ); break;
@@ -1618,7 +1618,7 @@ static void ExtractAggregates ( const CSphRsetSchema & tSchema, const CSphAttrLo
 		case SPH_AGGR_MIN:
 			switch ( tAttr.m_eAttrType )
 			{
-			case SPH_ATTR_INTEGER:	dAggregates.Add ( new AggrMin_t<DWORD> ( tAttr.m_tLocator ) ); break;
+			case SPH_ATTR_INTEGER:	dAggregates.Add ( new AggrMin_t<uint32_t> ( tAttr.m_tLocator ) ); break;
 			case SPH_ATTR_BIGINT:	dAggregates.Add ( new AggrMin_t<int64_t> ( tAttr.m_tLocator ) ); break;
 			case SPH_ATTR_FLOAT:	dAggregates.Add ( new AggrMin_t<float> ( tAttr.m_tLocator ) ); break;
 			default:				assert ( 0 && "internal error: unhandled aggregate type" ); break;
@@ -1628,7 +1628,7 @@ static void ExtractAggregates ( const CSphRsetSchema & tSchema, const CSphAttrLo
 		case SPH_AGGR_MAX:
 			switch ( tAttr.m_eAttrType )
 			{
-			case SPH_ATTR_INTEGER:	dAggregates.Add ( new AggrMax_t<DWORD> ( tAttr.m_tLocator ) ); break;
+			case SPH_ATTR_INTEGER:	dAggregates.Add ( new AggrMax_t<uint32_t> ( tAttr.m_tLocator ) ); break;
 			case SPH_ATTR_BIGINT:	dAggregates.Add ( new AggrMax_t<int64_t> ( tAttr.m_tLocator ) ); break;
 			case SPH_ATTR_FLOAT:	dAggregates.Add ( new AggrMax_t<float> ( tAttr.m_tLocator ) ); break;
 			default:				assert ( 0 && "internal error: unhandled aggregate type" ); break;
@@ -1652,12 +1652,12 @@ static void ExtractAggregates ( const CSphRsetSchema & tSchema, const CSphAttrLo
 }
 
 
-static SphAttr_t GetDistinctKey ( const CSphMatch & tEntry, const CSphAttrLocator & tDistinctLoc, ESphAttr eDistinctAttr, const BYTE * pStringBase )
+static SphAttr_t GetDistinctKey ( const CSphMatch & tEntry, const CSphAttrLocator & tDistinctLoc, ESphAttr eDistinctAttr, const uint8_t * pStringBase )
 {
 	SphAttr_t tRes = tEntry.GetAttr ( tDistinctLoc );
 	if ( eDistinctAttr==SPH_ATTR_STRING )
 	{
-		const BYTE * pStr = NULL;
+		const uint8_t * pStr = NULL;
 		int iLen = sphUnpackStr ( pStringBase+tRes, &pStr );
 		tRes = pStr && iLen ? sphFNV64 ( pStr, iLen ) : 0;					
 	}
@@ -1689,7 +1689,7 @@ protected:
 	CSphVector<IAggrFunc *>		m_dAvgs;
 	const ISphFilter *			m_pAggrFilter; ///< aggregate filter for matches on flatten
 	MatchCloner_t				m_tPregroup;
-	const BYTE *				m_pStringBase;
+	const uint8_t *				m_pStringBase;
 
 	static const int			GROUPBY_FACTOR = 4;	///< allocate this times more storage when doing group-by (k, as in k-buffer)
 
@@ -1759,7 +1759,7 @@ public:
 	}
 
 	/// set string pool pointer (for string+groupby sorters)
-	void SetStringPool ( const BYTE * pStrings )
+	void SetStringPool ( const uint8_t * pStrings )
 	{
 		m_pStringBase = pStrings;
 		m_pGrouper->SetStringPool ( pStrings );
@@ -2087,7 +2087,7 @@ protected:
 	CSphVector<IAggrFunc *>		m_dAvgs;
 	const ISphFilter *			m_pAggrFilter; ///< aggregate filter for matches on flatten
 	MatchCloner_t				m_tPregroup;
-	const BYTE *				m_pStringBase;
+	const uint8_t *				m_pStringBase;
 
 	static const int			GROUPBY_FACTOR = 4;	///< allocate this times more storage when doing group-by (k, as in k-buffer)
 
@@ -2216,7 +2216,7 @@ public:
 	}
 
 	/// set string pool pointer (for string+groupby sorters)
-	void SetStringPool ( const BYTE * pStrings )
+	void SetStringPool ( const uint8_t * pStrings )
 	{
 		m_pStringBase = pStrings;
 		m_pGrouper->SetStringPool ( pStrings );
@@ -2826,7 +2826,7 @@ template < typename COMPGROUP, bool DISTINCT, bool NOTIFICATIONS >
 class CSphKBufferMVAGroupSorter : public CSphKBufferGroupSorter < COMPGROUP, DISTINCT, NOTIFICATIONS >
 {
 protected:
-	const DWORD *		m_pMva;		///< pointer to MVA pool for incoming matches
+	const uint32_t *		m_pMva;		///< pointer to MVA pool for incoming matches
 	bool				m_bArenaProhibit;
 	CSphAttrLocator		m_tMvaLocator;
 	bool				m_bMva64;
@@ -2849,7 +2849,7 @@ public:
 	}
 
 	/// set MVA pool for subsequent matches
-	void SetMVAPool ( const DWORD * pMva, bool bArenaProhibit )
+	void SetMVAPool ( const uint32_t * pMva, bool bArenaProhibit )
 	{
 		m_pMva = pMva;
 		m_bArenaProhibit = bArenaProhibit;
@@ -2865,11 +2865,11 @@ public:
 		// get that list
 		// FIXME! OPTIMIZE! use simpler locator than full bits/count here
 		// FIXME! hardcoded MVA type, so here's MVA_DOWNSIZE marker for searching
-		const DWORD * pValues = tEntry.GetAttrMVA ( this->m_tMvaLocator, m_pMva, m_bArenaProhibit ); // (this pointer is for gcc; it doesn't work otherwise)
+		const uint32_t * pValues = tEntry.GetAttrMVA ( this->m_tMvaLocator, m_pMva, m_bArenaProhibit ); // (this pointer is for gcc; it doesn't work otherwise)
 		if ( !pValues )
 			return false;
 
-		DWORD iValues = *pValues++;
+		uint32_t iValues = *pValues++;
 
 		bool bRes = false;
 		if ( m_bMva64 )
@@ -2930,8 +2930,8 @@ public:
 		SphGroupKey_t uGroupkey = this->m_pGrouper->KeyFromMatch ( tMatch );
 
 		int64_t iValue = (int64_t)uGroupkey;
-		const BYTE * pStrings = ((CSphGrouperJsonField*)this->m_pGrouper)->m_pStrings;
-		const BYTE * pValue = pStrings + ( iValue & 0xffffffff );
+		const uint8_t * pStrings = ((CSphGrouperJsonField*)this->m_pGrouper)->m_pStrings;
+		const uint8_t * pValue = pStrings + ( iValue & 0xffffffff );
 		ESphJsonType eRes = (ESphJsonType)( iValue >> 32 );
 
 		switch ( eRes )
@@ -2955,7 +2955,7 @@ public:
 				iLen = sphJsonUnpackInt ( &pValue );
 				for ( int i=0;i<iLen;i++ )
 				{
-					DWORD uOff = pValue-pStrings;
+					uint32_t uOff = pValue-pStrings;
 					int64_t iValue = ( ( (int64_t)uOff ) | ( ( (int64_t)JSON_STRING )<<32 ) );
 					int iStrLen = sphJsonUnpackInt ( &pValue );
 					uGroupkey = sphFNV64 ( pValue, iStrLen );
@@ -2965,20 +2965,20 @@ public:
 				return bRes;
 			}
 		case JSON_INT32:
-			uGroupkey = sphFNV64 ( (BYTE*)FormatInt ( sBuf, (int)sphGetDword(pValue) ) );
+			uGroupkey = sphFNV64 ( (uint8_t*)FormatInt ( sBuf, (int)sphGetDword(pValue) ) );
 			break;
 		case JSON_INT64:
-			uGroupkey = sphFNV64 ( (BYTE*)FormatInt ( sBuf, (int)sphJsonLoadBigint ( &pValue ) ) );
+			uGroupkey = sphFNV64 ( (uint8_t*)FormatInt ( sBuf, (int)sphJsonLoadBigint ( &pValue ) ) );
 			break;
 		case JSON_DOUBLE:
 			snprintf ( sBuf, sizeof(sBuf), "%f", sphQW2D ( sphJsonLoadBigint ( &pValue ) ) );
-			uGroupkey = sphFNV64 ( (const BYTE*)sBuf );
+			uGroupkey = sphFNV64 ( (const uint8_t*)sBuf );
 			break;
 		case JSON_INT32_VECTOR:
 			{
 				iLen = sphJsonUnpackInt ( &pValue );
 				int * p = (int*)pValue;
-				DWORD uOff = pValue-pStrings;
+				uint32_t uOff = pValue-pStrings;
 				for ( int i=0;i<iLen;i++ )
 				{
 					int64_t iPacked = ( ( (int64_t)uOff ) | ( ( (int64_t)JSON_INT32 )<<32 ) );
@@ -2994,7 +2994,7 @@ public:
 			{
 				iLen = sphJsonUnpackInt ( &pValue );
 				int64_t * p = (int64_t*)pValue;
-				DWORD uOff = pValue-pStrings;
+				uint32_t uOff = pValue-pStrings;
 				ESphJsonType eType = eRes==JSON_INT64_VECTOR ? JSON_INT64 : JSON_DOUBLE;
 				for ( int i=0;i<iLen;i++ )
 				{
@@ -3039,7 +3039,7 @@ protected:
 	CSphVector<IAggrFunc *>		m_dAggregates;
 	const ISphFilter *			m_pAggrFilter;				///< aggregate filter for matches on flatten
 	MatchCloner_t				m_tPregroup;
-	const BYTE *				m_pStringBase;
+	const uint8_t *				m_pStringBase;
 
 public:
 	/// ctor
@@ -3108,7 +3108,7 @@ public:
 	}
 
 	/// set string pool pointer (for string+groupby sorters)
-	void SetStringPool ( const BYTE * pStringBase )
+	void SetStringPool ( const uint8_t * pStringBase )
 	{
 		m_pStringBase = pStringBase;
 	}
@@ -3822,7 +3822,7 @@ template < typename COMPGROUP >
 static ISphMatchSorter * sphCreateSorter3rd ( const ISphMatchComparator * pComp, const CSphQuery * pQuery,
 	const CSphGroupSorterSettings & tSettings, bool bHasPackedFactors )
 {
-	BYTE uSelector = (bHasPackedFactors?1:0)
+	uint8_t uSelector = (bHasPackedFactors?1:0)
 		+(tSettings.m_bDistinct?2:0)
 		+(tSettings.m_bMVA?4:0)
 		+(tSettings.m_bImplicit?8:0)
@@ -4243,7 +4243,7 @@ static bool FixupDependency ( ISphSchema & tSchema, const int * pAttrs, int iAtt
 // expression that transform string pool base + offset -> ptr
 struct ExprSortStringAttrFixup_c : public ISphExpr
 {
-	const BYTE *			m_pStrings; ///< string pool; base for offset of string attributes
+	const uint8_t *			m_pStrings; ///< string pool; base for offset of string attributes
 	const CSphAttrLocator	m_tLocator; ///< string attribute to fix
 
 	explicit ExprSortStringAttrFixup_c ( const CSphAttrLocator & tLocator )
@@ -4263,7 +4263,7 @@ struct ExprSortStringAttrFixup_c : public ISphExpr
 	virtual void Command ( ESphExprCommand eCmd, void * pArg )
 	{
 		if ( eCmd==SPH_EXPR_SET_STRING_POOL )
-			m_pStrings = (const BYTE*)pArg;
+			m_pStrings = (const uint8_t*)pArg;
 	}
 
 	virtual uint64_t GetHash ( const ISphSchema &, uint64_t, bool & )
@@ -4277,7 +4277,7 @@ struct ExprSortStringAttrFixup_c : public ISphExpr
 // expression that transform string pool base + offset -> ptr
 struct ExprSortJson2StringPtr_c : public ISphExpr
 {
-	const BYTE *			m_pStrings; ///< string pool; base for offset of string attributes
+	const uint8_t *			m_pStrings; ///< string pool; base for offset of string attributes
 	const CSphAttrLocator	m_tJsonCol; ///< JSON attribute to fix
 	CSphRefcountedPtr<ISphExpr>	m_pExpr;
 
@@ -4291,7 +4291,7 @@ struct ExprSortJson2StringPtr_c : public ISphExpr
 
 	virtual float Eval ( const CSphMatch & ) const { assert ( 0 ); return 0.0f; }
 
-	virtual int StringEval ( const CSphMatch & tMatch, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch & tMatch, const uint8_t ** ppStr ) const
 	{
 		if ( !m_pStrings || !m_pExpr )
 		{
@@ -4300,7 +4300,7 @@ struct ExprSortJson2StringPtr_c : public ISphExpr
 		}
 
 		uint64_t uValue = m_pExpr->Int64Eval ( tMatch );
-		const BYTE * pVal = m_pStrings + ( uValue & 0xffffffff );
+		const uint8_t * pVal = m_pStrings + ( uValue & 0xffffffff );
 		ESphJsonType eJson = (ESphJsonType)( uValue >> 32 );
 		CSphString sVal;
 
@@ -4327,8 +4327,8 @@ struct ExprSortJson2StringPtr_c : public ISphExpr
 			int iTotalLen = sphJsonUnpackInt ( &pVal );
 			int iCount = sphJsonUnpackInt ( &pVal );
 
-			CSphFixedVector<BYTE> dBuf ( iTotalLen + 4 ); // data and tail GAP
-			BYTE * pDst = dBuf.Begin();
+			CSphFixedVector<uint8_t> dBuf ( iTotalLen + 4 ); // data and tail GAP
+			uint8_t * pDst = dBuf.Begin();
 
 			// head element
 			if ( iCount )
@@ -4360,7 +4360,7 @@ struct ExprSortJson2StringPtr_c : public ISphExpr
 		}
 
 		int iStriLen = sVal.Length();
-		*ppStr = (const BYTE *)sVal.Leak();
+		*ppStr = (const uint8_t *)sVal.Leak();
 		return iStriLen;
 	}
 
@@ -4368,7 +4368,7 @@ struct ExprSortJson2StringPtr_c : public ISphExpr
 	{
 		if ( eCmd==SPH_EXPR_SET_STRING_POOL )
 		{
-			m_pStrings = (const BYTE*)pArg;
+			m_pStrings = (const uint8_t*)pArg;
 			if ( m_pExpr.Ptr() )
 				m_pExpr->Command ( eCmd, pArg );
 		}
@@ -4468,7 +4468,7 @@ bool sphSortGetStringRemap ( const ISphSchema & tSorterSchema, const ISphSchema 
 // BINARY COLLATION
 ////////////////////
 
-int sphCollateBinary ( const BYTE * pStr1, const BYTE * pStr2, bool bPacked )
+int sphCollateBinary ( const uint8_t * pStr1, const uint8_t * pStr2, bool bPacked )
 {
 	if ( bPacked )
 	{
@@ -4487,7 +4487,7 @@ int sphCollateBinary ( const BYTE * pStr1, const BYTE * pStr2, bool bPacked )
 ///////////////////////////////
 
 /// libc_ci, wrapper for strcasecmp
-int sphCollateLibcCI ( const BYTE * pStr1, const BYTE * pStr2, bool bPacked )
+int sphCollateLibcCI ( const uint8_t * pStr1, const uint8_t * pStr2, bool bPacked )
 {
 	if ( bPacked )
 	{
@@ -4503,7 +4503,7 @@ int sphCollateLibcCI ( const BYTE * pStr1, const BYTE * pStr2, bool bPacked )
 
 
 /// libc_cs, wrapper for strcoll
-int sphCollateLibcCS ( const BYTE * pStr1, const BYTE * pStr2, bool bPacked )
+int sphCollateLibcCS ( const uint8_t * pStr1, const uint8_t * pStr2, bool bPacked )
 {
 	#define COLLATE_STACK_BUFFER 1024
 
@@ -4519,8 +4519,8 @@ int sphCollateLibcCS ( const BYTE * pStr1, const BYTE * pStr2, bool bPacked )
 		if ( iLen<COLLATE_STACK_BUFFER )
 		{
 			// small strings on stack
-			BYTE sBuf1[COLLATE_STACK_BUFFER];
-			BYTE sBuf2[COLLATE_STACK_BUFFER];
+			uint8_t sBuf1[COLLATE_STACK_BUFFER];
+			uint8_t sBuf2[COLLATE_STACK_BUFFER];
 
 			memcpy ( sBuf1, pStr1, iLen );
 			memcpy ( sBuf2, pStr2, iLen );
@@ -4726,16 +4726,16 @@ static inline int CollateUTF8CI ( int iCode )
 
 
 /// utf8_general_ci
-int sphCollateUtf8GeneralCI ( const BYTE * pArg1, const BYTE * pArg2, bool bPacked )
+int sphCollateUtf8GeneralCI ( const uint8_t * pArg1, const uint8_t * pArg2, bool bPacked )
 {
-	const BYTE * pStr1 = pArg1;
-	const BYTE * pStr2 = pArg2;
-	const BYTE * pMax1 = NULL;
-	const BYTE * pMax2 = NULL;
+	const uint8_t * pStr1 = pArg1;
+	const uint8_t * pStr2 = pArg2;
+	const uint8_t * pMax1 = NULL;
+	const uint8_t * pMax2 = NULL;
 	if ( bPacked )
 	{
-		int iLen1 = sphUnpackStr ( pStr1, (const BYTE**)&pStr1 );
-		int iLen2 = sphUnpackStr ( pStr2, (const BYTE**)&pStr2 );
+		int iLen1 = sphUnpackStr ( pStr1, (const uint8_t**)&pStr1 );
+		int iLen2 = sphUnpackStr ( pStr2, (const uint8_t**)&pStr2 );
 		pMax1 = pStr1 + iLen1;
 		pMax2 = pStr2 + iLen2;
 	}
@@ -4780,7 +4780,7 @@ int sphCollateUtf8GeneralCI ( const BYTE * pArg1, const BYTE * pArg2, bool bPack
 class LibcCSHash_fn
 {
 public:
-	mutable CSphTightVector<BYTE> m_dBuf;
+	mutable CSphTightVector<uint8_t> m_dBuf;
 	static const int LOCALE_SAFE_GAP = 16;
 
 	LibcCSHash_fn()
@@ -4788,7 +4788,7 @@ public:
 		m_dBuf.Resize ( COLLATE_STACK_BUFFER );
 	}
 
-	uint64_t Hash ( const BYTE * pStr, int iLen, uint64_t uPrev=SPH_FNV64_SEED ) const
+	uint64_t Hash ( const uint8_t * pStr, int iLen, uint64_t uPrev=SPH_FNV64_SEED ) const
 	{
 		assert ( pStr && iLen );
 
@@ -4799,7 +4799,7 @@ public:
 		memcpy ( m_dBuf.Begin(), pStr, iLen );
 		m_dBuf[iLen] = '\0';
 
-		BYTE * pDst = m_dBuf.Begin()+iLen+1;
+		uint8_t * pDst = m_dBuf.Begin()+iLen+1;
 		int iDstAvailable = m_dBuf.GetLength() - iLen - LOCALE_SAFE_GAP;
 
 		int iDstLen = strxfrm ( (char *)pDst, (const char *)m_dBuf.Begin(), iDstAvailable );
@@ -4815,7 +4815,7 @@ public:
 class LibcCIHash_fn
 {
 public:
-	uint64_t Hash ( const BYTE * pStr, int iLen, uint64_t uPrev=SPH_FNV64_SEED ) const
+	uint64_t Hash ( const uint8_t * pStr, int iLen, uint64_t uPrev=SPH_FNV64_SEED ) const
 	{
 		assert ( pStr && iLen );
 
@@ -4834,14 +4834,14 @@ public:
 class Utf8CIHash_fn
 {
 public:
-	uint64_t Hash ( const BYTE * pStr, int iLen, uint64_t uPrev=SPH_FNV64_SEED ) const
+	uint64_t Hash ( const uint8_t * pStr, int iLen, uint64_t uPrev=SPH_FNV64_SEED ) const
 	{
 		assert ( pStr && iLen );
 
 		uint64_t uAcc = uPrev;
 		while ( iLen-- )
 		{
-			const BYTE * pCur = pStr++;
+			const uint8_t * pCur = pStr++;
 			int iCode = sphUTF8Decode ( pCur );
 			iCode = CollateUTF8CI ( iCode );
 			uAcc = sphFNV64 ( &iCode, 4, uAcc );
@@ -4944,7 +4944,7 @@ ISphMatchSorter * sphCreateQueue ( SphQueueSettings_t & tQueue )
 	sError = "";
 	bool bHasZonespanlist = false;
 	bool bNeedZonespanlist = false;
-	DWORD uPackedFactorFlags = SPH_FACTOR_DISABLE;
+	uint32_t uPackedFactorFlags = SPH_FACTOR_DISABLE;
 
 	///////////////////////////////////////
 	// build incoming and outgoing schemas
@@ -5085,7 +5085,7 @@ ISphMatchSorter * sphCreateQueue ( SphQueueSettings_t & tQueue )
 
 		// a new and shiny expression, lets parse
 		CSphColumnInfo tExprCol ( tItem.m_sAlias.cstr(), SPH_ATTR_NONE );
-		DWORD uQueryPackedFactorFlags = SPH_FACTOR_DISABLE;
+		uint32_t uQueryPackedFactorFlags = SPH_FACTOR_DISABLE;
 
 		// tricky bit
 		// GROUP_CONCAT() adds an implicit TO_STRING() conversion on top of its argument
@@ -5219,7 +5219,7 @@ ISphMatchSorter * sphCreateQueue ( SphQueueSettings_t & tQueue )
 					tDep.m_eStage = tExprCol.m_eStage;
 			}
 		}
-		dQueryAttrs.Add ( sphFNV64 ( (const BYTE *)tExprCol.m_sName.cstr() ) );
+		dQueryAttrs.Add ( sphFNV64 ( (const uint8_t *)tExprCol.m_sName.cstr() ) );
 	}
 
 	////////////////////////////////////////////
@@ -5558,7 +5558,7 @@ ISphMatchSorter * sphCreateQueue ( SphQueueSettings_t & tQueue )
 	if ( bRandomize )
 	{
 		if ( pQuery->m_iRandSeed>=0 )
-			sphSrand ( (DWORD)pQuery->m_iRandSeed );
+			sphSrand ( (uint32_t)pQuery->m_iRandSeed );
 		else
 			sphAutoSrand ();
 	}

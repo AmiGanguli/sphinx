@@ -296,7 +296,7 @@ static int						g_iMysqlHandshake = 0;
 //////////////////////////////////////////////////////////////////////////
 
 static CSphString		g_sConfigFile;
-static DWORD			g_uCfgCRC32		= 0;
+static uint32_t			g_uCfgCRC32		= 0;
 static struct stat		g_tCfgStat;
 
 static CSphConfigParser g_pCfg;
@@ -322,9 +322,9 @@ static volatile sig_atomic_t g_bGotSigterm		= 0;	// we just received SIGTERM; ne
 static volatile sig_atomic_t g_bGotSigusr1		= 0;	// we just received SIGUSR1; need to reopen logs
 
 // pipe to watchdog to inform that daemon is going to close, so no need to restart it in case of crash
-static CSphLargeBuffer<DWORD, true>	g_bDaemonAtShutdown;
+static CSphLargeBuffer<uint32_t, true>	g_bDaemonAtShutdown;
 volatile bool					g_bShutdown = false;
-static CSphLargeBuffer<DWORD, true>	g_bHaveTTY;
+static CSphLargeBuffer<uint32_t, true>	g_bHaveTTY;
 
 IndexHash_c *								g_pLocalIndexes = new IndexHash_c();	// served (local) indexes hash
 IndexHash_c *								g_pTemplateIndexes = new IndexHash_c(); // template (tokenizer) indexes hash
@@ -741,7 +741,7 @@ void ServedStats_c::CalcStatsForInterval ( const QueryStatContainer_i * pContain
 	dFound.Reserve ( m_tQueryStatRecords.GetNumRecords() );
 	dTime.Reserve ( m_tQueryStatRecords.GetNumRecords() );
 
-	DWORD uTotalQueries = 0;
+	uint32_t uTotalQueries = 0;
 	QueryStatRecord_t tRecord;
 
 	for ( int i = 0; i < pContainer->GetNumRecords(); i++ )
@@ -1053,7 +1053,7 @@ void sphLogEntry ( ESphLogLevel , char * sBuf, char * sTtyBuf )
 			lpszStrings[0] = g_sServiceName;
 			lpszStrings[1] = sBuf;
 
-			WORD eType = EVENTLOG_INFORMATION_TYPE;
+			uint16_t eType = EVENTLOG_INFORMATION_TYPE;
 			switch ( eLevel )
 			{
 				case SPH_LOG_FATAL:		eType = EVENTLOG_ERROR_TYPE; break;
@@ -1100,7 +1100,7 @@ void sphLog ( ESphLogLevel eLevel, const char * sFmt, va_list ap )
 	static const int	FLUSH_THRESH_COUNT	= 100;
 
 	static ESphLogLevel eLastLevel = SPH_LOG_INFO;
-	static DWORD uLastEntry = 0;
+	static uint32_t uLastEntry = 0;
 	static int64_t tmLastStamp = -1000000-FLUSH_THRESH_TIME;
 	static int iLastRepeats = 0;
 
@@ -1155,7 +1155,7 @@ void sphLog ( ESphLogLevel eLevel, const char * sFmt, va_list ap )
 	}
 
 	// catch dupes
-	DWORD uEntry = sFmt ? sphCRC32 ( sBuf+iLen ) : 0;
+	uint32_t uEntry = sFmt ? sphCRC32 ( sBuf+iLen ) : 0;
 	int64_t tmNow = sphMicroTimer();
 
 	// accumulate while possible
@@ -1392,9 +1392,9 @@ void Shutdown ()
 	fdStopwait = ::open ( sPipeName.cstr(), O_WRONLY | O_NONBLOCK );
 	if ( fdStopwait>=0 )
 	{
-		DWORD uHandshakeOk = 0;
+		uint32_t uHandshakeOk = 0;
 		int iDummy; // to avoid gcc unused result warning
-		iDummy = ::write ( fdStopwait, &uHandshakeOk, sizeof(DWORD) );
+		iDummy = ::write ( fdStopwait, &uHandshakeOk, sizeof(uint32_t) );
 		iDummy++; // to avoid gcc set but not used variable warning
 	}
 #endif
@@ -1483,9 +1483,9 @@ void Shutdown ()
 #else
 	if ( fdStopwait>=0 )
 	{
-		DWORD uStatus = bAttrsSaveOk;
+		uint32_t uStatus = bAttrsSaveOk;
 		int iDummy; // to avoid gcc unused result warning
-		iDummy = ::write ( fdStopwait, &uStatus, sizeof(DWORD) );
+		iDummy = ::write ( fdStopwait, &uStatus, sizeof(uint32_t) );
 		iDummy++; // to avoid gcc set but not used variable warning
 		::close ( fdStopwait );
 	}
@@ -1519,10 +1519,10 @@ void sigusr1 ( int )
 
 struct QueryCopyState_t
 {
-	BYTE * m_pDst;
-	BYTE * m_pDstEnd;
-	const BYTE * m_pSrc;
-	const BYTE * m_pSrcEnd;
+	uint8_t * m_pDst;
+	uint8_t * m_pDstEnd;
+	const uint8_t * m_pSrc;
+	const uint8_t * m_pSrcEnd;
 };
 
 // crash query handler
@@ -1530,11 +1530,11 @@ static const int g_iQueryLineLen = 80;
 static const char g_dEncodeBase64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 bool sphCopyEncodedBase64 ( QueryCopyState_t & tEnc )
 {
-	BYTE * pDst = tEnc.m_pDst;
-	const BYTE * pDstBase = tEnc.m_pDst;
-	const BYTE * pSrc = tEnc.m_pSrc;
-	const BYTE * pDstEnd = tEnc.m_pDstEnd-5;
-	const BYTE * pSrcEnd = tEnc.m_pSrcEnd-3;
+	uint8_t * pDst = tEnc.m_pDst;
+	const uint8_t * pDstBase = tEnc.m_pDst;
+	const uint8_t * pSrc = tEnc.m_pSrc;
+	const uint8_t * pDstEnd = tEnc.m_pDstEnd-5;
+	const uint8_t * pSrcEnd = tEnc.m_pSrcEnd-3;
 
 	while ( pDst<=pDstEnd && pSrc<=pSrcEnd )
 	{
@@ -1543,7 +1543,7 @@ bool sphCopyEncodedBase64 ( QueryCopyState_t & tEnc )
 			*pDst++ = '\n';
 
 		// Convert to big endian
-		DWORD uSrc = ( pSrc[0] << 16 ) | ( pSrc[1] << 8 ) | ( pSrc[2] );
+		uint32_t uSrc = ( pSrc[0] << 16 ) | ( pSrc[1] << 8 ) | ( pSrc[2] );
 		pSrc += 3;
 
 		*pDst++ = g_dEncodeBase64 [ ( uSrc & 0x00FC0000 ) >> 18 ];
@@ -1558,7 +1558,7 @@ bool sphCopyEncodedBase64 ( QueryCopyState_t & tEnc )
 		int iLeft = ( tEnc.m_pSrcEnd - pSrc ) % 3;
 		if ( iLeft==1 )
 		{
-			DWORD uSrc = pSrc[0]<<16;
+			uint32_t uSrc = pSrc[0]<<16;
 			pSrc += 1;
 			*pDst++ = g_dEncodeBase64 [ ( uSrc & 0x00FC0000 ) >> 18 ];
 			*pDst++ = g_dEncodeBase64 [ ( uSrc & 0x0003F000 ) >> 12 ];
@@ -1566,7 +1566,7 @@ bool sphCopyEncodedBase64 ( QueryCopyState_t & tEnc )
 			*pDst++ = '=';
 		} else if ( iLeft==2 )
 		{
-			DWORD uSrc = ( pSrc[0]<<16 ) | ( pSrc[1] << 8 );
+			uint32_t uSrc = ( pSrc[0]<<16 ) | ( pSrc[1] << 8 );
 			pSrc += 2;
 			*pDst++ = g_dEncodeBase64 [ ( uSrc & 0x00FC0000 ) >> 18 ];
 			*pDst++ = g_dEncodeBase64 [ ( uSrc & 0x0003F000 ) >> 12 ];
@@ -1583,9 +1583,9 @@ bool sphCopyEncodedBase64 ( QueryCopyState_t & tEnc )
 
 static bool sphCopySphinxQL ( QueryCopyState_t & tState )
 {
-	BYTE * pDst = tState.m_pDst;
-	const BYTE * pSrc = tState.m_pSrc;
-	BYTE * pNextLine = pDst+g_iQueryLineLen;
+	uint8_t * pDst = tState.m_pDst;
+	const uint8_t * pSrc = tState.m_pSrc;
+	uint8_t * pNextLine = pDst+g_iQueryLineLen;
 
 	while ( pDst<tState.m_pDstEnd && pSrc<tState.m_pSrcEnd )
 	{
@@ -1616,7 +1616,7 @@ const char		g_sCrashedBannerTail[] = "\n--- request dump end ---\n";
 const char		g_sMinidumpBanner[] = "minidump located at: ";
 const char		g_sMemoryStatBanner[] = "\n--- memory statistics ---\n";
 #endif
-static BYTE		g_dCrashQueryBuff [4096];
+static uint8_t		g_dCrashQueryBuff [4096];
 static char		g_sCrashInfo [SPH_TIME_PID_MAX_SIZE] = "[][]\n";
 static int		g_iCrashInfoLen = 0;
 
@@ -1687,15 +1687,15 @@ LONG WINAPI SphCrashLogger_c::HandleCrash ( EXCEPTION_POINTERS * pExc )
 			pfnCopy = &sphCopyEncodedBase64;
 
 			// should be power of 3 to seamlessly convert to BASE64
-			BYTE dHeader[] = {
-				(BYTE)( ( tQuery.m_uCMD>>8 ) & 0xff ),
-				(BYTE)( tQuery.m_uCMD & 0xff ),
-				(BYTE)( ( tQuery.m_uVer>>8 ) & 0xff ),
-				(BYTE)( tQuery.m_uVer & 0xff ),
-				(BYTE)( ( tQuery.m_iSize>>24 ) & 0xff ),
-				(BYTE)( ( tQuery.m_iSize>>16 ) & 0xff ),
-				(BYTE)( ( tQuery.m_iSize>>8 ) & 0xff ),
-				(BYTE)( tQuery.m_iSize & 0xff ),
+			uint8_t dHeader[] = {
+				(uint8_t)( ( tQuery.m_uCMD>>8 ) & 0xff ),
+				(uint8_t)( tQuery.m_uCMD & 0xff ),
+				(uint8_t)( ( tQuery.m_uVer>>8 ) & 0xff ),
+				(uint8_t)( tQuery.m_uVer & 0xff ),
+				(uint8_t)( ( tQuery.m_iSize>>24 ) & 0xff ),
+				(uint8_t)( ( tQuery.m_iSize>>16 ) & 0xff ),
+				(uint8_t)( ( tQuery.m_iSize>>8 ) & 0xff ),
+				(uint8_t)( tQuery.m_iSize & 0xff ),
 				*tQuery.m_pQuery
 			};
 
@@ -1981,9 +1981,9 @@ int sphSockPeekErrno ()
 
 /// formats IP address given in network byte order into sBuffer
 /// returns the buffer
-char * sphFormatIP ( char * sBuffer, int iBufferSize, DWORD uAddress )
+char * sphFormatIP ( char * sBuffer, int iBufferSize, uint32_t uAddress )
 {
-	const BYTE *a = (const BYTE *)&uAddress;
+	const uint8_t *a = (const uint8_t *)&uAddress;
 	snprintf ( sBuffer, iBufferSize, "%u.%u.%u.%u", a[0], a[1], a[2], a[3] );
 	return sBuffer;
 }
@@ -1991,7 +1991,7 @@ char * sphFormatIP ( char * sBuffer, int iBufferSize, DWORD uAddress )
 
 static const bool GETADDR_STRICT = true; ///< strict check, will die with sphFatal() on failure
 
-DWORD sphGetAddress ( const char * sHost, bool bFatal )
+uint32_t sphGetAddress ( const char * sHost, bool bFatal )
 {
 	struct hostent * pHost = gethostbyname ( sHost );
 
@@ -2007,9 +2007,9 @@ DWORD sphGetAddress ( const char * sHost, bool bFatal )
 	struct in_addr ** ppAddrs = (struct in_addr **)pHost->h_addr_list;
 	assert ( ppAddrs[0] );
 
-	assert ( sizeof(DWORD)==pHost->h_length );
-	DWORD uAddr;
-	memcpy ( &uAddr, ppAddrs[0], sizeof(DWORD) );
+	assert ( sizeof(uint32_t)==pHost->h_length );
+	uint32_t uAddr;
+	memcpy ( &uAddr, ppAddrs[0], sizeof(uint32_t) );
 
 	if ( ppAddrs[1] )
 	{
@@ -2057,7 +2057,7 @@ int sphCreateUnixSocket ( const char * sPath )
 #endif // !USE_WINDOWS
 
 
-int sphCreateInetSocket ( DWORD uAddr, int iPort )
+int sphCreateInetSocket ( uint32_t uAddr, int iPort )
 {
 	char sAddress[SPH_ADDRESS_SIZE];
 	sphFormatIP ( sAddress, SPH_ADDRESS_SIZE, uAddr );
@@ -2119,7 +2119,7 @@ struct ListenerDesc_t
 {
 	ProtocolType_e	m_eProto;
 	CSphString		m_sUnix;
-	DWORD			m_uIP;
+	uint32_t			m_uIP;
 	int				m_iPort;
 	bool			m_bVIP;
 };
@@ -2432,7 +2432,7 @@ ISphOutputBuffer::ISphOutputBuffer ()
 	m_dBuf.Reserve ( NETOUTBUF );
 }
 
-ISphOutputBuffer::ISphOutputBuffer ( CSphVector<BYTE> & dBuf )
+ISphOutputBuffer::ISphOutputBuffer ( CSphVector<uint8_t> & dBuf )
 {
 	m_dBuf.SwapData ( dBuf );
 }
@@ -2508,7 +2508,7 @@ void * MysqlPack ( void * pBuffer, int iValue )
 	return (void*)pOutput;
 }
 
-int MysqlUnpack ( InputBuffer_c & tReq, DWORD * pSize )
+int MysqlUnpack ( InputBuffer_c & tReq, uint32_t * pSize )
 {
 	assert ( pSize );
 
@@ -2543,8 +2543,8 @@ int MysqlUnpack ( InputBuffer_c & tReq, DWORD * pSize )
 
 void ISphOutputBuffer::SendMysqlInt ( int iVal )
 {
-	BYTE dBuf[12];
-	BYTE * pBuf = (BYTE*) MysqlPack ( dBuf, iVal );
+	uint8_t dBuf[12];
+	uint8_t * pBuf = (uint8_t*) MysqlPack ( dBuf, iVal );
 	SendBytes ( dBuf, (int)( pBuf-dBuf ) );
 }
 
@@ -2553,8 +2553,8 @@ void ISphOutputBuffer::SendMysqlString ( const char * sStr )
 {
 	int iLen = strlen(sStr);
 
-	BYTE dBuf[12];
-	BYTE * pBuf = (BYTE*) MysqlPack ( dBuf, iLen );
+	uint8_t dBuf[12];
+	uint8_t * pBuf = (uint8_t*) MysqlPack ( dBuf, iLen );
 	SendBytes ( dBuf, (int)( pBuf-dBuf ) );
 	SendBytes ( sStr, iLen );
 }
@@ -2670,7 +2670,7 @@ void NetOutputBuffer_c::Flush ()
 
 /////////////////////////////////////////////////////////////////////////////
 
-InputBuffer_c::InputBuffer_c ( const BYTE * pBuf, int iLen )
+InputBuffer_c::InputBuffer_c ( const uint8_t * pBuf, int iLen )
 	: m_pBuf ( pBuf )
 	, m_pCur ( pBuf )
 	, m_bError ( !pBuf || iLen<0 )
@@ -2715,7 +2715,7 @@ CSphString InputBuffer_c::GetRawString ( int iLen )
 }
 
 
-bool InputBuffer_c::GetString ( CSphVector<BYTE> & dBuffer )
+bool InputBuffer_c::GetString ( CSphVector<uint8_t> & dBuffer )
 {
 	int iLen = GetInt ();
 	if ( m_bError || iLen<0 || iLen>g_iMaxPacketSize || ( m_pCur+iLen > m_pBuf+m_iLen ) )
@@ -2815,14 +2815,14 @@ bool NetInputBuffer_c::ReadFrom ( int iLen, int iTimeout, bool bIntr, bool bAppe
 	if ( iLen<=0 || iLen>g_iMaxPacketSize || m_iSock<0 )
 		return false;
 
-	BYTE * pBuf = m_dMinibufer + iCur;
+	uint8_t * pBuf = m_dMinibufer + iCur;
 	if ( ( iCur+iLen )>NET_MINIBUFFER_SIZE )
 	{
 		if ( ( iCur+iLen )>m_iMaxibuffer )
 		{
 			if ( iCur )
 			{
-				BYTE * pNew = new BYTE [ iCur+iLen ];
+				uint8_t * pNew = new uint8_t [ iCur+iLen ];
 				memcpy ( pNew, m_pCur, iCur );
 				SafeDeleteArray ( m_pMaxibuffer );
 				m_pMaxibuffer = pNew;
@@ -2830,7 +2830,7 @@ bool NetInputBuffer_c::ReadFrom ( int iLen, int iTimeout, bool bIntr, bool bAppe
 			} else
 			{
 				SafeDeleteArray ( m_pMaxibuffer );
-				m_pMaxibuffer = new BYTE [ iLen ];
+				m_pMaxibuffer = new uint8_t [ iLen ];
 				m_iMaxibuffer = iLen;
 			}
 		}
@@ -2998,7 +2998,7 @@ protected:
 
 struct SearchReplyParser_t : public IReplyParser_t, public ISphNoncopyable
 {
-	SearchReplyParser_t ( int iStart, int iEnd, CSphVector<DWORD> & dMvaStorage, CSphVector<BYTE> & dStringsStorage )
+	SearchReplyParser_t ( int iStart, int iEnd, CSphVector<uint32_t> & dMvaStorage, CSphVector<uint8_t> & dStringsStorage )
 		: m_iStart ( iStart )
 		, m_iEnd ( iEnd )
 		, m_dMvaStorage ( dMvaStorage )
@@ -3010,8 +3010,8 @@ struct SearchReplyParser_t : public IReplyParser_t, public ISphNoncopyable
 protected:
 	int					m_iStart;
 	int					m_iEnd;
-	CSphVector<DWORD> &	m_dMvaStorage;
-	CSphVector<BYTE> &	m_dStringsStorage;
+	CSphVector<uint32_t> &	m_dMvaStorage;
+	CSphVector<uint8_t> &	m_dStringsStorage;
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -3099,7 +3099,7 @@ void SearchRequestBuilder_t::SendQuery ( const char * sIndexes, NetOutputBuffer_
 {
 	// starting with command version 1.27, flags go first
 	// reason being, i might add flags that affect *any* of the subsequent data (eg. qflag_pack_ints)
-	DWORD uFlags = 0;
+	uint32_t uFlags = 0;
 	uFlags |= QFLAG_REVERSE_SCAN * q.m_bReverseScan;
 	uFlags |= QFLAG_SORT_KBUFFER * q.m_bSortKbuffer;
 	uFlags |= QFLAG_MAX_PREDICTED_TIME * ( q.m_iMaxPredictedMsec > 0 );
@@ -3124,8 +3124,8 @@ void SearchRequestBuilder_t::SendQuery ( const char * sIndexes, NetOutputBuffer_
 		// with outer order by, inner limit must match between agent and master
 		tOut.SendInt ( q.m_iLimit );
 	}
-	tOut.SendInt ( (DWORD)q.m_eMode ); // match mode
-	tOut.SendInt ( (DWORD)q.m_eRanker ); // ranking mode
+	tOut.SendInt ( (uint32_t)q.m_eMode ); // match mode
+	tOut.SendInt ( (uint32_t)q.m_eRanker ); // ranking mode
 	if ( q.m_eRanker==SPH_RANK_EXPR || q.m_eRanker==SPH_RANK_EXPORT )
 		tOut.SendString ( q.m_sRankerExpr.cstr() );
 	tOut.SendInt ( q.m_eSort ); // sort mode
@@ -3239,7 +3239,7 @@ void SearchRequestBuilder_t::SendQuery ( const char * sIndexes, NetOutputBuffer_
 			{
 				case SPH_ATTR_FLOAT:	tOut.SendFloat ( tEntry.m_dValues[j].m_fValue ); break;
 				case SPH_ATTR_BIGINT:	tOut.SendUint64 ( tEntry.m_dValues[j].m_uValue ); break;
-				default:				tOut.SendDword ( (DWORD)tEntry.m_dValues[j].m_uValue ); break;
+				default:				tOut.SendDword ( (uint32_t)tEntry.m_dValues[j].m_uValue ); break;
 			}
 		}
 	}
@@ -3303,7 +3303,7 @@ bool SearchReplyParser_t::ParseReply ( MemInputBuffer_c & tReq, AgentConn_t & tA
 		tRes.m_sWarning = "";
 
 		// get status and message
-		DWORD eStatus = tReq.GetDword ();
+		uint32_t eStatus = tReq.GetDword ();
 		if ( eStatus!=SEARCHD_OK )
 		{
 			CSphString sMessage = tReq.GetString ();
@@ -3376,8 +3376,8 @@ bool SearchReplyParser_t::ParseReply ( MemInputBuffer_c & tReq, AgentConn_t & tA
 							for ( ; iValues; iValues -= 2 )
 							{
 								uint64_t uMva = tReq.GetUint64();
-								m_dMvaStorage.Add ( (DWORD)uMva );
-								m_dMvaStorage.Add ( (DWORD)( uMva>>32 ) );
+								m_dMvaStorage.Add ( (uint32_t)uMva );
+								m_dMvaStorage.Add ( (uint32_t)( uMva>>32 ) );
 							}
 						}
 
@@ -3413,10 +3413,10 @@ bool SearchReplyParser_t::ParseReply ( MemInputBuffer_c & tReq, AgentConn_t & tA
 						tMatch.SetAttr ( tAttr.m_tLocator, (SphAttr_t) sValue.Leak() );
 					} else if ( tAttr.m_eAttrType==SPH_ATTR_FACTORS || tAttr.m_eAttrType==SPH_ATTR_FACTORS_JSON )
 					{
-						DWORD uLength = tReq.GetDword();
-						BYTE * pData = new BYTE[uLength];
-						*(DWORD *)pData = uLength;
-						tReq.GetBytes ( pData+sizeof(DWORD), uLength-sizeof(DWORD) );
+						uint32_t uLength = tReq.GetDword();
+						uint8_t * pData = new uint8_t[uLength];
+						*(uint32_t *)pData = uLength;
+						tReq.GetBytes ( pData+sizeof(uint32_t), uLength-sizeof(uint32_t) );
 						tMatch.SetAttr ( tAttr.m_tLocator, (SphAttr_t) pData );
 
 					} else if ( tAttr.m_eAttrType==SPH_ATTR_JSON_FIELD )
@@ -3454,7 +3454,7 @@ bool SearchReplyParser_t::ParseReply ( MemInputBuffer_c & tReq, AgentConn_t & tA
 		tRes.m_iQueryTime = tReq.GetInt ();
 
 		// agents always send IO/CPU stats to master
-		BYTE uStatMask = tReq.GetByte();
+		uint8_t uStatMask = tReq.GetByte();
 		if ( uStatMask & 1 )
 		{
 			tRes.m_tIOStats.m_iReadTime = tReq.GetUint64();
@@ -3739,7 +3739,7 @@ bool ParseSearchQuery ( InputBuffer_c & tReq, ISphOutputBuffer & tOut, CSphQuery
 	tQuery.m_iAgentQueryTimeout = g_iAgentQueryTimeout;
 
 	// v.1.27+ flags come first
-	DWORD uFlags = 0;
+	uint32_t uFlags = 0;
 	if ( iVer>=0x11B )
 		uFlags = tReq.GetDword();
 
@@ -4947,12 +4947,12 @@ int CalcResultLength ( int iVer, const CSphQueryResult * pRes, const CSphTaggedV
 		for ( int i=0; i<pRes->m_iCount; i++ )
 		{
 			const CSphMatch & tMatch = pRes->m_dMatches [ pRes->m_iOffset+i ];
-			const DWORD * pMvaPool = dTag2Pools [ tMatch.m_iTag ].m_pMva;
+			const uint32_t * pMvaPool = dTag2Pools [ tMatch.m_iTag ].m_pMva;
 			bool bArenaProhibit = dTag2Pools[tMatch.m_iTag].m_bArenaProhibit;
 			ARRAY_FOREACH ( j, dMvaItems )
 			{
 				assert ( tMatch.GetAttr ( dMvaItems[j] )==0 || pMvaPool );
-				const DWORD * pMva = tMatch.GetAttrMVA ( dMvaItems[j], pMvaPool, bArenaProhibit );
+				const uint32_t * pMva = tMatch.GetAttrMVA ( dMvaItems[j], pMvaPool, bArenaProhibit );
 				if ( pMva )
 					iRespLen += pMva[0]*4; // FIXME? maybe add some sanity check here
 			}
@@ -4964,10 +4964,10 @@ int CalcResultLength ( int iVer, const CSphQueryResult * pRes, const CSphTaggedV
 		for ( int i=0; i<pRes->m_iCount; i++ )
 		{
 			const CSphMatch & tMatch = pRes->m_dMatches [ pRes->m_iOffset+i ];
-			const BYTE * pStrings = dTag2Pools [ tMatch.m_iTag ].m_pStrings;
+			const uint8_t * pStrings = dTag2Pools [ tMatch.m_iTag ].m_pStrings;
 			ARRAY_FOREACH ( j, dStringItems )
 			{
-				DWORD uOffset = (DWORD) tMatch.GetAttr ( dStringItems[j] );
+				uint32_t uOffset = (uint32_t) tMatch.GetAttr ( dStringItems[j] );
 				assert ( !uOffset || pStrings );
 				if ( uOffset ) // magic zero
 					iRespLen += sphUnpackStr ( pStrings+uOffset, NULL );
@@ -5007,15 +5007,15 @@ int CalcResultLength ( int iVer, const CSphQueryResult * pRes, const CSphTaggedV
 
 	if ( iVer>=0x117 && dJsonItems.GetLength() )
 	{
-		CSphVector<BYTE> dJson ( 512 );
+		CSphVector<uint8_t> dJson ( 512 );
 		// to master pass JSON as raw data
 		for ( int i=0; i<pRes->m_iCount; i++ )
 		{
 			const CSphMatch & tMatch = pRes->m_dMatches [ pRes->m_iOffset+i ];
-			const BYTE * pPool = dTag2Pools [ tMatch.m_iTag ].m_pStrings;
+			const uint8_t * pPool = dTag2Pools [ tMatch.m_iTag ].m_pStrings;
 			ARRAY_FOREACH ( j, dJsonItems )
 			{
-				DWORD uOffset = (DWORD) tMatch.GetAttr ( dJsonItems[j] );
+				uint32_t uOffset = (uint32_t) tMatch.GetAttr ( dJsonItems[j] );
 				assert ( !uOffset || pPool );
 				if ( !uOffset ) // magic zero
 				{
@@ -5024,7 +5024,7 @@ int CalcResultLength ( int iVer, const CSphQueryResult * pRes, const CSphTaggedV
 					continue;
 				}
 
-				const BYTE * pStr = NULL;
+				const uint8_t * pStr = NULL;
 				int iRawLen = sphUnpackStr ( pPool + uOffset, &pStr );
 
 				if ( bSendJson )
@@ -5042,30 +5042,30 @@ int CalcResultLength ( int iVer, const CSphQueryResult * pRes, const CSphTaggedV
 
 	if ( iVer>=0x117 && dJsonFieldsItems.GetLength() )
 	{
-		CSphVector<BYTE> dJson ( 512 );
+		CSphVector<uint8_t> dJson ( 512 );
 
 		for ( int i=0; i<pRes->m_iCount; i++ )
 		{
 			const CSphMatch & tMatch = pRes->m_dMatches [ pRes->m_iOffset+i ];
-			const BYTE * pStrings = dTag2Pools [ tMatch.m_iTag ].m_pStrings;
+			const uint8_t * pStrings = dTag2Pools [ tMatch.m_iTag ].m_pStrings;
 			ARRAY_FOREACH ( j, dJsonFieldsItems )
 			{
-				// sizeof(DWORD) count already
+				// sizeof(uint32_t) count already
 				uint64_t uTypeOffset = tMatch.GetAttr ( dJsonFieldsItems[j] );
 				assert ( !uTypeOffset || pStrings );
 				if ( !uTypeOffset ) // magic zero
 				{
 					if ( bSendJsonField )
-						iRespLen -= 3; // agent sends to master JSON type as BYTE
+						iRespLen -= 3; // agent sends to master JSON type as uint8_t
 					continue;
 				}
 
 				ESphJsonType eJson = ESphJsonType ( uTypeOffset>>32 );
-				DWORD uOff = (DWORD)uTypeOffset;
+				uint32_t uOff = (uint32_t)uTypeOffset;
 				if ( bSendJsonField )
 				{
-					const BYTE * pData = pStrings+uOff;
-					iRespLen -= 3; // JSON type as BYTE
+					const uint8_t * pData = pStrings+uOff;
+					iRespLen -= 3; // JSON type as uint8_t
 					iRespLen += sphJsonNodeSize ( eJson, pData );
 					if ( sphJsonNodeSize ( eJson, NULL )<0 )
 						iRespLen += 4;
@@ -5087,9 +5087,9 @@ int CalcResultLength ( int iVer, const CSphQueryResult * pRes, const CSphTaggedV
 			const CSphMatch & tMatch = pRes->m_dMatches [ pRes->m_iOffset+i ];
 			ARRAY_FOREACH ( j, dFactorItems )
 			{
-				DWORD * pData = (DWORD *) tMatch.GetAttr ( dFactorItems[j] );
+				uint32_t * pData = (uint32_t *) tMatch.GetAttr ( dFactorItems[j] );
 				if ( pData )
-					iRespLen += *pData-sizeof(DWORD);
+					iRespLen += *pData-sizeof(uint32_t);
 			}
 		}
 	}
@@ -5156,7 +5156,7 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 			if ( ( tCol.m_eAttrType==SPH_ATTR_JSON && !bSendJson ) || ( tCol.m_eAttrType==SPH_ATTR_JSON_FIELD && !bSendJsonField )
 				 || ( tCol.m_eAttrType==SPH_ATTR_STRINGPTR && !bAgentMode ) )
 				eCol = SPH_ATTR_STRING;
-			tOut.SendDword ( (DWORD)eCol );
+			tOut.SendDword ( (uint32_t)eCol );
 		}
 	}
 
@@ -5180,7 +5180,7 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 	if ( iVer>=0x108 )
 		tOut.SendInt ( USE_64BIT );
 
-	CSphVector<BYTE> dJson ( 512 );
+	CSphVector<uint8_t> dJson ( 512 );
 
 	for ( int i=0; i<pRes->m_iCount; i++ )
 	{
@@ -5190,19 +5190,19 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 			tOut.SendUint64 ( tMatch.m_uDocID );
 		else
 #endif
-			tOut.SendDword ( (DWORD)tMatch.m_uDocID );
+			tOut.SendDword ( (uint32_t)tMatch.m_uDocID );
 
 		if ( iVer<=0x101 )
 		{
-			tOut.SendDword ( iGIDLoc.m_iBitOffset>=0 ? (DWORD) tMatch.GetAttr ( iGIDLoc ) : 1 );
-			tOut.SendDword ( iTSLoc.m_iBitOffset>=0 ? (DWORD) tMatch.GetAttr ( iTSLoc ) : 1 );
+			tOut.SendDword ( iGIDLoc.m_iBitOffset>=0 ? (uint32_t) tMatch.GetAttr ( iGIDLoc ) : 1 );
+			tOut.SendDword ( iTSLoc.m_iBitOffset>=0 ? (uint32_t) tMatch.GetAttr ( iTSLoc ) : 1 );
 			tOut.SendInt ( tMatch.m_iWeight );
 		} else
 		{
 			tOut.SendInt ( tMatch.m_iWeight );
 
-			const DWORD * pMvaPool = dTag2Pools [ tMatch.m_iTag ].m_pMva;
-			const BYTE * pStrings = dTag2Pools [ tMatch.m_iTag ].m_pStrings;
+			const uint32_t * pMvaPool = dTag2Pools [ tMatch.m_iTag ].m_pMva;
+			const uint8_t * pStrings = dTag2Pools [ tMatch.m_iTag ].m_pStrings;
 			bool bArenaProhibit = dTag2Pools[tMatch.m_iTag].m_bArenaProhibit;
 
 			assert ( tMatch.m_pStatic || !pRes->m_tSchema.GetStaticSize() );
@@ -5221,7 +5221,7 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 				case SPH_ATTR_INT64SET:
 					{
 						assert ( tMatch.GetAttr ( tAttr.m_tLocator )==0 || pMvaPool );
-						const DWORD * pValues = tMatch.GetAttrMVA ( tAttr.m_tLocator, pMvaPool, bArenaProhibit );
+						const uint32_t * pValues = tMatch.GetAttrMVA ( tAttr.m_tLocator, pMvaPool, bArenaProhibit );
 						if ( iVer<0x10C || !pValues )
 						{
 							// for older clients, fixups column value to 0
@@ -5260,7 +5260,7 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 						if ( !bSendJson )
 						{
 							// formatted string to client
-							DWORD uOffset = (DWORD) tMatch.GetAttr ( tAttr.m_tLocator );
+							uint32_t uOffset = (uint32_t) tMatch.GetAttr ( tAttr.m_tLocator );
 							assert ( !uOffset || pStrings );
 							if ( !uOffset ) // magic zero
 							{
@@ -5269,7 +5269,7 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 							} else
 							{
 								dJson.Resize ( 0 );
-								const BYTE * pStr = NULL;
+								const uint8_t * pStr = NULL;
 								sphUnpackStr ( pStrings + uOffset, &pStr );
 								sphJsonFormat ( dJson, pStr );
 
@@ -5288,13 +5288,13 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 							break;
 						}
 						// for newer clients, send binary string either STRING or JSON attribute
-						DWORD uOffset = (DWORD) tMatch.GetAttr ( tAttr.m_tLocator );
+						uint32_t uOffset = (uint32_t) tMatch.GetAttr ( tAttr.m_tLocator );
 						if ( !uOffset ) // magic zero
 						{
 							tOut.SendDword ( 0 ); // null string
 						} else
 						{
-							const BYTE * pStr;
+							const uint8_t * pStr;
 							assert ( pStrings );
 							int iLen = sphUnpackStr ( pStrings+uOffset, &pStr );
 							tOut.SendDword ( iLen );
@@ -5332,7 +5332,7 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 
 						uint64_t uTypeOffset = tMatch.GetAttr ( tAttr.m_tLocator );
 						ESphJsonType eJson = ESphJsonType ( uTypeOffset>>32 );
-						DWORD uOff = (DWORD)uTypeOffset;
+						uint32_t uOff = (uint32_t)uTypeOffset;
 						assert ( !uOff || pStrings );
 						if ( !uOff )
 						{
@@ -5345,9 +5345,9 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 						} else if ( bSendJsonField )
 						{
 							// to master send packed data
-							tOut.SendByte ( (BYTE)eJson );
+							tOut.SendByte ( (uint8_t)eJson );
 
-							const BYTE * pData = pStrings+uOff;
+							const uint8_t * pData = pStrings+uOff;
 							int iLen = sphJsonNodeSize ( eJson, pData );
 							if ( sphJsonNodeSize ( eJson, NULL )<0 )
 								tOut.SendDword ( iLen );
@@ -5370,14 +5370,14 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 							tOut.SendDword ( 0 );
 							break;
 						}
-						BYTE * pData = (BYTE*) tMatch.GetAttr ( tAttr.m_tLocator );
+						uint8_t * pData = (uint8_t*) tMatch.GetAttr ( tAttr.m_tLocator );
 						if ( !pData )
 							tOut.SendDword ( 0 );
 						else
 						{
-							DWORD uLength = *(DWORD*)pData;
+							uint32_t uLength = *(uint32_t*)pData;
 							tOut.SendDword ( uLength );
-							tOut.SendBytes ( pData+sizeof(DWORD), uLength-sizeof(DWORD) );
+							tOut.SendBytes ( pData+sizeof(uint32_t), uLength-sizeof(uint32_t) );
 						}
 						break;
 					}
@@ -5392,7 +5392,7 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 					}
 					// no break here
 				default:
-					tOut.SendDword ( (DWORD)tMatch.GetAttr ( tAttr.m_tLocator ) );
+					tOut.SendDword ( (uint32_t)tMatch.GetAttr ( tAttr.m_tLocator ) );
 					break;
 				} /// end switch ( tAttr.m_eAttrType )
 			} /// end for ( int j=0; j<iAttrsCount; j++ )
@@ -5411,7 +5411,7 @@ void SendResult ( int iVer, ISphOutputBuffer & tOut, const CSphQueryResult * pRe
 	{
 		bool bNeedPredictedTime = tQuery.m_iMaxPredictedMsec > 0;
 
-		BYTE uStatMask = ( bNeedPredictedTime ? 4 : 0 ) | ( g_bCpuStats ? 2 : 0 ) | ( g_bIOStats ? 1 : 0 );
+		uint8_t uStatMask = ( bNeedPredictedTime ? 4 : 0 ) | ( g_bCpuStats ? 2 : 0 ) | ( g_bIOStats ? 1 : 0 );
 		tOut.SendByte ( uStatMask );
 
 		if ( g_bIOStats )
@@ -5635,7 +5635,7 @@ static void RemapStrings ( ISphMatchSorter * pSorter, AggrResult_t & tRes )
 			for ( int i=iCur; i<iCur+tRes.m_dMatchCounts[iSchema]; i++ )
 			{
 				CSphMatch & tMatch = tRes.m_dMatches[i];
-				const BYTE * pStringBase = tRes.m_dTag2Pools[tMatch.m_iTag].m_pStrings;
+				const uint8_t * pStringBase = tRes.m_dTag2Pools[tMatch.m_iTag].m_pStrings;
 
 				ARRAY_FOREACH ( iAttr, dRemapAttr )
 				{
@@ -5839,7 +5839,7 @@ static void ProcessPostlimit ( const CSphVector<const CSphColumnInfo *> & dPostl
 				tMatch.SetAttr ( pCol->m_tLocator, pCol->m_pExpr->Int64Eval(tMatch) );
 			else if ( pCol->m_eAttrType==SPH_ATTR_STRINGPTR )
 			{
-				const BYTE * pStr = NULL;
+				const uint8_t * pStr = NULL;
 				pCol->m_pExpr->StringEval ( tMatch, &pStr );
 				tMatch.SetAttr ( pCol->m_tLocator, (SphAttr_t) pStr ); // FIXME! a potential leak of *previous* value?
 			} else
@@ -6445,7 +6445,7 @@ struct Expr_Snippet_c : public ISphStringExpr
 {
 	ISphExpr *					m_pArgs;
 	ISphExpr *					m_pText;
-	const BYTE *				m_sWords;
+	const uint8_t *				m_sWords;
 	CSphIndex *					m_pIndex;
 	SnippetContext_t			m_tCtx;
 	mutable ExcerptQuery_t		m_tHighlight;
@@ -6464,13 +6464,13 @@ struct Expr_Snippet_c : public ISphStringExpr
 		CSphMatch tDummy;
 		char * pWords;
 		assert ( !pArglist->GetArg(1)->IsStringPtr() ); // aware of memleaks potentially caused by StringEval()
-		pArglist->GetArg(1)->StringEval ( tDummy, (const BYTE**)&pWords );
+		pArglist->GetArg(1)->StringEval ( tDummy, (const uint8_t**)&pWords );
 		m_tHighlight.m_sWords = pWords;
 
 		for ( int i = 2; i < pArglist->GetNumArgs(); i++ )
 		{
 			assert ( !pArglist->GetArg(i)->IsStringPtr() ); // aware of memleaks potentially caused by StringEval()
-			int iLen = pArglist->GetArg(i)->StringEval ( tDummy, (const BYTE**)&pWords );
+			int iLen = pArglist->GetArg(i)->StringEval ( tDummy, (const uint8_t**)&pWords );
 			if ( !pWords || !iLen )
 				continue;
 
@@ -6539,13 +6539,13 @@ struct Expr_Snippet_c : public ISphStringExpr
 		SafeRelease ( m_pArgs );
 	}
 
-	virtual int StringEval ( const CSphMatch & tMatch, const BYTE ** ppStr ) const
+	virtual int StringEval ( const CSphMatch & tMatch, const uint8_t ** ppStr ) const
 	{
 		CSphScopedProfile ( m_pProfiler, SPH_QSTATE_SNIPPET );
 
 		*ppStr = NULL;
 
-		const BYTE * sSource = NULL;
+		const uint8_t * sSource = NULL;
 		int iLen = m_pText->StringEval ( tMatch, &sSource );
 
 		if ( !iLen )
@@ -6734,13 +6734,13 @@ public:
 	CSphVector<SearchFailuresLog_c>	m_dFailuresSet;					///< failure logs for each query
 	CSphVector < CSphVector<int64_t> >	m_dAgentTimes;				///< per-agent time stats
 	CSphQueryProfile *				m_pProfile;
-	CSphVector<DWORD *>				m_dMva2Free;
-	CSphVector<BYTE *>				m_dString2Free;
+	CSphVector<uint32_t *>				m_dMva2Free;
+	CSphVector<uint8_t *>				m_dString2Free;
 	int								m_iCid;
 
 protected:
 	void							RunSubset ( int iStart, int iEnd );	///< run queries against index(es) from first query in the subset
-	void							RunLocalSearches ( ISphMatchSorter * pLocalSorter, DWORD uFactorFlags );
+	void							RunLocalSearches ( ISphMatchSorter * pLocalSorter, uint32_t uFactorFlags );
 	void							RunLocalSearchesMT ();
 	bool							RunLocalSearch ( int iLocal, ISphMatchSorter ** ppSorters, CSphQueryResult ** pResults, bool * pMulti ) const;
 	bool							AllowsMulti ( int iStart, int iEnd ) const;
@@ -7384,7 +7384,7 @@ bool SearchHandler_c::RunLocalSearch ( int iLocal, ISphMatchSorter ** ppSorters,
 
 	// create sorters
 	int iValidSorters = 0;
-	DWORD uFactorFlags = SPH_FACTOR_DISABLE;
+	uint32_t uFactorFlags = SPH_FACTOR_DISABLE;
 	for ( int i=0; i<iQueries; i++ )
 	{
 		CSphString & sError = ppResults[i]->m_sError;
@@ -7478,7 +7478,7 @@ bool SearchHandler_c::RunLocalSearch ( int iLocal, ISphMatchSorter ** ppSorters,
 }
 
 
-void SearchHandler_c::RunLocalSearches ( ISphMatchSorter * pLocalSorter, DWORD uFactorFlags )
+void SearchHandler_c::RunLocalSearches ( ISphMatchSorter * pLocalSorter, uint32_t uFactorFlags )
 {
 	m_dQueryIndexStats.Resize ( m_dLocal.GetLength() );
 	ARRAY_FOREACH ( i, m_dQueryIndexStats )
@@ -7518,7 +7518,7 @@ void SearchHandler_c::RunLocalSearches ( ISphMatchSorter * pLocalSorter, DWORD u
 		ARRAY_FOREACH ( i, dSorters )
 			dSorters[i] = NULL;
 
-		DWORD uTotalFactorFlags = uFactorFlags;
+		uint32_t uTotalFactorFlags = uFactorFlags;
 		int iValidSorters = 0;
 		for ( int iQuery=m_iStart; iQuery<=m_iEnd; iQuery++ )
 		{
@@ -8208,7 +8208,7 @@ void SearchHandler_c::RunSubset ( int iStart, int iEnd )
 	// optimize single-query, same-schema local searches
 	/////////////////////////////////////////////////////
 
-	DWORD uLocalPFFlags = SPH_FACTOR_DISABLE;
+	uint32_t uLocalPFFlags = SPH_FACTOR_DISABLE;
 	ISphMatchSorter * pLocalSorter = NULL;
 	while ( iStart==iEnd && m_dLocal.GetLength()>1 )
 	{
@@ -8331,8 +8331,8 @@ void SearchHandler_c::RunSubset ( int iStart, int iEnd )
 			// wait for remote queries to complete
 			if ( tDistCtrl->FetchReadyAgents() )
 			{
-				CSphVector<DWORD> dMvaStorage;
-				CSphVector<BYTE> dStringStorage;
+				CSphVector<uint32_t> dMvaStorage;
+				CSphVector<uint8_t> dStringStorage;
 				dMvaStorage.Add ( 0 );
 				dStringStorage.Add ( 0 );
 				SearchReplyParser_t tParser ( iStart, iEnd, dMvaStorage, dStringStorage );
@@ -8343,8 +8343,8 @@ void SearchHandler_c::RunSubset ( int iStart, int iEnd )
 				// check if there were valid (though might be 0-matches) replies, and merge them
 				if ( iReplys )
 				{
-					DWORD * pMva = dMvaStorage.Begin();
-					BYTE * pString = dStringStorage.Begin();
+					uint32_t * pMva = dMvaStorage.Begin();
+					uint8_t * pString = dStringStorage.Begin();
 					ARRAY_FOREACH ( iAgent, dAgents )
 					{
 						AgentConn_t & tAgent = dAgents[iAgent];
@@ -8759,7 +8759,7 @@ void SendSearchResponse ( SearchHandler_c & tHandler, ISphOutputBuffer & tOut, i
 		bool bWarning = ( iVer>=0x106 && !tRes.m_sWarning.IsEmpty() );
 
 		// send it
-		tOut.SendWord ( (WORD)( bWarning ? SEARCHD_WARNING : SEARCHD_OK ) );
+		tOut.SendWord ( (uint16_t)( bWarning ? SEARCHD_WARNING : SEARCHD_OK ) );
 		tOut.SendWord ( VER_COMMAND_SEARCH );
 		tOut.SendInt ( iReplyLen );
 
@@ -8771,7 +8771,7 @@ void SendSearchResponse ( SearchHandler_c & tHandler, ISphOutputBuffer & tOut, i
 			iReplyLen += CalcResultLength ( iVer, &tHandler.m_dResults[i], tHandler.m_dResults[i].m_dTag2Pools, bAgentMode, tHandler.m_dQueries[i], iMasterVer );
 
 		// send it
-		tOut.SendWord ( (WORD)SEARCHD_OK );
+		tOut.SendWord ( (uint16_t)SEARCHD_OK );
 		tOut.SendWord ( VER_COMMAND_SEARCH );
 		tOut.SendInt ( iReplyLen );
 
@@ -8930,8 +8930,8 @@ public:
 				continue;
 			if ( iCur && iLastValue && t==SPH_ATTR_STRING )
 			{
-				const BYTE * a = (const BYTE*) iCur;
-				const BYTE * b = (const BYTE*) iLastValue;
+				const uint8_t * a = (const uint8_t*) iCur;
+				const uint8_t * b = (const uint8_t*) iLastValue;
 				int iLen1 = sphUnpackStr ( a, &a );
 				int iLen2 = sphUnpackStr ( b, &b );
 				if ( iLen1==iLen2 && memcmp ( a, b, iLen1 )==0 )
@@ -9074,7 +9074,7 @@ public:
 	SqlStmt_t *		m_pStmt;
 	CSphVector<SqlStmt_t> & m_dStmt;
 	ESphCollation	m_eCollation;
-	BYTE			m_uSyntaxFlags;
+	uint8_t			m_uSyntaxFlags;
 
 public:
 	explicit		SqlParser_c ( CSphVector<SqlStmt_t> & dStmt, ESphCollation eCollation );
@@ -9527,7 +9527,7 @@ bool SqlParser_c::AddOption ( const SqlNode_t & tIdent, const SqlNode_t & tValue
 
 	} else if ( sOpt=="rand_seed" )
 	{
-		m_pStmt->m_tQuery.m_iRandSeed = int64_t(DWORD(tValue.m_iValue));
+		m_pStmt->m_tQuery.m_iRandSeed = int64_t(uint32_t(tValue.m_iValue));
 
 	} else if ( sOpt=="sync" )
 	{
@@ -9781,8 +9781,8 @@ void SqlParser_c::UpdateMVAAttr ( const SqlNode_t & tName, const SqlNode_t & dVa
 			{
 				eType = SPH_ATTR_INT64SET;
 			}
-			tUpd.m_dPool.Add ( (DWORD)uVal );
-			tUpd.m_dPool.Add ( (DWORD)( uVal>>32 ) );
+			tUpd.m_dPool.Add ( (uint32_t)uVal );
+			tUpd.m_dPool.Add ( (uint32_t)( uVal>>32 ) );
 		}
 	} else
 	{
@@ -10934,12 +10934,12 @@ void UpdateRequestBuilder_t::BuildRequest ( AgentConn_t & tAgent, NetOutputBuffe
 		int iMvaCount = 0;
 		ARRAY_FOREACH ( iDoc, m_tUpd.m_dDocids )
 		{
-			const DWORD * pPool = m_tUpd.m_dPool.Begin() + m_tUpd.m_dRowOffset[iDoc];
+			const uint32_t * pPool = m_tUpd.m_dPool.Begin() + m_tUpd.m_dRowOffset[iDoc];
 			ARRAY_FOREACH ( iAttr, m_tUpd.m_dTypes )
 			{
 				if ( m_tUpd.m_dTypes[iAttr]==SPH_ATTR_UINT32SET )
 				{
-					DWORD uVal = *pPool++;
+					uint32_t uVal = *pPool++;
 					iMvaCount += uVal;
 					pPool += uVal;
 				} else
@@ -10991,16 +10991,16 @@ void UpdateRequestBuilder_t::BuildRequest ( AgentConn_t & tAgent, NetOutputBuffe
 		{
 			tOut.SendUint64 ( m_tUpd.m_dDocids[iDoc] );
 
-			const DWORD * pPool = m_tUpd.m_dPool.Begin() + m_tUpd.m_dRowOffset[iDoc];
+			const uint32_t * pPool = m_tUpd.m_dPool.Begin() + m_tUpd.m_dRowOffset[iDoc];
 			ARRAY_FOREACH ( iAttr, m_tUpd.m_dTypes )
 			{
-				DWORD uVal = *pPool++;
+				uint32_t uVal = *pPool++;
 				if ( m_tUpd.m_dTypes[iAttr]!=SPH_ATTR_UINT32SET )
 				{
 					tOut.SendDword ( uVal );
 				} else
 				{
-					const DWORD * pEnd = pPool + uVal;
+					const uint32_t * pEnd = pPool + uVal;
 					tOut.SendDword ( uVal/2 );
 					while ( pPool<pEnd )
 					{
@@ -11084,7 +11084,7 @@ void HandleCommandUpdate ( ISphOutputBuffer & tOut, int iVer, InputBuffer_c & tR
 	// parse request
 	CSphString sIndexes = tReq.GetString ();
 	CSphAttrUpdate tUpd;
-	CSphVector<DWORD> dMva;
+	CSphVector<uint32_t> dMva;
 
 	bool bMvaUpdate = false;
 
@@ -11122,7 +11122,7 @@ void HandleCommandUpdate ( ISphOutputBuffer & tOut, int iVer, InputBuffer_c & tR
 		{
 			if ( tUpd.m_dTypes[iAttr]==SPH_ATTR_UINT32SET )
 			{
-				DWORD uCount = tReq.GetDword ();
+				uint32_t uCount = tReq.GetDword ();
 				if ( !uCount )
 				{
 					tUpd.m_dPool.Add ( 0 );
@@ -11130,7 +11130,7 @@ void HandleCommandUpdate ( ISphOutputBuffer & tOut, int iVer, InputBuffer_c & tR
 				}
 
 				dMva.Resize ( uCount );
-				for ( DWORD j=0; j<uCount; j++ )
+				for ( uint32_t j=0; j<uCount; j++ )
 				{
 					dMva[j] = tReq.GetDword();
 				}
@@ -11363,7 +11363,7 @@ void BuildStatus ( VectorLike & dStatus )
 
 	// FIXME? non-transactional!!!
 	if ( dStatus.MatchAdd ( "uptime" ) )
-		dStatus.Add().SetSprintf ( "%u", (DWORD)time(NULL)-g_tStats.m_uStarted );
+		dStatus.Add().SetSprintf ( "%u", (uint32_t)time(NULL)-g_tStats.m_uStarted );
 	if ( dStatus.MatchAdd ( "connections" ) )
 		dStatus.Add().SetSprintf ( FMT64, (int64_t) g_tStats.m_iConnections );
 	if ( dStatus.MatchAdd ( "maxed_out" ) )
@@ -11631,7 +11631,7 @@ void BuildDistIndexStatus ( VectorLike & dStatus, const CSphString& sIndex )
 				dStatus.Add().SetSprintf ( "%s:%s", dDesc.GetMyUrl().cstr(), dDesc.m_sIndexes.cstr() );
 
 			if ( tAgents.IsHA() && dStatus.MatchAddVa ( "%s_probability_weight", sKey.cstr() ) )
-				dStatus.Add().SetSprintf ( "%d", (DWORD)( dWeights[j]) );
+				dStatus.Add().SetSprintf ( "%d", (uint32_t)( dWeights[j]) );
 
 			if ( dStatus.MatchAddVa ( "%s_is_blackhole", sKey.cstr() ) )
 				dStatus.Add ( dDesc.m_bBlackhole ? "1" : "0" );
@@ -11909,7 +11909,7 @@ static void HandleClientSphinx ( int iSock, const char * sClientIP, ThdDesc_t * 
 	int64_t iCID = pThd->m_iConnID;
 
 	// send my version
-	DWORD uServer = htonl ( SPHINX_SEARCHD_PROTO );
+	uint32_t uServer = htonl ( SPHINX_SEARCHD_PROTO );
 	if ( sphSockSend ( iSock, (char*)&uServer, sizeof(uServer) )!=sizeof(uServer) )
 	{
 		sphWarning ( "failed to send server version (client=%s(" INT64_FMT "))", sClientIP, iCID );
@@ -12040,8 +12040,8 @@ bool LoopClientSphinx ( int iCommand, int iCommandVer, int iLength, const char *
 	tCrashQuery.m_pQuery = tBuf.GetBufferPtr();
 	tCrashQuery.m_iSize = iLength;
 	tCrashQuery.m_bMySQL = false;
-	tCrashQuery.m_uCMD = (WORD)iCommand;
-	tCrashQuery.m_uVer = (WORD)iCommandVer;
+	tCrashQuery.m_uCMD = (uint16_t)iCommand;
+	tCrashQuery.m_uVer = (uint16_t)iCommandVer;
 	SphCrashLogger_c::SetLastQuery ( tCrashQuery );
 
 	// handle known commands
@@ -12144,7 +12144,7 @@ enum MysqlColumnFlag_e
 };
 
 
-void SendMysqlFieldPacket ( ISphOutputBuffer & tOut, BYTE uPacketID, const char * sCol, MysqlColumnType_e eType, WORD uFlags )
+void SendMysqlFieldPacket ( ISphOutputBuffer & tOut, uint8_t uPacketID, const char * sCol, MysqlColumnType_e eType, uint16_t uFlags )
 {
 	const char * sDB = "";
 	const char * sTable = "";
@@ -12173,7 +12173,7 @@ void SendMysqlFieldPacket ( ISphOutputBuffer & tOut, BYTE uPacketID, const char 
 	tOut.SendByte ( 0x21 ); // charset_nr, 0x21 is utf8
 	tOut.SendByte ( 0 ); // charset_nr
 	tOut.SendLSBDword ( iColLen ); // length
-	tOut.SendByte ( BYTE(eType) ); // type (0=decimal)
+	tOut.SendByte ( uint8_t(eType) ); // type (0=decimal)
 	tOut.SendByte ( uFlags&255 );
 	tOut.SendByte ( uFlags>>8 );
 	tOut.SendByte ( 0 ); // decimals
@@ -12192,7 +12192,7 @@ enum MysqlErrors_e
 };
 
 
-void SendMysqlErrorPacket ( ISphOutputBuffer & tOut, BYTE uPacketID, const char * sStmt,
+void SendMysqlErrorPacket ( ISphOutputBuffer & tOut, uint8_t uPacketID, const char * sStmt,
 	const char * sError, int iCID, MysqlErrors_e iErr )
 {
 	if ( sError==NULL )
@@ -12207,8 +12207,8 @@ void SendMysqlErrorPacket ( ISphOutputBuffer & tOut, BYTE uPacketID, const char 
 	// send packet header
 	tOut.SendLSBDword ( (uPacketID<<24) + iLen );
 	tOut.SendByte ( 0xff ); // field count, always 0xff for error packet
-	tOut.SendByte ( (BYTE)( iError & 0xff ) );
-	tOut.SendByte ( (BYTE)( iError>>8 ) );
+	tOut.SendByte ( (uint8_t)( iError & 0xff ) );
+	tOut.SendByte ( (uint8_t)( iError>>8 ) );
 
 	// send sqlstate (1 byte marker, 5 byte state)
 	switch ( iErr )
@@ -12229,7 +12229,7 @@ void SendMysqlErrorPacket ( ISphOutputBuffer & tOut, BYTE uPacketID, const char 
 	tOut.SendBytes ( sError, iErrorLen );
 }
 
-void SendMysqlEofPacket ( ISphOutputBuffer & tOut, BYTE uPacketID, int iWarns, bool bMoreResults=false )
+void SendMysqlEofPacket ( ISphOutputBuffer & tOut, uint8_t uPacketID, int iWarns, bool bMoreResults=false )
 {
 	if ( iWarns<0 ) iWarns = 0;
 	if ( iWarns>65535 ) iWarns = 65535;
@@ -12242,9 +12242,9 @@ void SendMysqlEofPacket ( ISphOutputBuffer & tOut, BYTE uPacketID, int iWarns, b
 }
 
 
-void SendMysqlOkPacket ( ISphOutputBuffer & tOut, BYTE uPacketID, int iAffectedRows=0, int iWarns=0, const char * sMessage=NULL, bool bMoreResults=false )
+void SendMysqlOkPacket ( ISphOutputBuffer & tOut, uint8_t uPacketID, int iAffectedRows=0, int iWarns=0, const char * sMessage=NULL, bool bMoreResults=false )
 {
-	DWORD iInsert_id = 0;
+	uint32_t iInsert_id = 0;
 	char sVarLen[20] = {0}; // max 18 for packed number, +1 more just for fun
 	void * pBuf = sVarLen;
 	pBuf = MysqlPack ( pBuf, iAffectedRows );
@@ -12260,7 +12260,7 @@ void SendMysqlOkPacket ( ISphOutputBuffer & tOut, BYTE uPacketID, int iAffectedR
 	tOut.SendBytes ( sVarLen, iLen );	// packed affected rows & insert_id
 	if ( iWarns<0 ) iWarns = 0;
 	if ( iWarns>65535 ) iWarns = 65535;
-	DWORD uWarnStatus = iWarns<<16;
+	uint32_t uWarnStatus = iWarns<<16;
 	if ( bMoreResults ) // order of WORDs is opposite to EOF packet
 		uWarnStatus |= ( SPH_MYSQL_FLAG_MORE_RESULTS );
 	tOut.SendLSBDword ( uWarnStatus );		// 0 status, N warnings
@@ -12287,7 +12287,7 @@ class SqlRowBuffer_c : public ISphNoncopyable, public IDataTupleter
 {
 public:
 
-	SqlRowBuffer_c ( BYTE * pPacketID, ISphOutputBuffer * pOut, int iCID )
+	SqlRowBuffer_c ( uint8_t * pPacketID, ISphOutputBuffer * pOut, int iCID )
 		: m_pBuf ( NULL )
 		, m_iLen ( 0 )
 		, m_iLimit ( sizeof ( m_dBuf ) )
@@ -12349,7 +12349,7 @@ public:
 	{
 		Reserve ( SPH_MAX_NUMERIC_STR );
 		int iLen = snprintf ( Get()+1, SPH_MAX_NUMERIC_STR-1, sFormat, tVal );
-		*Get() = BYTE(iLen);
+		*Get() = uint8_t(iLen);
 		IncPtr ( 1+iLen );
 	}
 
@@ -12376,14 +12376,14 @@ public:
 		int iFrac = (int)( iUsec % 1000000 );
 		Reserve ( 18 ); // 1..10 bytes for sec, 1 for dot, 6 for frac, 1 for len
 		int iLen = snprintf ( Get()+1, 18, "%d.%06d", iSec, iFrac ); //NOLINT
-		*Get() = BYTE(iLen);
+		*Get() = uint8_t(iLen);
 		IncPtr ( 1+iLen );
 	}
 
 	void PutNULL ()
 	{
 		Reserve ( 1 );
-		*( (BYTE *) Get() ) = 0xfb; // MySQL NULL is 0xfb at VLB length
+		*( (uint8_t *) Get() ) = 0xfb; // MySQL NULL is 0xfb at VLB length
 		IncPtr ( 1 );
 	}
 
@@ -12441,7 +12441,7 @@ public:
 	}
 
 	// add the next column. The EOF after the tull set will be fired automatically
-	inline void HeadColumn ( const char * sName, MysqlColumnType_e uType=MYSQL_COL_STRING, WORD uFlags=0 )
+	inline void HeadColumn ( const char * sName, MysqlColumnType_e uType=MYSQL_COL_STRING, uint16_t uFlags=0 )
 	{
 		assert ( m_iSize>0 && "you try to send more mysql columns than declared in InitHead" );
 		SendMysqlFieldPacket ( m_tOut, m_uPacketID++, sName, uType, uFlags );
@@ -12488,7 +12488,7 @@ private:
 	int m_iLimit;
 
 private:
-	BYTE &				m_uPacketID;
+	uint8_t &				m_uPacketID;
 	ISphOutputBuffer & m_tOut;
 	size_t				m_iSize;
 	int					m_iCID; // connection ID for error report
@@ -12722,7 +12722,7 @@ void HandleMysqlInsert ( SqlRowBuffer_c & tOut, const SqlStmt_t & tStmt,
 	}
 
 	CSphVector<const char *> dStrings;
-	CSphVector<DWORD> dMvas;
+	CSphVector<uint32_t> dMvas;
 
 	// convert attrs
 	for ( int c=0; c<tStmt.m_iRowsAffected; c++ )
@@ -12793,8 +12793,8 @@ void HandleMysqlInsert ( SqlRowBuffer_c & tOut, const SqlStmt_t & tStmt,
 						for ( int j=0; j<iLen; j++ )
 						{
 							uint64_t uVal = ( *tVal.m_pVals.Ptr() )[j];
-							DWORD uLow = (DWORD)uVal;
-							DWORD uHi = (DWORD)( uVal>>32 );
+							uint32_t uLow = (uint32_t)uVal;
+							uint32_t uHi = (uint32_t)( uVal>>32 );
 							dMvas.Add ( uLow );
 							dMvas.Add ( uHi );
 						}
@@ -12802,7 +12802,7 @@ void HandleMysqlInsert ( SqlRowBuffer_c & tOut, const SqlStmt_t & tStmt,
 					{
 						dMvas.Add ( iLen );
 						for ( int j=0; j<iLen; j++ )
-							dMvas.Add ( (DWORD)( *tVal.m_pVals.Ptr() )[j] );
+							dMvas.Add ( (uint32_t)( *tVal.m_pVals.Ptr() )[j] );
 					}
 				}
 
@@ -13587,7 +13587,7 @@ void HandleMysqlShowThreads ( SqlRowBuffer_c & tOut, const SqlStmt_t & tStmt )
 void HandleMysqlFlushHostnames ( SqlRowBuffer_c & tOut )
 {
 	CSphVector<AgentConn_t> dAgents;
-	SmallStringHash_T<DWORD> hHosts;
+	SmallStringHash_T<uint32_t> hHosts;
 
 	// copy distributed agents for further processing
 	g_tDistLock.Lock();
@@ -13613,7 +13613,7 @@ void HandleMysqlFlushHostnames ( SqlRowBuffer_c & tOut )
 	hHosts.IterateStart();
 	while ( hHosts.IterateNext() )
 	{
-		DWORD uRenew = sphGetAddress ( hHosts.IterateGetKey().cstr(), false );
+		uint32_t uRenew = sphGetAddress ( hHosts.IterateGetKey().cstr(), false );
 		if ( uRenew )
 			hHosts.IterateGet() = uRenew;
 	}
@@ -13633,7 +13633,7 @@ void HandleMysqlFlushHostnames ( SqlRowBuffer_c & tOut )
 			AgentConn_t & tAgent = dAgents[i];
 			if ( tAgent.m_iFamily==AF_INET && !tAgent.m_sHost.IsEmpty() )
 			{
-				DWORD * pRenew = hHosts ( tAgent.m_sHost );
+				uint32_t * pRenew = hHosts ( tAgent.m_sHost );
 				if ( pRenew && *pRenew )
 					tAgent.m_uAddr = *pRenew;
 			}
@@ -13768,7 +13768,7 @@ static void PingThreadFunc ( void * )
 
 struct UVarRequestBuilder_t : public IRequestBuilder_t
 {
-	explicit UVarRequestBuilder_t ( const char * sName, int iUserVars, const BYTE * pBuf, int iLength )
+	explicit UVarRequestBuilder_t ( const char * sName, int iUserVars, const uint8_t * pBuf, int iLength )
 		: m_sName ( sName )
 		, m_iUserVars ( iUserVars )
 		, m_pBuf ( pBuf )
@@ -13790,7 +13790,7 @@ struct UVarRequestBuilder_t : public IRequestBuilder_t
 
 	const char * m_sName;
 	int m_iUserVars;
-	const BYTE * m_pBuf;
+	const uint8_t * m_pBuf;
 	int m_iLength;
 };
 
@@ -13849,12 +13849,12 @@ static bool SendUserVar ( const char * sIndex, const char * sUserVarName, CSphVe
 	if ( dAgents.GetLength() )
 	{
 		int iUserVarsCount = dSetValues.GetLength();
-		CSphFixedVector<BYTE> dBuf ( iUserVarsCount * sizeof(dSetValues[0]) );
+		CSphFixedVector<uint8_t> dBuf ( iUserVarsCount * sizeof(dSetValues[0]) );
 		int iLength = 0;
 		if ( iUserVarsCount )
 		{
 			SphAttr_t iLast = 0;
-			BYTE * pCur = dBuf.Begin();
+			uint8_t * pCur = dBuf.Begin();
 			ARRAY_FOREACH ( i, dSetValues )
 			{
 				SphAttr_t iDelta = dSetValues[i] - iLast;
@@ -13899,7 +13899,7 @@ void HandleCommandUserVar ( ISphOutputBuffer & tOut, int iVer, InputBuffer_c & t
 	int iCount = tReq.GetInt();
 	CSphVector<SphAttr_t> dUserVar ( iCount );
 	int iLength = tReq.GetInt();
-	CSphFixedVector<BYTE> dBuf ( iLength );
+	CSphFixedVector<uint8_t> dBuf ( iLength );
 	tReq.GetBytes ( dBuf.Begin(), iLength );
 
 	if ( tReq.GetError() )
@@ -13909,7 +13909,7 @@ void HandleCommandUserVar ( ISphOutputBuffer & tOut, int iVer, InputBuffer_c & t
 	}
 
 	SphAttr_t iLast = 0;
-	const BYTE * pCur = dBuf.Begin();
+	const uint8_t * pCur = dBuf.Begin();
 	ARRAY_FOREACH ( i, dUserVar )
 	{
 		uint64_t iDelta = 0;
@@ -13959,8 +13959,8 @@ struct SphinxqlReplyParser_t : public IReplyParser_t
 
 	virtual bool ParseReply ( MemInputBuffer_c & tReq, AgentConn_t & ) const
 	{
-		DWORD uSize = ( tReq.GetLSBDword() & 0x00ffffff ) - 1;
-		BYTE uCommand = tReq.GetByte();
+		uint32_t uSize = ( tReq.GetLSBDword() & 0x00ffffff ) - 1;
+		uint8_t uCommand = tReq.GetByte();
 
 		if ( uCommand==0 ) // ok packet
 		{
@@ -14175,7 +14175,7 @@ bool HandleMysqlSelect ( SqlRowBuffer_c & dRows, SearchHandler_c & tHandler )
 }
 
 
-void sphFormatFactors ( CSphVector<BYTE> & dOut, const unsigned int * pFactors, bool bJson )
+void sphFormatFactors ( CSphVector<uint8_t> & dOut, const unsigned int * pFactors, bool bJson )
 {
 	const int MAX_STR_LEN = 512;
 	int iLen;
@@ -14307,7 +14307,7 @@ static void ReturnZeroCount ( const CSphRsetSchema & tSchema, int iAttrsCount, c
 		// @count or its alias or count(distinct attr_name)
 		if ( dCounts.Contains ( tCol.m_sName ) )
 		{
-			dRows.PutNumeric<DWORD> ( "%u", 0 );
+			dRows.PutNumeric<uint32_t> ( "%u", 0 );
 		} else
 		{
 			// essentially the same as SELECT_DUAL, parse and print constant expressions
@@ -14319,7 +14319,7 @@ static void ReturnZeroCount ( const CSphRsetSchema & tSchema, int iAttrsCount, c
 				eAttrType = SPH_ATTR_NONE;
 
 			CSphMatch tMatch;
-			const BYTE * pStr = NULL;
+			const uint8_t * pStr = NULL;
 
 			switch ( eAttrType )
 			{
@@ -14390,11 +14390,11 @@ void SendMysqlSelectResult ( SqlRowBuffer_c & dRows, const AggrResult_t & tRes, 
 	}
 
 	// EOF packet is sent explicitly due to non-default params.
-	BYTE iWarns = ( !tRes.m_sWarning.IsEmpty() ) ? 1 : 0;
+	uint8_t iWarns = ( !tRes.m_sWarning.IsEmpty() ) ? 1 : 0;
 	dRows.HeadEnd ( bMoreResultsFollow, iWarns );
 
 	// FIXME!!! replace that vector relocations by SqlRowBuffer
-	CSphVector<BYTE> dTmp;
+	CSphVector<uint8_t> dTmp;
 
 	// rows
 	for ( int iMatch = tRes.m_iOffset; iMatch < tRes.m_iOffset + tRes.m_iCount; iMatch++ )
@@ -14413,7 +14413,7 @@ void SendMysqlSelectResult ( SqlRowBuffer_c & dRows, const AggrResult_t & tRes, 
 			case SPH_ATTR_TIMESTAMP:
 			case SPH_ATTR_BOOL:
 			case SPH_ATTR_TOKENCOUNT:
-				dRows.PutNumeric<DWORD> ( "%u", (DWORD)tMatch.GetAttr(tLoc) );
+				dRows.PutNumeric<uint32_t> ( "%u", (uint32_t)tMatch.GetAttr(tLoc) );
 				break;
 
 			case SPH_ATTR_BIGINT:
@@ -14440,10 +14440,10 @@ void SendMysqlSelectResult ( SqlRowBuffer_c & dRows, const AggrResult_t & tRes, 
 
 					assert ( tMatch.GetAttr ( tLoc )==0 || tRes.m_dTag2Pools [ tMatch.m_iTag ].m_pMva || ( MVA_DOWNSIZE ( tMatch.GetAttr ( tLoc ) ) & MVA_ARENA_FLAG ) );
 					const PoolPtrs_t & tPools = tRes.m_dTag2Pools [ tMatch.m_iTag ];
-					const DWORD * pValues = tMatch.GetAttrMVA ( tLoc, tPools.m_pMva, tPools.m_bArenaProhibit );
+					const uint32_t * pValues = tMatch.GetAttrMVA ( tLoc, tPools.m_pMva, tPools.m_bArenaProhibit );
 					if ( pValues )
 					{
-						DWORD nValues = *pValues++;
+						uint32_t nValues = *pValues++;
 						assert ( eAttrType==SPH_ATTR_UINT32SET || ( nValues%2 )==0 );
 						if ( eAttrType==SPH_ATTR_UINT32SET )
 						{
@@ -14468,23 +14468,23 @@ void SendMysqlSelectResult ( SqlRowBuffer_c & dRows, const AggrResult_t & tRes, 
 					// manually pack length, forcibly into exactly 3 bytes
 					int iLen = dRows.Length()-iLenOff-4;
 					char * pLen = dRows.Off ( iLenOff );
-					pLen[0] = (BYTE)0xfd;
-					pLen[1] = (BYTE)( iLen & 0xff );
-					pLen[2] = (BYTE)( ( iLen>>8 ) & 0xff );
-					pLen[3] = (BYTE)( ( iLen>>16 ) & 0xff );
+					pLen[0] = (uint8_t)0xfd;
+					pLen[1] = (uint8_t)( iLen & 0xff );
+					pLen[2] = (uint8_t)( ( iLen>>8 ) & 0xff );
+					pLen[3] = (uint8_t)( ( iLen>>16 ) & 0xff );
 					break;
 				}
 
 			case SPH_ATTR_STRING:
 			case SPH_ATTR_JSON:
 				{
-					const BYTE * pStrings = tRes.m_dTag2Pools [ tMatch.m_iTag ].m_pStrings;
+					const uint8_t * pStrings = tRes.m_dTag2Pools [ tMatch.m_iTag ].m_pStrings;
 
 					// get that string
-					const BYTE * pStr = NULL;
+					const uint8_t * pStr = NULL;
 					int iLen = 0;
 
-					DWORD uOffset = (DWORD) tMatch.GetAttr ( tLoc );
+					uint32_t uOffset = (uint32_t) tMatch.GetAttr ( tLoc );
 					if ( uOffset )
 					{
 						assert ( pStrings );
@@ -14553,7 +14553,7 @@ void SendMysqlSelectResult ( SqlRowBuffer_c & dRows, const AggrResult_t & tRes, 
 			case SPH_ATTR_FACTORS_JSON:
 				{
 					int iLen = 0;
-					const BYTE * pStr = NULL;
+					const uint8_t * pStr = NULL;
 					const unsigned int * pFactors = (unsigned int*) tMatch.GetAttr ( tLoc );
 					if ( pFactors )
 					{
@@ -14579,7 +14579,7 @@ void SendMysqlSelectResult ( SqlRowBuffer_c & dRows, const AggrResult_t & tRes, 
 				{
 					uint64_t uTypeOffset = tMatch.GetAttr ( tLoc );
 					ESphJsonType eJson = ESphJsonType ( uTypeOffset>>32 );
-					DWORD uOff = (DWORD)uTypeOffset;
+					uint32_t uOff = (uint32_t)uTypeOffset;
 					if ( !uOff || eJson==JSON_NULL )
 					{
 						// no key found - NULL value
@@ -14589,7 +14589,7 @@ void SendMysqlSelectResult ( SqlRowBuffer_c & dRows, const AggrResult_t & tRes, 
 					{
 						// send string to client
 						dTmp.Resize ( 0 );
-						const BYTE * pStrings = tRes.m_dTag2Pools [ tMatch.m_iTag ].m_pStrings;
+						const uint8_t * pStrings = tRes.m_dTag2Pools [ tMatch.m_iTag ].m_pStrings;
 						sphJsonFieldFormat ( dTmp, pStrings+uOff, eJson, false );
 
 						// send length
@@ -15418,7 +15418,7 @@ void HandleMysqlSelectDual ( SqlRowBuffer_c & tOut, const SqlStmt_t & tStmt )
 	tOut.HeadEnd();
 
 	CSphMatch tMatch;
-	const BYTE * pStr = NULL;
+	const uint8_t * pStr = NULL;
 
 	switch ( eAttrType )
 	{
@@ -15604,7 +15604,7 @@ static void AddQueryTimeStatsToOutput ( SqlRowBuffer_c & tOut, const char * szPr
 		[]( CSphStringBuilder & sBuf, uint64_t uQueries, uint64_t uStat, const char * sType )
 		{
 			if ( uQueries )
-				sBuf.Appendf ( "\"%s_sec\":%d.%03d", sType, DWORD ( uStat/1000 ), DWORD ( uStat%1000 ) );
+				sBuf.Appendf ( "\"%s_sec\":%d.%03d", sType, uint32_t ( uStat/1000 ), uint32_t ( uStat%1000 ) );
 			else
 				sBuf.Appendf ( "\"%s\":\"-\"", sType );
 		} );
@@ -16224,11 +16224,11 @@ public:
 	//
 	// returns true if the current profile should be kept (default)
 	// returns false if profile should be discarded (eg. SHOW PROFILE case)
-	bool Execute ( const CSphString & sQuery, ISphOutputBuffer & tOutput, BYTE & uPacketID, ThdDesc_t * pThd )
+	bool Execute ( const CSphString & sQuery, ISphOutputBuffer & tOutput, uint8_t & uPacketID, ThdDesc_t * pThd )
 	{
 		// set on query guard
 		CrashQuery_t tCrashQuery;
-		tCrashQuery.m_pQuery = (const BYTE *)sQuery.cstr();
+		tCrashQuery.m_pQuery = (const uint8_t *)sQuery.cstr();
 		tCrashQuery.m_iSize = sQuery.Length();
 		tCrashQuery.m_bMySQL = true;
 		SphCrashLogger_c::SetLastQuery ( tCrashQuery );
@@ -16582,7 +16582,7 @@ void HandleCommandSphinxql ( ISphOutputBuffer & tOut, int iVer, InputBuffer_c & 
 	// parse request
 	CSphString sCommand = tReq.GetString ();
 
-	BYTE uDummy = 0;
+	uint8_t uDummy = 0;
 
 	// todo: move upper, if the session variables are also necessary in API access mode.
 	CSphinxqlSession tSession ( true ); // FIXME!!! check that no accum related command used via API
@@ -16605,7 +16605,7 @@ void StatCountCommand ( int iCmd, int iCount )
 		g_tStats.m_iCommandCount[iCmd] += iCount;
 }
 
-static bool LoopClientMySQL ( BYTE & uPacketID, CSphinxqlSession & tSession, CSphString & sQuery, int iPacketLen, bool bProfile, ThdDesc_t * pThd, InputBuffer_c & tIn, ISphOutputBuffer & tOut );
+static bool LoopClientMySQL ( uint8_t & uPacketID, CSphinxqlSession & tSession, CSphString & sQuery, int iPacketLen, bool bProfile, ThdDesc_t * pThd, InputBuffer_c & tIn, ISphOutputBuffer & tOut );
 
 static void HandleClientMySQL ( int iSock, const char * sClientIP, ThdDesc_t * pThd )
 {
@@ -16629,7 +16629,7 @@ static void HandleClientMySQL ( int iSock, const char * sClientIP, ThdDesc_t * p
 	CSphString sQuery; // to keep data alive for SphCrashQuery_c
 	CSphinxqlSession tSession ( false ); // session variables and state
 	bool bAuthed = false;
-	BYTE uPacketID = 1;
+	uint8_t uPacketID = 1;
 
 	for ( ;; )
 	{
@@ -16656,7 +16656,7 @@ static void HandleClientMySQL ( int iSock, const char * sClientIP, ThdDesc_t * p
 		// keep getting that packet
 		THD_STATE ( THD_NET_READ );
 		const int MAX_PACKET_LEN = 0xffffffL; // 16777215 bytes, max low level packet size
-		DWORD uPacketHeader = tIn.GetLSBDword ();
+		uint32_t uPacketHeader = tIn.GetLSBDword ();
 		int iPacketLen = ( uPacketHeader & MAX_PACKET_LEN );
 		if ( !tIn.ReadFrom ( iPacketLen, g_iClientQlTimeout, true ) )
 		{
@@ -16668,7 +16668,7 @@ static void HandleClientMySQL ( int iSock, const char * sClientIP, ThdDesc_t * p
 			tSession.m_tProfile.Switch ( SPH_QSTATE_UNKNOWN );
 
 		// handle it!
-		uPacketID = 1 + (BYTE)( uPacketHeader>>24 ); // client will expect this id
+		uPacketID = 1 + (uint8_t)( uPacketHeader>>24 ); // client will expect this id
 
 		// handle big packets
 		if ( iPacketLen==MAX_PACKET_LEN )
@@ -16683,8 +16683,8 @@ static void HandleClientMySQL ( int iSock, const char * sClientIP, ThdDesc_t * p
 					break;
 				}
 
-				DWORD uAddon = tIn2.GetLSBDword();
-				uPacketID = 1 + (BYTE)( uAddon>>24 );
+				uint32_t uAddon = tIn2.GetLSBDword();
+				uPacketID = 1 + (uint8_t)( uAddon>>24 );
 				iAddonLen = ( uAddon & MAX_PACKET_LEN );
 				if ( !tIn.ReadFrom ( iAddonLen, g_iClientQlTimeout, true, true ) )
 				{
@@ -16726,10 +16726,10 @@ static void HandleClientMySQL ( int iSock, const char * sClientIP, ThdDesc_t * p
 	SphCrashLogger_c::SetLastQuery ( CrashQuery_t() );
 }
 
-bool LoopClientMySQL ( BYTE & uPacketID, CSphinxqlSession & tSession, CSphString & sQuery, int iPacketLen, bool bProfile, ThdDesc_t * pThd, InputBuffer_c & tIn, ISphOutputBuffer & tOut )
+bool LoopClientMySQL ( uint8_t & uPacketID, CSphinxqlSession & tSession, CSphString & sQuery, int iPacketLen, bool bProfile, ThdDesc_t * pThd, InputBuffer_c & tIn, ISphOutputBuffer & tOut )
 {
 	// get command, handle special packets
-	const BYTE uMysqlCmd = tIn.GetByte ();
+	const uint8_t uMysqlCmd = tIn.GetByte ();
 	if ( uMysqlCmd==MYSQL_COM_QUIT )
 		return false;
 
@@ -16909,7 +16909,7 @@ bool RotateIndexGreedy ( ServedDesc_t & tIndex, const char * sIndex, CSphString 
 	}
 
 	snprintf ( sFile, sizeof( sFile ), "%s%s", sPath, sphGetExt ( bReEnable ? SPH_EXT_TYPE_CUR : SPH_EXT_TYPE_NEW, SPH_EXT_SPH ) );
-	DWORD uVersion = ReadVersion ( sFile, sError );
+	uint32_t uVersion = ReadVersion ( sFile, sError );
 
 	if ( !sError.IsEmpty() )
 	{
@@ -17677,7 +17677,7 @@ static void SphinxqlStateRead ( const CSphString & sName )
 	int iLines = 0;
 	for ( ;; )
 	{
-		const BYTE * pData = NULL;
+		const uint8_t * pData = NULL;
 		int iRead = tReader.GetBytesZerocopy ( &pData, iReadBlock );
 		// all uservars got read
 		if ( iRead<=0 )
@@ -17685,8 +17685,8 @@ static void SphinxqlStateRead ( const CSphString & sName )
 
 		// read escaped line
 		dLine.Reserve ( dLine.GetLength() + iRead + iGapLen );
-		const BYTE * s = pData;
-		const BYTE * pEnd = pData+iRead;
+		const uint8_t * s = pData;
+		const uint8_t * pEnd = pData+iRead;
 		while ( s<pEnd )
 		{
 			// goto next line for escaped string
@@ -18195,7 +18195,7 @@ bool CheckConfigChanges ()
 	if ( stat ( g_sConfigFile.cstr (), &tStat ) < 0 )
 		memset ( &tStat, 0, sizeof ( tStat ) );
 
-	DWORD uCRC32 = 0;
+	uint32_t uCRC32 = 0;
 
 #if !USE_WINDOWS
 	char sBuf [ 8192 ];
@@ -18672,9 +18672,9 @@ SERVICE_STATUS			g_ss;
 SERVICE_STATUS_HANDLE	g_ssHandle;
 
 
-void MySetServiceStatus ( DWORD dwCurrentState, DWORD dwWin32ExitCode, DWORD dwWaitHint )
+void MySetServiceStatus ( uint32_t dwCurrentState, uint32_t dwWin32ExitCode, uint32_t dwWaitHint )
 {
-	static DWORD dwCheckPoint = 1;
+	static uint32_t dwCheckPoint = 1;
 
 	if ( dwCurrentState==SERVICE_START_PENDING )
 		g_ss.dwControlsAccepted = 0;
@@ -18694,7 +18694,7 @@ void MySetServiceStatus ( DWORD dwCurrentState, DWORD dwWin32ExitCode, DWORD dwW
 }
 
 
-void WINAPI ServiceControl ( DWORD dwControlCode )
+void WINAPI ServiceControl ( uint32_t dwControlCode )
 {
 	switch ( dwControlCode )
 	{
@@ -18716,7 +18716,7 @@ const char * WinErrorInfo ()
 {
 	static char sBuf[1024];
 
-	DWORD uErr = ::GetLastError ();
+	uint32_t uErr = ::GetLastError ();
 	snprintf ( sBuf, sizeof(sBuf), "code=%d, error=", uErr );
 
 	int iLen = strlen(sBuf);
@@ -18936,19 +18936,19 @@ void ShowHelp ()
 }
 
 
-void InitSharedBuffer ( CSphLargeBuffer<DWORD, true> & tBuffer )
+void InitSharedBuffer ( CSphLargeBuffer<uint32_t, true> & tBuffer )
 {
 	CSphString sError, sWarning;
 	if ( !tBuffer.Alloc ( 1, sError ) )
 		sphDie ( "failed to allocate shared buffer (msg=%s)", sError.cstr() );
 
-	DWORD * pRes = tBuffer.GetWritePtr();
-	memset ( pRes, 0, sizeof(DWORD) ); // reset
+	uint32_t * pRes = tBuffer.GetWritePtr();
+	memset ( pRes, 0, sizeof(uint32_t) ); // reset
 }
 
 
 #if USE_WINDOWS
-BOOL WINAPI CtrlHandler ( DWORD )
+BOOL WINAPI CtrlHandler ( uint32_t )
 {
 	if ( !g_bService )
 	{
@@ -19137,12 +19137,12 @@ void CheckSignals ()
 	}
 
 #if USE_WINDOWS
-	BYTE dPipeInBuf [ WIN32_PIPE_BUFSIZE ];
-	DWORD nBytesRead = 0;
+	uint8_t dPipeInBuf [ WIN32_PIPE_BUFSIZE ];
+	uint32_t nBytesRead = 0;
 	BOOL bSuccess = ReadFile ( g_hPipe, dPipeInBuf, WIN32_PIPE_BUFSIZE, &nBytesRead, NULL );
 	if ( nBytesRead > 0 && bSuccess )
 	{
-		for ( DWORD i=0; i<nBytesRead; i++ )
+		for ( uint32_t i=0; i<nBytesRead; i++ )
 		{
 			switch ( dPipeInBuf[i] )
 			{
@@ -19253,7 +19253,7 @@ void QueryStatus ( CSphVariant * v )
 		if ( !tIn.ReadFrom ( 12, 5 ) ) // magic_header_size=12, magic_timeout=5
 			sphFatal ( "handshake failure (no response)" );
 
-		DWORD uVer = tIn.GetDword();
+		uint32_t uVer = tIn.GetDword();
 		if ( uVer!=SPHINX_SEARCHD_PROTO && uVer!=0x01000000UL ) // workaround for all the revisions that sent it in host order...
 			sphFatal ( "handshake failure (unexpected protocol version=%d)", uVer );
 
@@ -19310,7 +19310,7 @@ void FailClient ( int iSock, SearchdStatus_e eStatus, const char * sMessage )
 
 	NetOutputBuffer_c tOut ( iSock );
 	tOut.SendInt ( SPHINX_CLIENT_VERSION );
-	tOut.SendWord ( (WORD)eStatus );
+	tOut.SendWord ( (uint16_t)eStatus );
 	tOut.SendWord ( 0 ); // version doesn't matter
 	tOut.SendInt ( iRespLen );
 	tOut.SendString ( sMessage );
@@ -19567,7 +19567,7 @@ struct ISphNetAction : ISphNoncopyable, public ListNode_t
 
 	explicit ISphNetAction ( int iSock ) : m_tmTimeout ( 0 ), m_iSock ( iSock ) {}
 	virtual ~ISphNetAction () {}
-	virtual NetEvent_e		Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop ) = 0;
+	virtual NetEvent_e		Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop ) = 0;
 	virtual NetEvent_e		Setup ( int64_t tmNow ) = 0;
 	virtual bool			GetStats ( int & ) { return false; }
 	virtual void			CloseSocket () = 0;
@@ -19581,7 +19581,7 @@ struct NetStateCommon_t
 	bool				m_bKeepSocket;
 	bool				m_bVIP;
 
-	CSphVector<BYTE>	m_dBuf;
+	CSphVector<uint8_t>	m_dBuf;
 	int					m_iLeft;
 	int					m_iPos;
 
@@ -19599,7 +19599,7 @@ struct NetActionAccept_t : public ISphNetAction
 
 	explicit NetActionAccept_t ( const Listener_t & tListener );
 
-	virtual NetEvent_e		Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop );
+	virtual NetEvent_e		Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop );
 	virtual NetEvent_e		Setup ( int64_t tmNow );
 	virtual bool			GetStats ( int & iConnections );
 	virtual void			CloseSocket () {}
@@ -19614,7 +19614,7 @@ struct NetStateQL_t : public NetStateCommon_t
 {
 	CSphinxqlSession	m_tSession;
 	bool				m_bAuthed;
-	BYTE				m_uPacketID;
+	uint8_t				m_uPacketID;
 	NetStateQL_t ();
 };
 
@@ -19639,7 +19639,7 @@ struct NetReceiveDataAPI_t : public ISphNetAction
 	explicit NetReceiveDataAPI_t ( NetStateAPI_t * pState );
 	virtual ~NetReceiveDataAPI_t() {}
 
-	virtual NetEvent_e		Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop );
+	virtual NetEvent_e		Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop );
 	virtual NetEvent_e		Setup ( int64_t tmNow );
 	virtual void			CloseSocket ();
 
@@ -19668,7 +19668,7 @@ struct NetReceiveDataQL_t : public ISphNetAction
 	explicit NetReceiveDataQL_t ( NetStateQL_t * pState );
 	virtual ~NetReceiveDataQL_t() {}
 
-	virtual NetEvent_e		Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop );
+	virtual NetEvent_e		Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop );
 	virtual NetEvent_e		Setup ( int64_t tmNow );
 	virtual void			CloseSocket ();
 
@@ -19685,7 +19685,7 @@ struct NetSendData_t : public ISphNetAction
 	NetSendData_t ( NetStateCommon_t * pState, ProtocolType_e eProto );
 	virtual ~NetSendData_t () {}
 
-	virtual NetEvent_e		Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop );
+	virtual NetEvent_e		Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop );
 	virtual NetEvent_e		Setup ( int64_t tmNow );
 	virtual void			CloseSocket ();
 
@@ -19703,7 +19703,7 @@ struct HttpHeaderStreamParser_t
 	int m_iName;
 
 	HttpHeaderStreamParser_t ();
-	bool HeaderFound ( const BYTE * pBuf, int iLen );
+	bool HeaderFound ( const uint8_t * pBuf, int iLen );
 };
 
 struct NetReceiveDataHttp_t : public ISphNetAction
@@ -19714,7 +19714,7 @@ struct NetReceiveDataHttp_t : public ISphNetAction
 	explicit NetReceiveDataHttp_t ( NetStateQL_t * pState );
 	virtual ~NetReceiveDataHttp_t() {}
 
-	virtual NetEvent_e		Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop );
+	virtual NetEvent_e		Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop );
 	virtual NetEvent_e		Setup ( int64_t tmNow );
 	virtual void			CloseSocket ();
 };
@@ -19722,7 +19722,7 @@ struct NetReceiveDataHttp_t : public ISphNetAction
 struct EventsIterator_t
 {
 	ISphNetAction * m_pWork;
-	DWORD			m_uEvents;
+	uint32_t			m_uEvents;
 };
 
 
@@ -19732,9 +19732,9 @@ private:
 	EventsIterator_t	m_tIter;
 	ISphNetEvents*		m_pPoll;
 
-	inline DWORD TranslateEvents ( DWORD uNetEvents )
+	inline uint32_t TranslateEvents ( uint32_t uNetEvents )
 	{
-		DWORD uEvents = 0;
+		uint32_t uEvents = 0;
 		if ( uNetEvents & ISphNetEvents::SPH_POLL_RD )
 			uEvents |= NE_IN;
 		if ( uNetEvents & ISphNetEvents::SPH_POLL_WR )
@@ -19889,7 +19889,7 @@ public:
 		}
 	}
 
-	virtual NetEvent_e Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> &, CSphNetLoop * )
+	virtual NetEvent_e Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> &, CSphNetLoop * )
 	{
 		if ( ( uGotEvents & NE_IN ) )
 		{
@@ -20214,7 +20214,7 @@ static int	g_iThrottleAccept = 0;
 class CSphNetLoop
 {
 public:
-	DWORD							m_uTick;
+	uint32_t							m_uTick;
 
 private:
 	CSphVector<ISphNetAction *>		m_dWorkExternal;
@@ -20521,7 +20521,7 @@ static void LogSocketError ( const char * sMsg, const NetStateCommon_t * pConn, 
 		sphWarning ( "%s (client=%s(%d)), error: %d '%s', sock=%d", sMsg, pConn->m_sClientName, pConn->m_iConnID, iErrno, sphSockError ( iErrno ), pConn->m_iClientSock );
 }
 
-static bool CheckSocketError ( DWORD uGotEvents, const char * sMsg, const NetStateCommon_t * pConn, bool bDebug )
+static bool CheckSocketError ( uint32_t uGotEvents, const char * sMsg, const NetStateCommon_t * pConn, bool bDebug )
 {
 	bool bReadError = ( ( uGotEvents & NE_IN ) && ( uGotEvents & ( NE_ERR | NE_HUP ) ) );
 	bool bWriteError = ( ( uGotEvents & NE_OUT ) && ( uGotEvents & NE_ERR ) );
@@ -20567,18 +20567,18 @@ static int NetManageSocket ( int iSock, char * pBuf, int iSize, bool bWrite, boo
 	return iRes;
 }
 
-static WORD NetBufGetWord ( const BYTE * pBuf )
+static uint16_t NetBufGetWord ( const uint8_t * pBuf )
 {
-	WORD uVal = sphUnalignedRead ( (WORD &)*pBuf );
+	uint16_t uVal = sphUnalignedRead ( (uint16_t &)*pBuf );
 	return ntohs ( uVal );
 }
 
-static DWORD NetBufGetLSBDword ( const BYTE * pBuf )
+static uint32_t NetBufGetLSBDword ( const uint8_t * pBuf )
 {
 	return pBuf[0] + ( ( pBuf[1] ) <<8 ) + ( ( pBuf[2] )<<16 ) + ( ( pBuf[3] )<<24 );
 }
 
-static int NetBufGetInt ( const BYTE * pBuf )
+static int NetBufGetInt ( const uint8_t * pBuf )
 {
 	int uVal = sphUnalignedRead ( (int &)*pBuf );
 	return ntohl ( uVal );
@@ -20592,7 +20592,7 @@ NetActionAccept_t::NetActionAccept_t ( const Listener_t & tListener )
 	m_iConnections = 0;
 }
 
-NetEvent_e NetActionAccept_t::Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop )
+NetEvent_e NetActionAccept_t::Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop )
 {
 	if ( CheckSocketError ( uGotEvents, "accept err WTF???", &m_tDummy, true ) )
 		return NE_KEEP;
@@ -20738,7 +20738,7 @@ NetReceiveDataAPI_t::NetReceiveDataAPI_t ( NetStateAPI_t *	pState )
 	m_iCommandVer = 0;
 
 	m_tState->m_dBuf.Resize ( 4 );
-	*(DWORD *)( m_tState->m_dBuf.Begin() ) = htonl ( SPHINX_SEARCHD_PROTO );
+	*(uint32_t *)( m_tState->m_dBuf.Begin() ) = htonl ( SPHINX_SEARCHD_PROTO );
 	m_tState->m_iLeft = 4;
 	assert ( m_tState.Ptr() );
 }
@@ -20785,7 +20785,7 @@ void NetReceiveDataAPI_t::AddJobAPI ( CSphNetLoop * pLoop )
 
 static char g_sMaxedOutMessage[] = "maxed out, dismissing client";
 
-NetEvent_e NetReceiveDataAPI_t::Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop )
+NetEvent_e NetReceiveDataAPI_t::Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop )
 {
 	assert ( m_tState.Ptr() );
 	bool bDebug = ( m_ePhase==AAPI_HANDSHAKE_IN || m_ePhase==AAPI_COMMAND );
@@ -20869,7 +20869,7 @@ NetEvent_e NetReceiveDataAPI_t::Tick ( DWORD uGotEvents, CSphVector<ISphNetActio
 					int iRespLen = 4 + strlen(g_sMaxedOutMessage);
 
 					tOut.SendInt ( SPHINX_CLIENT_VERSION );
-					tOut.SendWord ( (WORD)SEARCHD_RETRY );
+					tOut.SendWord ( (uint16_t)SEARCHD_RETRY );
 					tOut.SendWord ( 0 ); // version doesn't matter
 					tOut.SendInt ( iRespLen );
 					tOut.SendString ( g_sMaxedOutMessage );
@@ -21007,7 +21007,7 @@ NetEvent_e NetReceiveDataQL_t::Setup ( int64_t tmNow )
 	return eEvent;
 }
 
-NetEvent_e NetReceiveDataQL_t::Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> &, CSphNetLoop * pLoop )
+NetEvent_e NetReceiveDataQL_t::Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> &, CSphNetLoop * pLoop )
 {
 	assert ( m_tState.Ptr() );
 	bool bDebugErr = ( ( m_ePhase==AQL_LENGTH && !m_bAppend ) || m_ePhase==AQL_AUTH );
@@ -21052,10 +21052,10 @@ NetEvent_e NetReceiveDataQL_t::Tick ( DWORD uGotEvents, CSphVector<ISphNetAction
 		case AQL_LENGTH:
 		{
 			const int MAX_PACKET_LEN = 0xffffffL; // 16777215 bytes, max low level packet size
-			DWORD uHeader = 0;
-			const BYTE * pBuf = ( m_bAppend ? m_tState->m_dBuf.Begin() + m_tState->m_iPos - sizeof(uHeader) : m_tState->m_dBuf.Begin() );
+			uint32_t uHeader = 0;
+			const uint8_t * pBuf = ( m_bAppend ? m_tState->m_dBuf.Begin() + m_tState->m_iPos - sizeof(uHeader) : m_tState->m_dBuf.Begin() );
 			uHeader = NetBufGetLSBDword ( pBuf );
-			m_tState->m_uPacketID = 1 + (BYTE)( uHeader>>24 ); // client will expect this id
+			m_tState->m_uPacketID = 1 + (uint8_t)( uHeader>>24 ); // client will expect this id
 			m_tState->m_iLeft = ( uHeader & MAX_PACKET_LEN );
 
 			if ( m_bAppend ) // reading big packet
@@ -21105,7 +21105,7 @@ NetEvent_e NetReceiveDataQL_t::Tick ( DWORD uGotEvents, CSphVector<ISphNetAction
 				m_ePhase = AQL_AUTH;
 			} else
 			{
-				CSphVector<BYTE> & dBuf = m_tState->m_dBuf;
+				CSphVector<uint8_t> & dBuf = m_tState->m_dBuf;
 				int iBufLen = dBuf.GetLength();
 				int iCmd = ( iBufLen>0 ? dBuf[0] : 0 );
 				int iStrLen = Min ( iBufLen, 80 );
@@ -21228,7 +21228,7 @@ NetSendData_t::NetSendData_t ( NetStateCommon_t * pState, ProtocolType_e eProto 
 	m_tState->m_iLeft = 0;
 }
 
-NetEvent_e NetSendData_t::Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop )
+NetEvent_e NetSendData_t::Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> & dNextTick, CSphNetLoop * pLoop )
 {
 	if ( CheckSocketError ( uGotEvents, "failed to send data", m_tState.Ptr(), false ) )
 		return NE_REMOVE;
@@ -21388,7 +21388,7 @@ HttpHeaderStreamParser_t::HttpHeaderStreamParser_t ()
 	m_iName = 0;
 }
 
-bool HttpHeaderStreamParser_t::HeaderFound ( const BYTE * pBuf, int iLen )
+bool HttpHeaderStreamParser_t::HeaderFound ( const uint8_t * pBuf, int iLen )
 {
 	// early exit at for already found request header
 	if ( m_iHeaderEnd || m_iCur>=iLen )
@@ -21429,7 +21429,7 @@ bool HttpHeaderStreamParser_t::HeaderFound ( const BYTE * pBuf, int iLen )
 	return ( m_iHeaderEnd>0 );
 }
 
-NetEvent_e NetReceiveDataHttp_t::Tick ( DWORD uGotEvents, CSphVector<ISphNetAction *> & , CSphNetLoop * pLoop )
+NetEvent_e NetReceiveDataHttp_t::Tick ( uint32_t uGotEvents, CSphVector<ISphNetAction *> & , CSphNetLoop * pLoop )
 {
 	assert ( m_tState.Ptr() );
 	const char * sHttpError = "http error";
@@ -21697,7 +21697,7 @@ void JobDoSendNB ( NetSendData_t * pSend, CSphNetLoop * pLoop )
 	// try to push data to socket here then transfer send-action to net-loop in case send needs poll to continue
 	CSphVector<ISphNetAction *> dNext ( 1 );
 	dNext.Resize ( 0 );
-	DWORD uGotEvents = NE_OUT;
+	uint32_t uGotEvents = NE_OUT;
 	NetEvent_e eRes = pSend->Tick ( uGotEvents, dNext, pLoop );
 	if ( eRes==NE_REMOVE )
 	{
@@ -21913,10 +21913,10 @@ void ConfigureSearchd ( const CSphConfig & hConf, bool bOptPIDFile )
 		"\x01\x00\x00\x00" // thread id
 		"\x01\x02\x03\x04\x05\x06\x07\x08" // scramble buffer (for auth)
 		"\x00" // filler
-		"\x08\x82" // server capabilities low WORD; CLIENT_PROTOCOL_41 | CLIENT_CONNECT_WITH_DB | CLIENT_SECURE_CONNECTION
+		"\x08\x82" // server capabilities low uint16_t; CLIENT_PROTOCOL_41 | CLIENT_CONNECT_WITH_DB | CLIENT_SECURE_CONNECTION
 		"\x21" // server language; let it be ut8_general_ci to make different clients happy
 		"\x02\x00" // server status
-		"\x00\x00" // server capabilities hi WORD; no CLIENT_PLUGIN_AUTH
+		"\x00\x00" // server capabilities hi uint16_t; no CLIENT_PLUGIN_AUTH
 		"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" // filler
 		"\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d"; // scramble buffer2 (for auth, 4.1+)
 
@@ -22138,7 +22138,7 @@ int WINAPI ServiceMain ( int argc, char **argv )
 	bool			bOptDebugQlog = true;
 	bool			bForcedPreread = false;
 
-	DWORD			uReplayFlags = 0;
+	uint32_t			uReplayFlags = 0;
 
 	#define OPT(_a1,_a2)	else if ( !strcmp(argv[i],_a1) || !strcmp(argv[i],_a2) )
 	#define OPT1(_a1)		else if ( !strcmp(argv[i],_a1) )
@@ -22341,8 +22341,8 @@ int WINAPI ServiceMain ( int argc, char **argv )
 
 		if ( hPipe!=INVALID_HANDLE_VALUE )
 		{
-			DWORD uWritten = 0;
-			BYTE uWrite = 1;
+			uint32_t uWritten = 0;
+			uint8_t uWrite = 1;
 			BOOL bResult = WriteFile ( hPipe, &uWrite, 1, &uWritten, NULL );
 			if ( !bResult )
 				fprintf ( stdout, "WARNING: failed to send SIGHTERM to searchd (pid=%d, GetLastError()=%d)\n", iPid, GetLastError () );
@@ -22405,9 +22405,9 @@ int WINAPI ServiceMain ( int argc, char **argv )
 			}
 
 			// reading data
-			DWORD uStatus = 0;
-			int iRead = ::read ( fdPipe, &uStatus, sizeof(DWORD) );
-			if ( iRead!=sizeof(DWORD) )
+			uint32_t uStatus = 0;
+			int iRead = ::read ( fdPipe, &uStatus, sizeof(uint32_t) );
+			if ( iRead!=sizeof(uint32_t) )
 			{
 				sphWarning ( "stopwait read fifo error '%s'", strerror(errno) );
 				iExitCode = 3; // stopped demon crashed during stop
@@ -22782,7 +22782,7 @@ int WINAPI ServiceMain ( int argc, char **argv )
 	if ( g_bIOStats && !sphInitIOStats () )
 		sphWarning ( "unable to init IO statistics" );
 
-	g_tStats.m_uStarted = (DWORD)time(NULL);
+	g_tStats.m_uStarted = (uint32_t)time(NULL);
 
 	// threads mode
 	// create optimize and flush threads, and load saved sphinxql state

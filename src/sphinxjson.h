@@ -42,18 +42,18 @@ enum ESphJsonType
 
 
 /// get stored value from SphinxBSON blob
-inline int sphJsonLoadInt ( const BYTE ** pp )
+inline int sphJsonLoadInt ( const uint8_t ** pp )
 {
-	DWORD uRes = sphGetDword(*pp);
+	uint32_t uRes = sphGetDword(*pp);
 	*pp += 4;
 	return int(uRes);
 }
 
 
 /// get stored value from SphinxBSON blob
-inline int64_t sphJsonLoadBigint ( const BYTE ** pp )
+inline int64_t sphJsonLoadBigint ( const uint8_t ** pp )
 {
-	uint64_t uRes = (DWORD)sphJsonLoadInt ( pp );
+	uint64_t uRes = (uint32_t)sphJsonLoadInt ( pp );
 	uRes += ( uint64_t ( sphJsonLoadInt ( pp ) )<<32 );
 	return uRes;
 }
@@ -65,10 +65,10 @@ inline int64_t sphJsonLoadBigint ( const BYTE ** pp )
 /// 253 == 3 more bytes
 /// 254 == 4 more bytes
 /// 255 == reserved
-inline DWORD sphJsonUnpackInt ( const BYTE ** pp )
+inline uint32_t sphJsonUnpackInt ( const uint8_t ** pp )
 {
-	const BYTE * p = *pp;
-	DWORD uRes = p[0];
+	const uint8_t * p = *pp;
+	uint32_t uRes = p[0];
 	switch ( p[0] )
 	{
 		default:
@@ -95,43 +95,43 @@ inline DWORD sphJsonUnpackInt ( const BYTE ** pp )
 }
 
 /// parse JSON, convert it into SphinxBSON blob
-bool sphJsonParse ( CSphVector<BYTE> & dData, char * sData, bool bAutoconv, bool bToLowercase, CSphString & sError );
+bool sphJsonParse ( CSphVector<uint8_t> & dData, char * sData, bool bAutoconv, bool bToLowercase, CSphString & sError );
 
 /// convert SphinxBSON blob back to JSON document
-void sphJsonFormat ( CSphVector<BYTE> & dOut, const BYTE * pData );
+void sphJsonFormat ( CSphVector<uint8_t> & dOut, const uint8_t * pData );
 
 /// convert SphinxBSON blob back to JSON document
 /// NOTE, bQuoteString==false is intended to format individual values only (and avoid quoting string values in that case)
-const BYTE * sphJsonFieldFormat ( CSphVector<BYTE> & dOut, const BYTE * pData, ESphJsonType eType, bool bQuoteString=true );
+const uint8_t * sphJsonFieldFormat ( CSphVector<uint8_t> & dOut, const uint8_t * pData, ESphJsonType eType, bool bQuoteString=true );
 
 /// compute key mask (for Bloom filtering) from the key name
-DWORD sphJsonKeyMask ( const char * sKey, int iLen );
+uint32_t sphJsonKeyMask ( const char * sKey, int iLen );
 
 /// find first value in SphinxBSON blob, return associated type
-ESphJsonType sphJsonFindFirst ( const BYTE ** ppData );
+ESphJsonType sphJsonFindFirst ( const uint8_t ** ppData );
 
 /// find value by key in SphinxBSON blob, return associated type
-ESphJsonType sphJsonFindByKey ( ESphJsonType eType, const BYTE ** ppValue, const void * pKey, int iLen, DWORD uMask );
+ESphJsonType sphJsonFindByKey ( ESphJsonType eType, const uint8_t ** ppValue, const void * pKey, int iLen, uint32_t uMask );
 
 /// find value by index in SphinxBSON blob, return associated type
-ESphJsonType sphJsonFindByIndex ( ESphJsonType eType, const BYTE ** ppValue, int iIndex );
+ESphJsonType sphJsonFindByIndex ( ESphJsonType eType, const uint8_t ** ppValue, int iIndex );
 
 /// split name to object and key parts, return false if not JSON name
 bool sphJsonNameSplit ( const char * sName, CSphString * sColumn, CSphString * sKey );
 
 /// compute node size, in bytes
 /// returns -1 when data itself is required to compute the size, but pData is NULL
-int sphJsonNodeSize ( ESphJsonType eType, const BYTE * pData );
+int sphJsonNodeSize ( ESphJsonType eType, const uint8_t * pData );
 
 /// skip the current node, and update the pointer
-void sphJsonSkipNode ( ESphJsonType eType, const BYTE ** ppData );
+void sphJsonSkipNode ( ESphJsonType eType, const uint8_t ** ppData );
 
 /// return object length or array length, in elements
 /// POD types return 1, empty objects return 0
-int sphJsonFieldLength ( ESphJsonType eType, const BYTE * pData );
+int sphJsonFieldLength ( ESphJsonType eType, const uint8_t * pData );
 
 /// inplace JSON update, both for realtime and non-realtime indexes, returns true if update is possible
-bool sphJsonInplaceUpdate ( ESphJsonType eValueType, int64_t iValue, ISphExpr * pExpr, BYTE * pStrings, const CSphRowitem * pRow, bool bUpdate );
+bool sphJsonInplaceUpdate ( ESphJsonType eValueType, int64_t iValue, ISphExpr * pExpr, uint8_t * pStrings, const CSphRowitem * pRow, bool bUpdate );
 
 /// converts string to number
 bool sphJsonStringToNumber ( const char * s, int iLen, ESphJsonType & eType, int64_t & iVal, double & fVal );

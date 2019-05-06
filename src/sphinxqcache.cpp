@@ -61,8 +61,8 @@ class QcacheRanker_c : public ISphRanker
 protected:
 	QcacheEntry_c *				m_pEntry;										///< cache entry we are decoding
 	CSphMatch					m_dMatches [ QcacheEntry_c::MAX_FRAME_SIZE ];	///< matches buffer
-	BYTE *						m_pCur;											///< current position in compressed data
-	BYTE *						m_pMax;											///< max position in compressed data
+	uint8_t *						m_pCur;											///< current position in compressed data
+	uint8_t *						m_pMax;											///< max position in compressed data
 	SphDocID_t					m_uLastId;										///< docid delta decoder state
 	const CSphIndex *			m_pIndex;
 	CSphQueryContext *			m_pCtx;
@@ -95,7 +95,7 @@ QcacheEntry_c::QcacheEntry_c()
 }
 
 
-void QcacheEntry_c::Append ( SphDocID_t uDocid, DWORD uWeight )
+void QcacheEntry_c::Append ( SphDocID_t uDocid, uint32_t uWeight )
 {
 	m_iTotalMatches++;
 
@@ -159,10 +159,10 @@ void QcacheEntry_c::FlushFrame()
 
 		assert ( iDeltaBytes>=1 && iDeltaBytes<=8 );
 		assert ( iWeightBytes>=1 && iWeightBytes<=4 );
-		m_dData.Add ( (BYTE)( 0x80 + ( iDeltaBytes-1 ) + ( ( iWeightBytes-1 )<<3 ) ) );
-		m_dData.Add ( (BYTE)m_dFrame.GetLength() );
+		m_dData.Add ( (uint8_t)( 0x80 + ( iDeltaBytes-1 ) + ( ( iWeightBytes-1 )<<3 ) ) );
+		m_dData.Add ( (uint8_t)m_dFrame.GetLength() );
 
-		BYTE * p = m_dData.AddN ( m_dFrame.GetLength()*( iDeltaBytes + iWeightBytes ) );
+		uint8_t * p = m_dData.AddN ( m_dFrame.GetLength()*( iDeltaBytes + iWeightBytes ) );
 		uLastId = m_uLastDocid;
 		ARRAY_FOREACH ( i, m_dFrame )
 		{
@@ -212,10 +212,10 @@ void QcacheEntry_c::FlushFrame()
 	// add marker byte
 	assert ( iDeltaBytes>=1 && iDeltaBytes<=8 );
 	assert ( iWeightBytes>=1 && iWeightBytes<=4 );
-	m_dData.Add ( (BYTE)( ( bIndexWeights<<5 ) + ( ( iWeightBytes-1 )<<3 ) + ( iDeltaBytes-1 ) ) );
+	m_dData.Add ( (uint8_t)( ( bIndexWeights<<5 ) + ( ( iWeightBytes-1 )<<3 ) + ( iDeltaBytes-1 ) ) );
 
 	// encode data
-	BYTE * p = m_dData.AddN ( MAX_FRAME_SIZE*( iDeltaBytes + iWeightBytes ) );
+	uint8_t * p = m_dData.AddN ( MAX_FRAME_SIZE*( iDeltaBytes + iWeightBytes ) );
 	uLastId = m_uLastDocid;
 	ARRAY_FOREACH ( i, m_dFrame )
 	{
@@ -629,7 +629,7 @@ int QcacheRanker_c::GetMatches()
 	while ( !iRes )
 	{
 		// end of buffer? bail
-		BYTE * p = m_pCur;
+		uint8_t * p = m_pCur;
 		if ( p>=m_pMax )
 			return 0;
 

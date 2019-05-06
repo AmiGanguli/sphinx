@@ -1322,8 +1322,8 @@ update_item:
 	ident '=' const_int
 		{
 			// it is performance-critical to forcibly inline this
-			pParser->m_pStmt->m_tUpdate.m_dPool.Add ( (DWORD)$3.m_iValue );
-			DWORD uHi = (DWORD)( $3.m_iValue>>32 );
+			pParser->m_pStmt->m_tUpdate.m_dPool.Add ( (uint32_t)$3.m_iValue );
+			uint32_t uHi = (uint32_t)( $3.m_iValue>>32 );
 			if ( uHi )
 			{
 				pParser->m_pStmt->m_tUpdate.m_dPool.Add ( uHi );
@@ -1351,8 +1351,8 @@ update_item:
 	| json_expr '=' const_int // duplicate ident code (avoiding s/r conflict)
 		{
 			// it is performance-critical to forcibly inline this
-			pParser->m_pStmt->m_tUpdate.m_dPool.Add ( (DWORD)$3.m_iValue );
-			DWORD uHi = (DWORD)( $3.m_iValue>>32 );
+			pParser->m_pStmt->m_tUpdate.m_dPool.Add ( (uint32_t)$3.m_iValue );
+			uint32_t uHi = (uint32_t)( $3.m_iValue>>32 );
 			if ( uHi )
 			{
 				pParser->m_pStmt->m_tUpdate.m_dPool.Add ( uHi );

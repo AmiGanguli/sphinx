@@ -54,7 +54,7 @@ static void AppendJsonKey ( const char * sName, CSphStringBuilderJson & tOut )
 static void EncodeResultJson ( const AggrResult_t & tRes, CSphStringBuilderJson & tOut )
 {
 	const CSphRsetSchema & tSchema = tRes.m_tSchema;
-	CSphVector<BYTE> dTmp;
+	CSphVector<uint8_t> dTmp;
 
 	int iAttrsCount = tSchema.GetAttrsCount();
 	if ( iAttrsCount && sphIsSortStringInternal ( tSchema.GetAttr ( iAttrsCount-1 ).m_sName.cstr() ) )
@@ -100,11 +100,11 @@ static void EncodeResultJson ( const AggrResult_t & tRes, CSphStringBuilderJson 
 					tOut += "[";
 					assert ( tMatch.GetAttr ( tLoc )==0 || tRes.m_dTag2Pools [ tMatch.m_iTag ].m_pMva || ( MVA_DOWNSIZE ( tMatch.GetAttr ( tLoc ) ) & MVA_ARENA_FLAG ) );
 					const PoolPtrs_t & tPools = tRes.m_dTag2Pools [ tMatch.m_iTag ];
-					const DWORD * pValues = tMatch.GetAttrMVA ( tLoc, tPools.m_pMva, tPools.m_bArenaProhibit );
+					const uint32_t * pValues = tMatch.GetAttrMVA ( tLoc, tPools.m_pMva, tPools.m_bArenaProhibit );
 					const char * sSep = "";
 					if ( pValues )
 					{
-						DWORD nValues = *pValues++;
+						uint32_t nValues = *pValues++;
 						assert ( eAttrType==SPH_ATTR_UINT32SET || ( nValues%2 )==0 );
 						bool bWide = ( eAttrType==SPH_ATTR_INT64SET );
 						int iStep = ( bWide ? 2 : 1 );
@@ -122,13 +122,13 @@ static void EncodeResultJson ( const AggrResult_t & tRes, CSphStringBuilderJson 
 			case SPH_ATTR_STRING:
 			case SPH_ATTR_JSON:
 				{
-					const BYTE * pStrings = tRes.m_dTag2Pools [ tMatch.m_iTag ].m_pStrings;
+					const uint8_t * pStrings = tRes.m_dTag2Pools [ tMatch.m_iTag ].m_pStrings;
 					bool bStr = ( eAttrType==SPH_ATTR_STRING );
 
 					// get that string
-					const BYTE * pStr = NULL;
+					const uint8_t * pStr = NULL;
 					int iLen = 0;
-					DWORD uOffset = (DWORD) tMatch.GetAttr ( tLoc );
+					uint32_t uOffset = (uint32_t) tMatch.GetAttr ( tLoc );
 					assert ( !uOffset || pStrings );
 					if ( uOffset )
 						iLen = sphUnpackStr ( pStrings+uOffset, &pStr );
@@ -209,7 +209,7 @@ static void EncodeResultJson ( const AggrResult_t & tRes, CSphStringBuilderJson 
 				{
 					uint64_t uTypeOffset = tMatch.GetAttr ( tLoc );
 					ESphJsonType eJson = ESphJsonType ( uTypeOffset>>32 );
-					DWORD uOff = (DWORD)uTypeOffset;
+					uint32_t uOff = (uint32_t)uTypeOffset;
 					if ( !uOff || eJson==JSON_NULL )
 					{
 						// no key found - NULL value
@@ -218,7 +218,7 @@ static void EncodeResultJson ( const AggrResult_t & tRes, CSphStringBuilderJson 
 					{
 						// send string to client
 						dTmp.Resize ( 0 );
-						const BYTE * pStrings = tRes.m_dTag2Pools [ tMatch.m_iTag ].m_pStrings;
+						const uint8_t * pStrings = tRes.m_dTag2Pools [ tMatch.m_iTag ].m_pStrings;
 						sphJsonFieldFormat ( dTmp, pStrings+uOff, eJson, false );
 						dTmp.Add ( '\0' );
 						tOut += (const char *)dTmp.Begin();
@@ -282,7 +282,7 @@ const char * g_dHttpStatus[] = { "200 OK", "206 Partial Content", "400 Bad Reque
 STATIC_ASSERT ( sizeof(g_dHttpStatus)/sizeof(g_dHttpStatus[0])==SPH_HTTP_STATUS_TOTAL, SPH_HTTP_STATUS_SHOULD_BE_SAME_AS_SPH_HTTP_STATUS_TOTAL );
 
 
-static void HttpBuildReply ( CSphVector<BYTE> & dData, ESphHttpStatus eCode, const char * sBody, int iBodyLen, bool bHtml )
+static void HttpBuildReply ( CSphVector<uint8_t> & dData, ESphHttpStatus eCode, const char * sBody, int iBodyLen, bool bHtml )
 {
 	assert ( sBody && iBodyLen );
 
@@ -296,7 +296,7 @@ static void HttpBuildReply ( CSphVector<BYTE> & dData, ESphHttpStatus eCode, con
 	memcpy ( dData.Begin() + iHeaderLen, sBody, iBodyLen );
 }
 
-static void HttpErrorReply ( CSphVector<BYTE> & dData, ESphHttpStatus eCode, const char * sTemplate, ... )
+static void HttpErrorReply ( CSphVector<uint8_t> & dData, ESphHttpStatus eCode, const char * sTemplate, ... )
 {
 	char sBuf[1024] = "{}";
 	char sErr[1008] = "\0";
@@ -342,7 +342,7 @@ struct HttpRequestParser_t : public ISphNoncopyable
 	HttpRequestParser_t ();
 	~HttpRequestParser_t () {}
 
-	bool Parse ( const CSphVector<BYTE> & dData );
+	bool Parse ( const CSphVector<uint8_t> & dData );
 	bool ParseList ( const char * sAt, int iLen );
 
 	static int ParserUrl ( http_parser * pParser, const char * sAt, size_t iLen );
@@ -358,7 +358,7 @@ HttpRequestParser_t::HttpRequestParser_t ()
 	m_sError = NULL;
 }
 
-bool HttpRequestParser_t::Parse ( const CSphVector<BYTE> & dData )
+bool HttpRequestParser_t::Parse ( const CSphVector<uint8_t> & dData )
 {
 	http_parser_settings tParserSettings;
 	http_parser_settings_init ( &tParserSettings );
@@ -384,7 +384,7 @@ bool HttpRequestParser_t::Parse ( const CSphVector<BYTE> & dData )
 	return true;
 }
 
-static BYTE Char2Hex ( BYTE uChar )
+static uint8_t Char2Hex ( uint8_t uChar )
 {
 	if ( uChar>=0x41 && uChar<=0x46 )
 		return ( uChar - 'A' ) + 10;
@@ -405,7 +405,7 @@ static void UriPercentReplace ( CSphString & sEntity )
 	{
 		if ( *pSrc=='%' && *(pSrc+1) && *(pSrc+2) )
 		{
-			BYTE uCode = Char2Hex ( *(pSrc+1) ) * 16 + Char2Hex ( *(pSrc+2) );
+			uint8_t uCode = Char2Hex ( *(pSrc+1) ) * 16 + Char2Hex ( *(pSrc+2) );
 			pSrc += 3;
 			*pDst++ = uCode;
 		} else
@@ -477,8 +477,8 @@ int HttpRequestParser_t::ParserUrl ( http_parser * pParser, const char * sAt, si
 	if ( http_parser_parse_url ( sAt, iLen, 0, &tUri ) )
 		return 0;
 
-	DWORD uPath = ( 1UL<<UF_PATH );
-	DWORD uQuery = ( 1UL<<UF_QUERY );
+	uint32_t uPath = ( 1UL<<UF_PATH );
+	uint32_t uQuery = ( 1UL<<UF_QUERY );
 
 	if ( ( tUri.field_set & uPath )!=0 )
 	{
@@ -573,7 +573,7 @@ static const char * g_sIndexPage =
 "</body>"
 "</html>";
 
-static void HttpHandlerPage ( bool bPage, const CSphString & sInvalidEndpoint, CSphVector<BYTE> & dData )
+static void HttpHandlerPage ( bool bPage, const CSphString & sInvalidEndpoint, CSphVector<uint8_t> & dData )
 {
 	if ( bPage )
 	{
@@ -586,7 +586,7 @@ static void HttpHandlerPage ( bool bPage, const CSphString & sInvalidEndpoint, C
 	}
 }
 
-static void HttpHandlerSearch ( bool bQL, const SmallStringHash_T<CSphString> & hOptions, int iCID, CSphVector<BYTE> & dData )
+static void HttpHandlerSearch ( bool bQL, const SmallStringHash_T<CSphString> & hOptions, int iCID, CSphVector<uint8_t> & dData )
 {
 	CSphScopedPtr<ISphSearchHandler> tHandler ( sphCreateSearchHandler ( 1, true, true, iCID ) );
 	CSphQuery * pQuery = tHandler->GetQuery ( 0 );
@@ -649,7 +649,7 @@ static void HttpHandlerSearch ( bool bQL, const SmallStringHash_T<CSphString> & 
 }
 
 
-bool sphLoopClientHttp ( CSphVector<BYTE> & dData, int iCID )
+bool sphLoopClientHttp ( CSphVector<uint8_t> & dData, int iCID )
 {
 	HttpRequestParser_t tParser;
 	if ( !tParser.Parse ( dData ) )

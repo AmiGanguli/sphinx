@@ -22,7 +22,7 @@ const int MAX_STR_LENGTH = 512;
 
 //////////////////////////////////////////////////////////////////////////
 
-BYTE GetWordchar ( const char * & szSet )
+uint8_t GetWordchar ( const char * & szSet )
 {
 	if ( *szSet=='\\' )
 	{
@@ -39,14 +39,14 @@ BYTE GetWordchar ( const char * & szSet )
 			return 0;
 
 		szSet += 4;
-		return (BYTE) iRes;
+		return (uint8_t) iRes;
 	}
 
 	return *szSet++;
 }
 
 
-bool IsInSet ( BYTE uLetter, const char * szSet )
+bool IsInSet ( uint8_t uLetter, const char * szSet )
 {
 	if ( !szSet )
 		return false;
@@ -60,16 +60,16 @@ bool IsInSet ( BYTE uLetter, const char * szSet )
 
 	if ( bRange )
 	{
-		BYTE uRange1 = GetWordchar ( szSet );
+		uint8_t uRange1 = GetWordchar ( szSet );
 		szSep++;
-		BYTE uRange2 = GetWordchar ( szSep );
+		uint8_t uRange2 = GetWordchar ( szSep );
 
 		if ( uLetter>=Min ( uRange1, uRange2 ) && uLetter<=Max ( uRange1, uRange2 ) )
 			return !bInvert;
 
 	} else
 	{
-		BYTE uChar = 0;
+		uint8_t uChar = 0;
 		while ( ( uChar = GetWordchar ( szSet ) )!=0 )
 			if ( uChar==uLetter )
 				break;
@@ -87,7 +87,7 @@ bool IsInSet ( BYTE uLetter, const char * szSet )
 }
 
 
-bool GetSetMinMax ( const char * szSet, BYTE & uMin, BYTE & uMax )
+bool GetSetMinMax ( const char * szSet, uint8_t & uMin, uint8_t & uMax )
 {
 	if ( !szSet || !*szSet )
 		return false;
@@ -95,7 +95,7 @@ bool GetSetMinMax ( const char * szSet, BYTE & uMin, BYTE & uMax )
 	uMin = GetWordchar ( szSet );
 	uMax = uMin;
 
-	BYTE uChar;
+	uint8_t uChar;
 	while ( ( uChar = GetWordchar ( szSet ) )!=0 )
 		if ( uChar!='-' )
 		{
@@ -457,7 +457,7 @@ private:
 	bool		m_bUseDictConversion;
 
 	bool		AddToCharset ( char * szRangeL, char * szRangeU );
-	void		AddCharPair ( BYTE uCharL, BYTE uCharU );
+	void		AddCharPair ( uint8_t uCharL, uint8_t uCharU );
 	void		Strip ( char * szText );
 	char		ToLowerCase ( char cChar );
 	void		LoadLocale ();
@@ -684,8 +684,8 @@ bool CISpellAffix::LoadMySpell ( FILE * pFile )
 	char sAppend	[MAX_STR_LENGTH];
 
 	RuleType_e eRule = RULE_NONE;
-	BYTE cFlag = 0;
-	BYTE cCombine = 0;
+	uint8_t cFlag = 0;
+	uint8_t cCombine = 0;
 	int iCount = 0, iLine = 0;
 	const char * sMode = 0;
 
@@ -792,18 +792,18 @@ bool CISpellAffix::AddToCharset ( char * szRangeL, char * szRangeU )
 		szRangeU [iLengthU - 1] = '\0';
 		szRangeU = szRangeU + 1;
 
-		BYTE uMinL, uMaxL;
+		uint8_t uMinL, uMaxL;
 		if ( !GetSetMinMax ( szRangeL, uMinL, uMaxL ) )
 			return false;
 
-		BYTE uMinU, uMaxU;
+		uint8_t uMinU, uMaxU;
 		if ( !GetSetMinMax ( szRangeU, uMinU, uMaxU ) )
 			return false;
 
 		if ( ( uMaxU - uMinU )!=( uMaxL - uMinL ) )
 			return false;
 
-		for ( BYTE i=0; i<=( uMaxL - uMinL ); ++i )
+		for ( uint8_t i=0; i<=( uMaxL - uMinL ); ++i )
 			if ( IsInSet ( uMinL + i, szRangeL ) && IsInSet ( uMinU + i, szRangeU ) )
 				AddCharPair ( uMinL + i, uMinU + i );
 	} else
@@ -822,7 +822,7 @@ bool CISpellAffix::AddToCharset ( char * szRangeL, char * szRangeU )
 }
 
 
-void CISpellAffix::AddCharPair ( BYTE uCharL, BYTE uCharU )
+void CISpellAffix::AddCharPair ( uint8_t uCharL, uint8_t uCharU )
 {
 	m_dCharset [uCharU] = uCharL;
 }
@@ -862,17 +862,17 @@ char CISpellAffix::ToLowerCase ( char cChar )
 
 	// dictionary conversion
 	if ( m_bUseDictConversion )
-		return m_dCharset [(BYTE) cChar] ? m_dCharset [(BYTE) cChar] : cChar;
+		return m_dCharset [(uint8_t) cChar] ? m_dCharset [(uint8_t) cChar] : cChar;
 
 	// user-defined character mapping
 	if ( m_bUseLowerCaser )
 	{
-		char cResult = (char)m_LowerCaser.ToLower ( (BYTE) cChar );
+		char cResult = (char)m_LowerCaser.ToLower ( (uint8_t) cChar );
 		return cResult ? cResult : cChar;
 	}
 
 	// user-specified code page conversion
-	return (char)tolower ( (BYTE)cChar ); // workaround for systems (eg. FreeBSD) which default to signed char. marvelous!
+	return (char)tolower ( (uint8_t)cChar ); // workaround for systems (eg. FreeBSD) which default to signed char. marvelous!
 }
 
 

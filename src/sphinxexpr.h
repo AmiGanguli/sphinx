@@ -98,13 +98,13 @@ public:
 	/// Note, that sometimes this method returns pointer to a static buffer
 	/// and sometimes it allocates a new buffer, so aware of memory leaks.
 	/// IsStringPtr() returns true if this method allocates a new buffer and false otherwise.
-	virtual int StringEval ( const CSphMatch &, const BYTE ** ppStr ) const { *ppStr = NULL; return 0; }
+	virtual int StringEval ( const CSphMatch &, const uint8_t ** ppStr ) const { *ppStr = NULL; return 0; }
 
 	/// evaluate MVA attr
-	virtual const DWORD * MvaEval ( const CSphMatch & ) const { assert ( 0 ); return NULL; }
+	virtual const uint32_t * MvaEval ( const CSphMatch & ) const { assert ( 0 ); return NULL; }
 
 	/// evaluate Packed factors
-	virtual const DWORD * FactorEval ( const CSphMatch & ) const { assert ( 0 ); return NULL; }
+	virtual const uint32_t * FactorEval ( const CSphMatch & ) const { assert ( 0 ); return NULL; }
 
 	/// check for arglist subtype
 	/// FIXME? replace with a single GetType() call?
@@ -237,7 +237,7 @@ enum ESphCollation
 class CSphQueryProfile;
 ISphExpr * sphExprParse ( const char * sExpr, const ISphSchema & tSchema, ESphAttr * pAttrType, bool * pUsesWeight,
 	CSphString & sError, CSphQueryProfile * pProfiler, ESphCollation eCollation=SPH_COLLATION_DEFAULT, ISphExprHook * pHook=NULL,
-	bool * pZonespanlist=NULL, DWORD * pPackedFactorsFlags=NULL, ESphEvalStage * pEvalStage=NULL );
+	bool * pZonespanlist=NULL, uint32_t * pPackedFactorsFlags=NULL, ESphEvalStage * pEvalStage=NULL );
 
 ISphExpr * sphJsonFieldConv ( ISphExpr * pExpr );
 

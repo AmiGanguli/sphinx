@@ -31,10 +31,10 @@ struct StoredDoc_t
 {
 	CSphMatch							m_tDocInfo;
 	CSphVector<CSphString>				m_dStrAttrs;
-	CSphVector<DWORD>					m_dMva;
-	CSphTightVector<BYTE*>				m_dFields;
+	CSphVector<uint32_t>					m_dMva;
+	CSphTightVector<uint8_t*>				m_dFields;
 	CSphVector<int>						m_dFieldLengths;
-	CSphTightVector< CSphVector<BYTE> >	m_dFieldStorage;
+	CSphTightVector< CSphVector<uint8_t> >	m_dFieldStorage;
 };
 
 // these are used to separate text before passing it to RLP
@@ -88,7 +88,7 @@ public:
 	}
 
 
-	virtual BYTE ** NextDocument ( CSphString & sError )
+	virtual uint8_t ** NextDocument ( CSphString & sError )
 	{
 		if ( !IsDocCacheEmpty() )
 			return CopyDoc();
@@ -107,7 +107,7 @@ public:
 
 		while ( !IsDocCacheFull() && m_dDocBuffer.GetLength() < g_iRLPMaxBatchSize )
 		{
-			BYTE ** pFields = T::NextDocument ( sError );
+			uint8_t ** pFields = T::NextDocument ( sError );
 			if ( !pFields )
 				break;
 
@@ -152,7 +152,7 @@ public:
 				{
 					int iFieldLength = m_dFieldLengths[i];
 					pDoc->m_dFieldStorage[i].Resize ( iFieldLength+1 );
-					BYTE * pStart = pDoc->m_dFieldStorage[i].Begin();
+					uint8_t * pStart = pDoc->m_dFieldStorage[i].Begin();
 					memcpy ( pStart, pFields[i], iFieldLength );
 					pDoc->m_dFields[i] = pStart;
 					pDoc->m_dFieldLengths[i] = iFieldLength;
@@ -167,7 +167,7 @@ public:
 
 				int iOldBufferLen = m_dDocBuffer.GetLength();
 				m_dDocBuffer.Resize ( iOldBufferLen+PROXY_MARKER_LEN+MAX_INDEX_LEN+2+iTotalFieldLen );
-				BYTE * pCurDocPtr = &(m_dDocBuffer[iOldBufferLen]);
+				uint8_t * pCurDocPtr = &(m_dDocBuffer[iOldBufferLen]);
 
 				// document start tag
 				COPY_MARKER ( pCurDocPtr, m_pMarkerDocStart );
@@ -200,16 +200,16 @@ public:
 		int iResultLen = m_pBatchFieldFilter->Apply ( m_dDocBuffer.Begin(), m_dDocBuffer.GetLength(), m_dResult, false );
 		assert ( iResultLen );
 
-		BYTE * pSegmentedStart = m_dResult.Begin();
-		BYTE * pSegmentedEnd = pSegmentedStart+iResultLen;
-		BYTE * pFieldStart = NULL;
+		uint8_t * pSegmentedStart = m_dResult.Begin();
+		uint8_t * pSegmentedEnd = pSegmentedStart+iResultLen;
+		uint8_t * pFieldStart = NULL;
 		StoredDoc_t * pCurDoc = NULL;
 		int iFieldId = -1;
 
 		while ( pSegmentedStart < pSegmentedEnd )
 		{
-			BYTE * pTmp = pSegmentedStart;
-			int iCode = sphUTF8Decode ( (const BYTE * &)pSegmentedStart );
+			uint8_t * pTmp = pSegmentedStart;
+			int iCode = sphUTF8Decode ( (const uint8_t * &)pSegmentedStart );
 
 			if ( iCode!=PROXY_DOCUMENT_START && iCode!=PROXY_FIELD_START )
 				continue;
@@ -263,16 +263,16 @@ public:
 private:
 	CSphSource_Document *	m_pSource;
 	CSphFixedVector<StoredDoc_t> m_dBatchedDocs;
-	CSphTightVector<BYTE>	m_dDocBuffer;
-	CSphVector<BYTE>		m_dResult;
+	CSphTightVector<uint8_t>	m_dDocBuffer;
+	CSphVector<uint8_t>		m_dResult;
 	CSphTightVector<int>	m_dFieldLengths;
 	CSphVector<bool>		m_dFieldHasChinese;
 	int						m_iDocStart;
 	int						m_iDocCount;
 	ISphFieldFilter *		m_pBatchFieldFilter;
 
-	BYTE					m_pMarkerDocStart[PROXY_MARKER_LEN];
-	BYTE					m_pMarkerFieldStart[PROXY_MARKER_LEN];
+	uint8_t					m_pMarkerDocStart[PROXY_MARKER_LEN];
+	uint8_t					m_pMarkerFieldStart[PROXY_MARKER_LEN];
 
 	bool					IsDocCacheEmpty() const	{ return !m_iDocCount; }
 	bool					IsDocCacheFull() const { return m_iDocCount==m_dBatchedDocs.GetLength(); }
@@ -297,7 +297,7 @@ private:
 		return pDoc;
 	}
 
-	BYTE ** CopyDoc ()
+	uint8_t ** CopyDoc ()
 	{
 		StoredDoc_t * pDoc = PopDoc();
 		assert ( pDoc );
@@ -328,7 +328,7 @@ private:
 		tTo.m_iTag = tFrom.m_iTag;
 	}
 
-	void AddNumber ( BYTE * & pPtr, int iNumber )
+	void AddNumber ( uint8_t * & pPtr, int iNumber )
 	{
 		char szTmp [256];
 		int iLen = snprintf ( szTmp, sizeof(szTmp), "%d", iNumber );
@@ -337,18 +337,18 @@ private:
 		pPtr += iLen;
 	}
 
-	int ReadNumber ( BYTE * & pPtr, BYTE * pEndPtr )
+	int ReadNumber ( uint8_t * & pPtr, uint8_t * pEndPtr )
 	{
-		int iCode = sphUTF8Decode ( (const BYTE * &)pPtr );
+		int iCode = sphUTF8Decode ( (const uint8_t * &)pPtr );
 		assert ( iCode==' ' );
-		const BYTE * pNumber = pPtr;
+		const uint8_t * pNumber = pPtr;
 		do 
 		{
-			iCode = sphUTF8Decode ( (const BYTE * &)pPtr );
+			iCode = sphUTF8Decode ( (const uint8_t * &)pPtr );
 		} while ( pPtr < pEndPtr && iCode!=' ');
 
 		assert ( iCode==' ' );
-		BYTE uTmp = *pPtr;
+		uint8_t uTmp = *pPtr;
 		*pPtr = '\0';
 		int iDoc = atoi ( (char *)pNumber );
 		*pPtr = uTmp;

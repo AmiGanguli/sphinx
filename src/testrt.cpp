@@ -76,7 +76,7 @@ static int g_iFieldsCount = 0;
 void DoIndexing ( CSphSource_MySQL * pSrc, ISphRtIndex * pIndex )
 {
 	CSphString sError, sWarning, sFilter;
-	CSphVector<DWORD> dMvas;
+	CSphVector<uint32_t> dMvas;
 
 	int64_t tmStart = sphMicroTimer ();
 	int64_t tmAvgCommit = 0;

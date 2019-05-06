@@ -164,7 +164,7 @@ public:
 		return true;
 	}
 
-	bool Process ( const BYTE * pBuffer, int iLength, CSphVector<BYTE> & dOut, bool bQuery )
+	bool Process ( const uint8_t * pBuffer, int iLength, CSphVector<uint8_t> & dOut, bool bQuery )
 	{
 		if ( !pBuffer || !iLength )
 			return false;
@@ -174,7 +174,7 @@ public:
 
 		dOut.Resize(0);
 
-		const BYTE * pSegment = pBuffer;
+		const uint8_t * pSegment = pBuffer;
 		int iLengthLeft = iLength;
 		while ( iLengthLeft )
 		{
@@ -223,15 +223,15 @@ private:
 	BT_RLP_TokenIteratorC *	m_pTokenIterator;
 	int						m_iNextCompoundComponent;
 	bool					m_bInitialized;
-	CSphTightVector<BYTE>	m_dCJKBuffer;
-	CSphTightVector<BYTE>	m_dNonCJKBuffer;
+	CSphTightVector<uint8_t>	m_dCJKBuffer;
+	CSphTightVector<uint8_t>	m_dNonCJKBuffer;
 	CSphTightVector<TextChunk_t> m_dNonCJKChunks;
-	BYTE					m_dUTF8Buffer[MAX_TOKEN_LEN];
-	BYTE					m_pMarkerChunkSeparator[PROXY_MARKER_LEN];
+	uint8_t					m_dUTF8Buffer[MAX_TOKEN_LEN];
+	uint8_t					m_pMarkerChunkSeparator[PROXY_MARKER_LEN];
 	CSphVector<CSphRemapRange> m_dBlendChars;
 
 
-	void ProcessSegment ( const BYTE * pIn, int iLen, CSphVector<BYTE> & dOut, bool bQuery )
+	void ProcessSegment ( const uint8_t * pIn, int iLen, CSphVector<uint8_t> & dOut, bool bQuery )
 	{
 		assert ( pIn && iLen );
 
@@ -239,15 +239,15 @@ private:
 		m_dNonCJKBuffer.Resize(0);
 		m_dNonCJKChunks.Resize(0);
 
-		const BYTE * pBuffer = pIn;
-		const BYTE * pBufferMax = pIn+iLen;
+		const uint8_t * pBuffer = pIn;
+		const uint8_t * pBufferMax = pIn+iLen;
 
 		bool bWasChineseCode = false;
-		const BYTE * pChunkStart = pBuffer;
+		const uint8_t * pChunkStart = pBuffer;
 		bool bFirstCode = true;
 		while ( pBuffer<pBufferMax )
 		{
-			const BYTE * pTmp = pBuffer;
+			const uint8_t * pTmp = pBuffer;
 			int iCode = sphUTF8Decode ( pBuffer );
 			bool bIsChineseCode = sphIsChineseCode(iCode);
 			if ( !bFirstCode && bWasChineseCode!=bIsChineseCode )
@@ -266,7 +266,7 @@ private:
 		dOut.Reserve ( m_dCJKBuffer.GetLength() + m_dNonCJKBuffer.GetLength() );
 
 		// reconstruct the buffer
-		BYTE * pToken;
+		uint8_t * pToken;
 		int iCurNonCJKToken = 0;
 		while ( (pToken = GetNextTokenRLP())!=NULL )
 		{
@@ -276,17 +276,17 @@ private:
 			if ( iTokenLen==PROXY_MARKER_LEN && CMP_MARKER ( pToken, m_pMarkerChunkSeparator ) )
 			{
 				const TextChunk_t & tChunk = m_dNonCJKChunks[iCurNonCJKToken++];
-				BYTE * pChunkStart = m_dNonCJKBuffer.Begin()+tChunk.m_iStart;
+				uint8_t * pChunkStart = m_dNonCJKBuffer.Begin()+tChunk.m_iStart;
 				bAddSpace &= !sphIsSpace( *pChunkStart ) && ( !bQuery || !IsSpecialQueryCode ( *pChunkStart ) ) && !IsBlendChar( *pChunkStart );
 				dOut.Resize ( iResLen + tChunk.m_iLength + ( bAddSpace ? 1 : 0 ) );
-				BYTE * pOut = dOut.Begin()+iResLen;
+				uint8_t * pOut = dOut.Begin()+iResLen;
 				if ( bAddSpace )
 					*pOut++ = ' ';
 				memcpy ( pOut, pChunkStart, tChunk.m_iLength );
 			} else
 			{
 				dOut.Resize ( iResLen + iTokenLen + ( bAddSpace ? 1 : 0 ) );
-				BYTE * pOut = dOut.Begin()+iResLen;
+				uint8_t * pOut = dOut.Begin()+iResLen;
 				if ( iResLen )
 					bAddSpace &= ( !bQuery || !IsSpecialQueryCode ( pOut[-1] ) ) && !IsBlendChar( pOut[-1] );
 
@@ -298,14 +298,14 @@ private:
 		}
 	}
 
-	void AddTextChunk ( const BYTE * pStart, int iLen, bool bChinese )
+	void AddTextChunk ( const uint8_t * pStart, int iLen, bool bChinese )
 	{
 		if ( bChinese )
 		{
 			// fixme! maybe surround these chinese text chunks by spaces?
 			int iOldBufferLen = m_dCJKBuffer.GetLength();
 			m_dCJKBuffer.Resize ( iOldBufferLen+iLen );
-			BYTE * pCurDocPtr = &(m_dCJKBuffer[iOldBufferLen]);
+			uint8_t * pCurDocPtr = &(m_dCJKBuffer[iOldBufferLen]);
 			memcpy ( pCurDocPtr, pStart, iLen );
 		} else
 		{
@@ -315,24 +315,24 @@ private:
 			tChunk.m_iStart = iOldBufferLen;
 			tChunk.m_iLength = iLen;
 			m_dNonCJKBuffer.Resize ( iOldBufferLen+iLen );
-			BYTE * pNonChinesePtr = &(m_dNonCJKBuffer[iOldBufferLen]);
+			uint8_t * pNonChinesePtr = &(m_dNonCJKBuffer[iOldBufferLen]);
 			memcpy ( pNonChinesePtr, pStart, iLen );
 
 			// copy marker to chinese buffer
 			iOldBufferLen = m_dCJKBuffer.GetLength();
 			m_dCJKBuffer.Resize ( iOldBufferLen+PROXY_MARKER_LEN+2 ); // marker+2 spaces around it
-			BYTE * pCurDocPtr = &(m_dCJKBuffer[iOldBufferLen]);
+			uint8_t * pCurDocPtr = &(m_dCJKBuffer[iOldBufferLen]);
 			COPY_MARKER ( pCurDocPtr, m_pMarkerChunkSeparator );
 		}
 	}
 
-	int GetNextLengthToSegment ( const BYTE * pBuffer, int iLength ) const
+	int GetNextLengthToSegment ( const uint8_t * pBuffer, int iLength ) const
 	{
 		if ( iLength <= MAX_CHUNK_SIZE )
 			return iLength;
 
-		const BYTE * pCurBuf = pBuffer;
-		const BYTE * pLastSeparator = NULL;
+		const uint8_t * pCurBuf = pBuffer;
+		const uint8_t * pLastSeparator = NULL;
 		int iLengthLeft = Min ( iLength, MAX_CHUNK_SIZE );
 		while ( pCurBuf<pBuffer+iLengthLeft )
 		{
@@ -344,7 +344,7 @@ private:
 		return pLastSeparator ? pLastSeparator-pBuffer : iLengthLeft;
 	}
 
-	void ProcessBufferRLP ( const BYTE * pBuffer, int iLength )
+	void ProcessBufferRLP ( const uint8_t * pBuffer, int iLength )
 	{
 		assert ( !m_pTokenIterator );
 
@@ -359,7 +359,7 @@ private:
 	}
 
 
-	BYTE * GetNextTokenRLP()
+	uint8_t * GetNextTokenRLP()
 	{
 		static const char * RPL_SPECIAL_STOPWORD = "rlpspecialstopword";
 
@@ -468,7 +468,7 @@ public:
 	CSphFieldFilterRLP ( const char * szRLPRoot, const char * szRLPEnv, const char * szRLPCtx );
 
 
-	virtual	int				Apply ( const BYTE * sField, int iLength, CSphVector<BYTE> & dStorage, bool bQuery );
+	virtual	int				Apply ( const uint8_t * sField, int iLength, CSphVector<uint8_t> & dStorage, bool bQuery );
 	virtual	void			GetSettings ( CSphFieldFilterSettings & tSettings ) const;
 	virtual ISphFieldFilter * Clone();
 };
@@ -480,14 +480,14 @@ CSphFieldFilterRLP::CSphFieldFilterRLP ( const char * szRLPRoot, const char * sz
 }
 
 
-int CSphFieldFilterRLP::Apply ( const BYTE * sField, int iLength, CSphVector<BYTE> & dStorage, bool bQuery )
+int CSphFieldFilterRLP::Apply ( const uint8_t * sField, int iLength, CSphVector<uint8_t> & dStorage, bool bQuery )
 {
 	if ( m_pParent )
 	{
 		int iResultLength = m_pParent->Apply ( sField, iLength, dStorage, bQuery );
 		if ( iResultLength ) // can't use dStorage.GetLength() because of the safety gap
 		{
-			CSphFixedVector<BYTE> dTmp ( iResultLength );
+			CSphFixedVector<uint8_t> dTmp ( iResultLength );
 			memcpy ( dTmp.Begin(), dStorage.Begin(), dStorage.GetLength() );
 			if ( !Process ( dTmp.Begin(), iLength, dStorage, bQuery ) )
 				return iResultLength;

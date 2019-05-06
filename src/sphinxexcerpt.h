@@ -59,7 +59,7 @@ public:
 	int64_t			m_iSize;			///< file size, to sort to work-queue order
 	int				m_iSeq;				///< request order, to sort back to request order
 	int				m_iNext;			///< the next one in one-link list for batch processing. -1 terminate the list. -2 sign of other (out-of-the-lists)
-	CSphVector<BYTE>	m_dRes;				///< snippet result holder
+	CSphVector<uint8_t>	m_dRes;				///< snippet result holder
 	CSphString		m_sError;			///< snippet error message
 	CSphString		m_sWarning;			///< snippet warning message
 	bool			m_bHasBeforePassageMacro;
@@ -67,7 +67,7 @@ public:
 	CSphString		m_sBeforeMatchPassage;
 	CSphString		m_sAfterMatchPassage;
 
-	DWORD			m_ePassageSPZ;
+	uint32_t			m_ePassageSPZ;
 
 public:
 	ExcerptQuery_t ();
@@ -79,7 +79,7 @@ struct XQQuery_t;
 /// returns a newly allocated string in encoding specified by tokenizer on success
 /// returns NULL on failure
 void sphBuildExcerpt ( ExcerptQuery_t & tOptions, const CSphIndex * pIndex, const CSphHTMLStripper * pStripper, const XQQuery_t & tExtQuery,
-						DWORD eExtQuerySPZ, CSphString & sWarning, CSphString & sError, CSphDict * pDict, ISphTokenizer * pDocTokenizer, ISphTokenizer * pQueryTokenizer );
+						uint32_t eExtQuerySPZ, CSphString & sWarning, CSphString & sError, CSphDict * pDict, ISphTokenizer * pDocTokenizer, ISphTokenizer * pQueryTokenizer );
 
 #endif // _sphinxexcerpt_
 
